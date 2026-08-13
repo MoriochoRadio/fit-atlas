@@ -1,17 +1,7 @@
-import { int, mysqlEnum, mysqlTable, text, timestamp, varchar } from "drizzle-orm/mysql-core";
+import { decimal, index, int, mysqlEnum, mysqlTable, text, timestamp, varchar } from "drizzle-orm/mysql-core";
 
-/**
- * Core user table backing auth flow.
- * Extend this file with additional tables as your product grows.
- * Columns use camelCase to match both database fields and generated types.
- */
 export const users = mysqlTable("users", {
-  /**
-   * Surrogate primary key. Auto-incremented numeric value managed by the database.
-   * Use this for relations between tables.
-   */
   id: int("id").autoincrement().primaryKey(),
-  /** Manus OAuth identifier (openId) returned from the OAuth callback. Unique per user. */
   openId: varchar("openId", { length: 64 }).notNull().unique(),
   name: text("name"),
   email: varchar("email", { length: 320 }),
@@ -22,7 +12,31 @@ export const users = mysqlTable("users", {
   lastSignedIn: timestamp("lastSignedIn").defaultNow().notNull(),
 });
 
+export const fitnessProfiles = mysqlTable("fitnessProfiles", {
+  id: int("id").autoincrement().primaryKey(),
+  userId: int("userId").notNull().unique().references(() => users.id, { onDelete: "cascade" }),
+  age: int("age"),
+  sex: mysqlEnum("sex", ["female", "male", "nonbinary", "undisclosed"]).default("undisclosed").notNull(),
+  weightKg: decimal("weightKg", { precision: 6, scale: 2 }),
+  primaryGoal: mysqlEnum("primaryGoal", ["strength", "endurance", "weight_management", "general_health"]).default("general_health").notNull(),
+  experience: mysqlEnum("experience", ["beginner", "intermediate", "advanced"]).default("beginner").notNull(),
+  updatedAt: timestamp("updatedAt").defaultNow().onUpdateNow().notNull(),
+});
+
+export const workoutLogs = mysqlTable("workoutLogs", {
+  id: int("id").autoincrement().primaryKey(),
+  userId: int("userId").notNull().references(() => users.id, { onDelete: "cascade" }),
+  exerciseName: varchar("exerciseName", { length: 160 }).notNull(),
+  sets: int("sets").notNull(),
+  reps: int("reps").notNull(),
+  loadKg: decimal("loadKg", { precision: 7, scale: 2 }).default("0").notNull(),
+  durationMinutes: int("durationMinutes").notNull(),
+  intensityRpe: int("intensityRpe").notNull(),
+  performedAt: timestamp("performedAt").notNull(),
+  createdAt: timestamp("createdAt").defaultNow().notNull(),
+}, (table) => [index("workout_user_performed_idx").on(table.userId, table.performedAt)]);
+
 export type User = typeof users.$inferSelect;
 export type InsertUser = typeof users.$inferInsert;
-
-// TODO: Add your tables here
+export type FitnessProfile = typeof fitnessProfiles.$inferSelect;
+export type WorkoutLog = typeof workoutLogs.$inferSelect;

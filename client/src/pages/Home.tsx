@@ -1,33 +1,189 @@
+import { AnatomyMap } from "@/components/AnatomyMap";
+import { exercises, recoveryGuides, wellnessCards, type BodyRegion, type Exercise } from "@/lib/fitnessData";
+import { Activity, ArrowRight, BarChart3, BookOpen, Brain, CalendarDays, Check, ChevronRight, Dumbbell, HeartPulse, Menu, Plus, Search, ShieldCheck, Sparkles, Timer, X } from "lucide-react";
+import { motion } from "framer-motion";
+import { useEffect, useMemo, useState } from "react";
+import { Bar, BarChart, CartesianGrid, ResponsiveContainer, Tooltip, XAxis, YAxis } from "recharts";
 import { useAuth } from "@/_core/hooks/useAuth";
-import { Button } from "@/components/ui/button";
-import { Loader2 } from "lucide-react";
-import { Streamdown } from 'streamdown';
+import { trpc } from "@/lib/trpc";
+import { startLogin } from "@/const";
+import { toast } from "sonner";
+import { getCalendarDays, getPersonalRecords, getTotalMinutes, getTotalVolume, getWeeklyVolume, type TrainingLog } from "@/lib/trainingMetrics";
+import { getPersonalizedProgram } from "@/lib/personalization";
 
-/**
- * All content in this page are only for example, replace with your own feature implementation
- * When building pages, remember your instructions in Frontend Workflow, Frontend Best Practices, Design Guide and Common Pitfalls
- */
+type LogEntry = TrainingLog;
+
+const categories = ["전체", "러닝", "유산소", "헬스기구", "프리웨이트", "맨몸운동"] as const;
+const goalCopy = { 근력증가: "strength", 체력증가: "endurance", 다이어트: "weight_management" } as const;
+
+function SectionTitle({ eyebrow, title, description, action }: { eyebrow: string; title: string; description: string; action?: React.ReactNode }) {
+  return <div className="section-heading"><div><p className="eyebrow">{eyebrow}</p><h2>{title}</h2><p className="section-description">{description}</p></div>{action}</div>;
+}
+
 export default function Home() {
-  // The useAuth hook provides authentication state.
-  // To implement login/logout, call logout(), or start login from an event
-  // handler: onClick={() => startLogin()} (imported from "@/const"). Never call
-  // startLogin() during render (no href={startLogin()}) — it mints a one-time
-  // nonce cookie and must run only at the moment of navigation.
-  let { user, loading, error, isAuthenticated, logout } = useAuth();
+  const { isAuthenticated } = useAuth();
+  const utils = trpc.useUtils();
+  const workoutQuery = trpc.fitness.workouts.list.useQuery(undefined, { enabled: isAuthenticated });
+  const profileQuery = trpc.fitness.profile.useQuery(undefined, { enabled: isAuthenticated });
+  const createWorkout = trpc.fitness.workouts.create.useMutation({
+    onSuccess: () => { utils.fitness.workouts.list.invalidate(); toast.success("운동 기록을 계정에 저장했습니다."); },
+    onError: () => toast.error("계정 기록을 저장하지 못했습니다. 연결 상태를 확인하고 다시 시도하세요."),
+  });
+  const saveProfile = trpc.fitness.saveProfile.useMutation();
+  const [keyword, setKeyword] = useState("");
+  const [category, setCategory] = useState<(typeof categories)[number]>("전체");
+  const [focus, setFocus] = useState("전체");
+  const [regionFilter, setRegionFilter] = useState("전체");
+  const [difficulty, setDifficulty] = useState("전체");
+  const [equipment, setEquipment] = useState("전체");
+  const [activeRegion, setActiveRegion] = useState<BodyRegion>("등");
+  const [goal, setGoal] = useState<keyof typeof goalCopy>("근력증가");
+  const [logOpen, setLogOpen] = useState(false);
+  const [profileOpen, setProfileOpen] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
+  const [guestLogs, setGuestLogs] = useState<LogEntry[]>(() => {
+    if (typeof window === "undefined") return [];
+    try { return JSON.parse(window.localStorage.getItem("fit-atlas-guest-logs") ?? "[]") as LogEntry[]; } catch { return []; }
+  });
+  const [form, setForm] = useState({ exercise: "바벨 백 스쿼트", sets: "3", reps: "8", load: "40", minutes: "35", intensity: "6" });
+  const [profileForm, setProfileForm] = useState({ age: "", weightKg: "", sex: "undisclosed", primaryGoal: "strength", experience: "beginner" });
 
-  // If theme is switchable in App.tsx, we can implement theme toggling like this:
-  // const { theme, toggleTheme } = useTheme();
+  const logs: LogEntry[] = isAuthenticated
+    ? (workoutQuery.data ?? []).map((log) => ({ id: String(log.id), date: new Date(log.performedAt).toISOString().slice(0, 10), exercise: log.exerciseName, sets: log.sets, reps: log.reps, load: Number(log.loadKg), minutes: log.durationMinutes, intensity: log.intensityRpe }))
+    : guestLogs;
+
+  useEffect(() => {
+    if (!isAuthenticated) window.localStorage.setItem("fit-atlas-guest-logs", JSON.stringify(guestLogs));
+  }, [guestLogs, isAuthenticated]);
+
+  useEffect(() => {
+    const profile = profileQuery.data;
+    if (!profile) return;
+    setProfileForm({
+      age: profile.age ? String(profile.age) : "",
+      weightKg: profile.weightKg ? String(profile.weightKg) : "",
+      sex: profile.sex,
+      primaryGoal: profile.primaryGoal,
+      experience: profile.experience,
+    });
+  }, [profileQuery.data]);
+
+  const filteredExercises = useMemo(() => exercises.filter((exercise) => {
+    const text = `${exercise.name} ${exercise.englishName} ${exercise.category} ${exercise.regions.join(" ")} ${exercise.focus} ${exercise.equipment}`.toLowerCase();
+    return (category === "전체" || exercise.category === category) && (focus === "전체" || exercise.focus === focus) && (regionFilter === "전체" || exercise.regions.includes(regionFilter as BodyRegion)) && (difficulty === "전체" || exercise.difficulty === difficulty) && (equipment === "전체" || (equipment === "장비 없음" ? exercise.equipment === "없음" : exercise.equipment !== "없음")) && text.includes(keyword.toLowerCase());
+  }), [category, difficulty, equipment, focus, keyword, regionFilter]);
+
+  const regionExercises = exercises.filter((exercise) => exercise.regions.includes(activeRegion));
+  const recovery = recoveryGuides[activeRegion];
+  const plan = getPersonalizedProgram({ age: profileForm.age ? Number(profileForm.age) : null, weightKg: profileForm.weightKg ? Number(profileForm.weightKg) : null, sex: profileForm.sex as "female" | "male" | "nonbinary" | "undisclosed", primaryGoal: goalCopy[goal], experience: profileForm.experience as "beginner" | "intermediate" | "advanced" });
+  const weeklyVolume = useMemo(() => getWeeklyVolume(logs), [logs]);
+  const calendarDays = useMemo(() => getCalendarDays(logs), [logs]);
+  const totalVolume = getTotalVolume(logs);
+  const totalMinutes = getTotalMinutes(logs);
+  const pr = useMemo(() => getPersonalRecords(logs), [logs]);
+
+  const addLog = () => {
+    const today = new Date().toISOString().slice(0, 10);
+    const entry = { id: crypto.randomUUID(), date: today, exercise: form.exercise, sets: Number(form.sets), reps: Number(form.reps), load: Number(form.load), minutes: Number(form.minutes), intensity: Number(form.intensity) };
+    if (!Number.isInteger(entry.sets) || entry.sets < 1 || entry.sets > 30 || !Number.isInteger(entry.reps) || entry.reps < 1 || entry.reps > 500 || !Number.isFinite(entry.load) || entry.load < 0 || entry.load > 1000 || !Number.isInteger(entry.minutes) || entry.minutes < 1 || entry.minutes > 1440 || !Number.isInteger(entry.intensity) || entry.intensity < 1 || entry.intensity > 10) {
+      toast.error("세트·횟수·시간·강도를 유효한 범위로 입력해 주세요.");
+      return;
+    }
+    if (isAuthenticated) {
+      createWorkout.mutate({ exerciseName: entry.exercise, sets: entry.sets, reps: entry.reps, loadKg: entry.load, durationMinutes: entry.minutes, intensityRpe: entry.intensity, performedAt: Date.now() });
+    } else {
+      setGuestLogs((current) => [entry, ...current]);
+      toast.success("이 브라우저에 운동 기록을 저장했습니다.");
+    }
+    setLogOpen(false);
+  };
+
+  const saveProfileSettings = () => {
+    const apiProfile = {
+      age: profileForm.age ? Number(profileForm.age) : null,
+      weightKg: profileForm.weightKg ? Number(profileForm.weightKg) : null,
+      sex: profileForm.sex as "female" | "male" | "nonbinary" | "undisclosed",
+      primaryGoal: profileForm.primaryGoal as "strength" | "endurance" | "weight_management" | "general_health",
+      experience: profileForm.experience as "beginner" | "intermediate" | "advanced",
+    };
+    if (apiProfile.age !== null && (apiProfile.age < 13 || apiProfile.age > 120)) { toast.error("연령은 13–120 범위에서 입력해 주세요."); return; }
+    if (apiProfile.weightKg !== null && (apiProfile.weightKg < 25 || apiProfile.weightKg > 400)) { toast.error("체중은 25–400 kg 범위에서 입력해 주세요."); return; }
+    if (isAuthenticated) saveProfile.mutate(apiProfile, { onSuccess: () => toast.success("개인화 기준을 계정에 저장했습니다."), onError: () => toast.error("개인화 기준을 계정에 저장하지 못했습니다. 다시 시도하세요.") });
+    window.localStorage.setItem("fit-atlas-profile", JSON.stringify(apiProfile));
+    const goalByProfile = { strength: "근력증가", endurance: "체력증가", weight_management: "다이어트", general_health: "체력증가" } as const;
+    setGoal(goalByProfile[apiProfile.primaryGoal]);
+    setProfileOpen(false);
+  };
+
 
   return (
-    <div className="min-h-screen flex flex-col">
-      <main>
-        {/* Example: lucide-react for icons */}
-        <Loader2 className="animate-spin" />
-        Example Page
-        {/* Example: Streamdown for markdown rendering */}
-        <Streamdown>Any **markdown** content</Streamdown>
-        <Button variant="default">Example Button</Button>
+    <div className="site-shell">
+      <header className="topbar">
+        <a className="brand" href="#top" aria-label="Fit Atlas 홈"><span className="brand-mark"><Activity size={17} /></span><span>FIT ATLAS</span></a>
+        <nav className={menuOpen ? "nav is-open" : "nav"} aria-label="주요 메뉴">
+          <a href="#explore" onClick={() => setMenuOpen(false)}>운동 탐색</a><a href="#anatomy" onClick={() => setMenuOpen(false)}>바디 맵</a><a href="#progress" onClick={() => setMenuOpen(false)}>기록 분석</a><a href="#wellness" onClick={() => setMenuOpen(false)}>웰니스</a>
+        </nav>
+        <div className="topbar-actions"><button className="ghost-button desktop-only" onClick={() => setProfileOpen(true)}>내 프로필</button>{!isAuthenticated && <button className="login-button desktop-only" onClick={() => startLogin()}>로그인</button>}<button className="dark-button" onClick={() => setLogOpen(true)}><Plus size={16} /> 운동 기록</button><button className="menu-button" onClick={() => setMenuOpen(!menuOpen)} aria-label="메뉴 열기"><Menu size={20} /></button></div>
+      </header>
+
+      <main id="top">
+        <section className="hero">
+          <div className="hero-noise" />
+          <motion.div className="hero-copy" initial={{ opacity: 0, y: 18 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.55 }}>
+            <p className="eyebrow light">THE INTELLIGENT BODY COMPANION</p>
+            <h1>몸을 이해할수록,<br /><em>움직임은 정교해집니다.</em></h1>
+            <p className="hero-description">운동 과학, 해부학적 인사이트, 개인화된 기록을 하나의 정교한 경험으로 연결합니다. 무엇을, 왜, 어떻게 해야 하는지 맥락까지 살펴보세요.</p>
+            <div className="hero-actions"><a href="#explore" className="light-button">운동 백과사전 보기 <ArrowRight size={16} /></a><button className="text-button" onClick={() => document.getElementById("anatomy")?.scrollIntoView({ behavior: "smooth" })}>바디 맵 탐색 <ChevronRight size={17} /></button></div>
+          </motion.div>
+          <motion.div className="hero-atlas" initial={{ opacity: 0, scale: 0.94 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.7, delay: 0.1 }}>
+            <div className="atlas-rings" /><div className="atlas-core"><Dumbbell size={52} strokeWidth={1.1} /></div><div className="atlas-stat stat-one"><span>GUIDED</span><b>8</b><small>기초 운동</small></div><div className="atlas-stat stat-two"><span>FOCUS</span><b>7</b><small>신체 부위</small></div><div className="atlas-caption">FITNESS, MAPPED<br />WITH INTENTION.</div>
+          </motion.div>
+          <div className="hero-footer"><span><ShieldCheck size={15} /> 연구 근거를 명시한 콘텐츠</span><span><HeartPulse size={15} /> 의료 진단을 대체하지 않는 안전 설계</span></div>
+        </section>
+
+        <section className="quick-strip"><div><span className="strip-index">01</span><b>EXPLORE</b><p>운동의 자세·부위·근거</p></div><div><span className="strip-index">02</span><b>PERSONALIZE</b><p>목표 기반 프로그램</p></div><div><span className="strip-index">03</span><b>PROGRESS</b><p>기록과 성과 분석</p></div><div><span className="strip-index">04</span><b>RECOVER</b><p>회복과 웰니스</p></div></section>
+
+        <section id="program" className="program-section section-pad">
+          <SectionTitle eyebrow="PERSONALIZE" title="오늘의 움직임을, 당신의 목표에 맞게." description="간단한 목표 선택으로 시작하는 보수적이고 점진적인 운동 제안입니다. 실제 서비스에서는 프로필·운동 이력·피로도까지 반영합니다." />
+          <div className="program-grid"><div className="program-selector"><p className="small-label">PRIMARY GOAL</p><div className="goal-pills">{(Object.keys(goalCopy) as Array<keyof typeof goalCopy>).map((item) => <button key={item} onClick={() => setGoal(item)} className={goal === item ? "is-selected" : ""}>{item}</button>)}</div><button className="profile-link" onClick={() => setProfileOpen(true)}>연령·체중·경험 수준 설정 <ArrowRight size={14} /></button><div className="program-note"><Sparkles size={18} /><p><strong>권장 원칙</strong><br />처음 2주간은 운동 전후 불편감·피로를 관찰하며 강도보다 일관성을 우선하세요.</p></div></div><div className="program-card"><div><p className="eyebrow">YOUR STARTING POINT · {plan.sessionsPerWeek} · {plan.targetRpe}</p><h3>{plan.title}</h3><p>{plan.note} {plan.personalizationNote}</p><p className="profile-context">{plan.sexConsideration}</p></div><div className="program-exercise-list">{plan.recommendations.map((name, index) => <div key={name}><span>0{index + 1}</span><b>{name}</b><Check size={16} /></div>)}</div><button className="outline-button" onClick={() => document.getElementById("explore")?.scrollIntoView({ behavior: "smooth" })}>운동 구성 살펴보기 <ArrowRight size={16} /></button></div></div>
+        </section>
+
+        <section id="explore" className="explore-section section-pad">
+          <SectionTitle eyebrow="EXERCISE LIBRARY" title="움직임을 지식으로 익히세요." description="카테고리와 목적, 장비로 탐색하고 올바른 자세의 핵심 단서와 안전 주의사항을 함께 확인하세요." action={<span className="library-count">{filteredExercises.length} EXERCISES</span>} />
+          <div className="search-panel"><div className="search-field"><Search size={18} /><input value={keyword} onChange={(event) => setKeyword(event.target.value)} placeholder="운동, 부위, 장비 검색" aria-label="운동 검색" /></div><div className="filter-row"><div className="filter-scroll">{categories.map((item) => <button key={item} className={category === item ? "filter-active" : ""} onClick={() => setCategory(item)}>{item}</button>)}</div><select value={regionFilter} onChange={(event) => setRegionFilter(event.target.value)} aria-label="부위 필터"><option>전체</option>{Object.keys(recoveryGuides).map((region) => <option key={region}>{region}</option>)}</select><select value={focus} onChange={(event) => setFocus(event.target.value)} aria-label="목적 필터"><option>전체</option><option>근력</option><option>체력</option><option>심폐</option><option>가동성</option></select><select value={difficulty} onChange={(event) => setDifficulty(event.target.value)} aria-label="난이도 필터"><option>전체</option><option>입문</option><option>중급</option><option>상급</option></select><select value={equipment} onChange={(event) => setEquipment(event.target.value)} aria-label="장비 필터"><option>전체</option><option>장비 없음</option><option>장비 필요</option></select></div></div>
+          <div className="exercise-grid">{filteredExercises.map((exercise, index) => <ExerciseCard key={exercise.id} exercise={exercise} index={index} />)}</div>
+          {filteredExercises.length === 0 && <div className="empty-library"><Search size={26} /><p>조건에 맞는 운동을 찾지 못했습니다. 검색어나 필터를 조정해 보세요.</p></div>}
+        </section>
+
+        <section id="anatomy" className="anatomy-section section-pad">
+          <SectionTitle eyebrow="BODY ATLAS" title="부위를 누르면, 필요한 움직임이 보입니다." description="신체 지도의 부위를 선택해 연관 운동과 회복 관점을 확인하세요. 통증 정보는 교육 목적이며 진단이나 치료가 아닙니다." />
+          <div className="anatomy-grid"><div className="body-map-card"><div className="map-head"><span>INTERACTIVE MUSCLE MAP</span><span className="live-dot">LIVE GUIDE</span></div><AnatomyMap activeRegion={activeRegion} onSelect={setActiveRegion} /><div className="region-selector">{(Object.keys(recoveryGuides) as BodyRegion[]).map((region) => <button key={region} className={activeRegion === region ? "is-active" : ""} onClick={() => setActiveRegion(region)}>{region}</button>)}</div></div><div className="anatomy-info"><div className="region-title"><p className="eyebrow">SELECTED REGION</p><h3>{activeRegion}</h3></div><div className="related-list"><p className="small-label">RELATED EXERCISES</p>{regionExercises.slice(0, 3).map((exercise) => <div key={exercise.id}><span>{exercise.category}</span><b>{exercise.name}</b><ArrowRight size={15} /></div>)}</div><div className="safety-callout"><ShieldCheck size={18} /><p><strong>안전한 탐색</strong><br />날카로운 통증, 저림, 근력 저하, 외상 후 변화는 자가 관리보다 의료 평가를 우선하세요.</p></div></div></div>
+          <div className="recovery-card"><div><p className="eyebrow">RECOVERY GUIDE · {activeRegion}</p><h3>{recovery.title}</h3><p>{recovery.intro}</p></div><ol>{recovery.steps.map((step, index) => <li key={step}><span>0{index + 1}</span>{step}</li>)}</ol><div className="recovery-caution"><HeartPulse size={17} /> {recovery.caution}</div></div>
+        </section>
+
+        <section id="progress" className="progress-section section-pad">
+          <SectionTitle eyebrow="TRAINING LOG" title="기록은 감이 아닌 방향을 만듭니다." description="종목·세트·횟수·중량·시간·강도를 기록하면 누적 볼륨과 개인 최고 기록을 확인할 수 있습니다." action={<button className="dark-button" onClick={() => setLogOpen(true)}><Plus size={16} /> 새 기록</button>} />
+          <div className="metric-row"><Metric icon={<Dumbbell size={18} />} label="누적 볼륨" value={logs.length ? `${totalVolume.toLocaleString()} kg` : "—"} caption={logs.length ? "기록된 세트 기준" : "기록을 추가해 시작"} /><Metric icon={<Timer size={18} />} label="운동 시간" value={logs.length ? `${totalMinutes}분` : "—"} caption={logs.length ? "누적 기록 기준" : "아직 기록 없음"} /><Metric icon={<Activity size={18} />} label="세션 수" value={`${logs.length}`} caption="오늘 기록된 운동" /><Metric icon={<CalendarDays size={18} />} label="이번 주" value={`${logs.filter((item) => item.date >= new Date(Date.now() - 6 * 86400000).toISOString().slice(0, 10)).length}`} caption="기록된 세션" /></div>
+          <div className="analytics-grid"><div className="chart-card"><div className="card-title"><div><p className="small-label">WEEKLY VOLUME</p><h3>최근 7일 볼륨</h3></div><BarChart3 size={21} /></div>{logs.length ? <div className="chart-frame"><ResponsiveContainer width="100%" height={245}><BarChart data={weeklyVolume}><CartesianGrid strokeDasharray="3 3" vertical={false} stroke="rgba(26,35,35,.09)" /><XAxis dataKey="day" axisLine={false} tickLine={false} tick={{ fill: "#71807c", fontSize: 12 }} /><YAxis axisLine={false} tickLine={false} tick={{ fill: "#71807c", fontSize: 11 }} /><Tooltip cursor={{ fill: "rgba(47,83,76,.06)" }} formatter={(value) => [`${Number(value).toLocaleString()} kg`, "볼륨"]} /><Bar dataKey="volume" fill="#2f534c" radius={[6, 6, 0, 0]} /></BarChart></ResponsiveContainer></div> : <div className="chart-empty"><div className="ghost-bars"><i /><i /><i /><i /><i /><i /><i /></div><p>첫 운동을 기록하면 주간 볼륨 추세가 표시됩니다.</p></div>}</div><div className="pr-card"><p className="small-label">PERSONAL RECORDS</p><h3>개인 최고 기록</h3>{Object.keys(pr).length ? <div className="pr-list">{Object.entries(pr).map(([name, value]) => <div key={name}><span>{name}</span><b>{value} kg</b></div>)}</div> : <div className="pr-empty"><span className="pr-orbit"><Sparkles size={21} /></span><p>중량 기록을 추가해<br />첫 PR을 만들어 보세요.</p></div>}<button className="text-button dark-text" onClick={() => setLogOpen(true)}>기록 추가하기 <ArrowRight size={15} /></button></div></div>
+          <div className="calendar-card"><div><p className="small-label">ACTIVITY CALENDAR</p><h3>날짜별 운동 기록</h3></div><div>{<div className="week-calendar">{calendarDays.map((day) => <div key={day.key} className={day.count ? "has-activity" : ""}><span>{day.weekday}</span><b>{day.day}</b><i>{day.count || "·"}</i></div>)}</div>}{logs.length ? <div className="log-table">{logs.slice(0, 4).map((log) => <div key={log.id}><span>{log.date.slice(5).replace("-", ".")}.</span><b>{log.exercise}</b><span>{log.sets}세트 · {log.reps}회 · {log.load}kg</span><span>RPE {log.intensity}</span></div>)}</div> : <div className="calendar-empty"><CalendarDays size={22} /><p>아직 기록된 운동이 없습니다. 세트와 강도를 남겨 다음 세션의 기준을 만들어 보세요.</p></div>}</div></div>
+        </section>
+
+        <section id="wellness" className="wellness-section section-pad"><SectionTitle eyebrow="WHOLE-PERSON WELLNESS" title="회복도 훈련의 일부입니다." description="영양, 수면, 열 노출은 운동을 대체하는 비법이 아니라, 일관된 훈련을 지지하는 생활 습관의 일부로 다룹니다." /><div className="wellness-grid">{wellnessCards.map((card, index) => <article className={`wellness-card tone-${card.tone}`} key={card.title}><span className="wellness-index">0{index + 1}</span><p className="eyebrow">{card.eyebrow}</p><h3>{card.title}</h3><p>{card.text}</p><a href={card.url} target="_blank" rel="noreferrer">{card.source} <ArrowRight size={14} /></a></article>)}</div></section>
+
+        <section className="evidence-section"><div><BookOpen size={21} /><p className="eyebrow">EVIDENCE FIRST</p><h2>근거를 남기고,<br />한계를 함께 말합니다.</h2></div><div><p>Fit Atlas는 운동 항목마다 공공 보건 지침 또는 전문 기관의 출처를 연결합니다. 권고량은 일반적 참고 정보이며 개인별 질환, 임신·산후 상태, 부상 이력, 복용 약물을 대체 평가하지 않습니다.</p><a href="https://www.who.int/news-room/fact-sheets/detail/physical-activity" target="_blank" rel="noreferrer">WHO 신체 활동 권고 보기 <ArrowRight size={16} /></a></div></section>
       </main>
+
+      <footer className="site-footer"><div className="brand"><span className="brand-mark"><Activity size={17} /></span><span>FIT ATLAS</span></div><p>움직임을 위한 지식, 일관성을 위한 기록.</p><p>© 2026 Fit Atlas. Educational information only.</p></footer>
+
+      {logOpen && <div className="modal-backdrop" role="presentation" onMouseDown={() => setLogOpen(false)}><motion.section className="log-modal" role="dialog" aria-modal="true" aria-labelledby="log-title" initial={{ opacity: 0, scale: .96, y: 12 }} animate={{ opacity: 1, scale: 1, y: 0 }} onMouseDown={(event) => event.stopPropagation()}><div className="modal-head"><div><p className="eyebrow">TRAINING LOG</p><h2 id="log-title">오늘의 움직임 기록</h2></div><button onClick={() => setLogOpen(false)} className="icon-button" aria-label="닫기"><X size={19} /></button></div><div className="log-form"><label>운동<select value={form.exercise} onChange={(event) => setForm({ ...form, exercise: event.target.value })}>{exercises.map((exercise) => <option key={exercise.id}>{exercise.name}</option>)}</select></label><div className="form-grid"><label>세트<input inputMode="numeric" value={form.sets} onChange={(event) => setForm({ ...form, sets: event.target.value })} /></label><label>횟수<input inputMode="numeric" value={form.reps} onChange={(event) => setForm({ ...form, reps: event.target.value })} /></label><label>중량 (kg)<input inputMode="decimal" value={form.load} onChange={(event) => setForm({ ...form, load: event.target.value })} /></label><label>운동 시간 (분)<input inputMode="numeric" value={form.minutes} onChange={(event) => setForm({ ...form, minutes: event.target.value })} /></label></div><label>주관적 강도 RPE <span>{form.intensity}/10</span><input type="range" min="1" max="10" value={form.intensity} onChange={(event) => setForm({ ...form, intensity: event.target.value })} /></label><p className="form-safety"><ShieldCheck size={15} /> {isAuthenticated ? "로그인 계정에 암호화된 세션으로 기록됩니다." : "기록은 이 브라우저에 저장됩니다. 로그인 후 개인 계정에 보관할 수 있습니다."}</p><button className="dark-button form-submit" onClick={addLog}>기록 저장 <ArrowRight size={16} /></button></div></motion.section></div>}
+      {profileOpen && <div className="modal-backdrop" role="presentation" onMouseDown={() => setProfileOpen(false)}><motion.section className="log-modal profile-modal" role="dialog" aria-modal="true" aria-labelledby="profile-title" initial={{ opacity: 0, scale: .96, y: 12 }} animate={{ opacity: 1, scale: 1, y: 0 }} onMouseDown={(event) => event.stopPropagation()}><div className="modal-head"><div><p className="eyebrow">PERSONALIZATION</p><h2 id="profile-title">운동 기준 설정</h2></div><button onClick={() => setProfileOpen(false)} className="icon-button" aria-label="닫기"><X size={19} /></button></div><p className="modal-description">입력값은 보수적인 시작 난이도와 안내 맥락을 정하는 데만 사용합니다. 질환·통증·임신 상태 등 의료 정보에 대한 진단은 제공하지 않습니다.</p><div className="log-form"><div className="form-grid"><label>연령<input inputMode="numeric" placeholder="예: 30" value={profileForm.age} onChange={(event) => setProfileForm({ ...profileForm, age: event.target.value })} /></label><label>체중 (kg)<input inputMode="decimal" placeholder="예: 68" value={profileForm.weightKg} onChange={(event) => setProfileForm({ ...profileForm, weightKg: event.target.value })} /></label></div><label>성별<select value={profileForm.sex} onChange={(event) => setProfileForm({ ...profileForm, sex: event.target.value })}><option value="undisclosed">응답하지 않음</option><option value="female">여성</option><option value="male">남성</option><option value="nonbinary">논바이너리</option></select></label><div className="form-grid"><label>주요 목표<select value={profileForm.primaryGoal} onChange={(event) => setProfileForm({ ...profileForm, primaryGoal: event.target.value })}><option value="strength">근력 증가</option><option value="endurance">체력 증가</option><option value="weight_management">체중 관리</option><option value="general_health">건강 증진</option></select></label><label>경험 수준<select value={profileForm.experience} onChange={(event) => setProfileForm({ ...profileForm, experience: event.target.value })}><option value="beginner">입문</option><option value="intermediate">중급</option><option value="advanced">상급</option></select></label></div><button className="dark-button form-submit" onClick={saveProfileSettings}>설정 저장 <ArrowRight size={16} /></button></div></motion.section></div>}
     </div>
   );
 }
+
+function ExerciseCard({ exercise, index }: { exercise: Exercise; index: number }) {
+  const [expanded, setExpanded] = useState(false);
+  return <motion.article className="exercise-card" initial={{ opacity: 0, y: 12 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: .2 }} transition={{ delay: Math.min(index * .04, .2) }}><div className="exercise-top"><span>{exercise.category}</span><span className="difficulty">{exercise.difficulty}</span></div><h3>{exercise.name}</h3><p className="english-name">{exercise.englishName}</p><p className="exercise-description">{exercise.description}</p><div className="tag-row">{exercise.regions.map((region) => <span key={region}>{region}</span>)}<span className="focus-tag">{exercise.focus}</span></div><div className="exercise-meta"><span><Timer size={14} />{exercise.minutes}</span><span><Dumbbell size={14} />{exercise.equipment}</span></div>{expanded && <div className="exercise-detail"><p className="small-label">FORM CUES</p><ul>{exercise.cues.map((cue) => <li key={cue}>{cue}</li>)}</ul><p className="exercise-warning">{exercise.warning}</p><a href={exercise.reference.url} target="_blank" rel="noreferrer">{exercise.reference.label} <ArrowRight size={13} /></a></div>}<button className="card-expand" onClick={() => setExpanded(!expanded)}>{expanded ? "간단히 보기" : "자세·근거 보기"}<ChevronRight size={15} className={expanded ? "rotate-icon" : ""} /></button></motion.article>;
+}
+
+function Metric({ icon, label, value, caption }: { icon: React.ReactNode; label: string; value: string; caption: string }) { return <div className="metric-card"><span className="metric-icon">{icon}</span><p>{label}</p><b>{value}</b><small>{caption}</small></div>; }
