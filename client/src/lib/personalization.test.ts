@@ -14,4 +14,12 @@ describe("local personalized program", () => {
     expect(program.sessionsPerWeek).toBe("의료진 확인 후 설정");
     expect(program.targetRpe).toBe("자가 처방 없음");
   });
+
+  it("records sex as context without unsafe automatic loading changes", () => {
+    const female = getPersonalizedProgram({ age: 30, weightKg: 68, sex: "female", primaryGoal: "strength", experience: "beginner", recoveryContext: "none" });
+    const male = getPersonalizedProgram({ age: 30, weightKg: 68, sex: "male", primaryGoal: "strength", experience: "beginner", recoveryContext: "none" });
+    expect(female.targetRpe).toBe(male.targetRpe);
+    expect(female.sexConsideration).toContain("성별만으로");
+    expect(male.sexConsideration).toContain("성별만으로");
+  });
 });
