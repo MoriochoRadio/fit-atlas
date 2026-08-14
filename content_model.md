@@ -26,7 +26,12 @@
 
 더운 환경의 활동 안내는 시간대 조절, 점진적 페이스, 갈증 전에 수분을 보충하는 습관, 어지러움·약화 시 활동 중단과 시원한 곳으로 이동이라는 안전 메시지를 우선한다. 이는 개인별 수분 섭취량이나 질환별 처방으로 확장하지 않는다.[2]
 
+파워·민첩성·점프 계열 항목은 일반적인 근력·균형 운동의 대체물이 아니라, 착지와 방향 전환을 통제할 수 있는 낮은 난도 변형부터 시작하는 보조 선택지로만 제시한다. NSCA는 플라이오메트릭을 신장-단축 주기의 빠른 전환을 활용하는 훈련으로 설명한다.[3] 따라서 각 항목에는 **충격이 낮은 변형, 짧은 거리·반복, 안정된 지지면, 통증·어지러움·착지 제어 상실 시 중단**이라는 안전 단서를 포함한다.
+
+카탈로그의 주간 맥락은 성인에게 주당 150분의 중강도 유산소 활동(또는 이에 상응하는 고강도·혼합 활동)과 2일 이상의 주요 근육군 근력 활동을 일반적 참고 범위로 제시하는 CDC 안내와 맞춘다.[1] 점프·민첩성 항목은 반복을 크게 누적하도록 처방하지 않으며, NSCA 원문이 강조한 저빈도·낮은 볼륨·동작 숙련 우선 관점을 안전 단서로 반영한다.[3]
+
 ## 참고 자료
 
 [1]: https://www.cdc.gov/physical-activity-basics/guidelines/adults.html "CDC — Adult Activity: An Overview"
 [2]: https://www.cdc.gov/heat-health/risk-factors/heat-and-athletes.html "CDC — Heat and Athletes"
+[3]: https://www.nsca.com/education/articles/kinetic-select/plyometric-exercises/ "NSCA — Plyometric Exercises"

@@ -8,8 +8,8 @@ describe("exercise library QA", () => {
   it("covers every supported category with posture, benefits, warnings, and sources", () => {
     const categories = new Set(exercises.map((exercise) => exercise.category));
     const stats = getCatalogStats(exercises);
-    expect(categories).toEqual(new Set(["러닝", "유산소", "헬스기구", "프리웨이트", "맨몸운동", "모빌리티", "균형·협응", "요가·필라테스"]));
-    expect(exercises.length).toBeGreaterThanOrEqual(76);
+    expect(categories).toEqual(new Set(["러닝", "유산소", "헬스기구", "프리웨이트", "맨몸운동", "모빌리티", "균형·협응", "요가·필라테스", "파워·민첩성"]));
+    expect(exercises.length).toBeGreaterThanOrEqual(95);
     expect(stats).toEqual({ exerciseCount: exercises.length, categoryCount: categories.size });
     exercises.forEach((exercise) => {
       expect(exercise.cues.length).toBeGreaterThanOrEqual(3);
@@ -28,6 +28,7 @@ describe("exercise library QA", () => {
     expect(filterExercises(exercises, { ...allFilters, category: "모빌리티" }).map((exercise) => exercise.id)).toContain("cat-cow");
     expect(filterExercises(exercises, { ...allFilters, category: "균형·협응", focus: "균형" }).map((exercise) => exercise.id)).toContain("single-leg-stand");
     expect(filterExercises(exercises, { ...allFilters, category: "요가·필라테스", keyword: "다운독" }).map((exercise) => exercise.id)).toEqual(["downward-dog"]);
+    expect(filterExercises(exercises, { ...allFilters, category: "파워·민첩성", focus: "파워" }).map((exercise) => exercise.id)).toEqual(expect.arrayContaining(["snap-down", "squat-jump-stick"]));
     expect(filterExercises(exercises, { ...allFilters, equipment: "장비 없음" }).every((exercise) => exercise.equipment === "없음")).toBe(true);
   });
 

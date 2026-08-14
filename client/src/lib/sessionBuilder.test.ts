@@ -23,4 +23,11 @@ describe("single session builder", () => {
     expect(plan.blocks.reduce((total, block) => total + block.minutes, 0)).toBe(45);
     expect(plan.blocks[1].items.join(" ")).not.toContain("걷기·달리기 인터벌");
   });
+
+  it("surfaces expanded machine, cardio, and agility options in appropriate environments", () => {
+    const gym = buildSession({ goal: "all_round", environment: "gym", duration: 45, checkin });
+    const outdoor = buildSession({ goal: "all_round", environment: "outdoor", duration: 45, checkin });
+    expect(gym.blocks[1].items.join(" ")).toContain("체스트 서포티드 로우");
+    expect(outdoor.blocks[1].items.join(" ")).toContain("로우 콘 셔플");
+  });
 });
