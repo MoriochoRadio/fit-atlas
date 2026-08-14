@@ -1,1 +1,0 @@
-ALTER TABLE `fitnessProfiles` ADD `recoveryContext` enum('none','reduced_readiness','pregnancy_postpartum') DEFAULT 'none' NOT NULL;

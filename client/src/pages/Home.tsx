@@ -1,16 +1,11 @@
 import { AnatomyMap } from "@/components/AnatomyMap";
 import { exercises, recoveryGuides, wellnessCards, type BodyRegion, type Exercise } from "@/lib/fitnessData";
 import { Activity, ArrowRight, BarChart3, BookOpen, Brain, CalendarDays, Check, ChevronRight, Dumbbell, HeartPulse, Menu, Plus, Search, ShieldCheck, Sparkles, Timer, X } from "lucide-react";
-import { motion } from "framer-motion";
 import { useEffect, useMemo, useState } from "react";
-import { Bar, BarChart, CartesianGrid, ResponsiveContainer, Tooltip, XAxis, YAxis } from "recharts";
-import { useAuth } from "@/_core/hooks/useAuth";
-import { trpc } from "@/lib/trpc";
-import { startLogin } from "@/const";
 import { toast } from "sonner";
 import { getCalendarDays, getPersonalRecords, getTotalMinutes, getTotalVolume, getWeeklyVolume, type TrainingLog } from "@/lib/trainingMetrics";
 import { getPersonalizedProgram } from "@/lib/personalization";
-import { defaultProfilePreferences, mergeAccountProfile, readProfilePreferences } from "@/lib/profilePreferences";
+import { downloadBackup, parseBackup, readLocalProfile, readTrainingLogs, saveLocalProfile, saveTrainingLogs } from "@/lib/localStore";
 
 type LogEntry = TrainingLog;
 
@@ -22,15 +17,6 @@ function SectionTitle({ eyebrow, title, description, action }: { eyebrow: string
 }
 
 export default function Home() {
-  const { isAuthenticated } = useAuth();
-  const utils = trpc.useUtils();
-  const workoutQuery = trpc.fitness.workouts.list.useQuery(undefined, { enabled: isAuthenticated });
-  const profileQuery = trpc.fitness.profile.useQuery(undefined, { enabled: isAuthenticated });
-  const createWorkout = trpc.fitness.workouts.create.useMutation({
-    onSuccess: () => { utils.fitness.workouts.list.invalidate(); toast.success("운동 기록을 계정에 저장했습니다."); },
-    onError: () => toast.error("계정 기록을 저장하지 못했습니다. 연결 상태를 확인하고 다시 시도하세요."),
-  });
-  const saveProfile = trpc.fitness.saveProfile.useMutation();
   const [keyword, setKeyword] = useState("");
   const [category, setCategory] = useState<(typeof categories)[number]>("전체");
   const [focus, setFocus] = useState("전체");
@@ -42,26 +28,13 @@ export default function Home() {
   const [logOpen, setLogOpen] = useState(false);
   const [profileOpen, setProfileOpen] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
-  const [guestLogs, setGuestLogs] = useState<LogEntry[]>(() => {
-    if (typeof window === "undefined") return [];
-    try { return JSON.parse(window.localStorage.getItem("fit-atlas-guest-logs") ?? "[]") as LogEntry[]; } catch { return []; }
-  });
+  const [logs, setLogs] = useState<LogEntry[]>(() => typeof window === "undefined" ? [] : readTrainingLogs());
   const [form, setForm] = useState({ exercise: "바벨 백 스쿼트", sets: "3", reps: "8", load: "40", minutes: "35", intensity: "6" });
-  const [profileForm, setProfileForm] = useState(() => typeof window === "undefined" ? defaultProfilePreferences : readProfilePreferences(window.localStorage.getItem("fit-atlas-profile")));
-
-  const logs: LogEntry[] = isAuthenticated
-    ? (workoutQuery.data ?? []).map((log) => ({ id: String(log.id), date: new Date(log.performedAt).toISOString().slice(0, 10), exercise: log.exerciseName, sets: log.sets, reps: log.reps, load: Number(log.loadKg), minutes: log.durationMinutes, intensity: log.intensityRpe }))
-    : guestLogs;
+  const [profileForm, setProfileForm] = useState(() => typeof window === "undefined" ? readLocalProfile() : readLocalProfile());
 
   useEffect(() => {
-    if (!isAuthenticated) window.localStorage.setItem("fit-atlas-guest-logs", JSON.stringify(guestLogs));
-  }, [guestLogs, isAuthenticated]);
-
-  useEffect(() => {
-    const profile = profileQuery.data;
-    if (!profile) return;
-    setProfileForm((current) => mergeAccountProfile(current, profile));
-  }, [profileQuery.data]);
+    saveTrainingLogs(logs);
+  }, [logs]);
 
   const filteredExercises = useMemo(() => exercises.filter((exercise) => {
     const text = `${exercise.name} ${exercise.englishName} ${exercise.category} ${exercise.regions.join(" ")} ${exercise.focus} ${exercise.equipment}`.toLowerCase();
@@ -72,6 +45,7 @@ export default function Home() {
   const recovery = recoveryGuides[activeRegion];
   const plan = getPersonalizedProgram({ age: profileForm.age ? Number(profileForm.age) : null, weightKg: profileForm.weightKg ? Number(profileForm.weightKg) : null, sex: profileForm.sex as "female" | "male" | "nonbinary" | "undisclosed", primaryGoal: goalCopy[goal], experience: profileForm.experience as "beginner" | "intermediate" | "advanced", recoveryContext: profileForm.recoveryContext as "none" | "reduced_readiness" | "pregnancy_postpartum" });
   const weeklyVolume = useMemo(() => getWeeklyVolume(logs), [logs]);
+  const maxWeeklyVolume = Math.max(...weeklyVolume.map((item) => item.volume), 1);
   const calendarDays = useMemo(() => getCalendarDays(logs), [logs]);
   const totalVolume = getTotalVolume(logs);
   const totalMinutes = getTotalMinutes(logs);
@@ -84,12 +58,8 @@ export default function Home() {
       toast.error("세트·횟수·시간·강도를 유효한 범위로 입력해 주세요.");
       return;
     }
-    if (isAuthenticated) {
-      createWorkout.mutate({ exerciseName: entry.exercise, sets: entry.sets, reps: entry.reps, loadKg: entry.load, durationMinutes: entry.minutes, intensityRpe: entry.intensity, performedAt: Date.now() });
-    } else {
-      setGuestLogs((current) => [entry, ...current]);
-      toast.success("이 브라우저에 운동 기록을 저장했습니다.");
-    }
+    setLogs((current) => [entry, ...current]);
+    toast.success("이 브라우저에 운동 기록을 저장했습니다.");
     setLogOpen(false);
   };
 
@@ -104,8 +74,7 @@ export default function Home() {
     };
     if (apiProfile.age !== null && (apiProfile.age < 13 || apiProfile.age > 120)) { toast.error("연령은 13–120 범위에서 입력해 주세요."); return; }
     if (apiProfile.weightKg !== null && (apiProfile.weightKg < 25 || apiProfile.weightKg > 400)) { toast.error("체중은 25–400 kg 범위에서 입력해 주세요."); return; }
-    if (isAuthenticated) saveProfile.mutate(apiProfile, { onSuccess: () => toast.success("개인화 기준을 계정에 저장했습니다."), onError: () => toast.error("개인화 기준을 계정에 저장하지 못했습니다. 다시 시도하세요.") });
-    window.localStorage.setItem("fit-atlas-profile", JSON.stringify(apiProfile));
+    saveLocalProfile(profileForm);
     const goalByProfile = { strength: "근력증가", endurance: "체력증가", weight_management: "다이어트", general_health: "체력증가" } as const;
     setGoal(goalByProfile[apiProfile.primaryGoal]);
     setProfileOpen(false);
@@ -119,21 +88,21 @@ export default function Home() {
         <nav className={menuOpen ? "nav is-open" : "nav"} aria-label="주요 메뉴">
           <a href="#explore" onClick={() => setMenuOpen(false)}>운동 탐색</a><a href="#anatomy" onClick={() => setMenuOpen(false)}>바디 맵</a><a href="#progress" onClick={() => setMenuOpen(false)}>기록 분석</a><a href="#wellness" onClick={() => setMenuOpen(false)}>웰니스</a>
         </nav>
-        <div className="topbar-actions"><button className="ghost-button desktop-only" onClick={() => setProfileOpen(true)}>내 프로필</button>{!isAuthenticated && <button className="login-button desktop-only" onClick={() => startLogin()}>로그인</button>}<button className="dark-button" onClick={() => setLogOpen(true)}><Plus size={16} /> 운동 기록</button><button className="menu-button" onClick={() => setMenuOpen(!menuOpen)} aria-label="메뉴 열기"><Menu size={20} /></button></div>
+        <div className="topbar-actions"><button className="ghost-button desktop-only" onClick={() => setProfileOpen(true)}>내 프로필</button><button className="ghost-button desktop-only" onClick={() => downloadBackup(logs, profileForm)}>백업</button><label className="login-button desktop-only">가져오기<input className="sr-only" type="file" accept="application/json" onChange={async (event) => { const file = event.target.files?.[0]; if (!file) return; try { const backup = parseBackup(await file.text()); setLogs(backup.logs); setProfileForm(backup.profile); saveLocalProfile(backup.profile); toast.success("백업을 복원했습니다."); } catch { toast.error("백업 파일을 읽지 못했습니다."); } event.currentTarget.value = ""; }} /></label><button className="dark-button" onClick={() => setLogOpen(true)}><Plus size={16} /> 운동 기록</button><button className="menu-button" onClick={() => setMenuOpen(!menuOpen)} aria-label="메뉴 열기"><Menu size={20} /></button></div>
       </header>
 
       <main id="top">
         <section className="hero">
           <div className="hero-noise" />
-          <motion.div className="hero-copy" initial={{ opacity: 0, y: 18 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.55 }}>
+          <div className="hero-copy">
             <p className="eyebrow light">THE INTELLIGENT BODY COMPANION</p>
             <h1>몸을 이해할수록,<br /><em>움직임은 정교해집니다.</em></h1>
             <p className="hero-description">운동 과학, 해부학적 인사이트, 개인화된 기록을 하나의 정교한 경험으로 연결합니다. 무엇을, 왜, 어떻게 해야 하는지 맥락까지 살펴보세요.</p>
             <div className="hero-actions"><a href="#explore" className="light-button">운동 백과사전 보기 <ArrowRight size={16} /></a><button className="text-button" onClick={() => document.getElementById("anatomy")?.scrollIntoView({ behavior: "smooth" })}>바디 맵 탐색 <ChevronRight size={17} /></button></div>
-          </motion.div>
-          <motion.div className="hero-atlas" initial={{ opacity: 0, scale: 0.94 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.7, delay: 0.1 }}>
+          </div>
+          <div className="hero-atlas">
             <div className="atlas-rings" /><div className="atlas-core"><Dumbbell size={52} strokeWidth={1.1} /></div><div className="atlas-stat stat-one"><span>GUIDED</span><b>8</b><small>기초 운동</small></div><div className="atlas-stat stat-two"><span>FOCUS</span><b>7</b><small>신체 부위</small></div><div className="atlas-caption">FITNESS, MAPPED<br />WITH INTENTION.</div>
-          </motion.div>
+          </div>
           <div className="hero-footer"><span><ShieldCheck size={15} /> 연구 근거를 명시한 콘텐츠</span><span><HeartPulse size={15} /> 의료 진단을 대체하지 않는 안전 설계</span></div>
         </section>
 
@@ -160,7 +129,7 @@ export default function Home() {
         <section id="progress" className="progress-section section-pad">
           <SectionTitle eyebrow="TRAINING LOG" title="기록은 감이 아닌 방향을 만듭니다." description="종목·세트·횟수·중량·시간·강도를 기록하면 누적 볼륨과 개인 최고 기록을 확인할 수 있습니다." action={<button className="dark-button" onClick={() => setLogOpen(true)}><Plus size={16} /> 새 기록</button>} />
           <div className="metric-row"><Metric icon={<Dumbbell size={18} />} label="누적 볼륨" value={logs.length ? `${totalVolume.toLocaleString()} kg` : "—"} caption={logs.length ? "기록된 세트 기준" : "기록을 추가해 시작"} /><Metric icon={<Timer size={18} />} label="운동 시간" value={logs.length ? `${totalMinutes}분` : "—"} caption={logs.length ? "누적 기록 기준" : "아직 기록 없음"} /><Metric icon={<Activity size={18} />} label="세션 수" value={`${logs.length}`} caption="오늘 기록된 운동" /><Metric icon={<CalendarDays size={18} />} label="이번 주" value={`${logs.filter((item) => item.date >= new Date(Date.now() - 6 * 86400000).toISOString().slice(0, 10)).length}`} caption="기록된 세션" /></div>
-          <div className="analytics-grid"><div className="chart-card"><div className="card-title"><div><p className="small-label">WEEKLY VOLUME</p><h3>최근 7일 볼륨</h3></div><BarChart3 size={21} /></div>{logs.length ? <div className="chart-frame"><ResponsiveContainer width="100%" height={245}><BarChart data={weeklyVolume}><CartesianGrid strokeDasharray="3 3" vertical={false} stroke="rgba(26,35,35,.09)" /><XAxis dataKey="day" axisLine={false} tickLine={false} tick={{ fill: "#71807c", fontSize: 12 }} /><YAxis axisLine={false} tickLine={false} tick={{ fill: "#71807c", fontSize: 11 }} /><Tooltip cursor={{ fill: "rgba(47,83,76,.06)" }} formatter={(value) => [`${Number(value).toLocaleString()} kg`, "볼륨"]} /><Bar dataKey="volume" fill="#2f534c" radius={[6, 6, 0, 0]} /></BarChart></ResponsiveContainer></div> : <div className="chart-empty"><div className="ghost-bars"><i /><i /><i /><i /><i /><i /><i /></div><p>첫 운동을 기록하면 주간 볼륨 추세가 표시됩니다.</p></div>}</div><div className="pr-card"><p className="small-label">PERSONAL RECORDS</p><h3>개인 최고 기록</h3>{Object.keys(pr).length ? <div className="pr-list">{Object.entries(pr).map(([name, value]) => <div key={name}><span>{name}</span><b>{value} kg</b></div>)}</div> : <div className="pr-empty"><span className="pr-orbit"><Sparkles size={21} /></span><p>중량 기록을 추가해<br />첫 PR을 만들어 보세요.</p></div>}<button className="text-button dark-text" onClick={() => setLogOpen(true)}>기록 추가하기 <ArrowRight size={15} /></button></div></div>
+          <div className="analytics-grid"><div className="chart-card"><div className="card-title"><div><p className="small-label">WEEKLY VOLUME</p><h3>최근 7일 볼륨</h3></div><BarChart3 size={21} /></div>{logs.length ? <div className="volume-bars" aria-label="최근 7일 운동 볼륨">{weeklyVolume.map((item) => <div className="volume-column" key={item.day} title={`${item.day}: ${item.volume.toLocaleString()} kg`}><i style={{ height: `${Math.max((item.volume / maxWeeklyVolume) * 100, item.volume ? 7 : 2)}%` }} /><span>{item.day}</span><b>{item.volume ? `${Math.round(item.volume / 1000)}k` : "·"}</b></div>)}</div> : <div className="chart-empty"><div className="ghost-bars"><i /><i /><i /><i /><i /><i /><i /></div><p>첫 운동을 기록하면 주간 볼륨 추세가 표시됩니다.</p></div>}</div><div className="pr-card"><p className="small-label">PERSONAL RECORDS</p><h3>개인 최고 기록</h3>{Object.keys(pr).length ? <div className="pr-list">{Object.entries(pr).map(([name, value]) => <div key={name}><span>{name}</span><b>{value} kg</b></div>)}</div> : <div className="pr-empty"><span className="pr-orbit"><Sparkles size={21} /></span><p>중량 기록을 추가해<br />첫 PR을 만들어 보세요.</p></div>}<button className="text-button dark-text" onClick={() => setLogOpen(true)}>기록 추가하기 <ArrowRight size={15} /></button></div></div>
           <div className="calendar-card"><div><p className="small-label">ACTIVITY CALENDAR</p><h3>날짜별 운동 기록</h3></div><div>{<div className="week-calendar">{calendarDays.map((day) => <div key={day.key} className={day.count ? "has-activity" : ""}><span>{day.weekday}</span><b>{day.day}</b><i>{day.count || "·"}</i></div>)}</div>}{logs.length ? <div className="log-table">{logs.slice(0, 4).map((log) => <div key={log.id}><span>{log.date.slice(5).replace("-", ".")}.</span><b>{log.exercise}</b><span>{log.sets}세트 · {log.reps}회 · {log.load}kg</span><span>RPE {log.intensity}</span></div>)}</div> : <div className="calendar-empty"><CalendarDays size={22} /><p>아직 기록된 운동이 없습니다. 세트와 강도를 남겨 다음 세션의 기준을 만들어 보세요.</p></div>}</div></div>
         </section>
 
@@ -171,15 +140,15 @@ export default function Home() {
 
       <footer className="site-footer"><div className="brand"><span className="brand-mark"><Activity size={17} /></span><span>FIT ATLAS</span></div><p>움직임을 위한 지식, 일관성을 위한 기록.</p><p>© 2026 Fit Atlas. Educational information only.</p></footer>
 
-      {logOpen && <div className="modal-backdrop" role="presentation" onMouseDown={() => setLogOpen(false)}><motion.section className="log-modal" role="dialog" aria-modal="true" aria-labelledby="log-title" initial={{ opacity: 0, scale: .96, y: 12 }} animate={{ opacity: 1, scale: 1, y: 0 }} onMouseDown={(event) => event.stopPropagation()}><div className="modal-head"><div><p className="eyebrow">TRAINING LOG</p><h2 id="log-title">오늘의 움직임 기록</h2></div><button onClick={() => setLogOpen(false)} className="icon-button" aria-label="닫기"><X size={19} /></button></div><div className="log-form"><label>운동<select value={form.exercise} onChange={(event) => setForm({ ...form, exercise: event.target.value })}>{exercises.map((exercise) => <option key={exercise.id}>{exercise.name}</option>)}</select></label><div className="form-grid"><label>세트<input inputMode="numeric" value={form.sets} onChange={(event) => setForm({ ...form, sets: event.target.value })} /></label><label>횟수<input inputMode="numeric" value={form.reps} onChange={(event) => setForm({ ...form, reps: event.target.value })} /></label><label>중량 (kg)<input inputMode="decimal" value={form.load} onChange={(event) => setForm({ ...form, load: event.target.value })} /></label><label>운동 시간 (분)<input inputMode="numeric" value={form.minutes} onChange={(event) => setForm({ ...form, minutes: event.target.value })} /></label></div><label>주관적 강도 RPE <span>{form.intensity}/10</span><input type="range" min="1" max="10" value={form.intensity} onChange={(event) => setForm({ ...form, intensity: event.target.value })} /></label><p className="form-safety"><ShieldCheck size={15} /> {isAuthenticated ? "로그인 계정에 암호화된 세션으로 기록됩니다." : "기록은 이 브라우저에 저장됩니다. 로그인 후 개인 계정에 보관할 수 있습니다."}</p><button className="dark-button form-submit" onClick={addLog}>기록 저장 <ArrowRight size={16} /></button></div></motion.section></div>}
-      {profileOpen && <div className="modal-backdrop" role="presentation" onMouseDown={() => setProfileOpen(false)}><motion.section className="log-modal profile-modal" role="dialog" aria-modal="true" aria-labelledby="profile-title" initial={{ opacity: 0, scale: .96, y: 12 }} animate={{ opacity: 1, scale: 1, y: 0 }} onMouseDown={(event) => event.stopPropagation()}><div className="modal-head"><div><p className="eyebrow">PERSONALIZATION</p><h2 id="profile-title">운동 기준 설정</h2></div><button onClick={() => setProfileOpen(false)} className="icon-button" aria-label="닫기"><X size={19} /></button></div><p className="modal-description">입력값은 보수적인 시작 난이도와 안내 맥락을 정하는 데만 사용합니다. 질환·통증·임신 상태 등 의료 정보에 대한 진단은 제공하지 않습니다.</p><div className="log-form"><div className="form-grid"><label>연령<input inputMode="numeric" placeholder="예: 30" value={profileForm.age} onChange={(event) => setProfileForm({ ...profileForm, age: event.target.value })} /></label><label>체중 (kg)<input inputMode="decimal" placeholder="예: 68" value={profileForm.weightKg} onChange={(event) => setProfileForm({ ...profileForm, weightKg: event.target.value })} /></label></div><label>성별<select value={profileForm.sex} onChange={(event) => setProfileForm({ ...profileForm, sex: event.target.value })}><option value="undisclosed">응답하지 않음</option><option value="female">여성</option><option value="male">남성</option><option value="nonbinary">논바이너리</option></select></label><div className="form-grid"><label>주요 목표<select value={profileForm.primaryGoal} onChange={(event) => setProfileForm({ ...profileForm, primaryGoal: event.target.value })}><option value="strength">근력 증가</option><option value="endurance">체력 증가</option><option value="weight_management">체중 관리</option><option value="general_health">건강 증진</option></select></label><label>경험 수준<select value={profileForm.experience} onChange={(event) => setProfileForm({ ...profileForm, experience: event.target.value })}><option value="beginner">입문</option><option value="intermediate">중급</option><option value="advanced">상급</option></select></label></div><label>선택적 안전 모드<select value={profileForm.recoveryContext} onChange={(event) => setProfileForm({ ...profileForm, recoveryContext: event.target.value })}><option value="none">해당 없음</option><option value="reduced_readiness">낮은 에너지·회복 저하·생애주기 변화</option><option value="pregnancy_postpartum">임신·산후 — 의료진 확인 우선</option></select></label><button className="dark-button form-submit" onClick={saveProfileSettings}>설정 저장 <ArrowRight size={16} /></button></div></motion.section></div>}
+      {logOpen && <div className="modal-backdrop" role="presentation" onMouseDown={() => setLogOpen(false)}><section className="log-modal" role="dialog" aria-modal="true" aria-labelledby="log-title" onMouseDown={(event) => event.stopPropagation()}><div className="modal-head"><div><p className="eyebrow">TRAINING LOG</p><h2 id="log-title">오늘의 움직임 기록</h2></div><button onClick={() => setLogOpen(false)} className="icon-button" aria-label="닫기"><X size={19} /></button></div><div className="log-form"><label>운동<select value={form.exercise} onChange={(event) => setForm({ ...form, exercise: event.target.value })}>{exercises.map((exercise) => <option key={exercise.id}>{exercise.name}</option>)}</select></label><div className="form-grid"><label>세트<input inputMode="numeric" value={form.sets} onChange={(event) => setForm({ ...form, sets: event.target.value })} /></label><label>횟수<input inputMode="numeric" value={form.reps} onChange={(event) => setForm({ ...form, reps: event.target.value })} /></label><label>중량 (kg)<input inputMode="decimal" value={form.load} onChange={(event) => setForm({ ...form, load: event.target.value })} /></label><label>운동 시간 (분)<input inputMode="numeric" value={form.minutes} onChange={(event) => setForm({ ...form, minutes: event.target.value })} /></label></div><label>주관적 강도 RPE <span>{form.intensity}/10</span><input type="range" min="1" max="10" value={form.intensity} onChange={(event) => setForm({ ...form, intensity: event.target.value })} /></label><p className="form-safety"><ShieldCheck size={15} /> 기록은 이 브라우저에만 저장됩니다. 백업 파일로 다른 기기에서 복원할 수 있습니다.</p><button className="dark-button form-submit" onClick={addLog}>기록 저장 <ArrowRight size={16} /></button></div></section></div>}
+      {profileOpen && <div className="modal-backdrop" role="presentation" onMouseDown={() => setProfileOpen(false)}><section className="log-modal profile-modal" role="dialog" aria-modal="true" aria-labelledby="profile-title" onMouseDown={(event) => event.stopPropagation()}><div className="modal-head"><div><p className="eyebrow">PERSONALIZATION</p><h2 id="profile-title">운동 기준 설정</h2></div><button onClick={() => setProfileOpen(false)} className="icon-button" aria-label="닫기"><X size={19} /></button></div><p className="modal-description">입력값은 이 기기에만 저장되며 보수적인 시작 난이도와 안내 맥락을 정하는 데만 사용합니다. 질환·통증·임신 상태 등 의료 정보에 대한 진단은 제공하지 않습니다.</p><div className="log-form"><div className="form-grid"><label>연령<input inputMode="numeric" placeholder="예: 30" value={profileForm.age} onChange={(event) => setProfileForm({ ...profileForm, age: event.target.value })} /></label><label>체중 (kg)<input inputMode="decimal" placeholder="예: 68" value={profileForm.weightKg} onChange={(event) => setProfileForm({ ...profileForm, weightKg: event.target.value })} /></label></div><label>성별<select value={profileForm.sex} onChange={(event) => setProfileForm({ ...profileForm, sex: event.target.value })}><option value="undisclosed">응답하지 않음</option><option value="female">여성</option><option value="male">남성</option><option value="nonbinary">논바이너리</option></select></label><div className="form-grid"><label>주요 목표<select value={profileForm.primaryGoal} onChange={(event) => setProfileForm({ ...profileForm, primaryGoal: event.target.value })}><option value="strength">근력 증가</option><option value="endurance">체력 증가</option><option value="weight_management">체중 관리</option><option value="general_health">건강 증진</option></select></label><label>경험 수준<select value={profileForm.experience} onChange={(event) => setProfileForm({ ...profileForm, experience: event.target.value })}><option value="beginner">입문</option><option value="intermediate">중급</option><option value="advanced">상급</option></select></label></div><label>선택적 안전 모드<select value={profileForm.recoveryContext} onChange={(event) => setProfileForm({ ...profileForm, recoveryContext: event.target.value })}><option value="none">해당 없음</option><option value="reduced_readiness">낮은 에너지·회복 저하·생애주기 변화</option><option value="pregnancy_postpartum">임신·산후 — 의료진 확인 우선</option></select></label><button className="dark-button form-submit" onClick={saveProfileSettings}>설정 저장 <ArrowRight size={16} /></button></div></section></div>}
     </div>
   );
 }
 
-function ExerciseCard({ exercise, index }: { exercise: Exercise; index: number }) {
+function ExerciseCard({ exercise }: { exercise: Exercise; index: number }) {
   const [expanded, setExpanded] = useState(false);
-  return <motion.article className="exercise-card" initial={{ opacity: 0, y: 12 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: .2 }} transition={{ delay: Math.min(index * .04, .2) }}><div className="exercise-top"><span>{exercise.category}</span><span className="difficulty">{exercise.difficulty}</span></div><h3>{exercise.name}</h3><p className="english-name">{exercise.englishName}</p><p className="exercise-description">{exercise.description}</p><div className="tag-row">{exercise.regions.map((region) => <span key={region}>{region}</span>)}<span className="focus-tag">{exercise.focus}</span></div><div className="exercise-meta"><span><Timer size={14} />{exercise.minutes}</span><span><Dumbbell size={14} />{exercise.equipment}</span></div>{expanded && <div className="exercise-detail"><p className="small-label">FORM CUES</p><ul>{exercise.cues.map((cue) => <li key={cue}>{cue}</li>)}</ul><p className="exercise-warning">{exercise.warning}</p><a href={exercise.reference.url} target="_blank" rel="noreferrer">{exercise.reference.label} <ArrowRight size={13} /></a></div>}<button className="card-expand" onClick={() => setExpanded(!expanded)}>{expanded ? "간단히 보기" : "자세·근거 보기"}<ChevronRight size={15} className={expanded ? "rotate-icon" : ""} /></button></motion.article>;
+  return <article className="exercise-card"><div className="exercise-top"><span>{exercise.category}</span><span className="difficulty">{exercise.difficulty}</span></div><h3>{exercise.name}</h3><p className="english-name">{exercise.englishName}</p><p className="exercise-description">{exercise.description}</p><div className="tag-row">{exercise.regions.map((region) => <span key={region}>{region}</span>)}<span className="focus-tag">{exercise.focus}</span></div><div className="exercise-meta"><span><Timer size={14} />{exercise.minutes}</span><span><Dumbbell size={14} />{exercise.equipment}</span></div>{expanded && <div className="exercise-detail"><p className="small-label">FORM CUES</p><ul>{exercise.cues.map((cue) => <li key={cue}>{cue}</li>)}</ul><p className="exercise-warning">{exercise.warning}</p><a href={exercise.reference.url} target="_blank" rel="noreferrer">{exercise.reference.label} <ArrowRight size={13} /></a></div>}<button className="card-expand" onClick={() => setExpanded(!expanded)}>{expanded ? "간단히 보기" : "자세·근거 보기"}<ChevronRight size={15} className={expanded ? "rotate-icon" : ""} /></button></article>;
 }
 
 function Metric({ icon, label, value, caption }: { icon: React.ReactNode; label: string; value: string; caption: string }) { return <div className="metric-card"><span className="metric-icon">{icon}</span><p>{label}</p><b>{value}</b><small>{caption}</small></div>; }
