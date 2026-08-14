@@ -72,8 +72,8 @@ describe("fitness.saveProfile", () => {
     const caller = fitnessRouter.createCaller(createContext());
     mocks.saveFitnessProfile.mockResolvedValue({ userId: 42, primaryGoal: "strength" });
 
-    await caller.saveProfile({ age: 30, weightKg: 68, sex: "undisclosed", primaryGoal: "strength", experience: "beginner" });
+    await caller.saveProfile({ age: 30, weightKg: 68, sex: "undisclosed", primaryGoal: "strength", experience: "beginner", recoveryContext: "reduced_readiness" });
 
-    expect(mocks.saveFitnessProfile).toHaveBeenCalledWith(42, expect.objectContaining({ age: 30, weightKg: 68, experience: "beginner" }));
+    expect(mocks.saveFitnessProfile).toHaveBeenCalledWith(42, expect.objectContaining({ age: 30, weightKg: 68, experience: "beginner", recoveryContext: "reduced_readiness" }));
   });
 });

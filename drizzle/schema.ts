@@ -20,6 +20,7 @@ export const fitnessProfiles = mysqlTable("fitnessProfiles", {
   weightKg: decimal("weightKg", { precision: 6, scale: 2 }),
   primaryGoal: mysqlEnum("primaryGoal", ["strength", "endurance", "weight_management", "general_health"]).default("general_health").notNull(),
   experience: mysqlEnum("experience", ["beginner", "intermediate", "advanced"]).default("beginner").notNull(),
+  recoveryContext: mysqlEnum("recoveryContext", ["none", "reduced_readiness", "pregnancy_postpartum"]).default("none").notNull(),
   updatedAt: timestamp("updatedAt").defaultNow().onUpdateNow().notNull(),
 });
 

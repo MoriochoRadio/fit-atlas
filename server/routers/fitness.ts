@@ -8,6 +8,7 @@ const profileInput = z.object({
   weightKg: z.number().min(25).max(400).nullable().optional(),
   primaryGoal: z.enum(["strength", "endurance", "weight_management", "general_health"]),
   experience: z.enum(["beginner", "intermediate", "advanced"]),
+  recoveryContext: z.enum(["none", "reduced_readiness", "pregnancy_postpartum"]),
 });
 
 const workoutInput = z.object({

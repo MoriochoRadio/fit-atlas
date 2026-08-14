@@ -4,6 +4,7 @@ export type PersonalizationProfile = {
   sex: "female" | "male" | "nonbinary" | "undisclosed";
   primaryGoal: "strength" | "endurance" | "weight_management" | "general_health";
   experience: "beginner" | "intermediate" | "advanced";
+  recoveryContext: "none" | "reduced_readiness" | "pregnancy_postpartum";
 };
 
 export type PersonalizedProgram = {
@@ -33,7 +34,7 @@ export function getPersonalizedProgram(profile: PersonalizationProfile): Persona
   const base = basePrograms[profile.primaryGoal];
   const experience = experienceSettings[profile.experience];
   const lowImpactStart = (profile.age !== null && profile.age >= 60) || (profile.weightKg !== null && profile.weightKg >= 100);
-  const recommendations = [...base.recommendations];
+  const recommendations: string[] = [...base.recommendations];
   let personalizationNote: string = experience.note;
 
   if (lowImpactStart) {
@@ -45,6 +46,23 @@ export function getPersonalizedProgram(profile: PersonalizationProfile): Persona
       : "체중 설정을 반영해 관절 충격을 낮춘 유산소 옵션부터 시작하고, 자각 강도와 통증 반응에 따라 진행합니다.";
   }
 
+  if (profile.recoveryContext === "reduced_readiness") {
+    recommendations.splice(0, recommendations.length, "스테디 사이클", "데드 버그", "편안한 걷기");
+    personalizationNote = "사용자가 선택한 낮은 준비도·생애주기 변화 맥락을 반영해 저충격 운동, 짧은 세션, 회복 우선을 제안합니다. 불편감이 커지면 중단하세요.";
+  }
+
+  if (profile.recoveryContext === "pregnancy_postpartum") {
+    return {
+      title: "의료진 확인을 우선하세요.",
+      note: "임신·산후 시기에는 개인 병력과 임신 경과에 따라 안전 기준이 달라 일반화된 맞춤 운동 처방을 제공하지 않습니다.",
+      recommendations: ["현재 컨디션 기록", "의료진·전문가 상담", "허가된 활동의 저강도 추적"],
+      sessionsPerWeek: "의료진 확인 후 설정",
+      targetRpe: "자가 처방 없음",
+      personalizationNote: "경고 신호, 통증, 출혈, 호흡 곤란 또는 어지러움이 있다면 즉시 활동을 중단하고 의료 평가를 받으세요.",
+      sexConsideration: "성별이 아니라 현재 임신·산후 상태와 의료진의 개별 평가가 안전 기준의 중심입니다.",
+    };
+  }
+
   const sexConsideration = {
     female: "성별만으로 시작 부하를 낮추거나 운동을 제한하지 않습니다. 컨디션·통증·회복 반응을 기준으로 조절하세요.",
     male: "성별만으로 시작 부하를 높이지 않습니다. 컨디션·통증·회복 반응을 기준으로 조절하세요.",
@@ -52,5 +70,6 @@ export function getPersonalizedProgram(profile: PersonalizationProfile): Persona
     undisclosed: "성별 정보는 선택 사항입니다. 시작안은 경험·자각 강도·회복 반응을 기준으로 설계합니다.",
   }[profile.sex];
 
-  return { ...base, recommendations, sessionsPerWeek: experience.sessionsPerWeek, targetRpe: lowImpactStart ? "RPE 3–5" : experience.targetRpe, personalizationNote, sexConsideration };
+  const reducedReadiness = profile.recoveryContext === "reduced_readiness";
+  return { ...base, recommendations, sessionsPerWeek: reducedReadiness ? "주 1–2회" : experience.sessionsPerWeek, targetRpe: reducedReadiness || lowImpactStart ? "RPE 3–5" : experience.targetRpe, personalizationNote, sexConsideration };
 }

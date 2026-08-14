@@ -57,15 +57,16 @@ export async function getFitnessProfile(userId: number) {
 export async function saveFitnessProfile(userId: number, profile: {
   age?: number | null; sex: "female" | "male" | "nonbinary" | "undisclosed"; weightKg?: number | null;
   primaryGoal: "strength" | "endurance" | "weight_management" | "general_health"; experience: "beginner" | "intermediate" | "advanced";
+  recoveryContext: "none" | "reduced_readiness" | "pregnancy_postpartum";
 }) {
   const db = await getDb();
   if (!db) throw new Error("Database is not available");
   await db.insert(fitnessProfiles).values({
     userId, age: profile.age ?? null, sex: profile.sex, weightKg: profile.weightKg?.toFixed(2) ?? null,
-    primaryGoal: profile.primaryGoal, experience: profile.experience,
+    primaryGoal: profile.primaryGoal, experience: profile.experience, recoveryContext: profile.recoveryContext,
   }).onDuplicateKeyUpdate({ set: {
     age: profile.age ?? null, sex: profile.sex, weightKg: profile.weightKg?.toFixed(2) ?? null,
-    primaryGoal: profile.primaryGoal, experience: profile.experience,
+    primaryGoal: profile.primaryGoal, experience: profile.experience, recoveryContext: profile.recoveryContext,
   } });
   return getFitnessProfile(userId);
 }
