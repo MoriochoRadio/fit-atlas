@@ -1,5 +1,8 @@
+import { expandedExercises } from "./expandedExercises";
+import { expandedExercisesPart2 } from "./expandedExercisesPart2";
+
 export type BodyRegion = "가슴" | "등" | "어깨" | "팔" | "코어" | "둔근" | "하체";
-export type ExerciseCategory = "러닝" | "유산소" | "헬스기구" | "프리웨이트" | "맨몸운동" | "모빌리티";
+export type ExerciseCategory = "러닝" | "유산소" | "헬스기구" | "프리웨이트" | "맨몸운동" | "모빌리티" | "균형·협응" | "요가·필라테스";
 
 export type Exercise = {
   id: string;
@@ -7,7 +10,7 @@ export type Exercise = {
   englishName: string;
   category: ExerciseCategory;
   regions: BodyRegion[];
-  focus: "근력" | "체력" | "심폐" | "가동성";
+  focus: "근력" | "체력" | "심폐" | "가동성" | "균형" | "협응";
   difficulty: "입문" | "중급" | "상급";
   equipment: string;
   minutes: string;
@@ -280,6 +283,9 @@ exercises.push(
   },
 );
 
+exercises.push(...expandedExercises);
+exercises.push(...expandedExercisesPart2);
+
 export const recoveryGuides: Record<BodyRegion, { title: string; intro: string; steps: string[]; caution: string }> = {
   가슴: { title: "가슴·앞어깨의 긴장 완화", intro: "무리한 밀기 운동 뒤의 뻐근함에는 강도를 줄이고 통증 없는 범위의 움직임부터 재개하세요.", steps: ["문틀에 손을 가볍게 대고 가슴 앞쪽을 부드럽게 열기", "폼롤러를 등 상부에 두고 흉추를 편안하게 펴기", "마사지건은 뼈·관절·목 앞쪽을 피하고 낮은 강도로 짧게 사용"], caution: "저림, 흉통, 숨참, 외상 후 변형은 자가 관리보다 즉시 평가가 우선입니다." },
   등: { title: "등·견갑 주변의 회복", intro: "오래 앉은 뒤의 뻣뻣함은 가벼운 걷기와 견갑의 부드러운 움직임으로 시작합니다.", steps: ["네발 자세에서 등 전체를 천천히 둥글고 길게 만들기", "벽에 등을 대고 팔을 천천히 위로 미끄러뜨리기", "마사지건은 척추뼈 위를 피하고 주변 근육에만 짧게 사용"], caution: "팔까지 내려오는 저림, 감각 이상, 진행성 약화는 전문 평가가 필요합니다." },
@@ -294,4 +300,9 @@ export const wellnessCards = [
   { eyebrow: "RECOVER", title: "수면 리듬", text: "성인 수면 권고는 7–9시간입니다. 기상·취침 시간을 일정하게 만들고, 취침 직전의 강한 빛·카페인·고강도 운동은 개인 반응을 보며 조절하세요.", source: "NHLBI, 2022", url: "https://www.nhlbi.nih.gov/health/heart-healthy-living/sleep", tone: "plum" },
   { eyebrow: "FUEL", title: "운동 전후 식사", text: "에너지·단백질·수분 요구량은 체격, 목표, 운동량 및 질환 여부에 따라 달라집니다. 극단적 제한보다 일관된 식사와 개인화된 상담을 우선하세요.", source: "Academy of Nutrition and Dietetics", url: "https://www.eatright.org/fitness/sports-and-athletic-performance", tone: "sand" },
   { eyebrow: "HEAT", title: "사우나와 열 노출", text: "사우나는 운동을 대체하지 않습니다. 수분 상태를 점검하고, 어지러움·불편감이 생기면 즉시 나오며 임신·심혈관 질환·복용 약물이 있다면 의료진과 먼저 상담하세요.", source: "CDC Heat Health", url: "https://www.cdc.gov/heat-health/about/index.html", tone: "ink" },
+  { eyebrow: "SLEEP", title: "수면 환경과 습관", text: "연령에 따른 권장 수면 시간은 다릅니다. 규칙적인 취침·기상 시간, 조용하고 시원한 침실, 취침 전 전자기기·카페인·큰 식사 조절은 일반적인 수면 위생 전략입니다.", source: "CDC About Sleep", url: "https://www.cdc.gov/sleep/about/index.html", tone: "plum" },
+  { eyebrow: "HYDRATE", title: "수분과 더운 날 활동", text: "더운 환경에서는 수분 보충, 휴식, 시원한 장소 확보, 어지러움·두통·메스꺼움·비정상적 숨참 같은 과열 증상 인지가 중요합니다.", source: "CDC Heat Health", url: "https://www.cdc.gov/heat-health/about/index.html", tone: "sand" },
+  { eyebrow: "RECOVER", title: "능동적 회복", text: "강한 세션 다음 날에는 편안한 걷기, 낮은 강도의 사이클, 통증 없는 가동성처럼 회복을 방해하지 않는 가벼운 움직임을 선택하고 강도·수면·피로 반응을 관찰하세요.", source: "CDC Adult Activity", url: "https://www.cdc.gov/physical-activity-basics/guidelines/adults.html", tone: "ink" },
+  { eyebrow: "TOOLS", title: "마사지건의 현실적 역할", text: "마사지건은 단기 가동 범위·유연성·주관적 회복 보조에 활용할 수 있지만, 근력·균형·폭발력 향상 도구로 과장하지 않습니다. 뼈·관절·목 앞쪽·감각 이상 부위는 피하세요.", source: "Ferreira et al., 2023 review", url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC10532323/", tone: "plum" },
+  { eyebrow: "BALANCE", title: "균형과 일상 기능", text: "특히 65세 이상은 유산소·근력과 함께 균형 활동을 포함하는 것이 권고됩니다. 한 발 서기, 의자 앉았다 일어나기, 탠덤 워킹은 지지대 가까이에서 시작하세요.", source: "CDC Older Adult Activity", url: "https://www.cdc.gov/physical-activity-basics/guidelines/older-adults.html", tone: "sand" },
 ];

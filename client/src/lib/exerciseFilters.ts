@@ -21,3 +21,10 @@ export function filterExercises(exercises: Exercise[], filters: ExerciseFilters)
     return categoryMatches && focusMatches && regionMatches && difficultyMatches && equipmentMatches && searchableText.includes(keyword);
   });
 }
+
+export function getCatalogStats(exercises: Exercise[]) {
+  return {
+    exerciseCount: exercises.length,
+    categoryCount: new Set(exercises.map((exercise) => exercise.category)).size,
+  };
+}

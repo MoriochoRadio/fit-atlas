@@ -22,4 +22,10 @@ describe("local personalized program", () => {
     expect(female.sexConsideration).toContain("성별만으로");
     expect(male.sexConsideration).toContain("성별만으로");
   });
+
+  it("adds balance and mobility options for older adult starting plans", () => {
+    const program = getPersonalizedProgram({ age: 68, weightKg: 64, sex: "undisclosed", primaryGoal: "general_health", experience: "beginner", recoveryContext: "none" });
+    expect(program.recommendations).toEqual(["스테디 사이클", "의자 앉았다 일어나기", "한 발 서기", "캣·카우 가동성"]);
+    expect(program.targetRpe).toBe("RPE 3–5");
+  });
 });

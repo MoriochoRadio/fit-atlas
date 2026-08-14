@@ -1,14 +1,16 @@
 import { describe, expect, it } from "vitest";
 import { exercises, recoveryGuides, wellnessCards } from "./fitnessData";
-import { filterExercises } from "./exerciseFilters";
+import { filterExercises, getCatalogStats } from "./exerciseFilters";
 
 const allFilters = { keyword: "", category: "전체", focus: "전체", region: "전체", difficulty: "전체", equipment: "전체" };
 
 describe("exercise library QA", () => {
   it("covers every supported category with posture, benefits, warnings, and sources", () => {
     const categories = new Set(exercises.map((exercise) => exercise.category));
-    expect(categories).toEqual(new Set(["러닝", "유산소", "헬스기구", "프리웨이트", "맨몸운동", "모빌리티"]));
-    expect(exercises.length).toBeGreaterThanOrEqual(16);
+    const stats = getCatalogStats(exercises);
+    expect(categories).toEqual(new Set(["러닝", "유산소", "헬스기구", "프리웨이트", "맨몸운동", "모빌리티", "균형·협응", "요가·필라테스"]));
+    expect(exercises.length).toBeGreaterThanOrEqual(64);
+    expect(stats).toEqual({ exerciseCount: exercises.length, categoryCount: categories.size });
     exercises.forEach((exercise) => {
       expect(exercise.cues.length).toBeGreaterThanOrEqual(3);
       expect(exercise.benefits.length).toBeGreaterThanOrEqual(3);
@@ -24,6 +26,8 @@ describe("exercise library QA", () => {
 
   it("shows mobility entries and excludes equipment when requested", () => {
     expect(filterExercises(exercises, { ...allFilters, category: "모빌리티" }).map((exercise) => exercise.id)).toContain("cat-cow");
+    expect(filterExercises(exercises, { ...allFilters, category: "균형·협응", focus: "균형" }).map((exercise) => exercise.id)).toContain("single-leg-stand");
+    expect(filterExercises(exercises, { ...allFilters, category: "요가·필라테스", keyword: "다운독" }).map((exercise) => exercise.id)).toEqual(["downward-dog"]);
     expect(filterExercises(exercises, { ...allFilters, equipment: "장비 없음" }).every((exercise) => exercise.equipment === "없음")).toBe(true);
   });
 
@@ -33,6 +37,8 @@ describe("exercise library QA", () => {
       expect(guide.steps).toHaveLength(3);
       expect(guide.caution.length).toBeGreaterThan(25);
     });
-    expect(wellnessCards.map((card) => card.title)).toEqual(["수면 리듬", "운동 전후 식사", "사우나와 열 노출"]);
+    expect(wellnessCards).toHaveLength(8);
+    expect(wellnessCards.map((card) => card.title)).toEqual(expect.arrayContaining(["수면 리듬", "운동 전후 식사", "사우나와 열 노출", "마사지건의 현실적 역할", "균형과 일상 기능"]));
+    wellnessCards.forEach((card) => expect(card.url).toMatch(/^https:\/\//));
   });
 });

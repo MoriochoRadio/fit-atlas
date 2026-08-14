@@ -44,10 +44,13 @@ export function getPersonalizedProgram(profile: PersonalizationProfile): Persona
     personalizationNote = profile.age !== null && profile.age >= 60
       ? "연령 설정을 반영해 균형·가동성·저충격 유산소 운동을 우선하고, 회복일을 충분히 둡니다."
       : "체중 설정을 반영해 관절 충격을 낮춘 유산소 옵션부터 시작하고, 자각 강도와 통증 반응에 따라 진행합니다.";
+    if (profile.age !== null && profile.age >= 60) {
+      recommendations.splice(0, recommendations.length, "스테디 사이클", "의자 앉았다 일어나기", "한 발 서기", "캣·카우 가동성");
+    }
   }
 
   if (profile.recoveryContext === "reduced_readiness") {
-    recommendations.splice(0, recommendations.length, "스테디 사이클", "데드 버그", "편안한 걷기");
+    recommendations.splice(0, recommendations.length, "스테디 사이클", "버드 독", "반무릎 고관절 앞쪽 스트레칭", "편안한 걷기");
     personalizationNote = "사용자가 선택한 낮은 준비도·생애주기 변화 맥락을 반영해 저충격 운동, 짧은 세션, 회복 우선을 제안합니다. 불편감이 커지면 중단하세요.";
   }
 
