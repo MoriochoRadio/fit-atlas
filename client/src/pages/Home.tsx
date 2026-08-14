@@ -15,7 +15,7 @@ import { getMovementVisual } from "@/lib/movementVisuals";
 import { getRoutineTemplate, type RoutineGoal } from "@/lib/routineTemplates";
 import { getCheckinRecommendation, type DailyCheckin } from "@/lib/dailyCheckin";
 import { buildSession, type SessionEnvironment, type SessionGoal, type SessionDuration } from "@/lib/sessionBuilder";
-import { addDesignedSession, getWeeklyPlanInsight, setWeeklyGoal, toggleWeeklySession, type WeeklyPlan } from "@/lib/weeklyPlan";
+import { addDesignedSession, completeWeeklySessionWithRecord, getWeeklyPlanInsight, setWeeklyGoal, toggleWeeklySession, type WeeklyPlan } from "@/lib/weeklyPlan";
 
 type LogEntry = TrainingLog;
 
@@ -41,6 +41,7 @@ export default function Home() {
   const [sessionDuration, setSessionDuration] = useState<SessionDuration>(30);
   const [weeklyPlan, setWeeklyPlan] = useState<WeeklyPlan>(() => typeof window === "undefined" ? readLocalWeeklyPlan() : readLocalWeeklyPlan());
   const [logOpen, setLogOpen] = useState(false);
+  const [linkedPlanSessionId, setLinkedPlanSessionId] = useState<string | null>(null);
   const [profileOpen, setProfileOpen] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const [logs, setLogs] = useState<LogEntry[]>(() => typeof window === "undefined" ? [] : readTrainingLogs());
@@ -63,6 +64,10 @@ export default function Home() {
   useEffect(() => {
     saveLocalWeeklyPlan(weeklyPlan);
   }, [weeklyPlan]);
+
+  useEffect(() => {
+    if (!logOpen) setLinkedPlanSessionId(null);
+  }, [logOpen]);
 
   const filteredExercises = useMemo(() => filterExercises(exercises, { keyword, category, focus, region: regionFilter, difficulty, equipment }), [category, difficulty, equipment, focus, keyword, regionFilter]);
   const catalogStats = useMemo(() => getCatalogStats(exercises), []);
@@ -94,8 +99,25 @@ export default function Home() {
       return;
     }
     setLogs((current) => [entry, ...current]);
-    toast.success("이 브라우저에 운동 기록을 저장했습니다.");
+    if (linkedPlanSessionId) {
+      setWeeklyPlan((current) => completeWeeklySessionWithRecord(current, linkedPlanSessionId, new Date().toISOString()));
+      toast.success("운동 기록을 저장하고 해당 계획 세션을 완료 처리했습니다.");
+    } else {
+      toast.success("이 브라우저에 운동 기록을 저장했습니다.");
+    }
     setLogOpen(false);
+  };
+
+  const startPlanSessionLog = (session: WeeklyPlan["sessions"][number]) => {
+    const exerciseByPlan: Record<SessionGoal, Record<SessionEnvironment, string>> = {
+      all_round: { home: "리버스 런지", gym: "레그 프레스", outdoor: "빠른 걷기" },
+      strength: { home: "리버스 런지", gym: "레그 프레스", outdoor: "스텝업" },
+      endurance: { home: "스텝업", gym: "스테디 사이클", outdoor: "빠른 걷기" },
+    };
+    const baseIntensity = checkinRecommendation.mode === "ready" ? "6" : checkinRecommendation.mode === "lighter" ? "4" : "3";
+    setForm((current) => ({ ...current, date: new Date().toISOString().slice(0, 10), exercise: exerciseByPlan[session.goal][session.environment], sets: session.goal === "endurance" ? "1" : "2", reps: session.goal === "endurance" ? "1" : "8", load: "0", minutes: String(session.duration), intensity: baseIntensity }));
+    setLinkedPlanSessionId(session.id);
+    setLogOpen(true);
   };
 
   const saveProfileSettings = () => {
@@ -151,7 +173,7 @@ export default function Home() {
         </section>
 
         <section id="session" className="session-section section-pad"><SectionTitle eyebrow="SESSION DESIGNER" title="오늘의 조건으로, 한 세션을 설계하세요." description="가용 시간·운동 환경·목표를 고르면 오늘의 컨디션에 맞춘 가벼운 시작 구조를 제안합니다. 의료 처방이나 고정된 프로그램이 아닌, 안전한 선택을 위한 정적 가이드입니다." /><div className="session-builder"><div className="session-options"><p className="small-label">SESSION INTENT</p><div className="session-choice-group"><span>목표</span><div>{(["all_round", "strength", "endurance"] as SessionGoal[]).map((item) => <button key={item} className={sessionGoal === item ? "is-selected" : ""} onClick={() => setSessionGoal(item)}>{{ all_round: "전신 균형", strength: "기초 근력", endurance: "심폐 리듬" }[item]}</button>)}</div></div><div className="session-choice-group"><span>환경</span><div>{(["home", "gym", "outdoor"] as SessionEnvironment[]).map((item) => <button key={item} className={sessionEnvironment === item ? "is-selected" : ""} onClick={() => setSessionEnvironment(item)}>{{ home: "집·매트", gym: "헬스장", outdoor: "야외·걷기" }[item]}</button>)}</div></div><div className="session-choice-group"><span>시간</span><div>{([15, 30, 45] as SessionDuration[]).map((item) => <button key={item} className={sessionDuration === item ? "is-selected" : ""} onClick={() => setSessionDuration(item)}>{item}분</button>)}</div></div><p className="session-local-note"><ShieldCheck size={15} /> 위의 오늘 체크인 값이 세션 강도 안내에 자동 반영됩니다.</p></div><article className="session-plan"><div className="session-plan-head"><div><p className="eyebrow">TODAY'S STARTING POINT</p><h3>{sessionPlan.title}</h3><p>{sessionPlan.summary}</p></div><span>{sessionPlan.adjustment}</span></div><div className="session-blocks">{sessionPlan.blocks.map((block, index) => <div key={block.label} className="session-block"><span>0{index + 1}</span><div><p className="small-label">{block.label} · 약 {block.minutes}분</p><ul>{block.items.map((item) => <li key={item}>{item}</li>)}</ul></div></div>)}</div><div className="session-safety"><HeartPulse size={16} />{sessionPlan.safetyNote}</div></article></div></section>
-        <WeeklyPlanPanel plan={weeklyPlan} insight={weeklyPlanInsight} onGoal={(nextGoal) => setWeeklyPlan((current) => setWeeklyGoal(current, nextGoal))} onToggle={(sessionId) => setWeeklyPlan((current) => toggleWeeklySession(current, sessionId))} onAdd={() => { setWeeklyPlan((current) => addDesignedSession(current, sessionPlan, sessionGoal, sessionEnvironment, sessionDuration)); toast.success("오늘의 설계 세션을 이번 주 계획에 추가했습니다."); }} />
+        <WeeklyPlanPanel plan={weeklyPlan} insight={weeklyPlanInsight} onGoal={(nextGoal) => setWeeklyPlan((current) => setWeeklyGoal(current, nextGoal))} onToggle={(sessionId) => setWeeklyPlan((current) => toggleWeeklySession(current, sessionId))} onStartLog={startPlanSessionLog} onAdd={() => { setWeeklyPlan((current) => addDesignedSession(current, sessionPlan, sessionGoal, sessionEnvironment, sessionDuration)); toast.success("오늘의 설계 세션을 이번 주 계획에 추가했습니다."); }} />
 
         <section className="routine-section section-pad"><SectionTitle eyebrow="ROUTINE LIBRARY" title="목표를 루틴으로, 루틴을 리듬으로." description="4주 템플릿은 일반적인 시작 구조입니다. 주차를 통과하기보다 통증·피로·수면 반응에 맞춰 머무르거나 가볍게 조절하세요." /><div className="routine-goals">{(["strength", "endurance", "weight_management", "general_health"] as RoutineGoal[]).map((item) => <button key={item} className={routineGoal === item ? "is-selected" : ""} onClick={() => setRoutineGoal(item)}>{{ strength: "근력", endurance: "심폐", weight_management: "체중 관리", general_health: "전신 건강" }[item]}</button>)}</div><div className="routine-card"><div className="routine-intro"><p className="eyebrow">{routineGoal.replace("_", " ").toUpperCase()}</p><h3>{routine.title}</h3><p>{routine.intro}</p><div className="routine-safety"><ShieldCheck size={16} />{routine.safetyNote}</div></div><div className="routine-weeks">{routine.weeks.map((week) => <article key={week.week}><span>W{week.week}</span><div><p className="small-label">{week.theme} · {week.sessions}</p><ul>{week.focus.map((item) => <li key={item}>{item}</li>)}</ul><p>{week.note}</p></div></article>)}</div></div></section>
 
@@ -199,9 +221,9 @@ function ExerciseCard({ exercise }: { exercise: Exercise; index: number }) {
 
 function Metric({ icon, label, value, caption }: { icon: React.ReactNode; label: string; value: string; caption: string }) { return <div className="metric-card"><span className="metric-icon">{icon}</span><p>{label}</p><b>{value}</b><small>{caption}</small></div>; }
 
-function WeeklyPlanPanel({ plan, insight, onGoal, onToggle, onAdd }: { plan: WeeklyPlan; insight: ReturnType<typeof getWeeklyPlanInsight>; onGoal: (goal: WeeklyPlan["goal"]) => void; onToggle: (sessionId: string) => void; onAdd: () => void }) {
+function WeeklyPlanPanel({ plan, insight, onGoal, onToggle, onStartLog, onAdd }: { plan: WeeklyPlan; insight: ReturnType<typeof getWeeklyPlanInsight>; onGoal: (goal: WeeklyPlan["goal"]) => void; onToggle: (sessionId: string) => void; onStartLog: (session: WeeklyPlan["sessions"][number]) => void; onAdd: () => void }) {
   const completion = insight.total ? Math.round((insight.completed / insight.total) * 100) : 0;
-  return <section className="weekly-plan-section section-pad"><SectionTitle eyebrow="WEEKLY RHYTHM" title="계획을 체크하고, 조절하며 이어가세요." description="완료 체크는 이 브라우저에만 저장됩니다. 실제 운동 기록과는 구분해 두고, 컨디션이 낮은 날에는 미루거나 더 가볍게 바꿔도 됩니다." /><div className="weekly-plan-grid"><aside className="weekly-summary"><p className="eyebrow">THIS WEEK · LOCAL ONLY</p><h3>{insight.completed} / {insight.total} 세션</h3><div className="weekly-progress-track" aria-label={`주간 계획 이행률 ${completion}%`}><i style={{ width: `${completion}%` }} /></div><p>{insight.label}</p><div className="weekly-goals">{(["all_round", "strength", "endurance"] as WeeklyPlan["goal"][]).map((goal) => <button key={goal} className={plan.goal === goal ? "is-selected" : ""} onClick={() => onGoal(goal)}>{{ all_round: "전신 균형", strength: "기초 근력", endurance: "심폐 리듬" }[goal]}</button>)}</div><button className="weekly-add-button" onClick={onAdd}><Plus size={15} /> 오늘 설계 세션 추가</button><small>이번 주 기록 {insight.loggedThisWeek}개 · 완료 체크와 운동 기록은 별도로 관리됩니다.</small></aside><div className="weekly-sessions">{plan.sessions.map((session, index) => <article key={session.id} className={session.completed ? "is-completed" : ""}><button className="weekly-check" onClick={() => onToggle(session.id)} aria-label={`${session.label} ${session.completed ? "완료 해제" : "완료 처리"}`} aria-pressed={session.completed}>{session.completed ? <Check size={15} /> : <span />}</button><div><p className="small-label">0{index + 1} · {session.weekday}요일 · {session.duration}분</p><h3>{session.label}</h3><p>{session.addedFromDesigner ? "세션 설계 도구에서 추가됨" : "목표별 시작 계획"}</p></div></article>)}</div></div></section>;
+  return <section className="weekly-plan-section section-pad"><SectionTitle eyebrow="WEEKLY RHYTHM" title="계획을 체크하고, 조절하며 이어가세요." description="완료 체크는 이 브라우저에만 저장됩니다. 실제 운동 기록과는 구분해 두고, 컨디션이 낮은 날에는 미루거나 더 가볍게 바꿔도 됩니다." /><div className="weekly-plan-grid"><aside className="weekly-summary"><p className="eyebrow">THIS WEEK · LOCAL ONLY</p><h3>{insight.completed} / {insight.total} 세션</h3><div className="weekly-progress-track" aria-label={`주간 계획 이행률 ${completion}%`}><i style={{ width: `${completion}%` }} /></div><p>{insight.label}</p><div className="weekly-goals">{(["all_round", "strength", "endurance"] as WeeklyPlan["goal"][]).map((goal) => <button key={goal} className={plan.goal === goal ? "is-selected" : ""} onClick={() => onGoal(goal)}>{{ all_round: "전신 균형", strength: "기초 근력", endurance: "심폐 리듬" }[goal]}</button>)}</div><button className="weekly-add-button" onClick={onAdd}><Plus size={15} /> 오늘 설계 세션 추가</button><small>기록 연결 {insight.linkedRecords}건 · 직접 체크 {insight.manualChecks}건 · 이번 주 운동 기록 {insight.loggedThisWeek}개</small></aside><div className="weekly-sessions">{plan.sessions.map((session, index) => <article key={session.id} className={session.completed ? "is-completed" : ""}><button className="weekly-check" onClick={() => onToggle(session.id)} aria-label={`${session.label} ${session.completed ? "완료 해제" : "완료 처리"}`} aria-pressed={session.completed}>{session.completed ? <Check size={15} /> : <span />}</button><div><p className="small-label">0{index + 1} · {session.weekday}요일 · {session.duration}분</p><h3>{session.label}</h3><p>{session.recordedAt ? "운동 기록과 연결되어 완료됨" : session.addedFromDesigner ? "세션 설계 도구에서 추가됨" : "목표별 시작 계획"}</p><button className="weekly-log-button" onClick={() => onStartLog(session)}>{session.recordedAt ? "기록 다시 열기" : "이 계획으로 기록 시작"}<ArrowRight size={13} /></button></div></article>)}</div></div></section>;
 }
 
 function RecoveryProtocolPanel({ region }: { region: BodyRegion }) {

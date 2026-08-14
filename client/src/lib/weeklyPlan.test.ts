@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { addDesignedSession, createWeeklyPlan, getWeeklyPlanInsight, getWeekStart, readWeeklyPlan, setWeeklyGoal, toggleWeeklySession } from "./weeklyPlan";
+import { addDesignedSession, completeWeeklySessionWithRecord, createWeeklyPlan, getWeeklyPlanInsight, getWeekStart, readWeeklyPlan, setWeeklyGoal, toggleWeeklySession } from "./weeklyPlan";
 
 const referenceDate = new Date("2026-08-14T12:00:00Z");
 const checkin = { date: "2026-08-14", energy: 4, sleep: 4, stress: 2, pain: 1 } as const;
@@ -17,6 +17,13 @@ describe("weekly plan", () => {
     const toggled = toggleWeeklySession(plan, plan.sessions[0].id);
     expect(toggled.sessions[0].completed).toBe(true);
     expect(setWeeklyGoal(toggled, "endurance", referenceDate).sessions.every((session) => session.goal === "endurance")).toBe(true);
+  });
+
+  it("marks an exact planned session as completed when a linked record is saved", () => {
+    const plan = createWeeklyPlan("all_round", referenceDate);
+    const linked = completeWeeklySessionWithRecord(plan, plan.sessions[0].id, "2026-08-14T12:30:00.000Z");
+    expect(linked.sessions[0]).toMatchObject({ completed: true, recordedAt: "2026-08-14T12:30:00.000Z" });
+    expect(getWeeklyPlanInsight(linked, [], checkin, referenceDate)).toMatchObject({ linkedRecords: 1, manualChecks: 0 });
   });
 
   it("adds today’s designed session and prioritizes readiness in the weekly insight", () => {

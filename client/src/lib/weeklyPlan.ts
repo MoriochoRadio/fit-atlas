@@ -13,6 +13,7 @@ export type WeeklyPlanSession = {
   duration: SessionDuration;
   completed: boolean;
   addedFromDesigner: boolean;
+  recordedAt?: string;
 };
 
 export type WeeklyPlan = {
@@ -64,7 +65,7 @@ export function createWeeklyPlan(goal: WeeklyPlanGoal = "all_round", referenceDa
 function isValidSession(value: unknown): value is WeeklyPlanSession {
   if (!value || typeof value !== "object") return false;
   const session = value as Partial<WeeklyPlanSession>;
-  return typeof session.id === "string" && typeof session.label === "string" && typeof session.weekday === "string" && ["all_round", "strength", "endurance"].includes(session.goal ?? "") && ["home", "gym", "outdoor"].includes(session.environment ?? "") && [15, 30, 45].includes(session.duration ?? 0) && typeof session.completed === "boolean" && typeof session.addedFromDesigner === "boolean";
+  return typeof session.id === "string" && typeof session.label === "string" && typeof session.weekday === "string" && ["all_round", "strength", "endurance"].includes(session.goal ?? "") && ["home", "gym", "outdoor"].includes(session.environment ?? "") && [15, 30, 45].includes(session.duration ?? 0) && typeof session.completed === "boolean" && typeof session.addedFromDesigner === "boolean" && (session.recordedAt === undefined || typeof session.recordedAt === "string");
 }
 
 export function readWeeklyPlan(serialized: string | null, referenceDate = new Date()): WeeklyPlan {
@@ -78,7 +79,11 @@ export function readWeeklyPlan(serialized: string | null, referenceDate = new Da
 }
 
 export function toggleWeeklySession(plan: WeeklyPlan, sessionId: string): WeeklyPlan {
-  return { ...plan, sessions: plan.sessions.map((session) => session.id === sessionId ? { ...session, completed: !session.completed } : session) };
+  return { ...plan, sessions: plan.sessions.map((session) => session.id === sessionId ? { ...session, completed: !session.completed, recordedAt: session.completed ? undefined : session.recordedAt } : session) };
+}
+
+export function completeWeeklySessionWithRecord(plan: WeeklyPlan, sessionId: string, recordedAt: string): WeeklyPlan {
+  return { ...plan, sessions: plan.sessions.map((session) => session.id === sessionId ? { ...session, completed: true, recordedAt } : session) };
 }
 
 export function setWeeklyGoal(plan: WeeklyPlan, goal: WeeklyPlanGoal, referenceDate = new Date()): WeeklyPlan {
@@ -98,6 +103,7 @@ export function getWeeklyPlanInsight(plan: WeeklyPlan, logs: TrainingLog[], chec
   const loggedThisWeek = logs.filter((log) => log.date >= plan.weekStart && log.date <= dayKey(referenceDate)).length;
   const readiness = getCheckinRecommendation(checkin);
   const remaining = plan.sessions.length - completed;
+  const linkedRecords = plan.sessions.filter((session) => Boolean(session.recordedAt)).length;
   const label = readiness.mode === "stop_and_assess" ? "통증 신호가 있으면 완료 수보다 회복과 평가를 우선하세요." : readiness.mode === "recovery" || readiness.mode === "lighter" ? "이번 주 계획은 줄여도 괜찮습니다. 남은 세션을 더 가볍게 조절하세요." : completed === plan.sessions.length ? "이번 주 계획을 모두 체크했어요. 다음 주에는 한 변수만 작게 조절하세요." : completed === 0 ? "첫 체크부터 시작해 보세요. 계획은 유연하게 조절할 수 있습니다." : `남은 ${remaining}개 세션은 컨디션을 보며 나누어 진행하세요.`;
-  return { completed, total: plan.sessions.length, remaining, loggedThisWeek, label };
+  return { completed, total: plan.sessions.length, remaining, loggedThisWeek, linkedRecords, manualChecks: completed - linkedRecords, label };
 }
