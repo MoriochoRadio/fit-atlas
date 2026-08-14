@@ -10,6 +10,7 @@ import { startLogin } from "@/const";
 import { toast } from "sonner";
 import { getCalendarDays, getPersonalRecords, getTotalMinutes, getTotalVolume, getWeeklyVolume, type TrainingLog } from "@/lib/trainingMetrics";
 import { getPersonalizedProgram } from "@/lib/personalization";
+import { defaultProfilePreferences, mergeAccountProfile, readProfilePreferences } from "@/lib/profilePreferences";
 
 type LogEntry = TrainingLog;
 
@@ -46,10 +47,7 @@ export default function Home() {
     try { return JSON.parse(window.localStorage.getItem("fit-atlas-guest-logs") ?? "[]") as LogEntry[]; } catch { return []; }
   });
   const [form, setForm] = useState({ exercise: "바벨 백 스쿼트", sets: "3", reps: "8", load: "40", minutes: "35", intensity: "6" });
-  const [profileForm, setProfileForm] = useState(() => {
-    if (typeof window === "undefined") return { age: "", weightKg: "", sex: "undisclosed", primaryGoal: "strength", experience: "beginner", recoveryContext: "none" };
-    try { return { age: "", weightKg: "", sex: "undisclosed", primaryGoal: "strength", experience: "beginner", recoveryContext: "none", ...JSON.parse(window.localStorage.getItem("fit-atlas-profile") ?? "{}") }; } catch { return { age: "", weightKg: "", sex: "undisclosed", primaryGoal: "strength", experience: "beginner", recoveryContext: "none" }; }
-  });
+  const [profileForm, setProfileForm] = useState(() => typeof window === "undefined" ? defaultProfilePreferences : readProfilePreferences(window.localStorage.getItem("fit-atlas-profile")));
 
   const logs: LogEntry[] = isAuthenticated
     ? (workoutQuery.data ?? []).map((log) => ({ id: String(log.id), date: new Date(log.performedAt).toISOString().slice(0, 10), exercise: log.exerciseName, sets: log.sets, reps: log.reps, load: Number(log.loadKg), minutes: log.durationMinutes, intensity: log.intensityRpe }))
@@ -62,14 +60,7 @@ export default function Home() {
   useEffect(() => {
     const profile = profileQuery.data;
     if (!profile) return;
-    setProfileForm({
-      age: profile.age ? String(profile.age) : "",
-      weightKg: profile.weightKg ? String(profile.weightKg) : "",
-      sex: profile.sex,
-      primaryGoal: profile.primaryGoal,
-      experience: profile.experience,
-      recoveryContext: profile.recoveryContext,
-    });
+    setProfileForm((current) => mergeAccountProfile(current, profile));
   }, [profileQuery.data]);
 
   const filteredExercises = useMemo(() => exercises.filter((exercise) => {
