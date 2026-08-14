@@ -9,7 +9,7 @@ describe("exercise library QA", () => {
     const categories = new Set(exercises.map((exercise) => exercise.category));
     const stats = getCatalogStats(exercises);
     expect(categories).toEqual(new Set(["러닝", "유산소", "헬스기구", "프리웨이트", "맨몸운동", "모빌리티", "균형·협응", "요가·필라테스"]));
-    expect(exercises.length).toBeGreaterThanOrEqual(64);
+    expect(exercises.length).toBeGreaterThanOrEqual(76);
     expect(stats).toEqual({ exerciseCount: exercises.length, categoryCount: categories.size });
     exercises.forEach((exercise) => {
       expect(exercise.cues.length).toBeGreaterThanOrEqual(3);
@@ -37,8 +37,8 @@ describe("exercise library QA", () => {
       expect(guide.steps).toHaveLength(3);
       expect(guide.caution.length).toBeGreaterThan(25);
     });
-    expect(wellnessCards).toHaveLength(8);
-    expect(wellnessCards.map((card) => card.title)).toEqual(expect.arrayContaining(["수면 리듬", "운동 전후 식사", "사우나와 열 노출", "마사지건의 현실적 역할", "균형과 일상 기능"]));
+    expect(wellnessCards).toHaveLength(10);
+    expect(wellnessCards.map((card) => card.title)).toEqual(expect.arrayContaining(["수면 리듬", "운동 전후 식사", "사우나와 열 노출", "마사지건의 현실적 역할", "균형과 일상 기능", "일상 식사 리듬", "더운 날 세션 계획"]));
     wellnessCards.forEach((card) => expect(card.url).toMatch(/^https:\/\//));
   });
 });
