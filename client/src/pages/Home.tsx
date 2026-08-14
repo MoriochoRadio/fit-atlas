@@ -5,12 +5,15 @@ import { useEffect, useMemo, useState } from "react";
 import { toast } from "sonner";
 import { getCalendarDays, getPersonalRecords, getTotalMinutes, getTotalVolume, getWeeklyVolume, type TrainingLog } from "@/lib/trainingMetrics";
 import { getPersonalizedProgram } from "@/lib/personalization";
-import { downloadBackup, parseBackup, readLocalProfile, readTrainingLogs, saveLocalProfile, saveTrainingLogs } from "@/lib/localStore";
+import { downloadBackup, parseBackup, readLocalCheckin, readLocalProfile, readTrainingLogs, saveLocalCheckin, saveLocalProfile, saveTrainingLogs } from "@/lib/localStore";
 import { filterExercises, getCatalogStats } from "@/lib/exerciseFilters";
 import { getExerciseDetail } from "@/lib/exerciseDetails";
 import { recoveryProtocols } from "@/lib/recoveryProtocols";
 import { getInsightSummary } from "@/lib/trainingInsights";
 import { wellnessDetails } from "@/lib/wellnessDetails";
+import { getMovementVisual } from "@/lib/movementVisuals";
+import { getRoutineTemplate, type RoutineGoal } from "@/lib/routineTemplates";
+import { getCheckinRecommendation, type DailyCheckin } from "@/lib/dailyCheckin";
 
 type LogEntry = TrainingLog;
 
@@ -30,16 +33,26 @@ export default function Home() {
   const [equipment, setEquipment] = useState("전체");
   const [activeRegion, setActiveRegion] = useState<BodyRegion>("등");
   const [goal, setGoal] = useState<keyof typeof goalCopy>("근력증가");
+  const [routineGoal, setRoutineGoal] = useState<RoutineGoal>("strength");
   const [logOpen, setLogOpen] = useState(false);
   const [profileOpen, setProfileOpen] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const [logs, setLogs] = useState<LogEntry[]>(() => typeof window === "undefined" ? [] : readTrainingLogs());
   const [form, setForm] = useState(() => ({ date: new Date().toISOString().slice(0, 10), exercise: "바벨 백 스쿼트", sets: "3", reps: "8", load: "40", minutes: "35", intensity: "6" }));
   const [profileForm, setProfileForm] = useState(() => typeof window === "undefined" ? readLocalProfile() : readLocalProfile());
+  const [checkin, setCheckin] = useState<DailyCheckin>(() => {
+    const saved = typeof window === "undefined" ? undefined : readLocalCheckin();
+    const today = new Date().toISOString().slice(0, 10);
+    return saved && saved.date === today ? saved : { ...(saved ?? { energy: 3, sleep: 3, stress: 3, pain: 1 }), date: today };
+  });
 
   useEffect(() => {
     saveTrainingLogs(logs);
   }, [logs]);
+
+  useEffect(() => {
+    saveLocalCheckin(checkin);
+  }, [checkin]);
 
   const filteredExercises = useMemo(() => filterExercises(exercises, { keyword, category, focus, region: regionFilter, difficulty, equipment }), [category, difficulty, equipment, focus, keyword, regionFilter]);
   const catalogStats = useMemo(() => getCatalogStats(exercises), []);
@@ -47,6 +60,7 @@ export default function Home() {
   const regionExercises = exercises.filter((exercise) => exercise.regions.includes(activeRegion));
   const recovery = recoveryGuides[activeRegion];
   const plan = getPersonalizedProgram({ age: profileForm.age ? Number(profileForm.age) : null, weightKg: profileForm.weightKg ? Number(profileForm.weightKg) : null, sex: profileForm.sex as "female" | "male" | "nonbinary" | "undisclosed", primaryGoal: goalCopy[goal], experience: profileForm.experience as "beginner" | "intermediate" | "advanced", recoveryContext: profileForm.recoveryContext as "none" | "reduced_readiness" | "pregnancy_postpartum" });
+  const routine = getRoutineTemplate(routineGoal);
   const weeklyVolume = useMemo(() => getWeeklyVolume(logs), [logs]);
   const maxWeeklyVolume = Math.max(...weeklyVolume.map((item) => item.volume), 1);
   const calendarDays = useMemo(() => getCalendarDays(logs), [logs]);
@@ -54,6 +68,7 @@ export default function Home() {
   const totalMinutes = getTotalMinutes(logs);
   const pr = useMemo(() => getPersonalRecords(logs), [logs]);
   const insights = useMemo(() => getInsightSummary(logs), [logs]);
+  const checkinRecommendation = useMemo(() => getCheckinRecommendation(checkin), [checkin]);
 
   const addLog = () => {
     const today = new Date().toISOString().slice(0, 10);
@@ -96,7 +111,7 @@ export default function Home() {
         <nav className={menuOpen ? "nav is-open" : "nav"} aria-label="주요 메뉴">
           <a href="#explore" onClick={() => setMenuOpen(false)}>운동 탐색</a><a href="#anatomy" onClick={() => setMenuOpen(false)}>바디 맵</a><a href="#progress" onClick={() => setMenuOpen(false)}>기록 분석</a><a href="#wellness" onClick={() => setMenuOpen(false)}>웰니스</a>
         </nav>
-        <div className="topbar-actions"><button className="ghost-button desktop-only" onClick={() => setProfileOpen(true)}>내 프로필</button><button className="ghost-button desktop-only" onClick={() => downloadBackup(logs, profileForm)}>백업</button><label className="login-button desktop-only">가져오기<input className="sr-only" type="file" accept="application/json" onChange={async (event) => { const file = event.target.files?.[0]; if (!file) return; try { const backup = parseBackup(await file.text()); setLogs(backup.logs); setProfileForm(backup.profile); saveLocalProfile(backup.profile); toast.success("백업을 복원했습니다."); } catch { toast.error("백업 파일을 읽지 못했습니다."); } event.currentTarget.value = ""; }} /></label><button className="dark-button" onClick={() => setLogOpen(true)}><Plus size={16} /> 운동 기록</button><button className="menu-button" onClick={() => setMenuOpen(!menuOpen)} aria-label="메뉴 열기"><Menu size={20} /></button></div>
+        <div className="topbar-actions"><button className="ghost-button desktop-only" onClick={() => setProfileOpen(true)}>내 프로필</button><button className="ghost-button desktop-only" onClick={() => downloadBackup(logs, profileForm, checkin)}>백업</button><label className="login-button desktop-only">가져오기<input className="sr-only" type="file" accept="application/json" onChange={async (event) => { const file = event.target.files?.[0]; if (!file) return; try { const backup = parseBackup(await file.text()); setLogs(backup.logs); setProfileForm(backup.profile); setCheckin(backup.checkin); saveLocalProfile(backup.profile); saveLocalCheckin(backup.checkin); toast.success("백업을 복원했습니다."); } catch { toast.error("백업 파일을 읽지 못했습니다."); } event.currentTarget.value = ""; }} /></label><button className="dark-button" onClick={() => setLogOpen(true)}><Plus size={16} /> 운동 기록</button><button className="menu-button" onClick={() => setMenuOpen(!menuOpen)} aria-label="메뉴 열기"><Menu size={20} /></button></div>
       </header>
 
       <main id="top">
@@ -120,7 +135,10 @@ export default function Home() {
         <section id="program" className="program-section section-pad">
           <SectionTitle eyebrow="PERSONALIZE" title="오늘의 움직임을, 당신의 목표에 맞게." description="간단한 목표 선택으로 시작하는 보수적이고 점진적인 운동 제안입니다. 실제 서비스에서는 프로필·운동 이력·피로도까지 반영합니다." />
           <div className="program-grid"><div className="program-selector"><p className="small-label">PRIMARY GOAL</p><div className="goal-pills">{(Object.keys(goalCopy) as Array<keyof typeof goalCopy>).map((item) => <button key={item} onClick={() => setGoal(item)} className={goal === item ? "is-selected" : ""}>{item}</button>)}</div><button className="profile-link" onClick={() => setProfileOpen(true)}>연령·체중·경험 수준 설정 <ArrowRight size={14} /></button><div className="program-note"><Sparkles size={18} /><p><strong>권장 원칙</strong><br />처음 2주간은 운동 전후 불편감·피로를 관찰하며 강도보다 일관성을 우선하세요.</p></div></div><div className="program-card"><div><p className="eyebrow">YOUR STARTING POINT · {plan.sessionsPerWeek} · {plan.targetRpe}</p><h3>{plan.title}</h3><p>{plan.note} {plan.personalizationNote}</p><p className="profile-context">{plan.sexConsideration}</p></div><div className="program-exercise-list">{plan.recommendations.map((name, index) => <div key={name}><span>0{index + 1}</span><b>{name}</b><Check size={16} /></div>)}</div><button className="outline-button" onClick={() => document.getElementById("explore")?.scrollIntoView({ behavior: "smooth" })}>운동 구성 살펴보기 <ArrowRight size={16} /></button></div></div>
+          <div className={`checkin-card mode-${checkinRecommendation.mode}`}><div className="checkin-head"><div><p className="eyebrow">DAILY READINESS · LOCAL ONLY</p><h3>{checkinRecommendation.title}</h3><p>{checkinRecommendation.guidance}</p></div><span>{checkinRecommendation.rpeAdjustment}</span></div><div className="checkin-controls"><label>에너지 <b>{checkin.energy}/5</b><input type="range" min="1" max="5" value={checkin.energy} onChange={(event) => setCheckin((current) => ({ ...current, date: new Date().toISOString().slice(0, 10), energy: Number(event.target.value) }))} /></label><label>수면 <b>{checkin.sleep}/5</b><input type="range" min="1" max="5" value={checkin.sleep} onChange={(event) => setCheckin((current) => ({ ...current, date: new Date().toISOString().slice(0, 10), sleep: Number(event.target.value) }))} /></label><label>스트레스 <b>{checkin.stress}/5</b><input type="range" min="1" max="5" value={checkin.stress} onChange={(event) => setCheckin((current) => ({ ...current, date: new Date().toISOString().slice(0, 10), stress: Number(event.target.value) }))} /></label><label>통증·불편감 <b>{checkin.pain}/5</b><input type="range" min="1" max="5" value={checkin.pain} onChange={(event) => setCheckin((current) => ({ ...current, date: new Date().toISOString().slice(0, 10), pain: Number(event.target.value) }))} /></label></div></div>
         </section>
+
+        <section className="routine-section section-pad"><SectionTitle eyebrow="ROUTINE LIBRARY" title="목표를 루틴으로, 루틴을 리듬으로." description="4주 템플릿은 일반적인 시작 구조입니다. 주차를 통과하기보다 통증·피로·수면 반응에 맞춰 머무르거나 가볍게 조절하세요." /><div className="routine-goals">{(["strength", "endurance", "weight_management", "general_health"] as RoutineGoal[]).map((item) => <button key={item} className={routineGoal === item ? "is-selected" : ""} onClick={() => setRoutineGoal(item)}>{{ strength: "근력", endurance: "심폐", weight_management: "체중 관리", general_health: "전신 건강" }[item]}</button>)}</div><div className="routine-card"><div className="routine-intro"><p className="eyebrow">{routineGoal.replace("_", " ").toUpperCase()}</p><h3>{routine.title}</h3><p>{routine.intro}</p><div className="routine-safety"><ShieldCheck size={16} />{routine.safetyNote}</div></div><div className="routine-weeks">{routine.weeks.map((week) => <article key={week.week}><span>W{week.week}</span><div><p className="small-label">{week.theme} · {week.sessions}</p><ul>{week.focus.map((item) => <li key={item}>{item}</li>)}</ul><p>{week.note}</p></div></article>)}</div></div></section>
 
         <section id="explore" className="explore-section section-pad">
           <SectionTitle eyebrow="EXERCISE LIBRARY" title="움직임을 지식으로 익히세요." description={`개인용 정적 큐레이션: ${catalogStats.categoryCount}개 카테고리 · ${catalogStats.exerciseCount}개 운동. 카테고리와 목적, 장비로 탐색하고 올바른 자세·효과·안전 단서를 확인하세요.`} action={<span className="library-count">{filteredExercises.length} EXERCISES</span>} />
@@ -160,7 +178,8 @@ export default function Home() {
 function ExerciseCard({ exercise }: { exercise: Exercise; index: number }) {
   const [expanded, setExpanded] = useState(false);
   const detail = getExerciseDetail(exercise);
-  return <article className="exercise-card"><div className="exercise-top"><span>{exercise.category}</span><span className="difficulty">{exercise.difficulty}</span></div><h3>{exercise.name}</h3><p className="english-name">{exercise.englishName}</p><p className="exercise-description">{exercise.description}</p><div className="tag-row">{exercise.regions.map((region) => <span key={region}>{region}</span>)}<span className="focus-tag">{exercise.focus}</span></div><div className="exercise-meta"><span><Timer size={14} />{exercise.minutes}</span><span><Dumbbell size={14} />{exercise.equipment}</span></div>{expanded && <div className="exercise-detail"><p className="small-label">TRAINING BENEFITS</p><div className="benefit-row">{exercise.benefits.map((benefit) => <span key={benefit}>{benefit}</span>)}</div><p className="small-label">SETUP</p><ol>{detail.setup.map((step, stepIndex) => <li key={step}><b>{stepIndex + 1}.</b>{step}</li>)}</ol><p className="small-label">FORM CUES</p><ol>{exercise.cues.map((cue, cueIndex) => <li key={cue}><b>{cueIndex + 1}.</b>{cue}</li>)}</ol><div className="detail-grid"><div><p className="small-label">EASIER</p><ul>{detail.regressions.map((item) => <li key={item}>{item}</li>)}</ul></div><div><p className="small-label">NEXT STEP</p><ul>{detail.progressions.map((item) => <li key={item}>{item}</li>)}</ul></div></div><p className="small-label">COMMON ERRORS</p><ul className="detail-errors">{detail.commonMistakes.map((item) => <li key={item}>{item}</li>)}</ul><p className="exercise-finish"><b>마무리</b>{detail.finish}</p><p className="exercise-warning">{exercise.warning}</p><a href={exercise.reference.url} target="_blank" rel="noreferrer">{exercise.reference.label} <ArrowRight size={13} /></a></div>}<button className="card-expand" onClick={() => setExpanded(!expanded)}>{expanded ? "간단히 보기" : "자세·근거 보기"}<ChevronRight size={15} className={expanded ? "rotate-icon" : ""} /></button></article>;
+  const visual = getMovementVisual(exercise.id);
+  return <article className="exercise-card"><div className="exercise-top"><span>{exercise.category}</span><span className="difficulty">{exercise.difficulty}</span></div><h3>{exercise.name}</h3><p className="english-name">{exercise.englishName}</p><p className="exercise-description">{exercise.description}</p><div className="tag-row">{exercise.regions.map((region) => <span key={region}>{region}</span>)}<span className="focus-tag">{exercise.focus}</span></div><div className="exercise-meta"><span><Timer size={14} />{exercise.minutes}</span><span><Dumbbell size={14} />{exercise.equipment}</span></div>{expanded && <div className="exercise-detail"><p className="small-label">TRAINING BENEFITS</p><div className="benefit-row">{exercise.benefits.map((benefit) => <span key={benefit}>{benefit}</span>)}</div>{visual && <MovementVisualGuide title={visual.title} frames={visual.frames} />}<p className="small-label">SETUP</p><ol>{detail.setup.map((step, stepIndex) => <li key={step}><b>{stepIndex + 1}.</b>{step}</li>)}</ol><p className="small-label">FORM CUES</p><ol>{exercise.cues.map((cue, cueIndex) => <li key={cue}><b>{cueIndex + 1}.</b>{cue}</li>)}</ol><div className="detail-grid"><div><p className="small-label">EASIER</p><ul>{detail.regressions.map((item) => <li key={item}>{item}</li>)}</ul></div><div><p className="small-label">NEXT STEP</p><ul>{detail.progressions.map((item) => <li key={item}>{item}</li>)}</ul></div></div><p className="small-label">COMMON ERRORS</p><ul className="detail-errors">{detail.commonMistakes.map((item) => <li key={item}>{item}</li>)}</ul><p className="exercise-finish"><b>마무리</b>{detail.finish}</p><p className="exercise-warning">{exercise.warning}</p><a href={exercise.reference.url} target="_blank" rel="noreferrer">{exercise.reference.label} <ArrowRight size={13} /></a></div>}<button className="card-expand" onClick={() => setExpanded(!expanded)}>{expanded ? "간단히 보기" : "자세·근거 보기"}<ChevronRight size={15} className={expanded ? "rotate-icon" : ""} /></button></article>;
 }
 
 function Metric({ icon, label, value, caption }: { icon: React.ReactNode; label: string; value: string; caption: string }) { return <div className="metric-card"><span className="metric-icon">{icon}</span><p>{label}</p><b>{value}</b><small>{caption}</small></div>; }
@@ -180,4 +199,8 @@ function WellnessCard({ card, index }: { card: (typeof wellnessCards)[number]; i
   const [expanded, setExpanded] = useState(false);
   const detail = wellnessDetails[card.title];
   return <article className={`wellness-card tone-${card.tone}`}><span className="wellness-index">{String(index + 1).padStart(2, "0")}</span><p className="eyebrow">{card.eyebrow}</p><h3>{card.title}</h3><p>{card.text}</p>{expanded && <div className="wellness-detail"><p className="small-label">일상 실천</p><ul>{detail.practices.map((item) => <li key={item}>{item}</li>)}</ul><p className="small-label">운동 맥락</p><ul>{detail.trainingContext.map((item) => <li key={item}>{item}</li>)}</ul><p className="wellness-caution">{detail.caution}</p></div>}<button className="wellness-expand" onClick={() => setExpanded(!expanded)}>{expanded ? "간단히 보기" : "상세 가이드"}<ChevronRight size={14} className={expanded ? "rotate-icon" : ""} /></button><a href={card.url} target="_blank" rel="noreferrer">{card.source} <ArrowRight size={14} /></a></article>;
+}
+
+function MovementVisualGuide({ title, frames }: { title: string; frames: ReturnType<typeof getMovementVisual>["frames"] }) {
+  return <div className="movement-visual"><p className="small-label">{title.toUpperCase()}</p><div className="movement-frames">{frames.map((frame, index) => <div className="movement-frame" key={frame.label}><div className={`pose-silhouette pose-${frame.pose}`} aria-hidden="true"><i className="pose-head" /><i className="pose-body" /><i className="pose-arm arm-one" /><i className="pose-arm arm-two" /><i className="pose-leg leg-one" /><i className="pose-leg leg-two" /></div><b>{index + 1}. {frame.label}</b><span>{frame.cue}</span></div>)}</div></div>;
 }
