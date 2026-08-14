@@ -82,12 +82,14 @@ a { color: inherit; text-decoration: none; }
 .weekly-log-button,
 .weekly-check,
 .wellness-card a,
+.evidence-section a,
 .search-field input {
   min-height: 24px;
 }
 .profile-link,
 .weekly-log-button,
-.wellness-card a {
+.wellness-card a,
+.evidence-section a {
   display: inline-flex;
   align-items: center;
   padding-block: 3px;
