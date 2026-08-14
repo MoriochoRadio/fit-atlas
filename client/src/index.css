@@ -71,3 +71,27 @@ a { color: inherit; text-decoration: none; }
 @media (max-width: 700px) { .routine-intro { padding: 24px; }.routine-weeks { grid-template-columns: 1fr; }.routine-weeks article, .routine-weeks article:nth-last-child(-n+2) { border-right: 0; border-bottom: 1px solid rgba(23,49,44,.1); }.routine-weeks article:last-child { border-bottom: 0; }.checkin-card { padding: 20px; }.checkin-head, .session-plan-head { display: grid; gap: 13px; }.checkin-head > span, .session-plan-head > span { max-width: none; }.checkin-controls { grid-template-columns: repeat(2, 1fr); gap: 9px; margin-top: 16px; }.session-options, .session-plan, .weekly-summary { padding: 24px 20px; }.weekly-sessions { grid-template-columns: 1fr; }.weekly-sessions article, .weekly-sessions article:nth-last-child(-n+2) { border-right: 0; border-bottom: 1px solid rgba(23,49,44,.1); }.weekly-sessions article:last-child { border-bottom: 0; } }
 @media (max-width: 700px) { .recovery-toolkit { padding: 18px; }.toolkit-grid { grid-template-columns: 1fr; } }
 @media (prefers-reduced-motion: reduce) { *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .001ms !important; animation-duration: .001ms !important; } }
+
+/* ── 조작 대상 최소 크기 (WCAG 2.2 SC 2.5.8) ──────────────────────────────
+   모바일 375px에서 프로필 링크·주간 체크·기록 시작 버튼과 출처 링크가
+   16~22px이라 손가락으로 정확히 누르기 어려웠다. 레이아웃을 바꾸지 않도록
+   최소 크기와 세로 여백만 확보한다. 문장 안에 섞인 링크는 SC 2.5.8의
+   inline 예외에 해당하지만, 카드 하단에 단독으로 놓인 출처 링크는 예외가
+   아니라 함께 넓힌다. */
+.profile-link,
+.weekly-log-button,
+.weekly-check,
+.wellness-card a,
+.search-field input {
+  min-height: 24px;
+}
+.profile-link,
+.weekly-log-button,
+.wellness-card a {
+  display: inline-flex;
+  align-items: center;
+  padding-block: 3px;
+}
+.weekly-check {
+  min-width: 24px;
+}
