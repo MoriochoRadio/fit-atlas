@@ -1,5 +1,6 @@
 import { AnatomyMap } from "@/components/AnatomyMap";
 import { exercises, recoveryGuides, wellnessCards, type BodyRegion, type Exercise } from "@/lib/fitnessData";
+import { aerobicIntervalTemplates } from "@/lib/aerobicIntervals";
 import { Activity, ArrowRight, BarChart3, BookOpen, Brain, CalendarDays, Check, ChevronRight, Dumbbell, HeartPulse, Menu, Plus, Search, ShieldCheck, Sparkles, Timer, X } from "lucide-react";
 import React, { useEffect, useMemo, useState } from "react";
 import { toast } from "sonner";
@@ -216,6 +217,8 @@ export default function Home() {
         </section>
 
         <section id="wellness" className="wellness-section section-pad"><SectionTitle eyebrow="WHOLE-PERSON WELLNESS" title="회복도 훈련의 일부입니다." description="영양, 수면, 열 노출은 운동을 대체하는 비법이 아니라, 일관된 훈련을 지지하는 생활 습관의 일부로 다룹니다." /><div className="wellness-grid">{wellnessCards.map((card, index) => <WellnessCard key={card.title} card={card} index={index} />)}</div></section>
+
+        <section className="interval-section section-pad"><SectionTitle eyebrow="CARDIO INTERVALS" title="종목에 맞춰, 숨이 무너지기 전에 낮춥니다." description="모든 템플릿은 입문·회복 우선의 출발점입니다. 말하기 검사와 RPE가 계획보다 우선하며, 통증·어지러움·비정상적 숨참은 중단 신호입니다." /><div className="interval-grid">{aerobicIntervalTemplates.map((template) => <article className="interval-card" key={template.id}><p className="small-label">{template.format}</p><h3>{template.title}</h3><dl><div><dt>준비</dt><dd>{template.warmup}</dd></div><div><dt>작업</dt><dd>{template.work}</dd></div><div><dt>회복</dt><dd>{template.recovery}</dd></div></dl><p className="interval-rpe">{template.rpe}</p><p>{template.adjust}</p><p className="interval-safety"><ShieldCheck size={14} /> {template.safety}</p></article>)}</div></section>
 
         <section className="evidence-section"><div><BookOpen size={21} /><p className="eyebrow">EVIDENCE FIRST</p><h2>근거를 남기고,<br />한계를 함께 말합니다.</h2></div><div><p>Fit Atlas는 운동 항목마다 공공 보건 지침 또는 전문 기관의 출처를 연결합니다. 권고량은 일반적 참고 정보이며 개인별 질환, 임신·산후 상태, 부상 이력, 복용 약물을 대체 평가하지 않습니다.</p><a href="https://www.who.int/news-room/fact-sheets/detail/physical-activity" target="_blank" rel="noreferrer">WHO 신체 활동 권고 보기 <ArrowRight size={16} /></a></div></section>
       </main>

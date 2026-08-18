@@ -2,7 +2,7 @@
 import { createElement } from "react";
 import * as ReactRuntime from "react";
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
-import { cleanup, fireEvent, render, screen } from "@testing-library/react";
+import { cleanup, fireEvent, render, screen, within } from "@testing-library/react";
 import Home from "./Home";
 
 Object.assign(globalThis, { React: ReactRuntime });
@@ -37,5 +37,29 @@ describe("Home recovery alternative flow", () => {
     expect(screen.getByText("거리 · 선택")).toBeTruthy();
     expect(screen.getByRole("option", { name: "km" })).toBeTruthy();
     expect(screen.getByRole("option", { name: "m" })).toBeTruthy();
+  });
+
+  it("renders all four conservative cardio interval templates", () => {
+    render(createElement(Home));
+    expect(screen.getByText("CARDIO INTERVALS")).toBeTruthy();
+    expect(screen.getAllByText("걷기·달리기 인터벌").length).toBeGreaterThan(0);
+    expect(screen.getAllByText("사이클 리듬 인터벌").length).toBeGreaterThan(0);
+    expect(screen.getAllByText("로잉 기술 인터벌").length).toBeGreaterThan(0);
+    expect(screen.getAllByText("수영 짧은 길이 인터벌").length).toBeGreaterThan(0);
+    expect(screen.getAllByText(/RPE 5–6/).length).toBeGreaterThan(0);
+    expect(screen.getAllByText(/숨이 정리된 뒤만 다음 길이/).length).toBeGreaterThan(0);
+    expect(screen.getAllByText(/혼자 하지 않기/).length).toBeGreaterThan(0);
+  });
+
+  it("renders nutrition, hydration, and heat-exposure safety guidance after expanding wellness cards", () => {
+    render(createElement(Home));
+    ["운동 전후 식사", "사우나와 열 노출", "수분과 더운 날 활동"].forEach((title) => {
+      const card = screen.getByRole("heading", { name: title }).closest("article");
+      expect(card).toBeTruthy();
+      fireEvent.click(within(card!).getByRole("button", { name: "상세 가이드" }));
+    });
+    expect(screen.getAllByText(/의료·영양 전문가 상담/).length).toBeGreaterThan(0);
+    expect(screen.getAllByText(/실신감·혼란·심한 두통/).length).toBeGreaterThan(0);
+    expect(screen.getAllByText(/심한 두통·실신감·혼란/).length).toBeGreaterThan(0);
   });
 });
