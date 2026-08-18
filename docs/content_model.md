@@ -30,8 +30,14 @@
 
 카탈로그의 주간 맥락은 성인에게 주당 150분의 중강도 유산소 활동(또는 이에 상응하는 고강도·혼합 활동)과 2일 이상의 주요 근육군 근력 활동을 일반적 참고 범위로 제시하는 CDC 안내와 맞춘다.[1] 점프·민첩성 항목은 반복을 크게 누적하도록 처방하지 않으며, NSCA 원문이 강조한 저빈도·낮은 볼륨·동작 숙련 우선 관점을 안전 단서로 반영한다.[3]
 
+회복 안내는 통증을 밀어붙이는 처방이 아니라, 통증을 유발하는 과제의 양을 낮추고 천천히 활동을 늘리는 일반적 원칙에 한정한다. NHS 계열 안내는 증상을 악화시키는 움직임·과제를 줄이고, 느리게 시작해 점진적으로 활동량을 높이는 접근을 제시한다.[4] 따라서 앱에서는 회복 전·후의 반응을 기록하고, 붓기·열감·외상·감각 변화·흉통·어지러움 등 위험 신호가 있으면 자가 관리보다 평가를 우선하도록 안내한다.
+
+수면 웰니스 안내는 특정 시간·용량을 처방하지 않는다. CDC는 규칙적인 수면 습관, 취침 전 화면·오후·저녁 카페인 회피, 규칙적인 신체 활동을 일반적 건강 수면 습관으로 제시한다.[5] 앱은 개인의 민감도·교대 근무·치료 상황을 가정하지 않고, 카페인·늦은 격한 운동·취침 시각의 관계를 일지로 관찰하라는 실천 단서만 제공한다.
+
 ## 참고 자료
 
 [1]: https://www.cdc.gov/physical-activity-basics/guidelines/adults.html "CDC — Adult Activity: An Overview"
 [2]: https://www.cdc.gov/heat-health/risk-factors/heat-and-athletes.html "CDC — Heat and Athletes"
 [3]: https://www.nsca.com/education/articles/kinetic-select/plyometric-exercises/ "NSCA — Plyometric Exercises"
+[4]: https://www.nhslanarkshire.scot.nhs.uk/services/physiotherapy-msk/ankle-sprain/ "NHS Lanarkshire — Ankle sprain"
+[5]: https://www.cdc.gov/sleep/about/index.html "CDC — About Sleep"

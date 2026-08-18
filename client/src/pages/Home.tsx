@@ -8,10 +8,11 @@ import { getPersonalizedProgram } from "@/lib/personalization";
 import { downloadBackup, parseBackup, readLocalCheckin, readLocalProfile, readLocalWeeklyPlan, readTrainingLogs, saveLocalCheckin, saveLocalProfile, saveLocalWeeklyPlan, saveTrainingLogs } from "@/lib/localStore";
 import { filterExercises, getCatalogStats } from "@/lib/exerciseFilters";
 import { getExerciseDetail } from "@/lib/exerciseDetails";
-import { recoveryProtocols } from "@/lib/recoveryProtocols";
+import { recoveryProtocols, recoveryStageGuides } from "@/lib/recoveryProtocols";
 import { getInsightSummary } from "@/lib/trainingInsights";
 import { wellnessDetails } from "@/lib/wellnessDetails";
 import { getMovementVisual } from "@/lib/movementVisuals";
+import { MovementVisualGuide, RecoveryStageGrid, WellnessDetailPanel } from "@/components/GuidancePanels";
 import { getRoutineTemplate, type RoutineGoal } from "@/lib/routineTemplates";
 import { getCheckinRecommendation, type DailyCheckin } from "@/lib/dailyCheckin";
 import { buildSession, type SessionEnvironment, type SessionGoal, type SessionDuration } from "@/lib/sessionBuilder";
@@ -228,21 +229,18 @@ function WeeklyPlanPanel({ plan, insight, onGoal, onToggle, onStartLog, onAdd }:
 
 function RecoveryProtocolPanel({ region }: { region: BodyRegion }) {
   const protocol = recoveryProtocols[region];
+  const stages = recoveryStageGuides[region];
   const groups = [
     ["스트레칭·가동성", protocol.stretch],
     ["폼롤러", protocol.foamRoller],
     ["마사지건", protocol.massageGun],
     ["부하 조절", protocol.loadManagement],
   ] as const;
-  return <section className="recovery-toolkit" aria-label={`${region} 회복 방법 상세`}><div className="toolkit-heading"><p className="eyebrow">RECOVERY TOOLKIT</p><h3>도구보다, 반응을 먼저 확인하세요.</h3><p>아래 내용은 일반 교육용입니다. 통증을 치료하려 하기보다 불편감·피로·기능 변화를 관찰하며 부하를 조절하세요.</p></div><div className="toolkit-grid">{groups.map(([label, steps]) => <article key={label}><p className="small-label">{label}</p><ul>{steps.map((step) => <li key={step}>{step}</li>)}</ul></article>)}</div><div className="toolkit-red-flags"><ShieldCheck size={17} /><div><p className="small-label">즉시 자가 관리를 멈추고 평가가 필요한 신호</p><ul>{protocol.redFlags.map((flag) => <li key={flag}>{flag}</li>)}</ul></div></div></section>;
+  return <section className="recovery-toolkit" aria-label={`${region} 회복 방법 상세`}><div className="toolkit-heading"><p className="eyebrow">RECOVERY TOOLKIT</p><h3>도구보다, 반응을 먼저 확인하세요.</h3><p>아래 내용은 일반 교육용입니다. 통증을 치료하려 하기보다 불편감·피로·기능 변화를 관찰하며 부하를 조절하세요.</p></div><RecoveryStageGrid stages={stages} /><div className="toolkit-grid">{groups.map(([label, steps]) => <article key={label}><p className="small-label">{label}</p><ul>{steps.map((step) => <li key={step}>{step}</li>)}</ul></article>)}</div><div className="toolkit-red-flags"><ShieldCheck size={17} /><div><p className="small-label">즉시 자가 관리를 멈추고 평가가 필요한 신호</p><ul>{protocol.redFlags.map((flag) => <li key={flag}>{flag}</li>)}</ul></div></div></section>;
 }
 
 function WellnessCard({ card, index }: { card: (typeof wellnessCards)[number]; index: number }) {
   const [expanded, setExpanded] = useState(false);
   const detail = wellnessDetails[card.title];
-  return <article className={`wellness-card tone-${card.tone}`}><span className="wellness-index">{String(index + 1).padStart(2, "0")}</span><p className="eyebrow">{card.eyebrow}</p><h3>{card.title}</h3><p>{card.text}</p>{expanded && <div className="wellness-detail"><p className="small-label">일상 실천</p><ul>{detail.practices.map((item) => <li key={item}>{item}</li>)}</ul><p className="small-label">운동 맥락</p><ul>{detail.trainingContext.map((item) => <li key={item}>{item}</li>)}</ul><p className="wellness-caution">{detail.caution}</p></div>}<button className="wellness-expand" onClick={() => setExpanded(!expanded)}>{expanded ? "간단히 보기" : "상세 가이드"}<ChevronRight size={14} className={expanded ? "rotate-icon" : ""} /></button><a href={card.url} target="_blank" rel="noreferrer">{card.source} <ArrowRight size={14} /></a></article>;
-}
-
-function MovementVisualGuide({ title, frames }: { title: string; frames: ReturnType<typeof getMovementVisual>["frames"] }) {
-  return <div className="movement-visual"><p className="small-label">{title.toUpperCase()}</p><div className="movement-frames">{frames.map((frame, index) => <div className="movement-frame" key={frame.label}><div className={`pose-silhouette pose-${frame.pose}`} aria-hidden="true"><i className="pose-head" /><i className="pose-body" /><i className="pose-arm arm-one" /><i className="pose-arm arm-two" /><i className="pose-leg leg-one" /><i className="pose-leg leg-two" /></div><b>{index + 1}. {frame.label}</b><span>{frame.cue}</span></div>)}</div></div>;
+  return <article className={`wellness-card tone-${card.tone}`}><span className="wellness-index">{String(index + 1).padStart(2, "0")}</span><p className="eyebrow">{card.eyebrow}</p><h3>{card.title}</h3><p>{card.text}</p>{expanded && <WellnessDetailPanel detail={detail} />}<button className="wellness-expand" onClick={() => setExpanded(!expanded)}>{expanded ? "간단히 보기" : "상세 가이드"}<ChevronRight size={14} className={expanded ? "rotate-icon" : ""} /></button><a href={card.url} target="_blank" rel="noreferrer">{card.source} <ArrowRight size={14} /></a></article>;
 }

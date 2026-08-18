@@ -38,8 +38,8 @@ describe("exercise library QA", () => {
       expect(guide.steps).toHaveLength(3);
       expect(guide.caution.length).toBeGreaterThan(25);
     });
-    expect(wellnessCards).toHaveLength(10);
-    expect(wellnessCards.map((card) => card.title)).toEqual(expect.arrayContaining(["수면 리듬", "운동 전후 식사", "사우나와 열 노출", "마사지건의 현실적 역할", "균형과 일상 기능", "일상 식사 리듬", "더운 날 세션 계획"]));
+    expect(wellnessCards).toHaveLength(11);
+    expect(wellnessCards.map((card) => card.title)).toEqual(expect.arrayContaining(["수면 리듬", "운동 전후 식사", "사우나와 열 노출", "마사지건의 현실적 역할", "균형과 일상 기능", "일상 식사 리듬", "더운 날 세션 계획", "카페인·운동·수면 일지"]));
     wellnessCards.forEach((card) => expect(card.url).toMatch(/^https:\/\//));
   });
 });

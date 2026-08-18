@@ -311,4 +311,5 @@ export const wellnessCards = [
   { eyebrow: "BALANCE", title: "균형과 일상 기능", text: "특히 65세 이상은 유산소·근력과 함께 균형 활동을 포함하는 것이 권고됩니다. 한 발 서기, 의자 앉았다 일어나기, 탠덤 워킹은 지지대 가까이에서 시작하세요.", source: "CDC Older Adult Activity", url: "https://www.cdc.gov/physical-activity-basics/guidelines/older-adults.html", tone: "sand" },
   { eyebrow: "FUEL", title: "일상 식사 리듬", text: "운동 전후 한 번의 식사보다 일관된 식사 리듬과 충분한 에너지·수분 섭취가 중요합니다. 속 불편·에너지 저하처럼 반복되는 반응은 기록해 훈련 시간과 식사 간격을 함께 조절하세요.", source: "Academy of Nutrition and Dietetics", url: "https://www.eatright.org/fitness/sports-and-athletic-performance", tone: "ink" },
   { eyebrow: "HEAT", title: "더운 날 세션 계획", text: "더운 날의 활동은 더 서늘한 시간대, 물, 그늘·실내 대안, 낮아진 페이스를 먼저 계획합니다. 약함·현기증이 느껴지면 활동을 멈추고 시원한 곳으로 이동하세요.", source: "CDC Heat and Athletes", url: "https://www.cdc.gov/heat-health/risk-factors/heat-and-athletes.html", tone: "plum" },
+  { eyebrow: "SLEEP", title: "카페인·운동·수면 일지", text: "카페인, 운동 시간, 취침·기상 시각이 수면에 미치는 반응은 개인마다 다를 수 있습니다. 정답을 고정하기보다 반복되는 패턴을 짧게 기록해 다음 세션 강도를 조절하세요.", source: "CDC About Sleep", url: "https://www.cdc.gov/sleep/about/index.html", tone: "sand" },
 ];
