@@ -82,6 +82,9 @@ export const exerciseDetails: Record<string, ExerciseDetail> = {
   "recovery-jog-walk": { setup: ["평지·날씨·귀가 경로 확인", "걷기 3분으로 시작", "30초 이하 조깅 선택"], finish: "걷기 2분 이상으로 호흡을 낮추고 통증·어지러움을 확인합니다.", commonMistakes: ["조깅을 질주로 바꿈", "호흡 회복 전 재시작", "통증 신호 무시"], regressions: ["걷기만", "15초 조깅", "휴식 증가"], progressions: ["조깅 15초 증가", "구간 1회 추가", "다음 날 편안할 때만"] },
   "machine-chest-press-easy": { setup: ["시트·손잡이·핀 고정 확인", "가벼운 저항으로 경로 리허설", "등과 발을 지지"], finish: "핀을 안전히 놓고 어깨·손목·호흡 반응을 확인합니다.", commonMistakes: ["무거운 중량부터", "팔꿈치를 잠금", "어깨 통증을 넘김"], regressions: ["더 가벼운 중량", "짧은 범위", "카운터 푸시업"], progressions: ["반복 1회 증가", "느린 복귀", "중량 한 단계만"] },
   "machine-seated-row-easy": { setup: ["시트·지지대·핀 고정 확인", "가벼운 저항으로 당기기 리허설", "목·어깨 이완"], finish: "핸들을 놓기 전 장력을 낮추고 등·어깨 반응을 확인합니다.", commonMistakes: ["몸통 반동", "어깨를 으쓱함", "핀·시트 미확인"], regressions: ["더 가벼운 중량", "짧은 범위", "밴드 로우"], progressions: ["반복 1회 증가", "정지 1초", "중량 한 단계만"] },
+  "supported-split-squat": { setup: ["벽·의자 지지와 발 간격 확인", "짧은 체중 이동 리허설", "통증 없는 깊이만"], finish: "양발을 모아 균형·무릎 반응을 확인합니다.", commonMistakes: ["지지대를 당김", "무릎 통증을 넘김", "깊이를 급하게 늘림"], regressions: ["체중 이동", "더 짧은 범위", "양손 지지"], progressions: ["반복 1회 증가", "지지 줄이기", "깊이 소폭 증가"] },
+  "dead-bug-heel-tap": { setup: ["매트·호흡 확인", "무릎 굽힌 기본 자세", "한쪽 발만 작은 범위로"], finish: "양발을 바닥에 두고 호흡·허리 반응을 확인합니다.", commonMistakes: ["허리 통증을 무시", "숨 참기", "다리를 너무 멀리 뻗음"], regressions: ["발 고정 호흡", "한쪽 팔만 이동", "범위 절반"], progressions: ["좌우 반복 증가", "천천히 내리기", "한 변수만 증가"] },
+  "prone-w-pull": { setup: ["매트·목 편안함 확인", "팔꿈치 W 위치", "아주 작은 당기기"], finish: "팔을 내려 목·어깨·저림 반응을 확인합니다.", commonMistakes: ["목을 젖힘", "팔을 높이 들기", "어깨 통증 무시"], regressions: ["벽 W 슬라이드", "더 작은 범위", "반복 절반"], progressions: ["반복 1회 증가", "정지 1초", "범위 소폭 증가"] },
 };
 
 export function getExerciseDetail(exercise: Exercise): ExerciseDetail {
