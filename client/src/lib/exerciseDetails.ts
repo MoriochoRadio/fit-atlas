@@ -91,6 +91,8 @@ export const exerciseDetails: Record<string, ExerciseDetail> = {
   "single-leg-hip-hinge-support": { setup: ["벽·의자 지지 확인", "양발 힌지 리허설", "작은 범위"], finish: "양발로 서서 균형·허리 반응을 확인합니다.", commonMistakes: ["골반을 열기", "지지대에 매달림", "범위 과도"], regressions: ["양발 힌지", "발끝 보조", "더 작은 범위"], progressions: ["반복 증가", "지지 줄이기", "느린 복귀"] },
   "treadmill-incline-easy": { setup: ["안전 클립·벨트·경사 확인", "평지 걷기 2분", "낮은 경사"], finish: "경사·속도를 낮춰 평지 걷기로 마무리합니다.", commonMistakes: ["난간 매달림", "경사 급증", "벨트 위 시선 고정"], regressions: ["평지 걷기", "더 낮은 경사", "짧은 시간"], progressions: ["시간 1분 증가", "경사 소폭", "속도는 유지"] },
   "machine-leg-press-easy": { setup: ["시트·핀·안전장치 확인", "가벼운 중량 리허설", "짧은 범위"], finish: "안전장치를 잠그고 무릎·허리 반응을 확인합니다.", commonMistakes: ["무릎 잠금", "허리 들림", "깊이를 과도하게"], regressions: ["더 가벼운 중량", "짧은 범위", "월 싯"], progressions: ["반복 증가", "느린 복귀", "중량 한 단계"] },
+  "machine-leg-curl-easy": { setup: ["패드·핀·무릎 축 확인", "가벼운 중량 리허설", "작은 범위"], finish: "핀을 안전히 놓고 무릎·햄스트링 반응을 확인합니다.", commonMistakes: ["골반 들림", "반동", "통증 무시"], regressions: ["중량 낮추기", "범위 줄이기", "글루트 브리지"], progressions: ["반복 증가", "느린 복귀", "중량 한 단계"] },
+  "machine-chest-fly-easy": { setup: ["시트·팔 위치·핀 확인", "가벼운 장력 리허설", "어깨 이완"], finish: "장력을 낮추고 어깨·가슴 반응을 확인합니다.", commonMistakes: ["어깨 으쓱", "범위 과도", "반동"], regressions: ["중량 낮추기", "범위 줄이기", "벽 푸시업"], progressions: ["반복 증가", "느린 복귀", "중량 한 단계"] },
 };
 
 export function getExerciseDetail(exercise: Exercise): ExerciseDetail {
