@@ -88,6 +88,9 @@ export const exerciseDetails: Record<string, ExerciseDetail> = {
   "wall-sit-easy": { setup: ["벽·발 위치 확인", "얕은 범위 선택", "10초부터 시작"], finish: "천천히 서서 무릎·호흡 반응을 확인합니다.", commonMistakes: ["깊이를 고집", "숨 참기", "통증 무시"], regressions: ["짧은 유지", "더 높은 범위", "벽 지지 서기"], progressions: ["5초 증가", "반복 1회 증가", "범위 소폭 낮추기"] },
   "knee-pushup-easy": { setup: ["매트·손 위치 확인", "몸통 길게", "작은 범위 리허설"], finish: "손을 짚고 천천히 일어나 손목·어깨를 확인합니다.", commonMistakes: ["골반 처짐", "팔꿈치 과도하게 벌림", "통증 무시"], regressions: ["벽 푸시업", "높은 지지면", "반복 절반"], progressions: ["반복 1회 증가", "느린 복귀", "지지면 낮추기"] },
   "side-plank-knee": { setup: ["팔꿈치·무릎 지지 확인", "짧은 골반 들기", "호흡 유지"], finish: "옆으로 누워 어깨·허리 반응을 확인합니다.", commonMistakes: ["어깨를 으쓱", "골반 처짐", "목 긴장"], regressions: ["옆으로 누운 호흡", "짧은 유지", "무릎 더 굽힘"], progressions: ["5초 증가", "반복 추가", "윗다리 펴기"] },
+  "single-leg-hip-hinge-support": { setup: ["벽·의자 지지 확인", "양발 힌지 리허설", "작은 범위"], finish: "양발로 서서 균형·허리 반응을 확인합니다.", commonMistakes: ["골반을 열기", "지지대에 매달림", "범위 과도"], regressions: ["양발 힌지", "발끝 보조", "더 작은 범위"], progressions: ["반복 증가", "지지 줄이기", "느린 복귀"] },
+  "treadmill-incline-easy": { setup: ["안전 클립·벨트·경사 확인", "평지 걷기 2분", "낮은 경사"], finish: "경사·속도를 낮춰 평지 걷기로 마무리합니다.", commonMistakes: ["난간 매달림", "경사 급증", "벨트 위 시선 고정"], regressions: ["평지 걷기", "더 낮은 경사", "짧은 시간"], progressions: ["시간 1분 증가", "경사 소폭", "속도는 유지"] },
+  "machine-leg-press-easy": { setup: ["시트·핀·안전장치 확인", "가벼운 중량 리허설", "짧은 범위"], finish: "안전장치를 잠그고 무릎·허리 반응을 확인합니다.", commonMistakes: ["무릎 잠금", "허리 들림", "깊이를 과도하게"], regressions: ["더 가벼운 중량", "짧은 범위", "월 싯"], progressions: ["반복 증가", "느린 복귀", "중량 한 단계"] },
 };
 
 export function getExerciseDetail(exercise: Exercise): ExerciseDetail {
