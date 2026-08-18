@@ -99,6 +99,9 @@ export const exerciseDetails: Record<string, ExerciseDetail> = {
   "machine-leg-extension-easy": { setup: ["시트·패드·핀 확인", "가벼운 중량 리허설", "무릎 축 맞추기"], finish: "핀을 안전히 놓고 무릎 반응을 확인합니다.", commonMistakes: ["반동", "무릎 잠금", "통증 무시"], regressions: ["중량 낮추기", "범위 줄이기", "의자 일어서기"], progressions: ["반복 증가", "느린 복귀", "중량 한 단계"] },
   "cable-face-pull-easy": { setup: ["핀·로프·높이 확인", "가벼운 장력 리허설", "목 이완"], finish: "장력을 낮추고 어깨·등 상부 반응을 확인합니다.", commonMistakes: ["허리 젖힘", "목 으쓱", "무거운 장력"], regressions: ["중량 낮추기", "범위 줄이기", "벽 W 슬라이드"], progressions: ["반복 증가", "정지 1초", "중량 한 단계"] },
   "treadmill-flat-interval-walk": { setup: ["안전 클립·벨트 확인", "편안한 걷기 2분", "속도 소폭만"], finish: "편안한 걷기 2분으로 호흡을 정리합니다.", commonMistakes: ["속도 급증", "난간 매달림", "회복 구간 생략"], regressions: ["편안한 걷기", "빠른 구간 줄이기", "총 구간 줄이기"], progressions: ["구간 1회 증가", "빠른 구간 소폭", "회복은 유지"] },
+  "back-extension-easy": { setup: ["패드·발 고정 확인", "중립 범위 리허설", "목 이완"], finish: "벤치에서 안전히 내려와 허리·둔근 반응을 확인합니다.", commonMistakes: ["허리 과신전", "목 젖힘", "반동"], regressions: ["글루트 브리지", "짧은 범위", "반복 절반"], progressions: ["반복 증가", "정지 1초", "범위 소폭"] },
+  "cable-woodchop-low-high": { setup: ["핀·손잡이·발 위치 확인", "가벼운 장력 리허설", "골반 정면"], finish: "장력을 낮추고 허리·어깨 반응을 확인합니다.", commonMistakes: ["허리만 비틀기", "무거운 장력", "반동"], regressions: ["중량 낮추기", "범위 줄이기", "팔로프 프레스"], progressions: ["반복 증가", "정지 1초", "중량 한 단계"] },
+  "recovery-jog-cadence": { setup: ["평지·신발·귀가 경로 확인", "걷기 3분", "20초 이하 조깅"], finish: "걷기 2분 이상으로 호흡을 정리합니다.", commonMistakes: ["조깅 질주", "걷기 생략", "통증 무시"], regressions: ["걷기만", "조깅 시간 줄이기", "휴식 증가"], progressions: ["조깅 5초 증가", "구간 1회 증가", "걷기는 유지"] },
 };
 
 export function getExerciseDetail(exercise: Exercise): ExerciseDetail {
