@@ -6,6 +6,7 @@ import { expandedExercisesPart7 } from "./expandedExercisesPart7";
 import { expandedExercisesPart8 } from "./expandedExercisesPart8";
 import { expandedExercisesPart9 } from "./expandedExercisesPart9";
 import { expandedExercisesPart10 } from "./expandedExercisesPart10";
+import { expandedExercisesPart11 } from "./expandedExercisesPart11";
 import { exercises } from "./fitnessData";
 
 describe("exercise detail knowledge", () => {
@@ -29,7 +30,7 @@ describe("exercise detail knowledge", () => {
   });
 
   it("gives every newly added equipment and low-impact movement an individual detail definition", () => {
-    [...expandedExercisesPart5, ...expandedExercisesPart6, ...expandedExercisesPart7, ...expandedExercisesPart8, ...expandedExercisesPart9, ...expandedExercisesPart10].forEach((exercise) => {
+    [...expandedExercisesPart5, ...expandedExercisesPart6, ...expandedExercisesPart7, ...expandedExercisesPart8, ...expandedExercisesPart9, ...expandedExercisesPart10, ...expandedExercisesPart11].forEach((exercise) => {
       expect(exerciseDetails[exercise.id]).toBeDefined();
       expect(exerciseDetails[exercise.id].setup).toHaveLength(3);
       expect(exerciseDetails[exercise.id].commonMistakes).toHaveLength(3);
