@@ -1,7 +1,7 @@
 import { AnatomyMap } from "@/components/AnatomyMap";
 import { exercises, recoveryGuides, wellnessCards, type BodyRegion, type Exercise } from "@/lib/fitnessData";
 import { Activity, ArrowRight, BarChart3, BookOpen, Brain, CalendarDays, Check, ChevronRight, Dumbbell, HeartPulse, Menu, Plus, Search, ShieldCheck, Sparkles, Timer, X } from "lucide-react";
-import { useEffect, useMemo, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import { toast } from "sonner";
 import { getCalendarDays, getPersonalRecords, getTotalMinutes, getTotalVolume, getWeeklyVolume, type TrainingLog } from "@/lib/trainingMetrics";
 import { getPersonalizedProgram } from "@/lib/personalization";
@@ -9,10 +9,11 @@ import { downloadBackup, parseBackup, readLocalCheckin, readLocalProfile, readLo
 import { filterExercises, getCatalogStats } from "@/lib/exerciseFilters";
 import { getExerciseDetail } from "@/lib/exerciseDetails";
 import { recoveryProtocols, recoveryStageGuides } from "@/lib/recoveryProtocols";
+import { applyRecoveryExplore, getRecoveryPathway, recoveryPathways, type RecoveryPathwayId } from "@/lib/recoveryPathways";
 import { getInsightSummary } from "@/lib/trainingInsights";
 import { wellnessDetails } from "@/lib/wellnessDetails";
 import { getMovementVisual } from "@/lib/movementVisuals";
-import { MovementVisualGuide, RecoveryStageGrid, WellnessDetailPanel } from "@/components/GuidancePanels";
+import { MovementVisualGuide, RecoveryPathwayPanel, RecoveryStageGrid, WellnessDetailPanel } from "@/components/GuidancePanels";
 import { getRoutineTemplate, type RoutineGoal } from "@/lib/routineTemplates";
 import { getCheckinRecommendation, type DailyCheckin } from "@/lib/dailyCheckin";
 import { buildSession, type SessionEnvironment, type SessionGoal, type SessionDuration } from "@/lib/sessionBuilder";
@@ -35,6 +36,7 @@ export default function Home() {
   const [difficulty, setDifficulty] = useState("전체");
   const [equipment, setEquipment] = useState("전체");
   const [activeRegion, setActiveRegion] = useState<BodyRegion>("등");
+  const [activeRecoveryPathwayId, setActiveRecoveryPathwayId] = useState<RecoveryPathwayId>("shoulder");
   const [goal, setGoal] = useState<keyof typeof goalCopy>("근력증가");
   const [routineGoal, setRoutineGoal] = useState<RoutineGoal>("strength");
   const [sessionGoal, setSessionGoal] = useState<SessionGoal>("all_round");
@@ -75,6 +77,8 @@ export default function Home() {
 
   const regionExercises = exercises.filter((exercise) => exercise.regions.includes(activeRegion));
   const recovery = recoveryGuides[activeRegion];
+  const activeRecoveryPathway = getRecoveryPathway(activeRecoveryPathwayId);
+  const pathwayAlternatives = activeRecoveryPathway.alternativeExerciseIds.map((id) => exercises.find((exercise) => exercise.id === id)).filter((exercise): exercise is Exercise => Boolean(exercise));
   const plan = getPersonalizedProgram({ age: profileForm.age ? Number(profileForm.age) : null, weightKg: profileForm.weightKg ? Number(profileForm.weightKg) : null, sex: profileForm.sex as "female" | "male" | "nonbinary" | "undisclosed", primaryGoal: goalCopy[goal], experience: profileForm.experience as "beginner" | "intermediate" | "advanced", recoveryContext: profileForm.recoveryContext as "none" | "reduced_readiness" | "pregnancy_postpartum" });
   const routine = getRoutineTemplate(routineGoal);
   const weeklyVolume = useMemo(() => getWeeklyVolume(logs), [logs]);
@@ -119,6 +123,11 @@ export default function Home() {
     setForm((current) => ({ ...current, date: new Date().toISOString().slice(0, 10), exercise: exerciseByPlan[session.goal][session.environment], sets: session.goal === "endurance" ? "1" : "2", reps: session.goal === "endurance" ? "1" : "8", load: "0", minutes: String(session.duration), intensity: baseIntensity }));
     setLinkedPlanSessionId(session.id);
     setLogOpen(true);
+  };
+
+  const exploreRecoveryAlternative = (exerciseId: string) => {
+    const result = applyRecoveryExplore(activeRecoveryPathway, exerciseId, exercises, { setKeyword, setCategory, setFocus, setRegion: setRegionFilter, scrollToTarget: (targetId) => document.getElementById(targetId)?.scrollIntoView({ behavior: "smooth" }) });
+    if (result) toast.success(`${result.exercise.name}의 자세·안전 단서를 확인하세요.`);
   };
 
   const saveProfileSettings = () => {
@@ -190,6 +199,7 @@ export default function Home() {
           <div className="anatomy-grid"><div className="body-map-card"><div className="map-head"><span>INTERACTIVE MUSCLE MAP</span><span className="live-dot">LIVE GUIDE</span></div><AnatomyMap activeRegion={activeRegion} onSelect={setActiveRegion} /><div className="region-selector">{(Object.keys(recoveryGuides) as BodyRegion[]).map((region) => <button key={region} className={activeRegion === region ? "is-active" : ""} onClick={() => setActiveRegion(region)}>{region}</button>)}</div></div><div className="anatomy-info"><div className="region-title"><p className="eyebrow">SELECTED REGION</p><h3>{activeRegion}</h3></div><div className="related-list"><p className="small-label">RELATED EXERCISES</p>{regionExercises.slice(0, 3).map((exercise) => <div key={exercise.id}><span>{exercise.category}</span><b>{exercise.name}</b><ArrowRight size={15} /></div>)}</div><div className="safety-callout"><ShieldCheck size={18} /><p><strong>안전한 탐색</strong><br />날카로운 통증, 저림, 근력 저하, 외상 후 변화는 자가 관리보다 의료 평가를 우선하세요.</p></div></div></div>
           <div className="recovery-card"><div><p className="eyebrow">RECOVERY GUIDE · {activeRegion}</p><h3>{recovery.title}</h3><p>{recovery.intro}</p></div><ol>{recovery.steps.map((step, index) => <li key={step}><span>0{index + 1}</span>{step}</li>)}</ol><div className="recovery-caution"><HeartPulse size={17} /> {recovery.caution}</div></div>
           <RecoveryProtocolPanel region={activeRegion} />
+          <RecoveryPathwayPanel pathways={recoveryPathways} pathway={activeRecoveryPathway} alternatives={pathwayAlternatives} onChoose={(id) => { setActiveRecoveryPathwayId(id); setActiveRegion(getRecoveryPathway(id).region); }} onExplore={exploreRecoveryAlternative} />
         </section>
 
         <section id="progress" className="progress-section section-pad">

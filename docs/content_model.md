@@ -34,6 +34,8 @@
 
 수면 웰니스 안내는 특정 시간·용량을 처방하지 않는다. CDC는 규칙적인 수면 습관, 취침 전 화면·오후·저녁 카페인 회피, 규칙적인 신체 활동을 일반적 건강 수면 습관으로 제시한다.[5] 앱은 개인의 민감도·교대 근무·치료 상황을 가정하지 않고, 카페인·늦은 격한 운동·취침 시각의 관계를 일지로 관찰하라는 실천 단서만 제공한다.
 
+관절별 회복 선택 경로는 질환·손상 진단이나 치료 계획이 아니다. 허리·무릎·발목·어깨의 일반적 불편에서 **운동 전 반응 확인 → 저충격·지지형·가동성 대체 → 다음 날 반응을 고려한 점진적 재개**라는 교육적 선택지를 제공한다. NHS 계열 자료는 척추 불편의 일반적 자가 관리와 적절한 상담 시점을 구분하므로, 앱은 저림·감각 변화·체중 부하 불가·외상·밤에 깨는 통증 등 기존 위험 신호가 있을 때 회복 루틴으로 진행하지 않도록 명확히 고지한다.[6]
+
 ## 참고 자료
 
 [1]: https://www.cdc.gov/physical-activity-basics/guidelines/adults.html "CDC — Adult Activity: An Overview"
@@ -41,3 +43,4 @@
 [3]: https://www.nsca.com/education/articles/kinetic-select/plyometric-exercises/ "NSCA — Plyometric Exercises"
 [4]: https://www.nhslanarkshire.scot.nhs.uk/services/physiotherapy-msk/ankle-sprain/ "NHS Lanarkshire — Ankle sprain"
 [5]: https://www.cdc.gov/sleep/about/index.html "CDC — About Sleep"
+[6]: https://www.nhs.uk/conditions/back-pain/ "NHS — Back pain"
