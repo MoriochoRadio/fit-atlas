@@ -30,6 +30,8 @@ export const movementVisuals: Record<string, MovementVisual> = {
   "trx-row": { title: "TRX 로우 흐름", frames: [{ label: "준비", cue: "고정점·각도 먼저 확인", pose: "stand" }, { label: "당기기", cue: "몸통은 긴 선·어깨 이완", pose: "row" }, { label: "복귀", cue: "반동 없이 천천히", pose: "stand" }] },
   "landmine-press": { title: "랜드마인 프레스 흐름", frames: [{ label: "준비", cue: "바 고정·대각선 경로 확인", pose: "stand" }, { label: "밀기", cue: "갈비뼈·골반을 편안히", pose: "push" }, { label: "복귀", cue: "통증 없는 범위로", pose: "stand" }] },
   "landmine-rotation-prep": { title: "랜드마인 회전 프렙 흐름", frames: [{ label: "준비", cue: "바 고정·작은 경로", pose: "stand" }, { label: "이동", cue: "발·골반·몸통을 함께", pose: "lunge" }, { label: "복귀", cue: "반동 없이 중앙으로", pose: "stand" }] },
+  "trekking-pole-walk-prep": { title: "트레킹 폴 워크 흐름", frames: [{ label: "준비", cue: "폴 길이·잠금·팁 확인", pose: "stand" }, { label: "리듬", cue: "반대손·반대발", pose: "run" }, { label: "확인", cue: "짧은 보폭·주변 간격", pose: "balance" }] },
+  "controlled-downhill-walk": { title: "컨트롤 다운힐 흐름", frames: [{ label: "준비", cue: "건조한 짧은 경사", pose: "stand" }, { label: "하강", cue: "보폭 짧게·조용히", pose: "lunge" }, { label: "리셋", cue: "평지에서 호흡 확인", pose: "balance" }] },
 };
 
 export function getMovementVisual(exerciseId: string) {

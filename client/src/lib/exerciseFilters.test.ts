@@ -9,7 +9,7 @@ describe("exercise library QA", () => {
     const categories = new Set(exercises.map((exercise) => exercise.category));
     const stats = getCatalogStats(exercises);
     expect(categories).toEqual(new Set(["러닝", "유산소", "헬스기구", "프리웨이트", "맨몸운동", "모빌리티", "균형·협응", "요가·필라테스", "파워·민첩성"]));
-    expect(exercises.length).toBeGreaterThanOrEqual(134);
+    expect(exercises.length).toBeGreaterThanOrEqual(140);
     expect(stats).toEqual({ exerciseCount: exercises.length, categoryCount: categories.size });
     expect(new Set(exercises.map((exercise) => exercise.id)).size).toBe(exercises.length);
     exercises.forEach((exercise) => {
@@ -18,7 +18,7 @@ describe("exercise library QA", () => {
       expect(exercise.warning.length).toBeGreaterThan(20);
       expect(exercise.reference.url).toMatch(/^https:\/\//);
     });
-    expect(exercises.map((exercise) => exercise.id)).toEqual(expect.arrayContaining(["kettlebell-sumo-deadlift", "resistance-band-row", "battle-rope-alternating-wave", "low-step-march", "medicine-ball-scoop-toss", "aqua-walk", "elliptical-easy", "recumbent-bike-easy", "row-erg-easy", "sandbag-bear-hug-carry", "trx-row", "landmine-press", "landmine-rotation-prep", "seated-wrist-mobility", "pool-easy-swim", "rail-supported-step-up", "counter-incline-pushup", "supported-floor-transfer", "grocery-bag-lift-to-counter"]));
+    expect(exercises.map((exercise) => exercise.id)).toEqual(expect.arrayContaining(["kettlebell-sumo-deadlift", "resistance-band-row", "battle-rope-alternating-wave", "low-step-march", "medicine-ball-scoop-toss", "aqua-walk", "elliptical-easy", "recumbent-bike-easy", "row-erg-easy", "sandbag-bear-hug-carry", "trx-row", "landmine-press", "landmine-rotation-prep", "seated-wrist-mobility", "pool-easy-swim", "rail-supported-step-up", "counter-incline-pushup", "supported-floor-transfer", "grocery-bag-lift-to-counter", "easy-incline-walk", "trekking-pole-walk-prep", "light-daypack-walk", "outdoor-pace-reset"]));
   });
 
   it("combines category, region, purpose, difficulty, equipment, and keyword filters", () => {

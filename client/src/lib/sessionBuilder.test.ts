@@ -35,5 +35,6 @@ describe("single session builder", () => {
     expect(gym.blocks[1].items.join(" ")).toContain("TRX 로우");
     expect(gym.blocks[1].items.join(" ")).toContain("일립티컬 이지");
     expect(outdoor.blocks[1].items.join(" ")).toContain("난간 지지 스텝업");
+    expect(outdoor.blocks[1].items.join(" ")).toContain("컨트롤 다운힐 워크");
   });
 });
