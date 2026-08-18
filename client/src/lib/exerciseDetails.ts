@@ -93,6 +93,9 @@ export const exerciseDetails: Record<string, ExerciseDetail> = {
   "machine-leg-press-easy": { setup: ["시트·핀·안전장치 확인", "가벼운 중량 리허설", "짧은 범위"], finish: "안전장치를 잠그고 무릎·허리 반응을 확인합니다.", commonMistakes: ["무릎 잠금", "허리 들림", "깊이를 과도하게"], regressions: ["더 가벼운 중량", "짧은 범위", "월 싯"], progressions: ["반복 증가", "느린 복귀", "중량 한 단계"] },
   "machine-leg-curl-easy": { setup: ["패드·핀·무릎 축 확인", "가벼운 중량 리허설", "작은 범위"], finish: "핀을 안전히 놓고 무릎·햄스트링 반응을 확인합니다.", commonMistakes: ["골반 들림", "반동", "통증 무시"], regressions: ["중량 낮추기", "범위 줄이기", "글루트 브리지"], progressions: ["반복 증가", "느린 복귀", "중량 한 단계"] },
   "machine-chest-fly-easy": { setup: ["시트·팔 위치·핀 확인", "가벼운 장력 리허설", "어깨 이완"], finish: "장력을 낮추고 어깨·가슴 반응을 확인합니다.", commonMistakes: ["어깨 으쓱", "범위 과도", "반동"], regressions: ["중량 낮추기", "범위 줄이기", "벽 푸시업"], progressions: ["반복 증가", "느린 복귀", "중량 한 단계"] },
+  "cable-seated-row-easy": { setup: ["핀·발판·손잡이 확인", "가벼운 장력 리허설", "몸통 길게"], finish: "장력을 낮추고 등·어깨 반응을 확인합니다.", commonMistakes: ["몸통 반동", "목 으쓱", "팔로만 당김"], regressions: ["중량 낮추기", "범위 줄이기", "밴드 로우"], progressions: ["반복 증가", "정지 1초", "중량 한 단계"] },
+  "assisted-pull-up-easy": { setup: ["보조 중량·패드·손잡이 확인", "발판에 안전히 오르기", "짧은 범위 리허설"], finish: "패드에서 안전히 내려와 어깨·호흡을 확인합니다.", commonMistakes: ["반동", "목 앞으로 빼기", "보조 중량 부족"], regressions: ["보조 중량 늘리기", "짧은 범위", "랫풀다운"], progressions: ["반복 증가", "느린 복귀", "보조 중량 소폭 감소"] },
+  "treadmill-incline-interval-walk": { setup: ["안전 클립·벨트·경사 확인", "평지 보행 2분", "낮은 경사 선택"], finish: "평지 걷기 2분으로 호흡을 정리합니다.", commonMistakes: ["난간 매달림", "경사 급증", "회복 전 다음 구간"], regressions: ["평지 걷기", "구간 줄이기", "경사 낮추기"], progressions: ["구간 1회 증가", "경사 소폭", "속도는 유지"] },
 };
 
 export function getExerciseDetail(exercise: Exercise): ExerciseDetail {
