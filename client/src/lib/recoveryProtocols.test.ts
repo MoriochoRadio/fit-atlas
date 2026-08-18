@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 import { recoveryGuides } from "./fitnessData";
-import { recoveryProtocols } from "./recoveryProtocols";
+import { recoveryProtocols, recoveryStageGuides } from "./recoveryProtocols";
 
 describe("recovery protocols", () => {
   it("provides five safety-separated recovery domains for every mapped body region", () => {
@@ -11,6 +11,15 @@ describe("recovery protocols", () => {
       expect(protocol.massageGun).toHaveLength(2);
       expect(protocol.loadManagement).toHaveLength(2);
       expect(protocol.redFlags).toHaveLength(2);
+    });
+  });
+
+  it("adds preparation, post-session, and gradual return guidance for every mapped body region", () => {
+    expect(Object.keys(recoveryStageGuides).sort()).toEqual(Object.keys(recoveryGuides).sort());
+    Object.values(recoveryStageGuides).forEach((guide) => {
+      expect(guide.beforeSession).toHaveLength(2);
+      expect(guide.afterSession).toHaveLength(2);
+      expect(guide.returnToLoad).toHaveLength(2);
     });
   });
 });
