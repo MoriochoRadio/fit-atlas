@@ -24,10 +24,14 @@ describe("single session builder", () => {
     expect(plan.blocks[1].items.join(" ")).not.toContain("걷기·달리기 인터벌");
   });
 
-  it("surfaces expanded machine, cardio, and agility options in appropriate environments", () => {
+  it("surfaces expanded equipment, low-impact cardio, and coordination options in appropriate environments", () => {
+    const home = buildSession({ goal: "strength", environment: "home", duration: 45, checkin });
     const gym = buildSession({ goal: "all_round", environment: "gym", duration: 45, checkin });
     const outdoor = buildSession({ goal: "all_round", environment: "outdoor", duration: 45, checkin });
+    expect(home.blocks[1].items.join(" ")).toContain("케틀벨 데드리프트");
+    expect(home.blocks[1].items.join(" ")).toContain("저항 밴드 로우");
     expect(gym.blocks[1].items.join(" ")).toContain("체스트 서포티드 로우");
-    expect(outdoor.blocks[1].items.join(" ")).toContain("로우 콘 셔플");
+    expect(gym.blocks[1].items.join(" ")).toContain("일립티컬 이지");
+    expect(outdoor.blocks[1].items.join(" ")).toContain("로우 스텝 레터럴 탭");
   });
 });

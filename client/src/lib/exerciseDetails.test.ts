@@ -1,5 +1,6 @@
 import { describe, expect, it } from "vitest";
-import { getExerciseDetail } from "./exerciseDetails";
+import { exerciseDetails, getExerciseDetail } from "./exerciseDetails";
+import { expandedExercisesPart5 } from "./expandedExercisesPart5";
 import { exercises } from "./fitnessData";
 
 describe("exercise detail knowledge", () => {
@@ -17,5 +18,18 @@ describe("exercise detail knowledge", () => {
   it("keeps exercise-specific details where the movement has higher technical demand", () => {
     expect(getExerciseDetail(exercises.find((exercise) => exercise.id === "squat")!).commonMistakes).toContain("무릎이 발과 다른 방향으로 무너짐");
     expect(getExerciseDetail(exercises.find((exercise) => exercise.id === "run")!).regressions).toContain("걷기·달리기 인터벌");
+    expect(getExerciseDetail(exercises.find((exercise) => exercise.id === "kettlebell-deadlift")!).commonMistakes).toContain("허리를 둥글게 말아 당김");
+    expect(getExerciseDetail(exercises.find((exercise) => exercise.id === "resistance-band-row")!).setup).toContain("문·기둥 등 고정점과 밴드 손상 여부를 확인");
+    expect(getExerciseDetail(exercises.find((exercise) => exercise.id === "battle-rope-alternating-wave")!).regressions).toContain("시티드 웨이브");
+  });
+
+  it("gives every newly added equipment and low-impact movement an individual detail definition", () => {
+    expandedExercisesPart5.forEach((exercise) => {
+      expect(exerciseDetails[exercise.id]).toBeDefined();
+      expect(exerciseDetails[exercise.id].setup).toHaveLength(3);
+      expect(exerciseDetails[exercise.id].commonMistakes).toHaveLength(3);
+      expect(exerciseDetails[exercise.id].regressions).toHaveLength(3);
+      expect(exerciseDetails[exercise.id].progressions).toHaveLength(3);
+    });
   });
 });

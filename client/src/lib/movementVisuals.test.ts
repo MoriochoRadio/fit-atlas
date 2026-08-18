@@ -3,7 +3,7 @@ import { getMovementVisual, movementVisuals } from "./movementVisuals";
 
 describe("movement visual guides", () => {
   it("provides three labelled frames for representative complex exercises", () => {
-    expect(Object.keys(movementVisuals)).toEqual(expect.arrayContaining(["squat", "pushup", "rdl", "run", "single-leg-stand", "row", "reverse-lunge", "snap-down", "squat-jump-stick", "lateral-bound-stick", "cable-chest-press", "ankle-knee-to-wall"]));
+    expect(Object.keys(movementVisuals)).toEqual(expect.arrayContaining(["squat", "pushup", "rdl", "run", "single-leg-stand", "row", "reverse-lunge", "snap-down", "squat-jump-stick", "lateral-bound-stick", "cable-chest-press", "ankle-knee-to-wall", "kettlebell-deadlift", "resistance-band-row", "low-step-march"]));
     Object.values(movementVisuals).forEach((guide) => {
       expect(guide.frames).toHaveLength(3);
       guide.frames.forEach((frame) => {

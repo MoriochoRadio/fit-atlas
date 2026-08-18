@@ -23,6 +23,9 @@ export const movementVisuals: Record<string, MovementVisual> = {
   "lateral-bound-stick": { title: "레터럴 바운드 흐름", frames: [{ label: "준비", cue: "짧은 거리·지지대 가까이", pose: "stand" }, { label: "측면 이동", cue: "발을 교차하지 않고", pose: "shuffle" }, { label: "착지", cue: "1–2초 균형 유지", pose: "balance" }] },
   "cable-chest-press": { title: "케이블 프레스 흐름", frames: [{ label: "준비", cue: "갈비뼈·골반을 편안히", pose: "stand" }, { label: "밀기", cue: "몸통 회전 없이 앞으로", pose: "push" }, { label: "복귀", cue: "천천히 장력 유지", pose: "stand" }] },
   "ankle-knee-to-wall": { title: "발목 락 흐름", frames: [{ label: "준비", cue: "발뒤꿈치를 바닥에", pose: "stand" }, { label: "이동", cue: "무릎은 발가락 방향", pose: "lunge" }, { label: "복귀", cue: "통증 없는 거리에서", pose: "stand" }] },
+  "kettlebell-deadlift": { title: "케틀벨 데드리프트 흐름", frames: [{ label: "준비", cue: "케틀벨을 발 중앙 가까이", pose: "stand" }, { label: "힌지", cue: "엉덩이를 뒤로 보내기", pose: "hinge" }, { label: "일어서기", cue: "발과 둔근으로 바닥 밀기", pose: "stand" }] },
+  "resistance-band-row": { title: "저항 밴드 로우 흐름", frames: [{ label: "준비", cue: "고정점과 장력 확인", pose: "stand" }, { label: "당기기", cue: "목 이완·팔꿈치 뒤로", pose: "row" }, { label: "복귀", cue: "반동 없이 장력 유지", pose: "stand" }] },
+  "low-step-march": { title: "로우 스텝 마치 흐름", frames: [{ label: "준비", cue: "스텝 안정성·지지대 확인", pose: "stand" }, { label: "올라가기", cue: "발 전체를 스텝 위에", pose: "lunge" }, { label: "균형", cue: "안정된 뒤 천천히 내려오기", pose: "balance" }] },
 };
 
 export function getMovementVisual(exerciseId: string) {

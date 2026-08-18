@@ -36,6 +36,8 @@
 
 관절별 회복 선택 경로는 질환·손상 진단이나 치료 계획이 아니다. 허리·무릎·발목·어깨의 일반적 불편에서 **운동 전 반응 확인 → 저충격·지지형·가동성 대체 → 다음 날 반응을 고려한 점진적 재개**라는 교육적 선택지를 제공한다. NHS 계열 자료는 척추 불편의 일반적 자가 관리와 적절한 상담 시점을 구분하므로, 앱은 저림·감각 변화·체중 부하 불가·외상·밤에 깨는 통증 등 기존 위험 신호가 있을 때 회복 루틴으로 진행하지 않도록 명확히 고지한다.[6]
 
+장비 확장 운동은 특정 도구가 필수라고 주장하지 않는다. ACSM의 최신 일반 성인 저항 운동 요약은 바벨·기계뿐 아니라 **탄성 밴드·맨몸·가정 기반 방식**도 근력·기능 향상에 활용될 수 있음을 설명하므로, 앱은 장비보다 일관성·개인 목표·제어 가능한 부하를 우선한다.[7] 케틀벨·메디신볼·스텝은 가벼운 도구 또는 낮은 높이에서 동작 경로를 먼저 익히고, 로프는 전신 리듬이 무너지거나 어지러움·어깨 통증이 생기면 구간을 줄이거나 중단하도록 안내한다. 배틀로프는 심박 반응을 높이는 컨디셔닝 도구가 될 수 있으나, 일반 근력·유산소 활동을 대체하는 단일 처방으로 표현하지 않는다.[8]
+
 ## 참고 자료
 
 [1]: https://www.cdc.gov/physical-activity-basics/guidelines/adults.html "CDC — Adult Activity: An Overview"
@@ -44,3 +46,5 @@
 [4]: https://www.nhslanarkshire.scot.nhs.uk/services/physiotherapy-msk/ankle-sprain/ "NHS Lanarkshire — Ankle sprain"
 [5]: https://www.cdc.gov/sleep/about/index.html "CDC — About Sleep"
 [6]: https://www.nhs.uk/conditions/back-pain/ "NHS — Back pain"
+[7]: https://acsm.org/resistance-training-guidelines-update-2026/ "ACSM — 2026 Resistance Training Guidelines"
+[8]: https://www.nsca.com/education/articles/ptq/utilizing-battling-rope-exercises-for-hiit-and-smit/ "NSCA — Utilizing Battling Rope Exercises"
