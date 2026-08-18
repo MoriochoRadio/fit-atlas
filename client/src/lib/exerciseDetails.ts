@@ -105,6 +105,9 @@ export const exerciseDetails: Record<string, ExerciseDetail> = {
   "machine-hip-abduction-easy": { setup: ["시트·패드·핀 확인", "가벼운 중량 리허설", "골반 고정"], finish: "핀을 안전히 놓고 고관절 반응을 확인합니다.", commonMistakes: ["반동", "몸통 기울임", "범위 과도"], regressions: ["중량 낮추기", "범위 줄이기", "옆으로 누운 클램"], progressions: ["반복 증가", "느린 복귀", "중량 한 단계"] },
   "machine-reverse-pec-deck-easy": { setup: ["시트·손잡이·핀 확인", "가벼운 중량 리허설", "목 이완"], finish: "장력을 낮추고 어깨·등 상부 반응을 확인합니다.", commonMistakes: ["목 으쓱", "허리 과신전", "반동"], regressions: ["중량 낮추기", "범위 줄이기", "프론 W 풀"], progressions: ["반복 증가", "정지 1초", "중량 한 단계"] },
   "single-leg-balance-reach": { setup: ["벽·의자 지지 확인", "양발 체중 이동", "작은 리치"], finish: "양발로 서서 발목·무릎 반응을 확인합니다.", commonMistakes: ["지지대 멀리", "무릎 잠금", "범위 과도"], regressions: ["양발 체중 이동", "발끝 보조", "리치 줄이기"], progressions: ["반복 증가", "지지 줄이기", "리치 소폭"] },
+  "cable-triceps-pressdown-easy": { setup: ["핀·손잡이 확인", "가벼운 장력 리허설", "팔꿈치 몸통 가까이"], finish: "장력을 낮추고 팔꿈치·손목 반응을 확인합니다.", commonMistakes: ["몸통 반동", "팔꿈치 벌어짐", "무거운 장력"], regressions: ["중량 낮추기", "범위 줄이기", "벽 푸시업"], progressions: ["반복 증가", "느린 복귀", "중량 한 단계"] },
+  "machine-hip-adduction-easy": { setup: ["시트·패드·핀 확인", "가벼운 중량 리허설", "골반 고정"], finish: "핀을 안전히 놓고 고관절 반응을 확인합니다.", commonMistakes: ["반동", "몸통 기울임", "범위 과도"], regressions: ["중량 낮추기", "범위 줄이기", "양발 체중 이동"], progressions: ["반복 증가", "느린 복귀", "중량 한 단계"] },
+  "run-cooldown-walk": { setup: ["안전한 평지 확인", "속도 낮추기", "호흡 길게"], finish: "정지 전 편안한 호흡·통증·어지러움을 확인합니다.", commonMistakes: ["갑자기 멈춤", "통증 무시", "너무 빠른 보행 유지"], regressions: ["더 느린 걷기", "시간 줄이기", "안전한 지지"], progressions: ["시간 소폭 증가", "일관된 호흡", "다음 러닝 전 컨디션 확인"] },
 };
 
 export function getExerciseDetail(exercise: Exercise): ExerciseDetail {
