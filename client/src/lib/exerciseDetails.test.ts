@@ -1,6 +1,7 @@
 import { describe, expect, it } from "vitest";
 import { exerciseDetails, getExerciseDetail } from "./exerciseDetails";
 import { expandedExercisesPart5 } from "./expandedExercisesPart5";
+import { expandedExercisesPart6 } from "./expandedExercisesPart6";
 import { exercises } from "./fitnessData";
 
 describe("exercise detail knowledge", () => {
@@ -24,7 +25,7 @@ describe("exercise detail knowledge", () => {
   });
 
   it("gives every newly added equipment and low-impact movement an individual detail definition", () => {
-    expandedExercisesPart5.forEach((exercise) => {
+    [...expandedExercisesPart5, ...expandedExercisesPart6].forEach((exercise) => {
       expect(exerciseDetails[exercise.id]).toBeDefined();
       expect(exerciseDetails[exercise.id].setup).toHaveLength(3);
       expect(exerciseDetails[exercise.id].commonMistakes).toHaveLength(3);

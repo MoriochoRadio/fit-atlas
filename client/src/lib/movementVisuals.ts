@@ -26,6 +26,10 @@ export const movementVisuals: Record<string, MovementVisual> = {
   "kettlebell-deadlift": { title: "케틀벨 데드리프트 흐름", frames: [{ label: "준비", cue: "케틀벨을 발 중앙 가까이", pose: "stand" }, { label: "힌지", cue: "엉덩이를 뒤로 보내기", pose: "hinge" }, { label: "일어서기", cue: "발과 둔근으로 바닥 밀기", pose: "stand" }] },
   "resistance-band-row": { title: "저항 밴드 로우 흐름", frames: [{ label: "준비", cue: "고정점과 장력 확인", pose: "stand" }, { label: "당기기", cue: "목 이완·팔꿈치 뒤로", pose: "row" }, { label: "복귀", cue: "반동 없이 장력 유지", pose: "stand" }] },
   "low-step-march": { title: "로우 스텝 마치 흐름", frames: [{ label: "준비", cue: "스텝 안정성·지지대 확인", pose: "stand" }, { label: "올라가기", cue: "발 전체를 스텝 위에", pose: "lunge" }, { label: "균형", cue: "안정된 뒤 천천히 내려오기", pose: "balance" }] },
+  "sandbag-bear-hug-carry": { title: "샌드백 캐리 흐름", frames: [{ label: "준비", cue: "가벼운 부하·짧은 경로", pose: "stand" }, { label: "보행", cue: "몸통을 길게·짧은 보폭", pose: "run" }, { label: "정지", cue: "방향 전환 전 속도 낮추기", pose: "stand" }] },
+  "trx-row": { title: "TRX 로우 흐름", frames: [{ label: "준비", cue: "고정점·각도 먼저 확인", pose: "stand" }, { label: "당기기", cue: "몸통은 긴 선·어깨 이완", pose: "row" }, { label: "복귀", cue: "반동 없이 천천히", pose: "stand" }] },
+  "landmine-press": { title: "랜드마인 프레스 흐름", frames: [{ label: "준비", cue: "바 고정·대각선 경로 확인", pose: "stand" }, { label: "밀기", cue: "갈비뼈·골반을 편안히", pose: "push" }, { label: "복귀", cue: "통증 없는 범위로", pose: "stand" }] },
+  "landmine-rotation-prep": { title: "랜드마인 회전 프렙 흐름", frames: [{ label: "준비", cue: "바 고정·작은 경로", pose: "stand" }, { label: "이동", cue: "발·골반·몸통을 함께", pose: "lunge" }, { label: "복귀", cue: "반동 없이 중앙으로", pose: "stand" }] },
 };
 
 export function getMovementVisual(exerciseId: string) {

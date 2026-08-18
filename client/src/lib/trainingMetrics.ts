@@ -7,6 +7,7 @@ export type TrainingLog = {
   load: number;
   minutes: number;
   intensity: number;
+  distanceKm?: number;
 };
 
 export function getVolume(log: Pick<TrainingLog, "sets" | "reps" | "load">) {

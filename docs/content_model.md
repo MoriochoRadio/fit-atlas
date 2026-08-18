@@ -38,6 +38,10 @@
 
 장비 확장 운동은 특정 도구가 필수라고 주장하지 않는다. ACSM의 최신 일반 성인 저항 운동 요약은 바벨·기계뿐 아니라 **탄성 밴드·맨몸·가정 기반 방식**도 근력·기능 향상에 활용될 수 있음을 설명하므로, 앱은 장비보다 일관성·개인 목표·제어 가능한 부하를 우선한다.[7] 케틀벨·메디신볼·스텝은 가벼운 도구 또는 낮은 높이에서 동작 경로를 먼저 익히고, 로프는 전신 리듬이 무너지거나 어지러움·어깨 통증이 생기면 구간을 줄이거나 중단하도록 안내한다. 배틀로프는 심박 반응을 높이는 컨디셔닝 도구가 될 수 있으나, 일반 근력·유산소 활동을 대체하는 단일 처방으로 표현하지 않는다.[8]
 
+특수 도구·기능성 운동은 단순한 장비 교체가 아니라, 고정점·공간·보행 경로의 안전 확인이 선행되는 선택지로만 제공한다. NSCA의 운반 운동 안내는 **몸통을 세우고, 천천히 통제해 걷고, 한 손 부하에서 척추가 옆으로 기울지 않게** 하는 일반 원칙을 제시한다.[9] 따라서 캐리·샌드백·클럽벨 계열은 가벼운 부하·짧은 거리·양손 지지 변형부터 안내하며, 매달리기·TRX 계열은 고정점과 스트랩 상태를 확인하고 난도를 낮출 때 발을 지면에 더 가깝게 둔다. 서스펜션 도구는 몸무게·중력을 이용하므로, 자세가 무너지거나 어지러움·관절 통증이 생기면 즉시 중단한다.[10]
+
+러닝·유산소 기록의 페이스·시간·자각강도는 진단용 심박 처방이 아니라 **개인 안의 반복 간 비교**에만 사용한다. CDC는 0–10 자각강도에서 상대적 중강도를 5–6, 고강도의 시작을 7–8로 설명하며, 중강도에서는 말할 수 있으나 노래하기 어렵고 고강도에서는 몇 단어 뒤 숨을 고르게 된다는 말하기 검사를 제시한다.[11] 따라서 앱은 페이스 변화가 같은 RPE에서 유지되는지, 또는 같은 페이스가 더 높은 RPE로 느껴지는지를 관찰하게 하며, 흉통·현기증·비정상적 숨참은 지표보다 중단과 평가를 우선하도록 안내한다.
+
 ## 참고 자료
 
 [1]: https://www.cdc.gov/physical-activity-basics/guidelines/adults.html "CDC — Adult Activity: An Overview"
@@ -48,3 +52,6 @@
 [6]: https://www.nhs.uk/conditions/back-pain/ "NHS — Back pain"
 [7]: https://acsm.org/resistance-training-guidelines-update-2026/ "ACSM — 2026 Resistance Training Guidelines"
 [8]: https://www.nsca.com/education/articles/ptq/utilizing-battling-rope-exercises-for-hiit-and-smit/ "NSCA — Utilizing Battling Rope Exercises"
+[9]: https://www.nsca.com/education/articles/nsca-coach/increase-hip-and-trunk-stability-with-loaded-carries/ "NSCA — Loaded Carries"
+[10]: https://www.acefitness.org/continuing-education/certified/september-2022/8128/get-suspended-a-workout-to-maximize-the-proven-health-benefits-of-suspension-training/ "ACE — Suspension Training"
+[11]: https://www.cdc.gov/physical-activity-basics/measuring/index.html "CDC — How to Measure Physical Activity Intensity"

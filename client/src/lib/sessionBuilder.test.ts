@@ -31,6 +31,8 @@ describe("single session builder", () => {
     expect(home.blocks[1].items.join(" ")).toContain("케틀벨 데드리프트");
     expect(home.blocks[1].items.join(" ")).toContain("저항 밴드 로우");
     expect(gym.blocks[1].items.join(" ")).toContain("체스트 서포티드 로우");
+    expect(gym.blocks[1].items.join(" ")).toContain("샌드백 프런트 스쿼트");
+    expect(gym.blocks[1].items.join(" ")).toContain("TRX 로우");
     expect(gym.blocks[1].items.join(" ")).toContain("일립티컬 이지");
     expect(outdoor.blocks[1].items.join(" ")).toContain("로우 스텝 레터럴 탭");
   });

@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { getConsistency, getInsightSummary, getRegionBalance, getTrainingLoad } from "./trainingInsights";
+import { getAerobicIntensityInsight, getConsecutiveDayStreak, getConsistency, getExerciseTrend, getInsightSummary, getPersonalRecordTrend, getRegionBalance, getTrainingLoad } from "./trainingInsights";
 import type { TrainingLog } from "./trainingMetrics";
 
 const logs: TrainingLog[] = [
@@ -21,5 +21,15 @@ describe("training insights", () => {
     const insight = getInsightSummary(logs, reference);
     expect(insight.loadLabel).toBe("최근 7일 2회 · 55분");
     expect(insight.balanceLabel).toContain("중심 기록");
+  });
+
+  it("reads aerobic RPE conservatively and compares a recent exercise trend", () => {
+    const aerobic = getAerobicIntensityInsight(logs, reference);
+    expect(aerobic.band).toBe("기록 대기");
+    const expanded = [...logs, { id: "4", date: "2026-08-13", exercise: "이지 러닝", sets: 1, reps: 1, load: 0, minutes: 30, distanceKm: 5, intensity: 6 }, { id: "5", date: "2026-08-05", exercise: "바벨 백 스쿼트", sets: 2, reps: 8, load: 40, minutes: 20, intensity: 5 }];
+    expect(getAerobicIntensityInsight(expanded, reference)).toMatchObject({ sessions: 1, minutes: 30, distanceKm: 5, paceMinutesPerKm: 6, averageRpe: 6, band: "중강도 근처" });
+    expect(getExerciseTrend(expanded, reference)).toMatchObject({ exercise: "바벨 백 스쿼트", direction: "상승" });
+    expect(getConsecutiveDayStreak(expanded, reference)).toMatchObject({ days: 3 });
+    expect(getPersonalRecordTrend(expanded, reference)).toMatchObject({ exercise: "바벨 백 스쿼트", direction: "새 PR" });
   });
 });
