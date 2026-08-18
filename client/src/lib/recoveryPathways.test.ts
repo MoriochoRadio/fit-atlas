@@ -17,7 +17,9 @@ describe("recovery pathways", () => {
   it("returns the selected pathway for the body-map recovery flow", () => {
     expect(getRecoveryPathway("ankle").region).toBe("하체");
     expect(getRecoveryPathway("low-back").alternativeExerciseIds).toContain("bird-dog");
-    expect(getRecoveryPathway("hip").alternativeExerciseIds).toContain("pilates-bridge");
+    expect(getRecoveryPathway("hip").alternativeExerciseIds).toContain("wall-supported-lateral-reach");
+    expect(getRecoveryPathway("knee").alternativeExerciseIds).toContain("seated-march-to-stand");
+    expect(getRecoveryPathway("wrist").alternativeExerciseIds).toContain("seated-march-to-stand");
   });
 
   it("creates the Home search and region action for an alternative exercise", () => {
@@ -30,5 +32,10 @@ describe("recovery pathways", () => {
     const result = applyRecoveryExplore(getRecoveryPathway("ankle"), "ankle-knee-to-wall", exercises, { setKeyword: (value) => calls.push(`keyword:${value}`), setCategory: (value) => calls.push(`category:${value}`), setFocus: (value) => calls.push(`focus:${value}`), setRegion: (value) => calls.push(`region:${value}`), scrollToTarget: (value) => calls.push(`scroll:${value}`) });
     expect(result?.exercise.name).toBe("발목 니투월 락");
     expect(calls).toEqual(["keyword:발목 니투월 락", "category:전체", "focus:전체", "region:하체", "scroll:explore"]);
+  });
+
+  it("keeps new functional alternatives connected to a valid Home exploration action", () => {
+    const result = applyRecoveryExplore(getRecoveryPathway("hip"), "wall-supported-lateral-reach", exercises, { setKeyword: () => undefined, setCategory: () => undefined, setFocus: () => undefined, setRegion: () => undefined, scrollToTarget: () => undefined });
+    expect(result?.exercise.name).toBe("벽 지지 사이드 리치");
   });
 });
