@@ -51,6 +51,14 @@ describe("Home recovery alternative flow", () => {
     expect(screen.getAllByText(/혼자 하지 않기/).length).toBeGreaterThan(0);
   });
 
+  it("renders life-stage general guidance and the pre-exercise safety checklist", () => {
+    render(createElement(Home));
+    expect(screen.getAllByText("운동 시작 전 5가지 확인").length).toBeGreaterThan(0);
+    expect(screen.getAllByText("고령층 일반 시작").length).toBeGreaterThan(0);
+    expect(screen.getAllByText("산후 일반 안내").length).toBeGreaterThan(0);
+    expect(screen.getAllByText(/개인 진단·치료·운동 처방이 아닌 일반 정보/).length).toBeGreaterThan(0);
+  });
+
   it("renders nutrition, hydration, and heat-exposure safety guidance after expanding wellness cards", () => {
     render(createElement(Home));
     ["운동 전후 식사", "사우나와 열 노출", "수분과 더운 날 활동"].forEach((title) => {

@@ -9,7 +9,7 @@ describe("exercise library QA", () => {
     const categories = new Set(exercises.map((exercise) => exercise.category));
     const stats = getCatalogStats(exercises);
     expect(categories).toEqual(new Set(["러닝", "유산소", "헬스기구", "프리웨이트", "맨몸운동", "모빌리티", "균형·협응", "요가·필라테스", "파워·민첩성"]));
-    expect(exercises.length).toBeGreaterThanOrEqual(140);
+    expect(exercises.length).toBeGreaterThanOrEqual(145);
     expect(stats).toEqual({ exerciseCount: exercises.length, categoryCount: categories.size });
     expect(new Set(exercises.map((exercise) => exercise.id)).size).toBe(exercises.length);
     exercises.forEach((exercise) => {
