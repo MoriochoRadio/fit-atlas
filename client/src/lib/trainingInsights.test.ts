@@ -28,6 +28,10 @@ describe("training insights", () => {
     expect(aerobic.band).toBe("기록 대기");
     const expanded = [...logs, { id: "4", date: "2026-08-13", exercise: "이지 러닝", sets: 1, reps: 1, load: 0, minutes: 30, distanceKm: 5, intensity: 6 }, { id: "5", date: "2026-08-05", exercise: "바벨 백 스쿼트", sets: 2, reps: 8, load: 40, minutes: 20, intensity: 5 }];
     expect(getAerobicIntensityInsight(expanded, reference)).toMatchObject({ sessions: 1, minutes: 30, distanceKm: 5, paceMinutesPerKm: 6, averageRpe: 6, band: "중강도 근처" });
+    const swim = [{ id: "swim", date: "2026-08-13", exercise: "이지 수영", sets: 1, reps: 1, load: 0, minutes: 12, intensity: 4, distance: 400, distanceUnit: "m" as const }];
+    expect(getAerobicIntensityInsight(swim, reference).paceLabel).toBe("평균 3분/100m");
+    const rowing = [{ id: "row", date: "2026-08-13", exercise: "로잉 에르고미터", sets: 1, reps: 1, load: 0, minutes: 4, intensity: 4, distance: 1000, distanceUnit: "m" as const }];
+    expect(getAerobicIntensityInsight(rowing, reference).paceLabel).toBe("평균 2분/500m");
     expect(getExerciseTrend(expanded, reference)).toMatchObject({ exercise: "바벨 백 스쿼트", direction: "상승" });
     expect(getConsecutiveDayStreak(expanded, reference)).toMatchObject({ days: 3 });
     expect(getPersonalRecordTrend(expanded, reference)).toMatchObject({ exercise: "바벨 백 스쿼트", direction: "새 PR" });

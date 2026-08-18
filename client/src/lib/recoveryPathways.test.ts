@@ -3,8 +3,8 @@ import { exercises } from "./fitnessData";
 import { applyRecoveryExplore, getRecoveryExploreAction, getRecoveryPathway, recoveryPathways } from "./recoveryPathways";
 
 describe("recovery pathways", () => {
-  it("provides four education-only joint and movement pathways with safe alternatives", () => {
-    expect(recoveryPathways.map((pathway) => pathway.id)).toEqual(["shoulder", "low-back", "knee", "ankle"]);
+  it("provides seven education-only joint and movement pathways with safe alternatives", () => {
+    expect(recoveryPathways.map((pathway) => pathway.id)).toEqual(["shoulder", "low-back", "knee", "ankle", "wrist", "elbow", "hip"]);
     recoveryPathways.forEach((pathway) => {
       expect(pathway.checkBefore).toHaveLength(2);
       expect(pathway.chooseInstead).toHaveLength(2);
@@ -17,6 +17,7 @@ describe("recovery pathways", () => {
   it("returns the selected pathway for the body-map recovery flow", () => {
     expect(getRecoveryPathway("ankle").region).toBe("하체");
     expect(getRecoveryPathway("low-back").alternativeExerciseIds).toContain("bird-dog");
+    expect(getRecoveryPathway("hip").alternativeExerciseIds).toContain("pilates-bridge");
   });
 
   it("creates the Home search and region action for an alternative exercise", () => {

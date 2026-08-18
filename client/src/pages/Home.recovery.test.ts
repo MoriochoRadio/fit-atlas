@@ -29,4 +29,13 @@ describe("Home recovery alternative flow", () => {
     expect((screen.getByLabelText("부위 필터") as HTMLSelectElement).value).toBe("하체");
     expect(scrollIntoView).toHaveBeenCalledWith({ behavior: "smooth" });
   });
+
+  it("renders distance units and the four-week rhythm card in the local record experience", () => {
+    render(createElement(Home));
+    fireEvent.click(screen.getByRole("button", { name: /운동 기록/ }));
+    expect(screen.getByText("4-WEEK RHYTHM")).toBeTruthy();
+    expect(screen.getByText("거리 · 선택")).toBeTruthy();
+    expect(screen.getByRole("option", { name: "km" })).toBeTruthy();
+    expect(screen.getByRole("option", { name: "m" })).toBeTruthy();
+  });
 });

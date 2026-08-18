@@ -8,7 +8,14 @@ export type TrainingLog = {
   minutes: number;
   intensity: number;
   distanceKm?: number;
+  distance?: number;
+  distanceUnit?: "km" | "m";
 };
+
+export function getDistanceKm(log: Pick<TrainingLog, "distanceKm" | "distance" | "distanceUnit">) {
+  if (typeof log.distance === "number") return log.distanceUnit === "m" ? log.distance / 1000 : log.distance;
+  return log.distanceKm ?? 0;
+}
 
 export function getVolume(log: Pick<TrainingLog, "sets" | "reps" | "load">) {
   return log.sets * log.reps * log.load;
@@ -54,5 +61,16 @@ export function getCalendarDays(logs: TrainingLog[], referenceDate = new Date())
       weekday: new Intl.DateTimeFormat("ko-KR", { weekday: "short" }).format(date),
       count: logs.filter((log) => log.date === key).length,
     };
+  });
+}
+
+export function getFourWeekTrends(logs: TrainingLog[], referenceDate = new Date()) {
+  return Array.from({ length: 4 }, (_, index) => {
+    const end = new Date(referenceDate);
+    end.setUTCDate(end.getUTCDate() - (3 - index) * 7);
+    const start = new Date(end);
+    start.setUTCDate(start.getUTCDate() - 6);
+    const selected = logs.filter((log) => log.date >= start.toISOString().slice(0, 10) && log.date <= end.toISOString().slice(0, 10));
+    return { label: `${index + 1}주`, minutes: selected.reduce((sum, log) => sum + log.minutes, 0), distanceKm: Math.round(selected.reduce((sum, log) => sum + getDistanceKm(log), 0) * 10) / 10, load: selected.reduce((sum, log) => sum + log.minutes * log.intensity, 0) };
   });
 }

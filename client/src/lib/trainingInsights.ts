@@ -1,5 +1,5 @@
 import { exercises } from "./fitnessData";
-import { getVolume, type TrainingLog } from "./trainingMetrics";
+import { getDistanceKm, getVolume, type TrainingLog } from "./trainingMetrics";
 
 const DAY_MS = 86_400_000;
 
@@ -40,13 +40,16 @@ export function getAerobicIntensityInsight(logs: TrainingLog[], referenceDate = 
   const aerobic = logs.filter((log) => log.date >= isoDay(start) && log.date <= isoDay(referenceDate) && ["러닝", "유산소"].includes(nameMap.get(log.exercise)?.category ?? ""));
   if (aerobic.length === 0) return { sessions: 0, minutes: 0, distanceKm: 0, averageRpe: 0, paceMinutesPerKm: undefined, band: "기록 대기", label: "러닝·유산소 기록을 추가하면 시간·거리·자각강도를 함께 읽습니다." };
   const minutes = aerobic.reduce((sum, log) => sum + log.minutes, 0);
-  const distanceKm = aerobic.reduce((sum, log) => sum + (log.distanceKm ?? 0), 0);
+  const distanceKm = Math.round(aerobic.reduce((sum, log) => sum + getDistanceKm(log), 0) * 10) / 10;
   const averageRpe = Math.round((aerobic.reduce((sum, log) => sum + log.intensity, 0) / aerobic.length) * 10) / 10;
   const paceMinutesPerKm = distanceKm > 0 ? Math.round((minutes / distanceKm) * 10) / 10 : undefined;
+  const aerobicExercises = aerobic.map((log) => nameMap.get(log.exercise));
+  const allSwimming = aerobicExercises.every((exercise) => exercise?.name.includes("수영") || exercise?.englishName.toLowerCase().includes("swim"));
+  const allRowing = aerobicExercises.every((exercise) => exercise?.name.includes("로잉") || exercise?.englishName.toLowerCase().includes("row") || exercise?.equipment.includes("로잉"));
+  const paceLabel = distanceKm === 0 ? "거리 미입력" : allSwimming ? `평균 ${Math.round((minutes / (distanceKm * 10)) * 10) / 10}분/100m` : allRowing ? `평균 ${Math.round((minutes / (distanceKm * 2)) * 10) / 10}분/500m` : `평균 ${paceMinutesPerKm}분/km`;
   const band = averageRpe <= 4 ? "편안한 범위" : averageRpe <= 6 ? "중강도 근처" : "고강도 가능";
   const talkTest = averageRpe <= 6 ? "말은 가능하지만 노래하기 어려운지 확인" : "몇 단어 뒤 숨을 고르게 되면 구간을 줄이기";
-  const paceLabel = paceMinutesPerKm ? ` · 평균 ${paceMinutesPerKm}분/km` : " · 거리 미입력";
-  return { sessions: aerobic.length, minutes, distanceKm, averageRpe, paceMinutesPerKm, band, label: `최근 ${aerobic.length}회 · ${minutes}분${paceLabel} · ${talkTest}` };
+  return { sessions: aerobic.length, minutes, distanceKm, averageRpe, paceMinutesPerKm, band, paceLabel, label: `최근 ${aerobic.length}회 · ${minutes}분 · ${paceLabel} · ${talkTest}` };
 }
 
 export function getExerciseTrend(logs: TrainingLog[], referenceDate = new Date()) {
