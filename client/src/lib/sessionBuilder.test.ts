@@ -319,4 +319,19 @@ describe("single session builder", () => {
     expect(homeAllRound.blocks[1].items.join(" ")).toContain("월 핸드스탠드 린 이지");
     expect(homeAllRound.blocks[1].items.join(" ")).toContain("할로우 턱 락 이지");
   });
+
+  it("connects representative 500-exercise expansion options across home, gym, and outdoor sessions", () => {
+    const homeStrength = buildSession({ goal: "strength", environment: "home", duration: 45, checkin });
+    const homeAllRound = buildSession({ goal: "all_round", environment: "home", duration: 45, checkin });
+    const gymStrength = buildSession({ goal: "strength", environment: "gym", duration: 45, checkin });
+    const gymEndurance = buildSession({ goal: "endurance", environment: "gym", duration: 45, checkin });
+    const outdoorEndurance = buildSession({ goal: "endurance", environment: "outdoor", duration: 45, checkin });
+    expect(homeStrength.blocks[1].items.join(" ")).toContain("닐링 푸시업 네거티브 이지");
+    expect(homeAllRound.blocks[1].items.join(" ")).toContain("베어 크롤 레터럴 이지");
+    expect(homeAllRound.blocks[1].items.join(" ")).toContain("토·힐 탠덤 워크 이지");
+    expect(gymStrength.blocks[1].items.join(" ")).toContain("케이블 닐링 찹 이지");
+    expect(gymStrength.blocks[1].items.join(" ")).toContain("머신 힙 어브덕션 아이소메트릭 이지");
+    expect(gymEndurance.blocks[1].items.join(" ")).toContain("트레드밀 힐 워크 래더 이지");
+    expect(outdoorEndurance.blocks[1].items.join(" ")).toContain("워크·조그 디센딩 래더 이지");
+  });
 });

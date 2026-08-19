@@ -1,5 +1,7 @@
 import type { Exercise } from "./fitnessData";
 
+import { expandedExercisesPart12 } from "./expandedExercisesPart12";
+
 export type ExerciseDetail = {
   setup: string[];
   finish: string;
@@ -386,6 +388,17 @@ export const exerciseDetails: Record<string, ExerciseDetail> = {
   "hollow-tuck-rock-easy": { setup: ["매트·공간 확인", "턱 자세", "작은 흔들림"], finish: "옆으로 누워 목·허리·어지러움 반응을 확인합니다.", commonMistakes: ["목 과긴장", "흔들림 과도", "허리 통증 무시"], regressions: ["할로우 턱 홀드", "반복 줄이기", "흔들림 생략"], progressions: ["반복 증가", "느린 흔들림", "정지 1초"] },
   "seated-straddle-compression-easy": { setup: ["매트·고관절 확인", "편안한 다리 벌림", "낮은 뒤꿈치 들기"], finish: "다리를 편안히 모으고 고관절·허리·햄스트링 반응을 확인합니다.", commonMistakes: ["억지로 벌림", "허리 둥글게", "발 너무 높이"], regressions: ["무릎 굽히기", "발 들기 생략", "범위 줄이기"], progressions: ["반복 증가", "정지 1초", "다리 벌림 소폭"] },
 };
+
+for (const exercise of expandedExercisesPart12) {
+  const base = categoryDefaults[exercise.category];
+  exerciseDetails[exercise.id] = {
+    setup: [`${exercise.name} 전 장비·바닥·주변 공간 확인`, "통증 없는 쉬운 범위", "낮은 강도의 리허설"],
+    finish: `${exercise.name}을 마친 뒤 호흡을 정리하고 관절·균형·통증 반응을 확인합니다.`,
+    commonMistakes: ["반동 또는 과도한 속도", "정렬이 무너진 범위 고집", "통증·어지러움 신호 무시"],
+    regressions: [...base.regressions],
+    progressions: [...base.progressions],
+  };
+}
 
 export function getExerciseDetail(exercise: Exercise): ExerciseDetail {
   return exerciseDetails[exercise.id] ?? categoryDefaults[exercise.category];

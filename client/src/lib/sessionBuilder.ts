@@ -61,6 +61,16 @@ const mainItems: Record<SessionGoal, Record<SessionEnvironment, string[]>> = {
   },
 };
 
+mainItems.strength.gym.push("케이블 로우 로우 이지 또는 케이블 닐링 찹 이지 또는 케이블 하프 닐링 리프트 이지 또는 케이블 리어 델트 로우 이지 또는 케이블 싱글 암 풀다운 이지 또는 케이블 스플릿 스탠스 프레스 이지 · 2세트");
+mainItems.strength.gym.push("머신 시티드 카프 레이즈 이지 또는 머신 힙 어브덕션 아이소메트릭 이지 또는 머신 힙 애덕션 아이소메트릭 이지 또는 머신 백 익스텐션 이지 또는 머신 토르소 로테이션 이지 또는 플레이트 로디드 체스트 프레스 이지 · 2세트");
+mainItems.all_round.gym.push("케이블 닐링 찹 이지 또는 케이블 하프 닐링 리프트 이지 또는 머신 토르소 로테이션 이지 또는 머신 시티드 카프 레이즈 이지 · 좌우 2세트");
+mainItems.endurance.gym.push("트레드밀 워밍업 워크 이지 또는 트레드밀 인클라인 워크 인터벌 이지 또는 트레드밀 힐 워크 래더 이지 또는 트레드밀 쿨다운 워크 이지 · 편안한 호흡");
+mainItems.endurance.outdoor.push("워크·조그 디센딩 래더 이지 또는 리커버리 워크·조그 이지 또는 트랙 커브 워크·런 이지 또는 잔디 런·워크 이지 · 평지·안전한 노면 우선");
+mainItems.strength.home.push("엘리베이티드 파이크 푸시업 이지 또는 닐링 푸시업 네거티브 이지 또는 다이아몬드 월 푸시업 이지 또는 월 파이크 숄더 탭 이지 · 2세트");
+mainItems.all_round.home.push("힙 에어플레인 서포트 이지 또는 스텝백 런지 리치 이지 또는 지지 싱글 레그 힐 레이즈 이지 또는 와이드 스탠스 스쿼트 펄스 이지 · 좌우 2세트");
+mainItems.all_round.home.push("테이블탑 숄더 탭 이지 또는 데드 버그 힐 프레스 이지 또는 사이드 라잉 레그 서클 이지 또는 베어 크롤 레터럴 이지 또는 크랩 워크 리치 이지 · 좌우 2세트");
+mainItems.all_round.home.push("토·힐 탠덤 워크 이지 또는 클락 밸런스 리치 이지 또는 체어 싯 리치 이지 또는 스탠딩 오픈 북 이지 또는 닐링 앵클 록 이지 또는 수파인 윈드실드 와이퍼 이지 · 2세트");
+
 function shortMain(items: string[], duration: SessionDuration) {
   if (duration === 15) return items.slice(0, 2);
   if (duration === 30) return items.slice(0, 3);

@@ -105,6 +105,10 @@ describe("exercise library QA", () => {
     expect(exercises.map((exercise) => exercise.id)).toEqual(expect.arrayContaining(["elevated-pike-pushup-easy", "wall-handstand-lean-easy", "supported-cossack-squat-easy", "supported-shrimp-squat-easy", "partial-wall-walk-prep", "frog-stand-weight-shift-prep", "quadruped-shoulder-tap-easy", "hollow-tuck-rock-easy", "seated-straddle-compression-easy"]));
     expect(filterExercises(exercises, { ...allFilters, category: "맨몸운동", keyword: "프로그 스탠드" }).map((exercise) => exercise.id)).toEqual(["frog-stand-weight-shift-prep"]);
   });
+  it("includes the 500-exercise expansion across running, gym equipment, bodyweight, balance, and mobility", () => {
+    expect(exercises.map((exercise) => exercise.id)).toEqual(expect.arrayContaining(["walk-jog-ladder-descend-easy", "treadmill-incline-walk-interval-easy", "cable-kneeling-chop-easy", "machine-hip-abduction-isometric-easy", "wall-pike-shoulder-tap-easy", "bear-crawl-lateral-easy", "clock-balance-reach-easy", "supine-windshield-wiper-easy"]));
+    expect(filterExercises(exercises, { ...allFilters, category: "러닝", keyword: "디센딩 래더" }).map((exercise) => exercise.id)).toEqual(["walk-jog-ladder-descend-easy"]);
+  });
   it("shows mobility entries and excludes equipment when requested", () => {
     expect(filterExercises(exercises, { ...allFilters, category: "모빌리티" }).map((exercise) => exercise.id)).toContain("cat-cow");
     expect(filterExercises(exercises, { ...allFilters, category: "균형·협응", focus: "균형" }).map((exercise) => exercise.id)).toContain("single-leg-stand");
