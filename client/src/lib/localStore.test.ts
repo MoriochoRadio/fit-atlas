@@ -42,6 +42,20 @@ describe("local backup format", () => {
     expect(readLocalProfile()).toEqual(defaultProfilePreferences);
   });
 
+  it("keeps legacy records without distance fields and restores new meter-based distance records", () => {
+    const legacy = parseBackup(JSON.stringify(createBackup([{ id: "legacy", date: "2026-08-14", exercise: "푸시업", sets: 2, reps: 8, load: 0, minutes: 10, intensity: 4 }], defaultProfilePreferences)));
+    const modern = parseBackup(JSON.stringify(createBackup([{ id: "swim", date: "2026-08-14", exercise: "이지 수영", sets: 1, reps: 1, load: 0, minutes: 12, intensity: 4, distance: 400, distanceUnit: "m" }], defaultProfilePreferences)));
+    expect(legacy.logs[0]).not.toHaveProperty("distance");
+    expect(modern.logs[0]).toMatchObject({ distance: 400, distanceUnit: "m" });
+  });
+
+  it("preserves legacy and new distance-unit logs through localStorage", () => {
+    installLocalStorage();
+    const logs = [{ id: "legacy", date: "2026-08-14", exercise: "푸시업", sets: 2, reps: 8, load: 0, minutes: 10, intensity: 4 }, { id: "row", date: "2026-08-14", exercise: "로잉 에르고미터", sets: 1, reps: 1, load: 0, minutes: 8, intensity: 4, distance: 2000, distanceUnit: "m" as const }];
+    saveTrainingLogs(logs);
+    expect(readTrainingLogs()).toEqual(logs);
+  });
+
   it("rejects an invalid backup format", () => {
     expect(() => parseBackup(JSON.stringify({ version: 3, logs: [], profile: {}, checkin: {} }))).toThrow("지원하지 않는 백업 파일입니다.");
   });

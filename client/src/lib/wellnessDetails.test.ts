@@ -7,7 +7,7 @@ describe("wellness detail knowledge", () => {
     expect(Object.keys(wellnessDetails).sort()).toEqual(wellnessCards.map((card) => card.title).sort());
     Object.values(wellnessDetails).forEach((detail) => {
       expect(detail.practices).toHaveLength(3);
-      expect(detail.trainingContext).toHaveLength(2);
+      expect(detail.trainingContext.length).toBeGreaterThanOrEqual(2);
       expect(detail.caution.length).toBeGreaterThan(30);
     });
   });

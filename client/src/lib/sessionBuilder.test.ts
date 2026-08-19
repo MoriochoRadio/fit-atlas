@@ -24,10 +24,30 @@ describe("single session builder", () => {
     expect(plan.blocks[1].items.join(" ")).not.toContain("걷기·달리기 인터벌");
   });
 
-  it("surfaces expanded machine, cardio, and agility options in appropriate environments", () => {
+  it("surfaces expanded equipment, low-impact cardio, and coordination options in appropriate environments", () => {
+    const home = buildSession({ goal: "strength", environment: "home", duration: 45, checkin });
     const gym = buildSession({ goal: "all_round", environment: "gym", duration: 45, checkin });
     const outdoor = buildSession({ goal: "all_round", environment: "outdoor", duration: 45, checkin });
+    expect(home.blocks[1].items.join(" ")).toContain("케틀벨 데드리프트");
+    expect(home.blocks[1].items.join(" ")).toContain("카운터 인클라인 푸시업");
     expect(gym.blocks[1].items.join(" ")).toContain("체스트 서포티드 로우");
-    expect(outdoor.blocks[1].items.join(" ")).toContain("로우 콘 셔플");
+    expect(gym.blocks[1].items.join(" ")).toContain("샌드백 프런트 스쿼트");
+    expect(gym.blocks[1].items.join(" ")).toContain("케이블 스탠딩 힙 어브덕션");
+    expect(gym.blocks[1].items.join(" ")).toContain("일립티컬 이지");
+    expect(gym.blocks[1].items.join(" ")).toContain("어시스트 딥 머신");
+    expect(gym.blocks[1].items.join(" ")).toContain("트레드밀 템포 워크");
+    expect(outdoor.blocks[1].items.join(" ")).toContain("난간 지지 스텝업");
+    expect(outdoor.blocks[1].items.join(" ")).toContain("컨트롤 다운힐 워크");
+  });
+
+  it("connects the recent home, gym, and outdoor individual exercise variants", () => {
+    const home = buildSession({ goal: "strength", environment: "home", duration: 45, checkin });
+    const gym = buildSession({ goal: "strength", environment: "gym", duration: 45, checkin });
+    const outdoor = buildSession({ goal: "endurance", environment: "outdoor", duration: 45, checkin });
+    expect(home.blocks[1].items.join(" ")).toContain("지지 인버티드 로우");
+    expect(home.blocks[1].items.join(" ")).toContain("노르딕 컬 프렙");
+    expect(gym.blocks[1].items.join(" ")).toContain("케이블 스탠딩 힙 어브덕션");
+    expect(outdoor.blocks[1].items.join(" ")).toContain("템포 워크·런");
+    expect(outdoor.blocks[1].items.join(" ")).toContain("경사 조그·워크");
   });
 });
