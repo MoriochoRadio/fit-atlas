@@ -24,4 +24,7 @@ for (let pageIndex = 0; pageIndex < pageCount; pageIndex += 1) {
 const contentSource = `import type { BodyRegion } from "./catalogTypes";\n\nexport const recoveryGuides: Record<BodyRegion, { title: string; intro: string; steps: string[]; caution: string }> = ${serialize(recoveryGuides)};\n\nexport const wellnessCards = ${serialize(wellnessCards)};\n`;
 fs.writeFileSync(path.join(catalogDirectory, "catalogContent.ts"), contentSource);
 
+const pageByExerciseId = Object.fromEntries(entries.map(({ exercise }, index) => [exercise.id, Math.floor(index / pageSize)]));
+fs.writeFileSync(path.join(catalogDirectory, "catalogPageIndex.ts"), `export const catalogPageByExerciseId: Record<string, number> = ${serialize(pageByExerciseId)};\n`);
+
 console.log(`Generated ${pageCount} lazy catalog pages with ${pageSize} entries each at ${catalogDirectory}.`);

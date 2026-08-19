@@ -1,4 +1,5 @@
 import { catalogPage01 } from "./catalogPage01";
+import { catalogPageByExerciseId } from "./catalogPageIndex";
 import type { CatalogEntry, Exercise } from "./catalogTypes";
 
 export const catalogSummary = { exerciseCount: 1000, categoryCount: 9, pageSize: 100 } as const;
@@ -42,6 +43,17 @@ export async function loadCatalogPage(pageIndex: number): Promise<CatalogEntry[]
 export async function loadFullCatalog(): Promise<CatalogEntry[]> {
   const pages = await Promise.all(Array.from({ length: getCatalogPageCount() }, (_, pageIndex) => loadCatalogPage(pageIndex)));
   return pages.flat();
+}
+
+export async function loadCatalogEntriesByIds(exerciseIds: string[]): Promise<CatalogEntry[]> {
+  const requestedIds = Array.from(new Set(exerciseIds));
+  const pageIndexes = Array.from(new Set(requestedIds.map((id) => catalogPageByExerciseId[id]).filter((pageIndex): pageIndex is number => Number.isInteger(pageIndex))));
+  const pages = await Promise.all(pageIndexes.map((pageIndex) => loadCatalogPage(pageIndex)));
+  const entriesById = new Map(pages.flat().map((entry) => [entry.exercise.id, entry]));
+  return requestedIds.flatMap((id) => {
+    const entry = entriesById.get(id);
+    return entry ? [entry] : [];
+  });
 }
 
 export const entriesToExercises = (entries: CatalogEntry[]): Exercise[] => entries.map(({ exercise }) => exercise);

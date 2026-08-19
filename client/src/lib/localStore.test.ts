@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { createBackup, parseBackup, readLocalProfile, readLocalWeeklyPlan, readTrainingLogs, saveLocalProfile, saveLocalWeeklyPlan, saveTrainingLogs } from "./localStore";
+import { createBackup, parseBackup, readLocalExplorePreferences, readLocalProfile, readLocalWeeklyPlan, readTrainingLogs, saveLocalExplorePreferences, saveLocalProfile, saveLocalWeeklyPlan, saveTrainingLogs } from "./localStore";
 import { defaultProfilePreferences } from "./profilePreferences";
 import { createWeeklyPlan } from "./weeklyPlan";
 
@@ -19,10 +19,11 @@ describe("local backup format", () => {
   it("round-trips profile and workout records without server data", () => {
     const backup = createBackup([{ id: "log-1", date: "2026-08-14", exercise: "푸시업", sets: 3, reps: 10, load: 0, minutes: 20, intensity: 5 }], { ...defaultProfilePreferences, recoveryContext: "reduced_readiness" });
     const restored = parseBackup(JSON.stringify(backup));
-    expect(backup.version).toBe(3);
+    expect(backup.version).toBe(4);
     expect(restored.logs).toHaveLength(1);
     expect(restored.profile.recoveryContext).toBe("reduced_readiness");
     expect(restored.weeklyPlan.sessions).toHaveLength(3);
+    expect(restored.explorePreferences).toEqual({ favoriteExerciseIds: [], recentExerciseIds: [] });
   });
 
   it("persists logs and profiles locally, then safely handles malformed stored data", () => {
@@ -33,9 +34,12 @@ describe("local backup format", () => {
     saveLocalProfile(profile);
     const weeklyPlan = createWeeklyPlan("strength");
     saveLocalWeeklyPlan(weeklyPlan);
+    const explorePreferences = { favoriteExerciseIds: ["squat"], recentExerciseIds: ["run", "squat"] };
+    saveLocalExplorePreferences(explorePreferences);
     expect(readTrainingLogs()).toEqual(logs);
     expect(readLocalProfile()).toEqual(profile);
     expect(readLocalWeeklyPlan()).toEqual(weeklyPlan);
+    expect(readLocalExplorePreferences()).toEqual(explorePreferences);
     storage.setItem("fit-atlas-logs", "not-json");
     storage.setItem("fit-atlas-profile", "not-json");
     expect(readTrainingLogs()).toEqual([]);
@@ -57,12 +61,21 @@ describe("local backup format", () => {
   });
 
   it("rejects an invalid backup format", () => {
-    expect(() => parseBackup(JSON.stringify({ version: 3, logs: [], profile: {}, checkin: {} }))).toThrow("지원하지 않는 백업 파일입니다.");
+    expect(() => parseBackup(JSON.stringify({ version: 4, logs: [], profile: {}, checkin: {} }))).toThrow("지원하지 않는 백업 파일입니다.");
   });
 
   it("migrates version 2 backups by creating a safe current weekly plan", () => {
     const restored = parseBackup(JSON.stringify({ version: 2, logs: [], profile: defaultProfilePreferences, checkin: { date: "2026-08-14", energy: 3, sleep: 3, stress: 3, pain: 1 } }));
-    expect(restored.version).toBe(3);
+    expect(restored.version).toBe(4);
     expect(restored.weeklyPlan.sessions).toHaveLength(3);
+  });
+
+  it("round-trips favorites and recent exercises while safely migrating version 3 backups", () => {
+    const preferences = { favoriteExerciseIds: ["squat"], recentExerciseIds: ["run", "squat"] };
+    const restored = parseBackup(JSON.stringify(createBackup([], defaultProfilePreferences, undefined, undefined, preferences)));
+    expect(restored.explorePreferences).toEqual(preferences);
+
+    const legacy = parseBackup(JSON.stringify({ version: 3, logs: [], profile: defaultProfilePreferences, checkin: { date: "2026-08-14", energy: 3, sleep: 3, stress: 3, pain: 1 }, weeklyPlan: createWeeklyPlan() }));
+    expect(legacy.explorePreferences).toEqual({ favoriteExerciseIds: [], recentExerciseIds: [] });
   });
 });

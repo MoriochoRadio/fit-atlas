@@ -23,7 +23,9 @@ describe("Home recovery alternative flow", () => {
   it("updates the Home search and region filter, then scrolls to the library when a pathway alternative is clicked", () => {
     render(createElement(Home));
     fireEvent.click(screen.getByRole("button", { name: "발목 불편" }));
-    fireEvent.click(screen.getByRole("button", { name: /발목 니투월 락/ }));
+    const ankleAlternative = screen.getAllByRole("button").find((button) => button.textContent?.includes("발목 니투월 락"));
+    expect(ankleAlternative).toBeTruthy();
+    fireEvent.click(ankleAlternative!);
 
     expect((screen.getByLabelText("운동 검색") as HTMLInputElement).value).toBe("발목 니투월 락");
     expect((screen.getByLabelText("부위 필터") as HTMLSelectElement).value).toBe("하체");
@@ -45,6 +47,20 @@ describe("Home recovery alternative flow", () => {
 
     fireEvent.click(screen.getByRole("button", { name: /운동 100개 더 보기/ }));
     await waitFor(() => expect(screen.getByText("200개 표시 · 200/1000개 카탈로그를 불러왔습니다.")).toBeTruthy());
+  });
+
+  it("saves a favorite and a recently viewed exercise from its card", async () => {
+    render(createElement(Home));
+    const card = screen.getByRole("heading", { name: "바벨 백 스쿼트" }).closest("article");
+    expect(card).toBeTruthy();
+
+    fireEvent.click(within(card!).getByRole("button", { name: "바벨 백 스쿼트 즐겨찾기 추가" }));
+    expect(within(card!).getByRole("button", { name: "바벨 백 스쿼트 즐겨찾기 해제" }).getAttribute("aria-pressed")).toBe("true");
+    fireEvent.click(within(card!).getByRole("button", { name: "자세·근거 보기" }));
+
+    await waitFor(() => expect(screen.getAllByText("바벨 백 스쿼트").length).toBeGreaterThan(2));
+    expect(screen.getByRole("heading", { name: "최근 본 운동" })).toBeTruthy();
+    expect(screen.getByRole("heading", { name: "즐겨찾기" })).toBeTruthy();
   });
 
   it("renders all four conservative cardio interval templates", () => {
