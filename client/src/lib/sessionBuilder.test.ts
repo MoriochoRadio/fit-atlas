@@ -175,4 +175,16 @@ describe("single session builder", () => {
     expect(homeAllRound.blocks[1].items.join(" ")).toContain("타월 셀프 로우 시티드 이지");
     expect(homeAllRound.blocks[1].items.join(" ")).toContain("월 힙 어브덕션 홀드 이지");
   });
+
+  it("connects no-equipment back-and-arm endurance with low-load hip-or-knee options at home", () => {
+    const homeStrength = buildSession({ goal: "strength", environment: "home", duration: 45, checkin });
+    const homeAllRound = buildSession({ goal: "all_round", environment: "home", duration: 45, checkin });
+    expect(homeStrength.blocks[1].items.join(" ")).toContain("프론 엘보 풀백 홀드 이지");
+    expect(homeStrength.blocks[1].items.join(" ")).toContain("시티드 바이셉스 아이소메트릭 컬 이지");
+    expect(homeStrength.blocks[1].items.join(" ")).toContain("체어 햄스트링 힐 딕 이지");
+    expect(homeStrength.blocks[1].items.join(" ")).toContain("수파인 힐 슬라이드 이지");
+    expect(homeAllRound.blocks[1].items.join(" ")).toContain("프론 스위머 스윕 이지");
+    expect(homeAllRound.blocks[1].items.join(" ")).toContain("월 노 머니 외회전 이지");
+    expect(homeAllRound.blocks[1].items.join(" ")).toContain("체어 지지 니 벤드 탭");
+  });
 });
