@@ -51,6 +51,16 @@ describe("Home recovery alternative flow", () => {
     expect(screen.getAllByText(/혼자 하지 않기/).length).toBeGreaterThan(0);
   });
 
+  it("renders 10, 20, and 30 minute low-noise no-jump circuit templates", () => {
+    render(createElement(Home));
+    expect(screen.getByText("QUIET HOME CIRCUITS")).toBeTruthy();
+    expect(screen.getAllByText("10분 · 매우 조용한 리셋").length).toBeGreaterThan(0);
+    expect(screen.getAllByText("20분 · 저소음 전신 기본").length).toBeGreaterThan(0);
+    expect(screen.getAllByText("30분 · 저소음 전신 리듬").length).toBeGreaterThan(0);
+    expect(screen.getAllByText(/소음 수준: 매우 낮음/).length).toBeGreaterThan(0);
+    expect(screen.getAllByText(/점프·발 구르기·가구 충격 없음/).length).toBeGreaterThan(0);
+  });
+
   it("renders life-stage general guidance and the pre-exercise safety checklist", () => {
     render(createElement(Home));
     expect(screen.getAllByText("운동 시작 전 5가지 확인").length).toBeGreaterThan(0);
