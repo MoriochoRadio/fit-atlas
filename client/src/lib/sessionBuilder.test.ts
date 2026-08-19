@@ -81,7 +81,7 @@ describe("single session builder", () => {
     expect(homeStrength.blocks[1].items.join(" ")).toContain("지지 풀업 네거티브");
     expect(homeStrength.blocks[1].items.join(" ")).toContain("발 지지 풀업 포즈 래더");
     expect(homeAllRound.blocks[1].items.join(" ")).toContain("지지 Y 밸런스 리치");
-    expect(homeAllRound.blocks[1].items.join(" ")).toContain("크로스 바디 탭 밸런스");
+    expect(homeAllRound.blocks[1].items.join(" ")).toContain("지지 레터럴 런지");
     expect(gym.blocks[1].items.join(" ")).toContain("어시스트 뉴트럴 그립 풀업 머신");
   });
 
@@ -95,5 +95,15 @@ describe("single session builder", () => {
     expect(homeAllRound.blocks[1].items.join(" ")).toContain("로우 바 그립 전환 로우");
     expect(gymStrength.blocks[1].items.join(" ")).toContain("어시스트 뉴트럴 그립 풀업 머신");
     expect(gymAllRound.blocks[1].items.join(" ")).toContain("어시스트 뉴트럴 그립 풀업 머신");
+  });
+
+  it("connects varied squat, hinge, core, and coordination bodyweight options", () => {
+    const homeStrength = buildSession({ goal: "strength", environment: "home", duration: 45, checkin });
+    const homeAllRound = buildSession({ goal: "all_round", environment: "home", duration: 45, checkin });
+    expect(homeStrength.blocks[1].items.join(" ")).toContain("맨몸 굿모닝");
+    expect(homeStrength.blocks[1].items.join(" ")).toContain("지지 레터럴 런지");
+    expect(homeStrength.blocks[1].items.join(" ")).toContain("데드 버그 콘트랄래터럴 리치");
+    expect(homeAllRound.blocks[1].items.join(" ")).toContain("스쿼트 투 카프 레이즈");
+    expect(homeAllRound.blocks[1].items.join(" ")).toContain("베어 크롤 포워드 이지");
   });
 });
