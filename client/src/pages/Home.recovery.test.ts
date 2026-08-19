@@ -82,4 +82,23 @@ describe("Home recovery alternative flow", () => {
     expect(screen.getAllByText(/실신감·혼란·심한 두통/).length).toBeGreaterThan(0);
     expect(screen.getAllByText(/심한 두통·실신감·혼란/).length).toBeGreaterThan(0);
   });
+
+  it("provides an accessible quick exercise-type filter that combines with existing filters and can reset", () => {
+    render(createElement(Home));
+    const typeFilter = screen.getByRole("group", { name: "운동 종류 빠른 필터" });
+    const bodyweight = within(typeFilter).getByRole("button", { name: "맨몸운동" });
+
+    expect(bodyweight.getAttribute("aria-pressed")).toBe("false");
+    fireEvent.click(bodyweight);
+    expect(bodyweight.getAttribute("aria-pressed")).toBe("true");
+    expect(within(typeFilter).getByText(/맨몸운동 \d+개 표시/)).toBeTruthy();
+
+    fireEvent.change(screen.getByLabelText("장비 필터"), { target: { value: "장비 필요" } });
+    expect((screen.getByLabelText("장비 필터") as HTMLSelectElement).value).toBe("장비 필요");
+    expect(bodyweight.getAttribute("aria-pressed")).toBe("true");
+
+    fireEvent.click(within(typeFilter).getByRole("button", { name: "조건 초기화" }));
+    expect(within(typeFilter).getByRole("button", { name: "전체 보기" }).getAttribute("aria-pressed")).toBe("true");
+    expect((screen.getByLabelText("장비 필터") as HTMLSelectElement).value).toBe("전체");
+  });
 });
