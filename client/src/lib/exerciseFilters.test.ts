@@ -51,6 +51,11 @@ describe("exercise library QA", () => {
     expect(filterExercises(exercises, { ...allFilters, category: "맨몸운동", keyword: "타월 셀프" }).map((exercise) => exercise.id)).toEqual(["towel-self-row-seated-easy"]);
   });
 
+  it("includes no-equipment back-and-arm endurance and low-load hip-or-knee variants", () => {
+    expect(exercises.map((exercise) => exercise.id)).toEqual(expect.arrayContaining(["prone-swimmer-sweep-easy", "prone-elbow-pullback-hold-easy", "back-of-hand-wall-press-easy", "seated-biceps-isometric-curl-easy", "chair-arm-pressdown-isometric-easy", "wall-no-money-external-rotation-easy", "chair-hamstring-heel-dig-easy", "wall-hip-extension-press-easy", "supine-heel-slide-easy", "chair-supported-knee-bend-tap", "wall-split-stance-hip-shift-easy"]));
+    expect(filterExercises(exercises, { ...allFilters, category: "맨몸운동", keyword: "스위머" }).map((exercise) => exercise.id)).toEqual(["prone-swimmer-sweep-easy"]);
+  });
+
   it("shows mobility entries and excludes equipment when requested", () => {
     expect(filterExercises(exercises, { ...allFilters, category: "모빌리티" }).map((exercise) => exercise.id)).toContain("cat-cow");
     expect(filterExercises(exercises, { ...allFilters, category: "균형·협응", focus: "균형" }).map((exercise) => exercise.id)).toContain("single-leg-stand");
