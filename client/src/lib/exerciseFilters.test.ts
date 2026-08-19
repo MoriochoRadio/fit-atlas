@@ -101,6 +101,10 @@ describe("exercise library QA", () => {
     expect(exercises.map((exercise) => exercise.id)).toEqual(expect.arrayContaining(["smith-machine-box-squat-easy", "smith-machine-rdl-easy", "smith-machine-hip-thrust-easy", "smith-machine-incline-press-easy", "smith-machine-calf-raise-easy", "smith-machine-inverted-row-easy", "cable-high-row-easy", "cable-squat-to-row-easy", "machine-unilateral-leg-curl-easy", "machine-unilateral-leg-extension-easy"]));
     expect(filterExercises(exercises, { ...allFilters, category: "헬스기구", keyword: "스미스 머신 박스 스쿼트" }).map((exercise) => exercise.id)).toEqual(["smith-machine-box-squat-easy"]);
   });
+  it("includes solo advanced bodyweight pushing, unilateral lower-body, balance, and core variants", () => {
+    expect(exercises.map((exercise) => exercise.id)).toEqual(expect.arrayContaining(["elevated-pike-pushup-easy", "wall-handstand-lean-easy", "supported-cossack-squat-easy", "supported-shrimp-squat-easy", "partial-wall-walk-prep", "frog-stand-weight-shift-prep", "quadruped-shoulder-tap-easy", "hollow-tuck-rock-easy", "seated-straddle-compression-easy"]));
+    expect(filterExercises(exercises, { ...allFilters, category: "맨몸운동", keyword: "프로그 스탠드" }).map((exercise) => exercise.id)).toEqual(["frog-stand-weight-shift-prep"]);
+  });
   it("shows mobility entries and excludes equipment when requested", () => {
     expect(filterExercises(exercises, { ...allFilters, category: "모빌리티" }).map((exercise) => exercise.id)).toContain("cat-cow");
     expect(filterExercises(exercises, { ...allFilters, category: "균형·협응", focus: "균형" }).map((exercise) => exercise.id)).toContain("single-leg-stand");

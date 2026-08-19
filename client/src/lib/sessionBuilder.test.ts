@@ -309,4 +309,14 @@ describe("single session builder", () => {
     expect(gymAllRound.blocks[1].items.join(" ")).toContain("머신 유니래터럴 레그 컬 이지");
     expect(gymAllRound.blocks[1].items.join(" ")).toContain("스미스 머신 인버티드 로우 이지");
   });
+
+  it("connects solo advanced bodyweight pushing, unilateral lower-body, balance, and core options at home", () => {
+    const homeStrength = buildSession({ goal: "strength", environment: "home", duration: 45, checkin });
+    const homeAllRound = buildSession({ goal: "all_round", environment: "home", duration: 45, checkin });
+    expect(homeStrength.blocks[1].items.join(" ")).toContain("엘리베이티드 파이크 푸시업 이지");
+    expect(homeStrength.blocks[1].items.join(" ")).toContain("서포티드 코사크 스쿼트 이지");
+    expect(homeStrength.blocks[1].items.join(" ")).toContain("파셜 월 워크 프렙");
+    expect(homeAllRound.blocks[1].items.join(" ")).toContain("월 핸드스탠드 린 이지");
+    expect(homeAllRound.blocks[1].items.join(" ")).toContain("할로우 턱 락 이지");
+  });
 });
