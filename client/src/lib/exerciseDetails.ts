@@ -1,7 +1,6 @@
 import type { Exercise } from "./fitnessData";
 
 import { expandedExercisesPart12 } from "./expandedExercisesPart12";
-import { expandedExerciseDetailsPart13, expandedExercisesPart13 } from "./expandedExercisesPart13";
 
 export type ExerciseDetail = {
   setup: string[];
@@ -399,12 +398,6 @@ for (const exercise of expandedExercisesPart12) {
     regressions: [...base.regressions],
     progressions: [...base.progressions],
   };
-}
-
-Object.assign(exerciseDetails, expandedExerciseDetailsPart13);
-
-for (const exercise of expandedExercisesPart13) {
-  if (!exerciseDetails[exercise.id]) exerciseDetails[exercise.id] = categoryDefaults[exercise.category];
 }
 
 export function getExerciseDetail(exercise: Exercise): ExerciseDetail {

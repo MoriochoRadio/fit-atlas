@@ -9,7 +9,7 @@ describe("exercise library QA", () => {
     const categories = new Set(exercises.map((exercise) => exercise.category));
     const stats = getCatalogStats(exercises);
     expect(categories).toEqual(new Set(["러닝", "유산소", "헬스기구", "프리웨이트", "맨몸운동", "모빌리티", "균형·협응", "요가·필라테스", "파워·민첩성"]));
-    expect(exercises.length).toBeGreaterThanOrEqual(1000);
+    expect(exercises.length).toBeGreaterThanOrEqual(499);
     expect(stats).toEqual({ exerciseCount: exercises.length, categoryCount: categories.size });
     expect(new Set(exercises.map((exercise) => exercise.id)).size).toBe(exercises.length);
     exercises.forEach((exercise) => {
@@ -19,7 +19,7 @@ describe("exercise library QA", () => {
       expect(exercise.reference.url).toMatch(/^https:\/\//);
     });
     expect(exercises.map((exercise) => exercise.id)).toEqual(expect.arrayContaining(["kettlebell-sumo-deadlift", "resistance-band-row", "battle-rope-alternating-wave", "low-step-march", "medicine-ball-scoop-toss", "aqua-walk", "elliptical-easy", "recumbent-bike-easy", "row-erg-easy", "sandbag-bear-hug-carry", "trx-row", "landmine-press", "landmine-rotation-prep", "seated-wrist-mobility", "pool-easy-swim", "rail-supported-step-up", "counter-incline-pushup", "supported-floor-transfer", "grocery-bag-lift-to-counter", "easy-incline-walk", "trekking-pole-walk-prep", "light-daypack-walk", "outdoor-pace-reset", "cable-biceps-curl-easy", "machine-incline-chest-press-easy", "a-skip-walk-drill", "easy-fartlek-run", "pike-pushup-prep", "copenhagen-plank-knee-easy", "assisted-pistol-squat-to-box", "decline-pushup-prep", "treadmill-incline-tempo-walk", "machine-ab-crunch-easy", "cable-reverse-fly-easy", "hollow-tuck-hold", "run-walk-200m-easy", "treadmill-jog-walk-interval", "cable-single-arm-chest-press-easy", "unilateral-leg-press-easy", "active-hang-foot-assist", "supported-pull-up-negative", "band-assisted-chin-up-easy", "y-balance-reach-support", "single-leg-head-turn-support", "foot-assisted-pronated-pullup", "mixed-grip-pullup-foot-assist", "pullup-pause-ladder-foot-assist", "band-assisted-pullup-tempo", "assisted-neutral-grip-pullup-machine", "frog-pump-easy", "hamstring-walkout-easy", "supported-lateral-lunge", "bear-crawl-forward-easy", "dead-bug-contralateral-reach", "standing-cross-crawl-march", "offset-wall-pushup", "counter-bodyweight-triceps-extension", "wall-sit-calf-raise-easy", "knee-plank-up-down", "high-plank-knee-to-elbow-easy"]));
-    expect(exercises.map((exercise) => exercise.id)).toEqual(expect.arrayContaining(["atlas13-road-run-interval", "atlas13-leg-press-tempo", "atlas13-dumbbell-rdl-control", "atlas13-bodyweight-pushup-partial", "atlas13-tandem-walk-reset", "atlas13-chair-yoga-flow-isometric", "atlas13-snap-down-pause"]));
+    expect(exercises.some((exercise) => exercise.id.startsWith("atlas13-"))).toBe(false);
   });
 
   it("combines category, region, purpose, difficulty, equipment, and keyword filters", () => {

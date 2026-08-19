@@ -10,7 +10,6 @@ import { expandedExercisesPart9 } from "./expandedExercisesPart9";
 import { expandedExercisesPart10 } from "./expandedExercisesPart10";
 import { expandedExercisesPart11 } from "./expandedExercisesPart11";
 import { expandedExercisesPart12 } from "./expandedExercisesPart12";
-import { expandedExercisesPart13 } from "./expandedExercisesPart13";
 
 export type BodyRegion = "가슴" | "등" | "어깨" | "팔" | "코어" | "둔근" | "하체";
 export type ExerciseCategory = "러닝" | "유산소" | "헬스기구" | "프리웨이트" | "맨몸운동" | "모빌리티" | "균형·협응" | "요가·필라테스" | "파워·민첩성";
@@ -306,7 +305,6 @@ exercises.push(...expandedExercisesPart9);
 exercises.push(...expandedExercisesPart10);
 exercises.push(...expandedExercisesPart11);
 exercises.push(...expandedExercisesPart12);
-exercises.push(...expandedExercisesPart13);
 
 export const recoveryGuides: Record<BodyRegion, { title: string; intro: string; steps: string[]; caution: string }> = {
   가슴: { title: "가슴·앞어깨의 긴장 완화", intro: "무리한 밀기 운동 뒤의 뻐근함에는 강도를 줄이고 통증 없는 범위의 움직임부터 재개하세요.", steps: ["문틀에 손을 가볍게 대고 가슴 앞쪽을 부드럽게 열기", "폼롤러를 등 상부에 두고 흉추를 편안하게 펴기", "마사지건은 뼈·관절·목 앞쪽을 피하고 낮은 강도로 짧게 사용"], caution: "저림, 흉통, 숨참, 외상 후 변형은 자가 관리보다 즉시 평가가 우선입니다." },
