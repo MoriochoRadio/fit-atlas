@@ -187,4 +187,17 @@ describe("single session builder", () => {
     expect(homeAllRound.blocks[1].items.join(" ")).toContain("월 노 머니 외회전 이지");
     expect(homeAllRound.blocks[1].items.join(" ")).toContain("체어 지지 니 벤드 탭");
   });
+
+  it("connects forearm-grip endurance and low-load hip-or-knee control options at home", () => {
+    const homeStrength = buildSession({ goal: "strength", environment: "home", duration: 45, checkin });
+    const homeEndurance = buildSession({ goal: "endurance", environment: "home", duration: 30, checkin });
+    const homeAllRound = buildSession({ goal: "all_round", environment: "home", duration: 45, checkin });
+    expect(homeStrength.blocks[1].items.join(" ")).toContain("시티드 손목 굴곡 아이소메트릭 이지");
+    expect(homeStrength.blocks[1].items.join(" ")).toContain("피스트 스퀴즈 아이소메트릭 이지");
+    expect(homeEndurance.blocks[1].items.join(" ")).toContain("체어 서포티드 사이드 스텝 터치");
+    expect(homeEndurance.blocks[1].items.join(" ")).toContain("시티드 앵클 펌프 마치 이지");
+    expect(homeAllRound.blocks[1].items.join(" ")).toContain("시티드 손목 신전 아이소메트릭 이지");
+    expect(homeAllRound.blocks[1].items.join(" ")).toContain("월 서포티드 힙 서클 이지");
+    expect(homeAllRound.blocks[1].items.join(" ")).toContain("엄지 대립 탭 이지");
+  });
 });
