@@ -73,6 +73,10 @@ describe("exercise library QA", () => {
     expect(exercises.map((exercise) => exercise.id)).toEqual(expect.arrayContaining(["ski-erg-steady-easy", "air-bike-steady-easy", "curved-treadmill-walk-easy", "vertical-climber-easy", "arm-ergometer-easy"]));
     expect(filterExercises(exercises, { ...allFilters, category: "유산소", keyword: "암 에르고미터" }).map((exercise) => exercise.id)).toEqual(["arm-ergometer-easy"]);
   });
+  it("includes solo bodyweight hinge, unilateral lower-body, and core coordination variants", () => {
+    expect(exercises.map((exercise) => exercise.id)).toEqual(expect.arrayContaining(["supported-single-leg-rdl-reach", "split-squat-front-reach-support", "side-plank-knee-reach-through", "supine-march-heel-tap-easy", "wall-squat-lateral-weight-shift-easy", "tall-kneeling-hip-hinge-easy"]));
+    expect(filterExercises(exercises, { ...allFilters, category: "맨몸운동", keyword: "리치스루" }).map((exercise) => exercise.id)).toEqual(["side-plank-knee-reach-through"]);
+  });
   it("shows mobility entries and excludes equipment when requested", () => {
     expect(filterExercises(exercises, { ...allFilters, category: "모빌리티" }).map((exercise) => exercise.id)).toContain("cat-cow");
     expect(filterExercises(exercises, { ...allFilters, category: "균형·협응", focus: "균형" }).map((exercise) => exercise.id)).toContain("single-leg-stand");

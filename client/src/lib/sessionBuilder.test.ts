@@ -235,4 +235,14 @@ describe("single session builder", () => {
     expect(gymAllRound.blocks[1].items.join(" ")).toContain("에어 바이크 스테디 이지");
     expect(gymAllRound.blocks[1].items.join(" ")).toContain("커브드 트레드밀 워크 이지");
   });
+
+  it("connects solo hinge, unilateral lower-body, and core coordination options at home", () => {
+    const homeStrength = buildSession({ goal: "strength", environment: "home", duration: 45, checkin });
+    const homeAllRound = buildSession({ goal: "all_round", environment: "home", duration: 45, checkin });
+    expect(homeStrength.blocks[1].items.join(" ")).toContain("탈 니링 힙 힌지 이지");
+    expect(homeStrength.blocks[1].items.join(" ")).toContain("지지 스플릿 스쿼트 프런트 리치");
+    expect(homeStrength.blocks[1].items.join(" ")).toContain("수파인 마치 힐 탭 이지");
+    expect(homeAllRound.blocks[1].items.join(" ")).toContain("지지 단일다리 RDL 리치");
+    expect(homeAllRound.blocks[1].items.join(" ")).toContain("사이드 플랭크 니 리치스루");
+  });
 });

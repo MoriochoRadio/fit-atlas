@@ -329,6 +329,12 @@ export const exerciseDetails: Record<string, ExerciseDetail> = {
   "curved-treadmill-walk-easy": { setup: ["벨트·난간·신발 확인", "난간 가까이 서기", "짧은 걷기 리허설"], finish: "벨트를 완전히 멈춘 뒤 안전하게 내려 발목·무릎·호흡 반응을 확인합니다.", commonMistakes: ["속도 급증", "긴 보폭", "벨트 끝쪽으로 이동"], regressions: ["일반 트레드밀 평지 걷기", "시간 줄이기", "난간 가까이"], progressions: ["시간 1분", "보폭 안정", "손 지지 줄이기"] },
   "vertical-climber-easy": { setup: ["발판·손잡이·저항 확인", "낮은 저항", "작은 교차 리듬"], finish: "기구를 완전히 멈추고 내려 어깨·무릎·균형·호흡 반응을 확인합니다.", commonMistakes: ["보폭 과도", "목 으쓱", "발판 미끄러움 무시"], regressions: ["일립티컬", "저항 낮추기", "시간 줄이기"], progressions: ["시간 30초", "리듬 안정", "저항 한 단계"] },
   "arm-ergometer-easy": { setup: ["시트·크랭크 높이 확인", "낮은 저항", "작은 원 그리기"], finish: "저항을 낮추고 팔을 편안히 내려 어깨·팔꿈치·손목·호흡 반응을 확인합니다.", commonMistakes: ["어깨 으쓱", "저항 과도", "팔꿈치 잠금"], regressions: ["저항 낮추기", "시간 줄이기", "한 방향만"], progressions: ["시간 1분", "방향 바꾸기", "저항 한 단계"] },
+  "supported-single-leg-rdl-reach": { setup: ["벽·의자 지지 확인", "양발 힌지 리허설", "낮은 뒤발 리치"], finish: "양발로 서서 발목·무릎·고관절·허리 반응을 확인합니다.", commonMistakes: ["골반 열림", "등 둥글게", "지지대에서 멀리 섬"], regressions: ["양발 힌지", "범위 줄이기", "양손 지지"], progressions: ["반복 증가", "정지 1초", "지지 소폭 줄이기"] },
+  "split-squat-front-reach-support": { setup: ["지지대·발 위치 확인", "짧은 스플릿 스탠스", "낮은 앞 리치"], finish: "양발로 서서 무릎·고관절·어깨·균형 반응을 확인합니다.", commonMistakes: ["보폭 과도", "앞무릎 안쪽 붕괴", "리치 과도"], regressions: ["체중 이동", "리치 생략", "양손 지지"], progressions: ["반복 증가", "정지 1초", "지지 소폭 줄이기"] },
+  "side-plank-knee-reach-through": { setup: ["매트·어깨 확인", "아래 무릎 지지", "작은 팔 리치"], finish: "양무릎을 매트에 두고 어깨·허리·호흡 반응을 확인합니다.", commonMistakes: ["골반 처짐", "회전 과도", "어깨 으쓱"], regressions: ["사이드 플랭크 니 홀드", "리치 생략", "유지 줄이기"], progressions: ["반복 증가", "정지 1초", "느린 회전"] },
+  "supine-march-heel-tap-easy": { setup: ["매트·허리 확인", "양발 바닥 지지", "낮은 발 들기"], finish: "양발을 매트에 두고 허리·고관절·호흡 반응을 확인합니다.", commonMistakes: ["허리 과신전", "무릎 너무 높이", "골반 흔들림"], regressions: ["한쪽 힐 탭", "범위 줄이기", "90·90 힐 프레스"], progressions: ["반복 증가", "느린 교대", "정지 1초"] },
+  "wall-squat-lateral-weight-shift-easy": { setup: ["벽·발 위치 확인", "얕은 월 싯", "작은 옆 이동"], finish: "천천히 서서 무릎·고관절·허리·균형 반응을 확인합니다.", commonMistakes: ["깊이 과도", "무릎 안쪽 붕괴", "발 미끄러짐 무시"], regressions: ["양발 월 싯", "범위 줄이기", "체중 이동 생략"], progressions: ["반복 증가", "정지 1초", "느린 이동"] },
+  "tall-kneeling-hip-hinge-easy": { setup: ["매트·무릎 확인", "높은 무릎 자세", "작은 엉덩이 뒤 이동"], finish: "옆으로 앉아 무릎·고관절·허리 반응을 확인합니다.", commonMistakes: ["허리 꺾임", "엉덩이 과도하게 뒤로", "무릎 압박 무시"], regressions: ["시티드 힙 힌지", "범위 줄이기", "한 손 지지"], progressions: ["반복 증가", "정지 1초", "느린 복귀"] },
 };
 
 export function getExerciseDetail(exercise: Exercise): ExerciseDetail {
