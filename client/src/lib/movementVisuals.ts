@@ -1,7 +1,7 @@
 export type MovementFrame = {
   label: string;
   cue: string;
-  pose: "stand" | "squat" | "hinge" | "push" | "plank" | "run" | "balance" | "row" | "lunge" | "jump" | "shuffle";
+  pose: "stand" | "squat" | "hinge" | "push" | "plank" | "run" | "balance" | "row" | "lunge" | "jump" | "shuffle" | "walk" | "erg" | "bench" | "deadbug" | "sideplank" | "carry";
 };
 
 export type MovementVisual = {
@@ -32,6 +32,17 @@ export const movementVisuals: Record<string, MovementVisual> = {
   "landmine-rotation-prep": { title: "랜드마인 회전 프렙 흐름", frames: [{ label: "준비", cue: "바 고정·작은 경로", pose: "stand" }, { label: "이동", cue: "발·골반·몸통을 함께", pose: "lunge" }, { label: "복귀", cue: "반동 없이 중앙으로", pose: "stand" }] },
   "trekking-pole-walk-prep": { title: "트레킹 폴 워크 흐름", frames: [{ label: "준비", cue: "폴 길이·잠금·팁 확인", pose: "stand" }, { label: "리듬", cue: "반대손·반대발", pose: "run" }, { label: "확인", cue: "짧은 보폭·주변 간격", pose: "balance" }] },
   "controlled-downhill-walk": { title: "컨트롤 다운힐 흐름", frames: [{ label: "준비", cue: "건조한 짧은 경사", pose: "stand" }, { label: "하강", cue: "보폭 짧게·조용히", pose: "lunge" }, { label: "리셋", cue: "평지에서 호흡 확인", pose: "balance" }] },
+  "bodyweight-squat": { title: "맨몸 스쿼트 흐름", frames: [{ label: "준비", cue: "발 전체를 바닥에", pose: "stand" }, { label: "앉기", cue: "엉덩이·무릎을 함께", pose: "squat" }, { label: "일어서기", cue: "통증 없는 범위로", pose: "stand" }] },
+  "counter-incline-pushup": { title: "카운터 푸시업 흐름", frames: [{ label: "준비", cue: "단단한 지지면·긴 몸통", pose: "plank" }, { label: "내려가기", cue: "팔꿈치를 편안한 대각선", pose: "push" }, { label: "밀기", cue: "어깨를 으쓱하지 않기", pose: "plank" }] },
+  "dead-bug-heel-tap": { title: "데드 버그 힐 탭 흐름", frames: [{ label: "준비", cue: "갈비뼈·골반을 편안히", pose: "deadbug" }, { label: "탭", cue: "내쉬며 한쪽 발뒤꿈치", pose: "deadbug" }, { label: "복귀", cue: "허리 반응을 먼저 확인", pose: "deadbug" }] },
+  "side-plank-knee": { title: "무릎 지지 사이드 플랭크 흐름", frames: [{ label: "준비", cue: "팔꿈치를 어깨 아래", pose: "sideplank" }, { label: "지지", cue: "골반을 짧게 들어올리기", pose: "sideplank" }, { label: "전환", cue: "천천히 내려 반대쪽", pose: "sideplank" }] },
+  "incline-treadmill-walk": { title: "경사 트레드밀 걷기 흐름", frames: [{ label: "설정", cue: "낮은 경사·느린 속도부터", pose: "stand" }, { label: "보행", cue: "손잡이에 체중 싣지 않기", pose: "walk" }, { label: "조절", cue: "호흡이 거칠면 경사 낮추기", pose: "walk" }] },
+  "treadmill-walk-interval": { title: "트레드밀 워크 인터벌 흐름", frames: [{ label: "준비", cue: "평지·낮은 속도로 적응", pose: "stand" }, { label: "조금 빠르게", cue: "대화 가능한 보폭 유지", pose: "walk" }, { label: "회복", cue: "속도를 낮춰 호흡 정리", pose: "walk" }] },
+  "row-erg-easy": { title: "로잉 에르고미터 흐름", frames: [{ label: "캐치", cue: "낮은 저항·몸통 길게", pose: "erg" }, { label: "드라이브", cue: "다리·몸통·팔 순서", pose: "erg" }, { label: "복귀", cue: "팔·몸통·다리 순서", pose: "erg" }] },
+  "dumbbell-bench": { title: "덤벨 벤치 프레스 흐름", frames: [{ label: "준비", cue: "발·등을 벤치에 안정적으로", pose: "bench" }, { label: "내리기", cue: "손목을 편안히·제어", pose: "bench" }, { label: "밀기", cue: "어깨 통증 없는 경로", pose: "bench" }] },
+  "kettlebell-goblet-squat": { title: "고블릿 스쿼트 흐름", frames: [{ label: "준비", cue: "케틀벨을 가슴 가까이", pose: "stand" }, { label: "앉기", cue: "발 전체·무릎 정렬", pose: "squat" }, { label: "일어서기", cue: "몸통 길게·부드럽게", pose: "stand" }] },
+  "resistance-band-chest-press": { title: "밴드 체스트 프레스 흐름", frames: [{ label: "준비", cue: "고정점·밴드 상태 확인", pose: "stand" }, { label: "밀기", cue: "갈비뼈를 과도하게 들지 않기", pose: "push" }, { label: "복귀", cue: "장력을 천천히 제어", pose: "stand" }] },
+  "kettlebell-suitcase-carry": { title: "수트케이스 캐리 흐름", frames: [{ label: "준비", cue: "가벼운 부하·짧은 경로", pose: "carry" }, { label: "보행", cue: "몸통 기울임 없이 짧게", pose: "carry" }, { label: "정지", cue: "방향 전환 전 속도 낮추기", pose: "stand" }] },
 };
 
 export function getMovementVisual(exerciseId: string) {

@@ -29,8 +29,8 @@ export const catalogPage01: CatalogEntry[] = [
       ],
       "warning": "날카로운 무릎·허리 통증, 저림 또는 불안정감이 있으면 중단하고 평가를 받으세요.",
       "reference": {
-        "label": "ACSM 저항 운동 지침",
-        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
+        "label": "NSCA 바벨 스쿼트 기술 안내",
+        "url": "https://www.nsca.com/education/videos/exercise-technique-high-bar-back-squat/"
       }
     },
     "detail": {

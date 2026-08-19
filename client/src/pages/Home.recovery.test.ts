@@ -60,10 +60,24 @@ describe("Home recovery alternative flow", () => {
 
     await waitFor(() => expect(screen.getAllByText("바벨 백 스쿼트").length).toBeGreaterThan(2));
     expect(screen.getByLabelText("바벨 백 스쿼트 근거 적용 범위")).toBeTruthy();
-    expect(screen.getByText(/일반 저항 운동·점진적 부하·안전 원칙/)).toBeTruthy();
-    expect(screen.getByText(/개인의 질환·통증·부상 상태/)).toBeTruthy();
+    expect(screen.getByText(/전문 훈련 기관의 기술·훈련 원칙 자료/)).toBeTruthy();
+    expect(screen.getByText(/통증·불안정이 있으면 중단/)).toBeTruthy();
+    expect(screen.getByRole("link", { name: /NSCA 바벨 스쿼트 기술 안내/ })).toBeTruthy();
     expect(screen.getByRole("heading", { name: "최근 본 운동" })).toBeTruthy();
     expect(screen.getByRole("heading", { name: "즐겨찾기" })).toBeTruthy();
+  });
+
+  it("renders the expanded visual guide from a representative bodyweight exercise detail card", async () => {
+    render(createElement(Home));
+    fireEvent.change(screen.getByLabelText("운동 검색"), { target: { value: "맨몸 스쿼트" } });
+
+    await waitFor(() => expect(screen.getByRole("heading", { name: "맨몸 스쿼트" })).toBeTruthy());
+    const card = screen.getByRole("heading", { name: "맨몸 스쿼트" }).closest("article");
+    expect(card).toBeTruthy();
+    fireEvent.click(within(card!).getByRole("button", { name: "자세·근거 보기" }));
+
+    expect(within(card!).getByText("맨몸 스쿼트 흐름")).toBeTruthy();
+    expect(within(card!).getAllByText(/발 전체를 바닥에|엉덩이·무릎을 함께|통증 없는 범위로/)).toHaveLength(3);
   });
 
   it("renders all four conservative cardio interval templates", () => {
