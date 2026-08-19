@@ -335,6 +335,12 @@ export const exerciseDetails: Record<string, ExerciseDetail> = {
   "supine-march-heel-tap-easy": { setup: ["매트·허리 확인", "양발 바닥 지지", "낮은 발 들기"], finish: "양발을 매트에 두고 허리·고관절·호흡 반응을 확인합니다.", commonMistakes: ["허리 과신전", "무릎 너무 높이", "골반 흔들림"], regressions: ["한쪽 힐 탭", "범위 줄이기", "90·90 힐 프레스"], progressions: ["반복 증가", "느린 교대", "정지 1초"] },
   "wall-squat-lateral-weight-shift-easy": { setup: ["벽·발 위치 확인", "얕은 월 싯", "작은 옆 이동"], finish: "천천히 서서 무릎·고관절·허리·균형 반응을 확인합니다.", commonMistakes: ["깊이 과도", "무릎 안쪽 붕괴", "발 미끄러짐 무시"], regressions: ["양발 월 싯", "범위 줄이기", "체중 이동 생략"], progressions: ["반복 증가", "정지 1초", "느린 이동"] },
   "tall-kneeling-hip-hinge-easy": { setup: ["매트·무릎 확인", "높은 무릎 자세", "작은 엉덩이 뒤 이동"], finish: "옆으로 앉아 무릎·고관절·허리 반응을 확인합니다.", commonMistakes: ["허리 꺾임", "엉덩이 과도하게 뒤로", "무릎 압박 무시"], regressions: ["시티드 힙 힌지", "범위 줄이기", "한 손 지지"], progressions: ["반복 증가", "정지 1초", "느린 복귀"] },
+  "easy-progression-run": { setup: ["평지·신발·귀가 경로 확인", "걷기 3분", "편안한 조깅 시작"], finish: "걷기 2–3분으로 호흡·통증·보행 반응을 확인합니다.", commonMistakes: ["속도 급증", "회복 조깅 생략", "말하기 검사 무시"], regressions: ["걷기만", "리듬 구간 생략", "구간 줄이기"], progressions: ["구간 1회", "리듬 5초", "회복은 유지"] },
+  "negative-split-walk-run-easy": { setup: ["평지·신발 확인", "걷기 3분", "첫 조깅 보수적"], finish: "걷기 2–3분으로 호흡·통증·발목 반응을 확인합니다.", commonMistakes: ["첫 조깅 과속", "걷기 생략", "시간 집착"], regressions: ["조깅 30초", "걷기 늘리기", "구간 줄이기"], progressions: ["뒤 조깅 5초", "구간 1회", "걷기는 유지"] },
+  "cruise-interval-run-easy": { setup: ["평지·신발·귀가 경로 확인", "걷기 4분", "조절 조깅 리허설"], finish: "걷기 3분으로 호흡·통증·보행 반응을 확인합니다.", commonMistakes: ["질주", "걷기 회복 생략", "자세 무너짐 무시"], regressions: ["조깅 1분", "걷기 늘리기", "구간 줄이기"], progressions: ["조깅 15초", "구간 1회", "회복은 유지"] },
+  "hill-repeat-walk-run-easy": { setup: ["완만한 경사·신발 확인", "평지 걷기 4분", "낮은 경사 리허설"], finish: "평지 걷기 3분으로 무릎·발목·호흡 반응을 확인합니다.", commonMistakes: ["경사 과도", "보폭 과도", "회복 생략"], regressions: ["평지 걷기", "경사 줄이기", "시간 줄이기"], progressions: ["구간 1회", "오르막 5초", "평지 회복 유지"] },
+  "cadence-ladder-march-jog": { setup: ["평지·신발 확인", "제자리 마치 10회", "짧은 조그 리허설"], finish: "편안한 걷기로 호흡·발목·무릎 반응을 확인합니다.", commonMistakes: ["보폭 과도", "발 앞쪽 과도 착지", "팔 긴장"], regressions: ["마치만", "조그 생략", "시간 줄이기"], progressions: ["조그 5초", "구간 1회", "리듬 안정"] },
+  "run-walk-ladder-easy": { setup: ["평지·신발·거리 확인", "걷기 4분", "첫 조깅 짧게"], finish: "걷기 3분으로 호흡·통증·보행 반응을 확인합니다.", commonMistakes: ["단계 건너뜀", "걷기 생략", "통증 무시"], regressions: ["30초만", "걷기 늘리기", "단계 1개"], progressions: ["마지막 조깅 5초", "구간 1회", "걷기는 유지"] },
 };
 
 export function getExerciseDetail(exercise: Exercise): ExerciseDetail {

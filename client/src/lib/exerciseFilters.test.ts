@@ -77,6 +77,10 @@ describe("exercise library QA", () => {
     expect(exercises.map((exercise) => exercise.id)).toEqual(expect.arrayContaining(["supported-single-leg-rdl-reach", "split-squat-front-reach-support", "side-plank-knee-reach-through", "supine-march-heel-tap-easy", "wall-squat-lateral-weight-shift-easy", "tall-kneeling-hip-hinge-easy"]));
     expect(filterExercises(exercises, { ...allFilters, category: "맨몸운동", keyword: "리치스루" }).map((exercise) => exercise.id)).toEqual(["side-plank-knee-reach-through"]);
   });
+  it("includes solo progression, split, cruise, hill, cadence, and ladder running variants", () => {
+    expect(exercises.map((exercise) => exercise.id)).toEqual(expect.arrayContaining(["easy-progression-run", "negative-split-walk-run-easy", "cruise-interval-run-easy", "hill-repeat-walk-run-easy", "cadence-ladder-march-jog", "run-walk-ladder-easy"]));
+    expect(filterExercises(exercises, { ...allFilters, category: "러닝", keyword: "네거티브 스플릿" }).map((exercise) => exercise.id)).toEqual(["negative-split-walk-run-easy"]);
+  });
   it("shows mobility entries and excludes equipment when requested", () => {
     expect(filterExercises(exercises, { ...allFilters, category: "모빌리티" }).map((exercise) => exercise.id)).toContain("cat-cow");
     expect(filterExercises(exercises, { ...allFilters, category: "균형·협응", focus: "균형" }).map((exercise) => exercise.id)).toContain("single-leg-stand");

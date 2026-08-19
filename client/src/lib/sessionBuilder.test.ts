@@ -245,4 +245,16 @@ describe("single session builder", () => {
     expect(homeAllRound.blocks[1].items.join(" ")).toContain("지지 단일다리 RDL 리치");
     expect(homeAllRound.blocks[1].items.join(" ")).toContain("사이드 플랭크 니 리치스루");
   });
+
+  it("connects solo progression, split, hill, cadence, and ladder running options outdoors or on gym equipment", () => {
+    const gymEndurance = buildSession({ goal: "endurance", environment: "gym", duration: 30, checkin });
+    const outdoorEndurance = buildSession({ goal: "endurance", environment: "outdoor", duration: 45, checkin });
+    const outdoorAllRound = buildSession({ goal: "all_round", environment: "outdoor", duration: 45, checkin });
+    expect(gymEndurance.blocks[1].items.join(" ")).toContain("네거티브 스플릿 워크·런 이지");
+    expect(outdoorEndurance.blocks[1].items.join(" ")).toContain("이지 프로그레션 런");
+    expect(outdoorEndurance.blocks[1].items.join(" ")).toContain("크루즈 인터벌 런 이지");
+    expect(outdoorEndurance.blocks[1].items.join(" ")).toContain("런·워크 래더 이지");
+    expect(outdoorAllRound.blocks[1].items.join(" ")).toContain("힐 리피트 워크·런 이지");
+    expect(outdoorAllRound.blocks[1].items.join(" ")).toContain("케이던스 래더 마치·조그");
+  });
 });
