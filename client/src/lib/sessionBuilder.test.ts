@@ -30,11 +30,11 @@ describe("single session builder", () => {
     const outdoor = buildSession({ goal: "all_round", environment: "outdoor", duration: 45, checkin });
     expect(home.blocks[1].items.join(" ")).toContain("케틀벨 데드리프트");
     expect(home.blocks[1].items.join(" ")).toContain("핸드 릴리스 푸시업");
-    expect(gym.blocks[1].items.join(" ")).toContain("체스트 서포티드 로우");
-    expect(gym.blocks[1].items.join(" ")).toContain("샌드백 프런트 스쿼트");
-    expect(gym.blocks[1].items.join(" ")).toContain("케이블 스탠딩 힙 어브덕션");
+    expect(gym.blocks[1].items.join(" ")).toContain("케이블 싱글 암 로우");
+    expect(gym.blocks[1].items.join(" ")).toContain("유니래터럴 레그 프레스");
+    expect(gym.blocks[1].items.join(" ")).toContain("케이블 싱글 암 체스트 프레스");
     expect(gym.blocks[1].items.join(" ")).toContain("일립티컬 이지");
-    expect(gym.blocks[1].items.join(" ")).toContain("어시스트 딥 머신");
+    expect(gym.blocks[1].items.join(" ")).toContain("유니래터럴 레그 프레스");
     expect(gym.blocks[1].items.join(" ")).toContain("트레드밀 템포 워크");
     expect(outdoor.blocks[1].items.join(" ")).toContain("난간 지지 스텝업");
     expect(outdoor.blocks[1].items.join(" ")).toContain("컨트롤 다운힐 워크");
@@ -47,8 +47,8 @@ describe("single session builder", () => {
     expect(home.blocks[1].items.join(" ")).toContain("지지 인버티드 로우");
     expect(home.blocks[1].items.join(" ")).toContain("노르딕 컬 프렙");
     expect(gym.blocks[1].items.join(" ")).toContain("케이블 스탠딩 힙 어브덕션");
-    expect(outdoor.blocks[1].items.join(" ")).toContain("템포 워크·런");
-    expect(outdoor.blocks[1].items.join(" ")).toContain("경사 조그·워크");
+    expect(outdoor.blocks[1].items.join(" ")).toContain("200m 런·워크 이지");
+    expect(outdoor.blocks[1].items.join(" ")).toContain("400m 런·워크");
   });
 
   it("includes the current squat, push, incline-walk, and machine progression variants", () => {
@@ -59,6 +59,18 @@ describe("single session builder", () => {
     expect(home.blocks[1].items.join(" ")).toContain("핸드 릴리스 푸시업");
     expect(gymStrength.blocks[1].items.join(" ")).toContain("체스트 서포티드 머신 로우");
     expect(gymStrength.blocks[1].items.join(" ")).toContain("머신 앱 크런치");
-    expect(gymEndurance.blocks[1].items.join(" ")).toContain("트레드밀 인클라인 템포 워크");
+    expect(gymEndurance.blocks[1].items.join(" ")).toContain("트레드밀 조그·워크 인터벌");
+  });
+
+  it("connects advanced bodyweight, distance-based running, and unilateral machine options", () => {
+    const home = buildSession({ goal: "all_round", environment: "home", duration: 45, checkin });
+    const outdoor = buildSession({ goal: "endurance", environment: "outdoor", duration: 45, checkin });
+    const gym = buildSession({ goal: "all_round", environment: "gym", duration: 45, checkin });
+    expect(home.blocks[1].items.join(" ")).toContain("아처 푸시업 프렙");
+    expect(home.blocks[1].items.join(" ")).toContain("할로우 턱 홀드");
+    expect(outdoor.blocks[1].items.join(" ")).toContain("200m 런·워크 이지");
+    expect(outdoor.blocks[1].items.join(" ")).toContain("400m 런·워크");
+    expect(gym.blocks[1].items.join(" ")).toContain("유니래터럴 레그 프레스");
+    expect(gym.blocks[1].items.join(" ")).toContain("케이블 싱글 암 체스트 프레스");
   });
 });
