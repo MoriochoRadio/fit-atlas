@@ -2,7 +2,7 @@
 import { createElement } from "react";
 import * as ReactRuntime from "react";
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
-import { cleanup, fireEvent, render, screen, within } from "@testing-library/react";
+import { cleanup, fireEvent, render, screen, waitFor, within } from "@testing-library/react";
 import Home from "./Home";
 
 Object.assign(globalThis, { React: ReactRuntime });
@@ -37,6 +37,14 @@ describe("Home recovery alternative flow", () => {
     expect(screen.getByText("거리 · 선택")).toBeTruthy();
     expect(screen.getByRole("option", { name: "km" })).toBeTruthy();
     expect(screen.getByRole("option", { name: "m" })).toBeTruthy();
+  });
+
+  it("renders the first catalog page first, then appends the next page on demand", async () => {
+    render(createElement(Home));
+    expect(screen.getByText("100개 표시 · 100/1000개 카탈로그를 불러왔습니다.")).toBeTruthy();
+
+    fireEvent.click(screen.getByRole("button", { name: /운동 100개 더 보기/ }));
+    await waitFor(() => expect(screen.getByText("200개 표시 · 200/1000개 카탈로그를 불러왔습니다.")).toBeTruthy());
   });
 
   it("renders all four conservative cardio interval templates", () => {

@@ -1,4 +1,4 @@
-import { exercises } from "./fitnessData";
+import type { Exercise } from "./catalogTypes";
 import { getDistanceKm, getVolume, type TrainingLog } from "./trainingMetrics";
 
 const DAY_MS = 86_400_000;
@@ -22,8 +22,8 @@ export function getConsistency(logs: TrainingLog[], referenceDate = new Date()) 
   return { activeDays: days.size, possibleDays: 28, weeklyAverage: Math.round((days.size / 4) * 10) / 10 };
 }
 
-export function getRegionBalance(logs: TrainingLog[]) {
-  const nameMap = new Map(exercises.map((exercise) => [exercise.name, exercise]));
+export function getRegionBalance(logs: TrainingLog[], catalog: Exercise[] = []) {
+  const nameMap = new Map(catalog.map((exercise) => [exercise.name, exercise]));
   const totals = new Map<string, number>();
   logs.forEach((log) => {
     const exercise = nameMap.get(log.exercise);
@@ -34,8 +34,8 @@ export function getRegionBalance(logs: TrainingLog[]) {
   return Array.from(totals.entries()).map(([region, score]) => ({ region, score })).sort((a, b) => b.score - a.score);
 }
 
-export function getAerobicIntensityInsight(logs: TrainingLog[], referenceDate = new Date()) {
-  const nameMap = new Map(exercises.map((exercise) => [exercise.name, exercise]));
+export function getAerobicIntensityInsight(logs: TrainingLog[], referenceDate = new Date(), catalog: Exercise[] = []) {
+  const nameMap = new Map(catalog.map((exercise) => [exercise.name, exercise]));
   const start = new Date(referenceDate.getTime() - 6 * DAY_MS);
   const aerobic = logs.filter((log) => log.date >= isoDay(start) && log.date <= isoDay(referenceDate) && ["러닝", "유산소"].includes(nameMap.get(log.exercise)?.category ?? ""));
   if (aerobic.length === 0) return { sessions: 0, minutes: 0, distanceKm: 0, averageRpe: 0, paceMinutesPerKm: undefined, band: "기록 대기", label: "러닝·유산소 기록을 추가하면 시간·거리·자각강도를 함께 읽습니다." };
@@ -98,11 +98,11 @@ export function getPersonalRecordTrend(logs: TrainingLog[], referenceDate = new 
   return { exercise: candidate.exercise, direction, label: `${candidate.exercise} · ${candidate.load}kg · 이전 최고 ${priorBest || "없음"}kg` };
 }
 
-export function getInsightSummary(logs: TrainingLog[], referenceDate = new Date()) {
+export function getInsightSummary(logs: TrainingLog[], referenceDate = new Date(), catalog: Exercise[] = []) {
   const load = getTrainingLoad(logs, referenceDate);
   const consistency = getConsistency(logs, referenceDate);
-  const balance = getRegionBalance(logs);
-  const aerobic = getAerobicIntensityInsight(logs, referenceDate);
+  const balance = getRegionBalance(logs, catalog);
+  const aerobic = getAerobicIntensityInsight(logs, referenceDate, catalog);
   const trend = getExerciseTrend(logs, referenceDate);
   const streak = getConsecutiveDayStreak(logs, referenceDate);
   const prTrend = getPersonalRecordTrend(logs, referenceDate);

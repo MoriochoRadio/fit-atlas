@@ -1,17 +1,18 @@
 import { AnatomyMap } from "@/components/AnatomyMap";
-import { exercises, recoveryGuides, wellnessCards, type BodyRegion, type Exercise } from "@/lib/fitnessData";
+import { recoveryGuides, wellnessCards } from "@/lib/catalogContent";
+import { catalogSummary, entriesToExercises, getCatalogPageCount, getInitialCatalogEntries, loadCatalogPage, loadFullCatalog } from "@/lib/catalogLoader";
+import type { BodyRegion, Exercise, ExerciseDetail } from "@/lib/catalogTypes";
 import { aerobicIntervalTemplates } from "@/lib/aerobicIntervals";
 import { lowNoiseCircuitTemplates } from "@/lib/lowNoiseCircuits";
 import { lifeStageGuides, startChecklist } from "@/lib/lifeStageGuidance";
-import { Activity, ArrowRight, BarChart3, BookOpen, Brain, CalendarDays, Check, ChevronRight, Dumbbell, HeartPulse, Menu, Plus, Search, ShieldCheck, Sparkles, Timer, X } from "lucide-react";
+import { Activity, ArrowRight, BarChart3, BookOpen, Brain, CalendarDays, Check, ChevronRight, Dumbbell, HeartPulse, Loader2, Menu, Plus, Search, ShieldCheck, Sparkles, Timer, X } from "lucide-react";
 import React, { useEffect, useMemo, useState } from "react";
 import { toast } from "sonner";
 import { getCalendarDays, getFourWeekTrends, getPersonalRecords, getTotalMinutes, getTotalVolume, getWeeklyVolume, type TrainingLog } from "@/lib/trainingMetrics";
 import { getPersonalizedProgram } from "@/lib/personalization";
 import { downloadBackup, parseBackup, readLocalCheckin, readLocalProfile, readLocalWeeklyPlan, readTrainingLogs, saveLocalCheckin, saveLocalProfile, saveLocalWeeklyPlan, saveTrainingLogs } from "@/lib/localStore";
-import { filterExercises, getCatalogStats } from "@/lib/exerciseFilters";
+import { filterExercises } from "@/lib/exerciseFilters";
 import { sortExercises, type ExerciseSort } from "@/lib/exerciseSorting";
-import { getExerciseDetail } from "@/lib/exerciseDetails";
 import { recoveryProtocols, recoveryStageGuides } from "@/lib/recoveryProtocols";
 import { applyRecoveryExplore, getRecoveryPathway, recoveryPathways, type RecoveryPathwayId } from "@/lib/recoveryPathways";
 import { getInsightSummary } from "@/lib/trainingInsights";
@@ -27,6 +28,7 @@ type LogEntry = TrainingLog;
 
 const categories = ["전체", "러닝", "유산소", "헬스기구", "프리웨이트", "맨몸운동", "모빌리티", "균형·협응", "요가·필라테스", "파워·민첩성"] as const;
 const goalCopy = { 근력증가: "strength", 체력증가: "endurance", 다이어트: "weight_management" } as const;
+const catalogPageSize = catalogSummary.pageSize;
 
 function SectionTitle({ eyebrow, title, description, action }: { eyebrow: string; title: string; description: string; action?: React.ReactNode }) {
   return <div className="section-heading"><div><p className="eyebrow">{eyebrow}</p><h2>{title}</h2><p className="section-description">{description}</p></div>{action}</div>;
@@ -40,6 +42,10 @@ export default function Home() {
   const [difficulty, setDifficulty] = useState("전체");
   const [equipment, setEquipment] = useState("전체");
   const [sort, setSort] = useState<ExerciseSort>("recommended");
+  const [catalogEntries, setCatalogEntries] = useState(() => getInitialCatalogEntries());
+  const [loadedCatalogPages, setLoadedCatalogPages] = useState(1);
+  const [visibleExerciseCount, setVisibleExerciseCount] = useState<number>(catalogPageSize);
+  const [catalogLoading, setCatalogLoading] = useState(false);
   const [activeRegion, setActiveRegion] = useState<BodyRegion>("등");
   const [activeRecoveryPathwayId, setActiveRecoveryPathwayId] = useState<RecoveryPathwayId>("shoulder");
   const [goal, setGoal] = useState<keyof typeof goalCopy>("근력증가");
@@ -77,13 +83,16 @@ export default function Home() {
     if (!logOpen) setLinkedPlanSessionId(null);
   }, [logOpen]);
 
-  const filteredExercises = useMemo(() => sortExercises(filterExercises(exercises, { keyword, category, focus, region: regionFilter, difficulty, equipment }), sort), [category, difficulty, equipment, focus, keyword, regionFilter, sort]);
-  const catalogStats = useMemo(() => getCatalogStats(exercises), []);
+  const catalogExercises = useMemo(() => entriesToExercises(catalogEntries), [catalogEntries]);
+  const detailsByExerciseId = useMemo(() => new Map(catalogEntries.map(({ exercise, detail }) => [exercise.id, detail])), [catalogEntries]);
+  const filteredExercises = useMemo(() => sortExercises(filterExercises(catalogExercises, { keyword, category, focus, region: regionFilter, difficulty, equipment }), sort), [catalogExercises, category, difficulty, equipment, focus, keyword, regionFilter, sort]);
+  const visibleExercises = useMemo(() => filteredExercises.slice(0, visibleExerciseCount), [filteredExercises, visibleExerciseCount]);
+  const catalogStats = catalogSummary;
 
-  const regionExercises = exercises.filter((exercise) => exercise.regions.includes(activeRegion));
+  const regionExercises = catalogExercises.filter((exercise) => exercise.regions.includes(activeRegion));
   const recovery = recoveryGuides[activeRegion];
   const activeRecoveryPathway = getRecoveryPathway(activeRecoveryPathwayId);
-  const pathwayAlternatives = activeRecoveryPathway.alternativeExerciseIds.map((id) => exercises.find((exercise) => exercise.id === id)).filter((exercise): exercise is Exercise => Boolean(exercise));
+  const pathwayAlternatives = activeRecoveryPathway.alternativeExerciseIds.map((id) => catalogExercises.find((exercise) => exercise.id === id)).filter((exercise): exercise is Exercise => Boolean(exercise));
   const plan = getPersonalizedProgram({ age: profileForm.age ? Number(profileForm.age) : null, weightKg: profileForm.weightKg ? Number(profileForm.weightKg) : null, sex: profileForm.sex as "female" | "male" | "nonbinary" | "undisclosed", primaryGoal: goalCopy[goal], experience: profileForm.experience as "beginner" | "intermediate" | "advanced", recoveryContext: profileForm.recoveryContext as "none" | "reduced_readiness" | "pregnancy_postpartum" });
   const routine = getRoutineTemplate(routineGoal);
   const weeklyVolume = useMemo(() => getWeeklyVolume(logs), [logs]);
@@ -94,7 +103,7 @@ export default function Home() {
   const totalVolume = getTotalVolume(logs);
   const totalMinutes = getTotalMinutes(logs);
   const pr = useMemo(() => getPersonalRecords(logs), [logs]);
-  const insights = useMemo(() => getInsightSummary(logs), [logs]);
+  const insights = useMemo(() => getInsightSummary(logs, new Date(), catalogExercises), [catalogExercises, logs]);
   const checkinRecommendation = useMemo(() => getCheckinRecommendation(checkin), [checkin]);
   const sessionPlan = useMemo(() => buildSession({ goal: sessionGoal, environment: sessionEnvironment, duration: sessionDuration, checkin }), [checkin, sessionDuration, sessionEnvironment, sessionGoal]);
   const weeklyPlanInsight = useMemo(() => getWeeklyPlanInsight(weeklyPlan, logs, checkin), [checkin, logs, weeklyPlan]);
@@ -133,8 +142,63 @@ export default function Home() {
     setLogOpen(true);
   };
 
-  const exploreRecoveryAlternative = (exerciseId: string) => {
-    const result = applyRecoveryExplore(activeRecoveryPathway, exerciseId, exercises, { setKeyword, setCategory, setFocus, setRegion: setRegionFilter, scrollToTarget: (targetId) => document.getElementById(targetId)?.scrollIntoView({ behavior: "smooth" }) });
+  useEffect(() => {
+    setVisibleExerciseCount(catalogPageSize);
+  }, [category, difficulty, equipment, focus, keyword, regionFilter, sort]);
+
+  useEffect(() => {
+    const needsFullCatalog = Boolean(keyword || category !== "전체" || focus !== "전체" || regionFilter !== "전체" || difficulty !== "전체" || equipment !== "전체");
+    if (!needsFullCatalog || loadedCatalogPages === getCatalogPageCount()) return;
+    let cancelled = false;
+    setCatalogLoading(true);
+    void loadFullCatalog().then((entries) => {
+      if (cancelled) return;
+      setCatalogEntries(entries);
+      setLoadedCatalogPages(getCatalogPageCount());
+    }).catch(() => {
+      if (!cancelled) toast.error("운동 목록을 추가로 불러오지 못했습니다. 다시 시도해 주세요.");
+    }).finally(() => {
+      if (!cancelled) setCatalogLoading(false);
+    });
+    return () => { cancelled = true; };
+  }, [category, difficulty, equipment, focus, keyword, loadedCatalogPages, regionFilter]);
+
+  useEffect(() => {
+    if (!logOpen || loadedCatalogPages === getCatalogPageCount()) return;
+    void loadFullCatalog().then((entries) => {
+      setCatalogEntries(entries);
+      setLoadedCatalogPages(getCatalogPageCount());
+    });
+  }, [loadedCatalogPages, logOpen]);
+
+  const loadMoreExercises = async () => {
+    if (visibleExerciseCount < filteredExercises.length) {
+      setVisibleExerciseCount((current) => current + catalogPageSize);
+      return;
+    }
+    if (loadedCatalogPages >= getCatalogPageCount() || catalogLoading) return;
+    setCatalogLoading(true);
+    try {
+      const nextPage = await loadCatalogPage(loadedCatalogPages);
+      setCatalogEntries((current) => [...current, ...nextPage]);
+      setLoadedCatalogPages((current) => current + 1);
+      setVisibleExerciseCount((current) => current + catalogPageSize);
+    } catch {
+      toast.error("다음 운동 목록을 불러오지 못했습니다. 다시 시도해 주세요.");
+    } finally {
+      setCatalogLoading(false);
+    }
+  };
+
+  const exploreRecoveryAlternative = async (exerciseId: string) => {
+    let availableExercises = catalogExercises;
+    if (!availableExercises.some((exercise) => exercise.id === exerciseId)) {
+      const entries = await loadFullCatalog();
+      setCatalogEntries(entries);
+      setLoadedCatalogPages(getCatalogPageCount());
+      availableExercises = entriesToExercises(entries);
+    }
+    const result = applyRecoveryExplore(activeRecoveryPathway, exerciseId, availableExercises, { setKeyword, setCategory, setFocus, setRegion: setRegionFilter, scrollToTarget: (targetId) => document.getElementById(targetId)?.scrollIntoView({ behavior: "smooth" }) });
     if (result) toast.success(`${result.exercise.name}의 자세·안전 단서를 확인하세요.`);
   };
 
@@ -206,10 +270,11 @@ export default function Home() {
         <section className="routine-section section-pad"><SectionTitle eyebrow="ROUTINE LIBRARY" title="목표를 루틴으로, 루틴을 리듬으로." description="4주 템플릿은 일반적인 시작 구조입니다. 주차를 통과하기보다 통증·피로·수면 반응에 맞춰 머무르거나 가볍게 조절하세요." /><div className="routine-goals">{(["strength", "endurance", "weight_management", "general_health"] as RoutineGoal[]).map((item) => <button key={item} className={routineGoal === item ? "is-selected" : ""} onClick={() => setRoutineGoal(item)}>{{ strength: "근력", endurance: "심폐", weight_management: "체중 관리", general_health: "전신 건강" }[item]}</button>)}</div><div className="routine-card"><div className="routine-intro"><p className="eyebrow">{routineGoal.replace("_", " ").toUpperCase()}</p><h3>{routine.title}</h3><p>{routine.intro}</p><div className="routine-safety"><ShieldCheck size={16} />{routine.safetyNote}</div></div><div className="routine-weeks">{routine.weeks.map((week) => <article key={week.week}><span>W{week.week}</span><div><p className="small-label">{week.theme} · {week.sessions}</p><ul>{week.focus.map((item) => <li key={item}>{item}</li>)}</ul><p>{week.note}</p></div></article>)}</div></div></section>
 
         <section id="explore" className="explore-section section-pad">
-          <SectionTitle eyebrow="EXERCISE LIBRARY" title="움직임을 지식으로 익히세요." description={`개인용 정적 큐레이션: ${catalogStats.categoryCount}개 카테고리 · ${catalogStats.exerciseCount}개 운동. 카테고리와 목적, 장비로 탐색하고 올바른 자세·효과·안전 단서를 확인하세요.`} action={<span className="library-count">{filteredExercises.length} EXERCISES</span>} />
+          <SectionTitle eyebrow="EXERCISE LIBRARY" title="움직임을 지식으로 익히세요." description={`개인용 정적 큐레이션: ${catalogStats.categoryCount}개 카테고리 · ${catalogStats.exerciseCount}개 운동. 카테고리와 목적, 장비로 탐색하고 올바른 자세·효과·안전 단서를 확인하세요.`} action={<span className="library-count">{filteredExercises.length} MATCHES · {catalogExercises.length}/{catalogStats.exerciseCount}</span>} />
           <div className="search-panel"><div className="search-field"><Search size={18} /><input value={keyword} onChange={(event) => setKeyword(event.target.value)} placeholder="운동, 부위, 장비 검색" aria-label="운동 검색" /></div><div className="quick-category-filter" role="group" aria-label="운동 종류 빠른 필터"><div className="quick-category-head"><div><p className="small-label">EXERCISE TYPE</p><b>운동 종류 빠른 선택</b><span aria-live="polite">{category === "전체" ? `전체 ${filteredExercises.length}개 표시` : `${category} ${filteredExercises.length}개 표시`}</span></div>{(keyword || category !== "전체" || focus !== "전체" || regionFilter !== "전체" || difficulty !== "전체" || equipment !== "전체" || sort !== "recommended") && <button className="filter-reset" onClick={resetExploreFilters}>조건 초기화</button>}</div><div className="quick-category-options">{categories.map((item) => <button key={item} className={category === item ? "filter-active" : ""} aria-pressed={category === item} onClick={() => setCategory(item)}>{item === "전체" ? "전체 보기" : item}</button>)}</div></div><div className="filter-row"><label className="sort-select">정렬<select value={sort} onChange={(event) => setSort(event.target.value as ExerciseSort)} aria-label="정렬 기준"><option value="recommended">추천순 · 입문·짧은 시간 우선</option><option value="difficulty">난이도순 · 입문부터</option><option value="duration">소요 시간순 · 짧은 시간부터</option></select></label><select value={regionFilter} onChange={(event) => setRegionFilter(event.target.value)} aria-label="부위 필터"><option>전체</option>{Object.keys(recoveryGuides).map((region) => <option key={region}>{region}</option>)}</select><select value={focus} onChange={(event) => setFocus(event.target.value)} aria-label="목적 필터"><option>전체</option><option>근력</option><option>체력</option><option>심폐</option><option>가동성</option><option>균형</option><option>협응</option><option>파워</option></select><select value={difficulty} onChange={(event) => setDifficulty(event.target.value)} aria-label="난이도 필터"><option>전체</option><option>입문</option><option>중급</option><option>상급</option></select><select value={equipment} onChange={(event) => setEquipment(event.target.value)} aria-label="장비 필터"><option>전체</option><option>장비 없음</option><option>장비 필요</option></select></div></div>
-          <div className="exercise-grid">{filteredExercises.map((exercise, index) => <ExerciseCard key={exercise.id} exercise={exercise} index={index} />)}</div>
+          <div className="exercise-grid">{visibleExercises.map((exercise, index) => <ExerciseCard key={exercise.id} exercise={exercise} detail={detailsByExerciseId.get(exercise.id)!} index={index} />)}</div>
           {filteredExercises.length === 0 && <div className="empty-library"><Search size={26} /><p>조건에 맞는 운동을 찾지 못했습니다. 검색어나 필터를 조정해 보세요.</p></div>}
+          {filteredExercises.length > 0 && (visibleExerciseCount < filteredExercises.length || loadedCatalogPages < getCatalogPageCount()) && <div className="catalog-pagination"><p aria-live="polite">{visibleExercises.length}개 표시 · {catalogExercises.length}/{catalogStats.exerciseCount}개 카탈로그를 불러왔습니다.</p><button className="outline-button catalog-load-more" onClick={() => void loadMoreExercises()} disabled={catalogLoading}>{catalogLoading ? <><Loader2 size={15} className="animate-spin" /> 불러오는 중</> : <>운동 100개 더 보기 <ArrowRight size={15} /></>}</button></div>}
         </section>
 
         <section id="anatomy" className="anatomy-section section-pad">
@@ -243,15 +308,14 @@ export default function Home() {
 
       <footer className="site-footer"><div className="brand"><span className="brand-mark"><Activity size={17} /></span><span>FIT ATLAS</span></div><p>움직임을 위한 지식, 일관성을 위한 기록.</p><p>© 2026 Fit Atlas. Educational information only.</p></footer>
 
-      {logOpen && <div className="modal-backdrop" role="presentation" onMouseDown={() => setLogOpen(false)}><section className="log-modal" role="dialog" aria-modal="true" aria-labelledby="log-title" onMouseDown={(event) => event.stopPropagation()}><div className="modal-head"><div><p className="eyebrow">TRAINING LOG</p><h2 id="log-title">운동 기록 추가</h2></div><button onClick={() => setLogOpen(false)} className="icon-button" aria-label="닫기"><X size={19} /></button></div><div className="log-form"><div className="form-grid"><label>운동 날짜<input type="date" max={new Date().toISOString().slice(0, 10)} value={form.date} onChange={(event) => setForm({ ...form, date: event.target.value })} /></label><label>운동<select value={form.exercise} onChange={(event) => setForm({ ...form, exercise: event.target.value })}>{exercises.map((exercise) => <option key={exercise.id}>{exercise.name}</option>)}</select></label></div><div className="form-grid"><label>세트<input inputMode="numeric" value={form.sets} onChange={(event) => setForm({ ...form, sets: event.target.value })} /></label><label>횟수<input inputMode="numeric" value={form.reps} onChange={(event) => setForm({ ...form, reps: event.target.value })} /></label><label>중량 (kg)<input inputMode="decimal" value={form.load} onChange={(event) => setForm({ ...form, load: event.target.value })} /></label><label>운동 시간 (분)<input inputMode="numeric" value={form.minutes} onChange={(event) => setForm({ ...form, minutes: event.target.value })} /></label><label>거리 · 선택<input inputMode="decimal" placeholder="러닝·사이클·로잉·수영" value={form.distance} onChange={(event) => setForm({ ...form, distance: event.target.value })} /><select value={form.distanceUnit} onChange={(event) => setForm({ ...form, distanceUnit: event.target.value as "km" | "m" })}><option value="km">km</option><option value="m">m</option></select></label></div><label>주관적 강도 RPE <span>{form.intensity}/10</span><input type="range" min="1" max="10" value={form.intensity} onChange={(event) => setForm({ ...form, intensity: event.target.value })} /></label><p className="form-safety"><ShieldCheck size={15} /> 거리 단위는 러닝·사이클에는 km, 로잉·수영에는 m를 사용하세요. 기록은 시간·거리·RPE의 보수적 맥락과 4주 흐름을 이 브라우저에서만 계산합니다.</p><button className="dark-button form-submit" onClick={addLog}>기록 저장 <ArrowRight size={16} /></button></div></section></div>}
+      {logOpen && <div className="modal-backdrop" role="presentation" onMouseDown={() => setLogOpen(false)}><section className="log-modal" role="dialog" aria-modal="true" aria-labelledby="log-title" onMouseDown={(event) => event.stopPropagation()}><div className="modal-head"><div><p className="eyebrow">TRAINING LOG</p><h2 id="log-title">운동 기록 추가</h2></div><button onClick={() => setLogOpen(false)} className="icon-button" aria-label="닫기"><X size={19} /></button></div><div className="log-form"><div className="form-grid"><label>운동 날짜<input type="date" max={new Date().toISOString().slice(0, 10)} value={form.date} onChange={(event) => setForm({ ...form, date: event.target.value })} /></label><label>운동<select value={form.exercise} onChange={(event) => setForm({ ...form, exercise: event.target.value })}>{catalogExercises.map((exercise) => <option key={exercise.id}>{exercise.name}</option>)}</select></label></div><div className="form-grid"><label>세트<input inputMode="numeric" value={form.sets} onChange={(event) => setForm({ ...form, sets: event.target.value })} /></label><label>횟수<input inputMode="numeric" value={form.reps} onChange={(event) => setForm({ ...form, reps: event.target.value })} /></label><label>중량 (kg)<input inputMode="decimal" value={form.load} onChange={(event) => setForm({ ...form, load: event.target.value })} /></label><label>운동 시간 (분)<input inputMode="numeric" value={form.minutes} onChange={(event) => setForm({ ...form, minutes: event.target.value })} /></label><label>거리 · 선택<input inputMode="decimal" placeholder="러닝·사이클·로잉·수영" value={form.distance} onChange={(event) => setForm({ ...form, distance: event.target.value })} /><select value={form.distanceUnit} onChange={(event) => setForm({ ...form, distanceUnit: event.target.value as "km" | "m" })}><option value="km">km</option><option value="m">m</option></select></label></div><label>주관적 강도 RPE <span>{form.intensity}/10</span><input type="range" min="1" max="10" value={form.intensity} onChange={(event) => setForm({ ...form, intensity: event.target.value })} /></label><p className="form-safety"><ShieldCheck size={15} /> 거리 단위는 러닝·사이클에는 km, 로잉·수영에는 m를 사용하세요. 기록은 시간·거리·RPE의 보수적 맥락과 4주 흐름을 이 브라우저에서만 계산합니다.</p><button className="dark-button form-submit" onClick={addLog}>기록 저장 <ArrowRight size={16} /></button></div></section></div>}
       {profileOpen && <div className="modal-backdrop" role="presentation" onMouseDown={() => setProfileOpen(false)}><section className="log-modal profile-modal" role="dialog" aria-modal="true" aria-labelledby="profile-title" onMouseDown={(event) => event.stopPropagation()}><div className="modal-head"><div><p className="eyebrow">PERSONALIZATION</p><h2 id="profile-title">운동 기준 설정</h2></div><button onClick={() => setProfileOpen(false)} className="icon-button" aria-label="닫기"><X size={19} /></button></div><p className="modal-description">입력값은 이 기기에만 저장되며 보수적인 시작 난이도와 안내 맥락을 정하는 데만 사용합니다. 질환·통증·임신 상태 등 의료 정보에 대한 진단은 제공하지 않습니다.</p><div className="log-form"><div className="form-grid"><label>연령<input inputMode="numeric" placeholder="예: 30" value={profileForm.age} onChange={(event) => setProfileForm({ ...profileForm, age: event.target.value })} /></label><label>체중 (kg)<input inputMode="decimal" placeholder="예: 68" value={profileForm.weightKg} onChange={(event) => setProfileForm({ ...profileForm, weightKg: event.target.value })} /></label></div><label>성별<select value={profileForm.sex} onChange={(event) => setProfileForm({ ...profileForm, sex: event.target.value })}><option value="undisclosed">응답하지 않음</option><option value="female">여성</option><option value="male">남성</option><option value="nonbinary">논바이너리</option></select></label><div className="form-grid"><label>주요 목표<select value={profileForm.primaryGoal} onChange={(event) => setProfileForm({ ...profileForm, primaryGoal: event.target.value })}><option value="strength">근력 증가</option><option value="endurance">체력 증가</option><option value="weight_management">체중 관리</option><option value="general_health">건강 증진</option></select></label><label>경험 수준<select value={profileForm.experience} onChange={(event) => setProfileForm({ ...profileForm, experience: event.target.value })}><option value="beginner">입문</option><option value="intermediate">중급</option><option value="advanced">상급</option></select></label></div><label>선택적 안전 모드<select value={profileForm.recoveryContext} onChange={(event) => setProfileForm({ ...profileForm, recoveryContext: event.target.value })}><option value="none">해당 없음</option><option value="reduced_readiness">낮은 에너지·회복 저하·생애주기 변화</option><option value="pregnancy_postpartum">임신·산후 — 의료진 확인 우선</option></select></label><button className="dark-button form-submit" onClick={saveProfileSettings}>설정 저장 <ArrowRight size={16} /></button></div></section></div>}
     </div>
   );
 }
 
-function ExerciseCard({ exercise }: { exercise: Exercise; index: number }) {
+function ExerciseCard({ exercise, detail }: { exercise: Exercise; detail: ExerciseDetail; index: number }) {
   const [expanded, setExpanded] = useState(false);
-  const detail = getExerciseDetail(exercise);
   const visual = getMovementVisual(exercise.id);
   return <article className="exercise-card"><div className="exercise-top"><span>{exercise.category}</span><span className="difficulty">{exercise.difficulty}</span></div><h3>{exercise.name}</h3><p className="english-name">{exercise.englishName}</p><p className="exercise-description">{exercise.description}</p><div className="tag-row">{exercise.regions.map((region) => <span key={region}>{region}</span>)}<span className="focus-tag">{exercise.focus}</span></div><div className="exercise-meta"><span><Timer size={14} />{exercise.minutes}</span><span><Dumbbell size={14} />{exercise.equipment}</span></div>{expanded && <div className="exercise-detail"><p className="small-label">TRAINING BENEFITS</p><div className="benefit-row">{exercise.benefits.map((benefit) => <span key={benefit}>{benefit}</span>)}</div>{visual && <MovementVisualGuide title={visual.title} frames={visual.frames} />}<p className="small-label">SETUP</p><ol>{detail.setup.map((step, stepIndex) => <li key={step}><b>{stepIndex + 1}.</b>{step}</li>)}</ol><p className="small-label">FORM CUES</p><ol>{exercise.cues.map((cue, cueIndex) => <li key={cue}><b>{cueIndex + 1}.</b>{cue}</li>)}</ol><div className="detail-grid"><div><p className="small-label">EASIER</p><ul>{detail.regressions.map((item) => <li key={item}>{item}</li>)}</ul></div><div><p className="small-label">NEXT STEP</p><ul>{detail.progressions.map((item) => <li key={item}>{item}</li>)}</ul></div></div><p className="small-label">COMMON ERRORS</p><ul className="detail-errors">{detail.commonMistakes.map((item) => <li key={item}>{item}</li>)}</ul><p className="exercise-finish"><b>마무리</b>{detail.finish}</p><p className="exercise-warning">{exercise.warning}</p><a href={exercise.reference.url} target="_blank" rel="noreferrer">{exercise.reference.label} <ArrowRight size={13} /></a></div>}<button className="card-expand" onClick={() => setExpanded(!expanded)}>{expanded ? "간단히 보기" : "자세·근거 보기"}<ChevronRight size={15} className={expanded ? "rotate-icon" : ""} /></button></article>;
 }

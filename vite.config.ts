@@ -35,7 +35,6 @@ export default defineConfig({
     rollupOptions: {
       output: {
         manualChunks(id) {
-          if (id.includes("/client/src/lib/expandedExercisesPart") || id.endsWith("/client/src/lib/fitnessData.ts") || id.endsWith("/client/src/lib/exerciseDetails.ts")) return "exercise-catalog";
           if (!id.includes("node_modules")) return;
           if (id.includes("react-dom") || id.includes("/react/")) return "react-runtime";
           if (id.includes("lucide-react")) return "icons";
