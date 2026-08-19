@@ -129,4 +129,15 @@ describe("single session builder", () => {
     expect(homeAllRound.blocks[1].items.join(" ")).toContain("지지 컨트롤 스텝백 탭");
     expect(homeStrength.blocks[1].items.join(" ")).toContain("콰이어트 힙 힌지 리치");
   });
+
+  it("connects floor-transfer, isometric, shoulder-stability, and calf-control options at home", () => {
+    const homeStrength = buildSession({ goal: "strength", environment: "home", duration: 45, checkin });
+    const homeAllRound = buildSession({ goal: "all_round", environment: "home", duration: 45, checkin });
+    expect(homeStrength.blocks[1].items.join(" ")).toContain("솔레우스 월 레이즈 이지");
+    expect(homeStrength.blocks[1].items.join(" ")).toContain("데드 버그 아이소메트릭 프레스");
+    expect(homeStrength.blocks[1].items.join(" ")).toContain("베어 플랭크 스캐풀라 프로트랙션");
+    expect(homeAllRound.blocks[1].items.join(" ")).toContain("티비알리스 월 레이즈 이지");
+    expect(homeAllRound.blocks[1].items.join(" ")).toContain("월 슬라이드 리프트오프 이지");
+    expect(homeAllRound.blocks[1].items.join(" ")).toContain("지지 하프 니링 투 스탠드");
+  });
 });
