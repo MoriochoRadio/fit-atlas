@@ -65,7 +65,6 @@ describe("exercise library QA", () => {
     expect(exercises.map((exercise) => exercise.id)).toEqual(expect.arrayContaining(["seated-wrist-radial-deviation-easy", "seated-wrist-ulnar-deviation-easy", "seated-hand-tendon-glide-easy", "elbow-supported-hand-open-close-easy", "seated-heel-raise-easy", "seated-toe-raise-easy", "seated-hip-abduction-press-easy", "seated-hip-adduction-squeeze-easy", "chair-seated-leg-slide-easy", "seated-cross-body-knee-tap-easy", "seated-step-out-tap-easy"]));
     expect(filterExercises(exercises, { ...allFilters, category: "맨몸운동", keyword: "텐던" }).map((exercise) => exercise.id)).toEqual(["seated-hand-tendon-glide-easy"]);
   });
-
   it("shows mobility entries and excludes equipment when requested", () => {
     expect(filterExercises(exercises, { ...allFilters, category: "모빌리티" }).map((exercise) => exercise.id)).toContain("cat-cow");
     expect(filterExercises(exercises, { ...allFilters, category: "균형·협응", focus: "균형" }).map((exercise) => exercise.id)).toContain("single-leg-stand");
