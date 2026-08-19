@@ -59,6 +59,9 @@ describe("Home recovery alternative flow", () => {
     fireEvent.click(within(card!).getByRole("button", { name: "자세·근거 보기" }));
 
     await waitFor(() => expect(screen.getAllByText("바벨 백 스쿼트").length).toBeGreaterThan(2));
+    expect(screen.getByLabelText("바벨 백 스쿼트 근거 적용 범위")).toBeTruthy();
+    expect(screen.getByText(/일반 저항 운동·점진적 부하·안전 원칙/)).toBeTruthy();
+    expect(screen.getByText(/개인의 질환·통증·부상 상태/)).toBeTruthy();
     expect(screen.getByRole("heading", { name: "최근 본 운동" })).toBeTruthy();
     expect(screen.getByRole("heading", { name: "즐겨찾기" })).toBeTruthy();
   });
