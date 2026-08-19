@@ -3,1845 +3,6 @@ import type { CatalogEntry } from "./catalogTypes";
 export const catalogPage09: CatalogEntry[] = [
   {
     "exercise": {
-      "id": "verified-single-leg-glute-bridge",
-      "name": "싱글 레그 글루트 브리지",
-      "englishName": "Single Leg Glute Bridge",
-      "category": "맨몸운동",
-      "regions": [
-        "둔근",
-        "하체"
-      ],
-      "focus": "근력",
-      "difficulty": "입문",
-      "equipment": "장비 없음",
-      "minutes": "6–12회 · 2세트",
-      "description": "싱글 레그 글루트 브리지은 장비 없음을 사용해 둔근·하체 중심의 독립적인 동작 경로를 연습하는 실제 운동 종목입니다.",
-      "cues": [
-        "지지면을 밀고 몸통 정렬",
-        "장비 없음과 신체 위치 먼저 확인",
-        "통증 없는 범위·호흡 유지"
-      ],
-      "benefits": [
-        "맨몸 근력·협응",
-        "둔근·하체 사용 인식",
-        "자기 조절 능력"
-      ],
-      "warning": "관절 통증·저림·어지러움·지지면 미끄러짐 또는 몸통 정렬 상실이 있으면 쉬운 변형으로 낮추거나 중단하세요.",
-      "reference": {
-        "label": "ACSM — Exercise Safety",
-        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
-      }
-    },
-    "detail": {
-      "setup": [
-        "싱글 레그 글루트 브리지 전 장비 없음·바닥·주변 공간을 확인",
-        "바닥·공간·지지면을 확인하고 쉬운 범위 리허설",
-        "가장 쉬운 범위와 낮은 강도에서 2회 리허설"
-      ],
-      "finish": "싱글 레그 글루트 브리지을 마친 뒤 호흡을 정리하고 손목·어깨·무릎 반응을 확인합니다.",
-      "commonMistakes": [
-        "통증을 참고 난도·반복을 동시에 올리기",
-        "정렬이 무너진 상태에서 반복 지속",
-        "통증·저림·어지러움 신호 무시"
-      ],
-      "regressions": [
-        "벽·벤치·무릎 지지 또는 짧은 범위",
-        "반복·시간 또는 가동 범위 낮추기",
-        "더 안정된 지지 또는 쉬운 기본 동작으로 전환"
-      ],
-      "progressions": [
-        "안정된 지지에서 반복만 소폭 증가",
-        "한 번에 하나의 변수만 조절",
-        "다음 날 반응이 편안할 때만 다음 단계 시도"
-      ]
-    }
-  },
-  {
-    "exercise": {
-      "id": "verified-single-arm-push-up",
-      "name": "원암 푸시업",
-      "englishName": "Single-Arm Push-Up",
-      "category": "맨몸운동",
-      "regions": [
-        "가슴"
-      ],
-      "focus": "근력",
-      "difficulty": "중급",
-      "equipment": "장비 없음",
-      "minutes": "6–12회 · 2세트",
-      "description": "원암 푸시업은 장비 없음을 사용해 가슴 중심의 독립적인 동작 경로를 연습하는 실제 운동 종목입니다.",
-      "cues": [
-        "지지면을 밀고 몸통 정렬",
-        "장비 없음과 신체 위치 먼저 확인",
-        "통증 없는 범위·호흡 유지"
-      ],
-      "benefits": [
-        "맨몸 근력·협응",
-        "가슴 사용 인식",
-        "자기 조절 능력"
-      ],
-      "warning": "관절 통증·저림·어지러움·지지면 미끄러짐 또는 몸통 정렬 상실이 있으면 쉬운 변형으로 낮추거나 중단하세요.",
-      "reference": {
-        "label": "ACSM — Exercise Safety",
-        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
-      }
-    },
-    "detail": {
-      "setup": [
-        "원암 푸시업 전 장비 없음·바닥·주변 공간을 확인",
-        "바닥·공간·지지면을 확인하고 쉬운 범위 리허설",
-        "가장 쉬운 범위와 낮은 강도에서 2회 리허설"
-      ],
-      "finish": "원암 푸시업을 마친 뒤 호흡을 정리하고 손목·어깨·무릎 반응을 확인합니다.",
-      "commonMistakes": [
-        "통증을 참고 난도·반복을 동시에 올리기",
-        "정렬이 무너진 상태에서 반복 지속",
-        "통증·저림·어지러움 신호 무시"
-      ],
-      "regressions": [
-        "벽·벤치·무릎 지지 또는 짧은 범위",
-        "반복·시간 또는 가동 범위 낮추기",
-        "더 안정된 지지 또는 쉬운 기본 동작으로 전환"
-      ],
-      "progressions": [
-        "안정된 지지에서 반복만 소폭 증가",
-        "한 번에 하나의 변수만 조절",
-        "다음 날 반응이 편안할 때만 다음 단계 시도"
-      ]
-    }
-  },
-  {
-    "exercise": {
-      "id": "verified-sit-up",
-      "name": "싯업",
-      "englishName": "Sit-Up",
-      "category": "맨몸운동",
-      "regions": [
-        "코어"
-      ],
-      "focus": "근력",
-      "difficulty": "입문",
-      "equipment": "장비 없음",
-      "minutes": "6–12회 · 2세트",
-      "description": "싯업은 장비 없음을 사용해 코어 중심의 독립적인 동작 경로를 연습하는 실제 운동 종목입니다.",
-      "cues": [
-        "지지면을 밀고 몸통 정렬",
-        "장비 없음과 신체 위치 먼저 확인",
-        "통증 없는 범위·호흡 유지"
-      ],
-      "benefits": [
-        "맨몸 근력·협응",
-        "코어 사용 인식",
-        "자기 조절 능력"
-      ],
-      "warning": "관절 통증·저림·어지러움·지지면 미끄러짐 또는 몸통 정렬 상실이 있으면 쉬운 변형으로 낮추거나 중단하세요.",
-      "reference": {
-        "label": "ACSM — Exercise Safety",
-        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
-      }
-    },
-    "detail": {
-      "setup": [
-        "싯업 전 장비 없음·바닥·주변 공간을 확인",
-        "바닥·공간·지지면을 확인하고 쉬운 범위 리허설",
-        "가장 쉬운 범위와 낮은 강도에서 2회 리허설"
-      ],
-      "finish": "싯업을 마친 뒤 호흡을 정리하고 손목·어깨·무릎 반응을 확인합니다.",
-      "commonMistakes": [
-        "통증을 참고 난도·반복을 동시에 올리기",
-        "정렬이 무너진 상태에서 반복 지속",
-        "통증·저림·어지러움 신호 무시"
-      ],
-      "regressions": [
-        "벽·벤치·무릎 지지 또는 짧은 범위",
-        "반복·시간 또는 가동 범위 낮추기",
-        "더 안정된 지지 또는 쉬운 기본 동작으로 전환"
-      ],
-      "progressions": [
-        "안정된 지지에서 반복만 소폭 증가",
-        "한 번에 하나의 변수만 조절",
-        "다음 날 반응이 편안할 때만 다음 단계 시도"
-      ]
-    }
-  },
-  {
-    "exercise": {
-      "id": "verified-spider-crawl",
-      "name": "스파이더 크롤",
-      "englishName": "Spider Crawl",
-      "category": "맨몸운동",
-      "regions": [
-        "코어"
-      ],
-      "focus": "근력",
-      "difficulty": "입문",
-      "equipment": "장비 없음",
-      "minutes": "6–12회 · 2세트",
-      "description": "스파이더 크롤은 장비 없음을 사용해 코어 중심의 독립적인 동작 경로를 연습하는 실제 운동 종목입니다.",
-      "cues": [
-        "지지면을 밀고 몸통 정렬",
-        "장비 없음과 신체 위치 먼저 확인",
-        "통증 없는 범위·호흡 유지"
-      ],
-      "benefits": [
-        "맨몸 근력·협응",
-        "코어 사용 인식",
-        "자기 조절 능력"
-      ],
-      "warning": "관절 통증·저림·어지러움·지지면 미끄러짐 또는 몸통 정렬 상실이 있으면 쉬운 변형으로 낮추거나 중단하세요.",
-      "reference": {
-        "label": "ACSM — Exercise Safety",
-        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
-      }
-    },
-    "detail": {
-      "setup": [
-        "스파이더 크롤 전 장비 없음·바닥·주변 공간을 확인",
-        "바닥·공간·지지면을 확인하고 쉬운 범위 리허설",
-        "가장 쉬운 범위와 낮은 강도에서 2회 리허설"
-      ],
-      "finish": "스파이더 크롤을 마친 뒤 호흡을 정리하고 손목·어깨·무릎 반응을 확인합니다.",
-      "commonMistakes": [
-        "통증을 참고 난도·반복을 동시에 올리기",
-        "정렬이 무너진 상태에서 반복 지속",
-        "통증·저림·어지러움 신호 무시"
-      ],
-      "regressions": [
-        "벽·벤치·무릎 지지 또는 짧은 범위",
-        "반복·시간 또는 가동 범위 낮추기",
-        "더 안정된 지지 또는 쉬운 기본 동작으로 전환"
-      ],
-      "progressions": [
-        "안정된 지지에서 반복만 소폭 증가",
-        "한 번에 하나의 변수만 조절",
-        "다음 날 반응이 편안할 때만 다음 단계 시도"
-      ]
-    }
-  },
-  {
-    "exercise": {
-      "id": "verified-standing-towel-triceps-extension",
-      "name": "서서 타월 삼두 익스텐션",
-      "englishName": "Standing Towel Triceps Extension",
-      "category": "맨몸운동",
-      "regions": [
-        "팔"
-      ],
-      "focus": "근력",
-      "difficulty": "입문",
-      "equipment": "장비 없음",
-      "minutes": "6–12회 · 2세트",
-      "description": "서서 타월 삼두 익스텐션은 장비 없음을 사용해 팔 중심의 독립적인 동작 경로를 연습하는 실제 운동 종목입니다.",
-      "cues": [
-        "지지면을 밀고 몸통 정렬",
-        "장비 없음과 신체 위치 먼저 확인",
-        "통증 없는 범위·호흡 유지"
-      ],
-      "benefits": [
-        "맨몸 근력·협응",
-        "팔 사용 인식",
-        "자기 조절 능력"
-      ],
-      "warning": "관절 통증·저림·어지러움·지지면 미끄러짐 또는 몸통 정렬 상실이 있으면 쉬운 변형으로 낮추거나 중단하세요.",
-      "reference": {
-        "label": "ACSM — Exercise Safety",
-        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
-      }
-    },
-    "detail": {
-      "setup": [
-        "서서 타월 삼두 익스텐션 전 장비 없음·바닥·주변 공간을 확인",
-        "바닥·공간·지지면을 확인하고 쉬운 범위 리허설",
-        "가장 쉬운 범위와 낮은 강도에서 2회 리허설"
-      ],
-      "finish": "서서 타월 삼두 익스텐션을 마친 뒤 호흡을 정리하고 손목·어깨·무릎 반응을 확인합니다.",
-      "commonMistakes": [
-        "통증을 참고 난도·반복을 동시에 올리기",
-        "정렬이 무너진 상태에서 반복 지속",
-        "통증·저림·어지러움 신호 무시"
-      ],
-      "regressions": [
-        "벽·벤치·무릎 지지 또는 짧은 범위",
-        "반복·시간 또는 가동 범위 낮추기",
-        "더 안정된 지지 또는 쉬운 기본 동작으로 전환"
-      ],
-      "progressions": [
-        "안정된 지지에서 반복만 소폭 증가",
-        "한 번에 하나의 변수만 조절",
-        "다음 날 반응이 편안할 때만 다음 단계 시도"
-      ]
-    }
-  },
-  {
-    "exercise": {
-      "id": "verified-step-up-with-knee-raise",
-      "name": "스텝업(무릎 올림)",
-      "englishName": "Step-up with Knee Raise",
-      "category": "맨몸운동",
-      "regions": [
-        "둔근",
-        "하체"
-      ],
-      "focus": "근력",
-      "difficulty": "입문",
-      "equipment": "장비 없음",
-      "minutes": "6–12회 · 2세트",
-      "description": "스텝업(무릎 올림)은 장비 없음을 사용해 둔근·하체 중심의 독립적인 동작 경로를 연습하는 실제 운동 종목입니다.",
-      "cues": [
-        "지지면을 밀고 몸통 정렬",
-        "장비 없음과 신체 위치 먼저 확인",
-        "통증 없는 범위·호흡 유지"
-      ],
-      "benefits": [
-        "맨몸 근력·협응",
-        "둔근·하체 사용 인식",
-        "자기 조절 능력"
-      ],
-      "warning": "관절 통증·저림·어지러움·지지면 미끄러짐 또는 몸통 정렬 상실이 있으면 쉬운 변형으로 낮추거나 중단하세요.",
-      "reference": {
-        "label": "ACSM — Exercise Safety",
-        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
-      }
-    },
-    "detail": {
-      "setup": [
-        "스텝업(무릎 올림) 전 장비 없음·바닥·주변 공간을 확인",
-        "바닥·공간·지지면을 확인하고 쉬운 범위 리허설",
-        "가장 쉬운 범위와 낮은 강도에서 2회 리허설"
-      ],
-      "finish": "스텝업(무릎 올림)을 마친 뒤 호흡을 정리하고 손목·어깨·무릎 반응을 확인합니다.",
-      "commonMistakes": [
-        "통증을 참고 난도·반복을 동시에 올리기",
-        "정렬이 무너진 상태에서 반복 지속",
-        "통증·저림·어지러움 신호 무시"
-      ],
-      "regressions": [
-        "벽·벤치·무릎 지지 또는 짧은 범위",
-        "반복·시간 또는 가동 범위 낮추기",
-        "더 안정된 지지 또는 쉬운 기본 동작으로 전환"
-      ],
-      "progressions": [
-        "안정된 지지에서 반복만 소폭 증가",
-        "한 번에 하나의 변수만 조절",
-        "다음 날 반응이 편안할 때만 다음 단계 시도"
-      ]
-    }
-  },
-  {
-    "exercise": {
-      "id": "verified-tuck-crunch",
-      "name": "턱 크런치",
-      "englishName": "Tuck Crunch",
-      "category": "맨몸운동",
-      "regions": [
-        "코어"
-      ],
-      "focus": "근력",
-      "difficulty": "입문",
-      "equipment": "장비 없음",
-      "minutes": "6–12회 · 2세트",
-      "description": "턱 크런치은 장비 없음을 사용해 코어 중심의 독립적인 동작 경로를 연습하는 실제 운동 종목입니다.",
-      "cues": [
-        "지지면을 밀고 몸통 정렬",
-        "장비 없음과 신체 위치 먼저 확인",
-        "통증 없는 범위·호흡 유지"
-      ],
-      "benefits": [
-        "맨몸 근력·협응",
-        "코어 사용 인식",
-        "자기 조절 능력"
-      ],
-      "warning": "관절 통증·저림·어지러움·지지면 미끄러짐 또는 몸통 정렬 상실이 있으면 쉬운 변형으로 낮추거나 중단하세요.",
-      "reference": {
-        "label": "ACSM — Exercise Safety",
-        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
-      }
-    },
-    "detail": {
-      "setup": [
-        "턱 크런치 전 장비 없음·바닥·주변 공간을 확인",
-        "바닥·공간·지지면을 확인하고 쉬운 범위 리허설",
-        "가장 쉬운 범위와 낮은 강도에서 2회 리허설"
-      ],
-      "finish": "턱 크런치을 마친 뒤 호흡을 정리하고 손목·어깨·무릎 반응을 확인합니다.",
-      "commonMistakes": [
-        "통증을 참고 난도·반복을 동시에 올리기",
-        "정렬이 무너진 상태에서 반복 지속",
-        "통증·저림·어지러움 신호 무시"
-      ],
-      "regressions": [
-        "벽·벤치·무릎 지지 또는 짧은 범위",
-        "반복·시간 또는 가동 범위 낮추기",
-        "더 안정된 지지 또는 쉬운 기본 동작으로 전환"
-      ],
-      "progressions": [
-        "안정된 지지에서 반복만 소폭 증가",
-        "한 번에 하나의 변수만 조절",
-        "다음 날 반응이 편안할 때만 다음 단계 시도"
-      ]
-    }
-  },
-  {
-    "exercise": {
-      "id": "verified-v-bar-pullup",
-      "name": "V바 풀업",
-      "englishName": "V-Bar Pullup",
-      "category": "맨몸운동",
-      "regions": [
-        "등"
-      ],
-      "focus": "근력",
-      "difficulty": "입문",
-      "equipment": "장비 없음",
-      "minutes": "6–12회 · 2세트",
-      "description": "V바 풀업은 장비 없음을 사용해 등 중심의 독립적인 동작 경로를 연습하는 실제 운동 종목입니다.",
-      "cues": [
-        "지지면을 밀고 몸통 정렬",
-        "장비 없음과 신체 위치 먼저 확인",
-        "통증 없는 범위·호흡 유지"
-      ],
-      "benefits": [
-        "맨몸 근력·협응",
-        "등 사용 인식",
-        "자기 조절 능력"
-      ],
-      "warning": "관절 통증·저림·어지러움·지지면 미끄러짐 또는 몸통 정렬 상실이 있으면 쉬운 변형으로 낮추거나 중단하세요.",
-      "reference": {
-        "label": "ACSM — Exercise Safety",
-        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
-      }
-    },
-    "detail": {
-      "setup": [
-        "V바 풀업 전 장비 없음·바닥·주변 공간을 확인",
-        "바닥·공간·지지면을 확인하고 쉬운 범위 리허설",
-        "가장 쉬운 범위와 낮은 강도에서 2회 리허설"
-      ],
-      "finish": "V바 풀업을 마친 뒤 호흡을 정리하고 손목·어깨·무릎 반응을 확인합니다.",
-      "commonMistakes": [
-        "통증을 참고 난도·반복을 동시에 올리기",
-        "정렬이 무너진 상태에서 반복 지속",
-        "통증·저림·어지러움 신호 무시"
-      ],
-      "regressions": [
-        "벽·벤치·무릎 지지 또는 짧은 범위",
-        "반복·시간 또는 가동 범위 낮추기",
-        "더 안정된 지지 또는 쉬운 기본 동작으로 전환"
-      ],
-      "progressions": [
-        "안정된 지지에서 반복만 소폭 증가",
-        "한 번에 하나의 변수만 조절",
-        "다음 날 반응이 편안할 때만 다음 단계 시도"
-      ]
-    }
-  },
-  {
-    "exercise": {
-      "id": "verified-wide-grip-rear-pull-up",
-      "name": "와이드 그립 리어 풀업",
-      "englishName": "Wide-Grip Rear Pull-Up",
-      "category": "맨몸운동",
-      "regions": [
-        "등"
-      ],
-      "focus": "근력",
-      "difficulty": "중급",
-      "equipment": "장비 없음",
-      "minutes": "6–12회 · 2세트",
-      "description": "와이드 그립 리어 풀업은 장비 없음을 사용해 등 중심의 독립적인 동작 경로를 연습하는 실제 운동 종목입니다.",
-      "cues": [
-        "지지면을 밀고 몸통 정렬",
-        "장비 없음과 신체 위치 먼저 확인",
-        "통증 없는 범위·호흡 유지"
-      ],
-      "benefits": [
-        "맨몸 근력·협응",
-        "등 사용 인식",
-        "자기 조절 능력"
-      ],
-      "warning": "관절 통증·저림·어지러움·지지면 미끄러짐 또는 몸통 정렬 상실이 있으면 쉬운 변형으로 낮추거나 중단하세요.",
-      "reference": {
-        "label": "ACSM — Exercise Safety",
-        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
-      }
-    },
-    "detail": {
-      "setup": [
-        "와이드 그립 리어 풀업 전 장비 없음·바닥·주변 공간을 확인",
-        "바닥·공간·지지면을 확인하고 쉬운 범위 리허설",
-        "가장 쉬운 범위와 낮은 강도에서 2회 리허설"
-      ],
-      "finish": "와이드 그립 리어 풀업을 마친 뒤 호흡을 정리하고 손목·어깨·무릎 반응을 확인합니다.",
-      "commonMistakes": [
-        "통증을 참고 난도·반복을 동시에 올리기",
-        "정렬이 무너진 상태에서 반복 지속",
-        "통증·저림·어지러움 신호 무시"
-      ],
-      "regressions": [
-        "벽·벤치·무릎 지지 또는 짧은 범위",
-        "반복·시간 또는 가동 범위 낮추기",
-        "더 안정된 지지 또는 쉬운 기본 동작으로 전환"
-      ],
-      "progressions": [
-        "안정된 지지에서 반복만 소폭 증가",
-        "한 번에 하나의 변수만 조절",
-        "다음 날 반응이 편안할 때만 다음 단계 시도"
-      ]
-    }
-  },
-  {
-    "exercise": {
-      "id": "verified-wind-sprints",
-      "name": "전력 질주",
-      "englishName": "Wind Sprints",
-      "category": "맨몸운동",
-      "regions": [
-        "코어"
-      ],
-      "focus": "근력",
-      "difficulty": "입문",
-      "equipment": "장비 없음",
-      "minutes": "6–12회 · 2세트",
-      "description": "전력 질주은 장비 없음을 사용해 코어 중심의 독립적인 동작 경로를 연습하는 실제 운동 종목입니다.",
-      "cues": [
-        "지지면을 밀고 몸통 정렬",
-        "장비 없음과 신체 위치 먼저 확인",
-        "통증 없는 범위·호흡 유지"
-      ],
-      "benefits": [
-        "맨몸 근력·협응",
-        "코어 사용 인식",
-        "자기 조절 능력"
-      ],
-      "warning": "관절 통증·저림·어지러움·지지면 미끄러짐 또는 몸통 정렬 상실이 있으면 쉬운 변형으로 낮추거나 중단하세요.",
-      "reference": {
-        "label": "ACSM — Exercise Safety",
-        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
-      }
-    },
-    "detail": {
-      "setup": [
-        "전력 질주 전 장비 없음·바닥·주변 공간을 확인",
-        "바닥·공간·지지면을 확인하고 쉬운 범위 리허설",
-        "가장 쉬운 범위와 낮은 강도에서 2회 리허설"
-      ],
-      "finish": "전력 질주을 마친 뒤 호흡을 정리하고 손목·어깨·무릎 반응을 확인합니다.",
-      "commonMistakes": [
-        "통증을 참고 난도·반복을 동시에 올리기",
-        "정렬이 무너진 상태에서 반복 지속",
-        "통증·저림·어지러움 신호 무시"
-      ],
-      "regressions": [
-        "벽·벤치·무릎 지지 또는 짧은 범위",
-        "반복·시간 또는 가동 범위 낮추기",
-        "더 안정된 지지 또는 쉬운 기본 동작으로 전환"
-      ],
-      "progressions": [
-        "안정된 지지에서 반복만 소폭 증가",
-        "한 번에 하나의 변수만 조절",
-        "다음 날 반응이 편안할 때만 다음 단계 시도"
-      ]
-    }
-  },
-  {
-    "exercise": {
-      "id": "verified-alternating-cable-shoulder-press",
-      "name": "얼터네이팅 케이블 숄더 프레스",
-      "englishName": "Alternating Cable Shoulder Press",
-      "category": "헬스기구",
-      "regions": [
-        "어깨"
-      ],
-      "focus": "근력",
-      "difficulty": "입문",
-      "equipment": "케이블 머신·핀",
-      "minutes": "6–12회 · 2세트",
-      "description": "얼터네이팅 케이블 숄더 프레스은 케이블 머신·핀을 사용해 어깨 중심의 독립적인 동작 경로를 연습하는 실제 운동 종목입니다.",
-      "cues": [
-        "시트·패드·관절 축 맞추기",
-        "케이블 머신·핀과 신체 위치 먼저 확인",
-        "통증 없는 범위·호흡 유지"
-      ],
-      "benefits": [
-        "저항 운동 적응",
-        "어깨 사용 인식",
-        "자기 조절 능력"
-      ],
-      "warning": "관절 통증·저림·기구 흔들림·핀 미고정 또는 반동이 있으면 즉시 중단하고 설정을 다시 확인하세요.",
-      "reference": {
-        "label": "ACSM — Exercise Safety",
-        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
-      }
-    },
-    "detail": {
-      "setup": [
-        "얼터네이팅 케이블 숄더 프레스 전 케이블 머신·핀·바닥·주변 공간을 확인",
-        "시트·패드·핀을 신체에 맞게 조절",
-        "가장 쉬운 범위와 낮은 강도에서 2회 리허설"
-      ],
-      "finish": "얼터네이팅 케이블 숄더 프레스을 마친 뒤 중량을 완전히 제자리에 두고 관절·호흡 반응을 확인합니다.",
-      "commonMistakes": [
-        "반동으로 중량을 움직이고 범위를 억지로 늘리기",
-        "정렬이 무너진 상태에서 반복 지속",
-        "통증·저림·어지러움 신호 무시"
-      ],
-      "regressions": [
-        "중량·가동 범위 낮추기",
-        "반복·시간 또는 가동 범위 낮추기",
-        "더 안정된 지지 또는 쉬운 기본 동작으로 전환"
-      ],
-      "progressions": [
-        "반복 품질 뒤 중량 한 단계만 조절",
-        "한 번에 하나의 변수만 조절",
-        "다음 날 반응이 편안할 때만 다음 단계 시도"
-      ]
-    }
-  },
-  {
-    "exercise": {
-      "id": "verified-bent-over-low-pulley-side-lateral",
-      "name": "벤트오버 로우 풀리 사이드 레터럴",
-      "englishName": "Bent Over Low-Pulley Side Lateral",
-      "category": "헬스기구",
-      "regions": [
-        "어깨"
-      ],
-      "focus": "근력",
-      "difficulty": "입문",
-      "equipment": "케이블 머신·핀",
-      "minutes": "6–12회 · 2세트",
-      "description": "벤트오버 로우 풀리 사이드 레터럴은 케이블 머신·핀을 사용해 어깨 중심의 독립적인 동작 경로를 연습하는 실제 운동 종목입니다.",
-      "cues": [
-        "시트·패드·관절 축 맞추기",
-        "케이블 머신·핀과 신체 위치 먼저 확인",
-        "통증 없는 범위·호흡 유지"
-      ],
-      "benefits": [
-        "저항 운동 적응",
-        "어깨 사용 인식",
-        "자기 조절 능력"
-      ],
-      "warning": "관절 통증·저림·기구 흔들림·핀 미고정 또는 반동이 있으면 즉시 중단하고 설정을 다시 확인하세요.",
-      "reference": {
-        "label": "ACSM — Exercise Safety",
-        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
-      }
-    },
-    "detail": {
-      "setup": [
-        "벤트오버 로우 풀리 사이드 레터럴 전 케이블 머신·핀·바닥·주변 공간을 확인",
-        "시트·패드·핀을 신체에 맞게 조절",
-        "가장 쉬운 범위와 낮은 강도에서 2회 리허설"
-      ],
-      "finish": "벤트오버 로우 풀리 사이드 레터럴을 마친 뒤 중량을 완전히 제자리에 두고 관절·호흡 반응을 확인합니다.",
-      "commonMistakes": [
-        "반동으로 중량을 움직이고 범위를 억지로 늘리기",
-        "정렬이 무너진 상태에서 반복 지속",
-        "통증·저림·어지러움 신호 무시"
-      ],
-      "regressions": [
-        "중량·가동 범위 낮추기",
-        "반복·시간 또는 가동 범위 낮추기",
-        "더 안정된 지지 또는 쉬운 기본 동작으로 전환"
-      ],
-      "progressions": [
-        "반복 품질 뒤 중량 한 단계만 조절",
-        "한 번에 하나의 변수만 조절",
-        "다음 날 반응이 편안할 때만 다음 단계 시도"
-      ]
-    }
-  },
-  {
-    "exercise": {
-      "id": "verified-bosu-ball-cable-crunch-with-side-bends",
-      "name": "BOSU 케이블 크런치(사이드벤드)",
-      "englishName": "Bosu Ball Cable Crunch With Side Bends",
-      "category": "헬스기구",
-      "regions": [
-        "코어"
-      ],
-      "focus": "근력",
-      "difficulty": "입문",
-      "equipment": "케이블 머신·핀",
-      "minutes": "6–12회 · 2세트",
-      "description": "BOSU 케이블 크런치(사이드벤드)은 케이블 머신·핀을 사용해 코어 중심의 독립적인 동작 경로를 연습하는 실제 운동 종목입니다.",
-      "cues": [
-        "시트·패드·관절 축 맞추기",
-        "케이블 머신·핀과 신체 위치 먼저 확인",
-        "통증 없는 범위·호흡 유지"
-      ],
-      "benefits": [
-        "저항 운동 적응",
-        "코어 사용 인식",
-        "자기 조절 능력"
-      ],
-      "warning": "관절 통증·저림·기구 흔들림·핀 미고정 또는 반동이 있으면 즉시 중단하고 설정을 다시 확인하세요.",
-      "reference": {
-        "label": "ACSM — Exercise Safety",
-        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
-      }
-    },
-    "detail": {
-      "setup": [
-        "BOSU 케이블 크런치(사이드벤드) 전 케이블 머신·핀·바닥·주변 공간을 확인",
-        "시트·패드·핀을 신체에 맞게 조절",
-        "가장 쉬운 범위와 낮은 강도에서 2회 리허설"
-      ],
-      "finish": "BOSU 케이블 크런치(사이드벤드)을 마친 뒤 중량을 완전히 제자리에 두고 관절·호흡 반응을 확인합니다.",
-      "commonMistakes": [
-        "반동으로 중량을 움직이고 범위를 억지로 늘리기",
-        "정렬이 무너진 상태에서 반복 지속",
-        "통증·저림·어지러움 신호 무시"
-      ],
-      "regressions": [
-        "중량·가동 범위 낮추기",
-        "반복·시간 또는 가동 범위 낮추기",
-        "더 안정된 지지 또는 쉬운 기본 동작으로 전환"
-      ],
-      "progressions": [
-        "반복 품질 뒤 중량 한 단계만 조절",
-        "한 번에 하나의 변수만 조절",
-        "다음 날 반응이 편안할 때만 다음 단계 시도"
-      ]
-    }
-  },
-  {
-    "exercise": {
-      "id": "verified-cable-crossover",
-      "name": "케이블 크로스오버",
-      "englishName": "Cable Crossover",
-      "category": "헬스기구",
-      "regions": [
-        "가슴"
-      ],
-      "focus": "근력",
-      "difficulty": "입문",
-      "equipment": "케이블 머신·핀",
-      "minutes": "6–12회 · 2세트",
-      "description": "케이블 크로스오버은 케이블 머신·핀을 사용해 가슴 중심의 독립적인 동작 경로를 연습하는 실제 운동 종목입니다.",
-      "cues": [
-        "시트·패드·관절 축 맞추기",
-        "케이블 머신·핀과 신체 위치 먼저 확인",
-        "통증 없는 범위·호흡 유지"
-      ],
-      "benefits": [
-        "저항 운동 적응",
-        "가슴 사용 인식",
-        "자기 조절 능력"
-      ],
-      "warning": "관절 통증·저림·기구 흔들림·핀 미고정 또는 반동이 있으면 즉시 중단하고 설정을 다시 확인하세요.",
-      "reference": {
-        "label": "ACSM — Exercise Safety",
-        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
-      }
-    },
-    "detail": {
-      "setup": [
-        "케이블 크로스오버 전 케이블 머신·핀·바닥·주변 공간을 확인",
-        "시트·패드·핀을 신체에 맞게 조절",
-        "가장 쉬운 범위와 낮은 강도에서 2회 리허설"
-      ],
-      "finish": "케이블 크로스오버을 마친 뒤 중량을 완전히 제자리에 두고 관절·호흡 반응을 확인합니다.",
-      "commonMistakes": [
-        "반동으로 중량을 움직이고 범위를 억지로 늘리기",
-        "정렬이 무너진 상태에서 반복 지속",
-        "통증·저림·어지러움 신호 무시"
-      ],
-      "regressions": [
-        "중량·가동 범위 낮추기",
-        "반복·시간 또는 가동 범위 낮추기",
-        "더 안정된 지지 또는 쉬운 기본 동작으로 전환"
-      ],
-      "progressions": [
-        "반복 품질 뒤 중량 한 단계만 조절",
-        "한 번에 하나의 변수만 조절",
-        "다음 날 반응이 편안할 때만 다음 단계 시도"
-      ]
-    }
-  },
-  {
-    "exercise": {
-      "id": "verified-cable-crunch",
-      "name": "케이블 크런치",
-      "englishName": "Cable Crunch",
-      "category": "헬스기구",
-      "regions": [
-        "코어"
-      ],
-      "focus": "근력",
-      "difficulty": "입문",
-      "equipment": "케이블 머신·핀",
-      "minutes": "6–12회 · 2세트",
-      "description": "케이블 크런치은 케이블 머신·핀을 사용해 코어 중심의 독립적인 동작 경로를 연습하는 실제 운동 종목입니다.",
-      "cues": [
-        "시트·패드·관절 축 맞추기",
-        "케이블 머신·핀과 신체 위치 먼저 확인",
-        "통증 없는 범위·호흡 유지"
-      ],
-      "benefits": [
-        "저항 운동 적응",
-        "코어 사용 인식",
-        "자기 조절 능력"
-      ],
-      "warning": "관절 통증·저림·기구 흔들림·핀 미고정 또는 반동이 있으면 즉시 중단하고 설정을 다시 확인하세요.",
-      "reference": {
-        "label": "ACSM — Exercise Safety",
-        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
-      }
-    },
-    "detail": {
-      "setup": [
-        "케이블 크런치 전 케이블 머신·핀·바닥·주변 공간을 확인",
-        "시트·패드·핀을 신체에 맞게 조절",
-        "가장 쉬운 범위와 낮은 강도에서 2회 리허설"
-      ],
-      "finish": "케이블 크런치을 마친 뒤 중량을 완전히 제자리에 두고 관절·호흡 반응을 확인합니다.",
-      "commonMistakes": [
-        "반동으로 중량을 움직이고 범위를 억지로 늘리기",
-        "정렬이 무너진 상태에서 반복 지속",
-        "통증·저림·어지러움 신호 무시"
-      ],
-      "regressions": [
-        "중량·가동 범위 낮추기",
-        "반복·시간 또는 가동 범위 낮추기",
-        "더 안정된 지지 또는 쉬운 기본 동작으로 전환"
-      ],
-      "progressions": [
-        "반복 품질 뒤 중량 한 단계만 조절",
-        "한 번에 하나의 변수만 조절",
-        "다음 날 반응이 편안할 때만 다음 단계 시도"
-      ]
-    }
-  },
-  {
-    "exercise": {
-      "id": "verified-cable-deadlifts",
-      "name": "케이블 데드리프트",
-      "englishName": "Cable Deadlifts",
-      "category": "헬스기구",
-      "regions": [
-        "하체"
-      ],
-      "focus": "근력",
-      "difficulty": "입문",
-      "equipment": "케이블 머신·핀",
-      "minutes": "6–12회 · 2세트",
-      "description": "케이블 데드리프트은 케이블 머신·핀을 사용해 하체 중심의 독립적인 동작 경로를 연습하는 실제 운동 종목입니다.",
-      "cues": [
-        "시트·패드·관절 축 맞추기",
-        "케이블 머신·핀과 신체 위치 먼저 확인",
-        "통증 없는 범위·호흡 유지"
-      ],
-      "benefits": [
-        "저항 운동 적응",
-        "하체 사용 인식",
-        "자기 조절 능력"
-      ],
-      "warning": "관절 통증·저림·기구 흔들림·핀 미고정 또는 반동이 있으면 즉시 중단하고 설정을 다시 확인하세요.",
-      "reference": {
-        "label": "ACSM — Exercise Safety",
-        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
-      }
-    },
-    "detail": {
-      "setup": [
-        "케이블 데드리프트 전 케이블 머신·핀·바닥·주변 공간을 확인",
-        "시트·패드·핀을 신체에 맞게 조절",
-        "가장 쉬운 범위와 낮은 강도에서 2회 리허설"
-      ],
-      "finish": "케이블 데드리프트을 마친 뒤 중량을 완전히 제자리에 두고 관절·호흡 반응을 확인합니다.",
-      "commonMistakes": [
-        "반동으로 중량을 움직이고 범위를 억지로 늘리기",
-        "정렬이 무너진 상태에서 반복 지속",
-        "통증·저림·어지러움 신호 무시"
-      ],
-      "regressions": [
-        "중량·가동 범위 낮추기",
-        "반복·시간 또는 가동 범위 낮추기",
-        "더 안정된 지지 또는 쉬운 기본 동작으로 전환"
-      ],
-      "progressions": [
-        "반복 품질 뒤 중량 한 단계만 조절",
-        "한 번에 하나의 변수만 조절",
-        "다음 날 반응이 편안할 때만 다음 단계 시도"
-      ]
-    }
-  },
-  {
-    "exercise": {
-      "id": "verified-cable-hammer-curls-rope-attachment",
-      "name": "케이블 해머 컬(로프)",
-      "englishName": "Cable Hammer Curls - Rope Attachment",
-      "category": "헬스기구",
-      "regions": [
-        "팔"
-      ],
-      "focus": "근력",
-      "difficulty": "입문",
-      "equipment": "케이블 머신·핀",
-      "minutes": "6–12회 · 2세트",
-      "description": "케이블 해머 컬(로프)은 케이블 머신·핀을 사용해 팔 중심의 독립적인 동작 경로를 연습하는 실제 운동 종목입니다.",
-      "cues": [
-        "시트·패드·관절 축 맞추기",
-        "케이블 머신·핀과 신체 위치 먼저 확인",
-        "통증 없는 범위·호흡 유지"
-      ],
-      "benefits": [
-        "저항 운동 적응",
-        "팔 사용 인식",
-        "자기 조절 능력"
-      ],
-      "warning": "관절 통증·저림·기구 흔들림·핀 미고정 또는 반동이 있으면 즉시 중단하고 설정을 다시 확인하세요.",
-      "reference": {
-        "label": "ACSM — Exercise Safety",
-        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
-      }
-    },
-    "detail": {
-      "setup": [
-        "케이블 해머 컬(로프) 전 케이블 머신·핀·바닥·주변 공간을 확인",
-        "시트·패드·핀을 신체에 맞게 조절",
-        "가장 쉬운 범위와 낮은 강도에서 2회 리허설"
-      ],
-      "finish": "케이블 해머 컬(로프)을 마친 뒤 중량을 완전히 제자리에 두고 관절·호흡 반응을 확인합니다.",
-      "commonMistakes": [
-        "반동으로 중량을 움직이고 범위를 억지로 늘리기",
-        "정렬이 무너진 상태에서 반복 지속",
-        "통증·저림·어지러움 신호 무시"
-      ],
-      "regressions": [
-        "중량·가동 범위 낮추기",
-        "반복·시간 또는 가동 범위 낮추기",
-        "더 안정된 지지 또는 쉬운 기본 동작으로 전환"
-      ],
-      "progressions": [
-        "반복 품질 뒤 중량 한 단계만 조절",
-        "한 번에 하나의 변수만 조절",
-        "다음 날 반응이 편안할 때만 다음 단계 시도"
-      ]
-    }
-  },
-  {
-    "exercise": {
-      "id": "verified-cable-hip-adduction",
-      "name": "케이블 힙 어덕션",
-      "englishName": "Cable Hip Adduction",
-      "category": "헬스기구",
-      "regions": [
-        "하체"
-      ],
-      "focus": "근력",
-      "difficulty": "입문",
-      "equipment": "케이블 머신·핀",
-      "minutes": "6–12회 · 2세트",
-      "description": "케이블 힙 어덕션은 케이블 머신·핀을 사용해 하체 중심의 독립적인 동작 경로를 연습하는 실제 운동 종목입니다.",
-      "cues": [
-        "시트·패드·관절 축 맞추기",
-        "케이블 머신·핀과 신체 위치 먼저 확인",
-        "통증 없는 범위·호흡 유지"
-      ],
-      "benefits": [
-        "저항 운동 적응",
-        "하체 사용 인식",
-        "자기 조절 능력"
-      ],
-      "warning": "관절 통증·저림·기구 흔들림·핀 미고정 또는 반동이 있으면 즉시 중단하고 설정을 다시 확인하세요.",
-      "reference": {
-        "label": "ACSM — Exercise Safety",
-        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
-      }
-    },
-    "detail": {
-      "setup": [
-        "케이블 힙 어덕션 전 케이블 머신·핀·바닥·주변 공간을 확인",
-        "시트·패드·핀을 신체에 맞게 조절",
-        "가장 쉬운 범위와 낮은 강도에서 2회 리허설"
-      ],
-      "finish": "케이블 힙 어덕션을 마친 뒤 중량을 완전히 제자리에 두고 관절·호흡 반응을 확인합니다.",
-      "commonMistakes": [
-        "반동으로 중량을 움직이고 범위를 억지로 늘리기",
-        "정렬이 무너진 상태에서 반복 지속",
-        "통증·저림·어지러움 신호 무시"
-      ],
-      "regressions": [
-        "중량·가동 범위 낮추기",
-        "반복·시간 또는 가동 범위 낮추기",
-        "더 안정된 지지 또는 쉬운 기본 동작으로 전환"
-      ],
-      "progressions": [
-        "반복 품질 뒤 중량 한 단계만 조절",
-        "한 번에 하나의 변수만 조절",
-        "다음 날 반응이 편안할 때만 다음 단계 시도"
-      ]
-    }
-  },
-  {
-    "exercise": {
-      "id": "verified-cable-incline-pushdown",
-      "name": "케이블 인클라인 푸시다운",
-      "englishName": "Cable Incline Pushdown",
-      "category": "헬스기구",
-      "regions": [
-        "등"
-      ],
-      "focus": "근력",
-      "difficulty": "입문",
-      "equipment": "케이블 머신·핀",
-      "minutes": "6–12회 · 2세트",
-      "description": "케이블 인클라인 푸시다운은 케이블 머신·핀을 사용해 등 중심의 독립적인 동작 경로를 연습하는 실제 운동 종목입니다.",
-      "cues": [
-        "시트·패드·관절 축 맞추기",
-        "케이블 머신·핀과 신체 위치 먼저 확인",
-        "통증 없는 범위·호흡 유지"
-      ],
-      "benefits": [
-        "저항 운동 적응",
-        "등 사용 인식",
-        "자기 조절 능력"
-      ],
-      "warning": "관절 통증·저림·기구 흔들림·핀 미고정 또는 반동이 있으면 즉시 중단하고 설정을 다시 확인하세요.",
-      "reference": {
-        "label": "ACSM — Exercise Safety",
-        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
-      }
-    },
-    "detail": {
-      "setup": [
-        "케이블 인클라인 푸시다운 전 케이블 머신·핀·바닥·주변 공간을 확인",
-        "시트·패드·핀을 신체에 맞게 조절",
-        "가장 쉬운 범위와 낮은 강도에서 2회 리허설"
-      ],
-      "finish": "케이블 인클라인 푸시다운을 마친 뒤 중량을 완전히 제자리에 두고 관절·호흡 반응을 확인합니다.",
-      "commonMistakes": [
-        "반동으로 중량을 움직이고 범위를 억지로 늘리기",
-        "정렬이 무너진 상태에서 반복 지속",
-        "통증·저림·어지러움 신호 무시"
-      ],
-      "regressions": [
-        "중량·가동 범위 낮추기",
-        "반복·시간 또는 가동 범위 낮추기",
-        "더 안정된 지지 또는 쉬운 기본 동작으로 전환"
-      ],
-      "progressions": [
-        "반복 품질 뒤 중량 한 단계만 조절",
-        "한 번에 하나의 변수만 조절",
-        "다음 날 반응이 편안할 때만 다음 단계 시도"
-      ]
-    }
-  },
-  {
-    "exercise": {
-      "id": "verified-cable-incline-triceps-extension",
-      "name": "케이블 인클라인 트라이셉스 익스텐션",
-      "englishName": "Cable Incline Triceps Extension",
-      "category": "헬스기구",
-      "regions": [
-        "팔"
-      ],
-      "focus": "근력",
-      "difficulty": "입문",
-      "equipment": "케이블 머신·핀",
-      "minutes": "6–12회 · 2세트",
-      "description": "케이블 인클라인 트라이셉스 익스텐션은 케이블 머신·핀을 사용해 팔 중심의 독립적인 동작 경로를 연습하는 실제 운동 종목입니다.",
-      "cues": [
-        "시트·패드·관절 축 맞추기",
-        "케이블 머신·핀과 신체 위치 먼저 확인",
-        "통증 없는 범위·호흡 유지"
-      ],
-      "benefits": [
-        "저항 운동 적응",
-        "팔 사용 인식",
-        "자기 조절 능력"
-      ],
-      "warning": "관절 통증·저림·기구 흔들림·핀 미고정 또는 반동이 있으면 즉시 중단하고 설정을 다시 확인하세요.",
-      "reference": {
-        "label": "ACSM — Exercise Safety",
-        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
-      }
-    },
-    "detail": {
-      "setup": [
-        "케이블 인클라인 트라이셉스 익스텐션 전 케이블 머신·핀·바닥·주변 공간을 확인",
-        "시트·패드·핀을 신체에 맞게 조절",
-        "가장 쉬운 범위와 낮은 강도에서 2회 리허설"
-      ],
-      "finish": "케이블 인클라인 트라이셉스 익스텐션을 마친 뒤 중량을 완전히 제자리에 두고 관절·호흡 반응을 확인합니다.",
-      "commonMistakes": [
-        "반동으로 중량을 움직이고 범위를 억지로 늘리기",
-        "정렬이 무너진 상태에서 반복 지속",
-        "통증·저림·어지러움 신호 무시"
-      ],
-      "regressions": [
-        "중량·가동 범위 낮추기",
-        "반복·시간 또는 가동 범위 낮추기",
-        "더 안정된 지지 또는 쉬운 기본 동작으로 전환"
-      ],
-      "progressions": [
-        "반복 품질 뒤 중량 한 단계만 조절",
-        "한 번에 하나의 변수만 조절",
-        "다음 날 반응이 편안할 때만 다음 단계 시도"
-      ]
-    }
-  },
-  {
-    "exercise": {
-      "id": "verified-cable-internal-rotation",
-      "name": "케이블 내부 회전",
-      "englishName": "Cable Internal Rotation",
-      "category": "헬스기구",
-      "regions": [
-        "어깨"
-      ],
-      "focus": "근력",
-      "difficulty": "입문",
-      "equipment": "케이블 머신·핀",
-      "minutes": "6–12회 · 2세트",
-      "description": "케이블 내부 회전은 케이블 머신·핀을 사용해 어깨 중심의 독립적인 동작 경로를 연습하는 실제 운동 종목입니다.",
-      "cues": [
-        "시트·패드·관절 축 맞추기",
-        "케이블 머신·핀과 신체 위치 먼저 확인",
-        "통증 없는 범위·호흡 유지"
-      ],
-      "benefits": [
-        "저항 운동 적응",
-        "어깨 사용 인식",
-        "자기 조절 능력"
-      ],
-      "warning": "관절 통증·저림·기구 흔들림·핀 미고정 또는 반동이 있으면 즉시 중단하고 설정을 다시 확인하세요.",
-      "reference": {
-        "label": "ACSM — Exercise Safety",
-        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
-      }
-    },
-    "detail": {
-      "setup": [
-        "케이블 내부 회전 전 케이블 머신·핀·바닥·주변 공간을 확인",
-        "시트·패드·핀을 신체에 맞게 조절",
-        "가장 쉬운 범위와 낮은 강도에서 2회 리허설"
-      ],
-      "finish": "케이블 내부 회전을 마친 뒤 중량을 완전히 제자리에 두고 관절·호흡 반응을 확인합니다.",
-      "commonMistakes": [
-        "반동으로 중량을 움직이고 범위를 억지로 늘리기",
-        "정렬이 무너진 상태에서 반복 지속",
-        "통증·저림·어지러움 신호 무시"
-      ],
-      "regressions": [
-        "중량·가동 범위 낮추기",
-        "반복·시간 또는 가동 범위 낮추기",
-        "더 안정된 지지 또는 쉬운 기본 동작으로 전환"
-      ],
-      "progressions": [
-        "반복 품질 뒤 중량 한 단계만 조절",
-        "한 번에 하나의 변수만 조절",
-        "다음 날 반응이 편안할 때만 다음 단계 시도"
-      ]
-    }
-  },
-  {
-    "exercise": {
-      "id": "verified-cable-iron-cross",
-      "name": "케이블 아이언 크로스",
-      "englishName": "Cable Iron Cross",
-      "category": "헬스기구",
-      "regions": [
-        "가슴"
-      ],
-      "focus": "근력",
-      "difficulty": "입문",
-      "equipment": "케이블 머신·핀",
-      "minutes": "6–12회 · 2세트",
-      "description": "케이블 아이언 크로스은 케이블 머신·핀을 사용해 가슴 중심의 독립적인 동작 경로를 연습하는 실제 운동 종목입니다.",
-      "cues": [
-        "시트·패드·관절 축 맞추기",
-        "케이블 머신·핀과 신체 위치 먼저 확인",
-        "통증 없는 범위·호흡 유지"
-      ],
-      "benefits": [
-        "저항 운동 적응",
-        "가슴 사용 인식",
-        "자기 조절 능력"
-      ],
-      "warning": "관절 통증·저림·기구 흔들림·핀 미고정 또는 반동이 있으면 즉시 중단하고 설정을 다시 확인하세요.",
-      "reference": {
-        "label": "ACSM — Exercise Safety",
-        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
-      }
-    },
-    "detail": {
-      "setup": [
-        "케이블 아이언 크로스 전 케이블 머신·핀·바닥·주변 공간을 확인",
-        "시트·패드·핀을 신체에 맞게 조절",
-        "가장 쉬운 범위와 낮은 강도에서 2회 리허설"
-      ],
-      "finish": "케이블 아이언 크로스을 마친 뒤 중량을 완전히 제자리에 두고 관절·호흡 반응을 확인합니다.",
-      "commonMistakes": [
-        "반동으로 중량을 움직이고 범위를 억지로 늘리기",
-        "정렬이 무너진 상태에서 반복 지속",
-        "통증·저림·어지러움 신호 무시"
-      ],
-      "regressions": [
-        "중량·가동 범위 낮추기",
-        "반복·시간 또는 가동 범위 낮추기",
-        "더 안정된 지지 또는 쉬운 기본 동작으로 전환"
-      ],
-      "progressions": [
-        "반복 품질 뒤 중량 한 단계만 조절",
-        "한 번에 하나의 변수만 조절",
-        "다음 날 반응이 편안할 때만 다음 단계 시도"
-      ]
-    }
-  },
-  {
-    "exercise": {
-      "id": "verified-cable-lying-triceps-extension",
-      "name": "케이블 라잉 트라이셉스 익스텐션",
-      "englishName": "Cable Lying Triceps Extension",
-      "category": "헬스기구",
-      "regions": [
-        "팔"
-      ],
-      "focus": "근력",
-      "difficulty": "입문",
-      "equipment": "케이블 머신·핀",
-      "minutes": "6–12회 · 2세트",
-      "description": "케이블 라잉 트라이셉스 익스텐션은 케이블 머신·핀을 사용해 팔 중심의 독립적인 동작 경로를 연습하는 실제 운동 종목입니다.",
-      "cues": [
-        "시트·패드·관절 축 맞추기",
-        "케이블 머신·핀과 신체 위치 먼저 확인",
-        "통증 없는 범위·호흡 유지"
-      ],
-      "benefits": [
-        "저항 운동 적응",
-        "팔 사용 인식",
-        "자기 조절 능력"
-      ],
-      "warning": "관절 통증·저림·기구 흔들림·핀 미고정 또는 반동이 있으면 즉시 중단하고 설정을 다시 확인하세요.",
-      "reference": {
-        "label": "ACSM — Exercise Safety",
-        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
-      }
-    },
-    "detail": {
-      "setup": [
-        "케이블 라잉 트라이셉스 익스텐션 전 케이블 머신·핀·바닥·주변 공간을 확인",
-        "시트·패드·핀을 신체에 맞게 조절",
-        "가장 쉬운 범위와 낮은 강도에서 2회 리허설"
-      ],
-      "finish": "케이블 라잉 트라이셉스 익스텐션을 마친 뒤 중량을 완전히 제자리에 두고 관절·호흡 반응을 확인합니다.",
-      "commonMistakes": [
-        "반동으로 중량을 움직이고 범위를 억지로 늘리기",
-        "정렬이 무너진 상태에서 반복 지속",
-        "통증·저림·어지러움 신호 무시"
-      ],
-      "regressions": [
-        "중량·가동 범위 낮추기",
-        "반복·시간 또는 가동 범위 낮추기",
-        "더 안정된 지지 또는 쉬운 기본 동작으로 전환"
-      ],
-      "progressions": [
-        "반복 품질 뒤 중량 한 단계만 조절",
-        "한 번에 하나의 변수만 조절",
-        "다음 날 반응이 편안할 때만 다음 단계 시도"
-      ]
-    }
-  },
-  {
-    "exercise": {
-      "id": "verified-cable-one-arm-tricep-extension",
-      "name": "케이블 원암 트라이셉 익스텐션",
-      "englishName": "Cable One Arm Tricep Extension",
-      "category": "헬스기구",
-      "regions": [
-        "팔"
-      ],
-      "focus": "근력",
-      "difficulty": "입문",
-      "equipment": "케이블 머신·핀",
-      "minutes": "6–12회 · 2세트",
-      "description": "케이블 원암 트라이셉 익스텐션은 케이블 머신·핀을 사용해 팔 중심의 독립적인 동작 경로를 연습하는 실제 운동 종목입니다.",
-      "cues": [
-        "시트·패드·관절 축 맞추기",
-        "케이블 머신·핀과 신체 위치 먼저 확인",
-        "통증 없는 범위·호흡 유지"
-      ],
-      "benefits": [
-        "저항 운동 적응",
-        "팔 사용 인식",
-        "자기 조절 능력"
-      ],
-      "warning": "관절 통증·저림·기구 흔들림·핀 미고정 또는 반동이 있으면 즉시 중단하고 설정을 다시 확인하세요.",
-      "reference": {
-        "label": "ACSM — Exercise Safety",
-        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
-      }
-    },
-    "detail": {
-      "setup": [
-        "케이블 원암 트라이셉 익스텐션 전 케이블 머신·핀·바닥·주변 공간을 확인",
-        "시트·패드·핀을 신체에 맞게 조절",
-        "가장 쉬운 범위와 낮은 강도에서 2회 리허설"
-      ],
-      "finish": "케이블 원암 트라이셉 익스텐션을 마친 뒤 중량을 완전히 제자리에 두고 관절·호흡 반응을 확인합니다.",
-      "commonMistakes": [
-        "반동으로 중량을 움직이고 범위를 억지로 늘리기",
-        "정렬이 무너진 상태에서 반복 지속",
-        "통증·저림·어지러움 신호 무시"
-      ],
-      "regressions": [
-        "중량·가동 범위 낮추기",
-        "반복·시간 또는 가동 범위 낮추기",
-        "더 안정된 지지 또는 쉬운 기본 동작으로 전환"
-      ],
-      "progressions": [
-        "반복 품질 뒤 중량 한 단계만 조절",
-        "한 번에 하나의 변수만 조절",
-        "다음 날 반응이 편안할 때만 다음 단계 시도"
-      ]
-    }
-  },
-  {
-    "exercise": {
-      "id": "verified-cable-preacher-curl",
-      "name": "케이블 프리처 컬",
-      "englishName": "Cable Preacher Curl",
-      "category": "헬스기구",
-      "regions": [
-        "팔"
-      ],
-      "focus": "근력",
-      "difficulty": "입문",
-      "equipment": "케이블 머신·핀",
-      "minutes": "6–12회 · 2세트",
-      "description": "케이블 프리처 컬은 케이블 머신·핀을 사용해 팔 중심의 독립적인 동작 경로를 연습하는 실제 운동 종목입니다.",
-      "cues": [
-        "시트·패드·관절 축 맞추기",
-        "케이블 머신·핀과 신체 위치 먼저 확인",
-        "통증 없는 범위·호흡 유지"
-      ],
-      "benefits": [
-        "저항 운동 적응",
-        "팔 사용 인식",
-        "자기 조절 능력"
-      ],
-      "warning": "관절 통증·저림·기구 흔들림·핀 미고정 또는 반동이 있으면 즉시 중단하고 설정을 다시 확인하세요.",
-      "reference": {
-        "label": "ACSM — Exercise Safety",
-        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
-      }
-    },
-    "detail": {
-      "setup": [
-        "케이블 프리처 컬 전 케이블 머신·핀·바닥·주변 공간을 확인",
-        "시트·패드·핀을 신체에 맞게 조절",
-        "가장 쉬운 범위와 낮은 강도에서 2회 리허설"
-      ],
-      "finish": "케이블 프리처 컬을 마친 뒤 중량을 완전히 제자리에 두고 관절·호흡 반응을 확인합니다.",
-      "commonMistakes": [
-        "반동으로 중량을 움직이고 범위를 억지로 늘리기",
-        "정렬이 무너진 상태에서 반복 지속",
-        "통증·저림·어지러움 신호 무시"
-      ],
-      "regressions": [
-        "중량·가동 범위 낮추기",
-        "반복·시간 또는 가동 범위 낮추기",
-        "더 안정된 지지 또는 쉬운 기본 동작으로 전환"
-      ],
-      "progressions": [
-        "반복 품질 뒤 중량 한 단계만 조절",
-        "한 번에 하나의 변수만 조절",
-        "다음 날 반응이 편안할 때만 다음 단계 시도"
-      ]
-    }
-  },
-  {
-    "exercise": {
-      "id": "verified-cable-rear-delt-fly",
-      "name": "케이블 리어 델트 플라이",
-      "englishName": "Cable Rear Delt Fly",
-      "category": "헬스기구",
-      "regions": [
-        "어깨"
-      ],
-      "focus": "근력",
-      "difficulty": "입문",
-      "equipment": "케이블 머신·핀",
-      "minutes": "6–12회 · 2세트",
-      "description": "케이블 리어 델트 플라이은 케이블 머신·핀을 사용해 어깨 중심의 독립적인 동작 경로를 연습하는 실제 운동 종목입니다.",
-      "cues": [
-        "시트·패드·관절 축 맞추기",
-        "케이블 머신·핀과 신체 위치 먼저 확인",
-        "통증 없는 범위·호흡 유지"
-      ],
-      "benefits": [
-        "저항 운동 적응",
-        "어깨 사용 인식",
-        "자기 조절 능력"
-      ],
-      "warning": "관절 통증·저림·기구 흔들림·핀 미고정 또는 반동이 있으면 즉시 중단하고 설정을 다시 확인하세요.",
-      "reference": {
-        "label": "ACSM — Exercise Safety",
-        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
-      }
-    },
-    "detail": {
-      "setup": [
-        "케이블 리어 델트 플라이 전 케이블 머신·핀·바닥·주변 공간을 확인",
-        "시트·패드·핀을 신체에 맞게 조절",
-        "가장 쉬운 범위와 낮은 강도에서 2회 리허설"
-      ],
-      "finish": "케이블 리어 델트 플라이을 마친 뒤 중량을 완전히 제자리에 두고 관절·호흡 반응을 확인합니다.",
-      "commonMistakes": [
-        "반동으로 중량을 움직이고 범위를 억지로 늘리기",
-        "정렬이 무너진 상태에서 반복 지속",
-        "통증·저림·어지러움 신호 무시"
-      ],
-      "regressions": [
-        "중량·가동 범위 낮추기",
-        "반복·시간 또는 가동 범위 낮추기",
-        "더 안정된 지지 또는 쉬운 기본 동작으로 전환"
-      ],
-      "progressions": [
-        "반복 품질 뒤 중량 한 단계만 조절",
-        "한 번에 하나의 변수만 조절",
-        "다음 날 반응이 편안할 때만 다음 단계 시도"
-      ]
-    }
-  },
-  {
-    "exercise": {
-      "id": "verified-cable-reverse-crunch",
-      "name": "케이블 리버스 크런치",
-      "englishName": "Cable Reverse Crunch",
-      "category": "헬스기구",
-      "regions": [
-        "코어"
-      ],
-      "focus": "근력",
-      "difficulty": "입문",
-      "equipment": "케이블 머신·핀",
-      "minutes": "6–12회 · 2세트",
-      "description": "케이블 리버스 크런치은 케이블 머신·핀을 사용해 코어 중심의 독립적인 동작 경로를 연습하는 실제 운동 종목입니다.",
-      "cues": [
-        "시트·패드·관절 축 맞추기",
-        "케이블 머신·핀과 신체 위치 먼저 확인",
-        "통증 없는 범위·호흡 유지"
-      ],
-      "benefits": [
-        "저항 운동 적응",
-        "코어 사용 인식",
-        "자기 조절 능력"
-      ],
-      "warning": "관절 통증·저림·기구 흔들림·핀 미고정 또는 반동이 있으면 즉시 중단하고 설정을 다시 확인하세요.",
-      "reference": {
-        "label": "ACSM — Exercise Safety",
-        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
-      }
-    },
-    "detail": {
-      "setup": [
-        "케이블 리버스 크런치 전 케이블 머신·핀·바닥·주변 공간을 확인",
-        "시트·패드·핀을 신체에 맞게 조절",
-        "가장 쉬운 범위와 낮은 강도에서 2회 리허설"
-      ],
-      "finish": "케이블 리버스 크런치을 마친 뒤 중량을 완전히 제자리에 두고 관절·호흡 반응을 확인합니다.",
-      "commonMistakes": [
-        "반동으로 중량을 움직이고 범위를 억지로 늘리기",
-        "정렬이 무너진 상태에서 반복 지속",
-        "통증·저림·어지러움 신호 무시"
-      ],
-      "regressions": [
-        "중량·가동 범위 낮추기",
-        "반복·시간 또는 가동 범위 낮추기",
-        "더 안정된 지지 또는 쉬운 기본 동작으로 전환"
-      ],
-      "progressions": [
-        "반복 품질 뒤 중량 한 단계만 조절",
-        "한 번에 하나의 변수만 조절",
-        "다음 날 반응이 편안할 때만 다음 단계 시도"
-      ]
-    }
-  },
-  {
-    "exercise": {
-      "id": "verified-cable-rope-overhead-triceps-extension",
-      "name": "케이블 로프 오버헤드 삼두",
-      "englishName": "Cable Rope Overhead Triceps Extension",
-      "category": "헬스기구",
-      "regions": [
-        "팔"
-      ],
-      "focus": "근력",
-      "difficulty": "입문",
-      "equipment": "케이블 머신·핀",
-      "minutes": "6–12회 · 2세트",
-      "description": "케이블 로프 오버헤드 삼두은 케이블 머신·핀을 사용해 팔 중심의 독립적인 동작 경로를 연습하는 실제 운동 종목입니다.",
-      "cues": [
-        "시트·패드·관절 축 맞추기",
-        "케이블 머신·핀과 신체 위치 먼저 확인",
-        "통증 없는 범위·호흡 유지"
-      ],
-      "benefits": [
-        "저항 운동 적응",
-        "팔 사용 인식",
-        "자기 조절 능력"
-      ],
-      "warning": "관절 통증·저림·기구 흔들림·핀 미고정 또는 반동이 있으면 즉시 중단하고 설정을 다시 확인하세요.",
-      "reference": {
-        "label": "ACSM — Exercise Safety",
-        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
-      }
-    },
-    "detail": {
-      "setup": [
-        "케이블 로프 오버헤드 삼두 전 케이블 머신·핀·바닥·주변 공간을 확인",
-        "시트·패드·핀을 신체에 맞게 조절",
-        "가장 쉬운 범위와 낮은 강도에서 2회 리허설"
-      ],
-      "finish": "케이블 로프 오버헤드 삼두을 마친 뒤 중량을 완전히 제자리에 두고 관절·호흡 반응을 확인합니다.",
-      "commonMistakes": [
-        "반동으로 중량을 움직이고 범위를 억지로 늘리기",
-        "정렬이 무너진 상태에서 반복 지속",
-        "통증·저림·어지러움 신호 무시"
-      ],
-      "regressions": [
-        "중량·가동 범위 낮추기",
-        "반복·시간 또는 가동 범위 낮추기",
-        "더 안정된 지지 또는 쉬운 기본 동작으로 전환"
-      ],
-      "progressions": [
-        "반복 품질 뒤 중량 한 단계만 조절",
-        "한 번에 하나의 변수만 조절",
-        "다음 날 반응이 편안할 때만 다음 단계 시도"
-      ]
-    }
-  },
-  {
-    "exercise": {
-      "id": "verified-cable-rope-rear-delt-rows",
-      "name": "케이블 로프 리어 델트 로우",
-      "englishName": "Cable Rope Rear-Delt Rows",
-      "category": "헬스기구",
-      "regions": [
-        "어깨"
-      ],
-      "focus": "근력",
-      "difficulty": "입문",
-      "equipment": "케이블 머신·핀",
-      "minutes": "6–12회 · 2세트",
-      "description": "케이블 로프 리어 델트 로우은 케이블 머신·핀을 사용해 어깨 중심의 독립적인 동작 경로를 연습하는 실제 운동 종목입니다.",
-      "cues": [
-        "시트·패드·관절 축 맞추기",
-        "케이블 머신·핀과 신체 위치 먼저 확인",
-        "통증 없는 범위·호흡 유지"
-      ],
-      "benefits": [
-        "저항 운동 적응",
-        "어깨 사용 인식",
-        "자기 조절 능력"
-      ],
-      "warning": "관절 통증·저림·기구 흔들림·핀 미고정 또는 반동이 있으면 즉시 중단하고 설정을 다시 확인하세요.",
-      "reference": {
-        "label": "ACSM — Exercise Safety",
-        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
-      }
-    },
-    "detail": {
-      "setup": [
-        "케이블 로프 리어 델트 로우 전 케이블 머신·핀·바닥·주변 공간을 확인",
-        "시트·패드·핀을 신체에 맞게 조절",
-        "가장 쉬운 범위와 낮은 강도에서 2회 리허설"
-      ],
-      "finish": "케이블 로프 리어 델트 로우을 마친 뒤 중량을 완전히 제자리에 두고 관절·호흡 반응을 확인합니다.",
-      "commonMistakes": [
-        "반동으로 중량을 움직이고 범위를 억지로 늘리기",
-        "정렬이 무너진 상태에서 반복 지속",
-        "통증·저림·어지러움 신호 무시"
-      ],
-      "regressions": [
-        "중량·가동 범위 낮추기",
-        "반복·시간 또는 가동 범위 낮추기",
-        "더 안정된 지지 또는 쉬운 기본 동작으로 전환"
-      ],
-      "progressions": [
-        "반복 품질 뒤 중량 한 단계만 조절",
-        "한 번에 하나의 변수만 조절",
-        "다음 날 반응이 편안할 때만 다음 단계 시도"
-      ]
-    }
-  },
-  {
-    "exercise": {
-      "id": "verified-cable-russian-twists",
-      "name": "케이블 러시안 트위스트",
-      "englishName": "Cable Russian Twists",
-      "category": "헬스기구",
-      "regions": [
-        "코어"
-      ],
-      "focus": "근력",
-      "difficulty": "입문",
-      "equipment": "케이블 머신·핀",
-      "minutes": "6–12회 · 2세트",
-      "description": "케이블 러시안 트위스트은 케이블 머신·핀을 사용해 코어 중심의 독립적인 동작 경로를 연습하는 실제 운동 종목입니다.",
-      "cues": [
-        "시트·패드·관절 축 맞추기",
-        "케이블 머신·핀과 신체 위치 먼저 확인",
-        "통증 없는 범위·호흡 유지"
-      ],
-      "benefits": [
-        "저항 운동 적응",
-        "코어 사용 인식",
-        "자기 조절 능력"
-      ],
-      "warning": "관절 통증·저림·기구 흔들림·핀 미고정 또는 반동이 있으면 즉시 중단하고 설정을 다시 확인하세요.",
-      "reference": {
-        "label": "ACSM — Exercise Safety",
-        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
-      }
-    },
-    "detail": {
-      "setup": [
-        "케이블 러시안 트위스트 전 케이블 머신·핀·바닥·주변 공간을 확인",
-        "시트·패드·핀을 신체에 맞게 조절",
-        "가장 쉬운 범위와 낮은 강도에서 2회 리허설"
-      ],
-      "finish": "케이블 러시안 트위스트을 마친 뒤 중량을 완전히 제자리에 두고 관절·호흡 반응을 확인합니다.",
-      "commonMistakes": [
-        "반동으로 중량을 움직이고 범위를 억지로 늘리기",
-        "정렬이 무너진 상태에서 반복 지속",
-        "통증·저림·어지러움 신호 무시"
-      ],
-      "regressions": [
-        "중량·가동 범위 낮추기",
-        "반복·시간 또는 가동 범위 낮추기",
-        "더 안정된 지지 또는 쉬운 기본 동작으로 전환"
-      ],
-      "progressions": [
-        "반복 품질 뒤 중량 한 단계만 조절",
-        "한 번에 하나의 변수만 조절",
-        "다음 날 반응이 편안할 때만 다음 단계 시도"
-      ]
-    }
-  },
-  {
-    "exercise": {
-      "id": "verified-cable-seated-crunch",
-      "name": "케이블 시티드 크런치",
-      "englishName": "Cable Seated Crunch",
-      "category": "헬스기구",
-      "regions": [
-        "코어"
-      ],
-      "focus": "근력",
-      "difficulty": "입문",
-      "equipment": "케이블 머신·핀",
-      "minutes": "6–12회 · 2세트",
-      "description": "케이블 시티드 크런치은 케이블 머신·핀을 사용해 코어 중심의 독립적인 동작 경로를 연습하는 실제 운동 종목입니다.",
-      "cues": [
-        "시트·패드·관절 축 맞추기",
-        "케이블 머신·핀과 신체 위치 먼저 확인",
-        "통증 없는 범위·호흡 유지"
-      ],
-      "benefits": [
-        "저항 운동 적응",
-        "코어 사용 인식",
-        "자기 조절 능력"
-      ],
-      "warning": "관절 통증·저림·기구 흔들림·핀 미고정 또는 반동이 있으면 즉시 중단하고 설정을 다시 확인하세요.",
-      "reference": {
-        "label": "ACSM — Exercise Safety",
-        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
-      }
-    },
-    "detail": {
-      "setup": [
-        "케이블 시티드 크런치 전 케이블 머신·핀·바닥·주변 공간을 확인",
-        "시트·패드·핀을 신체에 맞게 조절",
-        "가장 쉬운 범위와 낮은 강도에서 2회 리허설"
-      ],
-      "finish": "케이블 시티드 크런치을 마친 뒤 중량을 완전히 제자리에 두고 관절·호흡 반응을 확인합니다.",
-      "commonMistakes": [
-        "반동으로 중량을 움직이고 범위를 억지로 늘리기",
-        "정렬이 무너진 상태에서 반복 지속",
-        "통증·저림·어지러움 신호 무시"
-      ],
-      "regressions": [
-        "중량·가동 범위 낮추기",
-        "반복·시간 또는 가동 범위 낮추기",
-        "더 안정된 지지 또는 쉬운 기본 동작으로 전환"
-      ],
-      "progressions": [
-        "반복 품질 뒤 중량 한 단계만 조절",
-        "한 번에 하나의 변수만 조절",
-        "다음 날 반응이 편안할 때만 다음 단계 시도"
-      ]
-    }
-  },
-  {
-    "exercise": {
-      "id": "verified-cable-seated-lateral-raise",
-      "name": "케이블 시티드 레터럴 레이즈",
-      "englishName": "Cable Seated Lateral Raise",
-      "category": "헬스기구",
-      "regions": [
-        "어깨"
-      ],
-      "focus": "근력",
-      "difficulty": "입문",
-      "equipment": "케이블 머신·핀",
-      "minutes": "6–12회 · 2세트",
-      "description": "케이블 시티드 레터럴 레이즈은 케이블 머신·핀을 사용해 어깨 중심의 독립적인 동작 경로를 연습하는 실제 운동 종목입니다.",
-      "cues": [
-        "시트·패드·관절 축 맞추기",
-        "케이블 머신·핀과 신체 위치 먼저 확인",
-        "통증 없는 범위·호흡 유지"
-      ],
-      "benefits": [
-        "저항 운동 적응",
-        "어깨 사용 인식",
-        "자기 조절 능력"
-      ],
-      "warning": "관절 통증·저림·기구 흔들림·핀 미고정 또는 반동이 있으면 즉시 중단하고 설정을 다시 확인하세요.",
-      "reference": {
-        "label": "ACSM — Exercise Safety",
-        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
-      }
-    },
-    "detail": {
-      "setup": [
-        "케이블 시티드 레터럴 레이즈 전 케이블 머신·핀·바닥·주변 공간을 확인",
-        "시트·패드·핀을 신체에 맞게 조절",
-        "가장 쉬운 범위와 낮은 강도에서 2회 리허설"
-      ],
-      "finish": "케이블 시티드 레터럴 레이즈을 마친 뒤 중량을 완전히 제자리에 두고 관절·호흡 반응을 확인합니다.",
-      "commonMistakes": [
-        "반동으로 중량을 움직이고 범위를 억지로 늘리기",
-        "정렬이 무너진 상태에서 반복 지속",
-        "통증·저림·어지러움 신호 무시"
-      ],
-      "regressions": [
-        "중량·가동 범위 낮추기",
-        "반복·시간 또는 가동 범위 낮추기",
-        "더 안정된 지지 또는 쉬운 기본 동작으로 전환"
-      ],
-      "progressions": [
-        "반복 품질 뒤 중량 한 단계만 조절",
-        "한 번에 하나의 변수만 조절",
-        "다음 날 반응이 편안할 때만 다음 단계 시도"
-      ]
-    }
-  },
-  {
-    "exercise": {
-      "id": "verified-cable-shoulder-press",
-      "name": "케이블 숄더 프레스",
-      "englishName": "Cable Shoulder Press",
-      "category": "헬스기구",
-      "regions": [
-        "어깨"
-      ],
-      "focus": "근력",
-      "difficulty": "입문",
-      "equipment": "케이블 머신·핀",
-      "minutes": "6–12회 · 2세트",
-      "description": "케이블 숄더 프레스은 케이블 머신·핀을 사용해 어깨 중심의 독립적인 동작 경로를 연습하는 실제 운동 종목입니다.",
-      "cues": [
-        "시트·패드·관절 축 맞추기",
-        "케이블 머신·핀과 신체 위치 먼저 확인",
-        "통증 없는 범위·호흡 유지"
-      ],
-      "benefits": [
-        "저항 운동 적응",
-        "어깨 사용 인식",
-        "자기 조절 능력"
-      ],
-      "warning": "관절 통증·저림·기구 흔들림·핀 미고정 또는 반동이 있으면 즉시 중단하고 설정을 다시 확인하세요.",
-      "reference": {
-        "label": "ACSM — Exercise Safety",
-        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
-      }
-    },
-    "detail": {
-      "setup": [
-        "케이블 숄더 프레스 전 케이블 머신·핀·바닥·주변 공간을 확인",
-        "시트·패드·핀을 신체에 맞게 조절",
-        "가장 쉬운 범위와 낮은 강도에서 2회 리허설"
-      ],
-      "finish": "케이블 숄더 프레스을 마친 뒤 중량을 완전히 제자리에 두고 관절·호흡 반응을 확인합니다.",
-      "commonMistakes": [
-        "반동으로 중량을 움직이고 범위를 억지로 늘리기",
-        "정렬이 무너진 상태에서 반복 지속",
-        "통증·저림·어지러움 신호 무시"
-      ],
-      "regressions": [
-        "중량·가동 범위 낮추기",
-        "반복·시간 또는 가동 범위 낮추기",
-        "더 안정된 지지 또는 쉬운 기본 동작으로 전환"
-      ],
-      "progressions": [
-        "반복 품질 뒤 중량 한 단계만 조절",
-        "한 번에 하나의 변수만 조절",
-        "다음 날 반응이 편안할 때만 다음 단계 시도"
-      ]
-    }
-  },
-  {
-    "exercise": {
-      "id": "verified-cable-shrugs",
-      "name": "케이블 슈러그",
-      "englishName": "Cable Shrugs",
-      "category": "헬스기구",
-      "regions": [
-        "등",
-        "어깨"
-      ],
-      "focus": "근력",
-      "difficulty": "입문",
-      "equipment": "케이블 머신·핀",
-      "minutes": "6–12회 · 2세트",
-      "description": "케이블 슈러그은 케이블 머신·핀을 사용해 등·어깨 중심의 독립적인 동작 경로를 연습하는 실제 운동 종목입니다.",
-      "cues": [
-        "시트·패드·관절 축 맞추기",
-        "케이블 머신·핀과 신체 위치 먼저 확인",
-        "통증 없는 범위·호흡 유지"
-      ],
-      "benefits": [
-        "저항 운동 적응",
-        "등·어깨 사용 인식",
-        "자기 조절 능력"
-      ],
-      "warning": "관절 통증·저림·기구 흔들림·핀 미고정 또는 반동이 있으면 즉시 중단하고 설정을 다시 확인하세요.",
-      "reference": {
-        "label": "ACSM — Exercise Safety",
-        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
-      }
-    },
-    "detail": {
-      "setup": [
-        "케이블 슈러그 전 케이블 머신·핀·바닥·주변 공간을 확인",
-        "시트·패드·핀을 신체에 맞게 조절",
-        "가장 쉬운 범위와 낮은 강도에서 2회 리허설"
-      ],
-      "finish": "케이블 슈러그을 마친 뒤 중량을 완전히 제자리에 두고 관절·호흡 반응을 확인합니다.",
-      "commonMistakes": [
-        "반동으로 중량을 움직이고 범위를 억지로 늘리기",
-        "정렬이 무너진 상태에서 반복 지속",
-        "통증·저림·어지러움 신호 무시"
-      ],
-      "regressions": [
-        "중량·가동 범위 낮추기",
-        "반복·시간 또는 가동 범위 낮추기",
-        "더 안정된 지지 또는 쉬운 기본 동작으로 전환"
-      ],
-      "progressions": [
-        "반복 품질 뒤 중량 한 단계만 조절",
-        "한 번에 하나의 변수만 조절",
-        "다음 날 반응이 편안할 때만 다음 단계 시도"
-      ]
-    }
-  },
-  {
-    "exercise": {
       "id": "verified-cable-wrist-curl",
       "name": "케이블 손목 컬",
       "englishName": "Cable Wrist Curl",
@@ -5390,6 +3551,1844 @@ export const catalogPage09: CatalogEntry[] = [
         "가장 쉬운 범위와 낮은 강도에서 2회 리허설"
       ],
       "finish": "디클라인 덤벨 벤치 프레스을 마친 뒤 도구를 안전하게 내려놓고 그립·관절·피로 반응을 확인합니다.",
+      "commonMistakes": [
+        "무게를 몸에서 멀리 두고 반동으로 반복하기",
+        "정렬이 무너진 상태에서 반복 지속",
+        "통증·저림·어지러움 신호 무시"
+      ],
+      "regressions": [
+        "더 가벼운 도구·짧은 범위",
+        "반복·시간 또는 가동 범위 낮추기",
+        "더 안정된 지지 또는 쉬운 기본 동작으로 전환"
+      ],
+      "progressions": [
+        "정렬 유지 뒤 반복 또는 부하 하나만 소폭 증가",
+        "한 번에 하나의 변수만 조절",
+        "다음 날 반응이 편안할 때만 다음 단계 시도"
+      ]
+    }
+  },
+  {
+    "exercise": {
+      "id": "verified-decline-dumbbell-flyes",
+      "name": "디클라인 덤벨 플라이",
+      "englishName": "Decline Dumbbell Flyes",
+      "category": "프리웨이트",
+      "regions": [
+        "가슴"
+      ],
+      "focus": "근력",
+      "difficulty": "입문",
+      "equipment": "덤벨·안정된 지지면 선택",
+      "minutes": "6–12회 · 2세트",
+      "description": "디클라인 덤벨 플라이은 덤벨·안정된 지지면 선택을 사용해 가슴 중심의 독립적인 동작 경로를 연습하는 실제 운동 종목입니다.",
+      "cues": [
+        "중량을 몸 가까이·정렬 유지",
+        "덤벨·안정된 지지면 선택과 신체 위치 먼저 확인",
+        "통증 없는 범위·호흡 유지"
+      ],
+      "benefits": [
+        "자유중량 제어",
+        "가슴 사용 인식",
+        "자기 조절 능력"
+      ],
+      "warning": "허리·관절 통증·저림·그립 미끄러짐·균형 상실 또는 주변 충돌 위험이 있으면 즉시 중단하세요.",
+      "reference": {
+        "label": "ACSM — Exercise Safety",
+        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
+      }
+    },
+    "detail": {
+      "setup": [
+        "디클라인 덤벨 플라이 전 덤벨·안정된 지지면 선택·바닥·주변 공간을 확인",
+        "바닥·장비·주변 반경과 안전한 내려놓기 위치 확인",
+        "가장 쉬운 범위와 낮은 강도에서 2회 리허설"
+      ],
+      "finish": "디클라인 덤벨 플라이을 마친 뒤 도구를 안전하게 내려놓고 그립·관절·피로 반응을 확인합니다.",
+      "commonMistakes": [
+        "무게를 몸에서 멀리 두고 반동으로 반복하기",
+        "정렬이 무너진 상태에서 반복 지속",
+        "통증·저림·어지러움 신호 무시"
+      ],
+      "regressions": [
+        "더 가벼운 도구·짧은 범위",
+        "반복·시간 또는 가동 범위 낮추기",
+        "더 안정된 지지 또는 쉬운 기본 동작으로 전환"
+      ],
+      "progressions": [
+        "정렬 유지 뒤 반복 또는 부하 하나만 소폭 증가",
+        "한 번에 하나의 변수만 조절",
+        "다음 날 반응이 편안할 때만 다음 단계 시도"
+      ]
+    }
+  },
+  {
+    "exercise": {
+      "id": "verified-decline-dumbbell-triceps-extension",
+      "name": "디클라인 덤벨 삼두 익스텐션",
+      "englishName": "Decline Dumbbell Triceps Extension",
+      "category": "프리웨이트",
+      "regions": [
+        "팔"
+      ],
+      "focus": "근력",
+      "difficulty": "입문",
+      "equipment": "덤벨·안정된 지지면 선택",
+      "minutes": "6–12회 · 2세트",
+      "description": "디클라인 덤벨 삼두 익스텐션은 덤벨·안정된 지지면 선택을 사용해 팔 중심의 독립적인 동작 경로를 연습하는 실제 운동 종목입니다.",
+      "cues": [
+        "중량을 몸 가까이·정렬 유지",
+        "덤벨·안정된 지지면 선택과 신체 위치 먼저 확인",
+        "통증 없는 범위·호흡 유지"
+      ],
+      "benefits": [
+        "자유중량 제어",
+        "팔 사용 인식",
+        "자기 조절 능력"
+      ],
+      "warning": "허리·관절 통증·저림·그립 미끄러짐·균형 상실 또는 주변 충돌 위험이 있으면 즉시 중단하세요.",
+      "reference": {
+        "label": "ACSM — Exercise Safety",
+        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
+      }
+    },
+    "detail": {
+      "setup": [
+        "디클라인 덤벨 삼두 익스텐션 전 덤벨·안정된 지지면 선택·바닥·주변 공간을 확인",
+        "바닥·장비·주변 반경과 안전한 내려놓기 위치 확인",
+        "가장 쉬운 범위와 낮은 강도에서 2회 리허설"
+      ],
+      "finish": "디클라인 덤벨 삼두 익스텐션을 마친 뒤 도구를 안전하게 내려놓고 그립·관절·피로 반응을 확인합니다.",
+      "commonMistakes": [
+        "무게를 몸에서 멀리 두고 반동으로 반복하기",
+        "정렬이 무너진 상태에서 반복 지속",
+        "통증·저림·어지러움 신호 무시"
+      ],
+      "regressions": [
+        "더 가벼운 도구·짧은 범위",
+        "반복·시간 또는 가동 범위 낮추기",
+        "더 안정된 지지 또는 쉬운 기본 동작으로 전환"
+      ],
+      "progressions": [
+        "정렬 유지 뒤 반복 또는 부하 하나만 소폭 증가",
+        "한 번에 하나의 변수만 조절",
+        "다음 날 반응이 편안할 때만 다음 단계 시도"
+      ]
+    }
+  },
+  {
+    "exercise": {
+      "id": "verified-dumbbell-alternate-bicep-curl",
+      "name": "덤벨 교대 이두 컬",
+      "englishName": "Dumbbell Alternate Bicep Curl",
+      "category": "프리웨이트",
+      "regions": [
+        "팔"
+      ],
+      "focus": "근력",
+      "difficulty": "입문",
+      "equipment": "덤벨·안정된 지지면 선택",
+      "minutes": "6–12회 · 2세트",
+      "description": "덤벨 교대 이두 컬은 덤벨·안정된 지지면 선택을 사용해 팔 중심의 독립적인 동작 경로를 연습하는 실제 운동 종목입니다.",
+      "cues": [
+        "중량을 몸 가까이·정렬 유지",
+        "덤벨·안정된 지지면 선택과 신체 위치 먼저 확인",
+        "통증 없는 범위·호흡 유지"
+      ],
+      "benefits": [
+        "자유중량 제어",
+        "팔 사용 인식",
+        "자기 조절 능력"
+      ],
+      "warning": "허리·관절 통증·저림·그립 미끄러짐·균형 상실 또는 주변 충돌 위험이 있으면 즉시 중단하세요.",
+      "reference": {
+        "label": "ACSM — Exercise Safety",
+        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
+      }
+    },
+    "detail": {
+      "setup": [
+        "덤벨 교대 이두 컬 전 덤벨·안정된 지지면 선택·바닥·주변 공간을 확인",
+        "바닥·장비·주변 반경과 안전한 내려놓기 위치 확인",
+        "가장 쉬운 범위와 낮은 강도에서 2회 리허설"
+      ],
+      "finish": "덤벨 교대 이두 컬을 마친 뒤 도구를 안전하게 내려놓고 그립·관절·피로 반응을 확인합니다.",
+      "commonMistakes": [
+        "무게를 몸에서 멀리 두고 반동으로 반복하기",
+        "정렬이 무너진 상태에서 반복 지속",
+        "통증·저림·어지러움 신호 무시"
+      ],
+      "regressions": [
+        "더 가벼운 도구·짧은 범위",
+        "반복·시간 또는 가동 범위 낮추기",
+        "더 안정된 지지 또는 쉬운 기본 동작으로 전환"
+      ],
+      "progressions": [
+        "정렬 유지 뒤 반복 또는 부하 하나만 소폭 증가",
+        "한 번에 하나의 변수만 조절",
+        "다음 날 반응이 편안할 때만 다음 단계 시도"
+      ]
+    }
+  },
+  {
+    "exercise": {
+      "id": "verified-dumbbell-bench-press-with-neutral-grip",
+      "name": "덤벨 벤치 프레스(중립)",
+      "englishName": "Dumbbell Bench Press with Neutral Grip",
+      "category": "프리웨이트",
+      "regions": [
+        "가슴"
+      ],
+      "focus": "근력",
+      "difficulty": "입문",
+      "equipment": "덤벨·안정된 지지면 선택",
+      "minutes": "6–12회 · 2세트",
+      "description": "덤벨 벤치 프레스(중립)은 덤벨·안정된 지지면 선택을 사용해 가슴 중심의 독립적인 동작 경로를 연습하는 실제 운동 종목입니다.",
+      "cues": [
+        "중량을 몸 가까이·정렬 유지",
+        "덤벨·안정된 지지면 선택과 신체 위치 먼저 확인",
+        "통증 없는 범위·호흡 유지"
+      ],
+      "benefits": [
+        "자유중량 제어",
+        "가슴 사용 인식",
+        "자기 조절 능력"
+      ],
+      "warning": "허리·관절 통증·저림·그립 미끄러짐·균형 상실 또는 주변 충돌 위험이 있으면 즉시 중단하세요.",
+      "reference": {
+        "label": "ACSM — Exercise Safety",
+        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
+      }
+    },
+    "detail": {
+      "setup": [
+        "덤벨 벤치 프레스(중립) 전 덤벨·안정된 지지면 선택·바닥·주변 공간을 확인",
+        "바닥·장비·주변 반경과 안전한 내려놓기 위치 확인",
+        "가장 쉬운 범위와 낮은 강도에서 2회 리허설"
+      ],
+      "finish": "덤벨 벤치 프레스(중립)을 마친 뒤 도구를 안전하게 내려놓고 그립·관절·피로 반응을 확인합니다.",
+      "commonMistakes": [
+        "무게를 몸에서 멀리 두고 반동으로 반복하기",
+        "정렬이 무너진 상태에서 반복 지속",
+        "통증·저림·어지러움 신호 무시"
+      ],
+      "regressions": [
+        "더 가벼운 도구·짧은 범위",
+        "반복·시간 또는 가동 범위 낮추기",
+        "더 안정된 지지 또는 쉬운 기본 동작으로 전환"
+      ],
+      "progressions": [
+        "정렬 유지 뒤 반복 또는 부하 하나만 소폭 증가",
+        "한 번에 하나의 변수만 조절",
+        "다음 날 반응이 편안할 때만 다음 단계 시도"
+      ]
+    }
+  },
+  {
+    "exercise": {
+      "id": "verified-dumbbell-bicep-curl",
+      "name": "덤벨 이두 컬",
+      "englishName": "Dumbbell Bicep Curl",
+      "category": "프리웨이트",
+      "regions": [
+        "팔"
+      ],
+      "focus": "근력",
+      "difficulty": "입문",
+      "equipment": "덤벨·안정된 지지면 선택",
+      "minutes": "6–12회 · 2세트",
+      "description": "덤벨 이두 컬은 덤벨·안정된 지지면 선택을 사용해 팔 중심의 독립적인 동작 경로를 연습하는 실제 운동 종목입니다.",
+      "cues": [
+        "중량을 몸 가까이·정렬 유지",
+        "덤벨·안정된 지지면 선택과 신체 위치 먼저 확인",
+        "통증 없는 범위·호흡 유지"
+      ],
+      "benefits": [
+        "자유중량 제어",
+        "팔 사용 인식",
+        "자기 조절 능력"
+      ],
+      "warning": "허리·관절 통증·저림·그립 미끄러짐·균형 상실 또는 주변 충돌 위험이 있으면 즉시 중단하세요.",
+      "reference": {
+        "label": "ACSM — Exercise Safety",
+        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
+      }
+    },
+    "detail": {
+      "setup": [
+        "덤벨 이두 컬 전 덤벨·안정된 지지면 선택·바닥·주변 공간을 확인",
+        "바닥·장비·주변 반경과 안전한 내려놓기 위치 확인",
+        "가장 쉬운 범위와 낮은 강도에서 2회 리허설"
+      ],
+      "finish": "덤벨 이두 컬을 마친 뒤 도구를 안전하게 내려놓고 그립·관절·피로 반응을 확인합니다.",
+      "commonMistakes": [
+        "무게를 몸에서 멀리 두고 반동으로 반복하기",
+        "정렬이 무너진 상태에서 반복 지속",
+        "통증·저림·어지러움 신호 무시"
+      ],
+      "regressions": [
+        "더 가벼운 도구·짧은 범위",
+        "반복·시간 또는 가동 범위 낮추기",
+        "더 안정된 지지 또는 쉬운 기본 동작으로 전환"
+      ],
+      "progressions": [
+        "정렬 유지 뒤 반복 또는 부하 하나만 소폭 증가",
+        "한 번에 하나의 변수만 조절",
+        "다음 날 반응이 편안할 때만 다음 단계 시도"
+      ]
+    }
+  },
+  {
+    "exercise": {
+      "id": "verified-dumbbell-clean",
+      "name": "덤벨 클린",
+      "englishName": "Dumbbell Clean",
+      "category": "프리웨이트",
+      "regions": [
+        "하체",
+        "둔근"
+      ],
+      "focus": "근력",
+      "difficulty": "중급",
+      "equipment": "덤벨·안정된 지지면 선택",
+      "minutes": "6–12회 · 2세트",
+      "description": "덤벨 클린은 덤벨·안정된 지지면 선택을 사용해 하체·둔근 중심의 독립적인 동작 경로를 연습하는 실제 운동 종목입니다.",
+      "cues": [
+        "중량을 몸 가까이·정렬 유지",
+        "덤벨·안정된 지지면 선택과 신체 위치 먼저 확인",
+        "통증 없는 범위·호흡 유지"
+      ],
+      "benefits": [
+        "자유중량 제어",
+        "하체·둔근 사용 인식",
+        "자기 조절 능력"
+      ],
+      "warning": "허리·관절 통증·저림·그립 미끄러짐·균형 상실 또는 주변 충돌 위험이 있으면 즉시 중단하세요.",
+      "reference": {
+        "label": "ACSM — Exercise Safety",
+        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
+      }
+    },
+    "detail": {
+      "setup": [
+        "덤벨 클린 전 덤벨·안정된 지지면 선택·바닥·주변 공간을 확인",
+        "바닥·장비·주변 반경과 안전한 내려놓기 위치 확인",
+        "가장 쉬운 범위와 낮은 강도에서 2회 리허설"
+      ],
+      "finish": "덤벨 클린을 마친 뒤 도구를 안전하게 내려놓고 그립·관절·피로 반응을 확인합니다.",
+      "commonMistakes": [
+        "무게를 몸에서 멀리 두고 반동으로 반복하기",
+        "정렬이 무너진 상태에서 반복 지속",
+        "통증·저림·어지러움 신호 무시"
+      ],
+      "regressions": [
+        "더 가벼운 도구·짧은 범위",
+        "반복·시간 또는 가동 범위 낮추기",
+        "더 안정된 지지 또는 쉬운 기본 동작으로 전환"
+      ],
+      "progressions": [
+        "정렬 유지 뒤 반복 또는 부하 하나만 소폭 증가",
+        "한 번에 하나의 변수만 조절",
+        "다음 날 반응이 편안할 때만 다음 단계 시도"
+      ]
+    }
+  },
+  {
+    "exercise": {
+      "id": "verified-dumbbell-flyes",
+      "name": "덤벨 플라이",
+      "englishName": "Dumbbell Flyes",
+      "category": "프리웨이트",
+      "regions": [
+        "가슴"
+      ],
+      "focus": "근력",
+      "difficulty": "입문",
+      "equipment": "덤벨·안정된 지지면 선택",
+      "minutes": "6–12회 · 2세트",
+      "description": "덤벨 플라이은 덤벨·안정된 지지면 선택을 사용해 가슴 중심의 독립적인 동작 경로를 연습하는 실제 운동 종목입니다.",
+      "cues": [
+        "중량을 몸 가까이·정렬 유지",
+        "덤벨·안정된 지지면 선택과 신체 위치 먼저 확인",
+        "통증 없는 범위·호흡 유지"
+      ],
+      "benefits": [
+        "자유중량 제어",
+        "가슴 사용 인식",
+        "자기 조절 능력"
+      ],
+      "warning": "허리·관절 통증·저림·그립 미끄러짐·균형 상실 또는 주변 충돌 위험이 있으면 즉시 중단하세요.",
+      "reference": {
+        "label": "ACSM — Exercise Safety",
+        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
+      }
+    },
+    "detail": {
+      "setup": [
+        "덤벨 플라이 전 덤벨·안정된 지지면 선택·바닥·주변 공간을 확인",
+        "바닥·장비·주변 반경과 안전한 내려놓기 위치 확인",
+        "가장 쉬운 범위와 낮은 강도에서 2회 리허설"
+      ],
+      "finish": "덤벨 플라이을 마친 뒤 도구를 안전하게 내려놓고 그립·관절·피로 반응을 확인합니다.",
+      "commonMistakes": [
+        "무게를 몸에서 멀리 두고 반동으로 반복하기",
+        "정렬이 무너진 상태에서 반복 지속",
+        "통증·저림·어지러움 신호 무시"
+      ],
+      "regressions": [
+        "더 가벼운 도구·짧은 범위",
+        "반복·시간 또는 가동 범위 낮추기",
+        "더 안정된 지지 또는 쉬운 기본 동작으로 전환"
+      ],
+      "progressions": [
+        "정렬 유지 뒤 반복 또는 부하 하나만 소폭 증가",
+        "한 번에 하나의 변수만 조절",
+        "다음 날 반응이 편안할 때만 다음 단계 시도"
+      ]
+    }
+  },
+  {
+    "exercise": {
+      "id": "verified-dumbbell-incline-row",
+      "name": "덤벨 인클라인 로우",
+      "englishName": "Dumbbell Incline Row",
+      "category": "프리웨이트",
+      "regions": [
+        "등"
+      ],
+      "focus": "근력",
+      "difficulty": "입문",
+      "equipment": "덤벨·안정된 지지면 선택",
+      "minutes": "6–12회 · 2세트",
+      "description": "덤벨 인클라인 로우은 덤벨·안정된 지지면 선택을 사용해 등 중심의 독립적인 동작 경로를 연습하는 실제 운동 종목입니다.",
+      "cues": [
+        "중량을 몸 가까이·정렬 유지",
+        "덤벨·안정된 지지면 선택과 신체 위치 먼저 확인",
+        "통증 없는 범위·호흡 유지"
+      ],
+      "benefits": [
+        "자유중량 제어",
+        "등 사용 인식",
+        "자기 조절 능력"
+      ],
+      "warning": "허리·관절 통증·저림·그립 미끄러짐·균형 상실 또는 주변 충돌 위험이 있으면 즉시 중단하세요.",
+      "reference": {
+        "label": "ACSM — Exercise Safety",
+        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
+      }
+    },
+    "detail": {
+      "setup": [
+        "덤벨 인클라인 로우 전 덤벨·안정된 지지면 선택·바닥·주변 공간을 확인",
+        "바닥·장비·주변 반경과 안전한 내려놓기 위치 확인",
+        "가장 쉬운 범위와 낮은 강도에서 2회 리허설"
+      ],
+      "finish": "덤벨 인클라인 로우을 마친 뒤 도구를 안전하게 내려놓고 그립·관절·피로 반응을 확인합니다.",
+      "commonMistakes": [
+        "무게를 몸에서 멀리 두고 반동으로 반복하기",
+        "정렬이 무너진 상태에서 반복 지속",
+        "통증·저림·어지러움 신호 무시"
+      ],
+      "regressions": [
+        "더 가벼운 도구·짧은 범위",
+        "반복·시간 또는 가동 범위 낮추기",
+        "더 안정된 지지 또는 쉬운 기본 동작으로 전환"
+      ],
+      "progressions": [
+        "정렬 유지 뒤 반복 또는 부하 하나만 소폭 증가",
+        "한 번에 하나의 변수만 조절",
+        "다음 날 반응이 편안할 때만 다음 단계 시도"
+      ]
+    }
+  },
+  {
+    "exercise": {
+      "id": "verified-dumbbell-incline-shoulder-raise",
+      "name": "덤벨 인클라인 숄더 레이즈",
+      "englishName": "Dumbbell Incline Shoulder Raise",
+      "category": "프리웨이트",
+      "regions": [
+        "어깨"
+      ],
+      "focus": "근력",
+      "difficulty": "입문",
+      "equipment": "덤벨·안정된 지지면 선택",
+      "minutes": "6–12회 · 2세트",
+      "description": "덤벨 인클라인 숄더 레이즈은 덤벨·안정된 지지면 선택을 사용해 어깨 중심의 독립적인 동작 경로를 연습하는 실제 운동 종목입니다.",
+      "cues": [
+        "중량을 몸 가까이·정렬 유지",
+        "덤벨·안정된 지지면 선택과 신체 위치 먼저 확인",
+        "통증 없는 범위·호흡 유지"
+      ],
+      "benefits": [
+        "자유중량 제어",
+        "어깨 사용 인식",
+        "자기 조절 능력"
+      ],
+      "warning": "허리·관절 통증·저림·그립 미끄러짐·균형 상실 또는 주변 충돌 위험이 있으면 즉시 중단하세요.",
+      "reference": {
+        "label": "ACSM — Exercise Safety",
+        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
+      }
+    },
+    "detail": {
+      "setup": [
+        "덤벨 인클라인 숄더 레이즈 전 덤벨·안정된 지지면 선택·바닥·주변 공간을 확인",
+        "바닥·장비·주변 반경과 안전한 내려놓기 위치 확인",
+        "가장 쉬운 범위와 낮은 강도에서 2회 리허설"
+      ],
+      "finish": "덤벨 인클라인 숄더 레이즈을 마친 뒤 도구를 안전하게 내려놓고 그립·관절·피로 반응을 확인합니다.",
+      "commonMistakes": [
+        "무게를 몸에서 멀리 두고 반동으로 반복하기",
+        "정렬이 무너진 상태에서 반복 지속",
+        "통증·저림·어지러움 신호 무시"
+      ],
+      "regressions": [
+        "더 가벼운 도구·짧은 범위",
+        "반복·시간 또는 가동 범위 낮추기",
+        "더 안정된 지지 또는 쉬운 기본 동작으로 전환"
+      ],
+      "progressions": [
+        "정렬 유지 뒤 반복 또는 부하 하나만 소폭 증가",
+        "한 번에 하나의 변수만 조절",
+        "다음 날 반응이 편안할 때만 다음 단계 시도"
+      ]
+    }
+  },
+  {
+    "exercise": {
+      "id": "verified-dumbbell-lunges",
+      "name": "덤벨 런지",
+      "englishName": "Dumbbell Lunges",
+      "category": "프리웨이트",
+      "regions": [
+        "하체"
+      ],
+      "focus": "근력",
+      "difficulty": "입문",
+      "equipment": "덤벨·안정된 지지면 선택",
+      "minutes": "6–12회 · 2세트",
+      "description": "덤벨 런지은 덤벨·안정된 지지면 선택을 사용해 하체 중심의 독립적인 동작 경로를 연습하는 실제 운동 종목입니다.",
+      "cues": [
+        "중량을 몸 가까이·정렬 유지",
+        "덤벨·안정된 지지면 선택과 신체 위치 먼저 확인",
+        "통증 없는 범위·호흡 유지"
+      ],
+      "benefits": [
+        "자유중량 제어",
+        "하체 사용 인식",
+        "자기 조절 능력"
+      ],
+      "warning": "허리·관절 통증·저림·그립 미끄러짐·균형 상실 또는 주변 충돌 위험이 있으면 즉시 중단하세요.",
+      "reference": {
+        "label": "ACSM — Exercise Safety",
+        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
+      }
+    },
+    "detail": {
+      "setup": [
+        "덤벨 런지 전 덤벨·안정된 지지면 선택·바닥·주변 공간을 확인",
+        "바닥·장비·주변 반경과 안전한 내려놓기 위치 확인",
+        "가장 쉬운 범위와 낮은 강도에서 2회 리허설"
+      ],
+      "finish": "덤벨 런지을 마친 뒤 도구를 안전하게 내려놓고 그립·관절·피로 반응을 확인합니다.",
+      "commonMistakes": [
+        "무게를 몸에서 멀리 두고 반동으로 반복하기",
+        "정렬이 무너진 상태에서 반복 지속",
+        "통증·저림·어지러움 신호 무시"
+      ],
+      "regressions": [
+        "더 가벼운 도구·짧은 범위",
+        "반복·시간 또는 가동 범위 낮추기",
+        "더 안정된 지지 또는 쉬운 기본 동작으로 전환"
+      ],
+      "progressions": [
+        "정렬 유지 뒤 반복 또는 부하 하나만 소폭 증가",
+        "한 번에 하나의 변수만 조절",
+        "다음 날 반응이 편안할 때만 다음 단계 시도"
+      ]
+    }
+  },
+  {
+    "exercise": {
+      "id": "verified-dumbbell-lying-one-arm-rear-lateral-raise",
+      "name": "덤벨 누운 원암 리어 레이즈",
+      "englishName": "Dumbbell Lying One-Arm Rear Lateral Raise",
+      "category": "프리웨이트",
+      "regions": [
+        "어깨"
+      ],
+      "focus": "근력",
+      "difficulty": "중급",
+      "equipment": "덤벨·안정된 지지면 선택",
+      "minutes": "6–12회 · 2세트",
+      "description": "덤벨 누운 원암 리어 레이즈은 덤벨·안정된 지지면 선택을 사용해 어깨 중심의 독립적인 동작 경로를 연습하는 실제 운동 종목입니다.",
+      "cues": [
+        "중량을 몸 가까이·정렬 유지",
+        "덤벨·안정된 지지면 선택과 신체 위치 먼저 확인",
+        "통증 없는 범위·호흡 유지"
+      ],
+      "benefits": [
+        "자유중량 제어",
+        "어깨 사용 인식",
+        "자기 조절 능력"
+      ],
+      "warning": "허리·관절 통증·저림·그립 미끄러짐·균형 상실 또는 주변 충돌 위험이 있으면 즉시 중단하세요.",
+      "reference": {
+        "label": "ACSM — Exercise Safety",
+        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
+      }
+    },
+    "detail": {
+      "setup": [
+        "덤벨 누운 원암 리어 레이즈 전 덤벨·안정된 지지면 선택·바닥·주변 공간을 확인",
+        "바닥·장비·주변 반경과 안전한 내려놓기 위치 확인",
+        "가장 쉬운 범위와 낮은 강도에서 2회 리허설"
+      ],
+      "finish": "덤벨 누운 원암 리어 레이즈을 마친 뒤 도구를 안전하게 내려놓고 그립·관절·피로 반응을 확인합니다.",
+      "commonMistakes": [
+        "무게를 몸에서 멀리 두고 반동으로 반복하기",
+        "정렬이 무너진 상태에서 반복 지속",
+        "통증·저림·어지러움 신호 무시"
+      ],
+      "regressions": [
+        "더 가벼운 도구·짧은 범위",
+        "반복·시간 또는 가동 범위 낮추기",
+        "더 안정된 지지 또는 쉬운 기본 동작으로 전환"
+      ],
+      "progressions": [
+        "정렬 유지 뒤 반복 또는 부하 하나만 소폭 증가",
+        "한 번에 하나의 변수만 조절",
+        "다음 날 반응이 편안할 때만 다음 단계 시도"
+      ]
+    }
+  },
+  {
+    "exercise": {
+      "id": "verified-dumbbell-lying-pronation",
+      "name": "덤벨 누운 회내",
+      "englishName": "Dumbbell Lying Pronation",
+      "category": "프리웨이트",
+      "regions": [
+        "팔"
+      ],
+      "focus": "근력",
+      "difficulty": "중급",
+      "equipment": "덤벨·안정된 지지면 선택",
+      "minutes": "6–12회 · 2세트",
+      "description": "덤벨 누운 회내은 덤벨·안정된 지지면 선택을 사용해 팔 중심의 독립적인 동작 경로를 연습하는 실제 운동 종목입니다.",
+      "cues": [
+        "중량을 몸 가까이·정렬 유지",
+        "덤벨·안정된 지지면 선택과 신체 위치 먼저 확인",
+        "통증 없는 범위·호흡 유지"
+      ],
+      "benefits": [
+        "자유중량 제어",
+        "팔 사용 인식",
+        "자기 조절 능력"
+      ],
+      "warning": "허리·관절 통증·저림·그립 미끄러짐·균형 상실 또는 주변 충돌 위험이 있으면 즉시 중단하세요.",
+      "reference": {
+        "label": "ACSM — Exercise Safety",
+        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
+      }
+    },
+    "detail": {
+      "setup": [
+        "덤벨 누운 회내 전 덤벨·안정된 지지면 선택·바닥·주변 공간을 확인",
+        "바닥·장비·주변 반경과 안전한 내려놓기 위치 확인",
+        "가장 쉬운 범위와 낮은 강도에서 2회 리허설"
+      ],
+      "finish": "덤벨 누운 회내을 마친 뒤 도구를 안전하게 내려놓고 그립·관절·피로 반응을 확인합니다.",
+      "commonMistakes": [
+        "무게를 몸에서 멀리 두고 반동으로 반복하기",
+        "정렬이 무너진 상태에서 반복 지속",
+        "통증·저림·어지러움 신호 무시"
+      ],
+      "regressions": [
+        "더 가벼운 도구·짧은 범위",
+        "반복·시간 또는 가동 범위 낮추기",
+        "더 안정된 지지 또는 쉬운 기본 동작으로 전환"
+      ],
+      "progressions": [
+        "정렬 유지 뒤 반복 또는 부하 하나만 소폭 증가",
+        "한 번에 하나의 변수만 조절",
+        "다음 날 반응이 편안할 때만 다음 단계 시도"
+      ]
+    }
+  },
+  {
+    "exercise": {
+      "id": "verified-dumbbell-lying-rear-lateral-raise",
+      "name": "덤벨 누운 리어 레이즈",
+      "englishName": "Dumbbell Lying Rear Lateral Raise",
+      "category": "프리웨이트",
+      "regions": [
+        "어깨"
+      ],
+      "focus": "근력",
+      "difficulty": "중급",
+      "equipment": "덤벨·안정된 지지면 선택",
+      "minutes": "6–12회 · 2세트",
+      "description": "덤벨 누운 리어 레이즈은 덤벨·안정된 지지면 선택을 사용해 어깨 중심의 독립적인 동작 경로를 연습하는 실제 운동 종목입니다.",
+      "cues": [
+        "중량을 몸 가까이·정렬 유지",
+        "덤벨·안정된 지지면 선택과 신체 위치 먼저 확인",
+        "통증 없는 범위·호흡 유지"
+      ],
+      "benefits": [
+        "자유중량 제어",
+        "어깨 사용 인식",
+        "자기 조절 능력"
+      ],
+      "warning": "허리·관절 통증·저림·그립 미끄러짐·균형 상실 또는 주변 충돌 위험이 있으면 즉시 중단하세요.",
+      "reference": {
+        "label": "ACSM — Exercise Safety",
+        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
+      }
+    },
+    "detail": {
+      "setup": [
+        "덤벨 누운 리어 레이즈 전 덤벨·안정된 지지면 선택·바닥·주변 공간을 확인",
+        "바닥·장비·주변 반경과 안전한 내려놓기 위치 확인",
+        "가장 쉬운 범위와 낮은 강도에서 2회 리허설"
+      ],
+      "finish": "덤벨 누운 리어 레이즈을 마친 뒤 도구를 안전하게 내려놓고 그립·관절·피로 반응을 확인합니다.",
+      "commonMistakes": [
+        "무게를 몸에서 멀리 두고 반동으로 반복하기",
+        "정렬이 무너진 상태에서 반복 지속",
+        "통증·저림·어지러움 신호 무시"
+      ],
+      "regressions": [
+        "더 가벼운 도구·짧은 범위",
+        "반복·시간 또는 가동 범위 낮추기",
+        "더 안정된 지지 또는 쉬운 기본 동작으로 전환"
+      ],
+      "progressions": [
+        "정렬 유지 뒤 반복 또는 부하 하나만 소폭 증가",
+        "한 번에 하나의 변수만 조절",
+        "다음 날 반응이 편안할 때만 다음 단계 시도"
+      ]
+    }
+  },
+  {
+    "exercise": {
+      "id": "verified-dumbbell-lying-supination",
+      "name": "덤벨 누운 회외",
+      "englishName": "Dumbbell Lying Supination",
+      "category": "프리웨이트",
+      "regions": [
+        "팔"
+      ],
+      "focus": "근력",
+      "difficulty": "중급",
+      "equipment": "덤벨·안정된 지지면 선택",
+      "minutes": "6–12회 · 2세트",
+      "description": "덤벨 누운 회외은 덤벨·안정된 지지면 선택을 사용해 팔 중심의 독립적인 동작 경로를 연습하는 실제 운동 종목입니다.",
+      "cues": [
+        "중량을 몸 가까이·정렬 유지",
+        "덤벨·안정된 지지면 선택과 신체 위치 먼저 확인",
+        "통증 없는 범위·호흡 유지"
+      ],
+      "benefits": [
+        "자유중량 제어",
+        "팔 사용 인식",
+        "자기 조절 능력"
+      ],
+      "warning": "허리·관절 통증·저림·그립 미끄러짐·균형 상실 또는 주변 충돌 위험이 있으면 즉시 중단하세요.",
+      "reference": {
+        "label": "ACSM — Exercise Safety",
+        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
+      }
+    },
+    "detail": {
+      "setup": [
+        "덤벨 누운 회외 전 덤벨·안정된 지지면 선택·바닥·주변 공간을 확인",
+        "바닥·장비·주변 반경과 안전한 내려놓기 위치 확인",
+        "가장 쉬운 범위와 낮은 강도에서 2회 리허설"
+      ],
+      "finish": "덤벨 누운 회외을 마친 뒤 도구를 안전하게 내려놓고 그립·관절·피로 반응을 확인합니다.",
+      "commonMistakes": [
+        "무게를 몸에서 멀리 두고 반동으로 반복하기",
+        "정렬이 무너진 상태에서 반복 지속",
+        "통증·저림·어지러움 신호 무시"
+      ],
+      "regressions": [
+        "더 가벼운 도구·짧은 범위",
+        "반복·시간 또는 가동 범위 낮추기",
+        "더 안정된 지지 또는 쉬운 기본 동작으로 전환"
+      ],
+      "progressions": [
+        "정렬 유지 뒤 반복 또는 부하 하나만 소폭 증가",
+        "한 번에 하나의 변수만 조절",
+        "다음 날 반응이 편안할 때만 다음 단계 시도"
+      ]
+    }
+  },
+  {
+    "exercise": {
+      "id": "verified-dumbbell-one-arm-shoulder-press",
+      "name": "원암 덤벨 숄더 프레스",
+      "englishName": "Dumbbell One-Arm Shoulder Press",
+      "category": "프리웨이트",
+      "regions": [
+        "어깨"
+      ],
+      "focus": "근력",
+      "difficulty": "중급",
+      "equipment": "덤벨·안정된 지지면 선택",
+      "minutes": "6–12회 · 2세트",
+      "description": "원암 덤벨 숄더 프레스은 덤벨·안정된 지지면 선택을 사용해 어깨 중심의 독립적인 동작 경로를 연습하는 실제 운동 종목입니다.",
+      "cues": [
+        "중량을 몸 가까이·정렬 유지",
+        "덤벨·안정된 지지면 선택과 신체 위치 먼저 확인",
+        "통증 없는 범위·호흡 유지"
+      ],
+      "benefits": [
+        "자유중량 제어",
+        "어깨 사용 인식",
+        "자기 조절 능력"
+      ],
+      "warning": "허리·관절 통증·저림·그립 미끄러짐·균형 상실 또는 주변 충돌 위험이 있으면 즉시 중단하세요.",
+      "reference": {
+        "label": "ACSM — Exercise Safety",
+        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
+      }
+    },
+    "detail": {
+      "setup": [
+        "원암 덤벨 숄더 프레스 전 덤벨·안정된 지지면 선택·바닥·주변 공간을 확인",
+        "바닥·장비·주변 반경과 안전한 내려놓기 위치 확인",
+        "가장 쉬운 범위와 낮은 강도에서 2회 리허설"
+      ],
+      "finish": "원암 덤벨 숄더 프레스을 마친 뒤 도구를 안전하게 내려놓고 그립·관절·피로 반응을 확인합니다.",
+      "commonMistakes": [
+        "무게를 몸에서 멀리 두고 반동으로 반복하기",
+        "정렬이 무너진 상태에서 반복 지속",
+        "통증·저림·어지러움 신호 무시"
+      ],
+      "regressions": [
+        "더 가벼운 도구·짧은 범위",
+        "반복·시간 또는 가동 범위 낮추기",
+        "더 안정된 지지 또는 쉬운 기본 동작으로 전환"
+      ],
+      "progressions": [
+        "정렬 유지 뒤 반복 또는 부하 하나만 소폭 증가",
+        "한 번에 하나의 변수만 조절",
+        "다음 날 반응이 편안할 때만 다음 단계 시도"
+      ]
+    }
+  },
+  {
+    "exercise": {
+      "id": "verified-dumbbell-one-arm-triceps-extension",
+      "name": "원암 덤벨 삼두 익스텐션",
+      "englishName": "Dumbbell One-Arm Triceps Extension",
+      "category": "프리웨이트",
+      "regions": [
+        "팔"
+      ],
+      "focus": "근력",
+      "difficulty": "중급",
+      "equipment": "덤벨·안정된 지지면 선택",
+      "minutes": "6–12회 · 2세트",
+      "description": "원암 덤벨 삼두 익스텐션은 덤벨·안정된 지지면 선택을 사용해 팔 중심의 독립적인 동작 경로를 연습하는 실제 운동 종목입니다.",
+      "cues": [
+        "중량을 몸 가까이·정렬 유지",
+        "덤벨·안정된 지지면 선택과 신체 위치 먼저 확인",
+        "통증 없는 범위·호흡 유지"
+      ],
+      "benefits": [
+        "자유중량 제어",
+        "팔 사용 인식",
+        "자기 조절 능력"
+      ],
+      "warning": "허리·관절 통증·저림·그립 미끄러짐·균형 상실 또는 주변 충돌 위험이 있으면 즉시 중단하세요.",
+      "reference": {
+        "label": "ACSM — Exercise Safety",
+        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
+      }
+    },
+    "detail": {
+      "setup": [
+        "원암 덤벨 삼두 익스텐션 전 덤벨·안정된 지지면 선택·바닥·주변 공간을 확인",
+        "바닥·장비·주변 반경과 안전한 내려놓기 위치 확인",
+        "가장 쉬운 범위와 낮은 강도에서 2회 리허설"
+      ],
+      "finish": "원암 덤벨 삼두 익스텐션을 마친 뒤 도구를 안전하게 내려놓고 그립·관절·피로 반응을 확인합니다.",
+      "commonMistakes": [
+        "무게를 몸에서 멀리 두고 반동으로 반복하기",
+        "정렬이 무너진 상태에서 반복 지속",
+        "통증·저림·어지러움 신호 무시"
+      ],
+      "regressions": [
+        "더 가벼운 도구·짧은 범위",
+        "반복·시간 또는 가동 범위 낮추기",
+        "더 안정된 지지 또는 쉬운 기본 동작으로 전환"
+      ],
+      "progressions": [
+        "정렬 유지 뒤 반복 또는 부하 하나만 소폭 증가",
+        "한 번에 하나의 변수만 조절",
+        "다음 날 반응이 편안할 때만 다음 단계 시도"
+      ]
+    }
+  },
+  {
+    "exercise": {
+      "id": "verified-dumbbell-one-arm-upright-row",
+      "name": "원암 덤벨 업라이트 로우",
+      "englishName": "Dumbbell One-Arm Upright Row",
+      "category": "프리웨이트",
+      "regions": [
+        "어깨"
+      ],
+      "focus": "근력",
+      "difficulty": "중급",
+      "equipment": "덤벨·안정된 지지면 선택",
+      "minutes": "6–12회 · 2세트",
+      "description": "원암 덤벨 업라이트 로우은 덤벨·안정된 지지면 선택을 사용해 어깨 중심의 독립적인 동작 경로를 연습하는 실제 운동 종목입니다.",
+      "cues": [
+        "중량을 몸 가까이·정렬 유지",
+        "덤벨·안정된 지지면 선택과 신체 위치 먼저 확인",
+        "통증 없는 범위·호흡 유지"
+      ],
+      "benefits": [
+        "자유중량 제어",
+        "어깨 사용 인식",
+        "자기 조절 능력"
+      ],
+      "warning": "허리·관절 통증·저림·그립 미끄러짐·균형 상실 또는 주변 충돌 위험이 있으면 즉시 중단하세요.",
+      "reference": {
+        "label": "ACSM — Exercise Safety",
+        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
+      }
+    },
+    "detail": {
+      "setup": [
+        "원암 덤벨 업라이트 로우 전 덤벨·안정된 지지면 선택·바닥·주변 공간을 확인",
+        "바닥·장비·주변 반경과 안전한 내려놓기 위치 확인",
+        "가장 쉬운 범위와 낮은 강도에서 2회 리허설"
+      ],
+      "finish": "원암 덤벨 업라이트 로우을 마친 뒤 도구를 안전하게 내려놓고 그립·관절·피로 반응을 확인합니다.",
+      "commonMistakes": [
+        "무게를 몸에서 멀리 두고 반동으로 반복하기",
+        "정렬이 무너진 상태에서 반복 지속",
+        "통증·저림·어지러움 신호 무시"
+      ],
+      "regressions": [
+        "더 가벼운 도구·짧은 범위",
+        "반복·시간 또는 가동 범위 낮추기",
+        "더 안정된 지지 또는 쉬운 기본 동작으로 전환"
+      ],
+      "progressions": [
+        "정렬 유지 뒤 반복 또는 부하 하나만 소폭 증가",
+        "한 번에 하나의 변수만 조절",
+        "다음 날 반응이 편안할 때만 다음 단계 시도"
+      ]
+    }
+  },
+  {
+    "exercise": {
+      "id": "verified-dumbbell-prone-incline-curl",
+      "name": "덤벨 엎드려 인클라인 컬",
+      "englishName": "Dumbbell Prone Incline Curl",
+      "category": "프리웨이트",
+      "regions": [
+        "팔"
+      ],
+      "focus": "근력",
+      "difficulty": "중급",
+      "equipment": "덤벨·안정된 지지면 선택",
+      "minutes": "6–12회 · 2세트",
+      "description": "덤벨 엎드려 인클라인 컬은 덤벨·안정된 지지면 선택을 사용해 팔 중심의 독립적인 동작 경로를 연습하는 실제 운동 종목입니다.",
+      "cues": [
+        "중량을 몸 가까이·정렬 유지",
+        "덤벨·안정된 지지면 선택과 신체 위치 먼저 확인",
+        "통증 없는 범위·호흡 유지"
+      ],
+      "benefits": [
+        "자유중량 제어",
+        "팔 사용 인식",
+        "자기 조절 능력"
+      ],
+      "warning": "허리·관절 통증·저림·그립 미끄러짐·균형 상실 또는 주변 충돌 위험이 있으면 즉시 중단하세요.",
+      "reference": {
+        "label": "ACSM — Exercise Safety",
+        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
+      }
+    },
+    "detail": {
+      "setup": [
+        "덤벨 엎드려 인클라인 컬 전 덤벨·안정된 지지면 선택·바닥·주변 공간을 확인",
+        "바닥·장비·주변 반경과 안전한 내려놓기 위치 확인",
+        "가장 쉬운 범위와 낮은 강도에서 2회 리허설"
+      ],
+      "finish": "덤벨 엎드려 인클라인 컬을 마친 뒤 도구를 안전하게 내려놓고 그립·관절·피로 반응을 확인합니다.",
+      "commonMistakes": [
+        "무게를 몸에서 멀리 두고 반동으로 반복하기",
+        "정렬이 무너진 상태에서 반복 지속",
+        "통증·저림·어지러움 신호 무시"
+      ],
+      "regressions": [
+        "더 가벼운 도구·짧은 범위",
+        "반복·시간 또는 가동 범위 낮추기",
+        "더 안정된 지지 또는 쉬운 기본 동작으로 전환"
+      ],
+      "progressions": [
+        "정렬 유지 뒤 반복 또는 부하 하나만 소폭 증가",
+        "한 번에 하나의 변수만 조절",
+        "다음 날 반응이 편안할 때만 다음 단계 시도"
+      ]
+    }
+  },
+  {
+    "exercise": {
+      "id": "verified-dumbbell-raise",
+      "name": "덤벨 레이즈",
+      "englishName": "Dumbbell Raise",
+      "category": "프리웨이트",
+      "regions": [
+        "어깨"
+      ],
+      "focus": "근력",
+      "difficulty": "입문",
+      "equipment": "덤벨·안정된 지지면 선택",
+      "minutes": "6–12회 · 2세트",
+      "description": "덤벨 레이즈은 덤벨·안정된 지지면 선택을 사용해 어깨 중심의 독립적인 동작 경로를 연습하는 실제 운동 종목입니다.",
+      "cues": [
+        "중량을 몸 가까이·정렬 유지",
+        "덤벨·안정된 지지면 선택과 신체 위치 먼저 확인",
+        "통증 없는 범위·호흡 유지"
+      ],
+      "benefits": [
+        "자유중량 제어",
+        "어깨 사용 인식",
+        "자기 조절 능력"
+      ],
+      "warning": "허리·관절 통증·저림·그립 미끄러짐·균형 상실 또는 주변 충돌 위험이 있으면 즉시 중단하세요.",
+      "reference": {
+        "label": "ACSM — Exercise Safety",
+        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
+      }
+    },
+    "detail": {
+      "setup": [
+        "덤벨 레이즈 전 덤벨·안정된 지지면 선택·바닥·주변 공간을 확인",
+        "바닥·장비·주변 반경과 안전한 내려놓기 위치 확인",
+        "가장 쉬운 범위와 낮은 강도에서 2회 리허설"
+      ],
+      "finish": "덤벨 레이즈을 마친 뒤 도구를 안전하게 내려놓고 그립·관절·피로 반응을 확인합니다.",
+      "commonMistakes": [
+        "무게를 몸에서 멀리 두고 반동으로 반복하기",
+        "정렬이 무너진 상태에서 반복 지속",
+        "통증·저림·어지러움 신호 무시"
+      ],
+      "regressions": [
+        "더 가벼운 도구·짧은 범위",
+        "반복·시간 또는 가동 범위 낮추기",
+        "더 안정된 지지 또는 쉬운 기본 동작으로 전환"
+      ],
+      "progressions": [
+        "정렬 유지 뒤 반복 또는 부하 하나만 소폭 증가",
+        "한 번에 하나의 변수만 조절",
+        "다음 날 반응이 편안할 때만 다음 단계 시도"
+      ]
+    }
+  },
+  {
+    "exercise": {
+      "id": "verified-dumbbell-rear-lunge",
+      "name": "덤벨 리어 런지",
+      "englishName": "Dumbbell Rear Lunge",
+      "category": "프리웨이트",
+      "regions": [
+        "하체"
+      ],
+      "focus": "근력",
+      "difficulty": "중급",
+      "equipment": "덤벨·안정된 지지면 선택",
+      "minutes": "6–12회 · 2세트",
+      "description": "덤벨 리어 런지은 덤벨·안정된 지지면 선택을 사용해 하체 중심의 독립적인 동작 경로를 연습하는 실제 운동 종목입니다.",
+      "cues": [
+        "중량을 몸 가까이·정렬 유지",
+        "덤벨·안정된 지지면 선택과 신체 위치 먼저 확인",
+        "통증 없는 범위·호흡 유지"
+      ],
+      "benefits": [
+        "자유중량 제어",
+        "하체 사용 인식",
+        "자기 조절 능력"
+      ],
+      "warning": "허리·관절 통증·저림·그립 미끄러짐·균형 상실 또는 주변 충돌 위험이 있으면 즉시 중단하세요.",
+      "reference": {
+        "label": "ACSM — Exercise Safety",
+        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
+      }
+    },
+    "detail": {
+      "setup": [
+        "덤벨 리어 런지 전 덤벨·안정된 지지면 선택·바닥·주변 공간을 확인",
+        "바닥·장비·주변 반경과 안전한 내려놓기 위치 확인",
+        "가장 쉬운 범위와 낮은 강도에서 2회 리허설"
+      ],
+      "finish": "덤벨 리어 런지을 마친 뒤 도구를 안전하게 내려놓고 그립·관절·피로 반응을 확인합니다.",
+      "commonMistakes": [
+        "무게를 몸에서 멀리 두고 반동으로 반복하기",
+        "정렬이 무너진 상태에서 반복 지속",
+        "통증·저림·어지러움 신호 무시"
+      ],
+      "regressions": [
+        "더 가벼운 도구·짧은 범위",
+        "반복·시간 또는 가동 범위 낮추기",
+        "더 안정된 지지 또는 쉬운 기본 동작으로 전환"
+      ],
+      "progressions": [
+        "정렬 유지 뒤 반복 또는 부하 하나만 소폭 증가",
+        "한 번에 하나의 변수만 조절",
+        "다음 날 반응이 편안할 때만 다음 단계 시도"
+      ]
+    }
+  },
+  {
+    "exercise": {
+      "id": "verified-dumbbell-scaption",
+      "name": "덤벨 스캡션",
+      "englishName": "Dumbbell Scaption",
+      "category": "프리웨이트",
+      "regions": [
+        "어깨"
+      ],
+      "focus": "근력",
+      "difficulty": "입문",
+      "equipment": "덤벨·안정된 지지면 선택",
+      "minutes": "6–12회 · 2세트",
+      "description": "덤벨 스캡션은 덤벨·안정된 지지면 선택을 사용해 어깨 중심의 독립적인 동작 경로를 연습하는 실제 운동 종목입니다.",
+      "cues": [
+        "중량을 몸 가까이·정렬 유지",
+        "덤벨·안정된 지지면 선택과 신체 위치 먼저 확인",
+        "통증 없는 범위·호흡 유지"
+      ],
+      "benefits": [
+        "자유중량 제어",
+        "어깨 사용 인식",
+        "자기 조절 능력"
+      ],
+      "warning": "허리·관절 통증·저림·그립 미끄러짐·균형 상실 또는 주변 충돌 위험이 있으면 즉시 중단하세요.",
+      "reference": {
+        "label": "ACSM — Exercise Safety",
+        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
+      }
+    },
+    "detail": {
+      "setup": [
+        "덤벨 스캡션 전 덤벨·안정된 지지면 선택·바닥·주변 공간을 확인",
+        "바닥·장비·주변 반경과 안전한 내려놓기 위치 확인",
+        "가장 쉬운 범위와 낮은 강도에서 2회 리허설"
+      ],
+      "finish": "덤벨 스캡션을 마친 뒤 도구를 안전하게 내려놓고 그립·관절·피로 반응을 확인합니다.",
+      "commonMistakes": [
+        "무게를 몸에서 멀리 두고 반동으로 반복하기",
+        "정렬이 무너진 상태에서 반복 지속",
+        "통증·저림·어지러움 신호 무시"
+      ],
+      "regressions": [
+        "더 가벼운 도구·짧은 범위",
+        "반복·시간 또는 가동 범위 낮추기",
+        "더 안정된 지지 또는 쉬운 기본 동작으로 전환"
+      ],
+      "progressions": [
+        "정렬 유지 뒤 반복 또는 부하 하나만 소폭 증가",
+        "한 번에 하나의 변수만 조절",
+        "다음 날 반응이 편안할 때만 다음 단계 시도"
+      ]
+    }
+  },
+  {
+    "exercise": {
+      "id": "verified-dumbbell-seated-one-leg-calf-raise",
+      "name": "덤벨 시티드 원레그 카프 레이즈",
+      "englishName": "Dumbbell Seated One-Leg Calf Raise",
+      "category": "프리웨이트",
+      "regions": [
+        "하체"
+      ],
+      "focus": "근력",
+      "difficulty": "입문",
+      "equipment": "덤벨·안정된 지지면 선택",
+      "minutes": "6–12회 · 2세트",
+      "description": "덤벨 시티드 원레그 카프 레이즈은 덤벨·안정된 지지면 선택을 사용해 하체 중심의 독립적인 동작 경로를 연습하는 실제 운동 종목입니다.",
+      "cues": [
+        "중량을 몸 가까이·정렬 유지",
+        "덤벨·안정된 지지면 선택과 신체 위치 먼저 확인",
+        "통증 없는 범위·호흡 유지"
+      ],
+      "benefits": [
+        "자유중량 제어",
+        "하체 사용 인식",
+        "자기 조절 능력"
+      ],
+      "warning": "허리·관절 통증·저림·그립 미끄러짐·균형 상실 또는 주변 충돌 위험이 있으면 즉시 중단하세요.",
+      "reference": {
+        "label": "ACSM — Exercise Safety",
+        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
+      }
+    },
+    "detail": {
+      "setup": [
+        "덤벨 시티드 원레그 카프 레이즈 전 덤벨·안정된 지지면 선택·바닥·주변 공간을 확인",
+        "바닥·장비·주변 반경과 안전한 내려놓기 위치 확인",
+        "가장 쉬운 범위와 낮은 강도에서 2회 리허설"
+      ],
+      "finish": "덤벨 시티드 원레그 카프 레이즈을 마친 뒤 도구를 안전하게 내려놓고 그립·관절·피로 반응을 확인합니다.",
+      "commonMistakes": [
+        "무게를 몸에서 멀리 두고 반동으로 반복하기",
+        "정렬이 무너진 상태에서 반복 지속",
+        "통증·저림·어지러움 신호 무시"
+      ],
+      "regressions": [
+        "더 가벼운 도구·짧은 범위",
+        "반복·시간 또는 가동 범위 낮추기",
+        "더 안정된 지지 또는 쉬운 기본 동작으로 전환"
+      ],
+      "progressions": [
+        "정렬 유지 뒤 반복 또는 부하 하나만 소폭 증가",
+        "한 번에 하나의 변수만 조절",
+        "다음 날 반응이 편안할 때만 다음 단계 시도"
+      ]
+    }
+  },
+  {
+    "exercise": {
+      "id": "verified-dumbbell-shoulder-press",
+      "name": "덤벨 숄더프레스",
+      "englishName": "Dumbbell Shoulder Press",
+      "category": "프리웨이트",
+      "regions": [
+        "어깨"
+      ],
+      "focus": "근력",
+      "difficulty": "중급",
+      "equipment": "덤벨·안정된 지지면 선택",
+      "minutes": "6–12회 · 2세트",
+      "description": "덤벨 숄더프레스은 덤벨·안정된 지지면 선택을 사용해 어깨 중심의 독립적인 동작 경로를 연습하는 실제 운동 종목입니다.",
+      "cues": [
+        "중량을 몸 가까이·정렬 유지",
+        "덤벨·안정된 지지면 선택과 신체 위치 먼저 확인",
+        "통증 없는 범위·호흡 유지"
+      ],
+      "benefits": [
+        "자유중량 제어",
+        "어깨 사용 인식",
+        "자기 조절 능력"
+      ],
+      "warning": "허리·관절 통증·저림·그립 미끄러짐·균형 상실 또는 주변 충돌 위험이 있으면 즉시 중단하세요.",
+      "reference": {
+        "label": "ACSM — Exercise Safety",
+        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
+      }
+    },
+    "detail": {
+      "setup": [
+        "덤벨 숄더프레스 전 덤벨·안정된 지지면 선택·바닥·주변 공간을 확인",
+        "바닥·장비·주변 반경과 안전한 내려놓기 위치 확인",
+        "가장 쉬운 범위와 낮은 강도에서 2회 리허설"
+      ],
+      "finish": "덤벨 숄더프레스을 마친 뒤 도구를 안전하게 내려놓고 그립·관절·피로 반응을 확인합니다.",
+      "commonMistakes": [
+        "무게를 몸에서 멀리 두고 반동으로 반복하기",
+        "정렬이 무너진 상태에서 반복 지속",
+        "통증·저림·어지러움 신호 무시"
+      ],
+      "regressions": [
+        "더 가벼운 도구·짧은 범위",
+        "반복·시간 또는 가동 범위 낮추기",
+        "더 안정된 지지 또는 쉬운 기본 동작으로 전환"
+      ],
+      "progressions": [
+        "정렬 유지 뒤 반복 또는 부하 하나만 소폭 증가",
+        "한 번에 하나의 변수만 조절",
+        "다음 날 반응이 편안할 때만 다음 단계 시도"
+      ]
+    }
+  },
+  {
+    "exercise": {
+      "id": "verified-dumbbell-shrug",
+      "name": "덤벨 슈러그",
+      "englishName": "Dumbbell Shrug",
+      "category": "프리웨이트",
+      "regions": [
+        "등",
+        "어깨"
+      ],
+      "focus": "근력",
+      "difficulty": "입문",
+      "equipment": "덤벨·안정된 지지면 선택",
+      "minutes": "6–12회 · 2세트",
+      "description": "덤벨 슈러그은 덤벨·안정된 지지면 선택을 사용해 등·어깨 중심의 독립적인 동작 경로를 연습하는 실제 운동 종목입니다.",
+      "cues": [
+        "중량을 몸 가까이·정렬 유지",
+        "덤벨·안정된 지지면 선택과 신체 위치 먼저 확인",
+        "통증 없는 범위·호흡 유지"
+      ],
+      "benefits": [
+        "자유중량 제어",
+        "등·어깨 사용 인식",
+        "자기 조절 능력"
+      ],
+      "warning": "허리·관절 통증·저림·그립 미끄러짐·균형 상실 또는 주변 충돌 위험이 있으면 즉시 중단하세요.",
+      "reference": {
+        "label": "ACSM — Exercise Safety",
+        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
+      }
+    },
+    "detail": {
+      "setup": [
+        "덤벨 슈러그 전 덤벨·안정된 지지면 선택·바닥·주변 공간을 확인",
+        "바닥·장비·주변 반경과 안전한 내려놓기 위치 확인",
+        "가장 쉬운 범위와 낮은 강도에서 2회 리허설"
+      ],
+      "finish": "덤벨 슈러그을 마친 뒤 도구를 안전하게 내려놓고 그립·관절·피로 반응을 확인합니다.",
+      "commonMistakes": [
+        "무게를 몸에서 멀리 두고 반동으로 반복하기",
+        "정렬이 무너진 상태에서 반복 지속",
+        "통증·저림·어지러움 신호 무시"
+      ],
+      "regressions": [
+        "더 가벼운 도구·짧은 범위",
+        "반복·시간 또는 가동 범위 낮추기",
+        "더 안정된 지지 또는 쉬운 기본 동작으로 전환"
+      ],
+      "progressions": [
+        "정렬 유지 뒤 반복 또는 부하 하나만 소폭 증가",
+        "한 번에 하나의 변수만 조절",
+        "다음 날 반응이 편안할 때만 다음 단계 시도"
+      ]
+    }
+  },
+  {
+    "exercise": {
+      "id": "verified-dumbbell-side-bend",
+      "name": "덤벨 사이드벤드",
+      "englishName": "Dumbbell Side Bend",
+      "category": "프리웨이트",
+      "regions": [
+        "코어"
+      ],
+      "focus": "근력",
+      "difficulty": "입문",
+      "equipment": "덤벨·안정된 지지면 선택",
+      "minutes": "6–12회 · 2세트",
+      "description": "덤벨 사이드벤드은 덤벨·안정된 지지면 선택을 사용해 코어 중심의 독립적인 동작 경로를 연습하는 실제 운동 종목입니다.",
+      "cues": [
+        "중량을 몸 가까이·정렬 유지",
+        "덤벨·안정된 지지면 선택과 신체 위치 먼저 확인",
+        "통증 없는 범위·호흡 유지"
+      ],
+      "benefits": [
+        "자유중량 제어",
+        "코어 사용 인식",
+        "자기 조절 능력"
+      ],
+      "warning": "허리·관절 통증·저림·그립 미끄러짐·균형 상실 또는 주변 충돌 위험이 있으면 즉시 중단하세요.",
+      "reference": {
+        "label": "ACSM — Exercise Safety",
+        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
+      }
+    },
+    "detail": {
+      "setup": [
+        "덤벨 사이드벤드 전 덤벨·안정된 지지면 선택·바닥·주변 공간을 확인",
+        "바닥·장비·주변 반경과 안전한 내려놓기 위치 확인",
+        "가장 쉬운 범위와 낮은 강도에서 2회 리허설"
+      ],
+      "finish": "덤벨 사이드벤드을 마친 뒤 도구를 안전하게 내려놓고 그립·관절·피로 반응을 확인합니다.",
+      "commonMistakes": [
+        "무게를 몸에서 멀리 두고 반동으로 반복하기",
+        "정렬이 무너진 상태에서 반복 지속",
+        "통증·저림·어지러움 신호 무시"
+      ],
+      "regressions": [
+        "더 가벼운 도구·짧은 범위",
+        "반복·시간 또는 가동 범위 낮추기",
+        "더 안정된 지지 또는 쉬운 기본 동작으로 전환"
+      ],
+      "progressions": [
+        "정렬 유지 뒤 반복 또는 부하 하나만 소폭 증가",
+        "한 번에 하나의 변수만 조절",
+        "다음 날 반응이 편안할 때만 다음 단계 시도"
+      ]
+    }
+  },
+  {
+    "exercise": {
+      "id": "verified-dumbbell-squat",
+      "name": "덤벨 스쿼트",
+      "englishName": "Dumbbell Squat",
+      "category": "프리웨이트",
+      "regions": [
+        "하체"
+      ],
+      "focus": "근력",
+      "difficulty": "입문",
+      "equipment": "덤벨·안정된 지지면 선택",
+      "minutes": "6–12회 · 2세트",
+      "description": "덤벨 스쿼트은 덤벨·안정된 지지면 선택을 사용해 하체 중심의 독립적인 동작 경로를 연습하는 실제 운동 종목입니다.",
+      "cues": [
+        "중량을 몸 가까이·정렬 유지",
+        "덤벨·안정된 지지면 선택과 신체 위치 먼저 확인",
+        "통증 없는 범위·호흡 유지"
+      ],
+      "benefits": [
+        "자유중량 제어",
+        "하체 사용 인식",
+        "자기 조절 능력"
+      ],
+      "warning": "허리·관절 통증·저림·그립 미끄러짐·균형 상실 또는 주변 충돌 위험이 있으면 즉시 중단하세요.",
+      "reference": {
+        "label": "ACSM — Exercise Safety",
+        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
+      }
+    },
+    "detail": {
+      "setup": [
+        "덤벨 스쿼트 전 덤벨·안정된 지지면 선택·바닥·주변 공간을 확인",
+        "바닥·장비·주변 반경과 안전한 내려놓기 위치 확인",
+        "가장 쉬운 범위와 낮은 강도에서 2회 리허설"
+      ],
+      "finish": "덤벨 스쿼트을 마친 뒤 도구를 안전하게 내려놓고 그립·관절·피로 반응을 확인합니다.",
+      "commonMistakes": [
+        "무게를 몸에서 멀리 두고 반동으로 반복하기",
+        "정렬이 무너진 상태에서 반복 지속",
+        "통증·저림·어지러움 신호 무시"
+      ],
+      "regressions": [
+        "더 가벼운 도구·짧은 범위",
+        "반복·시간 또는 가동 범위 낮추기",
+        "더 안정된 지지 또는 쉬운 기본 동작으로 전환"
+      ],
+      "progressions": [
+        "정렬 유지 뒤 반복 또는 부하 하나만 소폭 증가",
+        "한 번에 하나의 변수만 조절",
+        "다음 날 반응이 편안할 때만 다음 단계 시도"
+      ]
+    }
+  },
+  {
+    "exercise": {
+      "id": "verified-dumbbell-squat-to-a-bench",
+      "name": "덤벨 벤치 스쿼트",
+      "englishName": "Dumbbell Squat To A Bench",
+      "category": "프리웨이트",
+      "regions": [
+        "하체"
+      ],
+      "focus": "근력",
+      "difficulty": "중급",
+      "equipment": "덤벨·안정된 지지면 선택",
+      "minutes": "6–12회 · 2세트",
+      "description": "덤벨 벤치 스쿼트은 덤벨·안정된 지지면 선택을 사용해 하체 중심의 독립적인 동작 경로를 연습하는 실제 운동 종목입니다.",
+      "cues": [
+        "중량을 몸 가까이·정렬 유지",
+        "덤벨·안정된 지지면 선택과 신체 위치 먼저 확인",
+        "통증 없는 범위·호흡 유지"
+      ],
+      "benefits": [
+        "자유중량 제어",
+        "하체 사용 인식",
+        "자기 조절 능력"
+      ],
+      "warning": "허리·관절 통증·저림·그립 미끄러짐·균형 상실 또는 주변 충돌 위험이 있으면 즉시 중단하세요.",
+      "reference": {
+        "label": "ACSM — Exercise Safety",
+        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
+      }
+    },
+    "detail": {
+      "setup": [
+        "덤벨 벤치 스쿼트 전 덤벨·안정된 지지면 선택·바닥·주변 공간을 확인",
+        "바닥·장비·주변 반경과 안전한 내려놓기 위치 확인",
+        "가장 쉬운 범위와 낮은 강도에서 2회 리허설"
+      ],
+      "finish": "덤벨 벤치 스쿼트을 마친 뒤 도구를 안전하게 내려놓고 그립·관절·피로 반응을 확인합니다.",
+      "commonMistakes": [
+        "무게를 몸에서 멀리 두고 반동으로 반복하기",
+        "정렬이 무너진 상태에서 반복 지속",
+        "통증·저림·어지러움 신호 무시"
+      ],
+      "regressions": [
+        "더 가벼운 도구·짧은 범위",
+        "반복·시간 또는 가동 범위 낮추기",
+        "더 안정된 지지 또는 쉬운 기본 동작으로 전환"
+      ],
+      "progressions": [
+        "정렬 유지 뒤 반복 또는 부하 하나만 소폭 증가",
+        "한 번에 하나의 변수만 조절",
+        "다음 날 반응이 편안할 때만 다음 단계 시도"
+      ]
+    }
+  },
+  {
+    "exercise": {
+      "id": "verified-dumbbell-tricep-extension-pronated-grip",
+      "name": "덤벨 삼두 익스텐션(프로네이트)",
+      "englishName": "Dumbbell Tricep Extension -Pronated Grip",
+      "category": "프리웨이트",
+      "regions": [
+        "팔"
+      ],
+      "focus": "근력",
+      "difficulty": "입문",
+      "equipment": "덤벨·안정된 지지면 선택",
+      "minutes": "6–12회 · 2세트",
+      "description": "덤벨 삼두 익스텐션(프로네이트)은 덤벨·안정된 지지면 선택을 사용해 팔 중심의 독립적인 동작 경로를 연습하는 실제 운동 종목입니다.",
+      "cues": [
+        "중량을 몸 가까이·정렬 유지",
+        "덤벨·안정된 지지면 선택과 신체 위치 먼저 확인",
+        "통증 없는 범위·호흡 유지"
+      ],
+      "benefits": [
+        "자유중량 제어",
+        "팔 사용 인식",
+        "자기 조절 능력"
+      ],
+      "warning": "허리·관절 통증·저림·그립 미끄러짐·균형 상실 또는 주변 충돌 위험이 있으면 즉시 중단하세요.",
+      "reference": {
+        "label": "ACSM — Exercise Safety",
+        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
+      }
+    },
+    "detail": {
+      "setup": [
+        "덤벨 삼두 익스텐션(프로네이트) 전 덤벨·안정된 지지면 선택·바닥·주변 공간을 확인",
+        "바닥·장비·주변 반경과 안전한 내려놓기 위치 확인",
+        "가장 쉬운 범위와 낮은 강도에서 2회 리허설"
+      ],
+      "finish": "덤벨 삼두 익스텐션(프로네이트)을 마친 뒤 도구를 안전하게 내려놓고 그립·관절·피로 반응을 확인합니다.",
+      "commonMistakes": [
+        "무게를 몸에서 멀리 두고 반동으로 반복하기",
+        "정렬이 무너진 상태에서 반복 지속",
+        "통증·저림·어지러움 신호 무시"
+      ],
+      "regressions": [
+        "더 가벼운 도구·짧은 범위",
+        "반복·시간 또는 가동 범위 낮추기",
+        "더 안정된 지지 또는 쉬운 기본 동작으로 전환"
+      ],
+      "progressions": [
+        "정렬 유지 뒤 반복 또는 부하 하나만 소폭 증가",
+        "한 번에 하나의 변수만 조절",
+        "다음 날 반응이 편안할 때만 다음 단계 시도"
+      ]
+    }
+  },
+  {
+    "exercise": {
+      "id": "verified-external-rotation",
+      "name": "어깨 외회전",
+      "englishName": "External Rotation",
+      "category": "프리웨이트",
+      "regions": [
+        "어깨"
+      ],
+      "focus": "근력",
+      "difficulty": "입문",
+      "equipment": "덤벨·안정된 지지면 선택",
+      "minutes": "6–12회 · 2세트",
+      "description": "어깨 외회전은 덤벨·안정된 지지면 선택을 사용해 어깨 중심의 독립적인 동작 경로를 연습하는 실제 운동 종목입니다.",
+      "cues": [
+        "중량을 몸 가까이·정렬 유지",
+        "덤벨·안정된 지지면 선택과 신체 위치 먼저 확인",
+        "통증 없는 범위·호흡 유지"
+      ],
+      "benefits": [
+        "자유중량 제어",
+        "어깨 사용 인식",
+        "자기 조절 능력"
+      ],
+      "warning": "허리·관절 통증·저림·그립 미끄러짐·균형 상실 또는 주변 충돌 위험이 있으면 즉시 중단하세요.",
+      "reference": {
+        "label": "ACSM — Exercise Safety",
+        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
+      }
+    },
+    "detail": {
+      "setup": [
+        "어깨 외회전 전 덤벨·안정된 지지면 선택·바닥·주변 공간을 확인",
+        "바닥·장비·주변 반경과 안전한 내려놓기 위치 확인",
+        "가장 쉬운 범위와 낮은 강도에서 2회 리허설"
+      ],
+      "finish": "어깨 외회전을 마친 뒤 도구를 안전하게 내려놓고 그립·관절·피로 반응을 확인합니다.",
+      "commonMistakes": [
+        "무게를 몸에서 멀리 두고 반동으로 반복하기",
+        "정렬이 무너진 상태에서 반복 지속",
+        "통증·저림·어지러움 신호 무시"
+      ],
+      "regressions": [
+        "더 가벼운 도구·짧은 범위",
+        "반복·시간 또는 가동 범위 낮추기",
+        "더 안정된 지지 또는 쉬운 기본 동작으로 전환"
+      ],
+      "progressions": [
+        "정렬 유지 뒤 반복 또는 부하 하나만 소폭 증가",
+        "한 번에 하나의 변수만 조절",
+        "다음 날 반응이 편안할 때만 다음 단계 시도"
+      ]
+    }
+  },
+  {
+    "exercise": {
+      "id": "verified-flexor-incline-dumbbell-curls",
+      "name": "인클라인 플렉서 덤벨 컬",
+      "englishName": "Flexor Incline Dumbbell Curls",
+      "category": "프리웨이트",
+      "regions": [
+        "팔"
+      ],
+      "focus": "근력",
+      "difficulty": "입문",
+      "equipment": "덤벨·안정된 지지면 선택",
+      "minutes": "6–12회 · 2세트",
+      "description": "인클라인 플렉서 덤벨 컬은 덤벨·안정된 지지면 선택을 사용해 팔 중심의 독립적인 동작 경로를 연습하는 실제 운동 종목입니다.",
+      "cues": [
+        "중량을 몸 가까이·정렬 유지",
+        "덤벨·안정된 지지면 선택과 신체 위치 먼저 확인",
+        "통증 없는 범위·호흡 유지"
+      ],
+      "benefits": [
+        "자유중량 제어",
+        "팔 사용 인식",
+        "자기 조절 능력"
+      ],
+      "warning": "허리·관절 통증·저림·그립 미끄러짐·균형 상실 또는 주변 충돌 위험이 있으면 즉시 중단하세요.",
+      "reference": {
+        "label": "ACSM — Exercise Safety",
+        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
+      }
+    },
+    "detail": {
+      "setup": [
+        "인클라인 플렉서 덤벨 컬 전 덤벨·안정된 지지면 선택·바닥·주변 공간을 확인",
+        "바닥·장비·주변 반경과 안전한 내려놓기 위치 확인",
+        "가장 쉬운 범위와 낮은 강도에서 2회 리허설"
+      ],
+      "finish": "인클라인 플렉서 덤벨 컬을 마친 뒤 도구를 안전하게 내려놓고 그립·관절·피로 반응을 확인합니다.",
+      "commonMistakes": [
+        "무게를 몸에서 멀리 두고 반동으로 반복하기",
+        "정렬이 무너진 상태에서 반복 지속",
+        "통증·저림·어지러움 신호 무시"
+      ],
+      "regressions": [
+        "더 가벼운 도구·짧은 범위",
+        "반복·시간 또는 가동 범위 낮추기",
+        "더 안정된 지지 또는 쉬운 기본 동작으로 전환"
+      ],
+      "progressions": [
+        "정렬 유지 뒤 반복 또는 부하 하나만 소폭 증가",
+        "한 번에 하나의 변수만 조절",
+        "다음 날 반응이 편안할 때만 다음 단계 시도"
+      ]
+    }
+  },
+  {
+    "exercise": {
+      "id": "verified-front-dumbbell-raise",
+      "name": "덤벨 프론트 레이즈",
+      "englishName": "Front Dumbbell Raise",
+      "category": "프리웨이트",
+      "regions": [
+        "어깨"
+      ],
+      "focus": "근력",
+      "difficulty": "입문",
+      "equipment": "덤벨·안정된 지지면 선택",
+      "minutes": "6–12회 · 2세트",
+      "description": "덤벨 프론트 레이즈은 덤벨·안정된 지지면 선택을 사용해 어깨 중심의 독립적인 동작 경로를 연습하는 실제 운동 종목입니다.",
+      "cues": [
+        "중량을 몸 가까이·정렬 유지",
+        "덤벨·안정된 지지면 선택과 신체 위치 먼저 확인",
+        "통증 없는 범위·호흡 유지"
+      ],
+      "benefits": [
+        "자유중량 제어",
+        "어깨 사용 인식",
+        "자기 조절 능력"
+      ],
+      "warning": "허리·관절 통증·저림·그립 미끄러짐·균형 상실 또는 주변 충돌 위험이 있으면 즉시 중단하세요.",
+      "reference": {
+        "label": "ACSM — Exercise Safety",
+        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
+      }
+    },
+    "detail": {
+      "setup": [
+        "덤벨 프론트 레이즈 전 덤벨·안정된 지지면 선택·바닥·주변 공간을 확인",
+        "바닥·장비·주변 반경과 안전한 내려놓기 위치 확인",
+        "가장 쉬운 범위와 낮은 강도에서 2회 리허설"
+      ],
+      "finish": "덤벨 프론트 레이즈을 마친 뒤 도구를 안전하게 내려놓고 그립·관절·피로 반응을 확인합니다.",
+      "commonMistakes": [
+        "무게를 몸에서 멀리 두고 반동으로 반복하기",
+        "정렬이 무너진 상태에서 반복 지속",
+        "통증·저림·어지러움 신호 무시"
+      ],
+      "regressions": [
+        "더 가벼운 도구·짧은 범위",
+        "반복·시간 또는 가동 범위 낮추기",
+        "더 안정된 지지 또는 쉬운 기본 동작으로 전환"
+      ],
+      "progressions": [
+        "정렬 유지 뒤 반복 또는 부하 하나만 소폭 증가",
+        "한 번에 하나의 변수만 조절",
+        "다음 날 반응이 편안할 때만 다음 단계 시도"
+      ]
+    }
+  },
+  {
+    "exercise": {
+      "id": "verified-front-incline-dumbbell-raise",
+      "name": "인클라인 덤벨 프론트 레이즈",
+      "englishName": "Front Incline Dumbbell Raise",
+      "category": "프리웨이트",
+      "regions": [
+        "어깨"
+      ],
+      "focus": "근력",
+      "difficulty": "입문",
+      "equipment": "덤벨·안정된 지지면 선택",
+      "minutes": "6–12회 · 2세트",
+      "description": "인클라인 덤벨 프론트 레이즈은 덤벨·안정된 지지면 선택을 사용해 어깨 중심의 독립적인 동작 경로를 연습하는 실제 운동 종목입니다.",
+      "cues": [
+        "중량을 몸 가까이·정렬 유지",
+        "덤벨·안정된 지지면 선택과 신체 위치 먼저 확인",
+        "통증 없는 범위·호흡 유지"
+      ],
+      "benefits": [
+        "자유중량 제어",
+        "어깨 사용 인식",
+        "자기 조절 능력"
+      ],
+      "warning": "허리·관절 통증·저림·그립 미끄러짐·균형 상실 또는 주변 충돌 위험이 있으면 즉시 중단하세요.",
+      "reference": {
+        "label": "ACSM — Exercise Safety",
+        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
+      }
+    },
+    "detail": {
+      "setup": [
+        "인클라인 덤벨 프론트 레이즈 전 덤벨·안정된 지지면 선택·바닥·주변 공간을 확인",
+        "바닥·장비·주변 반경과 안전한 내려놓기 위치 확인",
+        "가장 쉬운 범위와 낮은 강도에서 2회 리허설"
+      ],
+      "finish": "인클라인 덤벨 프론트 레이즈을 마친 뒤 도구를 안전하게 내려놓고 그립·관절·피로 반응을 확인합니다.",
+      "commonMistakes": [
+        "무게를 몸에서 멀리 두고 반동으로 반복하기",
+        "정렬이 무너진 상태에서 반복 지속",
+        "통증·저림·어지러움 신호 무시"
+      ],
+      "regressions": [
+        "더 가벼운 도구·짧은 범위",
+        "반복·시간 또는 가동 범위 낮추기",
+        "더 안정된 지지 또는 쉬운 기본 동작으로 전환"
+      ],
+      "progressions": [
+        "정렬 유지 뒤 반복 또는 부하 하나만 소폭 증가",
+        "한 번에 하나의 변수만 조절",
+        "다음 날 반응이 편안할 때만 다음 단계 시도"
+      ]
+    }
+  },
+  {
+    "exercise": {
+      "id": "verified-front-two-dumbbell-raise",
+      "name": "투덤벨 프론트 레이즈",
+      "englishName": "Front Two-Dumbbell Raise",
+      "category": "프리웨이트",
+      "regions": [
+        "어깨"
+      ],
+      "focus": "근력",
+      "difficulty": "입문",
+      "equipment": "덤벨·안정된 지지면 선택",
+      "minutes": "6–12회 · 2세트",
+      "description": "투덤벨 프론트 레이즈은 덤벨·안정된 지지면 선택을 사용해 어깨 중심의 독립적인 동작 경로를 연습하는 실제 운동 종목입니다.",
+      "cues": [
+        "중량을 몸 가까이·정렬 유지",
+        "덤벨·안정된 지지면 선택과 신체 위치 먼저 확인",
+        "통증 없는 범위·호흡 유지"
+      ],
+      "benefits": [
+        "자유중량 제어",
+        "어깨 사용 인식",
+        "자기 조절 능력"
+      ],
+      "warning": "허리·관절 통증·저림·그립 미끄러짐·균형 상실 또는 주변 충돌 위험이 있으면 즉시 중단하세요.",
+      "reference": {
+        "label": "ACSM — Exercise Safety",
+        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
+      }
+    },
+    "detail": {
+      "setup": [
+        "투덤벨 프론트 레이즈 전 덤벨·안정된 지지면 선택·바닥·주변 공간을 확인",
+        "바닥·장비·주변 반경과 안전한 내려놓기 위치 확인",
+        "가장 쉬운 범위와 낮은 강도에서 2회 리허설"
+      ],
+      "finish": "투덤벨 프론트 레이즈을 마친 뒤 도구를 안전하게 내려놓고 그립·관절·피로 반응을 확인합니다.",
+      "commonMistakes": [
+        "무게를 몸에서 멀리 두고 반동으로 반복하기",
+        "정렬이 무너진 상태에서 반복 지속",
+        "통증·저림·어지러움 신호 무시"
+      ],
+      "regressions": [
+        "더 가벼운 도구·짧은 범위",
+        "반복·시간 또는 가동 범위 낮추기",
+        "더 안정된 지지 또는 쉬운 기본 동작으로 전환"
+      ],
+      "progressions": [
+        "정렬 유지 뒤 반복 또는 부하 하나만 소폭 증가",
+        "한 번에 하나의 변수만 조절",
+        "다음 날 반응이 편안할 때만 다음 단계 시도"
+      ]
+    }
+  },
+  {
+    "exercise": {
+      "id": "verified-hammer-curls",
+      "name": "해머 컬",
+      "englishName": "Hammer Curls",
+      "category": "프리웨이트",
+      "regions": [
+        "팔"
+      ],
+      "focus": "근력",
+      "difficulty": "입문",
+      "equipment": "덤벨·안정된 지지면 선택",
+      "minutes": "6–12회 · 2세트",
+      "description": "해머 컬은 덤벨·안정된 지지면 선택을 사용해 팔 중심의 독립적인 동작 경로를 연습하는 실제 운동 종목입니다.",
+      "cues": [
+        "중량을 몸 가까이·정렬 유지",
+        "덤벨·안정된 지지면 선택과 신체 위치 먼저 확인",
+        "통증 없는 범위·호흡 유지"
+      ],
+      "benefits": [
+        "자유중량 제어",
+        "팔 사용 인식",
+        "자기 조절 능력"
+      ],
+      "warning": "허리·관절 통증·저림·그립 미끄러짐·균형 상실 또는 주변 충돌 위험이 있으면 즉시 중단하세요.",
+      "reference": {
+        "label": "ACSM — Exercise Safety",
+        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
+      }
+    },
+    "detail": {
+      "setup": [
+        "해머 컬 전 덤벨·안정된 지지면 선택·바닥·주변 공간을 확인",
+        "바닥·장비·주변 반경과 안전한 내려놓기 위치 확인",
+        "가장 쉬운 범위와 낮은 강도에서 2회 리허설"
+      ],
+      "finish": "해머 컬을 마친 뒤 도구를 안전하게 내려놓고 그립·관절·피로 반응을 확인합니다.",
       "commonMistakes": [
         "무게를 몸에서 멀리 두고 반동으로 반복하기",
         "정렬이 무너진 상태에서 반복 지속",

@@ -3,397 +3,6 @@ import type { CatalogEntry } from "./catalogTypes";
 export const catalogPage03: CatalogEntry[] = [
   {
     "exercise": {
-      "id": "chair-hamstring-heel-dig-easy",
-      "name": "체어 햄스트링 힐 딕 이지",
-      "englishName": "Chair Hamstring Heel Dig Easy",
-      "category": "맨몸운동",
-      "regions": [
-        "하체",
-        "둔근"
-      ],
-      "focus": "근력",
-      "difficulty": "입문",
-      "equipment": "안정된 의자",
-      "minutes": "좌우 5–10초 · 2회",
-      "description": "의자에 앉아 한쪽 뒤꿈치를 바닥으로 가볍게 끌어당기는 느낌으로 누르며 햄스트링을 연습합니다.",
-      "cues": [
-        "뒤꿈치 가볍게 누르기",
-        "무릎 편안히",
-        "골반 수평"
-      ],
-      "benefits": [
-        "햄스트링 인식",
-        "무릎 뒤쪽 제어",
-        "앉은 하체 보강"
-      ],
-      "warning": "무릎 뒤쪽 통증, 경련, 저림 또는 허리 불편이 있으면 압력을 줄이거나 발을 바닥에 편안히 두세요.",
-      "reference": {
-        "label": "CDC 성인 활동 안내",
-        "url": "https://www.cdc.gov/physical-activity-basics/guidelines/adults.html"
-      }
-    },
-    "detail": {
-      "setup": [
-        "의자·무릎 확인",
-        "뒤꿈치 바닥",
-        "가벼운 끌기 압력"
-      ],
-      "finish": "발을 편안히 두고 무릎·고관절·햄스트링 반응을 확인합니다.",
-      "commonMistakes": [
-        "힘 과도",
-        "골반 뒤로 기울기",
-        "경련 무시"
-      ],
-      "regressions": [
-        "압력 줄이기",
-        "양발 동시",
-        "유지 줄이기"
-      ],
-      "progressions": [
-        "유지 2초",
-        "반복 증가",
-        "좌우 교대"
-      ]
-    }
-  },
-  {
-    "exercise": {
-      "id": "wall-hip-extension-press-easy",
-      "name": "월 힙 익스텐션 프레스 이지",
-      "englishName": "Wall Hip Extension Press Easy",
-      "category": "맨몸운동",
-      "regions": [
-        "둔근",
-        "하체",
-        "코어"
-      ],
-      "focus": "근력",
-      "difficulty": "입문",
-      "equipment": "단단한 벽",
-      "minutes": "좌우 5–10초 · 2회",
-      "description": "벽을 등진 자세에서 한쪽 발뒤꿈치를 벽 쪽으로 아주 가볍게 밀며 둔근과 고관절 뒤쪽의 등척성 제어를 연습합니다.",
-      "cues": [
-        "가벼운 뒤꿈치 압력",
-        "골반 수평",
-        "작은 범위"
-      ],
-      "benefits": [
-        "둔근 인식",
-        "고관절 신전 제어",
-        "저충격 하체"
-      ],
-      "warning": "고관절·무릎·허리 통증, 경련 또는 균형 상실이 있으면 양발 체중 이동으로 낮추세요.",
-      "reference": {
-        "label": "CDC 성인 활동 안내",
-        "url": "https://www.cdc.gov/physical-activity-basics/guidelines/adults.html"
-      }
-    },
-    "detail": {
-      "setup": [
-        "벽·균형 확인",
-        "뒤꿈치 가볍게 벽 쪽",
-        "골반 수평"
-      ],
-      "finish": "양발로 서서 고관절·무릎·허리 반응을 확인합니다.",
-      "commonMistakes": [
-        "허리 꺾임",
-        "압력 과도",
-        "골반 기울기"
-      ],
-      "regressions": [
-        "체중 이동",
-        "압력 줄이기",
-        "양손 벽 지지"
-      ],
-      "progressions": [
-        "유지 2초",
-        "반복 증가",
-        "좌우 교대"
-      ]
-    }
-  },
-  {
-    "exercise": {
-      "id": "supine-heel-slide-easy",
-      "name": "수파인 힐 슬라이드 이지",
-      "englishName": "Supine Heel Slide Easy",
-      "category": "맨몸운동",
-      "regions": [
-        "하체",
-        "코어",
-        "둔근"
-      ],
-      "focus": "협응",
-      "difficulty": "입문",
-      "equipment": "매트 또는 수건",
-      "minutes": "좌우 5–8회 · 2세트",
-      "description": "바로 누워 한쪽 뒤꿈치를 매트 위로 천천히 밀고 당기며 무릎·고관절·코어의 편안한 움직임을 연습합니다.",
-      "cues": [
-        "허리 편안히",
-        "뒤꿈치 천천히",
-        "작은 범위"
-      ],
-      "benefits": [
-        "무릎 굴곡 제어",
-        "고관절 협응",
-        "저충격 코어"
-      ],
-      "warning": "무릎·고관절·허리 통증, 당김 악화 또는 저림이 있으면 범위를 줄이거나 중단하세요.",
-      "reference": {
-        "label": "CDC 성인 활동 안내",
-        "url": "https://www.cdc.gov/physical-activity-basics/guidelines/adults.html"
-      }
-    },
-    "detail": {
-      "setup": [
-        "매트·허리 확인",
-        "한쪽 뒤꿈치 슬라이드",
-        "작은 범위"
-      ],
-      "finish": "양발을 매트에 두고 무릎·고관절·허리 반응을 확인합니다.",
-      "commonMistakes": [
-        "허리 과신전",
-        "슬라이드 과도",
-        "통증 무시"
-      ],
-      "regressions": [
-        "뒤꿈치 탭",
-        "범위 줄이기",
-        "양발 정지"
-      ],
-      "progressions": [
-        "반복 증가",
-        "느린 복귀",
-        "좌우 교대"
-      ]
-    }
-  },
-  {
-    "exercise": {
-      "id": "chair-supported-knee-bend-tap",
-      "name": "체어 지지 니 벤드 탭",
-      "englishName": "Chair Supported Knee Bend Tap",
-      "category": "균형·협응",
-      "regions": [
-        "하체",
-        "둔근",
-        "코어"
-      ],
-      "focus": "협응",
-      "difficulty": "입문",
-      "equipment": "안정된 의자",
-      "minutes": "좌우 5–10회 · 2세트",
-      "description": "의자를 가볍게 잡고 한쪽 무릎을 작게 굽혔다 펴며 반대 발끝을 조용히 탭해 저충격 균형을 연습합니다.",
-      "cues": [
-        "의자 가까이",
-        "작은 무릎 굽힘",
-        "조용한 탭"
-      ],
-      "benefits": [
-        "무릎 제어",
-        "균형",
-        "저충격 전신 준비"
-      ],
-      "warning": "무릎·발목·고관절 통증, 어지러움 또는 의자 흔들림이 있으면 양발 체중 이동으로 낮추세요.",
-      "reference": {
-        "label": "CDC 성인 활동 안내",
-        "url": "https://www.cdc.gov/physical-activity-basics/guidelines/adults.html"
-      }
-    },
-    "detail": {
-      "setup": [
-        "의자·바닥 확인",
-        "작은 무릎 굽힘",
-        "조용한 발끝 탭"
-      ],
-      "finish": "양발로 서서 무릎·발목·균형 반응을 확인합니다.",
-      "commonMistakes": [
-        "발 세게 탭",
-        "무릎 안쪽 붕괴",
-        "지지대 멀리 섬"
-      ],
-      "regressions": [
-        "체중 이동",
-        "범위 줄이기",
-        "양손 지지"
-      ],
-      "progressions": [
-        "반복 증가",
-        "느린 교대",
-        "지지 소폭 줄이기"
-      ]
-    }
-  },
-  {
-    "exercise": {
-      "id": "wall-split-stance-hip-shift-easy",
-      "name": "월 스플릿 스탠스 힙 시프트 이지",
-      "englishName": "Wall Split-Stance Hip Shift Easy",
-      "category": "맨몸운동",
-      "regions": [
-        "하체",
-        "둔근",
-        "코어"
-      ],
-      "focus": "협응",
-      "difficulty": "입문",
-      "equipment": "단단한 벽",
-      "minutes": "좌우 5–8회 · 2세트",
-      "description": "벽 지지의 작은 앞뒤 체중 이동으로 고관절·무릎에 무리 없는 스플릿 스탠스 제어를 연습합니다.",
-      "cues": [
-        "벽 지지",
-        "짧은 체중 이동",
-        "앞무릎 정렬"
-      ],
-      "benefits": [
-        "고관절 제어",
-        "보행 준비",
-        "균형"
-      ],
-      "warning": "무릎·고관절 통증, 균형 상실 또는 앞무릎 불안정이 있으면 양발 체중 이동으로 낮추세요.",
-      "reference": {
-        "label": "CDC 성인 활동 안내",
-        "url": "https://www.cdc.gov/physical-activity-basics/guidelines/adults.html"
-      }
-    },
-    "detail": {
-      "setup": [
-        "벽·발 위치 확인",
-        "짧은 스플릿 스탠스",
-        "작은 체중 이동"
-      ],
-      "finish": "양발로 서서 고관절·무릎·균형 반응을 확인합니다.",
-      "commonMistakes": [
-        "앞무릎 안쪽 붕괴",
-        "보폭 과도",
-        "벽 지지 생략"
-      ],
-      "regressions": [
-        "양발 체중 이동",
-        "보폭 줄이기",
-        "양손 벽 지지"
-      ],
-      "progressions": [
-        "반복 증가",
-        "정지 1초",
-        "보폭 소폭"
-      ]
-    }
-  },
-  {
-    "exercise": {
-      "id": "wall-elbow-row-isometric-easy",
-      "name": "월 엘보 로우 아이소메트릭 이지",
-      "englishName": "Wall Elbow Row Isometric Easy",
-      "category": "맨몸운동",
-      "regions": [
-        "등",
-        "어깨",
-        "팔"
-      ],
-      "focus": "근력",
-      "difficulty": "입문",
-      "equipment": "단단한 벽",
-      "minutes": "5–12초 · 2회",
-      "description": "벽에 등을 대고 팔꿈치를 뒤로 가볍게 누르며 등을 조이는 감각을 짧게 연습합니다.",
-      "cues": [
-        "목 길게",
-        "팔꿈치 가볍게 뒤로",
-        "갈비뼈 편안히"
-      ],
-      "benefits": [
-        "등 인식",
-        "견갑 제어",
-        "자세 보강"
-      ],
-      "warning": "어깨·목·팔꿈치 통증, 저림 또는 벽 압박 불편이 있으면 압력을 줄이거나 중단하세요.",
-      "reference": {
-        "label": "CDC 성인 활동 안내",
-        "url": "https://www.cdc.gov/physical-activity-basics/guidelines/adults.html"
-      }
-    },
-    "detail": {
-      "setup": [
-        "벽·등 확인",
-        "팔꿈치 가볍게 뒤로",
-        "짧은 조임"
-      ],
-      "finish": "팔을 편안히 내리고 목·어깨·등 반응을 확인합니다.",
-      "commonMistakes": [
-        "목 으쓱",
-        "압력 과도",
-        "허리 과신전"
-      ],
-      "regressions": [
-        "압력 줄이기",
-        "한쪽씩",
-        "팔 내리기"
-      ],
-      "progressions": [
-        "유지 2초",
-        "반복 증가",
-        "좌우 교대"
-      ]
-    }
-  },
-  {
-    "exercise": {
-      "id": "seated-lat-press-isometric-easy",
-      "name": "시티드 랫 프레스 아이소메트릭 이지",
-      "englishName": "Seated Lat Press Isometric Easy",
-      "category": "맨몸운동",
-      "regions": [
-        "등",
-        "어깨",
-        "팔"
-      ],
-      "focus": "근력",
-      "difficulty": "입문",
-      "equipment": "안정된 의자",
-      "minutes": "5–10초 · 2회",
-      "description": "의자에 앉아 손을 허벅지 옆에 두고 아래로 가볍게 누르며 겨드랑이 아래와 등 옆의 긴장을 연습합니다.",
-      "cues": [
-        "발 바닥 고정",
-        "어깨 내리기",
-        "가벼운 압력"
-      ],
-      "benefits": [
-        "광배근 인식",
-        "어깨 안정",
-        "앉은 자세 보강"
-      ],
-      "warning": "어깨·손목·팔꿈치 통증 또는 저림이 있으면 압력을 줄이거나 팔을 편안히 내려 두세요.",
-      "reference": {
-        "label": "CDC 성인 활동 안내",
-        "url": "https://www.cdc.gov/physical-activity-basics/guidelines/adults.html"
-      }
-    },
-    "detail": {
-      "setup": [
-        "의자·어깨 확인",
-        "손 허벅지 옆",
-        "가벼운 아래 압력"
-      ],
-      "finish": "손을 편안히 놓고 어깨·팔꿈치·호흡 반응을 확인합니다.",
-      "commonMistakes": [
-        "어깨 으쓱",
-        "압력 과도",
-        "숨 참기"
-      ],
-      "regressions": [
-        "압력 줄이기",
-        "한쪽씩",
-        "팔 내리기"
-      ],
-      "progressions": [
-        "유지 2초",
-        "반복 증가",
-        "좌우 교대"
-      ]
-    }
-  },
-  {
-    "exercise": {
       "id": "towel-self-row-seated-easy",
       "name": "타월 셀프 로우 시티드 이지",
       "englishName": "Towel Self Row Seated Easy",
@@ -4867,119 +4476,6 @@ export const catalogPage03: CatalogEntry[] = [
   },
   {
     "exercise": {
-      "id": "pullup-pause-ladder-foot-assist",
-      "name": "발 지지 풀업 포즈 래더",
-      "englishName": "Foot-Assisted Pull-up Pause Ladder",
-      "category": "맨몸운동",
-      "regions": [
-        "등",
-        "팔",
-        "어깨",
-        "코어"
-      ],
-      "focus": "근력",
-      "difficulty": "상급",
-      "equipment": "안정된 바·낮은 스텝",
-      "minutes": "상·중·하단 각 2–3초 · 2회",
-      "description": "발 지지를 유지한 채 상단·중간·하단의 짧은 정지를 연결하며 수직 당기기 경로를 천천히 연습합니다.",
-      "cues": [
-        "발 지지 유지",
-        "각 위치 짧게",
-        "낙하 금지"
-      ],
-      "benefits": [
-        "전환 제어",
-        "수직 당기기",
-        "그립·견갑 인식"
-      ],
-      "warning": "낙상 위험, 어깨·팔꿈치 통증, 손 미끄러짐이 있으면 한 위치 정지만 수행하세요.",
-      "reference": {
-        "label": "CDC 성인 활동 안내",
-        "url": "https://www.cdc.gov/physical-activity-basics/guidelines/adults.html"
-      }
-    },
-    "detail": {
-      "setup": [
-        "바·스텝 고정 확인",
-        "발 지지 유지",
-        "한 위치 정지부터"
-      ],
-      "finish": "발을 스텝에 안정적으로 두고 어깨·팔꿈치·그립 반응을 확인합니다.",
-      "commonMistakes": [
-        "낙하",
-        "여러 위치를 급히 연결",
-        "발 지지 생략"
-      ],
-      "regressions": [
-        "미드레인지 홀드",
-        "한 위치만",
-        "유지 시간 줄이기"
-      ],
-      "progressions": [
-        "위치 하나 추가",
-        "유지 1초",
-        "반복 1회"
-      ]
-    }
-  },
-  {
-    "exercise": {
-      "id": "band-assisted-pullup-tempo",
-      "name": "밴드 어시스트 풀업 템포",
-      "englishName": "Band-Assisted Pull-up Tempo",
-      "category": "맨몸운동",
-      "regions": [
-        "등",
-        "팔",
-        "어깨"
-      ],
-      "focus": "근력",
-      "difficulty": "중급",
-      "equipment": "안정된 바·저항 밴드·스텝",
-      "minutes": "3–6회 · 2세트",
-      "description": "안전하게 고정한 밴드를 사용해 올라갈 때와 내려올 때 모두 천천히 제어하는 풀업 변형입니다.",
-      "cues": [
-        "밴드·바·스텝 확인",
-        "반동 금지",
-        "천천히 복귀"
-      ],
-      "benefits": [
-        "풀업 제어",
-        "등·팔 근력",
-        "하강 인식"
-      ],
-      "warning": "밴드 균열·고정 불안·손 미끄러짐·어깨 통증이 있으면 수행하지 마세요.",
-      "reference": {
-        "label": "CDC 성인 활동 안내",
-        "url": "https://www.cdc.gov/physical-activity-basics/guidelines/adults.html"
-      }
-    },
-    "detail": {
-      "setup": [
-        "바·밴드·스텝 확인",
-        "밴드 지지 설정",
-        "짧은 템포 리허설"
-      ],
-      "finish": "스텝에 안전히 내려와 어깨·팔꿈치·손 반응을 확인합니다.",
-      "commonMistakes": [
-        "밴드 손상 무시",
-        "반동",
-        "복귀 너무 빠름"
-      ],
-      "regressions": [
-        "밴드 지지 늘리기",
-        "범위 줄이기",
-        "지지 행"
-      ],
-      "progressions": [
-        "하강 1초 증가",
-        "반복 증가",
-        "밴드 지지 소폭 줄이기"
-      ]
-    }
-  },
-  {
-    "exercise": {
       "id": "low-bar-grip-transition-row",
       "name": "로우 바 그립 전환 로우",
       "englishName": "Low-Bar Grip Transition Row",
@@ -5318,63 +4814,6 @@ export const catalogPage03: CatalogEntry[] = [
   },
   {
     "exercise": {
-      "id": "supported-pull-up-negative",
-      "name": "지지 풀업 네거티브",
-      "englishName": "Supported Pull-up Negative",
-      "category": "맨몸운동",
-      "regions": [
-        "등",
-        "팔",
-        "어깨",
-        "코어"
-      ],
-      "focus": "근력",
-      "difficulty": "상급",
-      "equipment": "안정된 바·낮은 스텝",
-      "minutes": "2–5회 · 2세트",
-      "description": "스텝을 이용해 상단 자세에 올라간 뒤 발 지지를 보조로 사용하며 짧은 범위만 천천히 내려옵니다.",
-      "cues": [
-        "스텝·바 고정 확인",
-        "발 지지 유지",
-        "짧은 하강"
-      ],
-      "benefits": [
-        "풀업 하강 제어",
-        "등·팔 근력",
-        "수직 당기기 준비"
-      ],
-      "warning": "낙상 위험, 어깨·팔꿈치 통증, 그립 미끄러짐이 있으면 밴드 로우 또는 어시스트 머신으로 낮추세요.",
-      "reference": {
-        "label": "CDC 성인 활동 안내",
-        "url": "https://www.cdc.gov/physical-activity-basics/guidelines/adults.html"
-      }
-    },
-    "detail": {
-      "setup": [
-        "바·스텝 고정 확인",
-        "상단 자세에 안전히 진입",
-        "발 지지 유지"
-      ],
-      "finish": "발을 스텝에 안정적으로 두고 어깨·팔꿈치·손 반응을 확인합니다.",
-      "commonMistakes": [
-        "낙하",
-        "발 지지 생략",
-        "통증 무시"
-      ],
-      "regressions": [
-        "플렉스드 암 행",
-        "하강 범위 줄이기",
-        "밴드 로우"
-      ],
-      "progressions": [
-        "하강 1초 증가",
-        "반복 1회",
-        "발 지지 소폭 줄이기"
-      ]
-    }
-  },
-  {
-    "exercise": {
       "id": "band-assisted-chin-up-easy",
       "name": "밴드 어시스트 친업 이지",
       "englishName": "Band-Assisted Chin-up Easy",
@@ -5594,6 +5033,565 @@ export const catalogPage03: CatalogEntry[] = [
         "유지 2초 증가",
         "회전 소폭",
         "지지 줄이기"
+      ]
+    }
+  },
+  {
+    "exercise": {
+      "id": "y-balance-reach-support",
+      "name": "지지 Y 밸런스 리치",
+      "englishName": "Supported Y Balance Reach",
+      "category": "맨몸운동",
+      "regions": [
+        "하체",
+        "둔근",
+        "코어"
+      ],
+      "focus": "균형",
+      "difficulty": "중급",
+      "equipment": "벽 또는 의자",
+      "minutes": "좌우 3방향 · 2회",
+      "description": "한 손 지지에서 반대발을 앞·대각선 두 방향으로 작은 범위만 뻗으며 한발 제어를 연습합니다.",
+      "cues": [
+        "지지대 가까이",
+        "작은 리치",
+        "골반 정면"
+      ],
+      "benefits": [
+        "동적 균형",
+        "고관절 제어",
+        "발목 인식"
+      ],
+      "warning": "균형 상실·발목·무릎·고관절 통증이 있으면 한 방향 체중 이동으로 낮추세요.",
+      "reference": {
+        "label": "CDC 성인 활동 안내",
+        "url": "https://www.cdc.gov/physical-activity-basics/guidelines/adults.html"
+      }
+    },
+    "detail": {
+      "setup": [
+        "벽·의자 지지 확인",
+        "양발 체중 이동",
+        "한 방향 작은 리치"
+      ],
+      "finish": "양발로 서서 발목·무릎·고관절 반응을 확인합니다.",
+      "commonMistakes": [
+        "리치 과도",
+        "골반 회전",
+        "지지대에서 멀리 섬"
+      ],
+      "regressions": [
+        "한 방향만",
+        "범위 줄이기",
+        "양손 지지"
+      ],
+      "progressions": [
+        "방향 하나 추가",
+        "반복 증가",
+        "지지 줄이기"
+      ]
+    }
+  },
+  {
+    "exercise": {
+      "id": "lateral-step-over-balance-support",
+      "name": "지지 레터럴 스텝오버 밸런스",
+      "englishName": "Supported Lateral Step-Over Balance",
+      "category": "맨몸운동",
+      "regions": [
+        "하체",
+        "둔근",
+        "코어"
+      ],
+      "focus": "균형",
+      "difficulty": "중급",
+      "equipment": "바닥 선·벽 또는 의자",
+      "minutes": "좌우 4–8회 · 2세트",
+      "description": "지지대 가까이에서 바닥 선을 옆으로 넘고 한 발에 잠깐 멈춰 방향 전환 균형을 연습합니다.",
+      "cues": [
+        "낮은 바닥 선",
+        "지지대 가까이",
+        "착지 후 멈춤"
+      ],
+      "benefits": [
+        "측면 균형",
+        "방향 전환",
+        "발목 제어"
+      ],
+      "warning": "발목·무릎 통증, 어지러움, 바닥 미끄러움 또는 균형 상실이 있으면 옆 체중 이동으로 낮추세요.",
+      "reference": {
+        "label": "CDC 성인 활동 안내",
+        "url": "https://www.cdc.gov/physical-activity-basics/guidelines/adults.html"
+      }
+    },
+    "detail": {
+      "setup": [
+        "바닥 선·지지대 확인",
+        "옆 체중 이동",
+        "낮은 선 넘기"
+      ],
+      "finish": "양발로 서서 발목·무릎·균형 반응을 확인합니다.",
+      "commonMistakes": [
+        "발 끌기",
+        "착지 후 멈춤 생략",
+        "지지대에서 멀리 섬"
+      ],
+      "regressions": [
+        "옆 체중 이동",
+        "선 없이 옆걸음",
+        "양손 지지"
+      ],
+      "progressions": [
+        "반복 증가",
+        "정지 1초",
+        "지지 줄이기"
+      ]
+    }
+  },
+  {
+    "exercise": {
+      "id": "staggered-stance-reach-balance",
+      "name": "스태거드 스탠스 리치 밸런스",
+      "englishName": "Staggered-Stance Reach Balance",
+      "category": "맨몸운동",
+      "regions": [
+        "하체",
+        "둔근",
+        "코어"
+      ],
+      "focus": "균형",
+      "difficulty": "입문",
+      "equipment": "벽 또는 의자",
+      "minutes": "좌우 4–8회 · 2세트",
+      "description": "앞뒤 발을 좁게 둔 자세에서 한 손 지지를 사용해 작은 앞쪽 도달과 체중 이동을 연습합니다.",
+      "cues": [
+        "발 간격 좁게",
+        "지지대 가까이",
+        "작은 도달"
+      ],
+      "benefits": [
+        "보행 균형",
+        "체중 이동",
+        "고관절 제어"
+      ],
+      "warning": "어지러움·균형 상실·발목·무릎 통증이 있으면 발 간격을 넓히고 양손 지지를 사용하세요.",
+      "reference": {
+        "label": "CDC 성인 활동 안내",
+        "url": "https://www.cdc.gov/physical-activity-basics/guidelines/adults.html"
+      }
+    },
+    "detail": {
+      "setup": [
+        "벽·의자 지지 확인",
+        "발 간격 넓게 시작",
+        "작은 앞쪽 리치"
+      ],
+      "finish": "양발 간격을 넓혀 어지러움·발목·무릎 반응을 확인합니다.",
+      "commonMistakes": [
+        "발 간격 과도하게 좁힘",
+        "리치 과도",
+        "무릎 잠금"
+      ],
+      "regressions": [
+        "양발 넓게",
+        "범위 줄이기",
+        "양손 지지"
+      ],
+      "progressions": [
+        "발 간격 소폭",
+        "리치 증가",
+        "지지 줄이기"
+      ]
+    }
+  },
+  {
+    "exercise": {
+      "id": "heel-toe-rock-balance-support",
+      "name": "지지 힐·토 록 밸런스",
+      "englishName": "Supported Heel-Toe Rock Balance",
+      "category": "맨몸운동",
+      "regions": [
+        "하체",
+        "코어"
+      ],
+      "focus": "균형",
+      "difficulty": "입문",
+      "equipment": "벽 또는 의자",
+      "minutes": "6–10회 · 2세트",
+      "description": "지지대를 가볍게 잡고 체중을 발뒤꿈치와 발앞쪽 사이로 천천히 옮겨 보행 전 균형을 연습합니다.",
+      "cues": [
+        "지지대 가까이",
+        "작은 체중 이동",
+        "무릎 부드럽게"
+      ],
+      "benefits": [
+        "발목 인식",
+        "균형",
+        "보행 준비"
+      ],
+      "warning": "어지러움·발목 통증·경련 또는 균형 상실이 있으면 양발 체중 이동만 수행하세요.",
+      "reference": {
+        "label": "CDC 성인 활동 안내",
+        "url": "https://www.cdc.gov/physical-activity-basics/guidelines/adults.html"
+      }
+    },
+    "detail": {
+      "setup": [
+        "벽·의자 지지 확인",
+        "양발 체중 고르게",
+        "작은 앞뒤 이동"
+      ],
+      "finish": "발 전체를 바닥에 두고 발목·균형 반응을 확인합니다.",
+      "commonMistakes": [
+        "범위 과도",
+        "무릎 잠금",
+        "어지러움 무시"
+      ],
+      "regressions": [
+        "체중 이동 줄이기",
+        "양손 지지",
+        "앉은 발목 펌프"
+      ],
+      "progressions": [
+        "반복 증가",
+        "지지 줄이기",
+        "정지 1초"
+      ]
+    }
+  },
+  {
+    "exercise": {
+      "id": "cross-body-tap-balance-support",
+      "name": "지지 크로스 바디 탭 밸런스",
+      "englishName": "Supported Cross-Body Tap Balance",
+      "category": "맨몸운동",
+      "regions": [
+        "하체",
+        "둔근",
+        "코어"
+      ],
+      "focus": "협응",
+      "difficulty": "중급",
+      "equipment": "벽 또는 의자",
+      "minutes": "좌우 4–8회 · 2세트",
+      "description": "한 손 지지 상태에서 반대 손을 몸 앞쪽으로 작게 뻗으며 한발 지지와 몸통 협응을 연습합니다.",
+      "cues": [
+        "지지대 가까이",
+        "작은 탭",
+        "골반 수평"
+      ],
+      "benefits": [
+        "균형",
+        "교차 협응",
+        "코어 제어"
+      ],
+      "warning": "균형 상실·어지러움·고관절·무릎 통증이 있으면 양발 선 자세의 교차 탭으로 낮추세요.",
+      "reference": {
+        "label": "CDC 성인 활동 안내",
+        "url": "https://www.cdc.gov/physical-activity-basics/guidelines/adults.html"
+      }
+    },
+    "detail": {
+      "setup": [
+        "벽·의자 지지 확인",
+        "양발 체중 이동",
+        "작은 교차 탭"
+      ],
+      "finish": "양발로 서서 고관절·무릎·균형 반응을 확인합니다.",
+      "commonMistakes": [
+        "몸통 회전 과도",
+        "지지대에서 멀리 섬",
+        "리치 과도"
+      ],
+      "regressions": [
+        "양발 교차 탭",
+        "범위 줄이기",
+        "양손 지지"
+      ],
+      "progressions": [
+        "반복 증가",
+        "한발 지지 시간",
+        "지지 줄이기"
+      ]
+    }
+  },
+  {
+    "exercise": {
+      "id": "scapular-pushup-easy",
+      "name": "스캐풀라 푸시업 이지",
+      "englishName": "Scapular Push-up Easy",
+      "category": "맨몸운동",
+      "regions": [
+        "어깨",
+        "등",
+        "코어"
+      ],
+      "focus": "협응",
+      "difficulty": "입문",
+      "equipment": "매트 또는 높은 지지면",
+      "minutes": "6–10회 · 2세트",
+      "description": "팔꿈치를 편 채 견갑골을 작게 앞뒤로 움직이며 어깨 지지와 상체 정렬을 연습합니다.",
+      "cues": [
+        "높은 지지면 가능",
+        "팔꿈치 편 채",
+        "작은 견갑 움직임"
+      ],
+      "benefits": [
+        "견갑 제어",
+        "어깨 지지",
+        "푸시업 준비"
+      ],
+      "warning": "어깨·손목 통증, 허리 처짐 또는 목 긴장이 있으면 벽 지지로 낮추세요.",
+      "reference": {
+        "label": "CDC 성인 활동 안내",
+        "url": "https://www.cdc.gov/physical-activity-basics/guidelines/adults.html"
+      }
+    },
+    "detail": {
+      "setup": [
+        "높은 지지면·손목 확인",
+        "팔꿈치 편 자세",
+        "작은 견갑 움직임"
+      ],
+      "finish": "발을 지지면 쪽으로 옮기고 손목·어깨·목 반응을 확인합니다.",
+      "commonMistakes": [
+        "팔꿈치 굽힘",
+        "허리 처짐",
+        "목 긴장"
+      ],
+      "regressions": [
+        "벽 지지",
+        "범위 줄이기",
+        "네발 자세"
+      ],
+      "progressions": [
+        "반복 증가",
+        "지지면 낮추기",
+        "느린 이동"
+      ]
+    }
+  },
+  {
+    "exercise": {
+      "id": "hollow-tuck-hold",
+      "name": "할로우 턱 홀드",
+      "englishName": "Hollow Tuck Hold",
+      "category": "맨몸운동",
+      "regions": [
+        "코어",
+        "하체"
+      ],
+      "focus": "근력",
+      "difficulty": "중급",
+      "equipment": "매트",
+      "minutes": "8–15초 · 2회",
+      "description": "무릎을 접은 누운 자세에서 갈비뼈와 골반을 가까이 유지하며 짧게 복부 지지를 연습합니다.",
+      "cues": [
+        "무릎 접기",
+        "허리 편안한 범위",
+        "숨 내쉬기"
+      ],
+      "benefits": [
+        "코어 지지",
+        "몸통 정렬",
+        "운동 전환"
+      ],
+      "warning": "허리 통증·저림·숨참이 있으면 데드 버그 힐 탭으로 낮추세요.",
+      "reference": {
+        "label": "CDC 성인 활동 안내",
+        "url": "https://www.cdc.gov/physical-activity-basics/guidelines/adults.html"
+      }
+    },
+    "detail": {
+      "setup": [
+        "매트·허리 반응 확인",
+        "무릎 접은 누운 자세",
+        "짧은 유지 리허설"
+      ],
+      "finish": "발을 바닥에 두고 허리·호흡·고관절 반응을 확인합니다.",
+      "commonMistakes": [
+        "허리 과도하게 뜸",
+        "숨 참기",
+        "다리 너무 멀리 뻗기"
+      ],
+      "regressions": [
+        "데드 버그 힐 탭",
+        "유지 시간 줄이기",
+        "한 발 바닥"
+      ],
+      "progressions": [
+        "유지 2초 증가",
+        "발 한쪽 소폭",
+        "팔 위치 소폭"
+      ]
+    }
+  },
+  {
+    "exercise": {
+      "id": "side-plank-hip-abduction-knee",
+      "name": "사이드 플랭크 힙 어브덕션 니",
+      "englishName": "Side Plank Hip Abduction Knee",
+      "category": "맨몸운동",
+      "regions": [
+        "코어",
+        "둔근",
+        "어깨"
+      ],
+      "focus": "협응",
+      "difficulty": "중급",
+      "equipment": "매트",
+      "minutes": "좌우 4–8회 · 2세트",
+      "description": "아래 무릎을 지지한 옆 플랭크에서 위쪽 다리를 작은 범위로 들어 올려 옆몸통과 둔근을 함께 제어합니다.",
+      "cues": [
+        "아래 무릎 지지",
+        "골반 수평",
+        "작은 다리 들기"
+      ],
+      "benefits": [
+        "옆몸통 지지",
+        "둔근 제어",
+        "균형 보조"
+      ],
+      "warning": "어깨·고관절 통증 또는 골반 흔들림이 있으면 사이드 플랭크 니 홀드로 낮추세요.",
+      "reference": {
+        "label": "CDC 성인 활동 안내",
+        "url": "https://www.cdc.gov/physical-activity-basics/guidelines/adults.html"
+      }
+    },
+    "detail": {
+      "setup": [
+        "매트·아래 무릎 지지",
+        "옆 플랭크 정렬",
+        "작은 다리 들기"
+      ],
+      "finish": "양무릎을 바닥에 두고 어깨·고관절 반응을 확인합니다.",
+      "commonMistakes": [
+        "골반 처짐",
+        "어깨 으쓱",
+        "다리 들기 과도"
+      ],
+      "regressions": [
+        "사이드 플랭크 니",
+        "유지 시간 줄이기",
+        "다리 들기 생략"
+      ],
+      "progressions": [
+        "반복 증가",
+        "유지 2초",
+        "다리 범위 소폭"
+      ]
+    }
+  },
+  {
+    "exercise": {
+      "id": "archer-pushup-prep",
+      "name": "아처 푸시업 프렙",
+      "englishName": "Archer Push-up Prep",
+      "category": "맨몸운동",
+      "regions": [
+        "가슴",
+        "팔",
+        "어깨",
+        "코어"
+      ],
+      "focus": "근력",
+      "difficulty": "상급",
+      "equipment": "매트 또는 높은 지지면",
+      "minutes": "좌우 3–6회 · 2세트",
+      "description": "높은 지지면에서 한 팔 쪽으로 체중을 작게 옮기며 단측 푸시업 전 제어를 연습합니다.",
+      "cues": [
+        "높은 지지면",
+        "작은 체중 이동",
+        "몸통 긴 선"
+      ],
+      "benefits": [
+        "편측 밀기 준비",
+        "상체 지지",
+        "체중 이동"
+      ],
+      "warning": "어깨·손목 통증, 허리 처짐 또는 통제되지 않는 이동이 있으면 인클라인 푸시업으로 낮추세요.",
+      "reference": {
+        "label": "CDC 성인 활동 안내",
+        "url": "https://www.cdc.gov/physical-activity-basics/guidelines/adults.html"
+      }
+    },
+    "detail": {
+      "setup": [
+        "높은 지지면·손목 확인",
+        "인클라인 푸시업 리허설",
+        "작은 체중 이동"
+      ],
+      "finish": "발을 지지면 쪽으로 옮기고 손목·어깨·허리 반응을 확인합니다.",
+      "commonMistakes": [
+        "체중 이동 과도",
+        "허리 처짐",
+        "팔꿈치 잠금"
+      ],
+      "regressions": [
+        "인클라인 푸시업",
+        "범위 줄이기",
+        "양손 지지"
+      ],
+      "progressions": [
+        "좌우 반복 증가",
+        "지지면 소폭 낮추기",
+        "느린 하강"
+      ]
+    }
+  },
+  {
+    "exercise": {
+      "id": "supported-reverse-lunge-knee-drive",
+      "name": "지지 리버스 런지 니 드라이브",
+      "englishName": "Supported Reverse Lunge Knee Drive",
+      "category": "맨몸운동",
+      "regions": [
+        "하체",
+        "둔근",
+        "코어"
+      ],
+      "focus": "균형",
+      "difficulty": "중급",
+      "equipment": "벽 또는 의자",
+      "minutes": "좌우 4–8회 · 2세트",
+      "description": "한 손 지지에서 짧은 리버스 런지 뒤 앞무릎을 낮게 들어 균형 전환을 연습합니다.",
+      "cues": [
+        "지지대 가까이",
+        "작은 런지",
+        "무릎 낮게"
+      ],
+      "benefits": [
+        "하체 제어",
+        "균형",
+        "러닝 준비"
+      ],
+      "warning": "무릎·고관절 통증 또는 균형 상실이 있으면 지지 스플릿 스쿼트로 낮추세요.",
+      "reference": {
+        "label": "CDC 성인 활동 안내",
+        "url": "https://www.cdc.gov/physical-activity-basics/guidelines/adults.html"
+      }
+    },
+    "detail": {
+      "setup": [
+        "벽·의자 지지 확인",
+        "짧은 리버스 런지",
+        "낮은 무릎 들기"
+      ],
+      "finish": "양발로 서서 무릎·고관절·균형 반응을 확인합니다.",
+      "commonMistakes": [
+        "무릎 무너짐",
+        "지지대에서 멀리 섬",
+        "무릎 너무 높이 들기"
+      ],
+      "regressions": [
+        "지지 스플릿 스쿼트",
+        "범위 줄이기",
+        "무릎 들기 생략"
+      ],
+      "progressions": [
+        "반복 증가",
+        "지지 줄이기",
+        "정지 1초"
       ]
     }
   }

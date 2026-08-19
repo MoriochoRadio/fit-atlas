@@ -2,6 +2,7 @@ import { describe, expect, it } from "vitest";
 import { getExerciseDetail } from "./exerciseDetails";
 import { exercises } from "./fitnessData";
 import { verifiedActualExercisesPart14 } from "./verifiedActualExercisesPart14";
+import { structuredTrainingEntryIds } from "./catalogQualityRules";
 
 const normalize = (value: string) => value
   .toLocaleLowerCase("ko-KR")
@@ -13,16 +14,21 @@ describe("exercise catalog quality gate", () => {
   it("keeps a catalog of individually named exercises instead of generated coaching combinations", () => {
     expect(exercises).toHaveLength(1000);
     expect(exercises.some((exercise) => exercise.id.startsWith("atlas13-"))).toBe(false);
-    expect(exercises.filter((exercise) => exercise.id.startsWith("verified-")).length).toBe(501);
+    expect(exercises.filter((exercise) => exercise.id.startsWith("verified-")).length).toBe(534);
   });
 
   it("keeps the new expansion grounded in sourced independent movements, not set prescriptions", () => {
-    expect(verifiedActualExercisesPart14).toHaveLength(501);
+    expect(verifiedActualExercisesPart14).toHaveLength(534);
     verifiedActualExercisesPart14.forEach((exercise) => {
       expect(exercise.reference.url).toMatch(/acsm\.org|github\.com\/yuhonas\/free-exercise-db/);
       expect(exercise.name).not.toMatch(/템포|폼 리셋|파셜 레인지|1\.5레프|포즈/);
       expect(exercise.englishName).not.toMatch(/tempo|form reset|partial range|one half rep|pause rep/i);
     });
+  });
+
+  it("excludes program structure and coaching methods from the independent exercise catalog", () => {
+    expect(exercises.some((exercise) => structuredTrainingEntryIds.has(exercise.id))).toBe(false);
+    expect(exercises.some((exercise) => /(?:behind(?: the)? neck|neck bridge|neck harness|judo flip|atlas stone|car deadlift|partner|with chains|with bands)/i.test(exercise.englishName))).toBe(false);
   });
 
   it("keeps identifiers and both display-name fields unique after normalization", () => {

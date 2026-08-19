@@ -3,231 +3,6 @@ import type { CatalogEntry } from "./catalogTypes";
 export const catalogPage02: CatalogEntry[] = [
   {
     "exercise": {
-      "id": "resistance-band-lateral-walk",
-      "name": "저항 밴드 사이드 워크",
-      "englishName": "Resistance Band Lateral Walk",
-      "category": "프리웨이트",
-      "regions": [
-        "둔근",
-        "하체",
-        "코어"
-      ],
-      "focus": "협응",
-      "difficulty": "입문",
-      "equipment": "가벼운 루프 밴드",
-      "minutes": "5–8걸음 · 좌우 2–3회",
-      "description": "무릎 위 또는 발목 위에 가벼운 밴드를 두고 작은 옆걸음으로 둔근·골반 제어를 연습합니다.",
-      "cues": [
-        "얕은 무릎 굽힘으로 시작",
-        "발끝과 무릎 방향을 자연스럽게 맞추기",
-        "보폭을 작게 유지"
-      ],
-      "benefits": [
-        "둔근 활성 보조",
-        "측면 보행 제어",
-        "한쪽 다리 준비"
-      ],
-      "warning": "무릎·고관절 통증이나 균형 불안이 있으면 밴드를 빼고 짧은 옆걸음으로 낮추세요.",
-      "reference": {
-        "label": "ACSM 2026 저항운동 지침",
-        "url": "https://acsm.org/resistance-training-guidelines-update-2026/"
-      }
-    },
-    "detail": {
-      "setup": [
-        "루프 밴드에 균열이 없는지 확인",
-        "무릎 위의 가벼운 위치에서 시작",
-        "벽·의자 가까이에서 작은 옆걸음 리허설"
-      ],
-      "finish": "밴드를 천천히 벗고 발목·무릎·고관절 반응을 확인합니다.",
-      "commonMistakes": [
-        "보폭을 너무 넓게 시작",
-        "무릎을 안쪽으로 무너뜨림",
-        "발을 끌며 균형 상실"
-      ],
-      "regressions": [
-        "밴드 없이 옆걸음",
-        "더 약한 밴드",
-        "두세 걸음만 수행"
-      ],
-      "progressions": [
-        "걸음 수 소폭 증가",
-        "낮은 반스쿼트 유지",
-        "안전한 환경에서 방향 전환"
-      ]
-    }
-  },
-  {
-    "exercise": {
-      "id": "battle-rope-alternating-wave",
-      "name": "배틀로프 얼터네이팅 웨이브",
-      "englishName": "Battle Rope Alternating Wave",
-      "category": "파워·민첩성",
-      "regions": [
-        "어깨",
-        "팔",
-        "코어",
-        "하체"
-      ],
-      "focus": "체력",
-      "difficulty": "중급",
-      "equipment": "안전하게 고정한 배틀로프",
-      "minutes": "10–20초 · 2–5회",
-      "description": "낮은 반스쿼트 또는 안정된 서기 자세에서 로프를 좌우 번갈아 흔들며 전신 리듬과 짧은 컨디셔닝을 연습합니다.",
-      "cues": [
-        "로프 고정점과 주변 공간 먼저 확인",
-        "낮은 진폭·짧은 구간부터",
-        "어깨를 귀에서 멀리 두고 리듬 유지"
-      ],
-      "benefits": [
-        "상체 컨디셔닝",
-        "전신 리듬",
-        "짧은 심박 자극"
-      ],
-      "warning": "어지러움·흉통·어깨 통증·기술 붕괴가 나타나면 즉시 멈추고 충분히 회복하세요.",
-      "reference": {
-        "label": "NSCA 배틀로프 컨디셔닝 안내",
-        "url": "https://www.nsca.com/education/articles/ptq/utilizing-battling-rope-exercises-for-hiit-and-smit/"
-      }
-    },
-    "detail": {
-      "setup": [
-        "로프 고정점·반경·바닥 미끄럼을 먼저 확인",
-        "가벼운 반스쿼트 또는 편안한 서기 자세 선택",
-        "10초 미만의 작은 진폭으로 리듬 리허설"
-      ],
-      "finish": "로프를 바닥에 완전히 놓고 짧게 걸으며 호흡과 어깨 반응을 낮춥니다.",
-      "commonMistakes": [
-        "초반부터 큰 파도와 긴 구간",
-        "목을 으쓱하고 팔만 사용",
-        "피로 후에도 로프를 제어하지 못함"
-      ],
-      "regressions": [
-        "시티드 웨이브",
-        "10초 미만 구간",
-        "더 작은 진폭과 긴 휴식"
-      ],
-      "progressions": [
-        "리듬 유지 후 5초만 추가",
-        "낮은 반스쿼트 유지",
-        "충분히 회복한 날 짧은 양팔 파도"
-      ]
-    }
-  },
-  {
-    "exercise": {
-      "id": "battle-rope-seated-wave",
-      "name": "시티드 배틀로프 웨이브",
-      "englishName": "Seated Battle Rope Wave",
-      "category": "파워·민첩성",
-      "regions": [
-        "어깨",
-        "팔",
-        "코어"
-      ],
-      "focus": "체력",
-      "difficulty": "입문",
-      "equipment": "안정된 벤치 · 고정한 배틀로프",
-      "minutes": "10–15초 · 2–4회",
-      "description": "안정된 벤치에 앉아 로프를 작게 흔들며 다리 부담을 줄이고 상체 리듬을 경험하는 쉬운 변형입니다.",
-      "cues": [
-        "벤치와 로프 고정점 확인",
-        "허리를 과도하게 젖히지 않기",
-        "짧은 구간 뒤 충분히 쉬기"
-      ],
-      "benefits": [
-        "상체 리듬",
-        "그립·어깨 지구력",
-        "낮은 하체 부담"
-      ],
-      "warning": "어깨·목 통증이나 어지러움이 있으면 시도하지 말고 가벼운 밴드 운동으로 바꾸세요.",
-      "reference": {
-        "label": "NSCA 배틀로프 컨디셔닝 안내",
-        "url": "https://www.nsca.com/education/articles/ptq/utilizing-battling-rope-exercises-for-hiit-and-smit/"
-      }
-    },
-    "detail": {
-      "setup": [
-        "벤치 안정성과 로프 고정점을 확인",
-        "발 전체를 바닥에 두고 몸통을 길게 세우기",
-        "10초 미만의 작은 파도로 리듬 확인"
-      ],
-      "finish": "로프를 바닥에 놓고 손·목·어깨의 긴장을 풀며 호흡을 낮춥니다.",
-      "commonMistakes": [
-        "허리를 젖혀 반동 만들기",
-        "목을 으쓱한 채 긴 구간 수행",
-        "피로 후에도 큰 진폭 유지"
-      ],
-      "regressions": [
-        "더 작은 진폭",
-        "8초 미만 구간",
-        "밴드 로우로 전환"
-      ],
-      "progressions": [
-        "리듬 유지 뒤 5초 증가",
-        "한 팔씩 짧은 파도",
-        "충분히 회복된 날 얼터네이팅 웨이브"
-      ]
-    }
-  },
-  {
-    "exercise": {
-      "id": "low-step-march",
-      "name": "로우 스텝 마치",
-      "englishName": "Low Step March",
-      "category": "균형·협응",
-      "regions": [
-        "하체",
-        "둔근",
-        "코어"
-      ],
-      "focus": "협응",
-      "difficulty": "입문",
-      "equipment": "낮고 안정된 스텝",
-      "minutes": "좌우 5–10회 · 2세트",
-      "description": "낮은 스텝 위로 한 발씩 올라 무릎을 가볍게 들어 올린 뒤 천천히 내려오며 계단·균형 리듬을 연습합니다.",
-      "cues": [
-        "스텝이 흔들리지 않는지 확인",
-        "발 전체를 스텝 위에 올리기",
-        "필요하면 벽·난간 가까이에서"
-      ],
-      "benefits": [
-        "계단 리듬",
-        "한쪽 다리 협응",
-        "균형 준비"
-      ],
-      "warning": "체중 부하 불가·무릎 통증·최근 낙상이 있으면 스텝 대신 평지 마치로 낮추세요.",
-      "reference": {
-        "label": "CDC 성인 신체 활동 지침",
-        "url": "https://www.cdc.gov/physical-activity-basics/guidelines/adults.html"
-      }
-    },
-    "detail": {
-      "setup": [
-        "낮고 미끄럽지 않은 스텝을 벽·난간 가까이에 놓기",
-        "스텝 위에 발 전체를 올리는 동작만 먼저 연습",
-        "필요하면 손가락으로 지지대 잡기"
-      ],
-      "finish": "양발을 바닥에 두고 균형이 안정된 뒤 반대쪽을 시작합니다.",
-      "commonMistakes": [
-        "스텝 가장자리에 발을 걸침",
-        "내려올 때 빠르게 떨어짐",
-        "균형을 잃은 채 반복"
-      ],
-      "regressions": [
-        "스텝 없이 제자리 마치",
-        "더 낮은 높이",
-        "양손 지지"
-      ],
-      "progressions": [
-        "한 손 지지",
-        "반복 소폭 증가",
-        "정지 균형 1초 추가"
-      ]
-    }
-  },
-  {
-    "exercise": {
       "id": "low-step-lateral-tap",
       "name": "로우 스텝 레터럴 탭",
       "englishName": "Low Step Lateral Tap",
@@ -2153,117 +1928,6 @@ export const catalogPage02: CatalogEntry[] = [
   },
   {
     "exercise": {
-      "id": "outdoor-pace-reset",
-      "name": "야외 페이스 리셋 워크",
-      "englishName": "Outdoor Pace Reset Walk",
-      "category": "러닝",
-      "regions": [
-        "하체",
-        "코어"
-      ],
-      "focus": "심폐",
-      "difficulty": "입문",
-      "equipment": "안전한 평지 또는 넓은 트레일",
-      "minutes": "1–2분 빠르게 + 1–2분 편안하게 · 3–5회",
-      "description": "안전한 평지에서 짧은 빠른 걷기와 편안한 걷기를 번갈아 수행하며 트레일 속도를 말하기 검사로 조정하는 유산소 기초입니다.",
-      "cues": [
-        "빠른 구간도 짧은 문장은 가능하게",
-        "내리막·교차로 전 미리 감속",
-        "날씨·수분·귀가 시간을 함께 확인"
-      ],
-      "benefits": [
-        "페이스 조절",
-        "야외 유산소 적응",
-        "말하기 검사 활용"
-      ],
-      "warning": "열·천둥·시야 불량·길 이탈·어지러움·흉통이 있거나 호흡이 회복되지 않으면 속도를 즉시 낮추고 안전한 곳에서 쉬세요.",
-      "reference": {
-        "label": "NPS Hike Smart 안전 안내",
-        "url": "https://www.nps.gov/articles/hiking-safety.htm"
-      }
-    },
-    "detail": {
-      "setup": [
-        "날씨·경로·교차로·귀가 시간 확인",
-        "편안한 걷기 2분으로 시작",
-        "빠른 구간도 말하기 가능한 속도 선택"
-      ],
-      "finish": "편안한 걷기로 2분 이상 속도를 낮추고 호흡·어지러움·수분 상태를 확인합니다.",
-      "commonMistakes": [
-        "빠른 구간을 질주로 바꿈",
-        "내리막·교차로에서도 가속",
-        "호흡 회복 전 다음 구간 시작"
-      ],
-      "regressions": [
-        "편안한 걷기만",
-        "빠른 구간 30초",
-        "휴식 2분 이상"
-      ],
-      "progressions": [
-        "빠른 구간 30초 증가",
-        "같은 휴식으로 한 구간 추가",
-        "날씨·경로가 안전할 때만 거리 증가"
-      ]
-    }
-  },
-  {
-    "exercise": {
-      "id": "bike-cadence-easy-spin",
-      "name": "이지 케이던스 스핀",
-      "englishName": "Easy Cadence Spin",
-      "category": "유산소",
-      "regions": [
-        "하체",
-        "둔근",
-        "코어"
-      ],
-      "focus": "심폐",
-      "difficulty": "입문",
-      "equipment": "실내 자전거 또는 안전한 평지 자전거",
-      "minutes": "30초 가볍게 + 60초 편안하게 · 4–6회",
-      "description": "아주 낮은 저항에서 발을 원형으로 부드럽게 돌리고, 짧은 가벼운 스핀 뒤 충분히 편안한 페달링으로 돌아오는 리듬 드릴입니다.",
-      "cues": [
-        "저항보다 부드러운 원형 리듬",
-        "어깨·손목 힘 빼기",
-        "안장 위에서 튀지 않기"
-      ],
-      "benefits": [
-        "페달링 리듬",
-        "저충격 심폐 준비",
-        "하체 협응"
-      ],
-      "warning": "어지러움·흉통·무릎 통증·안장 불안·야외 교통 위험이 있으면 즉시 중단하고 안전한 환경으로 전환하세요.",
-      "reference": {
-        "label": "WHO 신체 활동 일반 안내",
-        "url": "https://www.who.int/news-room/fact-sheets/detail/physical-activity"
-      }
-    },
-    "detail": {
-      "setup": [
-        "안장·페달·저항·주변 공간 확인",
-        "아주 낮은 저항으로 2분 리허설",
-        "발 전체를 페달에 안정적으로"
-      ],
-      "finish": "저항을 낮춰 천천히 돌린 뒤 내려와 무릎·호흡·어지러움을 확인합니다.",
-      "commonMistakes": [
-        "높은 저항에서 리듬 연습",
-        "안장 위에서 튀기",
-        "어깨·손목에 힘을 과하게 줌"
-      ],
-      "regressions": [
-        "편안한 일정 페달링",
-        "30초 스핀",
-        "더 낮은 저항"
-      ],
-      "progressions": [
-        "스핀 15초 증가",
-        "한 구간 추가",
-        "다음 날 무릎이 편안할 때만 저항 조절"
-      ]
-    }
-  },
-  {
-    "exercise": {
       "id": "bike-standing-transition-prep",
       "name": "사이클 스탠딩 전환 프렙",
       "englishName": "Bike Standing Transition Preparation",
@@ -3097,62 +2761,6 @@ export const catalogPage02: CatalogEntry[] = [
         "반복 1회 증가",
         "지지면 소폭 낮추기",
         "느린 탭"
-      ]
-    }
-  },
-  {
-    "exercise": {
-      "id": "run-cadence-march",
-      "name": "러닝 케이던스 마치",
-      "englishName": "Running Cadence March",
-      "category": "러닝",
-      "regions": [
-        "하체",
-        "둔근",
-        "코어"
-      ],
-      "focus": "협응",
-      "difficulty": "입문",
-      "equipment": "평평한 보행 경로",
-      "minutes": "20–30초 · 3–5회",
-      "description": "짧고 조용한 제자리 마치로 발 아래 리듬과 팔 스윙을 익히는 러닝 전 준비 드릴입니다.",
-      "cues": [
-        "발은 몸 아래에",
-        "작고 빠른 리듬",
-        "어깨·턱 이완"
-      ],
-      "benefits": [
-        "러닝 리듬 준비",
-        "보행 협응",
-        "워밍업"
-      ],
-      "warning": "발목·무릎 통증·어지러움이 있으면 편안한 걷기로 낮추세요.",
-      "reference": {
-        "label": "ACSM 저항·신체활동 일반 지침",
-        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
-      }
-    },
-    "detail": {
-      "setup": [
-        "평평한 경로·신발 확인",
-        "편안한 걷기 1분",
-        "작은 마치 10초 리허설"
-      ],
-      "finish": "편안한 걷기로 전환해 발목·무릎·호흡 반응을 확인합니다.",
-      "commonMistakes": [
-        "무릎을 과하게 높임",
-        "발을 몸 앞에 멀리 디딤",
-        "어깨 긴장"
-      ],
-      "regressions": [
-        "편안한 걷기",
-        "제자리 체중 이동",
-        "10초 마치"
-      ],
-      "progressions": [
-        "시간 5초 증가",
-        "짧은 보행 연결",
-        "리듬 유지"
       ]
     }
   },
@@ -5596,6 +5204,397 @@ export const catalogPage02: CatalogEntry[] = [
         "반복 증가",
         "정지 1초",
         "느린 복귀"
+      ]
+    }
+  },
+  {
+    "exercise": {
+      "id": "chair-hamstring-heel-dig-easy",
+      "name": "체어 햄스트링 힐 딕 이지",
+      "englishName": "Chair Hamstring Heel Dig Easy",
+      "category": "맨몸운동",
+      "regions": [
+        "하체",
+        "둔근"
+      ],
+      "focus": "근력",
+      "difficulty": "입문",
+      "equipment": "안정된 의자",
+      "minutes": "좌우 5–10초 · 2회",
+      "description": "의자에 앉아 한쪽 뒤꿈치를 바닥으로 가볍게 끌어당기는 느낌으로 누르며 햄스트링을 연습합니다.",
+      "cues": [
+        "뒤꿈치 가볍게 누르기",
+        "무릎 편안히",
+        "골반 수평"
+      ],
+      "benefits": [
+        "햄스트링 인식",
+        "무릎 뒤쪽 제어",
+        "앉은 하체 보강"
+      ],
+      "warning": "무릎 뒤쪽 통증, 경련, 저림 또는 허리 불편이 있으면 압력을 줄이거나 발을 바닥에 편안히 두세요.",
+      "reference": {
+        "label": "CDC 성인 활동 안내",
+        "url": "https://www.cdc.gov/physical-activity-basics/guidelines/adults.html"
+      }
+    },
+    "detail": {
+      "setup": [
+        "의자·무릎 확인",
+        "뒤꿈치 바닥",
+        "가벼운 끌기 압력"
+      ],
+      "finish": "발을 편안히 두고 무릎·고관절·햄스트링 반응을 확인합니다.",
+      "commonMistakes": [
+        "힘 과도",
+        "골반 뒤로 기울기",
+        "경련 무시"
+      ],
+      "regressions": [
+        "압력 줄이기",
+        "양발 동시",
+        "유지 줄이기"
+      ],
+      "progressions": [
+        "유지 2초",
+        "반복 증가",
+        "좌우 교대"
+      ]
+    }
+  },
+  {
+    "exercise": {
+      "id": "wall-hip-extension-press-easy",
+      "name": "월 힙 익스텐션 프레스 이지",
+      "englishName": "Wall Hip Extension Press Easy",
+      "category": "맨몸운동",
+      "regions": [
+        "둔근",
+        "하체",
+        "코어"
+      ],
+      "focus": "근력",
+      "difficulty": "입문",
+      "equipment": "단단한 벽",
+      "minutes": "좌우 5–10초 · 2회",
+      "description": "벽을 등진 자세에서 한쪽 발뒤꿈치를 벽 쪽으로 아주 가볍게 밀며 둔근과 고관절 뒤쪽의 등척성 제어를 연습합니다.",
+      "cues": [
+        "가벼운 뒤꿈치 압력",
+        "골반 수평",
+        "작은 범위"
+      ],
+      "benefits": [
+        "둔근 인식",
+        "고관절 신전 제어",
+        "저충격 하체"
+      ],
+      "warning": "고관절·무릎·허리 통증, 경련 또는 균형 상실이 있으면 양발 체중 이동으로 낮추세요.",
+      "reference": {
+        "label": "CDC 성인 활동 안내",
+        "url": "https://www.cdc.gov/physical-activity-basics/guidelines/adults.html"
+      }
+    },
+    "detail": {
+      "setup": [
+        "벽·균형 확인",
+        "뒤꿈치 가볍게 벽 쪽",
+        "골반 수평"
+      ],
+      "finish": "양발로 서서 고관절·무릎·허리 반응을 확인합니다.",
+      "commonMistakes": [
+        "허리 꺾임",
+        "압력 과도",
+        "골반 기울기"
+      ],
+      "regressions": [
+        "체중 이동",
+        "압력 줄이기",
+        "양손 벽 지지"
+      ],
+      "progressions": [
+        "유지 2초",
+        "반복 증가",
+        "좌우 교대"
+      ]
+    }
+  },
+  {
+    "exercise": {
+      "id": "supine-heel-slide-easy",
+      "name": "수파인 힐 슬라이드 이지",
+      "englishName": "Supine Heel Slide Easy",
+      "category": "맨몸운동",
+      "regions": [
+        "하체",
+        "코어",
+        "둔근"
+      ],
+      "focus": "협응",
+      "difficulty": "입문",
+      "equipment": "매트 또는 수건",
+      "minutes": "좌우 5–8회 · 2세트",
+      "description": "바로 누워 한쪽 뒤꿈치를 매트 위로 천천히 밀고 당기며 무릎·고관절·코어의 편안한 움직임을 연습합니다.",
+      "cues": [
+        "허리 편안히",
+        "뒤꿈치 천천히",
+        "작은 범위"
+      ],
+      "benefits": [
+        "무릎 굴곡 제어",
+        "고관절 협응",
+        "저충격 코어"
+      ],
+      "warning": "무릎·고관절·허리 통증, 당김 악화 또는 저림이 있으면 범위를 줄이거나 중단하세요.",
+      "reference": {
+        "label": "CDC 성인 활동 안내",
+        "url": "https://www.cdc.gov/physical-activity-basics/guidelines/adults.html"
+      }
+    },
+    "detail": {
+      "setup": [
+        "매트·허리 확인",
+        "한쪽 뒤꿈치 슬라이드",
+        "작은 범위"
+      ],
+      "finish": "양발을 매트에 두고 무릎·고관절·허리 반응을 확인합니다.",
+      "commonMistakes": [
+        "허리 과신전",
+        "슬라이드 과도",
+        "통증 무시"
+      ],
+      "regressions": [
+        "뒤꿈치 탭",
+        "범위 줄이기",
+        "양발 정지"
+      ],
+      "progressions": [
+        "반복 증가",
+        "느린 복귀",
+        "좌우 교대"
+      ]
+    }
+  },
+  {
+    "exercise": {
+      "id": "chair-supported-knee-bend-tap",
+      "name": "체어 지지 니 벤드 탭",
+      "englishName": "Chair Supported Knee Bend Tap",
+      "category": "균형·협응",
+      "regions": [
+        "하체",
+        "둔근",
+        "코어"
+      ],
+      "focus": "협응",
+      "difficulty": "입문",
+      "equipment": "안정된 의자",
+      "minutes": "좌우 5–10회 · 2세트",
+      "description": "의자를 가볍게 잡고 한쪽 무릎을 작게 굽혔다 펴며 반대 발끝을 조용히 탭해 저충격 균형을 연습합니다.",
+      "cues": [
+        "의자 가까이",
+        "작은 무릎 굽힘",
+        "조용한 탭"
+      ],
+      "benefits": [
+        "무릎 제어",
+        "균형",
+        "저충격 전신 준비"
+      ],
+      "warning": "무릎·발목·고관절 통증, 어지러움 또는 의자 흔들림이 있으면 양발 체중 이동으로 낮추세요.",
+      "reference": {
+        "label": "CDC 성인 활동 안내",
+        "url": "https://www.cdc.gov/physical-activity-basics/guidelines/adults.html"
+      }
+    },
+    "detail": {
+      "setup": [
+        "의자·바닥 확인",
+        "작은 무릎 굽힘",
+        "조용한 발끝 탭"
+      ],
+      "finish": "양발로 서서 무릎·발목·균형 반응을 확인합니다.",
+      "commonMistakes": [
+        "발 세게 탭",
+        "무릎 안쪽 붕괴",
+        "지지대 멀리 섬"
+      ],
+      "regressions": [
+        "체중 이동",
+        "범위 줄이기",
+        "양손 지지"
+      ],
+      "progressions": [
+        "반복 증가",
+        "느린 교대",
+        "지지 소폭 줄이기"
+      ]
+    }
+  },
+  {
+    "exercise": {
+      "id": "wall-split-stance-hip-shift-easy",
+      "name": "월 스플릿 스탠스 힙 시프트 이지",
+      "englishName": "Wall Split-Stance Hip Shift Easy",
+      "category": "맨몸운동",
+      "regions": [
+        "하체",
+        "둔근",
+        "코어"
+      ],
+      "focus": "협응",
+      "difficulty": "입문",
+      "equipment": "단단한 벽",
+      "minutes": "좌우 5–8회 · 2세트",
+      "description": "벽 지지의 작은 앞뒤 체중 이동으로 고관절·무릎에 무리 없는 스플릿 스탠스 제어를 연습합니다.",
+      "cues": [
+        "벽 지지",
+        "짧은 체중 이동",
+        "앞무릎 정렬"
+      ],
+      "benefits": [
+        "고관절 제어",
+        "보행 준비",
+        "균형"
+      ],
+      "warning": "무릎·고관절 통증, 균형 상실 또는 앞무릎 불안정이 있으면 양발 체중 이동으로 낮추세요.",
+      "reference": {
+        "label": "CDC 성인 활동 안내",
+        "url": "https://www.cdc.gov/physical-activity-basics/guidelines/adults.html"
+      }
+    },
+    "detail": {
+      "setup": [
+        "벽·발 위치 확인",
+        "짧은 스플릿 스탠스",
+        "작은 체중 이동"
+      ],
+      "finish": "양발로 서서 고관절·무릎·균형 반응을 확인합니다.",
+      "commonMistakes": [
+        "앞무릎 안쪽 붕괴",
+        "보폭 과도",
+        "벽 지지 생략"
+      ],
+      "regressions": [
+        "양발 체중 이동",
+        "보폭 줄이기",
+        "양손 벽 지지"
+      ],
+      "progressions": [
+        "반복 증가",
+        "정지 1초",
+        "보폭 소폭"
+      ]
+    }
+  },
+  {
+    "exercise": {
+      "id": "wall-elbow-row-isometric-easy",
+      "name": "월 엘보 로우 아이소메트릭 이지",
+      "englishName": "Wall Elbow Row Isometric Easy",
+      "category": "맨몸운동",
+      "regions": [
+        "등",
+        "어깨",
+        "팔"
+      ],
+      "focus": "근력",
+      "difficulty": "입문",
+      "equipment": "단단한 벽",
+      "minutes": "5–12초 · 2회",
+      "description": "벽에 등을 대고 팔꿈치를 뒤로 가볍게 누르며 등을 조이는 감각을 짧게 연습합니다.",
+      "cues": [
+        "목 길게",
+        "팔꿈치 가볍게 뒤로",
+        "갈비뼈 편안히"
+      ],
+      "benefits": [
+        "등 인식",
+        "견갑 제어",
+        "자세 보강"
+      ],
+      "warning": "어깨·목·팔꿈치 통증, 저림 또는 벽 압박 불편이 있으면 압력을 줄이거나 중단하세요.",
+      "reference": {
+        "label": "CDC 성인 활동 안내",
+        "url": "https://www.cdc.gov/physical-activity-basics/guidelines/adults.html"
+      }
+    },
+    "detail": {
+      "setup": [
+        "벽·등 확인",
+        "팔꿈치 가볍게 뒤로",
+        "짧은 조임"
+      ],
+      "finish": "팔을 편안히 내리고 목·어깨·등 반응을 확인합니다.",
+      "commonMistakes": [
+        "목 으쓱",
+        "압력 과도",
+        "허리 과신전"
+      ],
+      "regressions": [
+        "압력 줄이기",
+        "한쪽씩",
+        "팔 내리기"
+      ],
+      "progressions": [
+        "유지 2초",
+        "반복 증가",
+        "좌우 교대"
+      ]
+    }
+  },
+  {
+    "exercise": {
+      "id": "seated-lat-press-isometric-easy",
+      "name": "시티드 랫 프레스 아이소메트릭 이지",
+      "englishName": "Seated Lat Press Isometric Easy",
+      "category": "맨몸운동",
+      "regions": [
+        "등",
+        "어깨",
+        "팔"
+      ],
+      "focus": "근력",
+      "difficulty": "입문",
+      "equipment": "안정된 의자",
+      "minutes": "5–10초 · 2회",
+      "description": "의자에 앉아 손을 허벅지 옆에 두고 아래로 가볍게 누르며 겨드랑이 아래와 등 옆의 긴장을 연습합니다.",
+      "cues": [
+        "발 바닥 고정",
+        "어깨 내리기",
+        "가벼운 압력"
+      ],
+      "benefits": [
+        "광배근 인식",
+        "어깨 안정",
+        "앉은 자세 보강"
+      ],
+      "warning": "어깨·손목·팔꿈치 통증 또는 저림이 있으면 압력을 줄이거나 팔을 편안히 내려 두세요.",
+      "reference": {
+        "label": "CDC 성인 활동 안내",
+        "url": "https://www.cdc.gov/physical-activity-basics/guidelines/adults.html"
+      }
+    },
+    "detail": {
+      "setup": [
+        "의자·어깨 확인",
+        "손 허벅지 옆",
+        "가벼운 아래 압력"
+      ],
+      "finish": "손을 편안히 놓고 어깨·팔꿈치·호흡 반응을 확인합니다.",
+      "commonMistakes": [
+        "어깨 으쓱",
+        "압력 과도",
+        "숨 참기"
+      ],
+      "regressions": [
+        "압력 줄이기",
+        "한쪽씩",
+        "팔 내리기"
+      ],
+      "progressions": [
+        "유지 2초",
+        "반복 증가",
+        "좌우 교대"
       ]
     }
   }

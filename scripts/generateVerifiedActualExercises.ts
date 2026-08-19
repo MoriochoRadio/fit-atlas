@@ -1,6 +1,7 @@
 import { readFile, writeFile } from "node:fs/promises";
 import path from "node:path";
 import { exercises } from "../client/src/lib/fitnessData";
+import { isIndependentCatalogExercise } from "../client/src/lib/catalogQualityRules";
 
 type SourceExercise = {
   id: string;
@@ -16,7 +17,7 @@ type AtlasFocus = "근력" | "체력" | "심폐" | "가동성" | "균형" | "협
 type AtlasDifficulty = "입문" | "중급" | "상급";
 type AtlasRegion = "가슴" | "등" | "어깨" | "팔" | "코어" | "둔근" | "하체";
 
-const targetCount = 501;
+const targetCount = 534;
 const sourcePath = "/home/ubuntu/free-exercise-db/dist/exercises.json";
 const outputPath = path.resolve("client/src/lib/verifiedActualExercisesPart14.ts");
 const translationPath = "/tmp/verified_actual_korean_names.json";
@@ -29,6 +30,8 @@ const normalized = (value: string) => value
   .replace(/[^\p{L}\p{N}]+/gu, " ")
   .replace(/\s+/g, " ")
   .trim();
+
+const toVerifiedId = (sourceId: string) => `verified-${sourceId.toLocaleLowerCase("en-US").replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "")}`;
 
 const koreanTerms: Array<[RegExp, string]> = [
   [/\bbarbell\b/gi, "바벨"], [/\bdumbbell\b/gi, "덤벨"], [/\bkettlebell\b/gi, "케틀벨"], [/\bcable\b/gi, "케이블"], [/\bmachine\b/gi, "머신"], [/\blever\b/gi, "레버"], [/\bsmith\b/gi, "스미스"], [/\bbodyweight\b/gi, "맨몸"], [/\bbody only\b/gi, "맨몸"], [/\bbench\b/gi, "벤치"], [/\bseated\b/gi, "시티드"], [/\bstanding\b/gi, "스탠딩"], [/\blying\b/gi, "라잉"], [/\bincline\b/gi, "인클라인"], [/\bdecline\b/gi, "디클라인"], [/\bflat\b/gi, "플랫"], [/\bone arm\b/gi, "싱글 암"], [/\bone-arm\b/gi, "싱글 암"], [/\bsingle arm\b/gi, "싱글 암"], [/\bsingle-arm\b/gi, "싱글 암"], [/\balternating\b/gi, "얼터네이팅"], [/\balternate\b/gi, "얼터네이트"], [/\bclose-grip\b/gi, "클로즈 그립"], [/\bwide-grip\b/gi, "와이드 그립"], [/\bunderhand\b/gi, "언더핸드"], [/\boverhand\b/gi, "오버핸드"], [/\breverse\b/gi, "리버스"], [/\bfront\b/gi, "프런트"], [/\brear\b/gi, "리어"], [/\blateral\b/gi, "레터럴"], [/\boverhead\b/gi, "오버헤드"], [/\bhigh\b/gi, "하이"], [/\blow\b/gi, "로우"], [/\bhammer\b/gi, "해머"], [/\bpreacher\b/gi, "프리처"], [/\bconcentration\b/gi, "컨센트레이션"], [/\bcurl\b/gi, "컬"], [/\bpress\b/gi, "프레스"], [/\bsquat\b/gi, "스쿼트"], [/\bdeadlift\b/gi, "데드리프트"], [/\brow\b/gi, "로우"], [/\bpulldown\b/gi, "풀다운"], [/\bpull-up\b/gi, "풀업"], [/\bchin-up\b/gi, "친업"], [/\bpush-up\b/gi, "푸시업"], [/\bflye?s?\b/gi, "플라이"], [/\braise\b/gi, "레이즈"], [/\bextension\b/gi, "익스텐션"], [/\bcrunch\b/gi, "크런치"], [/\bplank\b/gi, "플랭크"], [/\brotation\b/gi, "로테이션"], [/\bshrug\b/gi, "슈러그"], [/\bcarry\b/gi, "캐리"], [/\blunge\b/gi, "런지"], [/\bstep-up\b/gi, "스텝업"], [/\bcalf raise\b/gi, "카프 레이즈"], [/\bhip\b/gi, "힙"], [/\bglute\b/gi, "글루트"], [/\bhamstring\b/gi, "햄스트링"], [/\bshoulder\b/gi, "숄더"], [/\bchest\b/gi, "체스트"], [/\bback\b/gi, "백"], [/\btriceps?\b/gi, "트라이셉스"], [/\bbiceps?\b/gi, "바이셉스"], [/\bwrist\b/gi, "리스트"], [/\bcore\b/gi, "코어"], [/\bwalk\b/gi, "워크"], [/\brun\b/gi, "런"], [/\bbike\b/gi, "바이크"], [/\bstretch\b/gi, "스트레치"], [/\bfoam roll\b/gi, "폼롤"], [/\bmedicine ball\b/gi, "메디신볼"], [/\bband\b/gi, "밴드"], [/\bball\b/gi, "볼"], [/\bpower\b/gi, "파워"], [/\bjump\b/gi, "점프"], [/\bclean\b/gi, "클린"], [/\bsnatch\b/gi, "스내치"], [/\bjerk\b/gi, "저크"], [/\bromanian\b/gi, "루마니안"], [/\bgood morning\b/gi, "굿모닝"], [/\bzercher\b/gi, "저처"], [/\bpullover\b/gi, "풀오버"], [/\bside bend\b/gi, "사이드 밴드"], [/\bside\b/gi, "사이드"], [/\barm\b/gi, "암"], [/\bleg\b/gi, "레그"], [/\bto\b/gi, "투"], [/\bwith\b/gi, "위드"],
@@ -78,7 +81,7 @@ const acsmRef = { label: "ACSM — Exercise Safety", url: "https://acsm.org/educ
 const dataset = JSON.parse(await readFile(sourcePath, "utf8")) as SourceExercise[];
 const translatedNames = JSON.parse(await readFile(translationPath, "utf8")) as Record<string, string>;
 const toKorean = (name: string) => translatedNames[name] ?? manualKorean(name);
-const baseExercises = exercises.filter((exercise) => !exercise.id.startsWith("verified-"));
+const baseExercises = exercises.filter((exercise) => !exercise.id.startsWith("verified-") && isIndependentCatalogExercise(exercise));
 const existingEnglishNames = new Set(baseExercises.map((exercise) => normalized(exercise.englishName)));
 const existingKoreanNames = new Set(baseExercises.map((exercise) => normalized(exercise.name)));
 const selectedNames = new Set<string>();
@@ -88,6 +91,7 @@ const candidates = dataset
   .filter((exercise) => allowedCategories.has(exercise.category))
   .filter((exercise) => allowedEquipment.has(exercise.equipment ?? "none"))
   .filter((exercise) => !rejectedNameTerms.test(exercise.name))
+  .filter((exercise) => isIndependentCatalogExercise({ id: toVerifiedId(exercise.id) }))
   .filter((exercise) => !existingEnglishNames.has(normalized(exercise.name)))
   .sort((left, right) => `${left.category}:${left.equipment}:${left.name}`.localeCompare(`${right.category}:${right.equipment}:${right.name}`));
 
@@ -110,7 +114,7 @@ const rows = selected.map((source) => {
   const equipment = getEquipment(source);
   const description = `${name}은 ${equipment}을 사용해 ${region.join("·")} 중심의 ${category === "모빌리티" ? "편안한 가동 범위" : "독립적인 동작 경로"}를 연습하는 실제 운동 종목입니다.`;
   return {
-    id: `verified-${source.id.toLocaleLowerCase("en-US").replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "")}`,
+    id: toVerifiedId(source.id),
     name,
     englishName: source.name,
     category,

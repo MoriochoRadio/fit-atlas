@@ -3,1798 +3,6 @@ import type { CatalogEntry } from "./catalogTypes";
 export const catalogPage06: CatalogEntry[] = [
   {
     "exercise": {
-      "id": "verified-jogging-treadmill",
-      "name": "트레드밀 조깅",
-      "englishName": "Jogging, Treadmill",
-      "category": "유산소",
-      "regions": [
-        "하체"
-      ],
-      "focus": "심폐",
-      "difficulty": "입문",
-      "equipment": "머신·시트/패드",
-      "minutes": "10–25분",
-      "description": "트레드밀 조깅은 머신·시트/패드을 사용해 하체 중심의 독립적인 동작 경로를 연습하는 실제 운동 종목입니다.",
-      "cues": [
-        "낮은 저항·리듬 유지",
-        "머신·시트/패드과 신체 위치 먼저 확인",
-        "통증 없는 범위·호흡 유지"
-      ],
-      "benefits": [
-        "저충격 심폐 활동",
-        "하체 사용 인식",
-        "자기 조절 능력"
-      ],
-      "warning": "흉통·현기증·비정상적인 숨참·관절 통증 또는 기구 이상이 있으면 즉시 저항을 낮추고 중단하세요.",
-      "reference": {
-        "label": "ACSM — Exercise Safety",
-        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
-      }
-    },
-    "detail": {
-      "setup": [
-        "트레드밀 조깅 전 머신·시트/패드·바닥·주변 공간을 확인",
-        "기구 높이·저항·고정 장치 확인",
-        "가장 쉬운 범위와 낮은 강도에서 2회 리허설"
-      ],
-      "finish": "트레드밀 조깅을 마친 뒤 저항을 낮춰 호흡을 안정시키고 관절 반응을 확인합니다.",
-      "commonMistakes": [
-        "저항을 급하게 올리고 손잡이에 체중 싣기",
-        "정렬이 무너진 상태에서 반복 지속",
-        "통증·저림·어지러움 신호 무시"
-      ],
-      "regressions": [
-        "저항·시간 낮추기",
-        "반복·시간 또는 가동 범위 낮추기",
-        "더 안정된 지지 또는 쉬운 기본 동작으로 전환"
-      ],
-      "progressions": [
-        "시간을 먼저 소폭 증가",
-        "한 번에 하나의 변수만 조절",
-        "다음 날 반응이 편안할 때만 다음 단계 시도"
-      ]
-    }
-  },
-  {
-    "exercise": {
-      "id": "verified-recumbent-bike",
-      "name": "리컴번트 자전거",
-      "englishName": "Recumbent Bike",
-      "category": "유산소",
-      "regions": [
-        "하체"
-      ],
-      "focus": "심폐",
-      "difficulty": "입문",
-      "equipment": "머신·시트/패드",
-      "minutes": "10–25분",
-      "description": "리컴번트 자전거은 머신·시트/패드을 사용해 하체 중심의 독립적인 동작 경로를 연습하는 실제 운동 종목입니다.",
-      "cues": [
-        "낮은 저항·리듬 유지",
-        "머신·시트/패드과 신체 위치 먼저 확인",
-        "통증 없는 범위·호흡 유지"
-      ],
-      "benefits": [
-        "저충격 심폐 활동",
-        "하체 사용 인식",
-        "자기 조절 능력"
-      ],
-      "warning": "흉통·현기증·비정상적인 숨참·관절 통증 또는 기구 이상이 있으면 즉시 저항을 낮추고 중단하세요.",
-      "reference": {
-        "label": "ACSM — Exercise Safety",
-        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
-      }
-    },
-    "detail": {
-      "setup": [
-        "리컴번트 자전거 전 머신·시트/패드·바닥·주변 공간을 확인",
-        "기구 높이·저항·고정 장치 확인",
-        "가장 쉬운 범위와 낮은 강도에서 2회 리허설"
-      ],
-      "finish": "리컴번트 자전거을 마친 뒤 저항을 낮춰 호흡을 안정시키고 관절 반응을 확인합니다.",
-      "commonMistakes": [
-        "저항을 급하게 올리고 손잡이에 체중 싣기",
-        "정렬이 무너진 상태에서 반복 지속",
-        "통증·저림·어지러움 신호 무시"
-      ],
-      "regressions": [
-        "저항·시간 낮추기",
-        "반복·시간 또는 가동 범위 낮추기",
-        "더 안정된 지지 또는 쉬운 기본 동작으로 전환"
-      ],
-      "progressions": [
-        "시간을 먼저 소폭 증가",
-        "한 번에 하나의 변수만 조절",
-        "다음 날 반응이 편안할 때만 다음 단계 시도"
-      ]
-    }
-  },
-  {
-    "exercise": {
-      "id": "verified-rowing-stationary",
-      "name": "로잉머신",
-      "englishName": "Rowing, Stationary",
-      "category": "유산소",
-      "regions": [
-        "하체"
-      ],
-      "focus": "심폐",
-      "difficulty": "중급",
-      "equipment": "머신·시트/패드",
-      "minutes": "10–25분",
-      "description": "로잉머신은 머신·시트/패드을 사용해 하체 중심의 독립적인 동작 경로를 연습하는 실제 운동 종목입니다.",
-      "cues": [
-        "낮은 저항·리듬 유지",
-        "머신·시트/패드과 신체 위치 먼저 확인",
-        "통증 없는 범위·호흡 유지"
-      ],
-      "benefits": [
-        "저충격 심폐 활동",
-        "하체 사용 인식",
-        "자기 조절 능력"
-      ],
-      "warning": "흉통·현기증·비정상적인 숨참·관절 통증 또는 기구 이상이 있으면 즉시 저항을 낮추고 중단하세요.",
-      "reference": {
-        "label": "ACSM — Exercise Safety",
-        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
-      }
-    },
-    "detail": {
-      "setup": [
-        "로잉머신 전 머신·시트/패드·바닥·주변 공간을 확인",
-        "기구 높이·저항·고정 장치 확인",
-        "가장 쉬운 범위와 낮은 강도에서 2회 리허설"
-      ],
-      "finish": "로잉머신을 마친 뒤 저항을 낮춰 호흡을 안정시키고 관절 반응을 확인합니다.",
-      "commonMistakes": [
-        "저항을 급하게 올리고 손잡이에 체중 싣기",
-        "정렬이 무너진 상태에서 반복 지속",
-        "통증·저림·어지러움 신호 무시"
-      ],
-      "regressions": [
-        "저항·시간 낮추기",
-        "반복·시간 또는 가동 범위 낮추기",
-        "더 안정된 지지 또는 쉬운 기본 동작으로 전환"
-      ],
-      "progressions": [
-        "시간을 먼저 소폭 증가",
-        "한 번에 하나의 변수만 조절",
-        "다음 날 반응이 편안할 때만 다음 단계 시도"
-      ]
-    }
-  },
-  {
-    "exercise": {
-      "id": "verified-running-treadmill",
-      "name": "트레드밀 달리기",
-      "englishName": "Running, Treadmill",
-      "category": "유산소",
-      "regions": [
-        "하체"
-      ],
-      "focus": "심폐",
-      "difficulty": "입문",
-      "equipment": "머신·시트/패드",
-      "minutes": "10–25분",
-      "description": "트레드밀 달리기은 머신·시트/패드을 사용해 하체 중심의 독립적인 동작 경로를 연습하는 실제 운동 종목입니다.",
-      "cues": [
-        "낮은 저항·리듬 유지",
-        "머신·시트/패드과 신체 위치 먼저 확인",
-        "통증 없는 범위·호흡 유지"
-      ],
-      "benefits": [
-        "저충격 심폐 활동",
-        "하체 사용 인식",
-        "자기 조절 능력"
-      ],
-      "warning": "흉통·현기증·비정상적인 숨참·관절 통증 또는 기구 이상이 있으면 즉시 저항을 낮추고 중단하세요.",
-      "reference": {
-        "label": "ACSM — Exercise Safety",
-        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
-      }
-    },
-    "detail": {
-      "setup": [
-        "트레드밀 달리기 전 머신·시트/패드·바닥·주변 공간을 확인",
-        "기구 높이·저항·고정 장치 확인",
-        "가장 쉬운 범위와 낮은 강도에서 2회 리허설"
-      ],
-      "finish": "트레드밀 달리기을 마친 뒤 저항을 낮춰 호흡을 안정시키고 관절 반응을 확인합니다.",
-      "commonMistakes": [
-        "저항을 급하게 올리고 손잡이에 체중 싣기",
-        "정렬이 무너진 상태에서 반복 지속",
-        "통증·저림·어지러움 신호 무시"
-      ],
-      "regressions": [
-        "저항·시간 낮추기",
-        "반복·시간 또는 가동 범위 낮추기",
-        "더 안정된 지지 또는 쉬운 기본 동작으로 전환"
-      ],
-      "progressions": [
-        "시간을 먼저 소폭 증가",
-        "한 번에 하나의 변수만 조절",
-        "다음 날 반응이 편안할 때만 다음 단계 시도"
-      ]
-    }
-  },
-  {
-    "exercise": {
-      "id": "verified-stairmaster",
-      "name": "스테어마스터",
-      "englishName": "Stairmaster",
-      "category": "유산소",
-      "regions": [
-        "하체"
-      ],
-      "focus": "심폐",
-      "difficulty": "중급",
-      "equipment": "머신·시트/패드",
-      "minutes": "10–25분",
-      "description": "스테어마스터은 머신·시트/패드을 사용해 하체 중심의 독립적인 동작 경로를 연습하는 실제 운동 종목입니다.",
-      "cues": [
-        "낮은 저항·리듬 유지",
-        "머신·시트/패드과 신체 위치 먼저 확인",
-        "통증 없는 범위·호흡 유지"
-      ],
-      "benefits": [
-        "저충격 심폐 활동",
-        "하체 사용 인식",
-        "자기 조절 능력"
-      ],
-      "warning": "흉통·현기증·비정상적인 숨참·관절 통증 또는 기구 이상이 있으면 즉시 저항을 낮추고 중단하세요.",
-      "reference": {
-        "label": "ACSM — Exercise Safety",
-        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
-      }
-    },
-    "detail": {
-      "setup": [
-        "스테어마스터 전 머신·시트/패드·바닥·주변 공간을 확인",
-        "기구 높이·저항·고정 장치 확인",
-        "가장 쉬운 범위와 낮은 강도에서 2회 리허설"
-      ],
-      "finish": "스테어마스터을 마친 뒤 저항을 낮춰 호흡을 안정시키고 관절 반응을 확인합니다.",
-      "commonMistakes": [
-        "저항을 급하게 올리고 손잡이에 체중 싣기",
-        "정렬이 무너진 상태에서 반복 지속",
-        "통증·저림·어지러움 신호 무시"
-      ],
-      "regressions": [
-        "저항·시간 낮추기",
-        "반복·시간 또는 가동 범위 낮추기",
-        "더 안정된 지지 또는 쉬운 기본 동작으로 전환"
-      ],
-      "progressions": [
-        "시간을 먼저 소폭 증가",
-        "한 번에 하나의 변수만 조절",
-        "다음 날 반응이 편안할 때만 다음 단계 시도"
-      ]
-    }
-  },
-  {
-    "exercise": {
-      "id": "verified-step-mill",
-      "name": "스텝밀",
-      "englishName": "Step Mill",
-      "category": "유산소",
-      "regions": [
-        "하체"
-      ],
-      "focus": "심폐",
-      "difficulty": "중급",
-      "equipment": "머신·시트/패드",
-      "minutes": "10–25분",
-      "description": "스텝밀은 머신·시트/패드을 사용해 하체 중심의 독립적인 동작 경로를 연습하는 실제 운동 종목입니다.",
-      "cues": [
-        "낮은 저항·리듬 유지",
-        "머신·시트/패드과 신체 위치 먼저 확인",
-        "통증 없는 범위·호흡 유지"
-      ],
-      "benefits": [
-        "저충격 심폐 활동",
-        "하체 사용 인식",
-        "자기 조절 능력"
-      ],
-      "warning": "흉통·현기증·비정상적인 숨참·관절 통증 또는 기구 이상이 있으면 즉시 저항을 낮추고 중단하세요.",
-      "reference": {
-        "label": "ACSM — Exercise Safety",
-        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
-      }
-    },
-    "detail": {
-      "setup": [
-        "스텝밀 전 머신·시트/패드·바닥·주변 공간을 확인",
-        "기구 높이·저항·고정 장치 확인",
-        "가장 쉬운 범위와 낮은 강도에서 2회 리허설"
-      ],
-      "finish": "스텝밀을 마친 뒤 저항을 낮춰 호흡을 안정시키고 관절 반응을 확인합니다.",
-      "commonMistakes": [
-        "저항을 급하게 올리고 손잡이에 체중 싣기",
-        "정렬이 무너진 상태에서 반복 지속",
-        "통증·저림·어지러움 신호 무시"
-      ],
-      "regressions": [
-        "저항·시간 낮추기",
-        "반복·시간 또는 가동 범위 낮추기",
-        "더 안정된 지지 또는 쉬운 기본 동작으로 전환"
-      ],
-      "progressions": [
-        "시간을 먼저 소폭 증가",
-        "한 번에 하나의 변수만 조절",
-        "다음 날 반응이 편안할 때만 다음 단계 시도"
-      ]
-    }
-  },
-  {
-    "exercise": {
-      "id": "verified-walking-treadmill",
-      "name": "트레드밀 걷기",
-      "englishName": "Walking, Treadmill",
-      "category": "유산소",
-      "regions": [
-        "하체"
-      ],
-      "focus": "심폐",
-      "difficulty": "입문",
-      "equipment": "머신·시트/패드",
-      "minutes": "10–25분",
-      "description": "트레드밀 걷기은 머신·시트/패드을 사용해 하체 중심의 독립적인 동작 경로를 연습하는 실제 운동 종목입니다.",
-      "cues": [
-        "낮은 저항·리듬 유지",
-        "머신·시트/패드과 신체 위치 먼저 확인",
-        "통증 없는 범위·호흡 유지"
-      ],
-      "benefits": [
-        "저충격 심폐 활동",
-        "하체 사용 인식",
-        "자기 조절 능력"
-      ],
-      "warning": "흉통·현기증·비정상적인 숨참·관절 통증 또는 기구 이상이 있으면 즉시 저항을 낮추고 중단하세요.",
-      "reference": {
-        "label": "ACSM — Exercise Safety",
-        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
-      }
-    },
-    "detail": {
-      "setup": [
-        "트레드밀 걷기 전 머신·시트/패드·바닥·주변 공간을 확인",
-        "기구 높이·저항·고정 장치 확인",
-        "가장 쉬운 범위와 낮은 강도에서 2회 리허설"
-      ],
-      "finish": "트레드밀 걷기을 마친 뒤 저항을 낮춰 호흡을 안정시키고 관절 반응을 확인합니다.",
-      "commonMistakes": [
-        "저항을 급하게 올리고 손잡이에 체중 싣기",
-        "정렬이 무너진 상태에서 반복 지속",
-        "통증·저림·어지러움 신호 무시"
-      ],
-      "regressions": [
-        "저항·시간 낮추기",
-        "반복·시간 또는 가동 범위 낮추기",
-        "더 안정된 지지 또는 쉬운 기본 동작으로 전환"
-      ],
-      "progressions": [
-        "시간을 먼저 소폭 증가",
-        "한 번에 하나의 변수만 조절",
-        "다음 날 반응이 편안할 때만 다음 단계 시도"
-      ]
-    }
-  },
-  {
-    "exercise": {
-      "id": "verified-trail-running-walking",
-      "name": "트레일 러닝/걷기",
-      "englishName": "Trail Running/Walking",
-      "category": "유산소",
-      "regions": [
-        "하체"
-      ],
-      "focus": "심폐",
-      "difficulty": "입문",
-      "equipment": "장비 없음",
-      "minutes": "10–25분",
-      "description": "트레일 러닝/걷기은 장비 없음을 사용해 하체 중심의 독립적인 동작 경로를 연습하는 실제 운동 종목입니다.",
-      "cues": [
-        "낮은 저항·리듬 유지",
-        "장비 없음과 신체 위치 먼저 확인",
-        "통증 없는 범위·호흡 유지"
-      ],
-      "benefits": [
-        "저충격 심폐 활동",
-        "하체 사용 인식",
-        "자기 조절 능력"
-      ],
-      "warning": "흉통·현기증·비정상적인 숨참·관절 통증 또는 기구 이상이 있으면 즉시 저항을 낮추고 중단하세요.",
-      "reference": {
-        "label": "ACSM — Exercise Safety",
-        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
-      }
-    },
-    "detail": {
-      "setup": [
-        "트레일 러닝/걷기 전 장비 없음·바닥·주변 공간을 확인",
-        "기구 높이·저항·고정 장치 확인",
-        "가장 쉬운 범위와 낮은 강도에서 2회 리허설"
-      ],
-      "finish": "트레일 러닝/걷기을 마친 뒤 저항을 낮춰 호흡을 안정시키고 관절 반응을 확인합니다.",
-      "commonMistakes": [
-        "저항을 급하게 올리고 손잡이에 체중 싣기",
-        "정렬이 무너진 상태에서 반복 지속",
-        "통증·저림·어지러움 신호 무시"
-      ],
-      "regressions": [
-        "저항·시간 낮추기",
-        "반복·시간 또는 가동 범위 낮추기",
-        "더 안정된 지지 또는 쉬운 기본 동작으로 전환"
-      ],
-      "progressions": [
-        "시간을 먼저 소폭 증가",
-        "한 번에 하나의 변수만 조절",
-        "다음 날 반응이 편안할 때만 다음 단계 시도"
-      ]
-    }
-  },
-  {
-    "exercise": {
-      "id": "verified-bicycling",
-      "name": "사이클링",
-      "englishName": "Bicycling",
-      "category": "유산소",
-      "regions": [
-        "하체"
-      ],
-      "focus": "심폐",
-      "difficulty": "입문",
-      "equipment": "안정된 전용 장비",
-      "minutes": "10–25분",
-      "description": "사이클링은 안정된 전용 장비을 사용해 하체 중심의 독립적인 동작 경로를 연습하는 실제 운동 종목입니다.",
-      "cues": [
-        "낮은 저항·리듬 유지",
-        "안정된 전용 장비과 신체 위치 먼저 확인",
-        "통증 없는 범위·호흡 유지"
-      ],
-      "benefits": [
-        "저충격 심폐 활동",
-        "하체 사용 인식",
-        "자기 조절 능력"
-      ],
-      "warning": "흉통·현기증·비정상적인 숨참·관절 통증 또는 기구 이상이 있으면 즉시 저항을 낮추고 중단하세요.",
-      "reference": {
-        "label": "ACSM — Exercise Safety",
-        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
-      }
-    },
-    "detail": {
-      "setup": [
-        "사이클링 전 안정된 전용 장비·바닥·주변 공간을 확인",
-        "기구 높이·저항·고정 장치 확인",
-        "가장 쉬운 범위와 낮은 강도에서 2회 리허설"
-      ],
-      "finish": "사이클링을 마친 뒤 저항을 낮춰 호흡을 안정시키고 관절 반응을 확인합니다.",
-      "commonMistakes": [
-        "저항을 급하게 올리고 손잡이에 체중 싣기",
-        "정렬이 무너진 상태에서 반복 지속",
-        "통증·저림·어지러움 신호 무시"
-      ],
-      "regressions": [
-        "저항·시간 낮추기",
-        "반복·시간 또는 가동 범위 낮추기",
-        "더 안정된 지지 또는 쉬운 기본 동작으로 전환"
-      ],
-      "progressions": [
-        "시간을 먼저 소폭 증가",
-        "한 번에 하나의 변수만 조절",
-        "다음 날 반응이 편안할 때만 다음 단계 시도"
-      ]
-    }
-  },
-  {
-    "exercise": {
-      "id": "verified-prowler-sprint",
-      "name": "프로우러 스프린트",
-      "englishName": "Prowler Sprint",
-      "category": "유산소",
-      "regions": [
-        "하체",
-        "둔근"
-      ],
-      "focus": "심폐",
-      "difficulty": "입문",
-      "equipment": "안정된 전용 장비",
-      "minutes": "10–25분",
-      "description": "프로우러 스프린트은 안정된 전용 장비을 사용해 하체·둔근 중심의 독립적인 동작 경로를 연습하는 실제 운동 종목입니다.",
-      "cues": [
-        "낮은 저항·리듬 유지",
-        "안정된 전용 장비과 신체 위치 먼저 확인",
-        "통증 없는 범위·호흡 유지"
-      ],
-      "benefits": [
-        "저충격 심폐 활동",
-        "하체·둔근 사용 인식",
-        "자기 조절 능력"
-      ],
-      "warning": "흉통·현기증·비정상적인 숨참·관절 통증 또는 기구 이상이 있으면 즉시 저항을 낮추고 중단하세요.",
-      "reference": {
-        "label": "ACSM — Exercise Safety",
-        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
-      }
-    },
-    "detail": {
-      "setup": [
-        "프로우러 스프린트 전 안정된 전용 장비·바닥·주변 공간을 확인",
-        "기구 높이·저항·고정 장치 확인",
-        "가장 쉬운 범위와 낮은 강도에서 2회 리허설"
-      ],
-      "finish": "프로우러 스프린트을 마친 뒤 저항을 낮춰 호흡을 안정시키고 관절 반응을 확인합니다.",
-      "commonMistakes": [
-        "저항을 급하게 올리고 손잡이에 체중 싣기",
-        "정렬이 무너진 상태에서 반복 지속",
-        "통증·저림·어지러움 신호 무시"
-      ],
-      "regressions": [
-        "저항·시간 낮추기",
-        "반복·시간 또는 가동 범위 낮추기",
-        "더 안정된 지지 또는 쉬운 기본 동작으로 전환"
-      ],
-      "progressions": [
-        "시간을 먼저 소폭 증가",
-        "한 번에 하나의 변수만 조절",
-        "다음 날 반응이 편안할 때만 다음 단계 시도"
-      ]
-    }
-  },
-  {
-    "exercise": {
-      "id": "verified-rope-jumping",
-      "name": "줄넘기",
-      "englishName": "Rope Jumping",
-      "category": "유산소",
-      "regions": [
-        "하체"
-      ],
-      "focus": "심폐",
-      "difficulty": "중급",
-      "equipment": "안정된 전용 장비",
-      "minutes": "10–25분",
-      "description": "줄넘기은 안정된 전용 장비을 사용해 하체 중심의 독립적인 동작 경로를 연습하는 실제 운동 종목입니다.",
-      "cues": [
-        "낮은 저항·리듬 유지",
-        "안정된 전용 장비과 신체 위치 먼저 확인",
-        "통증 없는 범위·호흡 유지"
-      ],
-      "benefits": [
-        "저충격 심폐 활동",
-        "하체 사용 인식",
-        "자기 조절 능력"
-      ],
-      "warning": "흉통·현기증·비정상적인 숨참·관절 통증 또는 기구 이상이 있으면 즉시 저항을 낮추고 중단하세요.",
-      "reference": {
-        "label": "ACSM — Exercise Safety",
-        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
-      }
-    },
-    "detail": {
-      "setup": [
-        "줄넘기 전 안정된 전용 장비·바닥·주변 공간을 확인",
-        "기구 높이·저항·고정 장치 확인",
-        "가장 쉬운 범위와 낮은 강도에서 2회 리허설"
-      ],
-      "finish": "줄넘기을 마친 뒤 저항을 낮춰 호흡을 안정시키고 관절 반응을 확인합니다.",
-      "commonMistakes": [
-        "저항을 급하게 올리고 손잡이에 체중 싣기",
-        "정렬이 무너진 상태에서 반복 지속",
-        "통증·저림·어지러움 신호 무시"
-      ],
-      "regressions": [
-        "저항·시간 낮추기",
-        "반복·시간 또는 가동 범위 낮추기",
-        "더 안정된 지지 또는 쉬운 기본 동작으로 전환"
-      ],
-      "progressions": [
-        "시간을 먼저 소폭 증가",
-        "한 번에 하나의 변수만 조절",
-        "다음 날 반응이 편안할 때만 다음 단계 시도"
-      ]
-    }
-  },
-  {
-    "exercise": {
-      "id": "verified-skating",
-      "name": "스케이팅",
-      "englishName": "Skating",
-      "category": "유산소",
-      "regions": [
-        "하체"
-      ],
-      "focus": "심폐",
-      "difficulty": "중급",
-      "equipment": "안정된 전용 장비",
-      "minutes": "10–25분",
-      "description": "스케이팅은 안정된 전용 장비을 사용해 하체 중심의 독립적인 동작 경로를 연습하는 실제 운동 종목입니다.",
-      "cues": [
-        "낮은 저항·리듬 유지",
-        "안정된 전용 장비과 신체 위치 먼저 확인",
-        "통증 없는 범위·호흡 유지"
-      ],
-      "benefits": [
-        "저충격 심폐 활동",
-        "하체 사용 인식",
-        "자기 조절 능력"
-      ],
-      "warning": "흉통·현기증·비정상적인 숨참·관절 통증 또는 기구 이상이 있으면 즉시 저항을 낮추고 중단하세요.",
-      "reference": {
-        "label": "ACSM — Exercise Safety",
-        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
-      }
-    },
-    "detail": {
-      "setup": [
-        "스케이팅 전 안정된 전용 장비·바닥·주변 공간을 확인",
-        "기구 높이·저항·고정 장치 확인",
-        "가장 쉬운 범위와 낮은 강도에서 2회 리허설"
-      ],
-      "finish": "스케이팅을 마친 뒤 저항을 낮춰 호흡을 안정시키고 관절 반응을 확인합니다.",
-      "commonMistakes": [
-        "저항을 급하게 올리고 손잡이에 체중 싣기",
-        "정렬이 무너진 상태에서 반복 지속",
-        "통증·저림·어지러움 신호 무시"
-      ],
-      "regressions": [
-        "저항·시간 낮추기",
-        "반복·시간 또는 가동 범위 낮추기",
-        "더 안정된 지지 또는 쉬운 기본 동작으로 전환"
-      ],
-      "progressions": [
-        "시간을 먼저 소폭 증가",
-        "한 번에 하나의 변수만 조절",
-        "다음 날 반응이 편안할 때만 다음 단계 시도"
-      ]
-    }
-  },
-  {
-    "exercise": {
-      "id": "verified-clean",
-      "name": "클린",
-      "englishName": "Clean",
-      "category": "프리웨이트",
-      "regions": [
-        "하체",
-        "둔근"
-      ],
-      "focus": "근력",
-      "difficulty": "중급",
-      "equipment": "바벨·안전 랙 선택",
-      "minutes": "6–12회 · 2세트",
-      "description": "클린은 바벨·안전 랙 선택을 사용해 하체·둔근 중심의 독립적인 동작 경로를 연습하는 실제 운동 종목입니다.",
-      "cues": [
-        "중량을 몸 가까이·정렬 유지",
-        "바벨·안전 랙 선택과 신체 위치 먼저 확인",
-        "통증 없는 범위·호흡 유지"
-      ],
-      "benefits": [
-        "자유중량 제어",
-        "하체·둔근 사용 인식",
-        "자기 조절 능력"
-      ],
-      "warning": "허리·관절 통증·저림·그립 미끄러짐·균형 상실 또는 주변 충돌 위험이 있으면 즉시 중단하세요.",
-      "reference": {
-        "label": "ACSM — Exercise Safety",
-        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
-      }
-    },
-    "detail": {
-      "setup": [
-        "클린 전 바벨·안전 랙 선택·바닥·주변 공간을 확인",
-        "바닥·장비·주변 반경과 안전한 내려놓기 위치 확인",
-        "가장 쉬운 범위와 낮은 강도에서 2회 리허설"
-      ],
-      "finish": "클린을 마친 뒤 도구를 안전하게 내려놓고 그립·관절·피로 반응을 확인합니다.",
-      "commonMistakes": [
-        "무게를 몸에서 멀리 두고 반동으로 반복하기",
-        "정렬이 무너진 상태에서 반복 지속",
-        "통증·저림·어지러움 신호 무시"
-      ],
-      "regressions": [
-        "더 가벼운 도구·짧은 범위",
-        "반복·시간 또는 가동 범위 낮추기",
-        "더 안정된 지지 또는 쉬운 기본 동작으로 전환"
-      ],
-      "progressions": [
-        "정렬 유지 뒤 반복 또는 부하 하나만 소폭 증가",
-        "한 번에 하나의 변수만 조절",
-        "다음 날 반응이 편안할 때만 다음 단계 시도"
-      ]
-    }
-  },
-  {
-    "exercise": {
-      "id": "verified-clean-and-jerk",
-      "name": "클린앤저크",
-      "englishName": "Clean and Jerk",
-      "category": "프리웨이트",
-      "regions": [
-        "어깨"
-      ],
-      "focus": "근력",
-      "difficulty": "상급",
-      "equipment": "바벨·안전 랙 선택",
-      "minutes": "6–12회 · 2세트",
-      "description": "클린앤저크은 바벨·안전 랙 선택을 사용해 어깨 중심의 독립적인 동작 경로를 연습하는 실제 운동 종목입니다.",
-      "cues": [
-        "중량을 몸 가까이·정렬 유지",
-        "바벨·안전 랙 선택과 신체 위치 먼저 확인",
-        "통증 없는 범위·호흡 유지"
-      ],
-      "benefits": [
-        "자유중량 제어",
-        "어깨 사용 인식",
-        "자기 조절 능력"
-      ],
-      "warning": "허리·관절 통증·저림·그립 미끄러짐·균형 상실 또는 주변 충돌 위험이 있으면 즉시 중단하세요.",
-      "reference": {
-        "label": "ACSM — Exercise Safety",
-        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
-      }
-    },
-    "detail": {
-      "setup": [
-        "클린앤저크 전 바벨·안전 랙 선택·바닥·주변 공간을 확인",
-        "바닥·장비·주변 반경과 안전한 내려놓기 위치 확인",
-        "가장 쉬운 범위와 낮은 강도에서 2회 리허설"
-      ],
-      "finish": "클린앤저크을 마친 뒤 도구를 안전하게 내려놓고 그립·관절·피로 반응을 확인합니다.",
-      "commonMistakes": [
-        "무게를 몸에서 멀리 두고 반동으로 반복하기",
-        "정렬이 무너진 상태에서 반복 지속",
-        "통증·저림·어지러움 신호 무시"
-      ],
-      "regressions": [
-        "더 가벼운 도구·짧은 범위",
-        "반복·시간 또는 가동 범위 낮추기",
-        "더 안정된 지지 또는 쉬운 기본 동작으로 전환"
-      ],
-      "progressions": [
-        "정렬 유지 뒤 반복 또는 부하 하나만 소폭 증가",
-        "한 번에 하나의 변수만 조절",
-        "다음 날 반응이 편안할 때만 다음 단계 시도"
-      ]
-    }
-  },
-  {
-    "exercise": {
-      "id": "verified-clean-deadlift",
-      "name": "클린 데드리프트",
-      "englishName": "Clean Deadlift",
-      "category": "프리웨이트",
-      "regions": [
-        "하체",
-        "둔근"
-      ],
-      "focus": "근력",
-      "difficulty": "입문",
-      "equipment": "바벨·안전 랙 선택",
-      "minutes": "6–12회 · 2세트",
-      "description": "클린 데드리프트은 바벨·안전 랙 선택을 사용해 하체·둔근 중심의 독립적인 동작 경로를 연습하는 실제 운동 종목입니다.",
-      "cues": [
-        "중량을 몸 가까이·정렬 유지",
-        "바벨·안전 랙 선택과 신체 위치 먼저 확인",
-        "통증 없는 범위·호흡 유지"
-      ],
-      "benefits": [
-        "자유중량 제어",
-        "하체·둔근 사용 인식",
-        "자기 조절 능력"
-      ],
-      "warning": "허리·관절 통증·저림·그립 미끄러짐·균형 상실 또는 주변 충돌 위험이 있으면 즉시 중단하세요.",
-      "reference": {
-        "label": "ACSM — Exercise Safety",
-        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
-      }
-    },
-    "detail": {
-      "setup": [
-        "클린 데드리프트 전 바벨·안전 랙 선택·바닥·주변 공간을 확인",
-        "바닥·장비·주변 반경과 안전한 내려놓기 위치 확인",
-        "가장 쉬운 범위와 낮은 강도에서 2회 리허설"
-      ],
-      "finish": "클린 데드리프트을 마친 뒤 도구를 안전하게 내려놓고 그립·관절·피로 반응을 확인합니다.",
-      "commonMistakes": [
-        "무게를 몸에서 멀리 두고 반동으로 반복하기",
-        "정렬이 무너진 상태에서 반복 지속",
-        "통증·저림·어지러움 신호 무시"
-      ],
-      "regressions": [
-        "더 가벼운 도구·짧은 범위",
-        "반복·시간 또는 가동 범위 낮추기",
-        "더 안정된 지지 또는 쉬운 기본 동작으로 전환"
-      ],
-      "progressions": [
-        "정렬 유지 뒤 반복 또는 부하 하나만 소폭 증가",
-        "한 번에 하나의 변수만 조절",
-        "다음 날 반응이 편안할 때만 다음 단계 시도"
-      ]
-    }
-  },
-  {
-    "exercise": {
-      "id": "verified-clean-from-blocks",
-      "name": "블록 클린",
-      "englishName": "Clean from Blocks",
-      "category": "프리웨이트",
-      "regions": [
-        "하체"
-      ],
-      "focus": "근력",
-      "difficulty": "중급",
-      "equipment": "바벨·안전 랙 선택",
-      "minutes": "6–12회 · 2세트",
-      "description": "블록 클린은 바벨·안전 랙 선택을 사용해 하체 중심의 독립적인 동작 경로를 연습하는 실제 운동 종목입니다.",
-      "cues": [
-        "중량을 몸 가까이·정렬 유지",
-        "바벨·안전 랙 선택과 신체 위치 먼저 확인",
-        "통증 없는 범위·호흡 유지"
-      ],
-      "benefits": [
-        "자유중량 제어",
-        "하체 사용 인식",
-        "자기 조절 능력"
-      ],
-      "warning": "허리·관절 통증·저림·그립 미끄러짐·균형 상실 또는 주변 충돌 위험이 있으면 즉시 중단하세요.",
-      "reference": {
-        "label": "ACSM — Exercise Safety",
-        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
-      }
-    },
-    "detail": {
-      "setup": [
-        "블록 클린 전 바벨·안전 랙 선택·바닥·주변 공간을 확인",
-        "바닥·장비·주변 반경과 안전한 내려놓기 위치 확인",
-        "가장 쉬운 범위와 낮은 강도에서 2회 리허설"
-      ],
-      "finish": "블록 클린을 마친 뒤 도구를 안전하게 내려놓고 그립·관절·피로 반응을 확인합니다.",
-      "commonMistakes": [
-        "무게를 몸에서 멀리 두고 반동으로 반복하기",
-        "정렬이 무너진 상태에서 반복 지속",
-        "통증·저림·어지러움 신호 무시"
-      ],
-      "regressions": [
-        "더 가벼운 도구·짧은 범위",
-        "반복·시간 또는 가동 범위 낮추기",
-        "더 안정된 지지 또는 쉬운 기본 동작으로 전환"
-      ],
-      "progressions": [
-        "정렬 유지 뒤 반복 또는 부하 하나만 소폭 증가",
-        "한 번에 하나의 변수만 조절",
-        "다음 날 반응이 편안할 때만 다음 단계 시도"
-      ]
-    }
-  },
-  {
-    "exercise": {
-      "id": "verified-clean-pull",
-      "name": "클린 풀",
-      "englishName": "Clean Pull",
-      "category": "프리웨이트",
-      "regions": [
-        "하체"
-      ],
-      "focus": "근력",
-      "difficulty": "중급",
-      "equipment": "바벨·안전 랙 선택",
-      "minutes": "6–12회 · 2세트",
-      "description": "클린 풀은 바벨·안전 랙 선택을 사용해 하체 중심의 독립적인 동작 경로를 연습하는 실제 운동 종목입니다.",
-      "cues": [
-        "중량을 몸 가까이·정렬 유지",
-        "바벨·안전 랙 선택과 신체 위치 먼저 확인",
-        "통증 없는 범위·호흡 유지"
-      ],
-      "benefits": [
-        "자유중량 제어",
-        "하체 사용 인식",
-        "자기 조절 능력"
-      ],
-      "warning": "허리·관절 통증·저림·그립 미끄러짐·균형 상실 또는 주변 충돌 위험이 있으면 즉시 중단하세요.",
-      "reference": {
-        "label": "ACSM — Exercise Safety",
-        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
-      }
-    },
-    "detail": {
-      "setup": [
-        "클린 풀 전 바벨·안전 랙 선택·바닥·주변 공간을 확인",
-        "바닥·장비·주변 반경과 안전한 내려놓기 위치 확인",
-        "가장 쉬운 범위와 낮은 강도에서 2회 리허설"
-      ],
-      "finish": "클린 풀을 마친 뒤 도구를 안전하게 내려놓고 그립·관절·피로 반응을 확인합니다.",
-      "commonMistakes": [
-        "무게를 몸에서 멀리 두고 반동으로 반복하기",
-        "정렬이 무너진 상태에서 반복 지속",
-        "통증·저림·어지러움 신호 무시"
-      ],
-      "regressions": [
-        "더 가벼운 도구·짧은 범위",
-        "반복·시간 또는 가동 범위 낮추기",
-        "더 안정된 지지 또는 쉬운 기본 동작으로 전환"
-      ],
-      "progressions": [
-        "정렬 유지 뒤 반복 또는 부하 하나만 소폭 증가",
-        "한 번에 하나의 변수만 조절",
-        "다음 날 반응이 편안할 때만 다음 단계 시도"
-      ]
-    }
-  },
-  {
-    "exercise": {
-      "id": "verified-clean-shrug",
-      "name": "클린 슈러그",
-      "englishName": "Clean Shrug",
-      "category": "프리웨이트",
-      "regions": [
-        "등",
-        "어깨"
-      ],
-      "focus": "근력",
-      "difficulty": "입문",
-      "equipment": "바벨·안전 랙 선택",
-      "minutes": "6–12회 · 2세트",
-      "description": "클린 슈러그은 바벨·안전 랙 선택을 사용해 등·어깨 중심의 독립적인 동작 경로를 연습하는 실제 운동 종목입니다.",
-      "cues": [
-        "중량을 몸 가까이·정렬 유지",
-        "바벨·안전 랙 선택과 신체 위치 먼저 확인",
-        "통증 없는 범위·호흡 유지"
-      ],
-      "benefits": [
-        "자유중량 제어",
-        "등·어깨 사용 인식",
-        "자기 조절 능력"
-      ],
-      "warning": "허리·관절 통증·저림·그립 미끄러짐·균형 상실 또는 주변 충돌 위험이 있으면 즉시 중단하세요.",
-      "reference": {
-        "label": "ACSM — Exercise Safety",
-        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
-      }
-    },
-    "detail": {
-      "setup": [
-        "클린 슈러그 전 바벨·안전 랙 선택·바닥·주변 공간을 확인",
-        "바닥·장비·주변 반경과 안전한 내려놓기 위치 확인",
-        "가장 쉬운 범위와 낮은 강도에서 2회 리허설"
-      ],
-      "finish": "클린 슈러그을 마친 뒤 도구를 안전하게 내려놓고 그립·관절·피로 반응을 확인합니다.",
-      "commonMistakes": [
-        "무게를 몸에서 멀리 두고 반동으로 반복하기",
-        "정렬이 무너진 상태에서 반복 지속",
-        "통증·저림·어지러움 신호 무시"
-      ],
-      "regressions": [
-        "더 가벼운 도구·짧은 범위",
-        "반복·시간 또는 가동 범위 낮추기",
-        "더 안정된 지지 또는 쉬운 기본 동작으로 전환"
-      ],
-      "progressions": [
-        "정렬 유지 뒤 반복 또는 부하 하나만 소폭 증가",
-        "한 번에 하나의 변수만 조절",
-        "다음 날 반응이 편안할 때만 다음 단계 시도"
-      ]
-    }
-  },
-  {
-    "exercise": {
-      "id": "verified-frankenstein-squat",
-      "name": "프랑켄슈타인 스쿼트",
-      "englishName": "Frankenstein Squat",
-      "category": "프리웨이트",
-      "regions": [
-        "하체"
-      ],
-      "focus": "근력",
-      "difficulty": "중급",
-      "equipment": "바벨·안전 랙 선택",
-      "minutes": "6–12회 · 2세트",
-      "description": "프랑켄슈타인 스쿼트은 바벨·안전 랙 선택을 사용해 하체 중심의 독립적인 동작 경로를 연습하는 실제 운동 종목입니다.",
-      "cues": [
-        "중량을 몸 가까이·정렬 유지",
-        "바벨·안전 랙 선택과 신체 위치 먼저 확인",
-        "통증 없는 범위·호흡 유지"
-      ],
-      "benefits": [
-        "자유중량 제어",
-        "하체 사용 인식",
-        "자기 조절 능력"
-      ],
-      "warning": "허리·관절 통증·저림·그립 미끄러짐·균형 상실 또는 주변 충돌 위험이 있으면 즉시 중단하세요.",
-      "reference": {
-        "label": "ACSM — Exercise Safety",
-        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
-      }
-    },
-    "detail": {
-      "setup": [
-        "프랑켄슈타인 스쿼트 전 바벨·안전 랙 선택·바닥·주변 공간을 확인",
-        "바닥·장비·주변 반경과 안전한 내려놓기 위치 확인",
-        "가장 쉬운 범위와 낮은 강도에서 2회 리허설"
-      ],
-      "finish": "프랑켄슈타인 스쿼트을 마친 뒤 도구를 안전하게 내려놓고 그립·관절·피로 반응을 확인합니다.",
-      "commonMistakes": [
-        "무게를 몸에서 멀리 두고 반동으로 반복하기",
-        "정렬이 무너진 상태에서 반복 지속",
-        "통증·저림·어지러움 신호 무시"
-      ],
-      "regressions": [
-        "더 가벼운 도구·짧은 범위",
-        "반복·시간 또는 가동 범위 낮추기",
-        "더 안정된 지지 또는 쉬운 기본 동작으로 전환"
-      ],
-      "progressions": [
-        "정렬 유지 뒤 반복 또는 부하 하나만 소폭 증가",
-        "한 번에 하나의 변수만 조절",
-        "다음 날 반응이 편안할 때만 다음 단계 시도"
-      ]
-    }
-  },
-  {
-    "exercise": {
-      "id": "verified-hang-clean",
-      "name": "행 클린",
-      "englishName": "Hang Clean",
-      "category": "프리웨이트",
-      "regions": [
-        "하체"
-      ],
-      "focus": "근력",
-      "difficulty": "중급",
-      "equipment": "바벨·안전 랙 선택",
-      "minutes": "6–12회 · 2세트",
-      "description": "행 클린은 바벨·안전 랙 선택을 사용해 하체 중심의 독립적인 동작 경로를 연습하는 실제 운동 종목입니다.",
-      "cues": [
-        "중량을 몸 가까이·정렬 유지",
-        "바벨·안전 랙 선택과 신체 위치 먼저 확인",
-        "통증 없는 범위·호흡 유지"
-      ],
-      "benefits": [
-        "자유중량 제어",
-        "하체 사용 인식",
-        "자기 조절 능력"
-      ],
-      "warning": "허리·관절 통증·저림·그립 미끄러짐·균형 상실 또는 주변 충돌 위험이 있으면 즉시 중단하세요.",
-      "reference": {
-        "label": "ACSM — Exercise Safety",
-        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
-      }
-    },
-    "detail": {
-      "setup": [
-        "행 클린 전 바벨·안전 랙 선택·바닥·주변 공간을 확인",
-        "바닥·장비·주변 반경과 안전한 내려놓기 위치 확인",
-        "가장 쉬운 범위와 낮은 강도에서 2회 리허설"
-      ],
-      "finish": "행 클린을 마친 뒤 도구를 안전하게 내려놓고 그립·관절·피로 반응을 확인합니다.",
-      "commonMistakes": [
-        "무게를 몸에서 멀리 두고 반동으로 반복하기",
-        "정렬이 무너진 상태에서 반복 지속",
-        "통증·저림·어지러움 신호 무시"
-      ],
-      "regressions": [
-        "더 가벼운 도구·짧은 범위",
-        "반복·시간 또는 가동 범위 낮추기",
-        "더 안정된 지지 또는 쉬운 기본 동작으로 전환"
-      ],
-      "progressions": [
-        "정렬 유지 뒤 반복 또는 부하 하나만 소폭 증가",
-        "한 번에 하나의 변수만 조절",
-        "다음 날 반응이 편안할 때만 다음 단계 시도"
-      ]
-    }
-  },
-  {
-    "exercise": {
-      "id": "verified-hang-clean-below-the-knees",
-      "name": "무릎 아래 행 클린",
-      "englishName": "Hang Clean - Below the Knees",
-      "category": "프리웨이트",
-      "regions": [
-        "하체"
-      ],
-      "focus": "근력",
-      "difficulty": "중급",
-      "equipment": "바벨·안전 랙 선택",
-      "minutes": "6–12회 · 2세트",
-      "description": "무릎 아래 행 클린은 바벨·안전 랙 선택을 사용해 하체 중심의 독립적인 동작 경로를 연습하는 실제 운동 종목입니다.",
-      "cues": [
-        "중량을 몸 가까이·정렬 유지",
-        "바벨·안전 랙 선택과 신체 위치 먼저 확인",
-        "통증 없는 범위·호흡 유지"
-      ],
-      "benefits": [
-        "자유중량 제어",
-        "하체 사용 인식",
-        "자기 조절 능력"
-      ],
-      "warning": "허리·관절 통증·저림·그립 미끄러짐·균형 상실 또는 주변 충돌 위험이 있으면 즉시 중단하세요.",
-      "reference": {
-        "label": "ACSM — Exercise Safety",
-        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
-      }
-    },
-    "detail": {
-      "setup": [
-        "무릎 아래 행 클린 전 바벨·안전 랙 선택·바닥·주변 공간을 확인",
-        "바닥·장비·주변 반경과 안전한 내려놓기 위치 확인",
-        "가장 쉬운 범위와 낮은 강도에서 2회 리허설"
-      ],
-      "finish": "무릎 아래 행 클린을 마친 뒤 도구를 안전하게 내려놓고 그립·관절·피로 반응을 확인합니다.",
-      "commonMistakes": [
-        "무게를 몸에서 멀리 두고 반동으로 반복하기",
-        "정렬이 무너진 상태에서 반복 지속",
-        "통증·저림·어지러움 신호 무시"
-      ],
-      "regressions": [
-        "더 가벼운 도구·짧은 범위",
-        "반복·시간 또는 가동 범위 낮추기",
-        "더 안정된 지지 또는 쉬운 기본 동작으로 전환"
-      ],
-      "progressions": [
-        "정렬 유지 뒤 반복 또는 부하 하나만 소폭 증가",
-        "한 번에 하나의 변수만 조절",
-        "다음 날 반응이 편안할 때만 다음 단계 시도"
-      ]
-    }
-  },
-  {
-    "exercise": {
-      "id": "verified-hang-snatch",
-      "name": "행 스내치",
-      "englishName": "Hang Snatch",
-      "category": "프리웨이트",
-      "regions": [
-        "하체",
-        "둔근"
-      ],
-      "focus": "근력",
-      "difficulty": "상급",
-      "equipment": "바벨·안전 랙 선택",
-      "minutes": "6–12회 · 2세트",
-      "description": "행 스내치은 바벨·안전 랙 선택을 사용해 하체·둔근 중심의 독립적인 동작 경로를 연습하는 실제 운동 종목입니다.",
-      "cues": [
-        "중량을 몸 가까이·정렬 유지",
-        "바벨·안전 랙 선택과 신체 위치 먼저 확인",
-        "통증 없는 범위·호흡 유지"
-      ],
-      "benefits": [
-        "자유중량 제어",
-        "하체·둔근 사용 인식",
-        "자기 조절 능력"
-      ],
-      "warning": "허리·관절 통증·저림·그립 미끄러짐·균형 상실 또는 주변 충돌 위험이 있으면 즉시 중단하세요.",
-      "reference": {
-        "label": "ACSM — Exercise Safety",
-        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
-      }
-    },
-    "detail": {
-      "setup": [
-        "행 스내치 전 바벨·안전 랙 선택·바닥·주변 공간을 확인",
-        "바닥·장비·주변 반경과 안전한 내려놓기 위치 확인",
-        "가장 쉬운 범위와 낮은 강도에서 2회 리허설"
-      ],
-      "finish": "행 스내치을 마친 뒤 도구를 안전하게 내려놓고 그립·관절·피로 반응을 확인합니다.",
-      "commonMistakes": [
-        "무게를 몸에서 멀리 두고 반동으로 반복하기",
-        "정렬이 무너진 상태에서 반복 지속",
-        "통증·저림·어지러움 신호 무시"
-      ],
-      "regressions": [
-        "더 가벼운 도구·짧은 범위",
-        "반복·시간 또는 가동 범위 낮추기",
-        "더 안정된 지지 또는 쉬운 기본 동작으로 전환"
-      ],
-      "progressions": [
-        "정렬 유지 뒤 반복 또는 부하 하나만 소폭 증가",
-        "한 번에 하나의 변수만 조절",
-        "다음 날 반응이 편안할 때만 다음 단계 시도"
-      ]
-    }
-  },
-  {
-    "exercise": {
-      "id": "verified-hang-snatch-below-knees",
-      "name": "무릎 아래 행 스내치",
-      "englishName": "Hang Snatch - Below Knees",
-      "category": "프리웨이트",
-      "regions": [
-        "하체",
-        "둔근"
-      ],
-      "focus": "근력",
-      "difficulty": "상급",
-      "equipment": "바벨·안전 랙 선택",
-      "minutes": "6–12회 · 2세트",
-      "description": "무릎 아래 행 스내치은 바벨·안전 랙 선택을 사용해 하체·둔근 중심의 독립적인 동작 경로를 연습하는 실제 운동 종목입니다.",
-      "cues": [
-        "중량을 몸 가까이·정렬 유지",
-        "바벨·안전 랙 선택과 신체 위치 먼저 확인",
-        "통증 없는 범위·호흡 유지"
-      ],
-      "benefits": [
-        "자유중량 제어",
-        "하체·둔근 사용 인식",
-        "자기 조절 능력"
-      ],
-      "warning": "허리·관절 통증·저림·그립 미끄러짐·균형 상실 또는 주변 충돌 위험이 있으면 즉시 중단하세요.",
-      "reference": {
-        "label": "ACSM — Exercise Safety",
-        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
-      }
-    },
-    "detail": {
-      "setup": [
-        "무릎 아래 행 스내치 전 바벨·안전 랙 선택·바닥·주변 공간을 확인",
-        "바닥·장비·주변 반경과 안전한 내려놓기 위치 확인",
-        "가장 쉬운 범위와 낮은 강도에서 2회 리허설"
-      ],
-      "finish": "무릎 아래 행 스내치을 마친 뒤 도구를 안전하게 내려놓고 그립·관절·피로 반응을 확인합니다.",
-      "commonMistakes": [
-        "무게를 몸에서 멀리 두고 반동으로 반복하기",
-        "정렬이 무너진 상태에서 반복 지속",
-        "통증·저림·어지러움 신호 무시"
-      ],
-      "regressions": [
-        "더 가벼운 도구·짧은 범위",
-        "반복·시간 또는 가동 범위 낮추기",
-        "더 안정된 지지 또는 쉬운 기본 동작으로 전환"
-      ],
-      "progressions": [
-        "정렬 유지 뒤 반복 또는 부하 하나만 소폭 증가",
-        "한 번에 하나의 변수만 조절",
-        "다음 날 반응이 편안할 때만 다음 단계 시도"
-      ]
-    }
-  },
-  {
-    "exercise": {
-      "id": "verified-heaving-snatch-balance",
-      "name": "헤빙 스내치 밸런스",
-      "englishName": "Heaving Snatch Balance",
-      "category": "프리웨이트",
-      "regions": [
-        "하체"
-      ],
-      "focus": "근력",
-      "difficulty": "중급",
-      "equipment": "바벨·안전 랙 선택",
-      "minutes": "6–12회 · 2세트",
-      "description": "헤빙 스내치 밸런스은 바벨·안전 랙 선택을 사용해 하체 중심의 독립적인 동작 경로를 연습하는 실제 운동 종목입니다.",
-      "cues": [
-        "중량을 몸 가까이·정렬 유지",
-        "바벨·안전 랙 선택과 신체 위치 먼저 확인",
-        "통증 없는 범위·호흡 유지"
-      ],
-      "benefits": [
-        "자유중량 제어",
-        "하체 사용 인식",
-        "자기 조절 능력"
-      ],
-      "warning": "허리·관절 통증·저림·그립 미끄러짐·균형 상실 또는 주변 충돌 위험이 있으면 즉시 중단하세요.",
-      "reference": {
-        "label": "ACSM — Exercise Safety",
-        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
-      }
-    },
-    "detail": {
-      "setup": [
-        "헤빙 스내치 밸런스 전 바벨·안전 랙 선택·바닥·주변 공간을 확인",
-        "바닥·장비·주변 반경과 안전한 내려놓기 위치 확인",
-        "가장 쉬운 범위와 낮은 강도에서 2회 리허설"
-      ],
-      "finish": "헤빙 스내치 밸런스을 마친 뒤 도구를 안전하게 내려놓고 그립·관절·피로 반응을 확인합니다.",
-      "commonMistakes": [
-        "무게를 몸에서 멀리 두고 반동으로 반복하기",
-        "정렬이 무너진 상태에서 반복 지속",
-        "통증·저림·어지러움 신호 무시"
-      ],
-      "regressions": [
-        "더 가벼운 도구·짧은 범위",
-        "반복·시간 또는 가동 범위 낮추기",
-        "더 안정된 지지 또는 쉬운 기본 동작으로 전환"
-      ],
-      "progressions": [
-        "정렬 유지 뒤 반복 또는 부하 하나만 소폭 증가",
-        "한 번에 하나의 변수만 조절",
-        "다음 날 반응이 편안할 때만 다음 단계 시도"
-      ]
-    }
-  },
-  {
-    "exercise": {
-      "id": "verified-jerk-balance",
-      "name": "저크 밸런스",
-      "englishName": "Jerk Balance",
-      "category": "프리웨이트",
-      "regions": [
-        "어깨"
-      ],
-      "focus": "근력",
-      "difficulty": "중급",
-      "equipment": "바벨·안전 랙 선택",
-      "minutes": "6–12회 · 2세트",
-      "description": "저크 밸런스은 바벨·안전 랙 선택을 사용해 어깨 중심의 독립적인 동작 경로를 연습하는 실제 운동 종목입니다.",
-      "cues": [
-        "중량을 몸 가까이·정렬 유지",
-        "바벨·안전 랙 선택과 신체 위치 먼저 확인",
-        "통증 없는 범위·호흡 유지"
-      ],
-      "benefits": [
-        "자유중량 제어",
-        "어깨 사용 인식",
-        "자기 조절 능력"
-      ],
-      "warning": "허리·관절 통증·저림·그립 미끄러짐·균형 상실 또는 주변 충돌 위험이 있으면 즉시 중단하세요.",
-      "reference": {
-        "label": "ACSM — Exercise Safety",
-        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
-      }
-    },
-    "detail": {
-      "setup": [
-        "저크 밸런스 전 바벨·안전 랙 선택·바닥·주변 공간을 확인",
-        "바닥·장비·주변 반경과 안전한 내려놓기 위치 확인",
-        "가장 쉬운 범위와 낮은 강도에서 2회 리허설"
-      ],
-      "finish": "저크 밸런스을 마친 뒤 도구를 안전하게 내려놓고 그립·관절·피로 반응을 확인합니다.",
-      "commonMistakes": [
-        "무게를 몸에서 멀리 두고 반동으로 반복하기",
-        "정렬이 무너진 상태에서 반복 지속",
-        "통증·저림·어지러움 신호 무시"
-      ],
-      "regressions": [
-        "더 가벼운 도구·짧은 범위",
-        "반복·시간 또는 가동 범위 낮추기",
-        "더 안정된 지지 또는 쉬운 기본 동작으로 전환"
-      ],
-      "progressions": [
-        "정렬 유지 뒤 반복 또는 부하 하나만 소폭 증가",
-        "한 번에 하나의 변수만 조절",
-        "다음 날 반응이 편안할 때만 다음 단계 시도"
-      ]
-    }
-  },
-  {
-    "exercise": {
-      "id": "verified-jerk-dip-squat",
-      "name": "저크 딥 스쿼트",
-      "englishName": "Jerk Dip Squat",
-      "category": "프리웨이트",
-      "regions": [
-        "하체"
-      ],
-      "focus": "근력",
-      "difficulty": "중급",
-      "equipment": "바벨·안전 랙 선택",
-      "minutes": "6–12회 · 2세트",
-      "description": "저크 딥 스쿼트은 바벨·안전 랙 선택을 사용해 하체 중심의 독립적인 동작 경로를 연습하는 실제 운동 종목입니다.",
-      "cues": [
-        "중량을 몸 가까이·정렬 유지",
-        "바벨·안전 랙 선택과 신체 위치 먼저 확인",
-        "통증 없는 범위·호흡 유지"
-      ],
-      "benefits": [
-        "자유중량 제어",
-        "하체 사용 인식",
-        "자기 조절 능력"
-      ],
-      "warning": "허리·관절 통증·저림·그립 미끄러짐·균형 상실 또는 주변 충돌 위험이 있으면 즉시 중단하세요.",
-      "reference": {
-        "label": "ACSM — Exercise Safety",
-        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
-      }
-    },
-    "detail": {
-      "setup": [
-        "저크 딥 스쿼트 전 바벨·안전 랙 선택·바닥·주변 공간을 확인",
-        "바닥·장비·주변 반경과 안전한 내려놓기 위치 확인",
-        "가장 쉬운 범위와 낮은 강도에서 2회 리허설"
-      ],
-      "finish": "저크 딥 스쿼트을 마친 뒤 도구를 안전하게 내려놓고 그립·관절·피로 반응을 확인합니다.",
-      "commonMistakes": [
-        "무게를 몸에서 멀리 두고 반동으로 반복하기",
-        "정렬이 무너진 상태에서 반복 지속",
-        "통증·저림·어지러움 신호 무시"
-      ],
-      "regressions": [
-        "더 가벼운 도구·짧은 범위",
-        "반복·시간 또는 가동 범위 낮추기",
-        "더 안정된 지지 또는 쉬운 기본 동작으로 전환"
-      ],
-      "progressions": [
-        "정렬 유지 뒤 반복 또는 부하 하나만 소폭 증가",
-        "한 번에 하나의 변수만 조절",
-        "다음 날 반응이 편안할 때만 다음 단계 시도"
-      ]
-    }
-  },
-  {
-    "exercise": {
-      "id": "verified-kneeling-jump-squat",
-      "name": "무릎 점프 스쿼트",
-      "englishName": "Kneeling Jump Squat",
-      "category": "프리웨이트",
-      "regions": [
-        "둔근",
-        "하체"
-      ],
-      "focus": "근력",
-      "difficulty": "상급",
-      "equipment": "바벨·안전 랙 선택",
-      "minutes": "6–12회 · 2세트",
-      "description": "무릎 점프 스쿼트은 바벨·안전 랙 선택을 사용해 둔근·하체 중심의 독립적인 동작 경로를 연습하는 실제 운동 종목입니다.",
-      "cues": [
-        "중량을 몸 가까이·정렬 유지",
-        "바벨·안전 랙 선택과 신체 위치 먼저 확인",
-        "통증 없는 범위·호흡 유지"
-      ],
-      "benefits": [
-        "자유중량 제어",
-        "둔근·하체 사용 인식",
-        "자기 조절 능력"
-      ],
-      "warning": "허리·관절 통증·저림·그립 미끄러짐·균형 상실 또는 주변 충돌 위험이 있으면 즉시 중단하세요.",
-      "reference": {
-        "label": "ACSM — Exercise Safety",
-        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
-      }
-    },
-    "detail": {
-      "setup": [
-        "무릎 점프 스쿼트 전 바벨·안전 랙 선택·바닥·주변 공간을 확인",
-        "바닥·장비·주변 반경과 안전한 내려놓기 위치 확인",
-        "가장 쉬운 범위와 낮은 강도에서 2회 리허설"
-      ],
-      "finish": "무릎 점프 스쿼트을 마친 뒤 도구를 안전하게 내려놓고 그립·관절·피로 반응을 확인합니다.",
-      "commonMistakes": [
-        "무게를 몸에서 멀리 두고 반동으로 반복하기",
-        "정렬이 무너진 상태에서 반복 지속",
-        "통증·저림·어지러움 신호 무시"
-      ],
-      "regressions": [
-        "더 가벼운 도구·짧은 범위",
-        "반복·시간 또는 가동 범위 낮추기",
-        "더 안정된 지지 또는 쉬운 기본 동작으로 전환"
-      ],
-      "progressions": [
-        "정렬 유지 뒤 반복 또는 부하 하나만 소폭 증가",
-        "한 번에 하나의 변수만 조절",
-        "다음 날 반응이 편안할 때만 다음 단계 시도"
-      ]
-    }
-  },
-  {
-    "exercise": {
-      "id": "verified-muscle-snatch",
-      "name": "머슬 스내치",
-      "englishName": "Muscle Snatch",
-      "category": "프리웨이트",
-      "regions": [
-        "하체",
-        "둔근"
-      ],
-      "focus": "근력",
-      "difficulty": "중급",
-      "equipment": "바벨·안전 랙 선택",
-      "minutes": "6–12회 · 2세트",
-      "description": "머슬 스내치은 바벨·안전 랙 선택을 사용해 하체·둔근 중심의 독립적인 동작 경로를 연습하는 실제 운동 종목입니다.",
-      "cues": [
-        "중량을 몸 가까이·정렬 유지",
-        "바벨·안전 랙 선택과 신체 위치 먼저 확인",
-        "통증 없는 범위·호흡 유지"
-      ],
-      "benefits": [
-        "자유중량 제어",
-        "하체·둔근 사용 인식",
-        "자기 조절 능력"
-      ],
-      "warning": "허리·관절 통증·저림·그립 미끄러짐·균형 상실 또는 주변 충돌 위험이 있으면 즉시 중단하세요.",
-      "reference": {
-        "label": "ACSM — Exercise Safety",
-        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
-      }
-    },
-    "detail": {
-      "setup": [
-        "머슬 스내치 전 바벨·안전 랙 선택·바닥·주변 공간을 확인",
-        "바닥·장비·주변 반경과 안전한 내려놓기 위치 확인",
-        "가장 쉬운 범위와 낮은 강도에서 2회 리허설"
-      ],
-      "finish": "머슬 스내치을 마친 뒤 도구를 안전하게 내려놓고 그립·관절·피로 반응을 확인합니다.",
-      "commonMistakes": [
-        "무게를 몸에서 멀리 두고 반동으로 반복하기",
-        "정렬이 무너진 상태에서 반복 지속",
-        "통증·저림·어지러움 신호 무시"
-      ],
-      "regressions": [
-        "더 가벼운 도구·짧은 범위",
-        "반복·시간 또는 가동 범위 낮추기",
-        "더 안정된 지지 또는 쉬운 기본 동작으로 전환"
-      ],
-      "progressions": [
-        "정렬 유지 뒤 반복 또는 부하 하나만 소폭 증가",
-        "한 번에 하나의 변수만 조절",
-        "다음 날 반응이 편안할 때만 다음 단계 시도"
-      ]
-    }
-  },
-  {
-    "exercise": {
-      "id": "verified-olympic-squat",
-      "name": "올림픽 스쿼트",
-      "englishName": "Olympic Squat",
-      "category": "프리웨이트",
-      "regions": [
-        "하체"
-      ],
-      "focus": "근력",
-      "difficulty": "중급",
-      "equipment": "바벨·안전 랙 선택",
-      "minutes": "6–12회 · 2세트",
-      "description": "올림픽 스쿼트은 바벨·안전 랙 선택을 사용해 하체 중심의 독립적인 동작 경로를 연습하는 실제 운동 종목입니다.",
-      "cues": [
-        "중량을 몸 가까이·정렬 유지",
-        "바벨·안전 랙 선택과 신체 위치 먼저 확인",
-        "통증 없는 범위·호흡 유지"
-      ],
-      "benefits": [
-        "자유중량 제어",
-        "하체 사용 인식",
-        "자기 조절 능력"
-      ],
-      "warning": "허리·관절 통증·저림·그립 미끄러짐·균형 상실 또는 주변 충돌 위험이 있으면 즉시 중단하세요.",
-      "reference": {
-        "label": "ACSM — Exercise Safety",
-        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
-      }
-    },
-    "detail": {
-      "setup": [
-        "올림픽 스쿼트 전 바벨·안전 랙 선택·바닥·주변 공간을 확인",
-        "바닥·장비·주변 반경과 안전한 내려놓기 위치 확인",
-        "가장 쉬운 범위와 낮은 강도에서 2회 리허설"
-      ],
-      "finish": "올림픽 스쿼트을 마친 뒤 도구를 안전하게 내려놓고 그립·관절·피로 반응을 확인합니다.",
-      "commonMistakes": [
-        "무게를 몸에서 멀리 두고 반동으로 반복하기",
-        "정렬이 무너진 상태에서 반복 지속",
-        "통증·저림·어지러움 신호 무시"
-      ],
-      "regressions": [
-        "더 가벼운 도구·짧은 범위",
-        "반복·시간 또는 가동 범위 낮추기",
-        "더 안정된 지지 또는 쉬운 기본 동작으로 전환"
-      ],
-      "progressions": [
-        "정렬 유지 뒤 반복 또는 부하 하나만 소폭 증가",
-        "한 번에 하나의 변수만 조절",
-        "다음 날 반응이 편안할 때만 다음 단계 시도"
-      ]
-    }
-  },
-  {
-    "exercise": {
-      "id": "verified-overhead-squat",
-      "name": "오버헤드 스쿼트",
-      "englishName": "Overhead Squat",
-      "category": "프리웨이트",
-      "regions": [
-        "하체"
-      ],
-      "focus": "근력",
-      "difficulty": "상급",
-      "equipment": "바벨·안전 랙 선택",
-      "minutes": "6–12회 · 2세트",
-      "description": "오버헤드 스쿼트은 바벨·안전 랙 선택을 사용해 하체 중심의 독립적인 동작 경로를 연습하는 실제 운동 종목입니다.",
-      "cues": [
-        "중량을 몸 가까이·정렬 유지",
-        "바벨·안전 랙 선택과 신체 위치 먼저 확인",
-        "통증 없는 범위·호흡 유지"
-      ],
-      "benefits": [
-        "자유중량 제어",
-        "하체 사용 인식",
-        "자기 조절 능력"
-      ],
-      "warning": "허리·관절 통증·저림·그립 미끄러짐·균형 상실 또는 주변 충돌 위험이 있으면 즉시 중단하세요.",
-      "reference": {
-        "label": "ACSM — Exercise Safety",
-        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
-      }
-    },
-    "detail": {
-      "setup": [
-        "오버헤드 스쿼트 전 바벨·안전 랙 선택·바닥·주변 공간을 확인",
-        "바닥·장비·주변 반경과 안전한 내려놓기 위치 확인",
-        "가장 쉬운 범위와 낮은 강도에서 2회 리허설"
-      ],
-      "finish": "오버헤드 스쿼트을 마친 뒤 도구를 안전하게 내려놓고 그립·관절·피로 반응을 확인합니다.",
-      "commonMistakes": [
-        "무게를 몸에서 멀리 두고 반동으로 반복하기",
-        "정렬이 무너진 상태에서 반복 지속",
-        "통증·저림·어지러움 신호 무시"
-      ],
-      "regressions": [
-        "더 가벼운 도구·짧은 범위",
-        "반복·시간 또는 가동 범위 낮추기",
-        "더 안정된 지지 또는 쉬운 기본 동작으로 전환"
-      ],
-      "progressions": [
-        "정렬 유지 뒤 반복 또는 부하 하나만 소폭 증가",
-        "한 번에 하나의 변수만 조절",
-        "다음 날 반응이 편안할 때만 다음 단계 시도"
-      ]
-    }
-  },
-  {
-    "exercise": {
-      "id": "verified-power-clean-from-blocks",
-      "name": "블록 파워 클린",
-      "englishName": "Power Clean from Blocks",
-      "category": "프리웨이트",
-      "regions": [
-        "하체",
-        "둔근"
-      ],
-      "focus": "근력",
-      "difficulty": "중급",
-      "equipment": "바벨·안전 랙 선택",
-      "minutes": "6–12회 · 2세트",
-      "description": "블록 파워 클린은 바벨·안전 랙 선택을 사용해 하체·둔근 중심의 독립적인 동작 경로를 연습하는 실제 운동 종목입니다.",
-      "cues": [
-        "중량을 몸 가까이·정렬 유지",
-        "바벨·안전 랙 선택과 신체 위치 먼저 확인",
-        "통증 없는 범위·호흡 유지"
-      ],
-      "benefits": [
-        "자유중량 제어",
-        "하체·둔근 사용 인식",
-        "자기 조절 능력"
-      ],
-      "warning": "허리·관절 통증·저림·그립 미끄러짐·균형 상실 또는 주변 충돌 위험이 있으면 즉시 중단하세요.",
-      "reference": {
-        "label": "ACSM — Exercise Safety",
-        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
-      }
-    },
-    "detail": {
-      "setup": [
-        "블록 파워 클린 전 바벨·안전 랙 선택·바닥·주변 공간을 확인",
-        "바닥·장비·주변 반경과 안전한 내려놓기 위치 확인",
-        "가장 쉬운 범위와 낮은 강도에서 2회 리허설"
-      ],
-      "finish": "블록 파워 클린을 마친 뒤 도구를 안전하게 내려놓고 그립·관절·피로 반응을 확인합니다.",
-      "commonMistakes": [
-        "무게를 몸에서 멀리 두고 반동으로 반복하기",
-        "정렬이 무너진 상태에서 반복 지속",
-        "통증·저림·어지러움 신호 무시"
-      ],
-      "regressions": [
-        "더 가벼운 도구·짧은 범위",
-        "반복·시간 또는 가동 범위 낮추기",
-        "더 안정된 지지 또는 쉬운 기본 동작으로 전환"
-      ],
-      "progressions": [
-        "정렬 유지 뒤 반복 또는 부하 하나만 소폭 증가",
-        "한 번에 하나의 변수만 조절",
-        "다음 날 반응이 편안할 때만 다음 단계 시도"
-      ]
-    }
-  },
-  {
-    "exercise": {
-      "id": "verified-power-jerk",
-      "name": "파워 저크",
-      "englishName": "Power Jerk",
-      "category": "프리웨이트",
-      "regions": [
-        "하체"
-      ],
-      "focus": "근력",
-      "difficulty": "상급",
-      "equipment": "바벨·안전 랙 선택",
-      "minutes": "6–12회 · 2세트",
-      "description": "파워 저크은 바벨·안전 랙 선택을 사용해 하체 중심의 독립적인 동작 경로를 연습하는 실제 운동 종목입니다.",
-      "cues": [
-        "중량을 몸 가까이·정렬 유지",
-        "바벨·안전 랙 선택과 신체 위치 먼저 확인",
-        "통증 없는 범위·호흡 유지"
-      ],
-      "benefits": [
-        "자유중량 제어",
-        "하체 사용 인식",
-        "자기 조절 능력"
-      ],
-      "warning": "허리·관절 통증·저림·그립 미끄러짐·균형 상실 또는 주변 충돌 위험이 있으면 즉시 중단하세요.",
-      "reference": {
-        "label": "ACSM — Exercise Safety",
-        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
-      }
-    },
-    "detail": {
-      "setup": [
-        "파워 저크 전 바벨·안전 랙 선택·바닥·주변 공간을 확인",
-        "바닥·장비·주변 반경과 안전한 내려놓기 위치 확인",
-        "가장 쉬운 범위와 낮은 강도에서 2회 리허설"
-      ],
-      "finish": "파워 저크을 마친 뒤 도구를 안전하게 내려놓고 그립·관절·피로 반응을 확인합니다.",
-      "commonMistakes": [
-        "무게를 몸에서 멀리 두고 반동으로 반복하기",
-        "정렬이 무너진 상태에서 반복 지속",
-        "통증·저림·어지러움 신호 무시"
-      ],
-      "regressions": [
-        "더 가벼운 도구·짧은 범위",
-        "반복·시간 또는 가동 범위 낮추기",
-        "더 안정된 지지 또는 쉬운 기본 동작으로 전환"
-      ],
-      "progressions": [
-        "정렬 유지 뒤 반복 또는 부하 하나만 소폭 증가",
-        "한 번에 하나의 변수만 조절",
-        "다음 날 반응이 편안할 때만 다음 단계 시도"
-      ]
-    }
-  },
-  {
-    "exercise": {
-      "id": "verified-power-snatch",
-      "name": "파워 스내치",
-      "englishName": "Power Snatch",
-      "category": "프리웨이트",
-      "regions": [
-        "하체",
-        "둔근"
-      ],
-      "focus": "근력",
-      "difficulty": "상급",
-      "equipment": "바벨·안전 랙 선택",
-      "minutes": "6–12회 · 2세트",
-      "description": "파워 스내치은 바벨·안전 랙 선택을 사용해 하체·둔근 중심의 독립적인 동작 경로를 연습하는 실제 운동 종목입니다.",
-      "cues": [
-        "중량을 몸 가까이·정렬 유지",
-        "바벨·안전 랙 선택과 신체 위치 먼저 확인",
-        "통증 없는 범위·호흡 유지"
-      ],
-      "benefits": [
-        "자유중량 제어",
-        "하체·둔근 사용 인식",
-        "자기 조절 능력"
-      ],
-      "warning": "허리·관절 통증·저림·그립 미끄러짐·균형 상실 또는 주변 충돌 위험이 있으면 즉시 중단하세요.",
-      "reference": {
-        "label": "ACSM — Exercise Safety",
-        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
-      }
-    },
-    "detail": {
-      "setup": [
-        "파워 스내치 전 바벨·안전 랙 선택·바닥·주변 공간을 확인",
-        "바닥·장비·주변 반경과 안전한 내려놓기 위치 확인",
-        "가장 쉬운 범위와 낮은 강도에서 2회 리허설"
-      ],
-      "finish": "파워 스내치을 마친 뒤 도구를 안전하게 내려놓고 그립·관절·피로 반응을 확인합니다.",
-      "commonMistakes": [
-        "무게를 몸에서 멀리 두고 반동으로 반복하기",
-        "정렬이 무너진 상태에서 반복 지속",
-        "통증·저림·어지러움 신호 무시"
-      ],
-      "regressions": [
-        "더 가벼운 도구·짧은 범위",
-        "반복·시간 또는 가동 범위 낮추기",
-        "더 안정된 지지 또는 쉬운 기본 동작으로 전환"
-      ],
-      "progressions": [
-        "정렬 유지 뒤 반복 또는 부하 하나만 소폭 증가",
-        "한 번에 하나의 변수만 조절",
-        "다음 날 반응이 편안할 때만 다음 단계 시도"
-      ]
-    }
-  },
-  {
-    "exercise": {
       "id": "verified-power-snatch-from-blocks",
       "name": "블록 파워 스내치",
       "englishName": "Power Snatch from Blocks",
@@ -5420,6 +3628,1803 @@ export const catalogPage06: CatalogEntry[] = [
       ],
       "progressions": [
         "착지 제어 뒤 거리 또는 반복 하나만 증가",
+        "한 번에 하나의 변수만 조절",
+        "다음 날 반응이 편안할 때만 다음 단계 시도"
+      ]
+    }
+  },
+  {
+    "exercise": {
+      "id": "verified-single-cone-sprint-drill",
+      "name": "싱글 콘 스프린트",
+      "englishName": "Single-Cone Sprint Drill",
+      "category": "파워·민첩성",
+      "regions": [
+        "하체"
+      ],
+      "focus": "파워",
+      "difficulty": "입문",
+      "equipment": "안정된 전용 장비",
+      "minutes": "3–6회 · 2세트",
+      "description": "싱글 콘 스프린트은 안정된 전용 장비을 사용해 하체 중심의 독립적인 동작 경로를 연습하는 실제 운동 종목입니다.",
+      "cues": [
+        "낮은 충격·착지 제어",
+        "안정된 전용 장비과 신체 위치 먼저 확인",
+        "통증 없는 범위·호흡 유지"
+      ],
+      "benefits": [
+        "파워·방향 제어",
+        "하체 사용 인식",
+        "자기 조절 능력"
+      ],
+      "warning": "무릎·발목·허리 통증·착지 불안·피로 누적·공간 부족 또는 미끄러운 바닥이 있으면 즉시 중단하세요.",
+      "reference": {
+        "label": "ACSM — Exercise Safety",
+        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
+      }
+    },
+    "detail": {
+      "setup": [
+        "싱글 콘 스프린트 전 안정된 전용 장비·바닥·주변 공간을 확인",
+        "낮은 충격의 기본 동작과 착지 공간 확인",
+        "가장 쉬운 범위와 낮은 강도에서 2회 리허설"
+      ],
+      "finish": "싱글 콘 스프린트을 마친 뒤 걷기로 호흡을 낮추고 관절·착지 반응을 확인합니다.",
+      "commonMistakes": [
+        "높이·속도·거리부터 동시에 올리기",
+        "정렬이 무너진 상태에서 반복 지속",
+        "통증·저림·어지러움 신호 무시"
+      ],
+      "regressions": [
+        "점프 없는 체중 이동·낮은 속도",
+        "반복·시간 또는 가동 범위 낮추기",
+        "더 안정된 지지 또는 쉬운 기본 동작으로 전환"
+      ],
+      "progressions": [
+        "착지 제어 뒤 거리 또는 반복 하나만 증가",
+        "한 번에 하나의 변수만 조절",
+        "다음 날 반응이 편안할 때만 다음 단계 시도"
+      ]
+    }
+  },
+  {
+    "exercise": {
+      "id": "verified-single-leg-lateral-hop",
+      "name": "싱글레그 측면 홉",
+      "englishName": "Single-Leg Lateral Hop",
+      "category": "파워·민첩성",
+      "regions": [
+        "하체"
+      ],
+      "focus": "파워",
+      "difficulty": "입문",
+      "equipment": "안정된 전용 장비",
+      "minutes": "3–6회 · 2세트",
+      "description": "싱글레그 측면 홉은 안정된 전용 장비을 사용해 하체 중심의 독립적인 동작 경로를 연습하는 실제 운동 종목입니다.",
+      "cues": [
+        "낮은 충격·착지 제어",
+        "안정된 전용 장비과 신체 위치 먼저 확인",
+        "통증 없는 범위·호흡 유지"
+      ],
+      "benefits": [
+        "파워·방향 제어",
+        "하체 사용 인식",
+        "자기 조절 능력"
+      ],
+      "warning": "무릎·발목·허리 통증·착지 불안·피로 누적·공간 부족 또는 미끄러운 바닥이 있으면 즉시 중단하세요.",
+      "reference": {
+        "label": "ACSM — Exercise Safety",
+        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
+      }
+    },
+    "detail": {
+      "setup": [
+        "싱글레그 측면 홉 전 안정된 전용 장비·바닥·주변 공간을 확인",
+        "낮은 충격의 기본 동작과 착지 공간 확인",
+        "가장 쉬운 범위와 낮은 강도에서 2회 리허설"
+      ],
+      "finish": "싱글레그 측면 홉을 마친 뒤 걷기로 호흡을 낮추고 관절·착지 반응을 확인합니다.",
+      "commonMistakes": [
+        "높이·속도·거리부터 동시에 올리기",
+        "정렬이 무너진 상태에서 반복 지속",
+        "통증·저림·어지러움 신호 무시"
+      ],
+      "regressions": [
+        "점프 없는 체중 이동·낮은 속도",
+        "반복·시간 또는 가동 범위 낮추기",
+        "더 안정된 지지 또는 쉬운 기본 동작으로 전환"
+      ],
+      "progressions": [
+        "착지 제어 뒤 거리 또는 반복 하나만 증가",
+        "한 번에 하나의 변수만 조절",
+        "다음 날 반응이 편안할 때만 다음 단계 시도"
+      ]
+    }
+  },
+  {
+    "exercise": {
+      "id": "verified-single-leg-stride-jump",
+      "name": "싱글레그 스트라이드 점프",
+      "englishName": "Single-Leg Stride Jump",
+      "category": "파워·민첩성",
+      "regions": [
+        "하체"
+      ],
+      "focus": "파워",
+      "difficulty": "입문",
+      "equipment": "안정된 전용 장비",
+      "minutes": "3–6회 · 2세트",
+      "description": "싱글레그 스트라이드 점프은 안정된 전용 장비을 사용해 하체 중심의 독립적인 동작 경로를 연습하는 실제 운동 종목입니다.",
+      "cues": [
+        "낮은 충격·착지 제어",
+        "안정된 전용 장비과 신체 위치 먼저 확인",
+        "통증 없는 범위·호흡 유지"
+      ],
+      "benefits": [
+        "파워·방향 제어",
+        "하체 사용 인식",
+        "자기 조절 능력"
+      ],
+      "warning": "무릎·발목·허리 통증·착지 불안·피로 누적·공간 부족 또는 미끄러운 바닥이 있으면 즉시 중단하세요.",
+      "reference": {
+        "label": "ACSM — Exercise Safety",
+        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
+      }
+    },
+    "detail": {
+      "setup": [
+        "싱글레그 스트라이드 점프 전 안정된 전용 장비·바닥·주변 공간을 확인",
+        "낮은 충격의 기본 동작과 착지 공간 확인",
+        "가장 쉬운 범위와 낮은 강도에서 2회 리허설"
+      ],
+      "finish": "싱글레그 스트라이드 점프을 마친 뒤 걷기로 호흡을 낮추고 관절·착지 반응을 확인합니다.",
+      "commonMistakes": [
+        "높이·속도·거리부터 동시에 올리기",
+        "정렬이 무너진 상태에서 반복 지속",
+        "통증·저림·어지러움 신호 무시"
+      ],
+      "regressions": [
+        "점프 없는 체중 이동·낮은 속도",
+        "반복·시간 또는 가동 범위 낮추기",
+        "더 안정된 지지 또는 쉬운 기본 동작으로 전환"
+      ],
+      "progressions": [
+        "착지 제어 뒤 거리 또는 반복 하나만 증가",
+        "한 번에 하나의 변수만 조절",
+        "다음 날 반응이 편안할 때만 다음 단계 시도"
+      ]
+    }
+  },
+  {
+    "exercise": {
+      "id": "verified-sledgehammer-swings",
+      "name": "슬레지해머 스윙",
+      "englishName": "Sledgehammer Swings",
+      "category": "파워·민첩성",
+      "regions": [
+        "코어"
+      ],
+      "focus": "파워",
+      "difficulty": "입문",
+      "equipment": "안정된 전용 장비",
+      "minutes": "3–6회 · 2세트",
+      "description": "슬레지해머 스윙은 안정된 전용 장비을 사용해 코어 중심의 독립적인 동작 경로를 연습하는 실제 운동 종목입니다.",
+      "cues": [
+        "낮은 충격·착지 제어",
+        "안정된 전용 장비과 신체 위치 먼저 확인",
+        "통증 없는 범위·호흡 유지"
+      ],
+      "benefits": [
+        "파워·방향 제어",
+        "코어 사용 인식",
+        "자기 조절 능력"
+      ],
+      "warning": "무릎·발목·허리 통증·착지 불안·피로 누적·공간 부족 또는 미끄러운 바닥이 있으면 즉시 중단하세요.",
+      "reference": {
+        "label": "ACSM — Exercise Safety",
+        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
+      }
+    },
+    "detail": {
+      "setup": [
+        "슬레지해머 스윙 전 안정된 전용 장비·바닥·주변 공간을 확인",
+        "낮은 충격의 기본 동작과 착지 공간 확인",
+        "가장 쉬운 범위와 낮은 강도에서 2회 리허설"
+      ],
+      "finish": "슬레지해머 스윙을 마친 뒤 걷기로 호흡을 낮추고 관절·착지 반응을 확인합니다.",
+      "commonMistakes": [
+        "높이·속도·거리부터 동시에 올리기",
+        "정렬이 무너진 상태에서 반복 지속",
+        "통증·저림·어지러움 신호 무시"
+      ],
+      "regressions": [
+        "점프 없는 체중 이동·낮은 속도",
+        "반복·시간 또는 가동 범위 낮추기",
+        "더 안정된 지지 또는 쉬운 기본 동작으로 전환"
+      ],
+      "progressions": [
+        "착지 제어 뒤 거리 또는 반복 하나만 증가",
+        "한 번에 하나의 변수만 조절",
+        "다음 날 반응이 편안할 때만 다음 단계 시도"
+      ]
+    }
+  },
+  {
+    "exercise": {
+      "id": "verified-stride-jump-crossover",
+      "name": "스트라이드 점프 크로스오버",
+      "englishName": "Stride Jump Crossover",
+      "category": "파워·민첩성",
+      "regions": [
+        "하체"
+      ],
+      "focus": "파워",
+      "difficulty": "입문",
+      "equipment": "안정된 전용 장비",
+      "minutes": "3–6회 · 2세트",
+      "description": "스트라이드 점프 크로스오버은 안정된 전용 장비을 사용해 하체 중심의 독립적인 동작 경로를 연습하는 실제 운동 종목입니다.",
+      "cues": [
+        "낮은 충격·착지 제어",
+        "안정된 전용 장비과 신체 위치 먼저 확인",
+        "통증 없는 범위·호흡 유지"
+      ],
+      "benefits": [
+        "파워·방향 제어",
+        "하체 사용 인식",
+        "자기 조절 능력"
+      ],
+      "warning": "무릎·발목·허리 통증·착지 불안·피로 누적·공간 부족 또는 미끄러운 바닥이 있으면 즉시 중단하세요.",
+      "reference": {
+        "label": "ACSM — Exercise Safety",
+        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
+      }
+    },
+    "detail": {
+      "setup": [
+        "스트라이드 점프 크로스오버 전 안정된 전용 장비·바닥·주변 공간을 확인",
+        "낮은 충격의 기본 동작과 착지 공간 확인",
+        "가장 쉬운 범위와 낮은 강도에서 2회 리허설"
+      ],
+      "finish": "스트라이드 점프 크로스오버을 마친 뒤 걷기로 호흡을 낮추고 관절·착지 반응을 확인합니다.",
+      "commonMistakes": [
+        "높이·속도·거리부터 동시에 올리기",
+        "정렬이 무너진 상태에서 반복 지속",
+        "통증·저림·어지러움 신호 무시"
+      ],
+      "regressions": [
+        "점프 없는 체중 이동·낮은 속도",
+        "반복·시간 또는 가동 범위 낮추기",
+        "더 안정된 지지 또는 쉬운 기본 동작으로 전환"
+      ],
+      "progressions": [
+        "착지 제어 뒤 거리 또는 반복 하나만 증가",
+        "한 번에 하나의 변수만 조절",
+        "다음 날 반응이 편안할 때만 다음 단계 시도"
+      ]
+    }
+  },
+  {
+    "exercise": {
+      "id": "verified-band-good-morning",
+      "name": "밴드 굿모닝",
+      "englishName": "Band Good Morning",
+      "category": "프리웨이트",
+      "regions": [
+        "하체",
+        "둔근"
+      ],
+      "focus": "근력",
+      "difficulty": "입문",
+      "equipment": "저항 밴드·안정된 고정점",
+      "minutes": "6–12회 · 2세트",
+      "description": "밴드 굿모닝은 저항 밴드·안정된 고정점을 사용해 하체·둔근 중심의 독립적인 동작 경로를 연습하는 실제 운동 종목입니다.",
+      "cues": [
+        "중량을 몸 가까이·정렬 유지",
+        "저항 밴드·안정된 고정점과 신체 위치 먼저 확인",
+        "통증 없는 범위·호흡 유지"
+      ],
+      "benefits": [
+        "자유중량 제어",
+        "하체·둔근 사용 인식",
+        "자기 조절 능력"
+      ],
+      "warning": "허리·관절 통증·저림·그립 미끄러짐·균형 상실 또는 주변 충돌 위험이 있으면 즉시 중단하세요.",
+      "reference": {
+        "label": "ACSM — Exercise Safety",
+        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
+      }
+    },
+    "detail": {
+      "setup": [
+        "밴드 굿모닝 전 저항 밴드·안정된 고정점·바닥·주변 공간을 확인",
+        "바닥·장비·주변 반경과 안전한 내려놓기 위치 확인",
+        "가장 쉬운 범위와 낮은 강도에서 2회 리허설"
+      ],
+      "finish": "밴드 굿모닝을 마친 뒤 도구를 안전하게 내려놓고 그립·관절·피로 반응을 확인합니다.",
+      "commonMistakes": [
+        "무게를 몸에서 멀리 두고 반동으로 반복하기",
+        "정렬이 무너진 상태에서 반복 지속",
+        "통증·저림·어지러움 신호 무시"
+      ],
+      "regressions": [
+        "더 가벼운 도구·짧은 범위",
+        "반복·시간 또는 가동 범위 낮추기",
+        "더 안정된 지지 또는 쉬운 기본 동작으로 전환"
+      ],
+      "progressions": [
+        "정렬 유지 뒤 반복 또는 부하 하나만 소폭 증가",
+        "한 번에 하나의 변수만 조절",
+        "다음 날 반응이 편안할 때만 다음 단계 시도"
+      ]
+    }
+  },
+  {
+    "exercise": {
+      "id": "verified-band-good-morning-pull-through",
+      "name": "밴드 굿모닝(풀스루)",
+      "englishName": "Band Good Morning (Pull Through)",
+      "category": "프리웨이트",
+      "regions": [
+        "하체",
+        "둔근"
+      ],
+      "focus": "근력",
+      "difficulty": "입문",
+      "equipment": "저항 밴드·안정된 고정점",
+      "minutes": "6–12회 · 2세트",
+      "description": "밴드 굿모닝(풀스루)은 저항 밴드·안정된 고정점을 사용해 하체·둔근 중심의 독립적인 동작 경로를 연습하는 실제 운동 종목입니다.",
+      "cues": [
+        "중량을 몸 가까이·정렬 유지",
+        "저항 밴드·안정된 고정점과 신체 위치 먼저 확인",
+        "통증 없는 범위·호흡 유지"
+      ],
+      "benefits": [
+        "자유중량 제어",
+        "하체·둔근 사용 인식",
+        "자기 조절 능력"
+      ],
+      "warning": "허리·관절 통증·저림·그립 미끄러짐·균형 상실 또는 주변 충돌 위험이 있으면 즉시 중단하세요.",
+      "reference": {
+        "label": "ACSM — Exercise Safety",
+        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
+      }
+    },
+    "detail": {
+      "setup": [
+        "밴드 굿모닝(풀스루) 전 저항 밴드·안정된 고정점·바닥·주변 공간을 확인",
+        "바닥·장비·주변 반경과 안전한 내려놓기 위치 확인",
+        "가장 쉬운 범위와 낮은 강도에서 2회 리허설"
+      ],
+      "finish": "밴드 굿모닝(풀스루)을 마친 뒤 도구를 안전하게 내려놓고 그립·관절·피로 반응을 확인합니다.",
+      "commonMistakes": [
+        "무게를 몸에서 멀리 두고 반동으로 반복하기",
+        "정렬이 무너진 상태에서 반복 지속",
+        "통증·저림·어지러움 신호 무시"
+      ],
+      "regressions": [
+        "더 가벼운 도구·짧은 범위",
+        "반복·시간 또는 가동 범위 낮추기",
+        "더 안정된 지지 또는 쉬운 기본 동작으로 전환"
+      ],
+      "progressions": [
+        "정렬 유지 뒤 반복 또는 부하 하나만 소폭 증가",
+        "한 번에 하나의 변수만 조절",
+        "다음 날 반응이 편안할 때만 다음 단계 시도"
+      ]
+    }
+  },
+  {
+    "exercise": {
+      "id": "verified-hip-lift-with-band",
+      "name": "밴드 힙 리프트",
+      "englishName": "Hip Lift with Band",
+      "category": "프리웨이트",
+      "regions": [
+        "둔근",
+        "하체"
+      ],
+      "focus": "근력",
+      "difficulty": "입문",
+      "equipment": "저항 밴드·안정된 고정점",
+      "minutes": "6–12회 · 2세트",
+      "description": "밴드 힙 리프트은 저항 밴드·안정된 고정점을 사용해 둔근·하체 중심의 독립적인 동작 경로를 연습하는 실제 운동 종목입니다.",
+      "cues": [
+        "중량을 몸 가까이·정렬 유지",
+        "저항 밴드·안정된 고정점과 신체 위치 먼저 확인",
+        "통증 없는 범위·호흡 유지"
+      ],
+      "benefits": [
+        "자유중량 제어",
+        "둔근·하체 사용 인식",
+        "자기 조절 능력"
+      ],
+      "warning": "허리·관절 통증·저림·그립 미끄러짐·균형 상실 또는 주변 충돌 위험이 있으면 즉시 중단하세요.",
+      "reference": {
+        "label": "ACSM — Exercise Safety",
+        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
+      }
+    },
+    "detail": {
+      "setup": [
+        "밴드 힙 리프트 전 저항 밴드·안정된 고정점·바닥·주변 공간을 확인",
+        "바닥·장비·주변 반경과 안전한 내려놓기 위치 확인",
+        "가장 쉬운 범위와 낮은 강도에서 2회 리허설"
+      ],
+      "finish": "밴드 힙 리프트을 마친 뒤 도구를 안전하게 내려놓고 그립·관절·피로 반응을 확인합니다.",
+      "commonMistakes": [
+        "무게를 몸에서 멀리 두고 반동으로 반복하기",
+        "정렬이 무너진 상태에서 반복 지속",
+        "통증·저림·어지러움 신호 무시"
+      ],
+      "regressions": [
+        "더 가벼운 도구·짧은 범위",
+        "반복·시간 또는 가동 범위 낮추기",
+        "더 안정된 지지 또는 쉬운 기본 동작으로 전환"
+      ],
+      "progressions": [
+        "정렬 유지 뒤 반복 또는 부하 하나만 소폭 증가",
+        "한 번에 하나의 변수만 조절",
+        "다음 날 반응이 편안할 때만 다음 단계 시도"
+      ]
+    }
+  },
+  {
+    "exercise": {
+      "id": "verified-barbell-glute-bridge",
+      "name": "바벨 글루트 브릿지",
+      "englishName": "Barbell Glute Bridge",
+      "category": "프리웨이트",
+      "regions": [
+        "둔근",
+        "하체"
+      ],
+      "focus": "근력",
+      "difficulty": "중급",
+      "equipment": "바벨·안전 랙 선택",
+      "minutes": "6–12회 · 2세트",
+      "description": "바벨 글루트 브릿지은 바벨·안전 랙 선택을 사용해 둔근·하체 중심의 독립적인 동작 경로를 연습하는 실제 운동 종목입니다.",
+      "cues": [
+        "중량을 몸 가까이·정렬 유지",
+        "바벨·안전 랙 선택과 신체 위치 먼저 확인",
+        "통증 없는 범위·호흡 유지"
+      ],
+      "benefits": [
+        "자유중량 제어",
+        "둔근·하체 사용 인식",
+        "자기 조절 능력"
+      ],
+      "warning": "허리·관절 통증·저림·그립 미끄러짐·균형 상실 또는 주변 충돌 위험이 있으면 즉시 중단하세요.",
+      "reference": {
+        "label": "ACSM — Exercise Safety",
+        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
+      }
+    },
+    "detail": {
+      "setup": [
+        "바벨 글루트 브릿지 전 바벨·안전 랙 선택·바닥·주변 공간을 확인",
+        "바닥·장비·주변 반경과 안전한 내려놓기 위치 확인",
+        "가장 쉬운 범위와 낮은 강도에서 2회 리허설"
+      ],
+      "finish": "바벨 글루트 브릿지을 마친 뒤 도구를 안전하게 내려놓고 그립·관절·피로 반응을 확인합니다.",
+      "commonMistakes": [
+        "무게를 몸에서 멀리 두고 반동으로 반복하기",
+        "정렬이 무너진 상태에서 반복 지속",
+        "통증·저림·어지러움 신호 무시"
+      ],
+      "regressions": [
+        "더 가벼운 도구·짧은 범위",
+        "반복·시간 또는 가동 범위 낮추기",
+        "더 안정된 지지 또는 쉬운 기본 동작으로 전환"
+      ],
+      "progressions": [
+        "정렬 유지 뒤 반복 또는 부하 하나만 소폭 증가",
+        "한 번에 하나의 변수만 조절",
+        "다음 날 반응이 편안할 때만 다음 단계 시도"
+      ]
+    }
+  },
+  {
+    "exercise": {
+      "id": "verified-bench-press-powerlifting",
+      "name": "벤치프레스(파워리프팅)",
+      "englishName": "Bench Press - Powerlifting",
+      "category": "프리웨이트",
+      "regions": [
+        "팔"
+      ],
+      "focus": "근력",
+      "difficulty": "중급",
+      "equipment": "바벨·안전 랙 선택",
+      "minutes": "6–12회 · 2세트",
+      "description": "벤치프레스(파워리프팅)은 바벨·안전 랙 선택을 사용해 팔 중심의 독립적인 동작 경로를 연습하는 실제 운동 종목입니다.",
+      "cues": [
+        "중량을 몸 가까이·정렬 유지",
+        "바벨·안전 랙 선택과 신체 위치 먼저 확인",
+        "통증 없는 범위·호흡 유지"
+      ],
+      "benefits": [
+        "자유중량 제어",
+        "팔 사용 인식",
+        "자기 조절 능력"
+      ],
+      "warning": "허리·관절 통증·저림·그립 미끄러짐·균형 상실 또는 주변 충돌 위험이 있으면 즉시 중단하세요.",
+      "reference": {
+        "label": "ACSM — Exercise Safety",
+        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
+      }
+    },
+    "detail": {
+      "setup": [
+        "벤치프레스(파워리프팅) 전 바벨·안전 랙 선택·바닥·주변 공간을 확인",
+        "바닥·장비·주변 반경과 안전한 내려놓기 위치 확인",
+        "가장 쉬운 범위와 낮은 강도에서 2회 리허설"
+      ],
+      "finish": "벤치프레스(파워리프팅)을 마친 뒤 도구를 안전하게 내려놓고 그립·관절·피로 반응을 확인합니다.",
+      "commonMistakes": [
+        "무게를 몸에서 멀리 두고 반동으로 반복하기",
+        "정렬이 무너진 상태에서 반복 지속",
+        "통증·저림·어지러움 신호 무시"
+      ],
+      "regressions": [
+        "더 가벼운 도구·짧은 범위",
+        "반복·시간 또는 가동 범위 낮추기",
+        "더 안정된 지지 또는 쉬운 기본 동작으로 전환"
+      ],
+      "progressions": [
+        "정렬 유지 뒤 반복 또는 부하 하나만 소폭 증가",
+        "한 번에 하나의 변수만 조절",
+        "다음 날 반응이 편안할 때만 다음 단계 시도"
+      ]
+    }
+  },
+  {
+    "exercise": {
+      "id": "verified-board-press",
+      "name": "보드프레스",
+      "englishName": "Board Press",
+      "category": "프리웨이트",
+      "regions": [
+        "팔"
+      ],
+      "focus": "근력",
+      "difficulty": "중급",
+      "equipment": "바벨·안전 랙 선택",
+      "minutes": "6–12회 · 2세트",
+      "description": "보드프레스은 바벨·안전 랙 선택을 사용해 팔 중심의 독립적인 동작 경로를 연습하는 실제 운동 종목입니다.",
+      "cues": [
+        "중량을 몸 가까이·정렬 유지",
+        "바벨·안전 랙 선택과 신체 위치 먼저 확인",
+        "통증 없는 범위·호흡 유지"
+      ],
+      "benefits": [
+        "자유중량 제어",
+        "팔 사용 인식",
+        "자기 조절 능력"
+      ],
+      "warning": "허리·관절 통증·저림·그립 미끄러짐·균형 상실 또는 주변 충돌 위험이 있으면 즉시 중단하세요.",
+      "reference": {
+        "label": "ACSM — Exercise Safety",
+        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
+      }
+    },
+    "detail": {
+      "setup": [
+        "보드프레스 전 바벨·안전 랙 선택·바닥·주변 공간을 확인",
+        "바닥·장비·주변 반경과 안전한 내려놓기 위치 확인",
+        "가장 쉬운 범위와 낮은 강도에서 2회 리허설"
+      ],
+      "finish": "보드프레스을 마친 뒤 도구를 안전하게 내려놓고 그립·관절·피로 반응을 확인합니다.",
+      "commonMistakes": [
+        "무게를 몸에서 멀리 두고 반동으로 반복하기",
+        "정렬이 무너진 상태에서 반복 지속",
+        "통증·저림·어지러움 신호 무시"
+      ],
+      "regressions": [
+        "더 가벼운 도구·짧은 범위",
+        "반복·시간 또는 가동 범위 낮추기",
+        "더 안정된 지지 또는 쉬운 기본 동작으로 전환"
+      ],
+      "progressions": [
+        "정렬 유지 뒤 반복 또는 부하 하나만 소폭 증가",
+        "한 번에 하나의 변수만 조절",
+        "다음 날 반응이 편안할 때만 다음 단계 시도"
+      ]
+    }
+  },
+  {
+    "exercise": {
+      "id": "verified-box-squat",
+      "name": "박스 스쿼트",
+      "englishName": "Box Squat",
+      "category": "프리웨이트",
+      "regions": [
+        "하체"
+      ],
+      "focus": "근력",
+      "difficulty": "중급",
+      "equipment": "바벨·안전 랙 선택",
+      "minutes": "6–12회 · 2세트",
+      "description": "박스 스쿼트은 바벨·안전 랙 선택을 사용해 하체 중심의 독립적인 동작 경로를 연습하는 실제 운동 종목입니다.",
+      "cues": [
+        "중량을 몸 가까이·정렬 유지",
+        "바벨·안전 랙 선택과 신체 위치 먼저 확인",
+        "통증 없는 범위·호흡 유지"
+      ],
+      "benefits": [
+        "자유중량 제어",
+        "하체 사용 인식",
+        "자기 조절 능력"
+      ],
+      "warning": "허리·관절 통증·저림·그립 미끄러짐·균형 상실 또는 주변 충돌 위험이 있으면 즉시 중단하세요.",
+      "reference": {
+        "label": "ACSM — Exercise Safety",
+        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
+      }
+    },
+    "detail": {
+      "setup": [
+        "박스 스쿼트 전 바벨·안전 랙 선택·바닥·주변 공간을 확인",
+        "바닥·장비·주변 반경과 안전한 내려놓기 위치 확인",
+        "가장 쉬운 범위와 낮은 강도에서 2회 리허설"
+      ],
+      "finish": "박스 스쿼트을 마친 뒤 도구를 안전하게 내려놓고 그립·관절·피로 반응을 확인합니다.",
+      "commonMistakes": [
+        "무게를 몸에서 멀리 두고 반동으로 반복하기",
+        "정렬이 무너진 상태에서 반복 지속",
+        "통증·저림·어지러움 신호 무시"
+      ],
+      "regressions": [
+        "더 가벼운 도구·짧은 범위",
+        "반복·시간 또는 가동 범위 낮추기",
+        "더 안정된 지지 또는 쉬운 기본 동작으로 전환"
+      ],
+      "progressions": [
+        "정렬 유지 뒤 반복 또는 부하 하나만 소폭 증가",
+        "한 번에 하나의 변수만 조절",
+        "다음 날 반응이 편안할 때만 다음 단계 시도"
+      ]
+    }
+  },
+  {
+    "exercise": {
+      "id": "verified-deficit-deadlift",
+      "name": "데피시트 데드리프트",
+      "englishName": "Deficit Deadlift",
+      "category": "프리웨이트",
+      "regions": [
+        "등",
+        "코어"
+      ],
+      "focus": "근력",
+      "difficulty": "중급",
+      "equipment": "바벨·안전 랙 선택",
+      "minutes": "6–12회 · 2세트",
+      "description": "데피시트 데드리프트은 바벨·안전 랙 선택을 사용해 등·코어 중심의 독립적인 동작 경로를 연습하는 실제 운동 종목입니다.",
+      "cues": [
+        "중량을 몸 가까이·정렬 유지",
+        "바벨·안전 랙 선택과 신체 위치 먼저 확인",
+        "통증 없는 범위·호흡 유지"
+      ],
+      "benefits": [
+        "자유중량 제어",
+        "등·코어 사용 인식",
+        "자기 조절 능력"
+      ],
+      "warning": "허리·관절 통증·저림·그립 미끄러짐·균형 상실 또는 주변 충돌 위험이 있으면 즉시 중단하세요.",
+      "reference": {
+        "label": "ACSM — Exercise Safety",
+        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
+      }
+    },
+    "detail": {
+      "setup": [
+        "데피시트 데드리프트 전 바벨·안전 랙 선택·바닥·주변 공간을 확인",
+        "바닥·장비·주변 반경과 안전한 내려놓기 위치 확인",
+        "가장 쉬운 범위와 낮은 강도에서 2회 리허설"
+      ],
+      "finish": "데피시트 데드리프트을 마친 뒤 도구를 안전하게 내려놓고 그립·관절·피로 반응을 확인합니다.",
+      "commonMistakes": [
+        "무게를 몸에서 멀리 두고 반동으로 반복하기",
+        "정렬이 무너진 상태에서 반복 지속",
+        "통증·저림·어지러움 신호 무시"
+      ],
+      "regressions": [
+        "더 가벼운 도구·짧은 범위",
+        "반복·시간 또는 가동 범위 낮추기",
+        "더 안정된 지지 또는 쉬운 기본 동작으로 전환"
+      ],
+      "progressions": [
+        "정렬 유지 뒤 반복 또는 부하 하나만 소폭 증가",
+        "한 번에 하나의 변수만 조절",
+        "다음 날 반응이 편안할 때만 다음 단계 시도"
+      ]
+    }
+  },
+  {
+    "exercise": {
+      "id": "verified-floor-press",
+      "name": "플로어 프레스",
+      "englishName": "Floor Press",
+      "category": "프리웨이트",
+      "regions": [
+        "팔"
+      ],
+      "focus": "근력",
+      "difficulty": "중급",
+      "equipment": "바벨·안전 랙 선택",
+      "minutes": "6–12회 · 2세트",
+      "description": "플로어 프레스은 바벨·안전 랙 선택을 사용해 팔 중심의 독립적인 동작 경로를 연습하는 실제 운동 종목입니다.",
+      "cues": [
+        "중량을 몸 가까이·정렬 유지",
+        "바벨·안전 랙 선택과 신체 위치 먼저 확인",
+        "통증 없는 범위·호흡 유지"
+      ],
+      "benefits": [
+        "자유중량 제어",
+        "팔 사용 인식",
+        "자기 조절 능력"
+      ],
+      "warning": "허리·관절 통증·저림·그립 미끄러짐·균형 상실 또는 주변 충돌 위험이 있으면 즉시 중단하세요.",
+      "reference": {
+        "label": "ACSM — Exercise Safety",
+        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
+      }
+    },
+    "detail": {
+      "setup": [
+        "플로어 프레스 전 바벨·안전 랙 선택·바닥·주변 공간을 확인",
+        "바닥·장비·주변 반경과 안전한 내려놓기 위치 확인",
+        "가장 쉬운 범위와 낮은 강도에서 2회 리허설"
+      ],
+      "finish": "플로어 프레스을 마친 뒤 도구를 안전하게 내려놓고 그립·관절·피로 반응을 확인합니다.",
+      "commonMistakes": [
+        "무게를 몸에서 멀리 두고 반동으로 반복하기",
+        "정렬이 무너진 상태에서 반복 지속",
+        "통증·저림·어지러움 신호 무시"
+      ],
+      "regressions": [
+        "더 가벼운 도구·짧은 범위",
+        "반복·시간 또는 가동 범위 낮추기",
+        "더 안정된 지지 또는 쉬운 기본 동작으로 전환"
+      ],
+      "progressions": [
+        "정렬 유지 뒤 반복 또는 부하 하나만 소폭 증가",
+        "한 번에 하나의 변수만 조절",
+        "다음 날 반응이 편안할 때만 다음 단계 시도"
+      ]
+    }
+  },
+  {
+    "exercise": {
+      "id": "verified-good-morning",
+      "name": "굿모닝",
+      "englishName": "Good Morning",
+      "category": "프리웨이트",
+      "regions": [
+        "하체",
+        "둔근"
+      ],
+      "focus": "근력",
+      "difficulty": "중급",
+      "equipment": "바벨·안전 랙 선택",
+      "minutes": "6–12회 · 2세트",
+      "description": "굿모닝은 바벨·안전 랙 선택을 사용해 하체·둔근 중심의 독립적인 동작 경로를 연습하는 실제 운동 종목입니다.",
+      "cues": [
+        "중량을 몸 가까이·정렬 유지",
+        "바벨·안전 랙 선택과 신체 위치 먼저 확인",
+        "통증 없는 범위·호흡 유지"
+      ],
+      "benefits": [
+        "자유중량 제어",
+        "하체·둔근 사용 인식",
+        "자기 조절 능력"
+      ],
+      "warning": "허리·관절 통증·저림·그립 미끄러짐·균형 상실 또는 주변 충돌 위험이 있으면 즉시 중단하세요.",
+      "reference": {
+        "label": "ACSM — Exercise Safety",
+        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
+      }
+    },
+    "detail": {
+      "setup": [
+        "굿모닝 전 바벨·안전 랙 선택·바닥·주변 공간을 확인",
+        "바닥·장비·주변 반경과 안전한 내려놓기 위치 확인",
+        "가장 쉬운 범위와 낮은 강도에서 2회 리허설"
+      ],
+      "finish": "굿모닝을 마친 뒤 도구를 안전하게 내려놓고 그립·관절·피로 반응을 확인합니다.",
+      "commonMistakes": [
+        "무게를 몸에서 멀리 두고 반동으로 반복하기",
+        "정렬이 무너진 상태에서 반복 지속",
+        "통증·저림·어지러움 신호 무시"
+      ],
+      "regressions": [
+        "더 가벼운 도구·짧은 범위",
+        "반복·시간 또는 가동 범위 낮추기",
+        "더 안정된 지지 또는 쉬운 기본 동작으로 전환"
+      ],
+      "progressions": [
+        "정렬 유지 뒤 반복 또는 부하 하나만 소폭 증가",
+        "한 번에 하나의 변수만 조절",
+        "다음 날 반응이 편안할 때만 다음 단계 시도"
+      ]
+    }
+  },
+  {
+    "exercise": {
+      "id": "verified-good-morning-off-pins",
+      "name": "핀에서 굿모닝",
+      "englishName": "Good Morning off Pins",
+      "category": "프리웨이트",
+      "regions": [
+        "하체",
+        "둔근"
+      ],
+      "focus": "근력",
+      "difficulty": "중급",
+      "equipment": "바벨·안전 랙 선택",
+      "minutes": "6–12회 · 2세트",
+      "description": "핀에서 굿모닝은 바벨·안전 랙 선택을 사용해 하체·둔근 중심의 독립적인 동작 경로를 연습하는 실제 운동 종목입니다.",
+      "cues": [
+        "중량을 몸 가까이·정렬 유지",
+        "바벨·안전 랙 선택과 신체 위치 먼저 확인",
+        "통증 없는 범위·호흡 유지"
+      ],
+      "benefits": [
+        "자유중량 제어",
+        "하체·둔근 사용 인식",
+        "자기 조절 능력"
+      ],
+      "warning": "허리·관절 통증·저림·그립 미끄러짐·균형 상실 또는 주변 충돌 위험이 있으면 즉시 중단하세요.",
+      "reference": {
+        "label": "ACSM — Exercise Safety",
+        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
+      }
+    },
+    "detail": {
+      "setup": [
+        "핀에서 굿모닝 전 바벨·안전 랙 선택·바닥·주변 공간을 확인",
+        "바닥·장비·주변 반경과 안전한 내려놓기 위치 확인",
+        "가장 쉬운 범위와 낮은 강도에서 2회 리허설"
+      ],
+      "finish": "핀에서 굿모닝을 마친 뒤 도구를 안전하게 내려놓고 그립·관절·피로 반응을 확인합니다.",
+      "commonMistakes": [
+        "무게를 몸에서 멀리 두고 반동으로 반복하기",
+        "정렬이 무너진 상태에서 반복 지속",
+        "통증·저림·어지러움 신호 무시"
+      ],
+      "regressions": [
+        "더 가벼운 도구·짧은 범위",
+        "반복·시간 또는 가동 범위 낮추기",
+        "더 안정된 지지 또는 쉬운 기본 동작으로 전환"
+      ],
+      "progressions": [
+        "정렬 유지 뒤 반복 또는 부하 하나만 소폭 증가",
+        "한 번에 하나의 변수만 조절",
+        "다음 날 반응이 편안할 때만 다음 단계 시도"
+      ]
+    }
+  },
+  {
+    "exercise": {
+      "id": "verified-hanging-bar-good-morning",
+      "name": "행잉바 굿모닝",
+      "englishName": "Hanging Bar Good Morning",
+      "category": "프리웨이트",
+      "regions": [
+        "하체",
+        "둔근"
+      ],
+      "focus": "근력",
+      "difficulty": "중급",
+      "equipment": "바벨·안전 랙 선택",
+      "minutes": "6–12회 · 2세트",
+      "description": "행잉바 굿모닝은 바벨·안전 랙 선택을 사용해 하체·둔근 중심의 독립적인 동작 경로를 연습하는 실제 운동 종목입니다.",
+      "cues": [
+        "중량을 몸 가까이·정렬 유지",
+        "바벨·안전 랙 선택과 신체 위치 먼저 확인",
+        "통증 없는 범위·호흡 유지"
+      ],
+      "benefits": [
+        "자유중량 제어",
+        "하체·둔근 사용 인식",
+        "자기 조절 능력"
+      ],
+      "warning": "허리·관절 통증·저림·그립 미끄러짐·균형 상실 또는 주변 충돌 위험이 있으면 즉시 중단하세요.",
+      "reference": {
+        "label": "ACSM — Exercise Safety",
+        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
+      }
+    },
+    "detail": {
+      "setup": [
+        "행잉바 굿모닝 전 바벨·안전 랙 선택·바닥·주변 공간을 확인",
+        "바닥·장비·주변 반경과 안전한 내려놓기 위치 확인",
+        "가장 쉬운 범위와 낮은 강도에서 2회 리허설"
+      ],
+      "finish": "행잉바 굿모닝을 마친 뒤 도구를 안전하게 내려놓고 그립·관절·피로 반응을 확인합니다.",
+      "commonMistakes": [
+        "무게를 몸에서 멀리 두고 반동으로 반복하기",
+        "정렬이 무너진 상태에서 반복 지속",
+        "통증·저림·어지러움 신호 무시"
+      ],
+      "regressions": [
+        "더 가벼운 도구·짧은 범위",
+        "반복·시간 또는 가동 범위 낮추기",
+        "더 안정된 지지 또는 쉬운 기본 동작으로 전환"
+      ],
+      "progressions": [
+        "정렬 유지 뒤 반복 또는 부하 하나만 소폭 증가",
+        "한 번에 하나의 변수만 조절",
+        "다음 날 반응이 편안할 때만 다음 단계 시도"
+      ]
+    }
+  },
+  {
+    "exercise": {
+      "id": "verified-kneeling-squat",
+      "name": "무릎꿇기 스쿼트",
+      "englishName": "Kneeling Squat",
+      "category": "프리웨이트",
+      "regions": [
+        "둔근",
+        "하체"
+      ],
+      "focus": "근력",
+      "difficulty": "중급",
+      "equipment": "바벨·안전 랙 선택",
+      "minutes": "6–12회 · 2세트",
+      "description": "무릎꿇기 스쿼트은 바벨·안전 랙 선택을 사용해 둔근·하체 중심의 독립적인 동작 경로를 연습하는 실제 운동 종목입니다.",
+      "cues": [
+        "중량을 몸 가까이·정렬 유지",
+        "바벨·안전 랙 선택과 신체 위치 먼저 확인",
+        "통증 없는 범위·호흡 유지"
+      ],
+      "benefits": [
+        "자유중량 제어",
+        "둔근·하체 사용 인식",
+        "자기 조절 능력"
+      ],
+      "warning": "허리·관절 통증·저림·그립 미끄러짐·균형 상실 또는 주변 충돌 위험이 있으면 즉시 중단하세요.",
+      "reference": {
+        "label": "ACSM — Exercise Safety",
+        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
+      }
+    },
+    "detail": {
+      "setup": [
+        "무릎꿇기 스쿼트 전 바벨·안전 랙 선택·바닥·주변 공간을 확인",
+        "바닥·장비·주변 반경과 안전한 내려놓기 위치 확인",
+        "가장 쉬운 범위와 낮은 강도에서 2회 리허설"
+      ],
+      "finish": "무릎꿇기 스쿼트을 마친 뒤 도구를 안전하게 내려놓고 그립·관절·피로 반응을 확인합니다.",
+      "commonMistakes": [
+        "무게를 몸에서 멀리 두고 반동으로 반복하기",
+        "정렬이 무너진 상태에서 반복 지속",
+        "통증·저림·어지러움 신호 무시"
+      ],
+      "regressions": [
+        "더 가벼운 도구·짧은 범위",
+        "반복·시간 또는 가동 범위 낮추기",
+        "더 안정된 지지 또는 쉬운 기본 동작으로 전환"
+      ],
+      "progressions": [
+        "정렬 유지 뒤 반복 또는 부하 하나만 소폭 증가",
+        "한 번에 하나의 변수만 조절",
+        "다음 날 반응이 편안할 때만 다음 단계 시도"
+      ]
+    }
+  },
+  {
+    "exercise": {
+      "id": "verified-pin-presses",
+      "name": "핀프레스",
+      "englishName": "Pin Presses",
+      "category": "프리웨이트",
+      "regions": [
+        "팔"
+      ],
+      "focus": "근력",
+      "difficulty": "중급",
+      "equipment": "바벨·안전 랙 선택",
+      "minutes": "6–12회 · 2세트",
+      "description": "핀프레스은 바벨·안전 랙 선택을 사용해 팔 중심의 독립적인 동작 경로를 연습하는 실제 운동 종목입니다.",
+      "cues": [
+        "중량을 몸 가까이·정렬 유지",
+        "바벨·안전 랙 선택과 신체 위치 먼저 확인",
+        "통증 없는 범위·호흡 유지"
+      ],
+      "benefits": [
+        "자유중량 제어",
+        "팔 사용 인식",
+        "자기 조절 능력"
+      ],
+      "warning": "허리·관절 통증·저림·그립 미끄러짐·균형 상실 또는 주변 충돌 위험이 있으면 즉시 중단하세요.",
+      "reference": {
+        "label": "ACSM — Exercise Safety",
+        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
+      }
+    },
+    "detail": {
+      "setup": [
+        "핀프레스 전 바벨·안전 랙 선택·바닥·주변 공간을 확인",
+        "바닥·장비·주변 반경과 안전한 내려놓기 위치 확인",
+        "가장 쉬운 범위와 낮은 강도에서 2회 리허설"
+      ],
+      "finish": "핀프레스을 마친 뒤 도구를 안전하게 내려놓고 그립·관절·피로 반응을 확인합니다.",
+      "commonMistakes": [
+        "무게를 몸에서 멀리 두고 반동으로 반복하기",
+        "정렬이 무너진 상태에서 반복 지속",
+        "통증·저림·어지러움 신호 무시"
+      ],
+      "regressions": [
+        "더 가벼운 도구·짧은 범위",
+        "반복·시간 또는 가동 범위 낮추기",
+        "더 안정된 지지 또는 쉬운 기본 동작으로 전환"
+      ],
+      "progressions": [
+        "정렬 유지 뒤 반복 또는 부하 하나만 소폭 증가",
+        "한 번에 하나의 변수만 조절",
+        "다음 날 반응이 편안할 때만 다음 단계 시도"
+      ]
+    }
+  },
+  {
+    "exercise": {
+      "id": "verified-rack-pulls",
+      "name": "랙풀",
+      "englishName": "Rack Pulls",
+      "category": "프리웨이트",
+      "regions": [
+        "등",
+        "코어"
+      ],
+      "focus": "근력",
+      "difficulty": "중급",
+      "equipment": "바벨·안전 랙 선택",
+      "minutes": "6–12회 · 2세트",
+      "description": "랙풀은 바벨·안전 랙 선택을 사용해 등·코어 중심의 독립적인 동작 경로를 연습하는 실제 운동 종목입니다.",
+      "cues": [
+        "중량을 몸 가까이·정렬 유지",
+        "바벨·안전 랙 선택과 신체 위치 먼저 확인",
+        "통증 없는 범위·호흡 유지"
+      ],
+      "benefits": [
+        "자유중량 제어",
+        "등·코어 사용 인식",
+        "자기 조절 능력"
+      ],
+      "warning": "허리·관절 통증·저림·그립 미끄러짐·균형 상실 또는 주변 충돌 위험이 있으면 즉시 중단하세요.",
+      "reference": {
+        "label": "ACSM — Exercise Safety",
+        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
+      }
+    },
+    "detail": {
+      "setup": [
+        "랙풀 전 바벨·안전 랙 선택·바닥·주변 공간을 확인",
+        "바닥·장비·주변 반경과 안전한 내려놓기 위치 확인",
+        "가장 쉬운 범위와 낮은 강도에서 2회 리허설"
+      ],
+      "finish": "랙풀을 마친 뒤 도구를 안전하게 내려놓고 그립·관절·피로 반응을 확인합니다.",
+      "commonMistakes": [
+        "무게를 몸에서 멀리 두고 반동으로 반복하기",
+        "정렬이 무너진 상태에서 반복 지속",
+        "통증·저림·어지러움 신호 무시"
+      ],
+      "regressions": [
+        "더 가벼운 도구·짧은 범위",
+        "반복·시간 또는 가동 범위 낮추기",
+        "더 안정된 지지 또는 쉬운 기본 동작으로 전환"
+      ],
+      "progressions": [
+        "정렬 유지 뒤 반복 또는 부하 하나만 소폭 증가",
+        "한 번에 하나의 변수만 조절",
+        "다음 날 반응이 편안할 때만 다음 단계 시도"
+      ]
+    }
+  },
+  {
+    "exercise": {
+      "id": "verified-reverse-band-bench-press",
+      "name": "리버스 밴드 벤치프레스",
+      "englishName": "Reverse Band Bench Press",
+      "category": "프리웨이트",
+      "regions": [
+        "팔"
+      ],
+      "focus": "근력",
+      "difficulty": "중급",
+      "equipment": "바벨·안전 랙 선택",
+      "minutes": "6–12회 · 2세트",
+      "description": "리버스 밴드 벤치프레스은 바벨·안전 랙 선택을 사용해 팔 중심의 독립적인 동작 경로를 연습하는 실제 운동 종목입니다.",
+      "cues": [
+        "중량을 몸 가까이·정렬 유지",
+        "바벨·안전 랙 선택과 신체 위치 먼저 확인",
+        "통증 없는 범위·호흡 유지"
+      ],
+      "benefits": [
+        "자유중량 제어",
+        "팔 사용 인식",
+        "자기 조절 능력"
+      ],
+      "warning": "허리·관절 통증·저림·그립 미끄러짐·균형 상실 또는 주변 충돌 위험이 있으면 즉시 중단하세요.",
+      "reference": {
+        "label": "ACSM — Exercise Safety",
+        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
+      }
+    },
+    "detail": {
+      "setup": [
+        "리버스 밴드 벤치프레스 전 바벨·안전 랙 선택·바닥·주변 공간을 확인",
+        "바닥·장비·주변 반경과 안전한 내려놓기 위치 확인",
+        "가장 쉬운 범위와 낮은 강도에서 2회 리허설"
+      ],
+      "finish": "리버스 밴드 벤치프레스을 마친 뒤 도구를 안전하게 내려놓고 그립·관절·피로 반응을 확인합니다.",
+      "commonMistakes": [
+        "무게를 몸에서 멀리 두고 반동으로 반복하기",
+        "정렬이 무너진 상태에서 반복 지속",
+        "통증·저림·어지러움 신호 무시"
+      ],
+      "regressions": [
+        "더 가벼운 도구·짧은 범위",
+        "반복·시간 또는 가동 범위 낮추기",
+        "더 안정된 지지 또는 쉬운 기본 동작으로 전환"
+      ],
+      "progressions": [
+        "정렬 유지 뒤 반복 또는 부하 하나만 소폭 증가",
+        "한 번에 하나의 변수만 조절",
+        "다음 날 반응이 편안할 때만 다음 단계 시도"
+      ]
+    }
+  },
+  {
+    "exercise": {
+      "id": "verified-reverse-band-box-squat",
+      "name": "리버스 밴드 박스 스쿼트",
+      "englishName": "Reverse Band Box Squat",
+      "category": "프리웨이트",
+      "regions": [
+        "하체"
+      ],
+      "focus": "근력",
+      "difficulty": "중급",
+      "equipment": "바벨·안전 랙 선택",
+      "minutes": "6–12회 · 2세트",
+      "description": "리버스 밴드 박스 스쿼트은 바벨·안전 랙 선택을 사용해 하체 중심의 독립적인 동작 경로를 연습하는 실제 운동 종목입니다.",
+      "cues": [
+        "중량을 몸 가까이·정렬 유지",
+        "바벨·안전 랙 선택과 신체 위치 먼저 확인",
+        "통증 없는 범위·호흡 유지"
+      ],
+      "benefits": [
+        "자유중량 제어",
+        "하체 사용 인식",
+        "자기 조절 능력"
+      ],
+      "warning": "허리·관절 통증·저림·그립 미끄러짐·균형 상실 또는 주변 충돌 위험이 있으면 즉시 중단하세요.",
+      "reference": {
+        "label": "ACSM — Exercise Safety",
+        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
+      }
+    },
+    "detail": {
+      "setup": [
+        "리버스 밴드 박스 스쿼트 전 바벨·안전 랙 선택·바닥·주변 공간을 확인",
+        "바닥·장비·주변 반경과 안전한 내려놓기 위치 확인",
+        "가장 쉬운 범위와 낮은 강도에서 2회 리허설"
+      ],
+      "finish": "리버스 밴드 박스 스쿼트을 마친 뒤 도구를 안전하게 내려놓고 그립·관절·피로 반응을 확인합니다.",
+      "commonMistakes": [
+        "무게를 몸에서 멀리 두고 반동으로 반복하기",
+        "정렬이 무너진 상태에서 반복 지속",
+        "통증·저림·어지러움 신호 무시"
+      ],
+      "regressions": [
+        "더 가벼운 도구·짧은 범위",
+        "반복·시간 또는 가동 범위 낮추기",
+        "더 안정된 지지 또는 쉬운 기본 동작으로 전환"
+      ],
+      "progressions": [
+        "정렬 유지 뒤 반복 또는 부하 하나만 소폭 증가",
+        "한 번에 하나의 변수만 조절",
+        "다음 날 반응이 편안할 때만 다음 단계 시도"
+      ]
+    }
+  },
+  {
+    "exercise": {
+      "id": "verified-reverse-band-deadlift",
+      "name": "리버스 밴드 데드리프트",
+      "englishName": "Reverse Band Deadlift",
+      "category": "프리웨이트",
+      "regions": [
+        "등",
+        "코어"
+      ],
+      "focus": "근력",
+      "difficulty": "상급",
+      "equipment": "바벨·안전 랙 선택",
+      "minutes": "6–12회 · 2세트",
+      "description": "리버스 밴드 데드리프트은 바벨·안전 랙 선택을 사용해 등·코어 중심의 독립적인 동작 경로를 연습하는 실제 운동 종목입니다.",
+      "cues": [
+        "중량을 몸 가까이·정렬 유지",
+        "바벨·안전 랙 선택과 신체 위치 먼저 확인",
+        "통증 없는 범위·호흡 유지"
+      ],
+      "benefits": [
+        "자유중량 제어",
+        "등·코어 사용 인식",
+        "자기 조절 능력"
+      ],
+      "warning": "허리·관절 통증·저림·그립 미끄러짐·균형 상실 또는 주변 충돌 위험이 있으면 즉시 중단하세요.",
+      "reference": {
+        "label": "ACSM — Exercise Safety",
+        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
+      }
+    },
+    "detail": {
+      "setup": [
+        "리버스 밴드 데드리프트 전 바벨·안전 랙 선택·바닥·주변 공간을 확인",
+        "바닥·장비·주변 반경과 안전한 내려놓기 위치 확인",
+        "가장 쉬운 범위와 낮은 강도에서 2회 리허설"
+      ],
+      "finish": "리버스 밴드 데드리프트을 마친 뒤 도구를 안전하게 내려놓고 그립·관절·피로 반응을 확인합니다.",
+      "commonMistakes": [
+        "무게를 몸에서 멀리 두고 반동으로 반복하기",
+        "정렬이 무너진 상태에서 반복 지속",
+        "통증·저림·어지러움 신호 무시"
+      ],
+      "regressions": [
+        "더 가벼운 도구·짧은 범위",
+        "반복·시간 또는 가동 범위 낮추기",
+        "더 안정된 지지 또는 쉬운 기본 동작으로 전환"
+      ],
+      "progressions": [
+        "정렬 유지 뒤 반복 또는 부하 하나만 소폭 증가",
+        "한 번에 하나의 변수만 조절",
+        "다음 날 반응이 편안할 때만 다음 단계 시도"
+      ]
+    }
+  },
+  {
+    "exercise": {
+      "id": "verified-reverse-band-power-squat",
+      "name": "리버스 밴드 파워 스쿼트",
+      "englishName": "Reverse Band Power Squat",
+      "category": "프리웨이트",
+      "regions": [
+        "하체"
+      ],
+      "focus": "근력",
+      "difficulty": "상급",
+      "equipment": "바벨·안전 랙 선택",
+      "minutes": "6–12회 · 2세트",
+      "description": "리버스 밴드 파워 스쿼트은 바벨·안전 랙 선택을 사용해 하체 중심의 독립적인 동작 경로를 연습하는 실제 운동 종목입니다.",
+      "cues": [
+        "중량을 몸 가까이·정렬 유지",
+        "바벨·안전 랙 선택과 신체 위치 먼저 확인",
+        "통증 없는 범위·호흡 유지"
+      ],
+      "benefits": [
+        "자유중량 제어",
+        "하체 사용 인식",
+        "자기 조절 능력"
+      ],
+      "warning": "허리·관절 통증·저림·그립 미끄러짐·균형 상실 또는 주변 충돌 위험이 있으면 즉시 중단하세요.",
+      "reference": {
+        "label": "ACSM — Exercise Safety",
+        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
+      }
+    },
+    "detail": {
+      "setup": [
+        "리버스 밴드 파워 스쿼트 전 바벨·안전 랙 선택·바닥·주변 공간을 확인",
+        "바닥·장비·주변 반경과 안전한 내려놓기 위치 확인",
+        "가장 쉬운 범위와 낮은 강도에서 2회 리허설"
+      ],
+      "finish": "리버스 밴드 파워 스쿼트을 마친 뒤 도구를 안전하게 내려놓고 그립·관절·피로 반응을 확인합니다.",
+      "commonMistakes": [
+        "무게를 몸에서 멀리 두고 반동으로 반복하기",
+        "정렬이 무너진 상태에서 반복 지속",
+        "통증·저림·어지러움 신호 무시"
+      ],
+      "regressions": [
+        "더 가벼운 도구·짧은 범위",
+        "반복·시간 또는 가동 범위 낮추기",
+        "더 안정된 지지 또는 쉬운 기본 동작으로 전환"
+      ],
+      "progressions": [
+        "정렬 유지 뒤 반복 또는 부하 하나만 소폭 증가",
+        "한 번에 하나의 변수만 조절",
+        "다음 날 반응이 편안할 때만 다음 단계 시도"
+      ]
+    }
+  },
+  {
+    "exercise": {
+      "id": "verified-reverse-band-sumo-deadlift",
+      "name": "리버스밴드 스모 데드리프트",
+      "englishName": "Reverse Band Sumo Deadlift",
+      "category": "프리웨이트",
+      "regions": [
+        "하체",
+        "둔근"
+      ],
+      "focus": "근력",
+      "difficulty": "상급",
+      "equipment": "바벨·안전 랙 선택",
+      "minutes": "6–12회 · 2세트",
+      "description": "리버스밴드 스모 데드리프트은 바벨·안전 랙 선택을 사용해 하체·둔근 중심의 독립적인 동작 경로를 연습하는 실제 운동 종목입니다.",
+      "cues": [
+        "중량을 몸 가까이·정렬 유지",
+        "바벨·안전 랙 선택과 신체 위치 먼저 확인",
+        "통증 없는 범위·호흡 유지"
+      ],
+      "benefits": [
+        "자유중량 제어",
+        "하체·둔근 사용 인식",
+        "자기 조절 능력"
+      ],
+      "warning": "허리·관절 통증·저림·그립 미끄러짐·균형 상실 또는 주변 충돌 위험이 있으면 즉시 중단하세요.",
+      "reference": {
+        "label": "ACSM — Exercise Safety",
+        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
+      }
+    },
+    "detail": {
+      "setup": [
+        "리버스밴드 스모 데드리프트 전 바벨·안전 랙 선택·바닥·주변 공간을 확인",
+        "바닥·장비·주변 반경과 안전한 내려놓기 위치 확인",
+        "가장 쉬운 범위와 낮은 강도에서 2회 리허설"
+      ],
+      "finish": "리버스밴드 스모 데드리프트을 마친 뒤 도구를 안전하게 내려놓고 그립·관절·피로 반응을 확인합니다.",
+      "commonMistakes": [
+        "무게를 몸에서 멀리 두고 반동으로 반복하기",
+        "정렬이 무너진 상태에서 반복 지속",
+        "통증·저림·어지러움 신호 무시"
+      ],
+      "regressions": [
+        "더 가벼운 도구·짧은 범위",
+        "반복·시간 또는 가동 범위 낮추기",
+        "더 안정된 지지 또는 쉬운 기본 동작으로 전환"
+      ],
+      "progressions": [
+        "정렬 유지 뒤 반복 또는 부하 하나만 소폭 증가",
+        "한 번에 하나의 변수만 조절",
+        "다음 날 반응이 편안할 때만 다음 단계 시도"
+      ]
+    }
+  },
+  {
+    "exercise": {
+      "id": "verified-seated-good-mornings",
+      "name": "시티드 굿모닝",
+      "englishName": "Seated Good Mornings",
+      "category": "프리웨이트",
+      "regions": [
+        "등",
+        "코어"
+      ],
+      "focus": "근력",
+      "difficulty": "중급",
+      "equipment": "바벨·안전 랙 선택",
+      "minutes": "6–12회 · 2세트",
+      "description": "시티드 굿모닝은 바벨·안전 랙 선택을 사용해 등·코어 중심의 독립적인 동작 경로를 연습하는 실제 운동 종목입니다.",
+      "cues": [
+        "중량을 몸 가까이·정렬 유지",
+        "바벨·안전 랙 선택과 신체 위치 먼저 확인",
+        "통증 없는 범위·호흡 유지"
+      ],
+      "benefits": [
+        "자유중량 제어",
+        "등·코어 사용 인식",
+        "자기 조절 능력"
+      ],
+      "warning": "허리·관절 통증·저림·그립 미끄러짐·균형 상실 또는 주변 충돌 위험이 있으면 즉시 중단하세요.",
+      "reference": {
+        "label": "ACSM — Exercise Safety",
+        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
+      }
+    },
+    "detail": {
+      "setup": [
+        "시티드 굿모닝 전 바벨·안전 랙 선택·바닥·주변 공간을 확인",
+        "바닥·장비·주변 반경과 안전한 내려놓기 위치 확인",
+        "가장 쉬운 범위와 낮은 강도에서 2회 리허설"
+      ],
+      "finish": "시티드 굿모닝을 마친 뒤 도구를 안전하게 내려놓고 그립·관절·피로 반응을 확인합니다.",
+      "commonMistakes": [
+        "무게를 몸에서 멀리 두고 반동으로 반복하기",
+        "정렬이 무너진 상태에서 반복 지속",
+        "통증·저림·어지러움 신호 무시"
+      ],
+      "regressions": [
+        "더 가벼운 도구·짧은 범위",
+        "반복·시간 또는 가동 범위 낮추기",
+        "더 안정된 지지 또는 쉬운 기본 동작으로 전환"
+      ],
+      "progressions": [
+        "정렬 유지 뒤 반복 또는 부하 하나만 소폭 증가",
+        "한 번에 하나의 변수만 조절",
+        "다음 날 반응이 편안할 때만 다음 단계 시도"
+      ]
+    }
+  },
+  {
+    "exercise": {
+      "id": "verified-speed-box-squat",
+      "name": "스피드 박스 스쿼트",
+      "englishName": "Speed Box Squat",
+      "category": "프리웨이트",
+      "regions": [
+        "하체"
+      ],
+      "focus": "근력",
+      "difficulty": "중급",
+      "equipment": "바벨·안전 랙 선택",
+      "minutes": "6–12회 · 2세트",
+      "description": "스피드 박스 스쿼트은 바벨·안전 랙 선택을 사용해 하체 중심의 독립적인 동작 경로를 연습하는 실제 운동 종목입니다.",
+      "cues": [
+        "중량을 몸 가까이·정렬 유지",
+        "바벨·안전 랙 선택과 신체 위치 먼저 확인",
+        "통증 없는 범위·호흡 유지"
+      ],
+      "benefits": [
+        "자유중량 제어",
+        "하체 사용 인식",
+        "자기 조절 능력"
+      ],
+      "warning": "허리·관절 통증·저림·그립 미끄러짐·균형 상실 또는 주변 충돌 위험이 있으면 즉시 중단하세요.",
+      "reference": {
+        "label": "ACSM — Exercise Safety",
+        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
+      }
+    },
+    "detail": {
+      "setup": [
+        "스피드 박스 스쿼트 전 바벨·안전 랙 선택·바닥·주변 공간을 확인",
+        "바닥·장비·주변 반경과 안전한 내려놓기 위치 확인",
+        "가장 쉬운 범위와 낮은 강도에서 2회 리허설"
+      ],
+      "finish": "스피드 박스 스쿼트을 마친 뒤 도구를 안전하게 내려놓고 그립·관절·피로 반응을 확인합니다.",
+      "commonMistakes": [
+        "무게를 몸에서 멀리 두고 반동으로 반복하기",
+        "정렬이 무너진 상태에서 반복 지속",
+        "통증·저림·어지러움 신호 무시"
+      ],
+      "regressions": [
+        "더 가벼운 도구·짧은 범위",
+        "반복·시간 또는 가동 범위 낮추기",
+        "더 안정된 지지 또는 쉬운 기본 동작으로 전환"
+      ],
+      "progressions": [
+        "정렬 유지 뒤 반복 또는 부하 하나만 소폭 증가",
+        "한 번에 하나의 변수만 조절",
+        "다음 날 반응이 편안할 때만 다음 단계 시도"
+      ]
+    }
+  },
+  {
+    "exercise": {
+      "id": "verified-sumo-deadlift",
+      "name": "스모 데드리프트",
+      "englishName": "Sumo Deadlift",
+      "category": "프리웨이트",
+      "regions": [
+        "하체",
+        "둔근"
+      ],
+      "focus": "근력",
+      "difficulty": "중급",
+      "equipment": "바벨·안전 랙 선택",
+      "minutes": "6–12회 · 2세트",
+      "description": "스모 데드리프트은 바벨·안전 랙 선택을 사용해 하체·둔근 중심의 독립적인 동작 경로를 연습하는 실제 운동 종목입니다.",
+      "cues": [
+        "중량을 몸 가까이·정렬 유지",
+        "바벨·안전 랙 선택과 신체 위치 먼저 확인",
+        "통증 없는 범위·호흡 유지"
+      ],
+      "benefits": [
+        "자유중량 제어",
+        "하체·둔근 사용 인식",
+        "자기 조절 능력"
+      ],
+      "warning": "허리·관절 통증·저림·그립 미끄러짐·균형 상실 또는 주변 충돌 위험이 있으면 즉시 중단하세요.",
+      "reference": {
+        "label": "ACSM — Exercise Safety",
+        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
+      }
+    },
+    "detail": {
+      "setup": [
+        "스모 데드리프트 전 바벨·안전 랙 선택·바닥·주변 공간을 확인",
+        "바닥·장비·주변 반경과 안전한 내려놓기 위치 확인",
+        "가장 쉬운 범위와 낮은 강도에서 2회 리허설"
+      ],
+      "finish": "스모 데드리프트을 마친 뒤 도구를 안전하게 내려놓고 그립·관절·피로 반응을 확인합니다.",
+      "commonMistakes": [
+        "무게를 몸에서 멀리 두고 반동으로 반복하기",
+        "정렬이 무너진 상태에서 반복 지속",
+        "통증·저림·어지러움 신호 무시"
+      ],
+      "regressions": [
+        "더 가벼운 도구·짧은 범위",
+        "반복·시간 또는 가동 범위 낮추기",
+        "더 안정된 지지 또는 쉬운 기본 동작으로 전환"
+      ],
+      "progressions": [
+        "정렬 유지 뒤 반복 또는 부하 하나만 소폭 증가",
+        "한 번에 하나의 변수만 조절",
+        "다음 날 반응이 편안할 때만 다음 단계 시도"
+      ]
+    }
+  },
+  {
+    "exercise": {
+      "id": "verified-glute-ham-raise",
+      "name": "글루트햄 레이즈",
+      "englishName": "Glute Ham Raise",
+      "category": "헬스기구",
+      "regions": [
+        "하체",
+        "둔근"
+      ],
+      "focus": "근력",
+      "difficulty": "중급",
+      "equipment": "머신·시트/패드",
+      "minutes": "6–12회 · 2세트",
+      "description": "글루트햄 레이즈은 머신·시트/패드을 사용해 하체·둔근 중심의 독립적인 동작 경로를 연습하는 실제 운동 종목입니다.",
+      "cues": [
+        "시트·패드·관절 축 맞추기",
+        "머신·시트/패드과 신체 위치 먼저 확인",
+        "통증 없는 범위·호흡 유지"
+      ],
+      "benefits": [
+        "저항 운동 적응",
+        "하체·둔근 사용 인식",
+        "자기 조절 능력"
+      ],
+      "warning": "관절 통증·저림·기구 흔들림·핀 미고정 또는 반동이 있으면 즉시 중단하고 설정을 다시 확인하세요.",
+      "reference": {
+        "label": "ACSM — Exercise Safety",
+        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
+      }
+    },
+    "detail": {
+      "setup": [
+        "글루트햄 레이즈 전 머신·시트/패드·바닥·주변 공간을 확인",
+        "시트·패드·핀을 신체에 맞게 조절",
+        "가장 쉬운 범위와 낮은 강도에서 2회 리허설"
+      ],
+      "finish": "글루트햄 레이즈을 마친 뒤 중량을 완전히 제자리에 두고 관절·호흡 반응을 확인합니다.",
+      "commonMistakes": [
+        "반동으로 중량을 움직이고 범위를 억지로 늘리기",
+        "정렬이 무너진 상태에서 반복 지속",
+        "통증·저림·어지러움 신호 무시"
+      ],
+      "regressions": [
+        "중량·가동 범위 낮추기",
+        "반복·시간 또는 가동 범위 낮추기",
+        "더 안정된 지지 또는 쉬운 기본 동작으로 전환"
+      ],
+      "progressions": [
+        "반복 품질 뒤 중량 한 단계만 조절",
+        "한 번에 하나의 변수만 조절",
+        "다음 날 반응이 편안할 때만 다음 단계 시도"
+      ]
+    }
+  },
+  {
+    "exercise": {
+      "id": "verified-chain-handle-extension",
+      "name": "체인 핸들 익스텐션",
+      "englishName": "Chain Handle Extension",
+      "category": "헬스기구",
+      "regions": [
+        "팔"
+      ],
+      "focus": "근력",
+      "difficulty": "중급",
+      "equipment": "안정된 전용 장비",
+      "minutes": "6–12회 · 2세트",
+      "description": "체인 핸들 익스텐션은 안정된 전용 장비을 사용해 팔 중심의 독립적인 동작 경로를 연습하는 실제 운동 종목입니다.",
+      "cues": [
+        "시트·패드·관절 축 맞추기",
+        "안정된 전용 장비과 신체 위치 먼저 확인",
+        "통증 없는 범위·호흡 유지"
+      ],
+      "benefits": [
+        "저항 운동 적응",
+        "팔 사용 인식",
+        "자기 조절 능력"
+      ],
+      "warning": "관절 통증·저림·기구 흔들림·핀 미고정 또는 반동이 있으면 즉시 중단하고 설정을 다시 확인하세요.",
+      "reference": {
+        "label": "ACSM — Exercise Safety",
+        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
+      }
+    },
+    "detail": {
+      "setup": [
+        "체인 핸들 익스텐션 전 안정된 전용 장비·바닥·주변 공간을 확인",
+        "시트·패드·핀을 신체에 맞게 조절",
+        "가장 쉬운 범위와 낮은 강도에서 2회 리허설"
+      ],
+      "finish": "체인 핸들 익스텐션을 마친 뒤 중량을 완전히 제자리에 두고 관절·호흡 반응을 확인합니다.",
+      "commonMistakes": [
+        "반동으로 중량을 움직이고 범위를 억지로 늘리기",
+        "정렬이 무너진 상태에서 반복 지속",
+        "통증·저림·어지러움 신호 무시"
+      ],
+      "regressions": [
+        "중량·가동 범위 낮추기",
+        "반복·시간 또는 가동 범위 낮추기",
+        "더 안정된 지지 또는 쉬운 기본 동작으로 전환"
+      ],
+      "progressions": [
+        "반복 품질 뒤 중량 한 단계만 조절",
+        "한 번에 하나의 변수만 조절",
+        "다음 날 반응이 편안할 때만 다음 단계 시도"
+      ]
+    }
+  },
+  {
+    "exercise": {
+      "id": "verified-chain-press",
+      "name": "체인 프레스",
+      "englishName": "Chain Press",
+      "category": "헬스기구",
+      "regions": [
+        "가슴"
+      ],
+      "focus": "근력",
+      "difficulty": "중급",
+      "equipment": "안정된 전용 장비",
+      "minutes": "6–12회 · 2세트",
+      "description": "체인 프레스은 안정된 전용 장비을 사용해 가슴 중심의 독립적인 동작 경로를 연습하는 실제 운동 종목입니다.",
+      "cues": [
+        "시트·패드·관절 축 맞추기",
+        "안정된 전용 장비과 신체 위치 먼저 확인",
+        "통증 없는 범위·호흡 유지"
+      ],
+      "benefits": [
+        "저항 운동 적응",
+        "가슴 사용 인식",
+        "자기 조절 능력"
+      ],
+      "warning": "관절 통증·저림·기구 흔들림·핀 미고정 또는 반동이 있으면 즉시 중단하고 설정을 다시 확인하세요.",
+      "reference": {
+        "label": "ACSM — Exercise Safety",
+        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
+      }
+    },
+    "detail": {
+      "setup": [
+        "체인 프레스 전 안정된 전용 장비·바닥·주변 공간을 확인",
+        "시트·패드·핀을 신체에 맞게 조절",
+        "가장 쉬운 범위와 낮은 강도에서 2회 리허설"
+      ],
+      "finish": "체인 프레스을 마친 뒤 중량을 완전히 제자리에 두고 관절·호흡 반응을 확인합니다.",
+      "commonMistakes": [
+        "반동으로 중량을 움직이고 범위를 억지로 늘리기",
+        "정렬이 무너진 상태에서 반복 지속",
+        "통증·저림·어지러움 신호 무시"
+      ],
+      "regressions": [
+        "중량·가동 범위 낮추기",
+        "반복·시간 또는 가동 범위 낮추기",
+        "더 안정된 지지 또는 쉬운 기본 동작으로 전환"
+      ],
+      "progressions": [
+        "반복 품질 뒤 중량 한 단계만 조절",
+        "한 번에 하나의 변수만 조절",
+        "다음 날 반응이 편안할 때만 다음 단계 시도"
+      ]
+    }
+  },
+  {
+    "exercise": {
+      "id": "verified-band-hip-adductions",
+      "name": "밴드 힙 내전",
+      "englishName": "Band Hip Adductions",
+      "category": "프리웨이트",
+      "regions": [
+        "하체"
+      ],
+      "focus": "근력",
+      "difficulty": "입문",
+      "equipment": "저항 밴드·안정된 고정점",
+      "minutes": "6–12회 · 2세트",
+      "description": "밴드 힙 내전은 저항 밴드·안정된 고정점을 사용해 하체 중심의 독립적인 동작 경로를 연습하는 실제 운동 종목입니다.",
+      "cues": [
+        "중량을 몸 가까이·정렬 유지",
+        "저항 밴드·안정된 고정점과 신체 위치 먼저 확인",
+        "통증 없는 범위·호흡 유지"
+      ],
+      "benefits": [
+        "자유중량 제어",
+        "하체 사용 인식",
+        "자기 조절 능력"
+      ],
+      "warning": "허리·관절 통증·저림·그립 미끄러짐·균형 상실 또는 주변 충돌 위험이 있으면 즉시 중단하세요.",
+      "reference": {
+        "label": "ACSM — Exercise Safety",
+        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
+      }
+    },
+    "detail": {
+      "setup": [
+        "밴드 힙 내전 전 저항 밴드·안정된 고정점·바닥·주변 공간을 확인",
+        "바닥·장비·주변 반경과 안전한 내려놓기 위치 확인",
+        "가장 쉬운 범위와 낮은 강도에서 2회 리허설"
+      ],
+      "finish": "밴드 힙 내전을 마친 뒤 도구를 안전하게 내려놓고 그립·관절·피로 반응을 확인합니다.",
+      "commonMistakes": [
+        "무게를 몸에서 멀리 두고 반동으로 반복하기",
+        "정렬이 무너진 상태에서 반복 지속",
+        "통증·저림·어지러움 신호 무시"
+      ],
+      "regressions": [
+        "더 가벼운 도구·짧은 범위",
+        "반복·시간 또는 가동 범위 낮추기",
+        "더 안정된 지지 또는 쉬운 기본 동작으로 전환"
+      ],
+      "progressions": [
+        "정렬 유지 뒤 반복 또는 부하 하나만 소폭 증가",
+        "한 번에 하나의 변수만 조절",
+        "다음 날 반응이 편안할 때만 다음 단계 시도"
+      ]
+    }
+  },
+  {
+    "exercise": {
+      "id": "verified-band-pull-apart",
+      "name": "밴드 풀어파트",
+      "englishName": "Band Pull Apart",
+      "category": "프리웨이트",
+      "regions": [
+        "어깨"
+      ],
+      "focus": "근력",
+      "difficulty": "입문",
+      "equipment": "저항 밴드·안정된 고정점",
+      "minutes": "6–12회 · 2세트",
+      "description": "밴드 풀어파트은 저항 밴드·안정된 고정점을 사용해 어깨 중심의 독립적인 동작 경로를 연습하는 실제 운동 종목입니다.",
+      "cues": [
+        "중량을 몸 가까이·정렬 유지",
+        "저항 밴드·안정된 고정점과 신체 위치 먼저 확인",
+        "통증 없는 범위·호흡 유지"
+      ],
+      "benefits": [
+        "자유중량 제어",
+        "어깨 사용 인식",
+        "자기 조절 능력"
+      ],
+      "warning": "허리·관절 통증·저림·그립 미끄러짐·균형 상실 또는 주변 충돌 위험이 있으면 즉시 중단하세요.",
+      "reference": {
+        "label": "ACSM — Exercise Safety",
+        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
+      }
+    },
+    "detail": {
+      "setup": [
+        "밴드 풀어파트 전 저항 밴드·안정된 고정점·바닥·주변 공간을 확인",
+        "바닥·장비·주변 반경과 안전한 내려놓기 위치 확인",
+        "가장 쉬운 범위와 낮은 강도에서 2회 리허설"
+      ],
+      "finish": "밴드 풀어파트을 마친 뒤 도구를 안전하게 내려놓고 그립·관절·피로 반응을 확인합니다.",
+      "commonMistakes": [
+        "무게를 몸에서 멀리 두고 반동으로 반복하기",
+        "정렬이 무너진 상태에서 반복 지속",
+        "통증·저림·어지러움 신호 무시"
+      ],
+      "regressions": [
+        "더 가벼운 도구·짧은 범위",
+        "반복·시간 또는 가동 범위 낮추기",
+        "더 안정된 지지 또는 쉬운 기본 동작으로 전환"
+      ],
+      "progressions": [
+        "정렬 유지 뒤 반복 또는 부하 하나만 소폭 증가",
         "한 번에 하나의 변수만 조절",
         "다음 날 반응이 편안할 때만 다음 단계 시도"
       ]

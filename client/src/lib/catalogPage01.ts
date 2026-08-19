@@ -448,62 +448,6 @@ export const catalogPage01: CatalogEntry[] = [
   },
   {
     "exercise": {
-      "id": "walk-run",
-      "name": "걷기·달리기 인터벌",
-      "englishName": "Walk-Run Intervals",
-      "category": "러닝",
-      "regions": [
-        "하체",
-        "둔근",
-        "코어"
-      ],
-      "focus": "심폐",
-      "difficulty": "입문",
-      "equipment": "러닝화 · 타이머",
-      "minutes": "20–30분 · 1–2분 교대",
-      "description": "짧은 달리기와 걷기를 번갈아 수행해 러닝의 심폐 부담을 점진적으로 익히는 입문용 방식입니다.",
-      "cues": [
-        "걷기 구간에서 호흡 회복",
-        "대화 가능한 달리기 속도부터",
-        "시간을 먼저 늘리고 속도는 나중에 조절"
-      ],
-      "benefits": [
-        "심폐 적응",
-        "러닝 입문",
-        "피로 관리"
-      ],
-      "warning": "흉통, 실신감, 비정상적인 숨참은 운동을 멈추고 평가를 받으세요.",
-      "reference": {
-        "label": "WHO 신체 활동 권고",
-        "url": "https://www.who.int/news-room/fact-sheets/detail/physical-activity"
-      }
-    },
-    "detail": {
-      "setup": [
-        "신발 끈·노면·날씨를 먼저 확인",
-        "처음 5분은 걷기 또는 매우 편안한 속도",
-        "호흡과 말하기 가능한 정도를 확인"
-      ],
-      "finish": "마지막 3–5분은 걷기로 낮추고 수분·통증 반응을 기록합니다.",
-      "commonMistakes": [
-        "초반부터 너무 빠르게 시작",
-        "보폭을 과도하게 넓힘",
-        "통증 신호를 무시"
-      ],
-      "regressions": [
-        "걷기·달리기 교대",
-        "평지·짧은 시간",
-        "대화 가능한 강도"
-      ],
-      "progressions": [
-        "시간을 소폭 늘리기",
-        "완만한 경사",
-        "회복이 충분한 날에만 빠른 구간 추가"
-      ]
-    }
-  },
-  {
-    "exercise": {
       "id": "rowing-ergometer",
       "name": "로잉 에르고미터",
       "englishName": "Rowing Ergometer",
@@ -923,62 +867,6 @@ export const catalogPage01: CatalogEntry[] = [
       "reference": {
         "label": "CDC 신체 활동 지침",
         "url": "https://www.cdc.gov/physical-activity-basics/guidelines/adults.html"
-      }
-    },
-    "detail": {
-      "setup": [
-        "신발 끈·노면·날씨를 먼저 확인",
-        "처음 5분은 걷기 또는 매우 편안한 속도",
-        "호흡과 말하기 가능한 정도를 확인"
-      ],
-      "finish": "마지막 3–5분은 걷기로 낮추고 수분·통증 반응을 기록합니다.",
-      "commonMistakes": [
-        "초반부터 너무 빠르게 시작",
-        "보폭을 과도하게 넓힘",
-        "통증 신호를 무시"
-      ],
-      "regressions": [
-        "걷기·달리기 교대",
-        "평지·짧은 시간",
-        "대화 가능한 강도"
-      ],
-      "progressions": [
-        "시간을 소폭 늘리기",
-        "완만한 경사",
-        "회복이 충분한 날에만 빠른 구간 추가"
-      ]
-    }
-  },
-  {
-    "exercise": {
-      "id": "tempo-run",
-      "name": "템포 러닝",
-      "englishName": "Tempo Run",
-      "category": "러닝",
-      "regions": [
-        "하체",
-        "둔근",
-        "코어"
-      ],
-      "focus": "심폐",
-      "difficulty": "상급",
-      "equipment": "러닝화 · 타이머",
-      "minutes": "10–20분 · 안정된 빠른 강도",
-      "description": "워밍업 뒤 제어 가능한 빠른 속도를 일정 시간 유지하는 러닝 세션입니다.",
-      "cues": [
-        "워밍업·정리운동을 먼저 확보",
-        "초반 과속 대신 일정한 리듬 유지",
-        "호흡이 무너지면 강도 낮추기"
-      ],
-      "benefits": [
-        "유산소 수행 능력",
-        "페이스 감각",
-        "달리기 지구력"
-      ],
-      "warning": "입문자는 이지 러닝과 걷기·달리기 인터벌을 먼저 일관되게 수행하세요.",
-      "reference": {
-        "label": "WHO 신체 활동 권고",
-        "url": "https://www.who.int/news-room/fact-sheets/detail/physical-activity"
       }
     },
     "detail": {
@@ -2785,62 +2673,6 @@ export const catalogPage01: CatalogEntry[] = [
         "시간을 소폭 늘리기",
         "완만한 경사",
         "회복이 충분한 날에만 빠른 구간 추가"
-      ]
-    }
-  },
-  {
-    "exercise": {
-      "id": "air-bike",
-      "name": "에어 바이크 인터벌",
-      "englishName": "Air Bike Intervals",
-      "category": "유산소",
-      "regions": [
-        "하체",
-        "팔",
-        "코어"
-      ],
-      "focus": "심폐",
-      "difficulty": "상급",
-      "equipment": "에어 바이크",
-      "minutes": "20초–1분 반복",
-      "description": "팔과 다리 페달을 함께 사용해 짧은 구간의 강도를 조절하는 전신 유산소 방식입니다.",
-      "cues": [
-        "가벼운 워밍업으로 시작",
-        "강한 구간 뒤 충분히 회복",
-        "자세가 무너지면 즉시 강도 낮추기"
-      ],
-      "benefits": [
-        "전신 심폐 자극",
-        "인터벌 조절",
-        "짧은 시간 체력"
-      ],
-      "warning": "심혈관 위험 요인·어지러움·흉통이 있으면 고강도 인터벌 전 의료진과 상의하세요.",
-      "reference": {
-        "label": "CDC 신체 활동 지침",
-        "url": "https://www.cdc.gov/physical-activity-basics/guidelines/adults.html"
-      }
-    },
-    "detail": {
-      "setup": [
-        "기구 높이·저항을 편안한 위치로 설정",
-        "3–5분 낮은 강도로 워밍업",
-        "수분과 환기 상태를 확인"
-      ],
-      "finish": "마지막 몇 분은 저항을 낮추고 호흡이 안정된 뒤 종료합니다.",
-      "commonMistakes": [
-        "저항을 너무 빨리 올림",
-        "손잡이에 체중을 과하게 싣기",
-        "어지러움을 참음"
-      ],
-      "regressions": [
-        "시간·저항 낮추기",
-        "짧은 간격과 휴식",
-        "저충격 기구 선택"
-      ],
-      "progressions": [
-        "시간 우선 증가",
-        "짧은 강도 변화",
-        "주간 빈도 점진 증가"
       ]
     }
   },
@@ -5079,62 +4911,6 @@ export const catalogPage01: CatalogEntry[] = [
   },
   {
     "exercise": {
-      "id": "treadmill-walk-interval",
-      "name": "트레드밀 워크 인터벌",
-      "englishName": "Treadmill Walk Interval",
-      "category": "유산소",
-      "regions": [
-        "하체",
-        "둔근",
-        "코어"
-      ],
-      "focus": "체력",
-      "difficulty": "입문",
-      "equipment": "트레드밀",
-      "minutes": "1–3분 걷기 구간 반복",
-      "description": "편안한 걷기와 약간 빠른 걷기를 번갈아 하며 고강도 달리기 없이 속도 변화를 경험하는 유산소 방식입니다.",
-      "cues": [
-        "평지·낮은 경사에서 시작",
-        "빠른 구간도 대화 가능한 범위",
-        "손잡이를 잡고 속도를 바꾸지 않기"
-      ],
-      "benefits": [
-        "심폐 리듬",
-        "걷기 속도 조절",
-        "저충격 인터벌"
-      ],
-      "warning": "흉통·현기증·비정상적 숨참이 있으면 즉시 중단하고 평가를 받으세요.",
-      "reference": {
-        "label": "CDC 성인 신체 활동 지침",
-        "url": "https://www.cdc.gov/physical-activity-basics/guidelines/adults.html"
-      }
-    },
-    "detail": {
-      "setup": [
-        "기구 높이·저항을 편안한 위치로 설정",
-        "3–5분 낮은 강도로 워밍업",
-        "수분과 환기 상태를 확인"
-      ],
-      "finish": "마지막 몇 분은 저항을 낮추고 호흡이 안정된 뒤 종료합니다.",
-      "commonMistakes": [
-        "저항을 너무 빨리 올림",
-        "손잡이에 체중을 과하게 싣기",
-        "어지러움을 참음"
-      ],
-      "regressions": [
-        "시간·저항 낮추기",
-        "짧은 간격과 휴식",
-        "저충격 기구 선택"
-      ],
-      "progressions": [
-        "시간 우선 증가",
-        "짧은 강도 변화",
-        "주간 빈도 점진 증가"
-      ]
-    }
-  },
-  {
-    "exercise": {
       "id": "ankle-knee-to-wall",
       "name": "발목 니투월 락",
       "englishName": "Ankle Knee-to-Wall Rock",
@@ -5579,6 +5355,231 @@ export const catalogPage01: CatalogEntry[] = [
         "반복 품질 뒤 장력 증가",
         "한쪽씩 프레스",
         "천천히 복귀 구간 추가"
+      ]
+    }
+  },
+  {
+    "exercise": {
+      "id": "resistance-band-lateral-walk",
+      "name": "저항 밴드 사이드 워크",
+      "englishName": "Resistance Band Lateral Walk",
+      "category": "프리웨이트",
+      "regions": [
+        "둔근",
+        "하체",
+        "코어"
+      ],
+      "focus": "협응",
+      "difficulty": "입문",
+      "equipment": "가벼운 루프 밴드",
+      "minutes": "5–8걸음 · 좌우 2–3회",
+      "description": "무릎 위 또는 발목 위에 가벼운 밴드를 두고 작은 옆걸음으로 둔근·골반 제어를 연습합니다.",
+      "cues": [
+        "얕은 무릎 굽힘으로 시작",
+        "발끝과 무릎 방향을 자연스럽게 맞추기",
+        "보폭을 작게 유지"
+      ],
+      "benefits": [
+        "둔근 활성 보조",
+        "측면 보행 제어",
+        "한쪽 다리 준비"
+      ],
+      "warning": "무릎·고관절 통증이나 균형 불안이 있으면 밴드를 빼고 짧은 옆걸음으로 낮추세요.",
+      "reference": {
+        "label": "ACSM 2026 저항운동 지침",
+        "url": "https://acsm.org/resistance-training-guidelines-update-2026/"
+      }
+    },
+    "detail": {
+      "setup": [
+        "루프 밴드에 균열이 없는지 확인",
+        "무릎 위의 가벼운 위치에서 시작",
+        "벽·의자 가까이에서 작은 옆걸음 리허설"
+      ],
+      "finish": "밴드를 천천히 벗고 발목·무릎·고관절 반응을 확인합니다.",
+      "commonMistakes": [
+        "보폭을 너무 넓게 시작",
+        "무릎을 안쪽으로 무너뜨림",
+        "발을 끌며 균형 상실"
+      ],
+      "regressions": [
+        "밴드 없이 옆걸음",
+        "더 약한 밴드",
+        "두세 걸음만 수행"
+      ],
+      "progressions": [
+        "걸음 수 소폭 증가",
+        "낮은 반스쿼트 유지",
+        "안전한 환경에서 방향 전환"
+      ]
+    }
+  },
+  {
+    "exercise": {
+      "id": "battle-rope-alternating-wave",
+      "name": "배틀로프 얼터네이팅 웨이브",
+      "englishName": "Battle Rope Alternating Wave",
+      "category": "파워·민첩성",
+      "regions": [
+        "어깨",
+        "팔",
+        "코어",
+        "하체"
+      ],
+      "focus": "체력",
+      "difficulty": "중급",
+      "equipment": "안전하게 고정한 배틀로프",
+      "minutes": "10–20초 · 2–5회",
+      "description": "낮은 반스쿼트 또는 안정된 서기 자세에서 로프를 좌우 번갈아 흔들며 전신 리듬과 짧은 컨디셔닝을 연습합니다.",
+      "cues": [
+        "로프 고정점과 주변 공간 먼저 확인",
+        "낮은 진폭·짧은 구간부터",
+        "어깨를 귀에서 멀리 두고 리듬 유지"
+      ],
+      "benefits": [
+        "상체 컨디셔닝",
+        "전신 리듬",
+        "짧은 심박 자극"
+      ],
+      "warning": "어지러움·흉통·어깨 통증·기술 붕괴가 나타나면 즉시 멈추고 충분히 회복하세요.",
+      "reference": {
+        "label": "NSCA 배틀로프 컨디셔닝 안내",
+        "url": "https://www.nsca.com/education/articles/ptq/utilizing-battling-rope-exercises-for-hiit-and-smit/"
+      }
+    },
+    "detail": {
+      "setup": [
+        "로프 고정점·반경·바닥 미끄럼을 먼저 확인",
+        "가벼운 반스쿼트 또는 편안한 서기 자세 선택",
+        "10초 미만의 작은 진폭으로 리듬 리허설"
+      ],
+      "finish": "로프를 바닥에 완전히 놓고 짧게 걸으며 호흡과 어깨 반응을 낮춥니다.",
+      "commonMistakes": [
+        "초반부터 큰 파도와 긴 구간",
+        "목을 으쓱하고 팔만 사용",
+        "피로 후에도 로프를 제어하지 못함"
+      ],
+      "regressions": [
+        "시티드 웨이브",
+        "10초 미만 구간",
+        "더 작은 진폭과 긴 휴식"
+      ],
+      "progressions": [
+        "리듬 유지 후 5초만 추가",
+        "낮은 반스쿼트 유지",
+        "충분히 회복한 날 짧은 양팔 파도"
+      ]
+    }
+  },
+  {
+    "exercise": {
+      "id": "battle-rope-seated-wave",
+      "name": "시티드 배틀로프 웨이브",
+      "englishName": "Seated Battle Rope Wave",
+      "category": "파워·민첩성",
+      "regions": [
+        "어깨",
+        "팔",
+        "코어"
+      ],
+      "focus": "체력",
+      "difficulty": "입문",
+      "equipment": "안정된 벤치 · 고정한 배틀로프",
+      "minutes": "10–15초 · 2–4회",
+      "description": "안정된 벤치에 앉아 로프를 작게 흔들며 다리 부담을 줄이고 상체 리듬을 경험하는 쉬운 변형입니다.",
+      "cues": [
+        "벤치와 로프 고정점 확인",
+        "허리를 과도하게 젖히지 않기",
+        "짧은 구간 뒤 충분히 쉬기"
+      ],
+      "benefits": [
+        "상체 리듬",
+        "그립·어깨 지구력",
+        "낮은 하체 부담"
+      ],
+      "warning": "어깨·목 통증이나 어지러움이 있으면 시도하지 말고 가벼운 밴드 운동으로 바꾸세요.",
+      "reference": {
+        "label": "NSCA 배틀로프 컨디셔닝 안내",
+        "url": "https://www.nsca.com/education/articles/ptq/utilizing-battling-rope-exercises-for-hiit-and-smit/"
+      }
+    },
+    "detail": {
+      "setup": [
+        "벤치 안정성과 로프 고정점을 확인",
+        "발 전체를 바닥에 두고 몸통을 길게 세우기",
+        "10초 미만의 작은 파도로 리듬 확인"
+      ],
+      "finish": "로프를 바닥에 놓고 손·목·어깨의 긴장을 풀며 호흡을 낮춥니다.",
+      "commonMistakes": [
+        "허리를 젖혀 반동 만들기",
+        "목을 으쓱한 채 긴 구간 수행",
+        "피로 후에도 큰 진폭 유지"
+      ],
+      "regressions": [
+        "더 작은 진폭",
+        "8초 미만 구간",
+        "밴드 로우로 전환"
+      ],
+      "progressions": [
+        "리듬 유지 뒤 5초 증가",
+        "한 팔씩 짧은 파도",
+        "충분히 회복된 날 얼터네이팅 웨이브"
+      ]
+    }
+  },
+  {
+    "exercise": {
+      "id": "low-step-march",
+      "name": "로우 스텝 마치",
+      "englishName": "Low Step March",
+      "category": "균형·협응",
+      "regions": [
+        "하체",
+        "둔근",
+        "코어"
+      ],
+      "focus": "협응",
+      "difficulty": "입문",
+      "equipment": "낮고 안정된 스텝",
+      "minutes": "좌우 5–10회 · 2세트",
+      "description": "낮은 스텝 위로 한 발씩 올라 무릎을 가볍게 들어 올린 뒤 천천히 내려오며 계단·균형 리듬을 연습합니다.",
+      "cues": [
+        "스텝이 흔들리지 않는지 확인",
+        "발 전체를 스텝 위에 올리기",
+        "필요하면 벽·난간 가까이에서"
+      ],
+      "benefits": [
+        "계단 리듬",
+        "한쪽 다리 협응",
+        "균형 준비"
+      ],
+      "warning": "체중 부하 불가·무릎 통증·최근 낙상이 있으면 스텝 대신 평지 마치로 낮추세요.",
+      "reference": {
+        "label": "CDC 성인 신체 활동 지침",
+        "url": "https://www.cdc.gov/physical-activity-basics/guidelines/adults.html"
+      }
+    },
+    "detail": {
+      "setup": [
+        "낮고 미끄럽지 않은 스텝을 벽·난간 가까이에 놓기",
+        "스텝 위에 발 전체를 올리는 동작만 먼저 연습",
+        "필요하면 손가락으로 지지대 잡기"
+      ],
+      "finish": "양발을 바닥에 두고 균형이 안정된 뒤 반대쪽을 시작합니다.",
+      "commonMistakes": [
+        "스텝 가장자리에 발을 걸침",
+        "내려올 때 빠르게 떨어짐",
+        "균형을 잃은 채 반복"
+      ],
+      "regressions": [
+        "스텝 없이 제자리 마치",
+        "더 낮은 높이",
+        "양손 지지"
+      ],
+      "progressions": [
+        "한 손 지지",
+        "반복 소폭 증가",
+        "정지 균형 1초 추가"
       ]
     }
   }

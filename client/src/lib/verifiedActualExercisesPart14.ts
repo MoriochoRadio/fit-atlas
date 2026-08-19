@@ -2985,35 +2985,6 @@ export const verifiedActualExercisesPart14: Exercise[] = [
     }
   },
   {
-    "id": "verified-single-leg-hop-progression",
-    "name": "싱글레그 홉 진행",
-    "englishName": "Single-Leg Hop Progression",
-    "category": "파워·민첩성",
-    "regions": [
-      "하체"
-    ],
-    "focus": "파워",
-    "difficulty": "입문",
-    "equipment": "안정된 전용 장비",
-    "minutes": "3–6회 · 2세트",
-    "description": "싱글레그 홉 진행은 안정된 전용 장비을 사용해 하체 중심의 독립적인 동작 경로를 연습하는 실제 운동 종목입니다.",
-    "cues": [
-      "낮은 충격·착지 제어",
-      "안정된 전용 장비과 신체 위치 먼저 확인",
-      "통증 없는 범위·호흡 유지"
-    ],
-    "benefits": [
-      "파워·방향 제어",
-      "하체 사용 인식",
-      "자기 조절 능력"
-    ],
-    "warning": "무릎·발목·허리 통증·착지 불안·피로 누적·공간 부족 또는 미끄러운 바닥이 있으면 즉시 중단하세요.",
-    "reference": {
-      "label": "ACSM — Exercise Safety",
-      "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
-    }
-  },
-  {
     "id": "verified-single-leg-lateral-hop",
     "name": "싱글레그 측면 홉",
     "englishName": "Single-Leg Lateral Hop",
@@ -14539,7 +14510,7 @@ export const verifiedActualExercisesPart14: Exercise[] = [
   },
   {
     "id": "verified-two-arm-dumbbell-preacher-curl",
-    "name": "Two-암 덤벨 프리처 컬",
+    "name": "양손 덤벨 프리처 컬",
     "englishName": "Two-Arm Dumbbell Preacher Curl",
     "category": "프리웨이트",
     "regions": [
@@ -14549,7 +14520,7 @@ export const verifiedActualExercisesPart14: Exercise[] = [
     "difficulty": "입문",
     "equipment": "덤벨·안정된 지지면 선택",
     "minutes": "6–12회 · 2세트",
-    "description": "Two-암 덤벨 프리처 컬은 덤벨·안정된 지지면 선택을 사용해 팔 중심의 독립적인 동작 경로를 연습하는 실제 운동 종목입니다.",
+    "description": "양손 덤벨 프리처 컬은 덤벨·안정된 지지면 선택을 사용해 팔 중심의 독립적인 동작 경로를 연습하는 실제 운동 종목입니다.",
     "cues": [
       "중량을 몸 가까이·정렬 유지",
       "덤벨·안정된 지지면 선택과 신체 위치 먼저 확인",
@@ -14587,6 +14558,998 @@ export const verifiedActualExercisesPart14: Exercise[] = [
     "benefits": [
       "자유중량 제어",
       "팔 사용 인식",
+      "자기 조절 능력"
+    ],
+    "warning": "허리·관절 통증·저림·그립 미끄러짐·균형 상실 또는 주변 충돌 위험이 있으면 즉시 중단하세요.",
+    "reference": {
+      "label": "ACSM — Exercise Safety",
+      "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
+    }
+  },
+  {
+    "id": "verified-zottman-preacher-curl",
+    "name": "조트만 프리처 컬",
+    "englishName": "Zottman Preacher Curl",
+    "category": "프리웨이트",
+    "regions": [
+      "팔"
+    ],
+    "focus": "근력",
+    "difficulty": "중급",
+    "equipment": "덤벨·안정된 지지면 선택",
+    "minutes": "6–12회 · 2세트",
+    "description": "조트만 프리처 컬은 덤벨·안정된 지지면 선택을 사용해 팔 중심의 독립적인 동작 경로를 연습하는 실제 운동 종목입니다.",
+    "cues": [
+      "중량을 몸 가까이·정렬 유지",
+      "덤벨·안정된 지지면 선택과 신체 위치 먼저 확인",
+      "통증 없는 범위·호흡 유지"
+    ],
+    "benefits": [
+      "자유중량 제어",
+      "팔 사용 인식",
+      "자기 조절 능력"
+    ],
+    "warning": "허리·관절 통증·저림·그립 미끄러짐·균형 상실 또는 주변 충돌 위험이 있으면 즉시 중단하세요.",
+    "reference": {
+      "label": "ACSM — Exercise Safety",
+      "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
+    }
+  },
+  {
+    "id": "verified-bodyweight-flyes",
+    "name": "맨몸 플라이",
+    "englishName": "Bodyweight Flyes",
+    "category": "프리웨이트",
+    "regions": [
+      "가슴"
+    ],
+    "focus": "근력",
+    "difficulty": "중급",
+    "equipment": "EZ 바",
+    "minutes": "6–12회 · 2세트",
+    "description": "맨몸 플라이은 EZ 바을 사용해 가슴 중심의 독립적인 동작 경로를 연습하는 실제 운동 종목입니다.",
+    "cues": [
+      "중량을 몸 가까이·정렬 유지",
+      "EZ 바과 신체 위치 먼저 확인",
+      "통증 없는 범위·호흡 유지"
+    ],
+    "benefits": [
+      "자유중량 제어",
+      "가슴 사용 인식",
+      "자기 조절 능력"
+    ],
+    "warning": "허리·관절 통증·저림·그립 미끄러짐·균형 상실 또는 주변 충돌 위험이 있으면 즉시 중단하세요.",
+    "reference": {
+      "label": "ACSM — Exercise Safety",
+      "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
+    }
+  },
+  {
+    "id": "verified-close-grip-ez-bar-curl-with-band",
+    "name": "밴드 EZ바 클로즈그립 컬",
+    "englishName": "Close-Grip EZ-Bar Curl with Band",
+    "category": "프리웨이트",
+    "regions": [
+      "팔"
+    ],
+    "focus": "근력",
+    "difficulty": "입문",
+    "equipment": "EZ 바",
+    "minutes": "6–12회 · 2세트",
+    "description": "밴드 EZ바 클로즈그립 컬은 EZ 바을 사용해 팔 중심의 독립적인 동작 경로를 연습하는 실제 운동 종목입니다.",
+    "cues": [
+      "중량을 몸 가까이·정렬 유지",
+      "EZ 바과 신체 위치 먼저 확인",
+      "통증 없는 범위·호흡 유지"
+    ],
+    "benefits": [
+      "자유중량 제어",
+      "팔 사용 인식",
+      "자기 조절 능력"
+    ],
+    "warning": "허리·관절 통증·저림·그립 미끄러짐·균형 상실 또는 주변 충돌 위험이 있으면 즉시 중단하세요.",
+    "reference": {
+      "label": "ACSM — Exercise Safety",
+      "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
+    }
+  },
+  {
+    "id": "verified-close-grip-ez-bar-press",
+    "name": "EZ바 클로즈그립 프레스",
+    "englishName": "Close-Grip EZ-Bar Press",
+    "category": "프리웨이트",
+    "regions": [
+      "팔"
+    ],
+    "focus": "근력",
+    "difficulty": "입문",
+    "equipment": "EZ 바",
+    "minutes": "6–12회 · 2세트",
+    "description": "EZ바 클로즈그립 프레스은 EZ 바을 사용해 팔 중심의 독립적인 동작 경로를 연습하는 실제 운동 종목입니다.",
+    "cues": [
+      "중량을 몸 가까이·정렬 유지",
+      "EZ 바과 신체 위치 먼저 확인",
+      "통증 없는 범위·호흡 유지"
+    ],
+    "benefits": [
+      "자유중량 제어",
+      "팔 사용 인식",
+      "자기 조절 능력"
+    ],
+    "warning": "허리·관절 통증·저림·그립 미끄러짐·균형 상실 또는 주변 충돌 위험이 있으면 즉시 중단하세요.",
+    "reference": {
+      "label": "ACSM — Exercise Safety",
+      "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
+    }
+  },
+  {
+    "id": "verified-ez-bar-curl",
+    "name": "EZ바 컬",
+    "englishName": "EZ-Bar Curl",
+    "category": "프리웨이트",
+    "regions": [
+      "팔"
+    ],
+    "focus": "근력",
+    "difficulty": "입문",
+    "equipment": "EZ 바",
+    "minutes": "6–12회 · 2세트",
+    "description": "EZ바 컬은 EZ 바을 사용해 팔 중심의 독립적인 동작 경로를 연습하는 실제 운동 종목입니다.",
+    "cues": [
+      "중량을 몸 가까이·정렬 유지",
+      "EZ 바과 신체 위치 먼저 확인",
+      "통증 없는 범위·호흡 유지"
+    ],
+    "benefits": [
+      "자유중량 제어",
+      "팔 사용 인식",
+      "자기 조절 능력"
+    ],
+    "warning": "허리·관절 통증·저림·그립 미끄러짐·균형 상실 또는 주변 충돌 위험이 있으면 즉시 중단하세요.",
+    "reference": {
+      "label": "ACSM — Exercise Safety",
+      "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
+    }
+  },
+  {
+    "id": "verified-ez-bar-skullcrusher",
+    "name": "이지바 스컬 크러셔",
+    "englishName": "EZ-Bar Skullcrusher",
+    "category": "프리웨이트",
+    "regions": [
+      "팔"
+    ],
+    "focus": "근력",
+    "difficulty": "입문",
+    "equipment": "EZ 바",
+    "minutes": "6–12회 · 2세트",
+    "description": "이지바 스컬 크러셔은 EZ 바을 사용해 팔 중심의 독립적인 동작 경로를 연습하는 실제 운동 종목입니다.",
+    "cues": [
+      "중량을 몸 가까이·정렬 유지",
+      "EZ 바과 신체 위치 먼저 확인",
+      "통증 없는 범위·호흡 유지"
+    ],
+    "benefits": [
+      "자유중량 제어",
+      "팔 사용 인식",
+      "자기 조절 능력"
+    ],
+    "warning": "허리·관절 통증·저림·그립 미끄러짐·균형 상실 또는 주변 충돌 위험이 있으면 즉시 중단하세요.",
+    "reference": {
+      "label": "ACSM — Exercise Safety",
+      "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
+    }
+  },
+  {
+    "id": "verified-lying-close-grip-barbell-triceps-press-to-chin",
+    "name": "클로즈그립 바벨 트라이셉스 프레스(턱까지)",
+    "englishName": "Lying Close-Grip Barbell Triceps Press To Chin",
+    "category": "프리웨이트",
+    "regions": [
+      "팔"
+    ],
+    "focus": "근력",
+    "difficulty": "중급",
+    "equipment": "EZ 바",
+    "minutes": "6–12회 · 2세트",
+    "description": "클로즈그립 바벨 트라이셉스 프레스(턱까지)은 EZ 바을 사용해 팔 중심의 독립적인 동작 경로를 연습하는 실제 운동 종목입니다.",
+    "cues": [
+      "중량을 몸 가까이·정렬 유지",
+      "EZ 바과 신체 위치 먼저 확인",
+      "통증 없는 범위·호흡 유지"
+    ],
+    "benefits": [
+      "자유중량 제어",
+      "팔 사용 인식",
+      "자기 조절 능력"
+    ],
+    "warning": "허리·관절 통증·저림·그립 미끄러짐·균형 상실 또는 주변 충돌 위험이 있으면 즉시 중단하세요.",
+    "reference": {
+      "label": "ACSM — Exercise Safety",
+      "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
+    }
+  },
+  {
+    "id": "verified-lying-triceps-press",
+    "name": "라잉 트라이셉스 프레스",
+    "englishName": "Lying Triceps Press",
+    "category": "프리웨이트",
+    "regions": [
+      "팔"
+    ],
+    "focus": "근력",
+    "difficulty": "중급",
+    "equipment": "EZ 바",
+    "minutes": "6–12회 · 2세트",
+    "description": "라잉 트라이셉스 프레스은 EZ 바을 사용해 팔 중심의 독립적인 동작 경로를 연습하는 실제 운동 종목입니다.",
+    "cues": [
+      "중량을 몸 가까이·정렬 유지",
+      "EZ 바과 신체 위치 먼저 확인",
+      "통증 없는 범위·호흡 유지"
+    ],
+    "benefits": [
+      "자유중량 제어",
+      "팔 사용 인식",
+      "자기 조절 능력"
+    ],
+    "warning": "허리·관절 통증·저림·그립 미끄러짐·균형 상실 또는 주변 충돌 위험이 있으면 즉시 중단하세요.",
+    "reference": {
+      "label": "ACSM — Exercise Safety",
+      "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
+    }
+  },
+  {
+    "id": "verified-reverse-barbell-preacher-curls",
+    "name": "리버스 바벨 프리처 컬",
+    "englishName": "Reverse Barbell Preacher Curls",
+    "category": "프리웨이트",
+    "regions": [
+      "팔"
+    ],
+    "focus": "근력",
+    "difficulty": "중급",
+    "equipment": "EZ 바",
+    "minutes": "6–12회 · 2세트",
+    "description": "리버스 바벨 프리처 컬은 EZ 바을 사용해 팔 중심의 독립적인 동작 경로를 연습하는 실제 운동 종목입니다.",
+    "cues": [
+      "중량을 몸 가까이·정렬 유지",
+      "EZ 바과 신체 위치 먼저 확인",
+      "통증 없는 범위·호흡 유지"
+    ],
+    "benefits": [
+      "자유중량 제어",
+      "팔 사용 인식",
+      "자기 조절 능력"
+    ],
+    "warning": "허리·관절 통증·저림·그립 미끄러짐·균형 상실 또는 주변 충돌 위험이 있으면 즉시 중단하세요.",
+    "reference": {
+      "label": "ACSM — Exercise Safety",
+      "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
+    }
+  },
+  {
+    "id": "verified-spider-curl",
+    "name": "스파이더 컬",
+    "englishName": "Spider Curl",
+    "category": "프리웨이트",
+    "regions": [
+      "팔"
+    ],
+    "focus": "근력",
+    "difficulty": "입문",
+    "equipment": "EZ 바",
+    "minutes": "6–12회 · 2세트",
+    "description": "스파이더 컬은 EZ 바을 사용해 팔 중심의 독립적인 동작 경로를 연습하는 실제 운동 종목입니다.",
+    "cues": [
+      "중량을 몸 가까이·정렬 유지",
+      "EZ 바과 신체 위치 먼저 확인",
+      "통증 없는 범위·호흡 유지"
+    ],
+    "benefits": [
+      "자유중량 제어",
+      "팔 사용 인식",
+      "자기 조절 능력"
+    ],
+    "warning": "허리·관절 통증·저림·그립 미끄러짐·균형 상실 또는 주변 충돌 위험이 있으면 즉시 중단하세요.",
+    "reference": {
+      "label": "ACSM — Exercise Safety",
+      "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
+    }
+  },
+  {
+    "id": "verified-ball-leg-curl",
+    "name": "짐볼 레그 컬",
+    "englishName": "Ball Leg Curl",
+    "category": "프리웨이트",
+    "regions": [
+      "하체",
+      "둔근"
+    ],
+    "focus": "근력",
+    "difficulty": "입문",
+    "equipment": "안정된 짐볼",
+    "minutes": "6–12회 · 2세트",
+    "description": "짐볼 레그 컬은 안정된 짐볼을 사용해 하체·둔근 중심의 독립적인 동작 경로를 연습하는 실제 운동 종목입니다.",
+    "cues": [
+      "중량을 몸 가까이·정렬 유지",
+      "안정된 짐볼과 신체 위치 먼저 확인",
+      "통증 없는 범위·호흡 유지"
+    ],
+    "benefits": [
+      "자유중량 제어",
+      "하체·둔근 사용 인식",
+      "자기 조절 능력"
+    ],
+    "warning": "허리·관절 통증·저림·그립 미끄러짐·균형 상실 또는 주변 충돌 위험이 있으면 즉시 중단하세요.",
+    "reference": {
+      "label": "ACSM — Exercise Safety",
+      "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
+    }
+  },
+  {
+    "id": "verified-downward-facing-balance",
+    "name": "다운워드 페이싱 밸런스",
+    "englishName": "Downward Facing Balance",
+    "category": "프리웨이트",
+    "regions": [
+      "둔근",
+      "하체"
+    ],
+    "focus": "근력",
+    "difficulty": "중급",
+    "equipment": "안정된 짐볼",
+    "minutes": "6–12회 · 2세트",
+    "description": "다운워드 페이싱 밸런스은 안정된 짐볼을 사용해 둔근·하체 중심의 독립적인 동작 경로를 연습하는 실제 운동 종목입니다.",
+    "cues": [
+      "중량을 몸 가까이·정렬 유지",
+      "안정된 짐볼과 신체 위치 먼저 확인",
+      "통증 없는 범위·호흡 유지"
+    ],
+    "benefits": [
+      "자유중량 제어",
+      "둔근·하체 사용 인식",
+      "자기 조절 능력"
+    ],
+    "warning": "허리·관절 통증·저림·그립 미끄러짐·균형 상실 또는 주변 충돌 위험이 있으면 즉시 중단하세요.",
+    "reference": {
+      "label": "ACSM — Exercise Safety",
+      "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
+    }
+  },
+  {
+    "id": "verified-exercise-ball-crunch",
+    "name": "짐볼 크런치",
+    "englishName": "Exercise Ball Crunch",
+    "category": "프리웨이트",
+    "regions": [
+      "코어"
+    ],
+    "focus": "근력",
+    "difficulty": "입문",
+    "equipment": "안정된 짐볼",
+    "minutes": "6–12회 · 2세트",
+    "description": "짐볼 크런치은 안정된 짐볼을 사용해 코어 중심의 독립적인 동작 경로를 연습하는 실제 운동 종목입니다.",
+    "cues": [
+      "중량을 몸 가까이·정렬 유지",
+      "안정된 짐볼과 신체 위치 먼저 확인",
+      "통증 없는 범위·호흡 유지"
+    ],
+    "benefits": [
+      "자유중량 제어",
+      "코어 사용 인식",
+      "자기 조절 능력"
+    ],
+    "warning": "허리·관절 통증·저림·그립 미끄러짐·균형 상실 또는 주변 충돌 위험이 있으면 즉시 중단하세요.",
+    "reference": {
+      "label": "ACSM — Exercise Safety",
+      "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
+    }
+  },
+  {
+    "id": "verified-exercise-ball-pull-in",
+    "name": "짐볼 풀인",
+    "englishName": "Exercise Ball Pull-In",
+    "category": "프리웨이트",
+    "regions": [
+      "코어"
+    ],
+    "focus": "근력",
+    "difficulty": "입문",
+    "equipment": "안정된 짐볼",
+    "minutes": "6–12회 · 2세트",
+    "description": "짐볼 풀인은 안정된 짐볼을 사용해 코어 중심의 독립적인 동작 경로를 연습하는 실제 운동 종목입니다.",
+    "cues": [
+      "중량을 몸 가까이·정렬 유지",
+      "안정된 짐볼과 신체 위치 먼저 확인",
+      "통증 없는 범위·호흡 유지"
+    ],
+    "benefits": [
+      "자유중량 제어",
+      "코어 사용 인식",
+      "자기 조절 능력"
+    ],
+    "warning": "허리·관절 통증·저림·그립 미끄러짐·균형 상실 또는 주변 충돌 위험이 있으면 즉시 중단하세요.",
+    "reference": {
+      "label": "ACSM — Exercise Safety",
+      "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
+    }
+  },
+  {
+    "id": "verified-physioball-hip-bridge",
+    "name": "피지오볼 힙 브리지",
+    "englishName": "Physioball Hip Bridge",
+    "category": "프리웨이트",
+    "regions": [
+      "둔근",
+      "하체"
+    ],
+    "focus": "근력",
+    "difficulty": "입문",
+    "equipment": "안정된 짐볼",
+    "minutes": "6–12회 · 2세트",
+    "description": "피지오볼 힙 브리지은 안정된 짐볼을 사용해 둔근·하체 중심의 독립적인 동작 경로를 연습하는 실제 운동 종목입니다.",
+    "cues": [
+      "중량을 몸 가까이·정렬 유지",
+      "안정된 짐볼과 신체 위치 먼저 확인",
+      "통증 없는 범위·호흡 유지"
+    ],
+    "benefits": [
+      "자유중량 제어",
+      "둔근·하체 사용 인식",
+      "자기 조절 능력"
+    ],
+    "warning": "허리·관절 통증·저림·그립 미끄러짐·균형 상실 또는 주변 충돌 위험이 있으면 즉시 중단하세요.",
+    "reference": {
+      "label": "ACSM — Exercise Safety",
+      "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
+    }
+  },
+  {
+    "id": "verified-push-ups-with-feet-on-an-exercise-ball",
+    "name": "발을 짐볼에 올린 푸시업",
+    "englishName": "Push-Ups With Feet On An Exercise Ball",
+    "category": "프리웨이트",
+    "regions": [
+      "가슴"
+    ],
+    "focus": "근력",
+    "difficulty": "중급",
+    "equipment": "안정된 짐볼",
+    "minutes": "6–12회 · 2세트",
+    "description": "발을 짐볼에 올린 푸시업은 안정된 짐볼을 사용해 가슴 중심의 독립적인 동작 경로를 연습하는 실제 운동 종목입니다.",
+    "cues": [
+      "중량을 몸 가까이·정렬 유지",
+      "안정된 짐볼과 신체 위치 먼저 확인",
+      "통증 없는 범위·호흡 유지"
+    ],
+    "benefits": [
+      "자유중량 제어",
+      "가슴 사용 인식",
+      "자기 조절 능력"
+    ],
+    "warning": "허리·관절 통증·저림·그립 미끄러짐·균형 상실 또는 주변 충돌 위험이 있으면 즉시 중단하세요.",
+    "reference": {
+      "label": "ACSM — Exercise Safety",
+      "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
+    }
+  },
+  {
+    "id": "verified-weighted-ball-hyperextension",
+    "name": "웨이트볼 하이퍼익스텐션",
+    "englishName": "Weighted Ball Hyperextension",
+    "category": "프리웨이트",
+    "regions": [
+      "등",
+      "코어"
+    ],
+    "focus": "근력",
+    "difficulty": "중급",
+    "equipment": "안정된 짐볼",
+    "minutes": "6–12회 · 2세트",
+    "description": "웨이트볼 하이퍼익스텐션은 안정된 짐볼을 사용해 등·코어 중심의 독립적인 동작 경로를 연습하는 실제 운동 종목입니다.",
+    "cues": [
+      "중량을 몸 가까이·정렬 유지",
+      "안정된 짐볼과 신체 위치 먼저 확인",
+      "통증 없는 범위·호흡 유지"
+    ],
+    "benefits": [
+      "자유중량 제어",
+      "등·코어 사용 인식",
+      "자기 조절 능력"
+    ],
+    "warning": "허리·관절 통증·저림·그립 미끄러짐·균형 상실 또는 주변 충돌 위험이 있으면 즉시 중단하세요.",
+    "reference": {
+      "label": "ACSM — Exercise Safety",
+      "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
+    }
+  },
+  {
+    "id": "verified-weighted-ball-side-bend",
+    "name": "웨이트볼 사이드 벤드",
+    "englishName": "Weighted Ball Side Bend",
+    "category": "프리웨이트",
+    "regions": [
+      "코어"
+    ],
+    "focus": "근력",
+    "difficulty": "중급",
+    "equipment": "안정된 짐볼",
+    "minutes": "6–12회 · 2세트",
+    "description": "웨이트볼 사이드 벤드은 안정된 짐볼을 사용해 코어 중심의 독립적인 동작 경로를 연습하는 실제 운동 종목입니다.",
+    "cues": [
+      "중량을 몸 가까이·정렬 유지",
+      "안정된 짐볼과 신체 위치 먼저 확인",
+      "통증 없는 범위·호흡 유지"
+    ],
+    "benefits": [
+      "자유중량 제어",
+      "코어 사용 인식",
+      "자기 조절 능력"
+    ],
+    "warning": "허리·관절 통증·저림·그립 미끄러짐·균형 상실 또는 주변 충돌 위험이 있으면 즉시 중단하세요.",
+    "reference": {
+      "label": "ACSM — Exercise Safety",
+      "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
+    }
+  },
+  {
+    "id": "verified-advanced-kettlebell-windmill",
+    "name": "고급 케틀벨 윈드밀",
+    "englishName": "Advanced Kettlebell Windmill",
+    "category": "프리웨이트",
+    "regions": [
+      "코어"
+    ],
+    "focus": "근력",
+    "difficulty": "중급",
+    "equipment": "케틀벨",
+    "minutes": "6–12회 · 2세트",
+    "description": "고급 케틀벨 윈드밀은 케틀벨을 사용해 코어 중심의 독립적인 동작 경로를 연습하는 실제 운동 종목입니다.",
+    "cues": [
+      "중량을 몸 가까이·정렬 유지",
+      "케틀벨과 신체 위치 먼저 확인",
+      "통증 없는 범위·호흡 유지"
+    ],
+    "benefits": [
+      "자유중량 제어",
+      "코어 사용 인식",
+      "자기 조절 능력"
+    ],
+    "warning": "허리·관절 통증·저림·그립 미끄러짐·균형 상실 또는 주변 충돌 위험이 있으면 즉시 중단하세요.",
+    "reference": {
+      "label": "ACSM — Exercise Safety",
+      "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
+    }
+  },
+  {
+    "id": "verified-alternating-floor-press",
+    "name": "교대 플로어 프레스",
+    "englishName": "Alternating Floor Press",
+    "category": "프리웨이트",
+    "regions": [
+      "가슴"
+    ],
+    "focus": "근력",
+    "difficulty": "입문",
+    "equipment": "케틀벨",
+    "minutes": "6–12회 · 2세트",
+    "description": "교대 플로어 프레스은 케틀벨을 사용해 가슴 중심의 독립적인 동작 경로를 연습하는 실제 운동 종목입니다.",
+    "cues": [
+      "중량을 몸 가까이·정렬 유지",
+      "케틀벨과 신체 위치 먼저 확인",
+      "통증 없는 범위·호흡 유지"
+    ],
+    "benefits": [
+      "자유중량 제어",
+      "가슴 사용 인식",
+      "자기 조절 능력"
+    ],
+    "warning": "허리·관절 통증·저림·그립 미끄러짐·균형 상실 또는 주변 충돌 위험이 있으면 즉시 중단하세요.",
+    "reference": {
+      "label": "ACSM — Exercise Safety",
+      "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
+    }
+  },
+  {
+    "id": "verified-alternating-hang-clean",
+    "name": "교대 행 클린",
+    "englishName": "Alternating Hang Clean",
+    "category": "프리웨이트",
+    "regions": [
+      "하체",
+      "둔근"
+    ],
+    "focus": "근력",
+    "difficulty": "중급",
+    "equipment": "케틀벨",
+    "minutes": "6–12회 · 2세트",
+    "description": "교대 행 클린은 케틀벨을 사용해 하체·둔근 중심의 독립적인 동작 경로를 연습하는 실제 운동 종목입니다.",
+    "cues": [
+      "중량을 몸 가까이·정렬 유지",
+      "케틀벨과 신체 위치 먼저 확인",
+      "통증 없는 범위·호흡 유지"
+    ],
+    "benefits": [
+      "자유중량 제어",
+      "하체·둔근 사용 인식",
+      "자기 조절 능력"
+    ],
+    "warning": "허리·관절 통증·저림·그립 미끄러짐·균형 상실 또는 주변 충돌 위험이 있으면 즉시 중단하세요.",
+    "reference": {
+      "label": "ACSM — Exercise Safety",
+      "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
+    }
+  },
+  {
+    "id": "verified-alternating-kettlebell-press",
+    "name": "교대 케틀벨 프레스",
+    "englishName": "Alternating Kettlebell Press",
+    "category": "프리웨이트",
+    "regions": [
+      "어깨"
+    ],
+    "focus": "근력",
+    "difficulty": "중급",
+    "equipment": "케틀벨",
+    "minutes": "6–12회 · 2세트",
+    "description": "교대 케틀벨 프레스은 케틀벨을 사용해 어깨 중심의 독립적인 동작 경로를 연습하는 실제 운동 종목입니다.",
+    "cues": [
+      "중량을 몸 가까이·정렬 유지",
+      "케틀벨과 신체 위치 먼저 확인",
+      "통증 없는 범위·호흡 유지"
+    ],
+    "benefits": [
+      "자유중량 제어",
+      "어깨 사용 인식",
+      "자기 조절 능력"
+    ],
+    "warning": "허리·관절 통증·저림·그립 미끄러짐·균형 상실 또는 주변 충돌 위험이 있으면 즉시 중단하세요.",
+    "reference": {
+      "label": "ACSM — Exercise Safety",
+      "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
+    }
+  },
+  {
+    "id": "verified-alternating-kettlebell-row",
+    "name": "교대 케틀벨 로우",
+    "englishName": "Alternating Kettlebell Row",
+    "category": "프리웨이트",
+    "regions": [
+      "등"
+    ],
+    "focus": "근력",
+    "difficulty": "중급",
+    "equipment": "케틀벨",
+    "minutes": "6–12회 · 2세트",
+    "description": "교대 케틀벨 로우은 케틀벨을 사용해 등 중심의 독립적인 동작 경로를 연습하는 실제 운동 종목입니다.",
+    "cues": [
+      "중량을 몸 가까이·정렬 유지",
+      "케틀벨과 신체 위치 먼저 확인",
+      "통증 없는 범위·호흡 유지"
+    ],
+    "benefits": [
+      "자유중량 제어",
+      "등 사용 인식",
+      "자기 조절 능력"
+    ],
+    "warning": "허리·관절 통증·저림·그립 미끄러짐·균형 상실 또는 주변 충돌 위험이 있으면 즉시 중단하세요.",
+    "reference": {
+      "label": "ACSM — Exercise Safety",
+      "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
+    }
+  },
+  {
+    "id": "verified-alternating-renegade-row",
+    "name": "교대 레니게이드 로우",
+    "englishName": "Alternating Renegade Row",
+    "category": "프리웨이트",
+    "regions": [
+      "등"
+    ],
+    "focus": "근력",
+    "difficulty": "상급",
+    "equipment": "케틀벨",
+    "minutes": "6–12회 · 2세트",
+    "description": "교대 레니게이드 로우은 케틀벨을 사용해 등 중심의 독립적인 동작 경로를 연습하는 실제 운동 종목입니다.",
+    "cues": [
+      "중량을 몸 가까이·정렬 유지",
+      "케틀벨과 신체 위치 먼저 확인",
+      "통증 없는 범위·호흡 유지"
+    ],
+    "benefits": [
+      "자유중량 제어",
+      "등 사용 인식",
+      "자기 조절 능력"
+    ],
+    "warning": "허리·관절 통증·저림·그립 미끄러짐·균형 상실 또는 주변 충돌 위험이 있으면 즉시 중단하세요.",
+    "reference": {
+      "label": "ACSM — Exercise Safety",
+      "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
+    }
+  },
+  {
+    "id": "verified-bent-press",
+    "name": "벤트 프레스",
+    "englishName": "Bent Press",
+    "category": "프리웨이트",
+    "regions": [
+      "코어"
+    ],
+    "focus": "근력",
+    "difficulty": "상급",
+    "equipment": "케틀벨",
+    "minutes": "6–12회 · 2세트",
+    "description": "벤트 프레스은 케틀벨을 사용해 코어 중심의 독립적인 동작 경로를 연습하는 실제 운동 종목입니다.",
+    "cues": [
+      "중량을 몸 가까이·정렬 유지",
+      "케틀벨과 신체 위치 먼저 확인",
+      "통증 없는 범위·호흡 유지"
+    ],
+    "benefits": [
+      "자유중량 제어",
+      "코어 사용 인식",
+      "자기 조절 능력"
+    ],
+    "warning": "허리·관절 통증·저림·그립 미끄러짐·균형 상실 또는 주변 충돌 위험이 있으면 즉시 중단하세요.",
+    "reference": {
+      "label": "ACSM — Exercise Safety",
+      "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
+    }
+  },
+  {
+    "id": "verified-bottoms-up-clean-from-the-hang-position",
+    "name": "행 바텀스업 클린",
+    "englishName": "Bottoms-Up Clean From The Hang Position",
+    "category": "프리웨이트",
+    "regions": [
+      "팔"
+    ],
+    "focus": "근력",
+    "difficulty": "중급",
+    "equipment": "케틀벨",
+    "minutes": "6–12회 · 2세트",
+    "description": "행 바텀스업 클린은 케틀벨을 사용해 팔 중심의 독립적인 동작 경로를 연습하는 실제 운동 종목입니다.",
+    "cues": [
+      "중량을 몸 가까이·정렬 유지",
+      "케틀벨과 신체 위치 먼저 확인",
+      "통증 없는 범위·호흡 유지"
+    ],
+    "benefits": [
+      "자유중량 제어",
+      "팔 사용 인식",
+      "자기 조절 능력"
+    ],
+    "warning": "허리·관절 통증·저림·그립 미끄러짐·균형 상실 또는 주변 충돌 위험이 있으면 즉시 중단하세요.",
+    "reference": {
+      "label": "ACSM — Exercise Safety",
+      "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
+    }
+  },
+  {
+    "id": "verified-double-kettlebell-alternating-hang-clean",
+    "name": "더블 케틀벨 교대 행 클린",
+    "englishName": "Double Kettlebell Alternating Hang Clean",
+    "category": "프리웨이트",
+    "regions": [
+      "하체",
+      "둔근"
+    ],
+    "focus": "근력",
+    "difficulty": "중급",
+    "equipment": "케틀벨",
+    "minutes": "6–12회 · 2세트",
+    "description": "더블 케틀벨 교대 행 클린은 케틀벨을 사용해 하체·둔근 중심의 독립적인 동작 경로를 연습하는 실제 운동 종목입니다.",
+    "cues": [
+      "중량을 몸 가까이·정렬 유지",
+      "케틀벨과 신체 위치 먼저 확인",
+      "통증 없는 범위·호흡 유지"
+    ],
+    "benefits": [
+      "자유중량 제어",
+      "하체·둔근 사용 인식",
+      "자기 조절 능력"
+    ],
+    "warning": "허리·관절 통증·저림·그립 미끄러짐·균형 상실 또는 주변 충돌 위험이 있으면 즉시 중단하세요.",
+    "reference": {
+      "label": "ACSM — Exercise Safety",
+      "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
+    }
+  },
+  {
+    "id": "verified-double-kettlebell-jerk",
+    "name": "더블 케틀벨 저크",
+    "englishName": "Double Kettlebell Jerk",
+    "category": "프리웨이트",
+    "regions": [
+      "어깨"
+    ],
+    "focus": "근력",
+    "difficulty": "중급",
+    "equipment": "케틀벨",
+    "minutes": "6–12회 · 2세트",
+    "description": "더블 케틀벨 저크은 케틀벨을 사용해 어깨 중심의 독립적인 동작 경로를 연습하는 실제 운동 종목입니다.",
+    "cues": [
+      "중량을 몸 가까이·정렬 유지",
+      "케틀벨과 신체 위치 먼저 확인",
+      "통증 없는 범위·호흡 유지"
+    ],
+    "benefits": [
+      "자유중량 제어",
+      "어깨 사용 인식",
+      "자기 조절 능력"
+    ],
+    "warning": "허리·관절 통증·저림·그립 미끄러짐·균형 상실 또는 주변 충돌 위험이 있으면 즉시 중단하세요.",
+    "reference": {
+      "label": "ACSM — Exercise Safety",
+      "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
+    }
+  },
+  {
+    "id": "verified-double-kettlebell-push-press",
+    "name": "더블 케틀벨 푸시프레스",
+    "englishName": "Double Kettlebell Push Press",
+    "category": "프리웨이트",
+    "regions": [
+      "어깨"
+    ],
+    "focus": "근력",
+    "difficulty": "중급",
+    "equipment": "케틀벨",
+    "minutes": "6–12회 · 2세트",
+    "description": "더블 케틀벨 푸시프레스은 케틀벨을 사용해 어깨 중심의 독립적인 동작 경로를 연습하는 실제 운동 종목입니다.",
+    "cues": [
+      "중량을 몸 가까이·정렬 유지",
+      "케틀벨과 신체 위치 먼저 확인",
+      "통증 없는 범위·호흡 유지"
+    ],
+    "benefits": [
+      "자유중량 제어",
+      "어깨 사용 인식",
+      "자기 조절 능력"
+    ],
+    "warning": "허리·관절 통증·저림·그립 미끄러짐·균형 상실 또는 주변 충돌 위험이 있으면 즉시 중단하세요.",
+    "reference": {
+      "label": "ACSM — Exercise Safety",
+      "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
+    }
+  },
+  {
+    "id": "verified-double-kettlebell-snatch",
+    "name": "더블 케틀벨 스내치",
+    "englishName": "Double Kettlebell Snatch",
+    "category": "프리웨이트",
+    "regions": [
+      "어깨"
+    ],
+    "focus": "근력",
+    "difficulty": "상급",
+    "equipment": "케틀벨",
+    "minutes": "6–12회 · 2세트",
+    "description": "더블 케틀벨 스내치은 케틀벨을 사용해 어깨 중심의 독립적인 동작 경로를 연습하는 실제 운동 종목입니다.",
+    "cues": [
+      "중량을 몸 가까이·정렬 유지",
+      "케틀벨과 신체 위치 먼저 확인",
+      "통증 없는 범위·호흡 유지"
+    ],
+    "benefits": [
+      "자유중량 제어",
+      "어깨 사용 인식",
+      "자기 조절 능력"
+    ],
+    "warning": "허리·관절 통증·저림·그립 미끄러짐·균형 상실 또는 주변 충돌 위험이 있으면 즉시 중단하세요.",
+    "reference": {
+      "label": "ACSM — Exercise Safety",
+      "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
+    }
+  },
+  {
+    "id": "verified-double-kettlebell-windmill",
+    "name": "더블 케틀벨 윈드밀",
+    "englishName": "Double Kettlebell Windmill",
+    "category": "프리웨이트",
+    "regions": [
+      "코어"
+    ],
+    "focus": "근력",
+    "difficulty": "중급",
+    "equipment": "케틀벨",
+    "minutes": "6–12회 · 2세트",
+    "description": "더블 케틀벨 윈드밀은 케틀벨을 사용해 코어 중심의 독립적인 동작 경로를 연습하는 실제 운동 종목입니다.",
+    "cues": [
+      "중량을 몸 가까이·정렬 유지",
+      "케틀벨과 신체 위치 먼저 확인",
+      "통증 없는 범위·호흡 유지"
+    ],
+    "benefits": [
+      "자유중량 제어",
+      "코어 사용 인식",
+      "자기 조절 능력"
+    ],
+    "warning": "허리·관절 통증·저림·그립 미끄러짐·균형 상실 또는 주변 충돌 위험이 있으면 즉시 중단하세요.",
+    "reference": {
+      "label": "ACSM — Exercise Safety",
+      "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
+    }
+  },
+  {
+    "id": "verified-extended-range-one-arm-kettlebell-floor-press",
+    "name": "확장범위 원암 케틀벨 플로어 프레스",
+    "englishName": "Extended Range One-Arm Kettlebell Floor Press",
+    "category": "프리웨이트",
+    "regions": [
+      "가슴"
+    ],
+    "focus": "근력",
+    "difficulty": "입문",
+    "equipment": "케틀벨",
+    "minutes": "6–12회 · 2세트",
+    "description": "확장범위 원암 케틀벨 플로어 프레스은 케틀벨을 사용해 가슴 중심의 독립적인 동작 경로를 연습하는 실제 운동 종목입니다.",
+    "cues": [
+      "중량을 몸 가까이·정렬 유지",
+      "케틀벨과 신체 위치 먼저 확인",
+      "통증 없는 범위·호흡 유지"
+    ],
+    "benefits": [
+      "자유중량 제어",
+      "가슴 사용 인식",
+      "자기 조절 능력"
+    ],
+    "warning": "허리·관절 통증·저림·그립 미끄러짐·균형 상실 또는 주변 충돌 위험이 있으면 즉시 중단하세요.",
+    "reference": {
+      "label": "ACSM — Exercise Safety",
+      "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
+    }
+  },
+  {
+    "id": "verified-front-squats-with-two-kettlebells",
+    "name": "더블 케틀벨 프런트 스쿼트",
+    "englishName": "Front Squats With Two Kettlebells",
+    "category": "프리웨이트",
+    "regions": [
+      "하체"
+    ],
+    "focus": "근력",
+    "difficulty": "중급",
+    "equipment": "케틀벨",
+    "minutes": "6–12회 · 2세트",
+    "description": "더블 케틀벨 프런트 스쿼트은 케틀벨을 사용해 하체 중심의 독립적인 동작 경로를 연습하는 실제 운동 종목입니다.",
+    "cues": [
+      "중량을 몸 가까이·정렬 유지",
+      "케틀벨과 신체 위치 먼저 확인",
+      "통증 없는 범위·호흡 유지"
+    ],
+    "benefits": [
+      "자유중량 제어",
+      "하체 사용 인식",
+      "자기 조절 능력"
+    ],
+    "warning": "허리·관절 통증·저림·그립 미끄러짐·균형 상실 또는 주변 충돌 위험이 있으면 즉시 중단하세요.",
+    "reference": {
+      "label": "ACSM — Exercise Safety",
+      "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
+    }
+  },
+  {
+    "id": "verified-kettlebell-arnold-press",
+    "name": "케틀벨 아놀드 프레스",
+    "englishName": "Kettlebell Arnold Press",
+    "category": "프리웨이트",
+    "regions": [
+      "어깨"
+    ],
+    "focus": "근력",
+    "difficulty": "중급",
+    "equipment": "케틀벨",
+    "minutes": "6–12회 · 2세트",
+    "description": "케틀벨 아놀드 프레스은 케틀벨을 사용해 어깨 중심의 독립적인 동작 경로를 연습하는 실제 운동 종목입니다.",
+    "cues": [
+      "중량을 몸 가까이·정렬 유지",
+      "케틀벨과 신체 위치 먼저 확인",
+      "통증 없는 범위·호흡 유지"
+    ],
+    "benefits": [
+      "자유중량 제어",
+      "어깨 사용 인식",
       "자기 조절 능력"
     ],
     "warning": "허리·관절 통증·저림·그립 미끄러짐·균형 상실 또는 주변 충돌 위험이 있으면 즉시 중단하세요.",
@@ -17233,32 +18196,6 @@ export const verifiedActualExerciseDetailsPart14: Record<string, ExerciseDetail>
         "가장 쉬운 범위와 낮은 강도에서 2회 리허설"
       ],
       "finish": "싱글 콘 스프린트을 마친 뒤 걷기로 호흡을 낮추고 관절·착지 반응을 확인합니다.",
-      "commonMistakes": [
-        "높이·속도·거리부터 동시에 올리기",
-        "정렬이 무너진 상태에서 반복 지속",
-        "통증·저림·어지러움 신호 무시"
-      ],
-      "regressions": [
-        "점프 없는 체중 이동·낮은 속도",
-        "반복·시간 또는 가동 범위 낮추기",
-        "더 안정된 지지 또는 쉬운 기본 동작으로 전환"
-      ],
-      "progressions": [
-        "착지 제어 뒤 거리 또는 반복 하나만 증가",
-        "한 번에 하나의 변수만 조절",
-        "다음 날 반응이 편안할 때만 다음 단계 시도"
-      ]
-    }
-  ],
-  [
-    "verified-single-leg-hop-progression",
-    {
-      "setup": [
-        "싱글레그 홉 진행 전 안정된 전용 장비·바닥·주변 공간을 확인",
-        "낮은 충격의 기본 동작과 착지 공간 확인",
-        "가장 쉬운 범위와 낮은 강도에서 2회 리허설"
-      ],
-      "finish": "싱글레그 홉 진행을 마친 뒤 걷기로 호흡을 낮추고 관절·착지 반응을 확인합니다.",
       "commonMistakes": [
         "높이·속도·거리부터 동시에 올리기",
         "정렬이 무너진 상태에서 반복 지속",
@@ -27576,11 +28513,11 @@ export const verifiedActualExerciseDetailsPart14: Record<string, ExerciseDetail>
     "verified-two-arm-dumbbell-preacher-curl",
     {
       "setup": [
-        "Two-암 덤벨 프리처 컬 전 덤벨·안정된 지지면 선택·바닥·주변 공간을 확인",
+        "양손 덤벨 프리처 컬 전 덤벨·안정된 지지면 선택·바닥·주변 공간을 확인",
         "바닥·장비·주변 반경과 안전한 내려놓기 위치 확인",
         "가장 쉬운 범위와 낮은 강도에서 2회 리허설"
       ],
-      "finish": "Two-암 덤벨 프리처 컬을 마친 뒤 도구를 안전하게 내려놓고 그립·관절·피로 반응을 확인합니다.",
+      "finish": "양손 덤벨 프리처 컬을 마친 뒤 도구를 안전하게 내려놓고 그립·관절·피로 반응을 확인합니다.",
       "commonMistakes": [
         "무게를 몸에서 멀리 두고 반동으로 반복하기",
         "정렬이 무너진 상태에서 반복 지속",
@@ -27607,6 +28544,890 @@ export const verifiedActualExerciseDetailsPart14: Record<string, ExerciseDetail>
         "가장 쉬운 범위와 낮은 강도에서 2회 리허설"
       ],
       "finish": "조트만 컬을 마친 뒤 도구를 안전하게 내려놓고 그립·관절·피로 반응을 확인합니다.",
+      "commonMistakes": [
+        "무게를 몸에서 멀리 두고 반동으로 반복하기",
+        "정렬이 무너진 상태에서 반복 지속",
+        "통증·저림·어지러움 신호 무시"
+      ],
+      "regressions": [
+        "더 가벼운 도구·짧은 범위",
+        "반복·시간 또는 가동 범위 낮추기",
+        "더 안정된 지지 또는 쉬운 기본 동작으로 전환"
+      ],
+      "progressions": [
+        "정렬 유지 뒤 반복 또는 부하 하나만 소폭 증가",
+        "한 번에 하나의 변수만 조절",
+        "다음 날 반응이 편안할 때만 다음 단계 시도"
+      ]
+    }
+  ],
+  [
+    "verified-zottman-preacher-curl",
+    {
+      "setup": [
+        "조트만 프리처 컬 전 덤벨·안정된 지지면 선택·바닥·주변 공간을 확인",
+        "바닥·장비·주변 반경과 안전한 내려놓기 위치 확인",
+        "가장 쉬운 범위와 낮은 강도에서 2회 리허설"
+      ],
+      "finish": "조트만 프리처 컬을 마친 뒤 도구를 안전하게 내려놓고 그립·관절·피로 반응을 확인합니다.",
+      "commonMistakes": [
+        "무게를 몸에서 멀리 두고 반동으로 반복하기",
+        "정렬이 무너진 상태에서 반복 지속",
+        "통증·저림·어지러움 신호 무시"
+      ],
+      "regressions": [
+        "더 가벼운 도구·짧은 범위",
+        "반복·시간 또는 가동 범위 낮추기",
+        "더 안정된 지지 또는 쉬운 기본 동작으로 전환"
+      ],
+      "progressions": [
+        "정렬 유지 뒤 반복 또는 부하 하나만 소폭 증가",
+        "한 번에 하나의 변수만 조절",
+        "다음 날 반응이 편안할 때만 다음 단계 시도"
+      ]
+    }
+  ],
+  [
+    "verified-bodyweight-flyes",
+    {
+      "setup": [
+        "맨몸 플라이 전 EZ 바·바닥·주변 공간을 확인",
+        "바닥·장비·주변 반경과 안전한 내려놓기 위치 확인",
+        "가장 쉬운 범위와 낮은 강도에서 2회 리허설"
+      ],
+      "finish": "맨몸 플라이을 마친 뒤 도구를 안전하게 내려놓고 그립·관절·피로 반응을 확인합니다.",
+      "commonMistakes": [
+        "무게를 몸에서 멀리 두고 반동으로 반복하기",
+        "정렬이 무너진 상태에서 반복 지속",
+        "통증·저림·어지러움 신호 무시"
+      ],
+      "regressions": [
+        "더 가벼운 도구·짧은 범위",
+        "반복·시간 또는 가동 범위 낮추기",
+        "더 안정된 지지 또는 쉬운 기본 동작으로 전환"
+      ],
+      "progressions": [
+        "정렬 유지 뒤 반복 또는 부하 하나만 소폭 증가",
+        "한 번에 하나의 변수만 조절",
+        "다음 날 반응이 편안할 때만 다음 단계 시도"
+      ]
+    }
+  ],
+  [
+    "verified-close-grip-ez-bar-curl-with-band",
+    {
+      "setup": [
+        "밴드 EZ바 클로즈그립 컬 전 EZ 바·바닥·주변 공간을 확인",
+        "바닥·장비·주변 반경과 안전한 내려놓기 위치 확인",
+        "가장 쉬운 범위와 낮은 강도에서 2회 리허설"
+      ],
+      "finish": "밴드 EZ바 클로즈그립 컬을 마친 뒤 도구를 안전하게 내려놓고 그립·관절·피로 반응을 확인합니다.",
+      "commonMistakes": [
+        "무게를 몸에서 멀리 두고 반동으로 반복하기",
+        "정렬이 무너진 상태에서 반복 지속",
+        "통증·저림·어지러움 신호 무시"
+      ],
+      "regressions": [
+        "더 가벼운 도구·짧은 범위",
+        "반복·시간 또는 가동 범위 낮추기",
+        "더 안정된 지지 또는 쉬운 기본 동작으로 전환"
+      ],
+      "progressions": [
+        "정렬 유지 뒤 반복 또는 부하 하나만 소폭 증가",
+        "한 번에 하나의 변수만 조절",
+        "다음 날 반응이 편안할 때만 다음 단계 시도"
+      ]
+    }
+  ],
+  [
+    "verified-close-grip-ez-bar-press",
+    {
+      "setup": [
+        "EZ바 클로즈그립 프레스 전 EZ 바·바닥·주변 공간을 확인",
+        "바닥·장비·주변 반경과 안전한 내려놓기 위치 확인",
+        "가장 쉬운 범위와 낮은 강도에서 2회 리허설"
+      ],
+      "finish": "EZ바 클로즈그립 프레스을 마친 뒤 도구를 안전하게 내려놓고 그립·관절·피로 반응을 확인합니다.",
+      "commonMistakes": [
+        "무게를 몸에서 멀리 두고 반동으로 반복하기",
+        "정렬이 무너진 상태에서 반복 지속",
+        "통증·저림·어지러움 신호 무시"
+      ],
+      "regressions": [
+        "더 가벼운 도구·짧은 범위",
+        "반복·시간 또는 가동 범위 낮추기",
+        "더 안정된 지지 또는 쉬운 기본 동작으로 전환"
+      ],
+      "progressions": [
+        "정렬 유지 뒤 반복 또는 부하 하나만 소폭 증가",
+        "한 번에 하나의 변수만 조절",
+        "다음 날 반응이 편안할 때만 다음 단계 시도"
+      ]
+    }
+  ],
+  [
+    "verified-ez-bar-curl",
+    {
+      "setup": [
+        "EZ바 컬 전 EZ 바·바닥·주변 공간을 확인",
+        "바닥·장비·주변 반경과 안전한 내려놓기 위치 확인",
+        "가장 쉬운 범위와 낮은 강도에서 2회 리허설"
+      ],
+      "finish": "EZ바 컬을 마친 뒤 도구를 안전하게 내려놓고 그립·관절·피로 반응을 확인합니다.",
+      "commonMistakes": [
+        "무게를 몸에서 멀리 두고 반동으로 반복하기",
+        "정렬이 무너진 상태에서 반복 지속",
+        "통증·저림·어지러움 신호 무시"
+      ],
+      "regressions": [
+        "더 가벼운 도구·짧은 범위",
+        "반복·시간 또는 가동 범위 낮추기",
+        "더 안정된 지지 또는 쉬운 기본 동작으로 전환"
+      ],
+      "progressions": [
+        "정렬 유지 뒤 반복 또는 부하 하나만 소폭 증가",
+        "한 번에 하나의 변수만 조절",
+        "다음 날 반응이 편안할 때만 다음 단계 시도"
+      ]
+    }
+  ],
+  [
+    "verified-ez-bar-skullcrusher",
+    {
+      "setup": [
+        "이지바 스컬 크러셔 전 EZ 바·바닥·주변 공간을 확인",
+        "바닥·장비·주변 반경과 안전한 내려놓기 위치 확인",
+        "가장 쉬운 범위와 낮은 강도에서 2회 리허설"
+      ],
+      "finish": "이지바 스컬 크러셔을 마친 뒤 도구를 안전하게 내려놓고 그립·관절·피로 반응을 확인합니다.",
+      "commonMistakes": [
+        "무게를 몸에서 멀리 두고 반동으로 반복하기",
+        "정렬이 무너진 상태에서 반복 지속",
+        "통증·저림·어지러움 신호 무시"
+      ],
+      "regressions": [
+        "더 가벼운 도구·짧은 범위",
+        "반복·시간 또는 가동 범위 낮추기",
+        "더 안정된 지지 또는 쉬운 기본 동작으로 전환"
+      ],
+      "progressions": [
+        "정렬 유지 뒤 반복 또는 부하 하나만 소폭 증가",
+        "한 번에 하나의 변수만 조절",
+        "다음 날 반응이 편안할 때만 다음 단계 시도"
+      ]
+    }
+  ],
+  [
+    "verified-lying-close-grip-barbell-triceps-press-to-chin",
+    {
+      "setup": [
+        "클로즈그립 바벨 트라이셉스 프레스(턱까지) 전 EZ 바·바닥·주변 공간을 확인",
+        "바닥·장비·주변 반경과 안전한 내려놓기 위치 확인",
+        "가장 쉬운 범위와 낮은 강도에서 2회 리허설"
+      ],
+      "finish": "클로즈그립 바벨 트라이셉스 프레스(턱까지)을 마친 뒤 도구를 안전하게 내려놓고 그립·관절·피로 반응을 확인합니다.",
+      "commonMistakes": [
+        "무게를 몸에서 멀리 두고 반동으로 반복하기",
+        "정렬이 무너진 상태에서 반복 지속",
+        "통증·저림·어지러움 신호 무시"
+      ],
+      "regressions": [
+        "더 가벼운 도구·짧은 범위",
+        "반복·시간 또는 가동 범위 낮추기",
+        "더 안정된 지지 또는 쉬운 기본 동작으로 전환"
+      ],
+      "progressions": [
+        "정렬 유지 뒤 반복 또는 부하 하나만 소폭 증가",
+        "한 번에 하나의 변수만 조절",
+        "다음 날 반응이 편안할 때만 다음 단계 시도"
+      ]
+    }
+  ],
+  [
+    "verified-lying-triceps-press",
+    {
+      "setup": [
+        "라잉 트라이셉스 프레스 전 EZ 바·바닥·주변 공간을 확인",
+        "바닥·장비·주변 반경과 안전한 내려놓기 위치 확인",
+        "가장 쉬운 범위와 낮은 강도에서 2회 리허설"
+      ],
+      "finish": "라잉 트라이셉스 프레스을 마친 뒤 도구를 안전하게 내려놓고 그립·관절·피로 반응을 확인합니다.",
+      "commonMistakes": [
+        "무게를 몸에서 멀리 두고 반동으로 반복하기",
+        "정렬이 무너진 상태에서 반복 지속",
+        "통증·저림·어지러움 신호 무시"
+      ],
+      "regressions": [
+        "더 가벼운 도구·짧은 범위",
+        "반복·시간 또는 가동 범위 낮추기",
+        "더 안정된 지지 또는 쉬운 기본 동작으로 전환"
+      ],
+      "progressions": [
+        "정렬 유지 뒤 반복 또는 부하 하나만 소폭 증가",
+        "한 번에 하나의 변수만 조절",
+        "다음 날 반응이 편안할 때만 다음 단계 시도"
+      ]
+    }
+  ],
+  [
+    "verified-reverse-barbell-preacher-curls",
+    {
+      "setup": [
+        "리버스 바벨 프리처 컬 전 EZ 바·바닥·주변 공간을 확인",
+        "바닥·장비·주변 반경과 안전한 내려놓기 위치 확인",
+        "가장 쉬운 범위와 낮은 강도에서 2회 리허설"
+      ],
+      "finish": "리버스 바벨 프리처 컬을 마친 뒤 도구를 안전하게 내려놓고 그립·관절·피로 반응을 확인합니다.",
+      "commonMistakes": [
+        "무게를 몸에서 멀리 두고 반동으로 반복하기",
+        "정렬이 무너진 상태에서 반복 지속",
+        "통증·저림·어지러움 신호 무시"
+      ],
+      "regressions": [
+        "더 가벼운 도구·짧은 범위",
+        "반복·시간 또는 가동 범위 낮추기",
+        "더 안정된 지지 또는 쉬운 기본 동작으로 전환"
+      ],
+      "progressions": [
+        "정렬 유지 뒤 반복 또는 부하 하나만 소폭 증가",
+        "한 번에 하나의 변수만 조절",
+        "다음 날 반응이 편안할 때만 다음 단계 시도"
+      ]
+    }
+  ],
+  [
+    "verified-spider-curl",
+    {
+      "setup": [
+        "스파이더 컬 전 EZ 바·바닥·주변 공간을 확인",
+        "바닥·장비·주변 반경과 안전한 내려놓기 위치 확인",
+        "가장 쉬운 범위와 낮은 강도에서 2회 리허설"
+      ],
+      "finish": "스파이더 컬을 마친 뒤 도구를 안전하게 내려놓고 그립·관절·피로 반응을 확인합니다.",
+      "commonMistakes": [
+        "무게를 몸에서 멀리 두고 반동으로 반복하기",
+        "정렬이 무너진 상태에서 반복 지속",
+        "통증·저림·어지러움 신호 무시"
+      ],
+      "regressions": [
+        "더 가벼운 도구·짧은 범위",
+        "반복·시간 또는 가동 범위 낮추기",
+        "더 안정된 지지 또는 쉬운 기본 동작으로 전환"
+      ],
+      "progressions": [
+        "정렬 유지 뒤 반복 또는 부하 하나만 소폭 증가",
+        "한 번에 하나의 변수만 조절",
+        "다음 날 반응이 편안할 때만 다음 단계 시도"
+      ]
+    }
+  ],
+  [
+    "verified-ball-leg-curl",
+    {
+      "setup": [
+        "짐볼 레그 컬 전 안정된 짐볼·바닥·주변 공간을 확인",
+        "바닥·장비·주변 반경과 안전한 내려놓기 위치 확인",
+        "가장 쉬운 범위와 낮은 강도에서 2회 리허설"
+      ],
+      "finish": "짐볼 레그 컬을 마친 뒤 도구를 안전하게 내려놓고 그립·관절·피로 반응을 확인합니다.",
+      "commonMistakes": [
+        "무게를 몸에서 멀리 두고 반동으로 반복하기",
+        "정렬이 무너진 상태에서 반복 지속",
+        "통증·저림·어지러움 신호 무시"
+      ],
+      "regressions": [
+        "더 가벼운 도구·짧은 범위",
+        "반복·시간 또는 가동 범위 낮추기",
+        "더 안정된 지지 또는 쉬운 기본 동작으로 전환"
+      ],
+      "progressions": [
+        "정렬 유지 뒤 반복 또는 부하 하나만 소폭 증가",
+        "한 번에 하나의 변수만 조절",
+        "다음 날 반응이 편안할 때만 다음 단계 시도"
+      ]
+    }
+  ],
+  [
+    "verified-downward-facing-balance",
+    {
+      "setup": [
+        "다운워드 페이싱 밸런스 전 안정된 짐볼·바닥·주변 공간을 확인",
+        "바닥·장비·주변 반경과 안전한 내려놓기 위치 확인",
+        "가장 쉬운 범위와 낮은 강도에서 2회 리허설"
+      ],
+      "finish": "다운워드 페이싱 밸런스을 마친 뒤 도구를 안전하게 내려놓고 그립·관절·피로 반응을 확인합니다.",
+      "commonMistakes": [
+        "무게를 몸에서 멀리 두고 반동으로 반복하기",
+        "정렬이 무너진 상태에서 반복 지속",
+        "통증·저림·어지러움 신호 무시"
+      ],
+      "regressions": [
+        "더 가벼운 도구·짧은 범위",
+        "반복·시간 또는 가동 범위 낮추기",
+        "더 안정된 지지 또는 쉬운 기본 동작으로 전환"
+      ],
+      "progressions": [
+        "정렬 유지 뒤 반복 또는 부하 하나만 소폭 증가",
+        "한 번에 하나의 변수만 조절",
+        "다음 날 반응이 편안할 때만 다음 단계 시도"
+      ]
+    }
+  ],
+  [
+    "verified-exercise-ball-crunch",
+    {
+      "setup": [
+        "짐볼 크런치 전 안정된 짐볼·바닥·주변 공간을 확인",
+        "바닥·장비·주변 반경과 안전한 내려놓기 위치 확인",
+        "가장 쉬운 범위와 낮은 강도에서 2회 리허설"
+      ],
+      "finish": "짐볼 크런치을 마친 뒤 도구를 안전하게 내려놓고 그립·관절·피로 반응을 확인합니다.",
+      "commonMistakes": [
+        "무게를 몸에서 멀리 두고 반동으로 반복하기",
+        "정렬이 무너진 상태에서 반복 지속",
+        "통증·저림·어지러움 신호 무시"
+      ],
+      "regressions": [
+        "더 가벼운 도구·짧은 범위",
+        "반복·시간 또는 가동 범위 낮추기",
+        "더 안정된 지지 또는 쉬운 기본 동작으로 전환"
+      ],
+      "progressions": [
+        "정렬 유지 뒤 반복 또는 부하 하나만 소폭 증가",
+        "한 번에 하나의 변수만 조절",
+        "다음 날 반응이 편안할 때만 다음 단계 시도"
+      ]
+    }
+  ],
+  [
+    "verified-exercise-ball-pull-in",
+    {
+      "setup": [
+        "짐볼 풀인 전 안정된 짐볼·바닥·주변 공간을 확인",
+        "바닥·장비·주변 반경과 안전한 내려놓기 위치 확인",
+        "가장 쉬운 범위와 낮은 강도에서 2회 리허설"
+      ],
+      "finish": "짐볼 풀인을 마친 뒤 도구를 안전하게 내려놓고 그립·관절·피로 반응을 확인합니다.",
+      "commonMistakes": [
+        "무게를 몸에서 멀리 두고 반동으로 반복하기",
+        "정렬이 무너진 상태에서 반복 지속",
+        "통증·저림·어지러움 신호 무시"
+      ],
+      "regressions": [
+        "더 가벼운 도구·짧은 범위",
+        "반복·시간 또는 가동 범위 낮추기",
+        "더 안정된 지지 또는 쉬운 기본 동작으로 전환"
+      ],
+      "progressions": [
+        "정렬 유지 뒤 반복 또는 부하 하나만 소폭 증가",
+        "한 번에 하나의 변수만 조절",
+        "다음 날 반응이 편안할 때만 다음 단계 시도"
+      ]
+    }
+  ],
+  [
+    "verified-physioball-hip-bridge",
+    {
+      "setup": [
+        "피지오볼 힙 브리지 전 안정된 짐볼·바닥·주변 공간을 확인",
+        "바닥·장비·주변 반경과 안전한 내려놓기 위치 확인",
+        "가장 쉬운 범위와 낮은 강도에서 2회 리허설"
+      ],
+      "finish": "피지오볼 힙 브리지을 마친 뒤 도구를 안전하게 내려놓고 그립·관절·피로 반응을 확인합니다.",
+      "commonMistakes": [
+        "무게를 몸에서 멀리 두고 반동으로 반복하기",
+        "정렬이 무너진 상태에서 반복 지속",
+        "통증·저림·어지러움 신호 무시"
+      ],
+      "regressions": [
+        "더 가벼운 도구·짧은 범위",
+        "반복·시간 또는 가동 범위 낮추기",
+        "더 안정된 지지 또는 쉬운 기본 동작으로 전환"
+      ],
+      "progressions": [
+        "정렬 유지 뒤 반복 또는 부하 하나만 소폭 증가",
+        "한 번에 하나의 변수만 조절",
+        "다음 날 반응이 편안할 때만 다음 단계 시도"
+      ]
+    }
+  ],
+  [
+    "verified-push-ups-with-feet-on-an-exercise-ball",
+    {
+      "setup": [
+        "발을 짐볼에 올린 푸시업 전 안정된 짐볼·바닥·주변 공간을 확인",
+        "바닥·장비·주변 반경과 안전한 내려놓기 위치 확인",
+        "가장 쉬운 범위와 낮은 강도에서 2회 리허설"
+      ],
+      "finish": "발을 짐볼에 올린 푸시업을 마친 뒤 도구를 안전하게 내려놓고 그립·관절·피로 반응을 확인합니다.",
+      "commonMistakes": [
+        "무게를 몸에서 멀리 두고 반동으로 반복하기",
+        "정렬이 무너진 상태에서 반복 지속",
+        "통증·저림·어지러움 신호 무시"
+      ],
+      "regressions": [
+        "더 가벼운 도구·짧은 범위",
+        "반복·시간 또는 가동 범위 낮추기",
+        "더 안정된 지지 또는 쉬운 기본 동작으로 전환"
+      ],
+      "progressions": [
+        "정렬 유지 뒤 반복 또는 부하 하나만 소폭 증가",
+        "한 번에 하나의 변수만 조절",
+        "다음 날 반응이 편안할 때만 다음 단계 시도"
+      ]
+    }
+  ],
+  [
+    "verified-weighted-ball-hyperextension",
+    {
+      "setup": [
+        "웨이트볼 하이퍼익스텐션 전 안정된 짐볼·바닥·주변 공간을 확인",
+        "바닥·장비·주변 반경과 안전한 내려놓기 위치 확인",
+        "가장 쉬운 범위와 낮은 강도에서 2회 리허설"
+      ],
+      "finish": "웨이트볼 하이퍼익스텐션을 마친 뒤 도구를 안전하게 내려놓고 그립·관절·피로 반응을 확인합니다.",
+      "commonMistakes": [
+        "무게를 몸에서 멀리 두고 반동으로 반복하기",
+        "정렬이 무너진 상태에서 반복 지속",
+        "통증·저림·어지러움 신호 무시"
+      ],
+      "regressions": [
+        "더 가벼운 도구·짧은 범위",
+        "반복·시간 또는 가동 범위 낮추기",
+        "더 안정된 지지 또는 쉬운 기본 동작으로 전환"
+      ],
+      "progressions": [
+        "정렬 유지 뒤 반복 또는 부하 하나만 소폭 증가",
+        "한 번에 하나의 변수만 조절",
+        "다음 날 반응이 편안할 때만 다음 단계 시도"
+      ]
+    }
+  ],
+  [
+    "verified-weighted-ball-side-bend",
+    {
+      "setup": [
+        "웨이트볼 사이드 벤드 전 안정된 짐볼·바닥·주변 공간을 확인",
+        "바닥·장비·주변 반경과 안전한 내려놓기 위치 확인",
+        "가장 쉬운 범위와 낮은 강도에서 2회 리허설"
+      ],
+      "finish": "웨이트볼 사이드 벤드을 마친 뒤 도구를 안전하게 내려놓고 그립·관절·피로 반응을 확인합니다.",
+      "commonMistakes": [
+        "무게를 몸에서 멀리 두고 반동으로 반복하기",
+        "정렬이 무너진 상태에서 반복 지속",
+        "통증·저림·어지러움 신호 무시"
+      ],
+      "regressions": [
+        "더 가벼운 도구·짧은 범위",
+        "반복·시간 또는 가동 범위 낮추기",
+        "더 안정된 지지 또는 쉬운 기본 동작으로 전환"
+      ],
+      "progressions": [
+        "정렬 유지 뒤 반복 또는 부하 하나만 소폭 증가",
+        "한 번에 하나의 변수만 조절",
+        "다음 날 반응이 편안할 때만 다음 단계 시도"
+      ]
+    }
+  ],
+  [
+    "verified-advanced-kettlebell-windmill",
+    {
+      "setup": [
+        "고급 케틀벨 윈드밀 전 케틀벨·바닥·주변 공간을 확인",
+        "바닥·장비·주변 반경과 안전한 내려놓기 위치 확인",
+        "가장 쉬운 범위와 낮은 강도에서 2회 리허설"
+      ],
+      "finish": "고급 케틀벨 윈드밀을 마친 뒤 도구를 안전하게 내려놓고 그립·관절·피로 반응을 확인합니다.",
+      "commonMistakes": [
+        "무게를 몸에서 멀리 두고 반동으로 반복하기",
+        "정렬이 무너진 상태에서 반복 지속",
+        "통증·저림·어지러움 신호 무시"
+      ],
+      "regressions": [
+        "더 가벼운 도구·짧은 범위",
+        "반복·시간 또는 가동 범위 낮추기",
+        "더 안정된 지지 또는 쉬운 기본 동작으로 전환"
+      ],
+      "progressions": [
+        "정렬 유지 뒤 반복 또는 부하 하나만 소폭 증가",
+        "한 번에 하나의 변수만 조절",
+        "다음 날 반응이 편안할 때만 다음 단계 시도"
+      ]
+    }
+  ],
+  [
+    "verified-alternating-floor-press",
+    {
+      "setup": [
+        "교대 플로어 프레스 전 케틀벨·바닥·주변 공간을 확인",
+        "바닥·장비·주변 반경과 안전한 내려놓기 위치 확인",
+        "가장 쉬운 범위와 낮은 강도에서 2회 리허설"
+      ],
+      "finish": "교대 플로어 프레스을 마친 뒤 도구를 안전하게 내려놓고 그립·관절·피로 반응을 확인합니다.",
+      "commonMistakes": [
+        "무게를 몸에서 멀리 두고 반동으로 반복하기",
+        "정렬이 무너진 상태에서 반복 지속",
+        "통증·저림·어지러움 신호 무시"
+      ],
+      "regressions": [
+        "더 가벼운 도구·짧은 범위",
+        "반복·시간 또는 가동 범위 낮추기",
+        "더 안정된 지지 또는 쉬운 기본 동작으로 전환"
+      ],
+      "progressions": [
+        "정렬 유지 뒤 반복 또는 부하 하나만 소폭 증가",
+        "한 번에 하나의 변수만 조절",
+        "다음 날 반응이 편안할 때만 다음 단계 시도"
+      ]
+    }
+  ],
+  [
+    "verified-alternating-hang-clean",
+    {
+      "setup": [
+        "교대 행 클린 전 케틀벨·바닥·주변 공간을 확인",
+        "바닥·장비·주변 반경과 안전한 내려놓기 위치 확인",
+        "가장 쉬운 범위와 낮은 강도에서 2회 리허설"
+      ],
+      "finish": "교대 행 클린을 마친 뒤 도구를 안전하게 내려놓고 그립·관절·피로 반응을 확인합니다.",
+      "commonMistakes": [
+        "무게를 몸에서 멀리 두고 반동으로 반복하기",
+        "정렬이 무너진 상태에서 반복 지속",
+        "통증·저림·어지러움 신호 무시"
+      ],
+      "regressions": [
+        "더 가벼운 도구·짧은 범위",
+        "반복·시간 또는 가동 범위 낮추기",
+        "더 안정된 지지 또는 쉬운 기본 동작으로 전환"
+      ],
+      "progressions": [
+        "정렬 유지 뒤 반복 또는 부하 하나만 소폭 증가",
+        "한 번에 하나의 변수만 조절",
+        "다음 날 반응이 편안할 때만 다음 단계 시도"
+      ]
+    }
+  ],
+  [
+    "verified-alternating-kettlebell-press",
+    {
+      "setup": [
+        "교대 케틀벨 프레스 전 케틀벨·바닥·주변 공간을 확인",
+        "바닥·장비·주변 반경과 안전한 내려놓기 위치 확인",
+        "가장 쉬운 범위와 낮은 강도에서 2회 리허설"
+      ],
+      "finish": "교대 케틀벨 프레스을 마친 뒤 도구를 안전하게 내려놓고 그립·관절·피로 반응을 확인합니다.",
+      "commonMistakes": [
+        "무게를 몸에서 멀리 두고 반동으로 반복하기",
+        "정렬이 무너진 상태에서 반복 지속",
+        "통증·저림·어지러움 신호 무시"
+      ],
+      "regressions": [
+        "더 가벼운 도구·짧은 범위",
+        "반복·시간 또는 가동 범위 낮추기",
+        "더 안정된 지지 또는 쉬운 기본 동작으로 전환"
+      ],
+      "progressions": [
+        "정렬 유지 뒤 반복 또는 부하 하나만 소폭 증가",
+        "한 번에 하나의 변수만 조절",
+        "다음 날 반응이 편안할 때만 다음 단계 시도"
+      ]
+    }
+  ],
+  [
+    "verified-alternating-kettlebell-row",
+    {
+      "setup": [
+        "교대 케틀벨 로우 전 케틀벨·바닥·주변 공간을 확인",
+        "바닥·장비·주변 반경과 안전한 내려놓기 위치 확인",
+        "가장 쉬운 범위와 낮은 강도에서 2회 리허설"
+      ],
+      "finish": "교대 케틀벨 로우을 마친 뒤 도구를 안전하게 내려놓고 그립·관절·피로 반응을 확인합니다.",
+      "commonMistakes": [
+        "무게를 몸에서 멀리 두고 반동으로 반복하기",
+        "정렬이 무너진 상태에서 반복 지속",
+        "통증·저림·어지러움 신호 무시"
+      ],
+      "regressions": [
+        "더 가벼운 도구·짧은 범위",
+        "반복·시간 또는 가동 범위 낮추기",
+        "더 안정된 지지 또는 쉬운 기본 동작으로 전환"
+      ],
+      "progressions": [
+        "정렬 유지 뒤 반복 또는 부하 하나만 소폭 증가",
+        "한 번에 하나의 변수만 조절",
+        "다음 날 반응이 편안할 때만 다음 단계 시도"
+      ]
+    }
+  ],
+  [
+    "verified-alternating-renegade-row",
+    {
+      "setup": [
+        "교대 레니게이드 로우 전 케틀벨·바닥·주변 공간을 확인",
+        "바닥·장비·주변 반경과 안전한 내려놓기 위치 확인",
+        "가장 쉬운 범위와 낮은 강도에서 2회 리허설"
+      ],
+      "finish": "교대 레니게이드 로우을 마친 뒤 도구를 안전하게 내려놓고 그립·관절·피로 반응을 확인합니다.",
+      "commonMistakes": [
+        "무게를 몸에서 멀리 두고 반동으로 반복하기",
+        "정렬이 무너진 상태에서 반복 지속",
+        "통증·저림·어지러움 신호 무시"
+      ],
+      "regressions": [
+        "더 가벼운 도구·짧은 범위",
+        "반복·시간 또는 가동 범위 낮추기",
+        "더 안정된 지지 또는 쉬운 기본 동작으로 전환"
+      ],
+      "progressions": [
+        "정렬 유지 뒤 반복 또는 부하 하나만 소폭 증가",
+        "한 번에 하나의 변수만 조절",
+        "다음 날 반응이 편안할 때만 다음 단계 시도"
+      ]
+    }
+  ],
+  [
+    "verified-bent-press",
+    {
+      "setup": [
+        "벤트 프레스 전 케틀벨·바닥·주변 공간을 확인",
+        "바닥·장비·주변 반경과 안전한 내려놓기 위치 확인",
+        "가장 쉬운 범위와 낮은 강도에서 2회 리허설"
+      ],
+      "finish": "벤트 프레스을 마친 뒤 도구를 안전하게 내려놓고 그립·관절·피로 반응을 확인합니다.",
+      "commonMistakes": [
+        "무게를 몸에서 멀리 두고 반동으로 반복하기",
+        "정렬이 무너진 상태에서 반복 지속",
+        "통증·저림·어지러움 신호 무시"
+      ],
+      "regressions": [
+        "더 가벼운 도구·짧은 범위",
+        "반복·시간 또는 가동 범위 낮추기",
+        "더 안정된 지지 또는 쉬운 기본 동작으로 전환"
+      ],
+      "progressions": [
+        "정렬 유지 뒤 반복 또는 부하 하나만 소폭 증가",
+        "한 번에 하나의 변수만 조절",
+        "다음 날 반응이 편안할 때만 다음 단계 시도"
+      ]
+    }
+  ],
+  [
+    "verified-bottoms-up-clean-from-the-hang-position",
+    {
+      "setup": [
+        "행 바텀스업 클린 전 케틀벨·바닥·주변 공간을 확인",
+        "바닥·장비·주변 반경과 안전한 내려놓기 위치 확인",
+        "가장 쉬운 범위와 낮은 강도에서 2회 리허설"
+      ],
+      "finish": "행 바텀스업 클린을 마친 뒤 도구를 안전하게 내려놓고 그립·관절·피로 반응을 확인합니다.",
+      "commonMistakes": [
+        "무게를 몸에서 멀리 두고 반동으로 반복하기",
+        "정렬이 무너진 상태에서 반복 지속",
+        "통증·저림·어지러움 신호 무시"
+      ],
+      "regressions": [
+        "더 가벼운 도구·짧은 범위",
+        "반복·시간 또는 가동 범위 낮추기",
+        "더 안정된 지지 또는 쉬운 기본 동작으로 전환"
+      ],
+      "progressions": [
+        "정렬 유지 뒤 반복 또는 부하 하나만 소폭 증가",
+        "한 번에 하나의 변수만 조절",
+        "다음 날 반응이 편안할 때만 다음 단계 시도"
+      ]
+    }
+  ],
+  [
+    "verified-double-kettlebell-alternating-hang-clean",
+    {
+      "setup": [
+        "더블 케틀벨 교대 행 클린 전 케틀벨·바닥·주변 공간을 확인",
+        "바닥·장비·주변 반경과 안전한 내려놓기 위치 확인",
+        "가장 쉬운 범위와 낮은 강도에서 2회 리허설"
+      ],
+      "finish": "더블 케틀벨 교대 행 클린을 마친 뒤 도구를 안전하게 내려놓고 그립·관절·피로 반응을 확인합니다.",
+      "commonMistakes": [
+        "무게를 몸에서 멀리 두고 반동으로 반복하기",
+        "정렬이 무너진 상태에서 반복 지속",
+        "통증·저림·어지러움 신호 무시"
+      ],
+      "regressions": [
+        "더 가벼운 도구·짧은 범위",
+        "반복·시간 또는 가동 범위 낮추기",
+        "더 안정된 지지 또는 쉬운 기본 동작으로 전환"
+      ],
+      "progressions": [
+        "정렬 유지 뒤 반복 또는 부하 하나만 소폭 증가",
+        "한 번에 하나의 변수만 조절",
+        "다음 날 반응이 편안할 때만 다음 단계 시도"
+      ]
+    }
+  ],
+  [
+    "verified-double-kettlebell-jerk",
+    {
+      "setup": [
+        "더블 케틀벨 저크 전 케틀벨·바닥·주변 공간을 확인",
+        "바닥·장비·주변 반경과 안전한 내려놓기 위치 확인",
+        "가장 쉬운 범위와 낮은 강도에서 2회 리허설"
+      ],
+      "finish": "더블 케틀벨 저크을 마친 뒤 도구를 안전하게 내려놓고 그립·관절·피로 반응을 확인합니다.",
+      "commonMistakes": [
+        "무게를 몸에서 멀리 두고 반동으로 반복하기",
+        "정렬이 무너진 상태에서 반복 지속",
+        "통증·저림·어지러움 신호 무시"
+      ],
+      "regressions": [
+        "더 가벼운 도구·짧은 범위",
+        "반복·시간 또는 가동 범위 낮추기",
+        "더 안정된 지지 또는 쉬운 기본 동작으로 전환"
+      ],
+      "progressions": [
+        "정렬 유지 뒤 반복 또는 부하 하나만 소폭 증가",
+        "한 번에 하나의 변수만 조절",
+        "다음 날 반응이 편안할 때만 다음 단계 시도"
+      ]
+    }
+  ],
+  [
+    "verified-double-kettlebell-push-press",
+    {
+      "setup": [
+        "더블 케틀벨 푸시프레스 전 케틀벨·바닥·주변 공간을 확인",
+        "바닥·장비·주변 반경과 안전한 내려놓기 위치 확인",
+        "가장 쉬운 범위와 낮은 강도에서 2회 리허설"
+      ],
+      "finish": "더블 케틀벨 푸시프레스을 마친 뒤 도구를 안전하게 내려놓고 그립·관절·피로 반응을 확인합니다.",
+      "commonMistakes": [
+        "무게를 몸에서 멀리 두고 반동으로 반복하기",
+        "정렬이 무너진 상태에서 반복 지속",
+        "통증·저림·어지러움 신호 무시"
+      ],
+      "regressions": [
+        "더 가벼운 도구·짧은 범위",
+        "반복·시간 또는 가동 범위 낮추기",
+        "더 안정된 지지 또는 쉬운 기본 동작으로 전환"
+      ],
+      "progressions": [
+        "정렬 유지 뒤 반복 또는 부하 하나만 소폭 증가",
+        "한 번에 하나의 변수만 조절",
+        "다음 날 반응이 편안할 때만 다음 단계 시도"
+      ]
+    }
+  ],
+  [
+    "verified-double-kettlebell-snatch",
+    {
+      "setup": [
+        "더블 케틀벨 스내치 전 케틀벨·바닥·주변 공간을 확인",
+        "바닥·장비·주변 반경과 안전한 내려놓기 위치 확인",
+        "가장 쉬운 범위와 낮은 강도에서 2회 리허설"
+      ],
+      "finish": "더블 케틀벨 스내치을 마친 뒤 도구를 안전하게 내려놓고 그립·관절·피로 반응을 확인합니다.",
+      "commonMistakes": [
+        "무게를 몸에서 멀리 두고 반동으로 반복하기",
+        "정렬이 무너진 상태에서 반복 지속",
+        "통증·저림·어지러움 신호 무시"
+      ],
+      "regressions": [
+        "더 가벼운 도구·짧은 범위",
+        "반복·시간 또는 가동 범위 낮추기",
+        "더 안정된 지지 또는 쉬운 기본 동작으로 전환"
+      ],
+      "progressions": [
+        "정렬 유지 뒤 반복 또는 부하 하나만 소폭 증가",
+        "한 번에 하나의 변수만 조절",
+        "다음 날 반응이 편안할 때만 다음 단계 시도"
+      ]
+    }
+  ],
+  [
+    "verified-double-kettlebell-windmill",
+    {
+      "setup": [
+        "더블 케틀벨 윈드밀 전 케틀벨·바닥·주변 공간을 확인",
+        "바닥·장비·주변 반경과 안전한 내려놓기 위치 확인",
+        "가장 쉬운 범위와 낮은 강도에서 2회 리허설"
+      ],
+      "finish": "더블 케틀벨 윈드밀을 마친 뒤 도구를 안전하게 내려놓고 그립·관절·피로 반응을 확인합니다.",
+      "commonMistakes": [
+        "무게를 몸에서 멀리 두고 반동으로 반복하기",
+        "정렬이 무너진 상태에서 반복 지속",
+        "통증·저림·어지러움 신호 무시"
+      ],
+      "regressions": [
+        "더 가벼운 도구·짧은 범위",
+        "반복·시간 또는 가동 범위 낮추기",
+        "더 안정된 지지 또는 쉬운 기본 동작으로 전환"
+      ],
+      "progressions": [
+        "정렬 유지 뒤 반복 또는 부하 하나만 소폭 증가",
+        "한 번에 하나의 변수만 조절",
+        "다음 날 반응이 편안할 때만 다음 단계 시도"
+      ]
+    }
+  ],
+  [
+    "verified-extended-range-one-arm-kettlebell-floor-press",
+    {
+      "setup": [
+        "확장범위 원암 케틀벨 플로어 프레스 전 케틀벨·바닥·주변 공간을 확인",
+        "바닥·장비·주변 반경과 안전한 내려놓기 위치 확인",
+        "가장 쉬운 범위와 낮은 강도에서 2회 리허설"
+      ],
+      "finish": "확장범위 원암 케틀벨 플로어 프레스을 마친 뒤 도구를 안전하게 내려놓고 그립·관절·피로 반응을 확인합니다.",
+      "commonMistakes": [
+        "무게를 몸에서 멀리 두고 반동으로 반복하기",
+        "정렬이 무너진 상태에서 반복 지속",
+        "통증·저림·어지러움 신호 무시"
+      ],
+      "regressions": [
+        "더 가벼운 도구·짧은 범위",
+        "반복·시간 또는 가동 범위 낮추기",
+        "더 안정된 지지 또는 쉬운 기본 동작으로 전환"
+      ],
+      "progressions": [
+        "정렬 유지 뒤 반복 또는 부하 하나만 소폭 증가",
+        "한 번에 하나의 변수만 조절",
+        "다음 날 반응이 편안할 때만 다음 단계 시도"
+      ]
+    }
+  ],
+  [
+    "verified-front-squats-with-two-kettlebells",
+    {
+      "setup": [
+        "더블 케틀벨 프런트 스쿼트 전 케틀벨·바닥·주변 공간을 확인",
+        "바닥·장비·주변 반경과 안전한 내려놓기 위치 확인",
+        "가장 쉬운 범위와 낮은 강도에서 2회 리허설"
+      ],
+      "finish": "더블 케틀벨 프런트 스쿼트을 마친 뒤 도구를 안전하게 내려놓고 그립·관절·피로 반응을 확인합니다.",
+      "commonMistakes": [
+        "무게를 몸에서 멀리 두고 반동으로 반복하기",
+        "정렬이 무너진 상태에서 반복 지속",
+        "통증·저림·어지러움 신호 무시"
+      ],
+      "regressions": [
+        "더 가벼운 도구·짧은 범위",
+        "반복·시간 또는 가동 범위 낮추기",
+        "더 안정된 지지 또는 쉬운 기본 동작으로 전환"
+      ],
+      "progressions": [
+        "정렬 유지 뒤 반복 또는 부하 하나만 소폭 증가",
+        "한 번에 하나의 변수만 조절",
+        "다음 날 반응이 편안할 때만 다음 단계 시도"
+      ]
+    }
+  ],
+  [
+    "verified-kettlebell-arnold-press",
+    {
+      "setup": [
+        "케틀벨 아놀드 프레스 전 케틀벨·바닥·주변 공간을 확인",
+        "바닥·장비·주변 반경과 안전한 내려놓기 위치 확인",
+        "가장 쉬운 범위와 낮은 강도에서 2회 리허설"
+      ],
+      "finish": "케틀벨 아놀드 프레스을 마친 뒤 도구를 안전하게 내려놓고 그립·관절·피로 반응을 확인합니다.",
       "commonMistakes": [
         "무게를 몸에서 멀리 두고 반동으로 반복하기",
         "정렬이 무너진 상태에서 반복 지속",
