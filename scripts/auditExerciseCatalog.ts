@@ -63,8 +63,16 @@ if (generatedCompoundEntries.length) {
   });
 }
 
+const categoryCounts = Object.fromEntries(
+  Object.entries(exercises.reduce<Record<string, number>>((counts, exercise) => {
+    counts[exercise.category] = (counts[exercise.category] ?? 0) + 1;
+    return counts;
+  }, {})).sort(([left], [right]) => left.localeCompare(right, "ko-KR")),
+);
+
 const summary = {
   totalExercises: exercises.length,
+  categoryCounts,
   manualExerciseEntries: exercises.length - generatedCompoundEntries.length,
   generatedCompoundEntries: generatedCompoundEntries.length,
   duplicateIdGroups: duplicateIds.length,

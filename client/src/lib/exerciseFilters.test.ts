@@ -9,7 +9,7 @@ describe("exercise library QA", () => {
     const categories = new Set(exercises.map((exercise) => exercise.category));
     const stats = getCatalogStats(exercises);
     expect(categories).toEqual(new Set(["러닝", "유산소", "헬스기구", "프리웨이트", "맨몸운동", "모빌리티", "균형·협응", "요가·필라테스", "파워·민첩성"]));
-    expect(exercises.length).toBeGreaterThanOrEqual(499);
+    expect(exercises.length).toBeGreaterThanOrEqual(1000);
     expect(stats).toEqual({ exerciseCount: exercises.length, categoryCount: categories.size });
     expect(new Set(exercises.map((exercise) => exercise.id)).size).toBe(exercises.length);
     exercises.forEach((exercise) => {
@@ -96,7 +96,7 @@ describe("exercise library QA", () => {
   });
   it("includes solo resistance-band upper-body, lower-body, and core coordination variants", () => {
     expect(exercises.map((exercise) => exercise.id)).toEqual(expect.arrayContaining(["resistance-band-pull-apart-easy", "resistance-band-biceps-curl-easy", "resistance-band-triceps-pressdown-easy", "resistance-band-squat-to-press-easy", "resistance-band-clamshell-easy", "resistance-band-dead-bug-press-easy", "resistance-band-hip-thrust-easy", "resistance-band-reverse-fly-easy"]));
-    expect(filterExercises(exercises, { ...allFilters, category: "프리웨이트", keyword: "밴드 풀어파트" }).map((exercise) => exercise.id)).toEqual(["resistance-band-pull-apart-easy"]);
+    expect(filterExercises(exercises, { ...allFilters, category: "프리웨이트", keyword: "밴드 풀어파트" }).map((exercise) => exercise.id)).toContain("resistance-band-pull-apart-easy");
   });
   it("includes solo Smith, cable, and unilateral machine strength variants", () => {
     expect(exercises.map((exercise) => exercise.id)).toEqual(expect.arrayContaining(["smith-machine-box-squat-easy", "smith-machine-rdl-easy", "smith-machine-hip-thrust-easy", "smith-machine-incline-press-easy", "smith-machine-calf-raise-easy", "smith-machine-inverted-row-easy", "cable-high-row-easy", "cable-squat-to-row-easy", "machine-unilateral-leg-curl-easy", "machine-unilateral-leg-extension-easy"]));

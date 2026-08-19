@@ -1,6 +1,7 @@
 import { describe, expect, it } from "vitest";
 import { getExerciseDetail } from "./exerciseDetails";
 import { exercises } from "./fitnessData";
+import { verifiedActualExercisesPart14 } from "./verifiedActualExercisesPart14";
 
 const normalize = (value: string) => value
   .toLocaleLowerCase("ko-KR")
@@ -10,8 +11,18 @@ const normalize = (value: string) => value
 
 describe("exercise catalog quality gate", () => {
   it("keeps a catalog of individually named exercises instead of generated coaching combinations", () => {
-    expect(exercises).toHaveLength(499);
+    expect(exercises).toHaveLength(1000);
     expect(exercises.some((exercise) => exercise.id.startsWith("atlas13-"))).toBe(false);
+    expect(exercises.filter((exercise) => exercise.id.startsWith("verified-")).length).toBe(501);
+  });
+
+  it("keeps the new expansion grounded in sourced independent movements, not set prescriptions", () => {
+    expect(verifiedActualExercisesPart14).toHaveLength(501);
+    verifiedActualExercisesPart14.forEach((exercise) => {
+      expect(exercise.reference.url).toMatch(/acsm\.org|github\.com\/yuhonas\/free-exercise-db/);
+      expect(exercise.name).not.toMatch(/템포|폼 리셋|파셜 레인지|1\.5레프|포즈/);
+      expect(exercise.englishName).not.toMatch(/tempo|form reset|partial range|one half rep|pause rep/i);
+    });
   });
 
   it("keeps identifiers and both display-name fields unique after normalization", () => {

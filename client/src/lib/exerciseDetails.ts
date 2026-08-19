@@ -1,6 +1,7 @@
 import type { Exercise } from "./fitnessData";
 
 import { expandedExercisesPart12 } from "./expandedExercisesPart12";
+import { verifiedActualExerciseDetailsPart14 } from "./verifiedActualExercisesPart14";
 
 export type ExerciseDetail = {
   setup: string[];
@@ -399,6 +400,8 @@ for (const exercise of expandedExercisesPart12) {
     progressions: [...base.progressions],
   };
 }
+
+Object.assign(exerciseDetails, verifiedActualExerciseDetailsPart14);
 
 export function getExerciseDetail(exercise: Exercise): ExerciseDetail {
   return exerciseDetails[exercise.id] ?? categoryDefaults[exercise.category];

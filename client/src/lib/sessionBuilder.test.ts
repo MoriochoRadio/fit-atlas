@@ -335,16 +335,16 @@ describe("single session builder", () => {
     expect(outdoorEndurance.blocks[1].items.join(" ")).toContain("워크·조그 디센딩 래더 이지");
   });
 
-  it("connects representative 1,000-exercise control, tempo, pause, and interval variants across sessions", () => {
+  it("connects representative real exercises from the 1,000-exercise catalog across sessions", () => {
     const homeStrength = buildSession({ goal: "strength", environment: "home", duration: 45, checkin });
     const homeAllRound = buildSession({ goal: "all_round", environment: "home", duration: 45, checkin });
     const gymStrength = buildSession({ goal: "strength", environment: "gym", duration: 45, checkin });
     const gymEndurance = buildSession({ goal: "endurance", environment: "gym", duration: 45, checkin });
     const outdoorEndurance = buildSession({ goal: "endurance", environment: "outdoor", duration: 45, checkin });
-    expect(homeStrength.blocks[1].items.join(" ")).toContain("맨몸 스쿼트 템포");
-    expect(homeAllRound.blocks[1].items.join(" ")).toContain("데드 버그 얼터네이팅");
-    expect(gymStrength.blocks[1].items.join(" ")).toContain("레그 프레스 템포");
-    expect(gymEndurance.blocks[1].items.join(" ")).toContain("트레드밀 런 인터벌");
-    expect(outdoorEndurance.blocks[1].items.join(" ")).toContain("로드 런 인터벌");
+    expect(homeStrength.blocks[1].items.join(" ")).toContain("맨몸 스쿼트");
+    expect(homeAllRound.blocks[1].items.join(" ")).toContain("데드 버그");
+    expect(gymStrength.blocks[1].items.join(" ")).toContain("레그 프레스");
+    expect(gymEndurance.blocks[1].items.join(" ")).toContain("실내 사이클");
+    expect(outdoorEndurance.blocks[1].items.join(" ")).toContain("트레일 러닝/걷기");
   });
 });
