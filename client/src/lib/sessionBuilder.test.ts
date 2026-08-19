@@ -140,4 +140,15 @@ describe("single session builder", () => {
     expect(homeAllRound.blocks[1].items.join(" ")).toContain("월 슬라이드 리프트오프 이지");
     expect(homeAllRound.blocks[1].items.join(" ")).toContain("지지 하프 니링 투 스탠드");
   });
+
+  it("connects seated recovery, self-resisted pull, wrist-friendly core, and tight-space options at home", () => {
+    const homeStrength = buildSession({ goal: "strength", environment: "home", duration: 45, checkin });
+    const homeAllRound = buildSession({ goal: "all_round", environment: "home", duration: 45, checkin });
+    expect(homeStrength.blocks[1].items.join(" ")).toContain("포어암 플랭크 니 홀드");
+    expect(homeStrength.blocks[1].items.join(" ")).toContain("수파인 90·90 힐 프레스");
+    expect(homeAllRound.blocks[1].items.join(" ")).toContain("시티드 펠빅 틸트 이지");
+    expect(homeAllRound.blocks[1].items.join(" ")).toContain("셀프 레지스티드 로우 이지");
+    expect(homeAllRound.blocks[1].items.join(" ")).toContain("월 스노우 엔젤 이지");
+    expect(homeAllRound.blocks[1].items.join(" ")).toContain("지지 스탠딩 클락 리치");
+  });
 });

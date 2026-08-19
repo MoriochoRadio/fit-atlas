@@ -36,6 +36,11 @@ describe("exercise library QA", () => {
     expect(filterExercises(exercises, { ...allFilters, category: "맨몸운동", keyword: "도밍" }).map((exercise) => exercise.id)).toEqual(["short-foot-doming-easy"]);
   });
 
+  it("includes seated recovery, self-resisted pull, wrist-friendly core, and tight-space variants", () => {
+    expect(exercises.map((exercise) => exercise.id)).toEqual(expect.arrayContaining(["seated-pelvic-tilt-easy", "chair-thoracic-extension-easy", "seated-spinal-twist-easy", "seated-posture-reset-reach", "wall-snow-angel-easy", "prone-cobra-hold-easy", "self-resisted-row-easy", "wall-lat-press-isometric-easy", "forearm-plank-knee-hold", "supine-heel-press-90-90", "side-lying-hip-abduction-hold", "standing-clock-reach-support"]));
+    expect(filterExercises(exercises, { ...allFilters, category: "맨몸운동", keyword: "셀프 레지스티드" }).map((exercise) => exercise.id)).toEqual(["self-resisted-row-easy"]);
+  });
+
   it("shows mobility entries and excludes equipment when requested", () => {
     expect(filterExercises(exercises, { ...allFilters, category: "모빌리티" }).map((exercise) => exercise.id)).toContain("cat-cow");
     expect(filterExercises(exercises, { ...allFilters, category: "균형·협응", focus: "균형" }).map((exercise) => exercise.id)).toContain("single-leg-stand");
