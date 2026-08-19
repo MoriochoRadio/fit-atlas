@@ -1,10 +1,12 @@
+import { lazy, Suspense } from "react";
 import { Toaster } from "@/components/ui/sonner";
 import ErrorBoundary from "./components/ErrorBoundary";
 import { ThemeProvider } from "./contexts/ThemeContext";
-import Home from "./pages/Home";
+
+const Home = lazy(() => import("./pages/Home"));
 
 function App() {
-  return <ErrorBoundary><ThemeProvider defaultTheme="light"><Toaster /><Home /></ThemeProvider></ErrorBoundary>;
+  return <ErrorBoundary><ThemeProvider defaultTheme="light"><Toaster /><Suspense fallback={<main aria-busy="true" />}><Home /></Suspense></ThemeProvider></ErrorBoundary>;
 }
 
 export default App;

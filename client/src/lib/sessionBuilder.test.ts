@@ -106,4 +106,15 @@ describe("single session builder", () => {
     expect(homeAllRound.blocks[1].items.join(" ")).toContain("스쿼트 투 카프 레이즈");
     expect(homeAllRound.blocks[1].items.join(" ")).toContain("베어 크롤 포워드 이지");
   });
+
+  it("connects bodyweight push, arm, lower-endurance, and core-transition options", () => {
+    const homeStrength = buildSession({ goal: "strength", environment: "home", duration: 45, checkin });
+    const homeAllRound = buildSession({ goal: "all_round", environment: "home", duration: 45, checkin });
+    expect(homeStrength.blocks[1].items.join(" ")).toContain("내로우 인클라인 푸시업 이지");
+    expect(homeStrength.blocks[1].items.join(" ")).toContain("지지 스플릿 스쿼트 홀드");
+    expect(homeStrength.blocks[1].items.join(" ")).toContain("니 플랭크 업다운");
+    expect(homeAllRound.blocks[1].items.join(" ")).toContain("월 싯 카프 레이즈 이지");
+    expect(homeAllRound.blocks[1].items.join(" ")).toContain("카운터 맨몸 트라이셉스 익스텐션");
+    expect(homeAllRound.blocks[1].items.join(" ")).toContain("하이 플랭크 니 투 엘보 이지");
+  });
 });
