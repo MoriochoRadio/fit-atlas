@@ -101,4 +101,19 @@ describe("Home recovery alternative flow", () => {
     expect(within(typeFilter).getByRole("button", { name: "전체 보기" }).getAttribute("aria-pressed")).toBe("true");
     expect((screen.getByLabelText("장비 필터") as HTMLSelectElement).value).toBe("전체");
   });
+
+  it("sorts filtered exercise results from the accessible sort dropdown and resets to recommendations", () => {
+    render(createElement(Home));
+    const typeFilter = screen.getByRole("group", { name: "운동 종류 빠른 필터" });
+    fireEvent.click(within(typeFilter).getByRole("button", { name: "요가·필라테스" }));
+
+    const sort = screen.getByLabelText("정렬 기준") as HTMLSelectElement;
+    expect(sort.value).toBe("recommended");
+    fireEvent.change(sort, { target: { value: "duration" } });
+    expect(sort.value).toBe("duration");
+    expect(within(typeFilter).getByText(/요가·필라테스 \d+개 표시/)).toBeTruthy();
+
+    fireEvent.click(within(typeFilter).getByRole("button", { name: "조건 초기화" }));
+    expect(sort.value).toBe("recommended");
+  });
 });
