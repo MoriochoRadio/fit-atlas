@@ -44,8 +44,8 @@ describe("single session builder", () => {
     const home = buildSession({ goal: "strength", environment: "home", duration: 45, checkin });
     const gym = buildSession({ goal: "strength", environment: "gym", duration: 45, checkin });
     const outdoor = buildSession({ goal: "endurance", environment: "outdoor", duration: 45, checkin });
-    expect(home.blocks[1].items.join(" ")).toContain("지지 인버티드 로우");
-    expect(home.blocks[1].items.join(" ")).toContain("노르딕 컬 프렙");
+    expect(home.blocks[1].items.join(" ")).toContain("지지 풀업 네거티브");
+    expect(home.blocks[1].items.join(" ")).toContain("발 지지 액티브 행");
     expect(gym.blocks[1].items.join(" ")).toContain("케이블 스탠딩 힙 어브덕션");
     expect(outdoor.blocks[1].items.join(" ")).toContain("200m 런·워크 이지");
     expect(outdoor.blocks[1].items.join(" ")).toContain("400m 런·워크");
@@ -56,8 +56,8 @@ describe("single session builder", () => {
     const gymStrength = buildSession({ goal: "strength", environment: "gym", duration: 45, checkin });
     const gymEndurance = buildSession({ goal: "endurance", environment: "gym", duration: 30, checkin });
     expect(home.blocks[1].items.join(" ")).toContain("지지 피스톨 스쿼트 투 박스");
-    expect(home.blocks[1].items.join(" ")).toContain("핸드 릴리스 푸시업");
-    expect(gymStrength.blocks[1].items.join(" ")).toContain("체스트 서포티드 머신 로우");
+    expect(home.blocks[1].items.join(" ")).toContain("지지 풀업 네거티브");
+    expect(gymStrength.blocks[1].items.join(" ")).toContain("어시스트 친업 머신");
     expect(gymStrength.blocks[1].items.join(" ")).toContain("머신 앱 크런치");
     expect(gymEndurance.blocks[1].items.join(" ")).toContain("트레드밀 조그·워크 인터벌");
   });
@@ -67,10 +67,21 @@ describe("single session builder", () => {
     const outdoor = buildSession({ goal: "endurance", environment: "outdoor", duration: 45, checkin });
     const gym = buildSession({ goal: "all_round", environment: "gym", duration: 45, checkin });
     expect(home.blocks[1].items.join(" ")).toContain("아처 푸시업 프렙");
-    expect(home.blocks[1].items.join(" ")).toContain("할로우 턱 홀드");
+    expect(home.blocks[1].items.join(" ")).toContain("지지 Y 밸런스 리치");
     expect(outdoor.blocks[1].items.join(" ")).toContain("200m 런·워크 이지");
     expect(outdoor.blocks[1].items.join(" ")).toContain("400m 런·워크");
     expect(gym.blocks[1].items.join(" ")).toContain("유니래터럴 레그 프레스");
     expect(gym.blocks[1].items.join(" ")).toContain("케이블 싱글 암 체스트 프레스");
+  });
+
+  it("connects supported pull-up progressions and advanced balance variants", () => {
+    const homeStrength = buildSession({ goal: "strength", environment: "home", duration: 45, checkin });
+    const homeAllRound = buildSession({ goal: "all_round", environment: "home", duration: 45, checkin });
+    const gym = buildSession({ goal: "strength", environment: "gym", duration: 45, checkin });
+    expect(homeStrength.blocks[1].items.join(" ")).toContain("지지 풀업 네거티브");
+    expect(homeStrength.blocks[1].items.join(" ")).toContain("발 지지 액티브 행");
+    expect(homeAllRound.blocks[1].items.join(" ")).toContain("지지 Y 밸런스 리치");
+    expect(homeAllRound.blocks[1].items.join(" ")).toContain("크로스 바디 탭 밸런스");
+    expect(gym.blocks[1].items.join(" ")).toContain("어시스트 친업 머신");
   });
 });
