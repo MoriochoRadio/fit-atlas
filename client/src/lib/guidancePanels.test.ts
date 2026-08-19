@@ -26,7 +26,6 @@ describe("guidance panels", () => {
     expect(recoveryMarkup).toContain("부하 재개");
     expect(wellnessMarkup).toContain("지속적인 불면");
   });
-
   it("renders the joint pathway tabs, alternatives, and stop signals in the UI markup", () => {
     const pathway = getRecoveryPathway("ankle");
     const markup = renderToStaticMarkup(createElement(RecoveryPathwayPanel, { pathways: recoveryPathways, pathway, alternatives: [{ id: "ankle-knee-to-wall", name: "발목 니투월 락", category: "모빌리티" }], onChoose: () => undefined, onExplore: () => undefined }));
