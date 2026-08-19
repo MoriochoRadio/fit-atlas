@@ -43,7 +43,7 @@ describe("exercise library QA", () => {
 
   it("includes hip-control, knee-friendly endurance, forearm-support, and floor-transition variants", () => {
     expect(exercises.map((exercise) => exercise.id)).toEqual(expect.arrayContaining(["glute-bridge-adduction-squeeze-easy", "prone-hip-extension-knee-bent-easy", "standing-hip-flexion-hold-support", "wall-quad-set-easy", "terminal-knee-extension-wall-easy", "supported-squat-pulse-easy", "forearm-tabletop-hold-easy", "seated-forearm-pronation-supination", "forearm-wall-slide-easy", "kneeling-hip-shift-clock", "squat-to-half-kneel-support", "side-lying-clam-hold-easy"]));
-    expect(filterExercises(exercises, { ...allFilters, category: "맨몸운동", keyword: "애덕션" }).map((exercise) => exercise.id)).toEqual(["glute-bridge-adduction-squeeze-easy"]);
+    expect(filterExercises(exercises, { ...allFilters, category: "맨몸운동", keyword: "애덕션" }).map((exercise) => exercise.id)).toEqual(expect.arrayContaining(["glute-bridge-adduction-squeeze-easy", "seated-hip-adduction-squeeze-easy"]));
   });
 
   it("includes low-impact endurance and wall-or-chair upper-body reinforcement variants", () => {
@@ -59,6 +59,11 @@ describe("exercise library QA", () => {
   it("includes no-equipment forearm-grip endurance and low-load hip-or-knee control variants", () => {
     expect(exercises.map((exercise) => exercise.id)).toEqual(expect.arrayContaining(["seated-wrist-flexion-isometric-easy", "seated-wrist-extension-isometric-easy", "finger-spread-isometric-easy", "thumb-opposition-tap-easy", "fist-squeeze-isometric-easy", "fingertip-wall-press-easy", "wall-supported-hip-circle-easy", "chair-supported-lateral-weight-shift", "seated-ankle-pump-march-easy", "standing-heel-toe-rock-support", "wall-supported-mini-lunge-easy", "chair-supported-side-step-touch"]));
     expect(filterExercises(exercises, { ...allFilters, category: "맨몸운동", keyword: "엄지" }).map((exercise) => exercise.id)).toEqual(["thumb-opposition-tap-easy"]);
+  });
+
+  it("includes hand-or-wrist friendly and seated recovery coordination variants", () => {
+    expect(exercises.map((exercise) => exercise.id)).toEqual(expect.arrayContaining(["seated-wrist-radial-deviation-easy", "seated-wrist-ulnar-deviation-easy", "seated-hand-tendon-glide-easy", "elbow-supported-hand-open-close-easy", "seated-heel-raise-easy", "seated-toe-raise-easy", "seated-hip-abduction-press-easy", "seated-hip-adduction-squeeze-easy", "chair-seated-leg-slide-easy", "seated-cross-body-knee-tap-easy", "seated-step-out-tap-easy"]));
+    expect(filterExercises(exercises, { ...allFilters, category: "맨몸운동", keyword: "텐던" }).map((exercise) => exercise.id)).toEqual(["seated-hand-tendon-glide-easy"]);
   });
 
   it("shows mobility entries and excludes equipment when requested", () => {

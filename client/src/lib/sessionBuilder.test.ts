@@ -200,4 +200,17 @@ describe("single session builder", () => {
     expect(homeAllRound.blocks[1].items.join(" ")).toContain("월 서포티드 힙 서클 이지");
     expect(homeAllRound.blocks[1].items.join(" ")).toContain("엄지 대립 탭 이지");
   });
+
+  it("connects hand-or-wrist friendly and seated recovery coordination options at home", () => {
+    const homeStrength = buildSession({ goal: "strength", environment: "home", duration: 45, checkin });
+    const homeEndurance = buildSession({ goal: "endurance", environment: "home", duration: 30, checkin });
+    const homeAllRound = buildSession({ goal: "all_round", environment: "home", duration: 45, checkin });
+    expect(homeStrength.blocks[1].items.join(" ")).toContain("시티드 핸드 텐던 글라이드 이지");
+    expect(homeStrength.blocks[1].items.join(" ")).toContain("시티드 힙 애덕션 스퀴즈 이지");
+    expect(homeEndurance.blocks[1].items.join(" ")).toContain("시티드 크로스 바디 니 탭 이지");
+    expect(homeEndurance.blocks[1].items.join(" ")).toContain("시티드 스텝 아웃 탭 이지");
+    expect(homeAllRound.blocks[1].items.join(" ")).toContain("시티드 힐 레이즈 이지");
+    expect(homeAllRound.blocks[1].items.join(" ")).toContain("시티드 손목 요측 편위 이지");
+    expect(homeAllRound.blocks[1].items.join(" ")).toContain("엘보 서포티드 핸드 오픈 클로즈 이지");
+  });
 });
