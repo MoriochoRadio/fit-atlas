@@ -2,7 +2,7 @@ import { catalogPage01 } from "./catalogPage01";
 import { catalogPageByExerciseId } from "./catalogPageIndex";
 import type { CatalogEntry, Exercise } from "./catalogTypes";
 
-export const catalogSummary = { exerciseCount: 1000, categoryCount: 9, pageSize: 100 } as const;
+export const catalogSummary = { exerciseCount: 1008, categoryCount: 9, pageSize: 100 } as const;
 
 type CatalogPageLoader = () => Promise<{ default?: CatalogEntry[]; [key: string]: unknown }>;
 
@@ -17,6 +17,7 @@ const dynamicPageLoaders: CatalogPageLoader[] = [
   () => import("./catalogPage08"),
   () => import("./catalogPage09"),
   () => import("./catalogPage10"),
+  () => import("./catalogPage11"),
 ];
 
 const pageCache = new Map<number, CatalogEntry[]>([[0, catalogPage01]]);

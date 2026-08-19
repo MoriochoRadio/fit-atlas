@@ -17,7 +17,7 @@ const manuallyCuratedEntries = exercises
   .map((exercise) => ({ exercise, detail: getExerciseDetail(exercise) }));
 const verifiedEntries = verifiedActualExercisesPart14.map((exercise) => ({ exercise, detail: verifiedActualExerciseDetailsPart14[exercise.id] }));
 const entries = [...manuallyCuratedEntries, ...verifiedEntries];
-if (entries.length !== 1000) throw new Error(`Expected 1,000 catalog entries, received ${entries.length}.`);
+if (entries.length < 1000) throw new Error(`Expected at least 1,000 catalog entries, received ${entries.length}.`);
 
 const pageCount = Math.ceil(entries.length / pageSize);
 for (let pageIndex = 0; pageIndex < pageCount; pageIndex += 1) {

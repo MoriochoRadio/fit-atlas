@@ -12,9 +12,26 @@ const normalize = (value: string) => value
 
 describe("exercise catalog quality gate", () => {
   it("keeps a catalog of individually named exercises instead of generated coaching combinations", () => {
-    expect(exercises).toHaveLength(1000);
+    expect(exercises).toHaveLength(1008);
     expect(exercises.some((exercise) => exercise.id.startsWith("atlas13-"))).toBe(false);
     expect(exercises.filter((exercise) => exercise.id.startsWith("verified-")).length).toBe(534);
+  });
+
+  it("keeps new racket and combat starter drills non-contact with individualized safety and detail knowledge", () => {
+    const ids = ["tennis-ready-split-step-easy", "tennis-shadow-forehand-recovery-easy", "badminton-ready-side-step-easy", "badminton-net-step-return-easy", "table-tennis-ready-shift-easy", "boxing-guard-step-reset-easy", "boxing-shadow-jab-return-easy", "martial-arts-stance-shift-easy"];
+    const additions = ids.map((id) => exercises.find((exercise) => exercise.id === id));
+    expect(additions).toHaveLength(8);
+    additions.forEach((exercise) => {
+      expect(exercise).toBeDefined();
+      if (!exercise) return;
+      const detail = getExerciseDetail(exercise);
+      expect(exercise.difficulty).toBe("입문");
+      expect(exercise.warning).toMatch(/통증|어지러움|미끄러움|장애물|대련|타격/);
+      expect(detail.setup).toHaveLength(3);
+      expect(detail.commonMistakes).toHaveLength(3);
+      expect(detail.regressions).toHaveLength(3);
+      expect(detail.progressions).toHaveLength(3);
+    });
   });
 
   it("keeps the new expansion grounded in sourced independent movements, not set prescriptions", () => {

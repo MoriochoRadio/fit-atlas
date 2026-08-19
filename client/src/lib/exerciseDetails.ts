@@ -8,6 +8,7 @@ import { catalogPage07 } from "./catalogPage07";
 import { catalogPage08 } from "./catalogPage08";
 import { catalogPage09 } from "./catalogPage09";
 import { catalogPage10 } from "./catalogPage10";
+import { catalogPage11 } from "./catalogPage11";
 import type { Exercise, ExerciseDetail } from "./catalogTypes";
 
 export type { ExerciseDetail } from "./catalogTypes";
@@ -23,6 +24,7 @@ const catalogEntries = [
   ...catalogPage08,
   ...catalogPage09,
   ...catalogPage10,
+  ...catalogPage11,
 ];
 
 const detailByExerciseId = new Map(catalogEntries.map(({ exercise, detail }) => [exercise.id, detail]));

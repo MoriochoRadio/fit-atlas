@@ -43,6 +43,8 @@ export const movementVisuals: Record<string, MovementVisual> = {
   "kettlebell-goblet-squat": { title: "고블릿 스쿼트 흐름", frames: [{ label: "준비", cue: "케틀벨을 가슴 가까이", pose: "stand" }, { label: "앉기", cue: "발 전체·무릎 정렬", pose: "squat" }, { label: "일어서기", cue: "몸통 길게·부드럽게", pose: "stand" }] },
   "resistance-band-chest-press": { title: "밴드 체스트 프레스 흐름", frames: [{ label: "준비", cue: "고정점·밴드 상태 확인", pose: "stand" }, { label: "밀기", cue: "갈비뼈를 과도하게 들지 않기", pose: "push" }, { label: "복귀", cue: "장력을 천천히 제어", pose: "stand" }] },
   "kettlebell-suitcase-carry": { title: "수트케이스 캐리 흐름", frames: [{ label: "준비", cue: "가벼운 부하·짧은 경로", pose: "carry" }, { label: "보행", cue: "몸통 기울임 없이 짧게", pose: "carry" }, { label: "정지", cue: "방향 전환 전 속도 낮추기", pose: "stand" }] },
+  "tennis-ready-split-step-easy": { title: "테니스 레디 스플릿 스텝 흐름", frames: [{ label: "준비", cue: "발 전체·무릎 편안히", pose: "stand" }, { label: "작은 벌림", cue: "점프 없이 조용히", pose: "shuffle" }, { label: "리셋", cue: "중앙 준비 자세로", pose: "balance" }] },
+  "boxing-guard-step-reset-easy": { title: "복싱 가드 스텝 리셋 흐름", frames: [{ label: "가드", cue: "주먹·어깨 힘 빼기", pose: "stand" }, { label: "짧은 스텝", cue: "발을 교차하지 않기", pose: "shuffle" }, { label: "리셋", cue: "중립에서 호흡 확인", pose: "balance" }] },
 };
 
 export function getMovementVisual(exerciseId: string) {

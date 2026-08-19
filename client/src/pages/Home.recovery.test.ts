@@ -43,10 +43,10 @@ describe("Home recovery alternative flow", () => {
 
   it("renders the first catalog page first, then appends the next page on demand", async () => {
     render(createElement(Home));
-    expect(screen.getByText("100개 표시 · 100/1000개 카탈로그를 불러왔습니다.")).toBeTruthy();
+    expect(screen.getByText("100개 표시 · 100/1008개 카탈로그를 불러왔습니다.")).toBeTruthy();
 
     fireEvent.click(screen.getByRole("button", { name: /운동 100개 더 보기/ }));
-    await waitFor(() => expect(screen.getByText("200개 표시 · 200/1000개 카탈로그를 불러왔습니다.")).toBeTruthy());
+    await waitFor(() => expect(screen.getByText("200개 표시 · 200/1008개 카탈로그를 불러왔습니다.")).toBeTruthy());
   });
 
   it("saves a favorite and a recently viewed exercise from its card", async () => {
@@ -78,6 +78,19 @@ describe("Home recovery alternative flow", () => {
 
     expect(within(card!).getByText("맨몸 스쿼트 흐름")).toBeTruthy();
     expect(within(card!).getAllByText(/발 전체를 바닥에|엉덩이·무릎을 함께|통증 없는 범위로/)).toHaveLength(3);
+  });
+
+  it("loads a non-contact combat starter drill with its visual guide and safety scope", async () => {
+    render(createElement(Home));
+    fireEvent.change(screen.getByLabelText("운동 검색"), { target: { value: "복싱 가드 스텝" } });
+
+    await waitFor(() => expect(screen.getByRole("heading", { name: "복싱 가드 스텝 리셋 이지" })).toBeTruthy());
+    const card = screen.getByRole("heading", { name: "복싱 가드 스텝 리셋 이지" }).closest("article");
+    expect(card).toBeTruthy();
+    fireEvent.click(within(card!).getByRole("button", { name: "자세·근거 보기" }));
+
+    expect(within(card!).getByText("복싱 가드 스텝 리셋 흐름")).toBeTruthy();
+    expect(within(card!).getByText(/대련·스파링·타격은 포함하지 않습니다/)).toBeTruthy();
   });
 
   it("switches the seated-work recovery routine and bridges to a light home session", () => {
