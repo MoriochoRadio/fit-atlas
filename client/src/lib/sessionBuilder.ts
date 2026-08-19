@@ -70,6 +70,12 @@ mainItems.strength.home.push("엘리베이티드 파이크 푸시업 이지 또�
 mainItems.all_round.home.push("힙 에어플레인 서포트 이지 또는 스텝백 런지 리치 이지 또는 지지 싱글 레그 힐 레이즈 이지 또는 와이드 스탠스 스쿼트 펄스 이지 · 좌우 2세트");
 mainItems.all_round.home.push("테이블탑 숄더 탭 이지 또는 데드 버그 힐 프레스 이지 또는 사이드 라잉 레그 서클 이지 또는 베어 크롤 레터럴 이지 또는 크랩 워크 리치 이지 · 좌우 2세트");
 mainItems.all_round.home.push("토·힐 탠덤 워크 이지 또는 클락 밸런스 리치 이지 또는 체어 싯 리치 이지 또는 스탠딩 오픈 북 이지 또는 닐링 앵클 록 이지 또는 수파인 윈드실드 와이퍼 이지 · 2세트");
+mainItems.strength.home.push("맨몸 스쿼트 템포 또는 맨몸 푸시업 파셜 레인지 또는 글루트 브리지 아이소메트릭 또는 포어암 플랭크 포즈 · 2세트");
+mainItems.all_round.home.push("데드 버그 얼터네이팅 또는 베어 플랭크 컨트롤 또는 사이드 플랭크 아이소메트릭 또는 싱글 레그 밸런스 폼 리셋 · 좌우 2세트");
+mainItems.strength.gym.push("레그 프레스 템포 또는 시티드 로우 포즈 또는 체스트 프레스 슬로우 네거티브 또는 덤벨 RDL 컨트롤 · 2세트");
+mainItems.all_round.gym.push("랫 풀다운 컨트롤 또는 힙 어브덕션 아이소메트릭 또는 케틀벨 수트케이스 캐리 폼 리셋 또는 앱 크런치 파셜 레인지 · 2세트");
+mainItems.endurance.gym.push("트레드밀 런 인터벌 또는 인클라인 워크·런 컨트롤 또는 리커버리 워크 폼 리셋 · 대화 가능한 호흡");
+mainItems.endurance.outdoor.push("로드 런 인터벌 또는 트랙 런 템포 또는 트레일 하이크·런 컨트롤 또는 스타디움 스텝 파셜 레인지 · 안전한 노면 우선");
 
 function shortMain(items: string[], duration: SessionDuration) {
   if (duration === 15) return items.slice(0, 2);
