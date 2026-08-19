@@ -341,6 +341,10 @@ export const exerciseDetails: Record<string, ExerciseDetail> = {
   "hill-repeat-walk-run-easy": { setup: ["완만한 경사·신발 확인", "평지 걷기 4분", "낮은 경사 리허설"], finish: "평지 걷기 3분으로 무릎·발목·호흡 반응을 확인합니다.", commonMistakes: ["경사 과도", "보폭 과도", "회복 생략"], regressions: ["평지 걷기", "경사 줄이기", "시간 줄이기"], progressions: ["구간 1회", "오르막 5초", "평지 회복 유지"] },
   "cadence-ladder-march-jog": { setup: ["평지·신발 확인", "제자리 마치 10회", "짧은 조그 리허설"], finish: "편안한 걷기로 호흡·발목·무릎 반응을 확인합니다.", commonMistakes: ["보폭 과도", "발 앞쪽 과도 착지", "팔 긴장"], regressions: ["마치만", "조그 생략", "시간 줄이기"], progressions: ["조그 5초", "구간 1회", "리듬 안정"] },
   "run-walk-ladder-easy": { setup: ["평지·신발·거리 확인", "걷기 4분", "첫 조깅 짧게"], finish: "걷기 3분으로 호흡·통증·보행 반응을 확인합니다.", commonMistakes: ["단계 건너뜀", "걷기 생략", "통증 무시"], regressions: ["30초만", "걷기 늘리기", "단계 1개"], progressions: ["마지막 조깅 5초", "구간 1회", "걷기는 유지"] },
+  "cable-reverse-curl-easy": { setup: ["핀·바 손잡이 확인", "아주 낮은 장력", "손목 중립"], finish: "장력을 낮추고 손목·전완·팔꿈치 반응을 확인합니다.", commonMistakes: ["손목 꺾임", "몸통 반동", "팔꿈치 이동"], regressions: ["케이블 해머 컬", "장력 낮추기", "범위 줄이기"], progressions: ["반복 증가", "느린 복귀", "장력 한 단계"] },
+  "cable-cross-body-triceps-extension-easy": { setup: ["핀·손잡이 확인", "낮은 장력", "편안한 팔꿈치 경로"], finish: "장력을 낮추고 어깨·팔꿈치·손목 반응을 확인합니다.", commonMistakes: ["어깨 으쓱", "팔꿈치 과신전", "몸통 비틀기"], regressions: ["월 트라이셉스 프레스", "장력 낮추기", "범위 줄이기"], progressions: ["반복 증가", "느린 복귀", "장력 한 단계"] },
+  "cable-front-raise-easy": { setup: ["핀·손잡이 확인", "아주 낮은 장력", "작은 앞 들기 리허설"], finish: "장력을 낮추고 어깨·목·허리 반응을 확인합니다.", commonMistakes: ["목 으쓱", "허리 과신전", "팔 너무 높이"], regressions: ["월 슬라이드", "장력 낮추기", "범위 줄이기"], progressions: ["반복 증가", "정지 1초", "장력 한 단계"] },
+  "machine-standing-calf-raise-easy": { setup: ["패드·발판·안전장치 확인", "가벼운 저항", "작은 발목 리허설"], finish: "안전장치를 걸고 내려 발목·종아리·무릎 반응을 확인합니다.", commonMistakes: ["반동", "무릎 잠금", "발판 가장자리 불안정"], regressions: ["시티드 힐 레이즈", "중량 낮추기", "범위 줄이기"], progressions: ["반복 증가", "느린 내리기", "중량 한 단계"] },
 };
 
 export function getExerciseDetail(exercise: Exercise): ExerciseDetail {

@@ -81,6 +81,10 @@ describe("exercise library QA", () => {
     expect(exercises.map((exercise) => exercise.id)).toEqual(expect.arrayContaining(["easy-progression-run", "negative-split-walk-run-easy", "cruise-interval-run-easy", "hill-repeat-walk-run-easy", "cadence-ladder-march-jog", "run-walk-ladder-easy"]));
     expect(filterExercises(exercises, { ...allFilters, category: "러닝", keyword: "네거티브 스플릿" }).map((exercise) => exercise.id)).toEqual(["negative-split-walk-run-easy"]);
   });
+  it("includes solo cable forearm, triceps, shoulder, and standing calf-machine variants", () => {
+    expect(exercises.map((exercise) => exercise.id)).toEqual(expect.arrayContaining(["cable-reverse-curl-easy", "cable-cross-body-triceps-extension-easy", "cable-front-raise-easy", "machine-standing-calf-raise-easy"]));
+    expect(filterExercises(exercises, { ...allFilters, category: "헬스기구", keyword: "리버스 컬" }).map((exercise) => exercise.id)).toEqual(["cable-reverse-curl-easy"]);
+  });
   it("shows mobility entries and excludes equipment when requested", () => {
     expect(filterExercises(exercises, { ...allFilters, category: "모빌리티" }).map((exercise) => exercise.id)).toContain("cat-cow");
     expect(filterExercises(exercises, { ...allFilters, category: "균형·협응", focus: "균형" }).map((exercise) => exercise.id)).toContain("single-leg-stand");

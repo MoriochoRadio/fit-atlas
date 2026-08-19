@@ -257,4 +257,14 @@ describe("single session builder", () => {
     expect(outdoorAllRound.blocks[1].items.join(" ")).toContain("힐 리피트 워크·런 이지");
     expect(outdoorAllRound.blocks[1].items.join(" ")).toContain("케이던스 래더 마치·조그");
   });
+
+  it("connects solo cable forearm, triceps, shoulder, and standing calf-machine options at the gym", () => {
+    const gymStrength = buildSession({ goal: "strength", environment: "gym", duration: 45, checkin });
+    const gymAllRound = buildSession({ goal: "all_round", environment: "gym", duration: 45, checkin });
+    expect(gymStrength.blocks[1].items.join(" ")).toContain("케이블 리버스 컬 이지");
+    expect(gymStrength.blocks[1].items.join(" ")).toContain("케이블 크로스바디 트라이셉스 익스텐션 이지");
+    expect(gymStrength.blocks[1].items.join(" ")).toContain("케이블 프런트 레이즈 이지");
+    expect(gymStrength.blocks[1].items.join(" ")).toContain("머신 스탠딩 카프 레이즈 이지");
+    expect(gymAllRound.blocks[1].items.join(" ")).toContain("케이블 프런트 레이즈 이지");
+  });
 });
