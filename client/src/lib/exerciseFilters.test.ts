@@ -41,6 +41,11 @@ describe("exercise library QA", () => {
     expect(filterExercises(exercises, { ...allFilters, category: "맨몸운동", keyword: "셀프 레지스티드" }).map((exercise) => exercise.id)).toEqual(["self-resisted-row-easy"]);
   });
 
+  it("includes hip-control, knee-friendly endurance, forearm-support, and floor-transition variants", () => {
+    expect(exercises.map((exercise) => exercise.id)).toEqual(expect.arrayContaining(["glute-bridge-adduction-squeeze-easy", "prone-hip-extension-knee-bent-easy", "standing-hip-flexion-hold-support", "wall-quad-set-easy", "terminal-knee-extension-wall-easy", "supported-squat-pulse-easy", "forearm-tabletop-hold-easy", "seated-forearm-pronation-supination", "forearm-wall-slide-easy", "kneeling-hip-shift-clock", "squat-to-half-kneel-support", "side-lying-clam-hold-easy"]));
+    expect(filterExercises(exercises, { ...allFilters, category: "맨몸운동", keyword: "애덕션" }).map((exercise) => exercise.id)).toEqual(["glute-bridge-adduction-squeeze-easy"]);
+  });
+
   it("shows mobility entries and excludes equipment when requested", () => {
     expect(filterExercises(exercises, { ...allFilters, category: "모빌리티" }).map((exercise) => exercise.id)).toContain("cat-cow");
     expect(filterExercises(exercises, { ...allFilters, category: "균형·협응", focus: "균형" }).map((exercise) => exercise.id)).toContain("single-leg-stand");

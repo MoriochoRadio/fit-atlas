@@ -151,4 +151,16 @@ describe("single session builder", () => {
     expect(homeAllRound.blocks[1].items.join(" ")).toContain("월 스노우 엔젤 이지");
     expect(homeAllRound.blocks[1].items.join(" ")).toContain("지지 스탠딩 클락 리치");
   });
+
+  it("connects hip-control, knee-friendly, forearm-support, and transition options at home", () => {
+    const homeStrength = buildSession({ goal: "strength", environment: "home", duration: 45, checkin });
+    const homeAllRound = buildSession({ goal: "all_round", environment: "home", duration: 45, checkin });
+    expect(homeStrength.blocks[1].items.join(" ")).toContain("글루트 브리지 애덕션 스퀴즈 이지");
+    expect(homeStrength.blocks[1].items.join(" ")).toContain("지지 스쿼트 펄스 이지");
+    expect(homeStrength.blocks[1].items.join(" ")).toContain("월 쿼드 셋 이지");
+    expect(homeStrength.blocks[1].items.join(" ")).toContain("포어암 테이블탑 홀드 이지");
+    expect(homeAllRound.blocks[1].items.join(" ")).toContain("니링 힙 시프트 클락");
+    expect(homeAllRound.blocks[1].items.join(" ")).toContain("전완 월 슬라이드 이지");
+    expect(homeAllRound.blocks[1].items.join(" ")).toContain("지지 스쿼트 투 하프 니");
+  });
 });
