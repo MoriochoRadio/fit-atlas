@@ -267,4 +267,14 @@ describe("single session builder", () => {
     expect(gymStrength.blocks[1].items.join(" ")).toContain("머신 스탠딩 카프 레이즈 이지");
     expect(gymAllRound.blocks[1].items.join(" ")).toContain("케이블 프런트 레이즈 이지");
   });
+
+  it("connects solo advanced pull, scapular-stability, and core-transition options at home", () => {
+    const homeStrength = buildSession({ goal: "strength", environment: "home", duration: 45, checkin });
+    const homeAllRound = buildSession({ goal: "all_round", environment: "home", duration: 45, checkin });
+    expect(homeStrength.blocks[1].items.join(" ")).toContain("발 지지 스캐풀라 풀업");
+    expect(homeStrength.blocks[1].items.join(" ")).toContain("발 지지 행잉 니 레이즈");
+    expect(homeStrength.blocks[1].items.join(" ")).toContain("턱 L-싯 서포트 이지");
+    expect(homeAllRound.blocks[1].items.join(" ")).toContain("할로우 투 아치 롤 이지");
+    expect(homeAllRound.blocks[1].items.join(" ")).toContain("리버스 플랭크 니 리프트 이지");
+  });
 });

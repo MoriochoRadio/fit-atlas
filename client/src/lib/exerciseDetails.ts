@@ -345,6 +345,11 @@ export const exerciseDetails: Record<string, ExerciseDetail> = {
   "cable-cross-body-triceps-extension-easy": { setup: ["핀·손잡이 확인", "낮은 장력", "편안한 팔꿈치 경로"], finish: "장력을 낮추고 어깨·팔꿈치·손목 반응을 확인합니다.", commonMistakes: ["어깨 으쓱", "팔꿈치 과신전", "몸통 비틀기"], regressions: ["월 트라이셉스 프레스", "장력 낮추기", "범위 줄이기"], progressions: ["반복 증가", "느린 복귀", "장력 한 단계"] },
   "cable-front-raise-easy": { setup: ["핀·손잡이 확인", "아주 낮은 장력", "작은 앞 들기 리허설"], finish: "장력을 낮추고 어깨·목·허리 반응을 확인합니다.", commonMistakes: ["목 으쓱", "허리 과신전", "팔 너무 높이"], regressions: ["월 슬라이드", "장력 낮추기", "범위 줄이기"], progressions: ["반복 증가", "정지 1초", "장력 한 단계"] },
   "machine-standing-calf-raise-easy": { setup: ["패드·발판·안전장치 확인", "가벼운 저항", "작은 발목 리허설"], finish: "안전장치를 걸고 내려 발목·종아리·무릎 반응을 확인합니다.", commonMistakes: ["반동", "무릎 잠금", "발판 가장자리 불안정"], regressions: ["시티드 힐 레이즈", "중량 낮추기", "범위 줄이기"], progressions: ["반복 증가", "느린 내리기", "중량 한 단계"] },
+  "scapular-pullup-foot-assist": { setup: ["바·발 지지대 고정 확인", "발로 체중 일부 지지", "짧은 견갑 리허설"], finish: "발로 체중을 받고 천천히 내려 어깨·손·팔꿈치 반응을 확인합니다.", commonMistakes: ["팔꿈치 굽힘", "목 으쓱", "발 지지 생략"], regressions: ["발 지지 액티브 행", "양발 지지 늘리기", "월 슬라이드"], progressions: ["반복 증가", "정지 1초", "발 지지 소폭 줄이기"] },
+  "hanging-knee-raise-foot-assist": { setup: ["바·발 지지대 고정 확인", "발로 체중 일부 지지", "낮은 무릎 들기 리허설"], finish: "발을 지지대에 두고 천천히 내려 어깨·허리·고관절 반응을 확인합니다.", commonMistakes: ["반동", "무릎 너무 높이", "어깨 으쓱"], regressions: ["스탠딩 니 리프트", "발 지지 늘리기", "범위 줄이기"], progressions: ["반복 증가", "느린 내리기", "정지 1초"] },
+  "tuck-l-sit-support-easy": { setup: ["평행바·패럴렛 고정 확인", "발 가까이 두기", "짧은 지지 리허설"], finish: "발을 매트에 두고 손목·어깨·팔꿈치·호흡 반응을 확인합니다.", commonMistakes: ["어깨 으쓱", "숨 참기", "장비 흔들림 무시"], regressions: ["서포트 홀드", "발 지지 늘리기", "유지 줄이기"], progressions: ["유지 2초", "무릎 조금 높이", "반복 증가"] },
+  "hollow-to-arch-roll-easy": { setup: ["매트·주변 공간 확인", "작은 할로우 자세", "목 길게"], finish: "옆으로 누워 잠시 쉬며 목·어깨·허리·어지러움 반응을 확인합니다.", commonMistakes: ["목으로 굴리기", "과도한 아치", "공간 확인 생략"], regressions: ["할로우 턱 홀드", "아치 홀드", "반복 줄이기"], progressions: ["반복 증가", "느린 전환", "정지 1초"] },
+  "reverse-plank-knee-lift-easy": { setup: ["매트·손목 확인", "무릎 굽힌 테이블탑", "낮은 무릎 들기"], finish: "양발을 매트에 두고 손목·어깨·허리·둔근 반응을 확인합니다.", commonMistakes: ["골반 처짐", "무릎 너무 높이", "어깨 으쓱"], regressions: ["리버스 테이블탑 홀드", "발끝 탭", "범위 줄이기"], progressions: ["반복 증가", "정지 1초", "느린 교대"] },
 };
 
 export function getExerciseDetail(exercise: Exercise): ExerciseDetail {

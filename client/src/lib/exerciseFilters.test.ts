@@ -85,6 +85,10 @@ describe("exercise library QA", () => {
     expect(exercises.map((exercise) => exercise.id)).toEqual(expect.arrayContaining(["cable-reverse-curl-easy", "cable-cross-body-triceps-extension-easy", "cable-front-raise-easy", "machine-standing-calf-raise-easy"]));
     expect(filterExercises(exercises, { ...allFilters, category: "헬스기구", keyword: "리버스 컬" }).map((exercise) => exercise.id)).toEqual(["cable-reverse-curl-easy"]);
   });
+  it("includes solo advanced pull, scapular-stability, and core-transition bodyweight variants", () => {
+    expect(exercises.map((exercise) => exercise.id)).toEqual(expect.arrayContaining(["scapular-pullup-foot-assist", "hanging-knee-raise-foot-assist", "tuck-l-sit-support-easy", "hollow-to-arch-roll-easy", "reverse-plank-knee-lift-easy"]));
+    expect(filterExercises(exercises, { ...allFilters, category: "맨몸운동", keyword: "스캐풀라 풀업" }).map((exercise) => exercise.id)).toEqual(["scapular-pullup-foot-assist"]);
+  });
   it("shows mobility entries and excludes equipment when requested", () => {
     expect(filterExercises(exercises, { ...allFilters, category: "모빌리티" }).map((exercise) => exercise.id)).toContain("cat-cow");
     expect(filterExercises(exercises, { ...allFilters, category: "균형·협응", focus: "균형" }).map((exercise) => exercise.id)).toContain("single-leg-stand");
