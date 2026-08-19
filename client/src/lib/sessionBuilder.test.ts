@@ -213,4 +213,16 @@ describe("single session builder", () => {
     expect(homeAllRound.blocks[1].items.join(" ")).toContain("시티드 손목 요측 편위 이지");
     expect(homeAllRound.blocks[1].items.join(" ")).toContain("엘보 서포티드 핸드 오픈 클로즈 이지");
   });
+
+  it("connects solo-friendly lower-body, pull, press, shoulder, and arm machine options at the gym", () => {
+    const gymStrength = buildSession({ goal: "strength", environment: "gym", duration: 45, checkin });
+    const gymAllRound = buildSession({ goal: "all_round", environment: "gym", duration: 45, checkin });
+    expect(gymStrength.blocks[1].items.join(" ")).toContain("핵 스쿼트 머신 이지");
+    expect(gymStrength.blocks[1].items.join(" ")).toContain("머신 글루트 드라이브 이지");
+    expect(gymStrength.blocks[1].items.join(" ")).toContain("플레이트 로디드 하이 로우 이지");
+    expect(gymStrength.blocks[1].items.join(" ")).toContain("케이블 해머 컬 이지");
+    expect(gymAllRound.blocks[1].items.join(" ")).toContain("벨트 스쿼트 머신 이지");
+    expect(gymAllRound.blocks[1].items.join(" ")).toContain("머신 딥 프레스 이지");
+    expect(gymAllRound.blocks[1].items.join(" ")).toContain("케이블 레터럴 레이즈 이지");
+  });
 });
