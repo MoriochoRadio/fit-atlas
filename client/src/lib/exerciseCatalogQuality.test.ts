@@ -26,6 +26,33 @@ describe("exercise catalog quality gate", () => {
     });
   });
 
+  it("gives every sourced movement an exercise-specific instruction profile instead of a category template", () => {
+    const instructionSignatures = verifiedActualExercisesPart14.map((exercise) => {
+      const detail = getExerciseDetail(exercise);
+      expect(exercise.description).not.toContain("독립적인 동작 경로를 연습하는 실제 운동 종목입니다.");
+      expect(exercise.cues.some((cue) => cue.includes(exercise.name))).toBe(true);
+      expect(exercise.benefits.some((benefit) => benefit.includes(exercise.name))).toBe(true);
+      expect(detail.setup.some((step) => step.includes(exercise.name))).toBe(true);
+      expect(detail.finish).toContain(exercise.name);
+      expect(detail.commonMistakes.every((mistake) => mistake.includes(exercise.name))).toBe(true);
+      expect(detail.regressions.every((regression) => regression.includes(exercise.name))).toBe(true);
+      expect(detail.progressions.every((progression) => progression.includes(exercise.name))).toBe(true);
+      return normalize(JSON.stringify({
+        description: exercise.description.replaceAll(exercise.name, "{name}"),
+        warning: exercise.warning,
+        setup: detail.setup.map((step) => step.replaceAll(exercise.name, "{name}").replaceAll(exercise.equipment, "{equipment}")),
+        mistakes: detail.commonMistakes.map((mistake) => mistake.replaceAll(exercise.name, "{name}")),
+        regressions: detail.regressions.map((regression) => regression.replaceAll(exercise.name, "{name}")),
+        progressions: detail.progressions.map((progression) => progression.replaceAll(exercise.name, "{name}")),
+      }));
+    });
+    const counts = instructionSignatures.reduce<Record<string, number>>((result, signature) => {
+      result[signature] = (result[signature] ?? 0) + 1;
+      return result;
+    }, {});
+    expect(Math.max(...Object.values(counts))).toBeLessThanOrEqual(2);
+  });
+
   it("excludes program structure and coaching methods from the independent exercise catalog", () => {
     expect(exercises.some((exercise) => structuredTrainingEntryIds.has(exercise.id))).toBe(false);
     expect(exercises.some((exercise) => /(?:behind(?: the)? neck|neck bridge|neck harness|judo flip|atlas stone|car deadlift|partner|with chains|with bands)/i.test(exercise.englishName))).toBe(false);

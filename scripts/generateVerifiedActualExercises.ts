@@ -2,6 +2,7 @@ import { readFile, writeFile } from "node:fs/promises";
 import path from "node:path";
 import { exercises } from "../client/src/lib/fitnessData";
 import { isIndependentCatalogExercise } from "../client/src/lib/catalogQualityRules";
+import { createDetailedProfile } from "./verifiedDetailProfileRules";
 
 type SourceExercise = {
   id: string;
@@ -112,7 +113,7 @@ const rows = selected.map((source) => {
   const safety = safetyByCategory[category];
   const name = toKorean(source.name);
   const equipment = getEquipment(source);
-  const description = `${name}은 ${equipment}을 사용해 ${region.join("·")} 중심의 ${category === "모빌리티" ? "편안한 가동 범위" : "독립적인 동작 경로"}를 연습하는 실제 운동 종목입니다.`;
+  const detailed = createDetailedProfile({ name, equipment, source });
   return {
     id: toVerifiedId(source.id),
     name,
@@ -123,18 +124,12 @@ const rows = selected.map((source) => {
     difficulty: getDifficulty(source.level),
     equipment,
     minutes: getMinutes(category),
-    description,
-    cues: [safety.cue, `${equipment}과 신체 위치 먼저 확인`, "통증 없는 범위·호흡 유지"],
-    benefits: [safety.benefit, `${region.join("·")} 사용 인식`, "자기 조절 능력"],
-    warning: safety.warning,
+    description: detailed.description,
+    cues: detailed.cues,
+    benefits: detailed.benefits,
+    warning: detailed.warning,
     reference: category === "모빌리티" ? sourceRef : acsmRef,
-    detail: {
-      setup: [`${name} 전 ${equipment}·바닥·주변 공간을 확인`, safety.setup, "가장 쉬운 범위와 낮은 강도에서 2회 리허설"],
-      finish: `${name}을 마친 뒤 ${safety.finish}`,
-      commonMistakes: [safety.mistake, "정렬이 무너진 상태에서 반복 지속", "통증·저림·어지러움 신호 무시"],
-      regressions: [safety.regression, "반복·시간 또는 가동 범위 낮추기", "더 안정된 지지 또는 쉬운 기본 동작으로 전환"],
-      progressions: [safety.progression, "한 번에 하나의 변수만 조절", "다음 날 반응이 편안할 때만 다음 단계 시도"],
-    },
+    detail: { setup: detailed.setup, finish: detailed.finish, commonMistakes: detailed.commonMistakes, regressions: detailed.regressions, progressions: detailed.progressions },
   };
 });
 
