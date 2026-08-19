@@ -298,4 +298,15 @@ describe("single session builder", () => {
     expect(homeAllRound.blocks[1].items.join(" ")).toContain("저항 밴드 스쿼트 투 프레스 이지");
     expect(homeAllRound.blocks[1].items.join(" ")).toContain("저항 밴드 리버스 플라이 이지");
   });
+
+  it("connects solo Smith, cable, and unilateral machine strength options at the gym", () => {
+    const gymStrength = buildSession({ goal: "strength", environment: "gym", duration: 45, checkin });
+    const gymAllRound = buildSession({ goal: "all_round", environment: "gym", duration: 45, checkin });
+    expect(gymStrength.blocks[1].items.join(" ")).toContain("스미스 머신 박스 스쿼트 이지");
+    expect(gymStrength.blocks[1].items.join(" ")).toContain("스미스 머신 인클라인 프레스 이지");
+    expect(gymStrength.blocks[1].items.join(" ")).toContain("케이블 하이 로우 이지");
+    expect(gymStrength.blocks[1].items.join(" ")).toContain("케이블 스쿼트 투 로우 이지");
+    expect(gymAllRound.blocks[1].items.join(" ")).toContain("머신 유니래터럴 레그 컬 이지");
+    expect(gymAllRound.blocks[1].items.join(" ")).toContain("스미스 머신 인버티드 로우 이지");
+  });
 });

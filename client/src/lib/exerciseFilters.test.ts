@@ -97,6 +97,10 @@ describe("exercise library QA", () => {
     expect(exercises.map((exercise) => exercise.id)).toEqual(expect.arrayContaining(["resistance-band-pull-apart-easy", "resistance-band-biceps-curl-easy", "resistance-band-triceps-pressdown-easy", "resistance-band-squat-to-press-easy", "resistance-band-clamshell-easy", "resistance-band-dead-bug-press-easy", "resistance-band-hip-thrust-easy", "resistance-band-reverse-fly-easy"]));
     expect(filterExercises(exercises, { ...allFilters, category: "프리웨이트", keyword: "밴드 풀어파트" }).map((exercise) => exercise.id)).toEqual(["resistance-band-pull-apart-easy"]);
   });
+  it("includes solo Smith, cable, and unilateral machine strength variants", () => {
+    expect(exercises.map((exercise) => exercise.id)).toEqual(expect.arrayContaining(["smith-machine-box-squat-easy", "smith-machine-rdl-easy", "smith-machine-hip-thrust-easy", "smith-machine-incline-press-easy", "smith-machine-calf-raise-easy", "smith-machine-inverted-row-easy", "cable-high-row-easy", "cable-squat-to-row-easy", "machine-unilateral-leg-curl-easy", "machine-unilateral-leg-extension-easy"]));
+    expect(filterExercises(exercises, { ...allFilters, category: "헬스기구", keyword: "스미스 머신 박스 스쿼트" }).map((exercise) => exercise.id)).toEqual(["smith-machine-box-squat-easy"]);
+  });
   it("shows mobility entries and excludes equipment when requested", () => {
     expect(filterExercises(exercises, { ...allFilters, category: "모빌리티" }).map((exercise) => exercise.id)).toContain("cat-cow");
     expect(filterExercises(exercises, { ...allFilters, category: "균형·협응", focus: "균형" }).map((exercise) => exercise.id)).toContain("single-leg-stand");
