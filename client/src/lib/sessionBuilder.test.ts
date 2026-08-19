@@ -117,4 +117,16 @@ describe("single session builder", () => {
     expect(homeAllRound.blocks[1].items.join(" ")).toContain("카운터 맨몸 트라이셉스 익스텐션");
     expect(homeAllRound.blocks[1].items.join(" ")).toContain("하이 플랭크 니 투 엘보 이지");
   });
+
+  it("connects low-noise no-jump whole-body circuit options at home", () => {
+    const homeEndurance = buildSession({ goal: "endurance", environment: "home", duration: 30, checkin });
+    const homeAllRound = buildSession({ goal: "all_round", environment: "home", duration: 45, checkin });
+    const homeStrength = buildSession({ goal: "strength", environment: "home", duration: 45, checkin });
+    expect(homeEndurance.blocks[1].items.join(" ")).toContain("콰이어트 스텝 터치");
+    expect(homeEndurance.blocks[1].items.join(" ")).toContain("스탠딩 섀도 복싱 이지");
+    expect(homeEndurance.blocks[1].items.join(" ")).toContain("사이드 투 사이드 토 탭");
+    expect(homeAllRound.blocks[1].items.join(" ")).toContain("월 푸시업 마치 이지");
+    expect(homeAllRound.blocks[1].items.join(" ")).toContain("지지 컨트롤 스텝백 탭");
+    expect(homeStrength.blocks[1].items.join(" ")).toContain("콰이어트 힙 힌지 리치");
+  });
 });
