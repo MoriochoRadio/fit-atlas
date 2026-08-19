@@ -277,4 +277,15 @@ describe("single session builder", () => {
     expect(homeAllRound.blocks[1].items.join(" ")).toContain("할로우 투 아치 롤 이지");
     expect(homeAllRound.blocks[1].items.join(" ")).toContain("리버스 플랭크 니 리프트 이지");
   });
+
+  it("connects solo free-weight hinge, carry, row, press, unilateral lower-body, and calf options at the gym", () => {
+    const gymStrength = buildSession({ goal: "strength", environment: "gym", duration: 45, checkin });
+    const gymAllRound = buildSession({ goal: "all_round", environment: "gym", duration: 45, checkin });
+    expect(gymStrength.blocks[1].items.join(" ")).toContain("덤벨 수트케이스 데드리프트 이지");
+    expect(gymStrength.blocks[1].items.join(" ")).toContain("체스트 서포티드 덤벨 로우 이지");
+    expect(gymStrength.blocks[1].items.join(" ")).toContain("덤벨 풀오버 이지");
+    expect(gymStrength.blocks[1].items.join(" ")).toContain("덤벨 프런트 랙 캐리 이지");
+    expect(gymAllRound.blocks[1].items.join(" ")).toContain("덤벨 불가리안 스플릿 스쿼트 이지");
+    expect(gymAllRound.blocks[1].items.join(" ")).toContain("덤벨 Z 프레스 이지");
+  });
 });
