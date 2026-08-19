@@ -31,6 +31,11 @@ describe("exercise library QA", () => {
     expect(filterExercises(exercises, { ...allFilters, category: "맨몸운동", keyword: "콰이어트" }).map((exercise) => exercise.id)).toEqual(expect.arrayContaining(["quiet-step-touch", "quiet-squat-front-reach", "quiet-hip-hinge-reach"]));
   });
 
+  it("includes floor-transfer, isometric, shoulder-stability, and foot-control bodyweight variants", () => {
+    expect(exercises.map((exercise) => exercise.id)).toEqual(expect.arrayContaining(["half-kneeling-to-stand-support", "side-sit-to-kneel-support", "dead-bug-isometric-press", "quadruped-reach-back-easy", "wall-slide-lift-off-easy", "prone-external-rotation-lift-easy", "short-foot-doming-easy", "toe-yoga-easy", "tibialis-wall-raise-easy", "soleus-wall-raise-easy", "single-leg-calf-hold-support", "bear-plank-scapular-protraction"]));
+    expect(filterExercises(exercises, { ...allFilters, category: "맨몸운동", keyword: "도밍" }).map((exercise) => exercise.id)).toEqual(["short-foot-doming-easy"]);
+  });
+
   it("shows mobility entries and excludes equipment when requested", () => {
     expect(filterExercises(exercises, { ...allFilters, category: "모빌리티" }).map((exercise) => exercise.id)).toContain("cat-cow");
     expect(filterExercises(exercises, { ...allFilters, category: "균형·협응", focus: "균형" }).map((exercise) => exercise.id)).toContain("single-leg-stand");
