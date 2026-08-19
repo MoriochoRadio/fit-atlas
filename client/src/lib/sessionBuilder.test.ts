@@ -288,4 +288,14 @@ describe("single session builder", () => {
     expect(gymAllRound.blocks[1].items.join(" ")).toContain("덤벨 불가리안 스플릿 스쿼트 이지");
     expect(gymAllRound.blocks[1].items.join(" ")).toContain("덤벨 Z 프레스 이지");
   });
+
+  it("connects solo resistance-band upper-body, lower-body, and core coordination options at home", () => {
+    const homeStrength = buildSession({ goal: "strength", environment: "home", duration: 45, checkin });
+    const homeAllRound = buildSession({ goal: "all_round", environment: "home", duration: 45, checkin });
+    expect(homeStrength.blocks[1].items.join(" ")).toContain("저항 밴드 풀어파트 이지");
+    expect(homeStrength.blocks[1].items.join(" ")).toContain("저항 밴드 힙 쓰러스트 이지");
+    expect(homeStrength.blocks[1].items.join(" ")).toContain("저항 밴드 데드 버그 프레스 이지");
+    expect(homeAllRound.blocks[1].items.join(" ")).toContain("저항 밴드 스쿼트 투 프레스 이지");
+    expect(homeAllRound.blocks[1].items.join(" ")).toContain("저항 밴드 리버스 플라이 이지");
+  });
 });

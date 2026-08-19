@@ -93,6 +93,10 @@ describe("exercise library QA", () => {
     expect(exercises.map((exercise) => exercise.id)).toEqual(expect.arrayContaining(["dumbbell-suitcase-deadlift-easy", "dumbbell-front-rack-carry-easy", "chest-supported-dumbbell-row-easy", "dumbbell-pullover-easy", "dumbbell-z-press-easy", "dumbbell-lateral-lunge-easy", "dumbbell-bulgarian-split-squat-easy", "dumbbell-calf-raise-easy"]));
     expect(filterExercises(exercises, { ...allFilters, category: "프리웨이트", keyword: "프런트 랙 캐리" }).map((exercise) => exercise.id)).toEqual(["dumbbell-front-rack-carry-easy"]);
   });
+  it("includes solo resistance-band upper-body, lower-body, and core coordination variants", () => {
+    expect(exercises.map((exercise) => exercise.id)).toEqual(expect.arrayContaining(["resistance-band-pull-apart-easy", "resistance-band-biceps-curl-easy", "resistance-band-triceps-pressdown-easy", "resistance-band-squat-to-press-easy", "resistance-band-clamshell-easy", "resistance-band-dead-bug-press-easy", "resistance-band-hip-thrust-easy", "resistance-band-reverse-fly-easy"]));
+    expect(filterExercises(exercises, { ...allFilters, category: "프리웨이트", keyword: "밴드 풀어파트" }).map((exercise) => exercise.id)).toEqual(["resistance-band-pull-apart-easy"]);
+  });
   it("shows mobility entries and excludes equipment when requested", () => {
     expect(filterExercises(exercises, { ...allFilters, category: "모빌리티" }).map((exercise) => exercise.id)).toContain("cat-cow");
     expect(filterExercises(exercises, { ...allFilters, category: "균형·협응", focus: "균형" }).map((exercise) => exercise.id)).toContain("single-leg-stand");
