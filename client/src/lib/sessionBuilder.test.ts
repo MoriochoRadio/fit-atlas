@@ -225,4 +225,14 @@ describe("single session builder", () => {
     expect(gymAllRound.blocks[1].items.join(" ")).toContain("머신 딥 프레스 이지");
     expect(gymAllRound.blocks[1].items.join(" ")).toContain("케이블 레터럴 레이즈 이지");
   });
+
+  it("connects steady solo aerobic machine options to gym endurance and all-round sessions", () => {
+    const gymEndurance = buildSession({ goal: "endurance", environment: "gym", duration: 30, checkin });
+    const gymAllRound = buildSession({ goal: "all_round", environment: "gym", duration: 45, checkin });
+    expect(gymEndurance.blocks[1].items.join(" ")).toContain("스키에르고 스테디 이지");
+    expect(gymEndurance.blocks[1].items.join(" ")).toContain("암 에르고미터 이지");
+    expect(gymEndurance.blocks[1].items.join(" ")).toContain("버티컬 클라이머 이지");
+    expect(gymAllRound.blocks[1].items.join(" ")).toContain("에어 바이크 스테디 이지");
+    expect(gymAllRound.blocks[1].items.join(" ")).toContain("커브드 트레드밀 워크 이지");
+  });
 });

@@ -69,6 +69,10 @@ describe("exercise library QA", () => {
     expect(exercises.map((exercise) => exercise.id)).toEqual(expect.arrayContaining(["hack-squat-machine-easy", "belt-squat-machine-easy", "machine-glute-drive-easy", "plate-loaded-high-row-easy", "machine-dip-press-easy", "cable-lateral-raise-easy", "cable-hammer-curl-easy", "cable-standing-hip-flexion-easy"]));
     expect(filterExercises(exercises, { ...allFilters, category: "헬스기구", keyword: "글루트 드라이브" }).map((exercise) => exercise.id)).toEqual(["machine-glute-drive-easy"]);
   });
+  it("includes solo-friendly aerobic machine variants with steady entry options", () => {
+    expect(exercises.map((exercise) => exercise.id)).toEqual(expect.arrayContaining(["ski-erg-steady-easy", "air-bike-steady-easy", "curved-treadmill-walk-easy", "vertical-climber-easy", "arm-ergometer-easy"]));
+    expect(filterExercises(exercises, { ...allFilters, category: "유산소", keyword: "암 에르고미터" }).map((exercise) => exercise.id)).toEqual(["arm-ergometer-easy"]);
+  });
   it("shows mobility entries and excludes equipment when requested", () => {
     expect(filterExercises(exercises, { ...allFilters, category: "모빌리티" }).map((exercise) => exercise.id)).toContain("cat-cow");
     expect(filterExercises(exercises, { ...allFilters, category: "균형·협응", focus: "균형" }).map((exercise) => exercise.id)).toContain("single-leg-stand");

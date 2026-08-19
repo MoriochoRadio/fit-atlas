@@ -324,6 +324,11 @@ export const exerciseDetails: Record<string, ExerciseDetail> = {
   "cable-lateral-raise-easy": { setup: ["핀·손잡이 확인", "아주 낮은 장력", "작은 옆 들기 리허설"], finish: "장력을 낮추고 어깨·목·손목 반응을 확인합니다.", commonMistakes: ["목 으쓱", "팔 너무 높이", "몸통 반동"], regressions: ["월 스노우 엔젤", "장력 낮추기", "범위 줄이기"], progressions: ["반복 증가", "정지 1초", "장력 한 단계"] },
   "cable-hammer-curl-easy": { setup: ["핀·로프 확인", "낮은 장력", "손목 중립"], finish: "장력을 낮추고 팔꿈치·손목·전완 반응을 확인합니다.", commonMistakes: ["손목 꺾임", "몸통 반동", "팔꿈치 앞뒤 이동"], regressions: ["시티드 바이셉스 아이소메트릭", "장력 낮추기", "범위 줄이기"], progressions: ["반복 증가", "느린 복귀", "장력 한 단계"] },
   "cable-standing-hip-flexion-easy": { setup: ["스트랩·핀·지지대 확인", "아주 낮은 장력", "낮은 무릎 들기"], finish: "스트랩을 분리하고 양발로 서서 고관절·허리·균형 반응을 확인합니다.", commonMistakes: ["골반 기울기", "무릎 너무 높이", "지지대에서 멀리 섬"], regressions: ["스탠딩 힙 플렉션 홀드", "장력 낮추기", "범위 줄이기"], progressions: ["반복 증가", "느린 복귀", "장력 한 단계"] },
+  "ski-erg-steady-easy": { setup: ["손잡이·발 위치·저항 확인", "낮은 저항", "짧은 리듬 리허설"], finish: "손잡이를 놓고 어깨·허리·손목·호흡 반응을 확인합니다.", commonMistakes: ["허리 과신전", "목 으쓱", "속도 급증"], regressions: ["저항 낮추기", "시간 줄이기", "한 팔씩 가볍게"], progressions: ["시간 1분", "리듬 안정", "저항 한 단계"] },
+  "air-bike-steady-easy": { setup: ["시트·페달·손잡이 확인", "낮은 저항", "편안한 페달 리허설"], finish: "저항을 낮추고 천천히 멈춰 무릎·어깨·호흡 반응을 확인합니다.", commonMistakes: ["초반 과속", "발 고정 미확인", "어깨 긴장"], regressions: ["저항 낮추기", "시간 줄이기", "다리 위주 리듬"], progressions: ["시간 1분", "리듬 안정", "저항 한 단계"] },
+  "curved-treadmill-walk-easy": { setup: ["벨트·난간·신발 확인", "난간 가까이 서기", "짧은 걷기 리허설"], finish: "벨트를 완전히 멈춘 뒤 안전하게 내려 발목·무릎·호흡 반응을 확인합니다.", commonMistakes: ["속도 급증", "긴 보폭", "벨트 끝쪽으로 이동"], regressions: ["일반 트레드밀 평지 걷기", "시간 줄이기", "난간 가까이"], progressions: ["시간 1분", "보폭 안정", "손 지지 줄이기"] },
+  "vertical-climber-easy": { setup: ["발판·손잡이·저항 확인", "낮은 저항", "작은 교차 리듬"], finish: "기구를 완전히 멈추고 내려 어깨·무릎·균형·호흡 반응을 확인합니다.", commonMistakes: ["보폭 과도", "목 으쓱", "발판 미끄러움 무시"], regressions: ["일립티컬", "저항 낮추기", "시간 줄이기"], progressions: ["시간 30초", "리듬 안정", "저항 한 단계"] },
+  "arm-ergometer-easy": { setup: ["시트·크랭크 높이 확인", "낮은 저항", "작은 원 그리기"], finish: "저항을 낮추고 팔을 편안히 내려 어깨·팔꿈치·손목·호흡 반응을 확인합니다.", commonMistakes: ["어깨 으쓱", "저항 과도", "팔꿈치 잠금"], regressions: ["저항 낮추기", "시간 줄이기", "한 방향만"], progressions: ["시간 1분", "방향 바꾸기", "저항 한 단계"] },
 };
 
 export function getExerciseDetail(exercise: Exercise): ExerciseDetail {
