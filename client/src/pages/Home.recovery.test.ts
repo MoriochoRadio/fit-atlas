@@ -80,6 +80,19 @@ describe("Home recovery alternative flow", () => {
     expect(within(card!).getAllByText(/발 전체를 바닥에|엉덩이·무릎을 함께|통증 없는 범위로/)).toHaveLength(3);
   });
 
+  it("switches the seated-work recovery routine and bridges to a light home session", () => {
+    render(createElement(Home));
+    const recoveryPanel = screen.getByLabelText("장시간 앉기 뒤 회복 루틴");
+    expect(within(recoveryPanel).getByText("5분 자리 리셋")).toBeTruthy();
+
+    fireEvent.click(within(recoveryPanel).getByRole("button", { name: "10분" }));
+    expect(within(recoveryPanel).getByText("10분 자리 회복·재시작")).toBeTruthy();
+    fireEvent.click(within(recoveryPanel).getByRole("button", { name: /15분 가벼운 세션 설계/ }));
+
+    expect(scrollIntoView).toHaveBeenCalledWith({ behavior: "smooth" });
+    expect(screen.getByRole("heading", { name: "15분 전신 균형 세션 · 집·매트" })).toBeTruthy();
+  });
+
   it("renders all four conservative cardio interval templates", () => {
     render(createElement(Home));
     expect(screen.getByText("CARDIO INTERVALS")).toBeTruthy();

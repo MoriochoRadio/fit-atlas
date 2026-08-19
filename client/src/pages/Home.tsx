@@ -20,11 +20,12 @@ import { getInsightSummary } from "@/lib/trainingInsights";
 import { wellnessDetails } from "@/lib/wellnessDetails";
 import { getMovementVisual } from "@/lib/movementVisuals";
 import { getExerciseEvidenceScope } from "@/lib/exerciseEvidence";
-import { MovementVisualGuide, RecoveryPathwayPanel, RecoveryStageGrid, WellnessDetailPanel } from "@/components/GuidancePanels";
+import { MovementVisualGuide, RecoveryPathwayPanel, RecoveryStageGrid, SeatedRecoveryPanel, WellnessDetailPanel } from "@/components/GuidancePanels";
 import { getRoutineTemplate, type RoutineGoal } from "@/lib/routineTemplates";
 import { getCheckinRecommendation, type DailyCheckin } from "@/lib/dailyCheckin";
 import { buildSession, type SessionEnvironment, type SessionGoal, type SessionDuration } from "@/lib/sessionBuilder";
 import { addDesignedSession, completeWeeklySessionWithRecord, getWeeklyPlanInsight, setWeeklyGoal, toggleWeeklySession, type WeeklyPlan } from "@/lib/weeklyPlan";
+import type { RecoveryContext, SeatedRecoveryDuration } from "@/lib/seatedRecovery";
 
 type LogEntry = TrainingLog;
 
@@ -57,6 +58,7 @@ export default function Home() {
   const [sessionGoal, setSessionGoal] = useState<SessionGoal>("all_round");
   const [sessionEnvironment, setSessionEnvironment] = useState<SessionEnvironment>("home");
   const [sessionDuration, setSessionDuration] = useState<SessionDuration>(30);
+  const [seatedRecoveryDuration, setSeatedRecoveryDuration] = useState<SeatedRecoveryDuration>(5);
   const [weeklyPlan, setWeeklyPlan] = useState<WeeklyPlan>(() => typeof window === "undefined" ? readLocalWeeklyPlan() : readLocalWeeklyPlan());
   const [logOpen, setLogOpen] = useState(false);
   const [linkedPlanSessionId, setLinkedPlanSessionId] = useState<string | null>(null);
@@ -232,6 +234,24 @@ export default function Home() {
     if (result) toast.success(`${result.exercise.name}의 자세·안전 단서를 확인하세요.`);
   };
 
+  const exploreSeatedRecoveryExercise = async (exerciseId: string) => {
+    let availableExercises = catalogExercises;
+    if (!availableExercises.some((exercise) => exercise.id === exerciseId)) {
+      const entries = await loadFullCatalog();
+      setCatalogEntries(entries);
+      setLoadedCatalogPages(getCatalogPageCount());
+      availableExercises = entriesToExercises(entries);
+    }
+    const exercise = availableExercises.find((item) => item.id === exerciseId);
+    if (!exercise) return;
+    setKeyword(exercise.name);
+    setCategory("전체");
+    setFocus("전체");
+    setRegionFilter("전체");
+    document.getElementById("explore")?.scrollIntoView({ behavior: "smooth" });
+    toast.success(`${exercise.name}의 자세·안전 단서를 확인하세요.`);
+  };
+
   const saveProfileSettings = () => {
     const apiProfile = {
       age: profileForm.age ? Number(profileForm.age) : null,
@@ -307,6 +327,7 @@ export default function Home() {
 
         <section id="session" className="session-section section-pad"><SectionTitle eyebrow="SESSION DESIGNER" title="오늘의 조건으로, 한 세션을 설계하세요." description="가용 시간·운동 환경·목표를 고르면 오늘의 컨디션에 맞춘 가벼운 시작 구조를 제안합니다. 의료 처방이나 고정된 프로그램이 아닌, 안전한 선택을 위한 정적 가이드입니다." /><div className="session-builder"><div className="session-options"><p className="small-label">SESSION INTENT</p><div className="session-choice-group"><span>목표</span><div>{(["all_round", "strength", "endurance"] as SessionGoal[]).map((item) => <button key={item} className={sessionGoal === item ? "is-selected" : ""} onClick={() => setSessionGoal(item)}>{{ all_round: "전신 균형", strength: "기초 근력", endurance: "심폐 리듬" }[item]}</button>)}</div></div><div className="session-choice-group"><span>환경</span><div>{(["home", "gym", "outdoor"] as SessionEnvironment[]).map((item) => <button key={item} className={sessionEnvironment === item ? "is-selected" : ""} onClick={() => setSessionEnvironment(item)}>{{ home: "집·매트", gym: "헬스장", outdoor: "야외·걷기" }[item]}</button>)}</div></div><div className="session-choice-group"><span>시간</span><div>{([15, 30, 45] as SessionDuration[]).map((item) => <button key={item} className={sessionDuration === item ? "is-selected" : ""} onClick={() => setSessionDuration(item)}>{item}분</button>)}</div></div><p className="session-local-note"><ShieldCheck size={15} /> 위의 오늘 체크인 값이 세션 강도 안내에 자동 반영됩니다.</p></div><article className="session-plan"><div className="session-plan-head"><div><p className="eyebrow">TODAY'S STARTING POINT</p><h3>{sessionPlan.title}</h3><p>{sessionPlan.summary}</p></div><span>{sessionPlan.adjustment}</span></div><div className="session-blocks">{sessionPlan.blocks.map((block, index) => <div key={block.label} className="session-block"><span>0{index + 1}</span><div><p className="small-label">{block.label} · 약 {block.minutes}분</p><ul>{block.items.map((item) => <li key={item}>{item}</li>)}</ul></div></div>)}</div><div className="session-safety"><HeartPulse size={16} />{sessionPlan.safetyNote}</div></article></div></section>
         <WeeklyPlanPanel plan={weeklyPlan} insight={weeklyPlanInsight} onGoal={(nextGoal) => setWeeklyPlan((current) => setWeeklyGoal(current, nextGoal))} onToggle={(sessionId) => setWeeklyPlan((current) => toggleWeeklySession(current, sessionId))} onStartLog={startPlanSessionLog} onAdd={() => { setWeeklyPlan((current) => addDesignedSession(current, sessionPlan, sessionGoal, sessionEnvironment, sessionDuration)); toast.success("오늘의 설계 세션을 이번 주 계획에 추가했습니다."); }} />
+        <section className="seated-recovery-section section-pad"><SectionTitle eyebrow="WORKDAY RECOVERY" title="오래 앉은 뒤, 다음 작업을 위한 짧은 전환." description="장시간 같은 자세 뒤에 환경을 확인하고 가볍게 움직이는 일반 교육용 루틴입니다. 통증을 치료하려 하거나 무리한 스트레칭을 하는 대신, 작은 범위와 반응 확인을 우선합니다." /><SeatedRecoveryPanel duration={seatedRecoveryDuration} onDuration={setSeatedRecoveryDuration} recommendation={checkinRecommendation} recoveryContext={profileForm.recoveryContext as RecoveryContext} onExplore={exploreSeatedRecoveryExercise} onBuildSession={() => { setSessionGoal("all_round"); setSessionEnvironment("home"); setSessionDuration(15); document.getElementById("session")?.scrollIntoView({ behavior: "smooth" }); toast.success("집·매트 환경의 15분 가벼운 세션으로 설정했습니다."); }} /></section>
 
         <section className="routine-section section-pad"><SectionTitle eyebrow="ROUTINE LIBRARY" title="목표를 루틴으로, 루틴을 리듬으로." description="4주 템플릿은 일반적인 시작 구조입니다. 주차를 통과하기보다 통증·피로·수면 반응에 맞춰 머무르거나 가볍게 조절하세요." /><div className="routine-goals">{(["strength", "endurance", "weight_management", "general_health"] as RoutineGoal[]).map((item) => <button key={item} className={routineGoal === item ? "is-selected" : ""} onClick={() => setRoutineGoal(item)}>{{ strength: "근력", endurance: "심폐", weight_management: "체중 관리", general_health: "전신 건강" }[item]}</button>)}</div><div className="routine-card"><div className="routine-intro"><p className="eyebrow">{routineGoal.replace("_", " ").toUpperCase()}</p><h3>{routine.title}</h3><p>{routine.intro}</p><div className="routine-safety"><ShieldCheck size={16} />{routine.safetyNote}</div></div><div className="routine-weeks">{routine.weeks.map((week) => <article key={week.week}><span>W{week.week}</span><div><p className="small-label">{week.theme} · {week.sessions}</p><ul>{week.focus.map((item) => <li key={item}>{item}</li>)}</ul><p>{week.note}</p></div></article>)}</div></div></section>
 

@@ -1,7 +1,7 @@
 import { renderToStaticMarkup } from "react-dom/server";
 import { createElement } from "react";
 import { describe, expect, it } from "vitest";
-import { MovementVisualGuide, RecoveryPathwayPanel, RecoveryStageGrid, WellnessDetailPanel } from "@/components/GuidancePanels";
+import { MovementVisualGuide, RecoveryPathwayPanel, RecoveryStageGrid, SeatedRecoveryPanel, WellnessDetailPanel } from "@/components/GuidancePanels";
 import { getMovementVisual } from "@/lib/movementVisuals";
 import { recoveryStageGuides } from "@/lib/recoveryProtocols";
 import { wellnessDetails } from "@/lib/wellnessDetails";
@@ -32,5 +32,14 @@ describe("guidance panels", () => {
     expect(markup).toContain("발목 불편");
     expect(markup).toContain("발목 니투월 락");
     expect(markup).toContain("자가 진행을 멈출 신호");
+  });
+
+  it("renders the seated-work recovery routine, today adjustment, stop signals, and session bridge", () => {
+    const markup = renderToStaticMarkup(createElement(SeatedRecoveryPanel, { duration: 5, onDuration: () => undefined, recommendation: { mode: "recovery", title: "", guidance: "", rpeAdjustment: "" }, recoveryContext: "none", onExplore: () => undefined, onBuildSession: () => undefined }));
+    expect(markup).toContain("5분 자리 리셋");
+    expect(markup).toContain("회복 우선 조정");
+    expect(markup).toContain("멈추고 평가가 필요한 신호");
+    expect(markup).toContain("15분 가벼운 세션 설계");
+    expect(markup).toContain("CDC/NIOSH 작업 인체공학 참고");
   });
 });
