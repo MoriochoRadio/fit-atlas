@@ -46,6 +46,11 @@ describe("exercise library QA", () => {
     expect(filterExercises(exercises, { ...allFilters, category: "맨몸운동", keyword: "애덕션" }).map((exercise) => exercise.id)).toEqual(["glute-bridge-adduction-squeeze-easy"]);
   });
 
+  it("includes low-impact endurance and wall-or-chair upper-body reinforcement variants", () => {
+    expect(exercises.map((exercise) => exercise.id)).toEqual(expect.arrayContaining(["wall-elbow-row-isometric-easy", "seated-lat-press-isometric-easy", "towel-self-row-seated-easy", "wall-triceps-press-isometric-easy", "chair-incline-scapular-pushup-easy", "chair-supported-hip-hinge-tap", "chair-sit-to-stand-pause-easy", "wall-sit-alternating-heel-lift-easy", "wall-hip-abduction-hold-easy", "standing-knee-flexion-hold-support", "seated-knee-extension-alternating-easy", "wall-march-press-easy"]));
+    expect(filterExercises(exercises, { ...allFilters, category: "맨몸운동", keyword: "타월 셀프" }).map((exercise) => exercise.id)).toEqual(["towel-self-row-seated-easy"]);
+  });
+
   it("shows mobility entries and excludes equipment when requested", () => {
     expect(filterExercises(exercises, { ...allFilters, category: "모빌리티" }).map((exercise) => exercise.id)).toContain("cat-cow");
     expect(filterExercises(exercises, { ...allFilters, category: "균형·협응", focus: "균형" }).map((exercise) => exercise.id)).toContain("single-leg-stand");

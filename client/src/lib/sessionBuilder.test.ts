@@ -163,4 +163,16 @@ describe("single session builder", () => {
     expect(homeAllRound.blocks[1].items.join(" ")).toContain("전완 월 슬라이드 이지");
     expect(homeAllRound.blocks[1].items.join(" ")).toContain("지지 스쿼트 투 하프 니");
   });
+
+  it("connects low-impact endurance and wall-or-chair reinforcement options at home", () => {
+    const homeStrength = buildSession({ goal: "strength", environment: "home", duration: 45, checkin });
+    const homeAllRound = buildSession({ goal: "all_round", environment: "home", duration: 45, checkin });
+    expect(homeStrength.blocks[1].items.join(" ")).toContain("체어 지지 힙 힌지 탭");
+    expect(homeStrength.blocks[1].items.join(" ")).toContain("체어 인클라인 스캐풀라 푸시업 이지");
+    expect(homeStrength.blocks[1].items.join(" ")).toContain("월 싯 얼터네이팅 힐 리프트 이지");
+    expect(homeAllRound.blocks[1].items.join(" ")).toContain("체어 싯 투 스탠드 포즈 이지");
+    expect(homeAllRound.blocks[1].items.join(" ")).toContain("월 엘보 로우 아이소메트릭 이지");
+    expect(homeAllRound.blocks[1].items.join(" ")).toContain("타월 셀프 로우 시티드 이지");
+    expect(homeAllRound.blocks[1].items.join(" ")).toContain("월 힙 어브덕션 홀드 이지");
+  });
 });
