@@ -26,6 +26,11 @@ describe("exercise library QA", () => {
     expect(result.map((exercise) => exercise.id)).toEqual(["pushup"]);
   });
 
+  it("includes the low-noise, no-jump home circuit variants", () => {
+    expect(exercises.map((exercise) => exercise.id)).toEqual(expect.arrayContaining(["quiet-step-touch", "low-impact-skater-step", "standing-shadow-box-easy", "quiet-squat-front-reach", "wall-pushup-march-easy", "seated-knee-lift-punch-easy", "slow-march-arm-sweep", "controlled-step-back-tap-support", "side-to-side-toe-tap-quiet", "quiet-hip-hinge-reach", "knee-supported-bear-shoulder-shift", "standing-hamstring-curl-tap-support"]));
+    expect(filterExercises(exercises, { ...allFilters, category: "맨몸운동", keyword: "콰이어트" }).map((exercise) => exercise.id)).toEqual(expect.arrayContaining(["quiet-step-touch", "quiet-squat-front-reach", "quiet-hip-hinge-reach"]));
+  });
+
   it("shows mobility entries and excludes equipment when requested", () => {
     expect(filterExercises(exercises, { ...allFilters, category: "모빌리티" }).map((exercise) => exercise.id)).toContain("cat-cow");
     expect(filterExercises(exercises, { ...allFilters, category: "균형·협응", focus: "균형" }).map((exercise) => exercise.id)).toContain("single-leg-stand");
