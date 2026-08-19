@@ -29,7 +29,7 @@ describe("single session builder", () => {
     const gym = buildSession({ goal: "all_round", environment: "gym", duration: 45, checkin });
     const outdoor = buildSession({ goal: "all_round", environment: "outdoor", duration: 45, checkin });
     expect(home.blocks[1].items.join(" ")).toContain("케틀벨 데드리프트");
-    expect(home.blocks[1].items.join(" ")).toContain("카운터 인클라인 푸시업");
+    expect(home.blocks[1].items.join(" ")).toContain("핸드 릴리스 푸시업");
     expect(gym.blocks[1].items.join(" ")).toContain("체스트 서포티드 로우");
     expect(gym.blocks[1].items.join(" ")).toContain("샌드백 프런트 스쿼트");
     expect(gym.blocks[1].items.join(" ")).toContain("케이블 스탠딩 힙 어브덕션");
@@ -49,5 +49,16 @@ describe("single session builder", () => {
     expect(gym.blocks[1].items.join(" ")).toContain("케이블 스탠딩 힙 어브덕션");
     expect(outdoor.blocks[1].items.join(" ")).toContain("템포 워크·런");
     expect(outdoor.blocks[1].items.join(" ")).toContain("경사 조그·워크");
+  });
+
+  it("includes the current squat, push, incline-walk, and machine progression variants", () => {
+    const home = buildSession({ goal: "strength", environment: "home", duration: 45, checkin });
+    const gymStrength = buildSession({ goal: "strength", environment: "gym", duration: 45, checkin });
+    const gymEndurance = buildSession({ goal: "endurance", environment: "gym", duration: 30, checkin });
+    expect(home.blocks[1].items.join(" ")).toContain("지지 피스톨 스쿼트 투 박스");
+    expect(home.blocks[1].items.join(" ")).toContain("핸드 릴리스 푸시업");
+    expect(gymStrength.blocks[1].items.join(" ")).toContain("체스트 서포티드 머신 로우");
+    expect(gymStrength.blocks[1].items.join(" ")).toContain("머신 앱 크런치");
+    expect(gymEndurance.blocks[1].items.join(" ")).toContain("트레드밀 인클라인 템포 워크");
   });
 });
