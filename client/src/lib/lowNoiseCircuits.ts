@@ -1,5 +1,5 @@
 export type LowNoiseCircuitTemplate = {
-  id: "quiet-10" | "quiet-20" | "quiet-30";
+  id: "quiet-10" | "quiet-15" | "quiet-20" | "quiet-30";
   title: string;
   format: string;
   noise: string;
@@ -21,6 +21,17 @@ export const lowNoiseCircuitTemplates: LowNoiseCircuitTemplate[] = [
     intensity: "RPE 3–4 · 숨은 편안하고 짧은 대화가 가능합니다.",
     adjust: "발소리가 나면 보폭·스쿼트 깊이·팔 속도를 줄이고, 한 동작만 반복해도 됩니다.",
     safety: "통증·어지러움·비정상적 숨참·벽 또는 바닥 미끄러움이 있으면 즉시 중단하세요.",
+  },
+  {
+    id: "quiet-15",
+    title: "15분 · 무도구 전신 협응",
+    format: "2분 준비 + 4종 2라운드 + 1분 마무리",
+    noise: "소음 수준: 매우 낮음 · 점프·발 구르기 없이 작은 체중 이동",
+    space: "필요 공간: 약 1m × 1.5m · 벽 또는 의자는 선택",
+    blocks: ["슬로 마치 암 스윕 30초 + 편안한 호흡 30초", "콰이어트 스쿼트 프런트 리치 6–8회", "스탠딩 섀도 복싱 이지 30초", "지지 컨트롤 스텝백 탭 좌우 6회"],
+    intensity: "RPE 3–4 · 발소리가 거의 없고 짧은 문장으로 대화할 수 있는 범위입니다.",
+    adjust: "손목 부담이 있으면 펀치를 작은 팔 스윙으로 바꾸고, 무릎·발목이 불편하면 스텝백 탭 대신 제자리 체중 이동을 선택하세요.",
+    safety: "통증·저림·어지러움·비정상적 숨참·균형 상실 또는 바닥 미끄러움이 있으면 즉시 중단하세요.",
   },
   {
     id: "quiet-20",
