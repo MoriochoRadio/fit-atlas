@@ -142,6 +142,8 @@ describe("Home recovery alternative flow", () => {
     expect(within(card!).getByLabelText("맨몸 스쿼트 ASCII 동작 도식")).toBeTruthy();
     expect(within(card!).getByText(/낮은 범위부터 균형을 유지하는 앉기·일어서기 흐름/)).toBeTruthy();
     expect(within(card!).getByText("ASCII MOTION SKETCH")).toBeTruthy();
+    expect(within(card!).getByText("중심축")).toBeTruthy();
+    expect(within(card!).getByText("ROM · 큼")).toBeTruthy();
   });
 
   it("renders the expanded machine visual guide with a safe adjustment cue", async () => {

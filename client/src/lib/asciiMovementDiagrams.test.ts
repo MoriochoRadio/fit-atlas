@@ -32,6 +32,9 @@ describe("ASCII movement diagrams", () => {
       expect(presentation.stageArrows.every((arrow) => /[↘↗↕↙↔→←↑]/.test(arrow))).toBe(true);
       expect(presentation.categoryLabel.length).toBeGreaterThan(2);
       expect(presentation.regionLabel.length).toBeGreaterThan(0);
+      expect(presentation.jointFocus.length).toBeGreaterThan(2);
+      expect(["작음", "보통", "큼"]).toContain(presentation.rom);
+      expect(presentation.romDescription.length).toBeGreaterThan(10);
     });
   });
 });

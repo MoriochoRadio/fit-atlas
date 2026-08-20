@@ -15,6 +15,9 @@ export type AsciiDiagramPresentation = {
   regionLabel: string;
   stageArrows: [string, string, string];
   motionLabel: string;
+  jointFocus: string;
+  rom: "작음" | "보통" | "큼";
+  romDescription: string;
 };
 
 const pose = (...lines: string[]) => lines.join("\n");
@@ -99,7 +102,8 @@ export function getAsciiDiagramPresentation(guide: ExerciseTextGuide): AsciiDiag
   const regionTheme = ({ 가슴: "chest", 등: "back", 어깨: "shoulder", 팔: "arms", 코어: "core", 둔근: "glutes", 하체: "lower" } as const)[guide.regions[0]];
   const regionLabel = ({ chest: "가슴", back: "등", shoulder: "어깨", arms: "팔", core: "코어", glutes: "둔근", lower: "하체" } as const)[regionTheme];
   const movement = pattern === "rdl" || pattern === "barbell-hip-thrust" ? { stageArrows: ["↘", "↗", "↕"] as [string, string, string], motionLabel: "고관절 접기 ↘ · 펴기 ↗" } : pattern === "dumbbell-bench" || pattern === "latpulldown" ? { stageArrows: ["↙", "↗", "↕"] as [string, string, string], motionLabel: "팔·어깨 경로 ↙ · 밀기/당기기 ↗" } : pattern === "row-erg-easy" || pattern === "bike" ? { stageArrows: ["↔", "→", "↔"] as [string, string, string], motionLabel: "반복 리듬 ↔ · 추진 방향 →" } : pattern === "step-up" ? { stageArrows: ["↗", "↑", "↘"] as [string, string, string], motionLabel: "발 지지 ↗ · 위로 밀기 ↑ · 천천히 내려오기 ↘" } : pattern === "front-plank" || pattern === "bird-dog" ? { stageArrows: ["→", "↔", "←"] as [string, string, string], motionLabel: "몸통 길게 → · 균형 유지 ↔ · 제어 복귀 ←" } : { stageArrows: ["↘", "↑", "↕"] as [string, string, string], motionLabel: "관절 굽힘 ↘ · 지면 밀기 ↑ · 제어 복귀 ↕" };
-  return { categoryTheme, regionTheme, categoryLabel, regionLabel, ...movement };
+  const axis = pattern === "rdl" || pattern === "barbell-hip-thrust" ? { jointFocus: "고관절 · 무릎", rom: "보통" as const, romDescription: "고관절을 중심으로 접고 펴되, 허리로 범위를 억지로 만들지 않습니다." } : pattern === "dumbbell-bench" || pattern === "latpulldown" ? { jointFocus: "어깨 · 팔꿈치", rom: "보통" as const, romDescription: "어깨·팔꿈치가 편안한 경로 안에서 움직입니다." } : pattern === "row-erg-easy" || pattern === "bike" ? { jointFocus: "고관절 · 무릎 · 발목", rom: "보통" as const, romDescription: "반복 리듬 안에서 다리 관절이 부드럽게 이어집니다." } : pattern === "step-up" || pattern === "bodyweight-squat" ? { jointFocus: "발목 · 무릎 · 고관절", rom: "큼" as const, romDescription: "발목·무릎·고관절을 함께 쓰되 통증 없는 범위에서 멈춥니다." } : pattern === "front-plank" || pattern === "bird-dog" ? { jointFocus: "어깨 · 골반 · 척추", rom: "작음" as const, romDescription: "관절을 크게 움직이기보다 몸통 중심축을 길게 유지합니다." } : guide.category === "모빌리티" || guide.category === "요가·필라테스" ? { jointFocus: `${regionLabel} 주변 관절`, rom: "큼" as const, romDescription: "범위는 호흡이 유지되는 선에서 천천히 넓힙니다." } : guide.focus === "균형" || guide.focus === "협응" ? { jointFocus: "발목 · 골반 · 몸통", rom: "작음" as const, romDescription: "작은 보정 움직임으로 안정된 중심축을 찾습니다." } : { jointFocus: `${regionLabel} · 몸통 중심축`, rom: "보통" as const, romDescription: "주요 부위와 몸통이 함께 제어되는 편안한 범위입니다." };
+  return { categoryTheme, regionTheme, categoryLabel, regionLabel, ...movement, ...axis };
 }
 
 export function getAsciiMovementDiagram(exerciseId: string, guide?: ExerciseTextGuide) {
