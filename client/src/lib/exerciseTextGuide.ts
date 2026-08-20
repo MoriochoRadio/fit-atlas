@@ -1,6 +1,11 @@
 import type { Exercise, ExerciseDetail } from "./catalogTypes";
 
 export type ExerciseTextGuide = {
+  name: string;
+  category: Exercise["category"];
+  focus: Exercise["focus"];
+  regions: Exercise["regions"];
+  equipment: string;
   sequence: [string, string, string];
   primaryMuscles: string[];
   supportingMuscles: string[];
@@ -38,6 +43,11 @@ export function getExerciseTextGuide(exercise: Exercise, detail: ExerciseDetail)
   const execution = exercise.cues.slice(0, 2).join(" · ") || `${exercise.name}의 움직임을 작고 제어된 범위로 반복합니다.`;
 
   return {
+    name: exercise.name,
+    category: exercise.category,
+    focus: exercise.focus,
+    regions: exercise.regions,
+    equipment: exercise.equipment,
     sequence: [
       explainStep(detail.setup[0] ?? `${exercise.equipment}의 고정·높이·주변 공간을 먼저 확인합니다.`),
       explainStep(execution),

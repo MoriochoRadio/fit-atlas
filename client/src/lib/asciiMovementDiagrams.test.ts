@@ -1,5 +1,7 @@
 import { describe, expect, it } from "vitest";
 import { asciiMovementDiagrams, getAsciiMovementDiagram } from "./asciiMovementDiagrams";
+import { loadFullCatalog } from "./catalogLoader";
+import { getExerciseTextGuide } from "./exerciseTextGuide";
 
 describe("ASCII movement diagrams", () => {
   it("provides three readable sketches for representative complex movement patterns", () => {
@@ -13,5 +15,17 @@ describe("ASCII movement diagrams", () => {
     });
     expect(getAsciiMovementDiagram("맨몸 스쿼트")?.title).toContain("맨몸 스쿼트");
     expect(getAsciiMovementDiagram("unknown")).toBeUndefined();
+  });
+
+  it("creates a three-stage accessible fallback diagram for every catalog exercise", async () => {
+    const entries = await loadFullCatalog();
+    expect(entries).toHaveLength(1008);
+
+    entries.forEach(({ exercise, detail }) => {
+      const diagram = getAsciiMovementDiagram(exercise.id, getExerciseTextGuide(exercise, detail));
+      expect(diagram).toBeDefined();
+      expect(diagram?.stages).toHaveLength(3);
+      expect(diagram?.stages.every((stage) => stage.art.includes("\n") && stage.cue.length > 4)).toBe(true);
+    });
   });
 });

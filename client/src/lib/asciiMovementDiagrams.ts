@@ -1,3 +1,5 @@
+import type { ExerciseTextGuide } from "./exerciseTextGuide";
+
 type AsciiStage = { label: string; art: string; cue: string };
 
 export type AsciiMovementDiagram = {
@@ -55,6 +57,33 @@ const asciiDiagramIdByExerciseName: Record<string, string> = {
   "스텝업": "step-up",
 };
 
-export function getAsciiMovementDiagram(exerciseId: string) {
-  return asciiMovementDiagrams[exerciseId] ?? asciiMovementDiagrams[asciiDiagramIdByExerciseName[exerciseId]];
+function selectFallbackDiagramId(guide: ExerciseTextGuide) {
+  const descriptor = `${guide.name} ${guide.equipment} ${guide.category} ${guide.focus} ${guide.regions.join(" ")}`.toLowerCase();
+  if (/(사이클|바이크|자전거)/.test(descriptor)) return "bike";
+  if (/(로잉|로우)/.test(descriptor)) return "row-erg-easy";
+  if (/(수영|수중|풀)/.test(descriptor)) return "row-erg-easy";
+  if (/(풀업|풀다운|랫|친업|매달리기)/.test(descriptor)) return "latpulldown";
+  if (/(프레스|벤치|푸시|딥)/.test(descriptor)) return "dumbbell-bench";
+  if (/(데드|힌지|스윙|굿모닝|RDL)/i.test(descriptor)) return "rdl";
+  if (/(런지|스텝|계단)/.test(descriptor)) return "step-up";
+  if (/(스쿼트|레그|종아리)/.test(descriptor)) return "bodyweight-squat";
+  if (/(플랭크|크런치|데드버그|코어|복근)/.test(descriptor)) return "front-plank";
+  if (/(둔근|힙|브리지)/.test(descriptor)) return "barbell-hip-thrust";
+  if (guide.category === "러닝" || guide.category === "유산소") return "bike";
+  if (guide.category === "모빌리티" || guide.category === "요가·필라테스" || guide.focus === "균형" || guide.focus === "협응") return "bird-dog";
+  return "bodyweight-squat";
+}
+
+function createFallbackDiagram(guide: ExerciseTextGuide): AsciiMovementDiagram {
+  const reference = asciiMovementDiagrams[selectFallbackDiagramId(guide)];
+  return {
+    title: `${guide.name} ASCII 동작 도식`,
+    description: `${guide.name}의 ${guide.category} 동작을 시작·핵심 움직임·마무리 확인 순서로 읽는 공통 도식입니다.`,
+    stages: reference.stages.map((stage, index) => ({ label: ["시작", "핵심", "마무리"][index], art: stage.art, cue: guide.sequence[index] })) as AsciiMovementDiagram["stages"],
+  };
+}
+
+export function getAsciiMovementDiagram(exerciseId: string, guide?: ExerciseTextGuide) {
+  const direct = asciiMovementDiagrams[exerciseId] ?? asciiMovementDiagrams[asciiDiagramIdByExerciseName[exerciseId]];
+  return direct ?? (guide ? createFallbackDiagram(guide) : undefined);
 }

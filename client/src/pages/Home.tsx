@@ -466,7 +466,7 @@ function ExerciseCard({ exercise, detail, isFavorite, onToggleFavorite, onViewed
 }
 
 function TextExerciseGuide({ guide, exerciseName }: { guide: ExerciseTextGuide; exerciseName: string }) {
-  const ascii = getAsciiMovementDiagram(exerciseName);
+  const ascii = getAsciiMovementDiagram(exerciseName, guide);
   return <section className="text-exercise-guide" aria-label={`${exerciseName} 사진 없는 자세 안내`}><div className="text-guide-head"><div><p className="small-label">TEXT MOVEMENT MAP</p><h4>읽으며 따라 하는 자세 지도</h4></div><span>사진 없이도<br />① → ② → ③</span></div>{ascii && <section className="ascii-movement-diagram" aria-label={`${exerciseName} ASCII 동작 도식`}><div><p className="small-label">ASCII MOTION SKETCH</p><p>{ascii.description}</p></div><div className="ascii-stages">{ascii.stages.map((stage, index) => <article key={stage.label}><span>0{index + 1} · {stage.label}</span><pre aria-label={`${stage.label} ASCII 도식: ${stage.cue}`}>{stage.art}</pre><b>{stage.cue}</b></article>)}</div></section>}<ol className="text-guide-sequence">{guide.sequence.map((step, index) => <li key={step}><span>0{index + 1}</span><div><b>{["시작 자세", "움직임", "마무리 확인"][index]}</b><p>{step}</p></div></li>)}</ol><div className="text-guide-facts"><article><span>◎ 주로 쓰는 근육</span><p>{guide.primaryMuscles.join(" · ")}</p></article><article><span>＋ 함께 쓰는 근육</span><p>{guide.supportingMuscles.join(" · ")}</p></article><article><span>↔ 호흡</span><p>{guide.breathing.replace("↔ ", "")}</p></article><article><span>↓ 어렵다면</span><p>{guide.adjustment.replace("↓ ", "")}</p></article></div><p className="text-guide-stop">{guide.stop}</p></section>;
 }
 
