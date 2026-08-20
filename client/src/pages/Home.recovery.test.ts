@@ -45,7 +45,7 @@ describe("Home recovery alternative flow", () => {
 
   it("renders the action-first start panel and opens the current session design flow", () => {
     render(createElement(Home));
-    expect(screen.getByRole("heading", { name: /오늘의 움직임을\s*차분하게 설계하세요\./ })).toBeTruthy();
+    expect(screen.getByRole("heading", { name: /오늘은\s*무엇을 움직일까요\?/ })).toBeTruthy();
     expect(screen.getByLabelText("오늘의 30분 전신 균형 세션 요약")).toBeTruthy();
     expect(screen.queryByRole("img", { name: /운동선수/ })).toBeNull();
     const startDock = screen.getByLabelText("오늘의 주요 행동");
@@ -55,6 +55,17 @@ describe("Home recovery alternative flow", () => {
 
     expect(scrollIntoView).toHaveBeenCalledWith({ behavior: "smooth" });
     expect(screen.getByRole("heading", { name: "30분 전신 균형 세션 · 집·매트" })).toBeTruthy();
+  });
+
+  it("summarizes weekly completion, exercise records, and atlas signal in one compact report", () => {
+    render(createElement(Home));
+    const report = screen.getByLabelText("주간 아틀라스 요약 리포트");
+    expect(within(report).getByRole("heading", { name: "이번 주 흐름" })).toBeTruthy();
+    expect(report.querySelector(".weekly-signal-orbit b")?.textContent).toBe("0%");
+    expect(within(report).getByText("준비 신호")).toBeTruthy();
+    screen.getAllByRole("button", { name: /완료 처리/ }).forEach((button) => fireEvent.click(button));
+    expect(report.querySelector(".weekly-signal-orbit b")?.textContent).toBe("100%");
+    expect(within(report).getByText("고밀도 신호")).toBeTruthy();
   });
 
   it("applies a quick exercise start path and makes the chosen condition visible", () => {
@@ -123,13 +134,14 @@ describe("Home recovery alternative flow", () => {
     const shell = document.querySelector(".site-shell");
     expect(shell?.className).toContain("scene-home");
 
-    fireEvent.click(screen.getByRole("link", { name: "운동 탐색" }));
+    const primaryNav = screen.getByRole("navigation", { name: "주요 메뉴" });
+    fireEvent.click(within(primaryNav).getByRole("link", { name: "운동 탐색" }));
     expect(shell?.className).toContain("scene-explore");
-    expect(screen.getByRole("link", { name: "운동 탐색" }).getAttribute("aria-current")).toBe("page");
+    expect(within(primaryNav).getByRole("link", { name: "운동 탐색" }).getAttribute("aria-current")).toBe("page");
 
-    fireEvent.click(screen.getByRole("link", { name: "웰니스" }));
+    fireEvent.click(within(primaryNav).getByRole("link", { name: "웰니스" }));
     expect(shell?.className).toContain("scene-wellness");
-    expect(screen.getByRole("link", { name: "웰니스" }).getAttribute("aria-current")).toBe("page");
+    expect(within(primaryNav).getByRole("link", { name: "웰니스" }).getAttribute("aria-current")).toBe("page");
   });
 
   it("renders the first catalog page first, then appends the next page on demand", async () => {

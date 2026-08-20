@@ -293,6 +293,8 @@ export default function Home() {
     if (completionRate >= .5 || weeklyPlanInsight.loggedThisWeek >= 2) return "active";
     return "starting";
   }, [weeklyPlanInsight]);
+  const weeklyCompletionPercent = weeklyPlanInsight.total ? Math.round((weeklyPlanInsight.completed / weeklyPlanInsight.total) * 100) : 0;
+  const atlasSignalSummary = atlasPerformance === "surge" ? { title: "고밀도 신호", detail: "완료·기록 흐름이 충분히 쌓였습니다." } : atlasPerformance === "active" ? { title: "활성 신호", detail: "이번 주 리듬을 이어가고 있습니다." } : { title: "준비 신호", detail: "첫 완료 또는 기록부터 시작하세요." };
   const activeAtlasBlock = activeAtlasNode === null ? null : atlasBlocks[activeAtlasNode] ?? null;
   const atlasRoute = { all_round: { label: "BALANCE ROUTE", description: "전신 연결과 리듬" }, strength: { label: "POWER ROUTE", description: "점진적 힘과 안정" }, endurance: { label: "FLOW ROUTE", description: "호흡과 지속 리듬" } }[sessionGoal];
 
@@ -573,11 +575,9 @@ export default function Home() {
         <section className="hero">
           <div className="hero-noise" />
           <div className="hero-copy">
-            <p className="eyebrow light">YOUR DAILY TRAINING WORKSPACE</p>
-            <h1>오늘의 움직임을<br /><em>차분하게 설계하세요.</em></h1>
-            <p className="hero-description">찾고, 이해하고, 기록하는 과정을 한 화면에 정리했습니다. 지금의 컨디션에 맞는 다음 움직임부터 시작하세요.</p>
-            <p className="local-first-note"><ShieldCheck size={14} /> 기록·프로필은 이 브라우저에만 저장됩니다. 다른 기기에서는 <strong>백업·가져오기</strong>를 사용하세요.</p>
-            <div className="hero-actions"><a href="#explore" className="light-button" onClick={() => setActiveScene("explore")}>운동 시작하기 <ArrowRight size={16} /></a><button className="text-button" onClick={() => { setActiveScene("anatomy"); document.getElementById("anatomy")?.scrollIntoView({ behavior: "smooth" }); }}>내 몸의 움직임 보기 <ChevronRight size={17} /></button></div>
+            <p className="eyebrow light">TODAY</p>
+            <h1>오늘은<br /><em>무엇을 움직일까요?</em></h1>
+            <div className="hero-actions"><button className="light-button" onClick={() => document.getElementById("session")?.scrollIntoView({ behavior: "smooth" })}>오늘 세션 <ArrowRight size={16} /></button><a href="#explore" className="text-button" onClick={() => setActiveScene("explore")}>운동 탐색 <ChevronRight size={17} /></a></div>
           </div>
           <div className="hero-atlas" aria-label={`오늘의 ${sessionDuration}분 ${sessionGoal === "strength" ? "기초 근력" : sessionGoal === "endurance" ? "심폐 리듬" : "전신 균형"} 세션 요약`}>
             <div className="atlas-visual-head"><span>ATLAS / TODAY</span><span className="atlas-ready"><i /> READY</span></div>
@@ -586,8 +586,9 @@ export default function Home() {
             <div className="atlas-stat stat-one"><span>ATLAS</span><b>{catalogStats.exerciseCount}</b><small>큐레이션 운동</small></div><div className="atlas-stat stat-two"><span>PATHS</span><b>{catalogStats.categoryCount}</b><small>운동 카테고리</small></div><div className="atlas-caption">PLAN / MOVE<br />/ ADJUST</div>
             <div className="atlas-theme-control" role="group" aria-label="아틀라스 제어"><div><p>ATLAS THEME</p><span>{atlasThemeCopy[atlasTheme].description}</span></div><div className="atlas-theme-options" aria-label="아틀라스 색상 테마 선택">{atlasThemes.map((theme) => <button key={theme} className={atlasTheme === theme ? "is-selected" : ""} onClick={() => { if (theme === atlasTheme) return; setAtlasTheme(theme); playAtlasTransition("theme", `${atlasThemeCopy[theme].label} 테마를 적용했습니다.`); }} aria-pressed={atlasTheme === theme} aria-label={`${atlasThemeCopy[theme].label} 테마 선택`}><i /><span>{atlasThemeCopy[theme].label}</span></button>)}</div><div className="atlas-speed-control" role="group" aria-label="아틀라스 궤적 재생 속도">{atlasMotionSpeeds.map((speed) => <button key={speed} className={atlasInteraction.motionSpeed === speed ? "is-selected" : ""} onClick={() => { if (speed === atlasInteraction.motionSpeed) return; setAtlasInteraction((current) => ({ ...current, motionSpeed: speed })); playAtlasTransition("route", `${atlasMotionSpeedCopy[speed].label} 속도로 경로를 재생합니다.`); }} aria-pressed={atlasInteraction.motionSpeed === speed}><span>{atlasMotionSpeedCopy[speed].label}</span><b>{atlasMotionSpeedCopy[speed].rate}</b></button>)}</div><span className="atlas-performance-status">이번 주 {weeklyPlanInsight.completed}/{weeklyPlanInsight.total || 0} · {atlasPerformance === "surge" ? "신호 밀도 높음" : atlasPerformance === "active" ? "신호 흐름 활성" : "신호 준비 중"}</span><span className="atlas-feedback" role="status" aria-live="polite">{atlasFeedback}</span></div>
           </div>
-          <div className="hero-footer"><span><ShieldCheck size={15} /> 연구 근거를 명시한 콘텐츠</span><span><HeartPulse size={15} /> 의료 진단을 대체하지 않는 안전 설계</span></div>
         </section>
+
+        <section className={`weekly-atlas-report signal-${atlasPerformance}`} aria-label="주간 아틀라스 요약 리포트"><div className="weekly-report-head"><div><p className="eyebrow">WEEKLY ATLAS</p><h2>이번 주 흐름</h2></div><span>{atlasSignalSummary.title}</span></div><div className="weekly-report-body"><div className="weekly-signal-orbit" style={{ "--report-progress": `${weeklyCompletionPercent}%` } as React.CSSProperties}><b>{weeklyCompletionPercent}<small>%</small></b><span>완료</span></div><div className="weekly-report-metrics"><article><span>완료 세션</span><b>{weeklyPlanInsight.completed}<small>/{weeklyPlanInsight.total || 0}</small></b></article><article><span>운동 기록</span><b>{weeklyPlanInsight.loggedThisWeek}</b></article><article><span>아틀라스</span><b>{atlasPerformance === "surge" ? "HIGH" : atlasPerformance === "active" ? "FLOW" : "READY"}</b></article></div><p>{atlasSignalSummary.detail}</p></div></section>
 
         <section className="start-dock" aria-label="오늘의 주요 행동"><div className="start-dock-intro"><p className="eyebrow">START HERE</p><h2>오늘, 무엇을<br /><em>시작할까요?</em></h2><p>복잡한 설정 없이 현재 목적에 맞는 한 가지 경로를 선택하세요.</p></div><div className="start-dock-actions"><a className="start-action start-action-explore" href="#explore" onClick={() => setActiveScene("explore")}><span><BookOpen size={19} /> 운동 찾기</span><b>1,008개 운동<br />자세·부위·근거</b><ArrowRight size={18} /></a><button className="start-action start-action-session" onClick={() => { setSessionGoal("all_round"); document.getElementById("session")?.scrollIntoView({ behavior: "smooth" }); }}><span><Timer size={19} /> 오늘 세션</span><b>{sessionDuration}분 맞춤<br />운동 설계</b><ArrowRight size={18} /></button><button className="start-action start-action-record" onClick={() => setLogOpen(true)}><span><History size={19} /> 운동 기록</span><b>{logs.length}개 기록<br />변화 확인</b><Plus size={18} /></button><a className="start-action start-action-recover" href="#recovery" onClick={() => setActiveScene("wellness")}><span><HeartPulse size={19} /> 회복 가이드</span><b>불편감·피로<br />가벼운 회복</b><ArrowRight size={18} /></a></div></section>
 
