@@ -29,6 +29,7 @@ import type { RecoveryContext, SeatedRecoveryDuration } from "@/lib/seatedRecove
 import { preferredCategoryOptions, preferredEnvironmentOptions, preferredEquipmentOptions } from "@/lib/profilePreferences";
 
 type LogEntry = TrainingLog;
+type CinematicScene = "home" | "explore" | "anatomy" | "progress" | "wellness";
 
 const categories = preferredCategoryOptions;
 const goalCopy = { 근력증가: "strength", 체력증가: "endurance", 다이어트: "weight_management" } as const;
@@ -66,6 +67,7 @@ export default function Home() {
   const [linkedPlanSessionId, setLinkedPlanSessionId] = useState<string | null>(null);
   const [profileOpen, setProfileOpen] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const [activeScene, setActiveScene] = useState<CinematicScene>("home");
   const [logs, setLogs] = useState<LogEntry[]>(() => typeof window === "undefined" ? [] : readTrainingLogs());
   const [form, setForm] = useState(() => ({ date: new Date().toISOString().slice(0, 10), exercise: "바벨 백 스쿼트", sets: "3", reps: "8", load: "40", minutes: "35", distance: "", distanceUnit: "km" as "km" | "m", intensity: "6" }));
   const [profileForm, setProfileForm] = useState(() => typeof window === "undefined" ? readLocalProfile() : readLocalProfile());
@@ -78,6 +80,17 @@ export default function Home() {
   useEffect(() => {
     saveTrainingLogs(logs);
   }, [logs]);
+
+  useEffect(() => {
+    if (typeof IntersectionObserver === "undefined") return;
+    const sceneById: Record<string, CinematicScene> = { program: "home", session: "home", explore: "explore", anatomy: "anatomy", progress: "progress", wellness: "wellness" };
+    const observer = new IntersectionObserver((entries) => {
+      const visible = entries.filter((entry) => entry.isIntersecting).sort((left, right) => right.intersectionRatio - left.intersectionRatio)[0];
+      if (visible) setActiveScene(sceneById[visible.target.id] ?? "home");
+    }, { threshold: [0.18, 0.45, 0.7], rootMargin: "-18% 0px -44% 0px" });
+    Object.keys(sceneById).forEach((id) => document.getElementById(id) && observer.observe(document.getElementById(id)!));
+    return () => observer.disconnect();
+  }, []);
 
   useEffect(() => {
     saveLocalCheckin(checkin);
@@ -308,11 +321,12 @@ export default function Home() {
 
 
   return (
-    <div className="site-shell">
+    <div className={`site-shell scene-${activeScene}`}>
+      <div className="cinematic-backdrop" aria-hidden="true"><span className="cinematic-orb orb-one" /><span className="cinematic-orb orb-two" /><span className="cinematic-gridlines" /><span className="cinematic-hud">SCENE / {activeScene.toUpperCase()}</span></div>
       <header className="topbar">
         <a className="brand" href="#top" aria-label="Fit Atlas 홈"><span className="brand-mark"><Activity size={17} /></span><span>FIT ATLAS</span></a>
         <nav className={menuOpen ? "nav is-open" : "nav"} aria-label="주요 메뉴">
-          <a href="#explore" onClick={() => setMenuOpen(false)}>운동 탐색</a><a href="#anatomy" onClick={() => setMenuOpen(false)}>바디 맵</a><a href="#progress" onClick={() => setMenuOpen(false)}>기록 분석</a><a href="#wellness" onClick={() => setMenuOpen(false)}>웰니스</a>
+          <a href="#explore" aria-current={activeScene === "explore" ? "page" : undefined} onClick={() => { setActiveScene("explore"); setMenuOpen(false); }}>운동 탐색</a><a href="#anatomy" aria-current={activeScene === "anatomy" ? "page" : undefined} onClick={() => { setActiveScene("anatomy"); setMenuOpen(false); }}>바디 맵</a><a href="#progress" aria-current={activeScene === "progress" ? "page" : undefined} onClick={() => { setActiveScene("progress"); setMenuOpen(false); }}>기록 분석</a><a href="#wellness" aria-current={activeScene === "wellness" ? "page" : undefined} onClick={() => { setActiveScene("wellness"); setMenuOpen(false); }}>웰니스</a>
         </nav>
         <div className="topbar-actions"><button className="ghost-button desktop-only" onClick={() => setProfileOpen(true)}>내 프로필</button><button className="ghost-button desktop-only" onClick={() => downloadBackup(logs, profileForm, checkin, weeklyPlan, explorePreferences)}>백업</button><label className="login-button desktop-only">가져오기<input className="sr-only" type="file" accept="application/json" onChange={async (event) => { const file = event.target.files?.[0]; if (!file) return; try { const backup = parseBackup(await file.text()); setLogs(backup.logs); setProfileForm(backup.profile); setCheckin(backup.checkin); setWeeklyPlan(backup.weeklyPlan); setExplorePreferences(backup.explorePreferences); saveLocalProfile(backup.profile); saveLocalCheckin(backup.checkin); saveLocalWeeklyPlan(backup.weeklyPlan); saveLocalExplorePreferences(backup.explorePreferences); toast.success("백업을 복원했습니다."); } catch { toast.error("백업 파일을 읽지 못했습니다."); } event.currentTarget.value = ""; }} /></label><button className="dark-button" onClick={() => setLogOpen(true)}><Plus size={16} /> 운동 기록</button><button className="menu-button" onClick={() => setMenuOpen(!menuOpen)} aria-label="메뉴 열기"><Menu size={20} /></button></div>
       </header>
@@ -325,7 +339,7 @@ export default function Home() {
             <h1>더 강하게.<br /><em>더 정확하게.</em></h1>
             <p className="hero-description">운동 과학과 실제 훈련 흐름을 하나로 연결합니다. 오늘의 컨디션에 맞는 동작을 찾고, 기록으로 다음 세션을 더 정교하게 설계하세요.</p>
             <p className="local-first-note"><ShieldCheck size={14} /> 기록·프로필은 이 브라우저에만 저장됩니다. 다른 기기에서는 <strong>백업·가져오기</strong>를 사용하세요.</p>
-            <div className="hero-actions"><a href="#explore" className="light-button">운동 시작하기 <ArrowRight size={16} /></a><button className="text-button" onClick={() => document.getElementById("anatomy")?.scrollIntoView({ behavior: "smooth" })}>내 몸의 움직임 보기 <ChevronRight size={17} /></button></div>
+            <div className="hero-actions"><a href="#explore" className="light-button" onClick={() => setActiveScene("explore")}>운동 시작하기 <ArrowRight size={16} /></a><button className="text-button" onClick={() => { setActiveScene("anatomy"); document.getElementById("anatomy")?.scrollIntoView({ behavior: "smooth" }); }}>내 몸의 움직임 보기 <ChevronRight size={17} /></button></div>
           </div>
           <div className="hero-atlas">
             <img className="hero-performance-image" src="/manus-storage/fit-atlas-performance-hero_9e3d3d3c.jpg" alt="바벨 프런트 스쿼트를 수행하는 운동선수" /><div className="hero-image-shade" /><div className="hero-performance-tag"><span>PERFORM</span><b>01</b><small>STRENGTH SESSION</small></div><div className="atlas-stat stat-one"><span>TRAIN</span><b>{catalogStats.exerciseCount}</b><small>큐레이션 운동</small></div><div className="atlas-stat stat-two"><span>FOCUS</span><b>{catalogStats.categoryCount}</b><small>운동 카테고리</small></div><div className="atlas-caption">TRAIN / RECOVER<br />/ REPEAT</div>

@@ -60,6 +60,20 @@ describe("Home recovery alternative flow", () => {
     expect(menu.className).toBe("nav is-open");
   });
 
+  it("changes the cinematic scene when primary navigation moves between training areas", () => {
+    render(createElement(Home));
+    const shell = document.querySelector(".site-shell");
+    expect(shell?.className).toContain("scene-home");
+
+    fireEvent.click(screen.getByRole("link", { name: "운동 탐색" }));
+    expect(shell?.className).toContain("scene-explore");
+    expect(screen.getByRole("link", { name: "운동 탐색" }).getAttribute("aria-current")).toBe("page");
+
+    fireEvent.click(screen.getByRole("link", { name: "웰니스" }));
+    expect(shell?.className).toContain("scene-wellness");
+    expect(screen.getByRole("link", { name: "웰니스" }).getAttribute("aria-current")).toBe("page");
+  });
+
   it("renders the first catalog page first, then appends the next page on demand", async () => {
     render(createElement(Home));
     expect(screen.getByText("18개 표시 · 100/1008개 카탈로그를 불러왔습니다.")).toBeTruthy();
