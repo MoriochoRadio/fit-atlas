@@ -441,7 +441,7 @@ export default function Home() {
     setRomDashboardExporting(true);
     try {
       const { default: html2canvas } = await import("html2canvas");
-      const canvas = await html2canvas(romDashboardRef.current, { backgroundColor: "#0e1d18", scale: 2, useCORS: true });
+      const canvas = await html2canvas(romDashboardRef.current, { backgroundColor: "#f6f8fb", scale: 2, useCORS: true });
       const link = document.createElement("a");
       link.href = canvas.toDataURL("image/png");
       const periodSlug = dashboardExportMeta.period.trim().replace(/[^0-9A-Za-z가-힣]+/g, "-").replace(/^-|-$/g, "") || "weekly";
@@ -474,14 +474,14 @@ export default function Home() {
         <section className="hero">
           <div className="hero-noise" />
           <div className="hero-copy">
-            <p className="eyebrow light">TRAINING INTELLIGENCE / 1008 MOVEMENTS</p>
-            <h1>더 강하게.<br /><em>더 정확하게.</em></h1>
-            <p className="hero-description">운동 과학과 실제 훈련 흐름을 하나로 연결합니다. 오늘의 컨디션에 맞는 동작을 찾고, 기록으로 다음 세션을 더 정교하게 설계하세요.</p>
+            <p className="eyebrow light">YOUR DAILY TRAINING WORKSPACE</p>
+            <h1>오늘의 움직임을<br /><em>차분하게 설계하세요.</em></h1>
+            <p className="hero-description">찾고, 이해하고, 기록하는 과정을 한 화면에 정리했습니다. 지금의 컨디션에 맞는 다음 움직임부터 시작하세요.</p>
             <p className="local-first-note"><ShieldCheck size={14} /> 기록·프로필은 이 브라우저에만 저장됩니다. 다른 기기에서는 <strong>백업·가져오기</strong>를 사용하세요.</p>
             <div className="hero-actions"><a href="#explore" className="light-button" onClick={() => setActiveScene("explore")}>운동 시작하기 <ArrowRight size={16} /></a><button className="text-button" onClick={() => { setActiveScene("anatomy"); document.getElementById("anatomy")?.scrollIntoView({ behavior: "smooth" }); }}>내 몸의 움직임 보기 <ChevronRight size={17} /></button></div>
           </div>
           <div className="hero-atlas">
-            <img className="hero-performance-image" src="/manus-storage/fit-atlas-performance-hero_9e3d3d3c.jpg" alt="바벨 프런트 스쿼트를 수행하는 운동선수" /><div className="hero-image-shade" /><div className="hero-performance-tag"><span>PERFORM</span><b>01</b><small>STRENGTH SESSION</small></div><div className="atlas-stat stat-one"><span>TRAIN</span><b>{catalogStats.exerciseCount}</b><small>큐레이션 운동</small></div><div className="atlas-stat stat-two"><span>FOCUS</span><b>{catalogStats.categoryCount}</b><small>운동 카테고리</small></div><div className="atlas-caption">TRAIN / RECOVER<br />/ REPEAT</div>
+            <img className="hero-performance-image" src="/manus-storage/fit-atlas-performance-hero_9e3d3d3c.jpg" alt="바벨 프런트 스쿼트를 수행하는 운동선수" /><div className="hero-image-shade" /><div className="hero-performance-tag"><span>FOCUS</span><b>01</b><small>YOUR NEXT SESSION</small></div><div className="atlas-stat stat-one"><span>ATLAS</span><b>{catalogStats.exerciseCount}</b><small>큐레이션 운동</small></div><div className="atlas-stat stat-two"><span>PATHS</span><b>{catalogStats.categoryCount}</b><small>운동 카테고리</small></div><div className="atlas-caption">MOVE WITH<br />/ INTENTION</div>
           </div>
           <div className="hero-footer"><span><ShieldCheck size={15} /> 연구 근거를 명시한 콘텐츠</span><span><HeartPulse size={15} /> 의료 진단을 대체하지 않는 안전 설계</span></div>
         </section>
