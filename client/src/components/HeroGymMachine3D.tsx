@@ -21,6 +21,11 @@ const equipmentCopy: Record<HeroEquipment, { label: string; action: string; resi
   dumbbell: { label: "덤벨", action: "LIFT", resistance: "부하" },
   treadmill: { label: "트레드밀", action: "PACE", resistance: "페이스" },
 };
+const resistancePresets: Record<HeroEquipment, { value: number; label: string; guidance: string }[]> = {
+  cable: [{ value: 36, label: "가볍게", guidance: "폼·가동 범위" }, { value: 54, label: "기준", guidance: "안정적 볼륨" }, { value: 76, label: "집중", guidance: "힘·휴식 확보" }],
+  dumbbell: [{ value: 30, label: "가볍게", guidance: "움직임 연습" }, { value: 58, label: "기준", guidance: "전신 부하" }, { value: 78, label: "집중", guidance: "반복 여유 확인" }],
+  treadmill: [{ value: 28, label: "워밍업", guidance: "호흡 깨우기" }, { value: 48, label: "리듬", guidance: "지속 페이스" }, { value: 68, label: "페이스업", guidance: "짧은 구간 집중" }],
+};
 
 export function HeroGymMachine3D({ goal, environment, completion, equipment, resistance, nodes, onEquipment, onResistance, onOpenNode }: HeroGymMachine3DProps) {
   const [rotation, setRotation] = useState(-12);
@@ -31,6 +36,8 @@ export function HeroGymMachine3D({ goal, environment, completion, equipment, res
   const pulledDistance = Math.round((resistance / 100) * 60);
   const rewardStackCount = Math.max(1, Math.min(7, Math.ceil((completion / 100) * 7)));
   const equipmentInfo = equipmentCopy[equipment];
+  const presets = resistancePresets[equipment];
+  const activePreset = presets.find((preset) => preset.value === resistance) ?? null;
 
   const startRotate = (event: React.PointerEvent<SVGSVGElement>) => {
     rotateDrag.current = { x: event.clientX, rotation };
@@ -73,7 +80,7 @@ export function HeroGymMachine3D({ goal, environment, completion, equipment, res
       {equipment === "treadmill" && <g className="treadmill-assembly"><path d="M88 289 L142 168 L278 168 L332 289 L304 317 L116 317 Z" fill="url(#machine-frame)"/><path d="M122 281 L157 191 L263 191 L298 281 Z" fill="#111828" stroke="#bac5ce"/><path d="M150 242 L270 242" stroke="#4a5971" strokeWidth="6" strokeDasharray="8 8"/><path d="M134 168 L114 68 L144 68 L169 168 M286 168 L306 68 L276 68 L251 168" fill="none" stroke="url(#machine-frame)" strokeWidth="18" strokeLinecap="round"/><rect x="154" y="52" width="112" height="55" rx="12" fill="url(#machine-panel)" stroke="#d8ff4f"/><rect x="173" y="66" width="74" height="22" rx="6" fill="#10192f"/><text x="210" y="82" fill="#d8ff4f" textAnchor="middle" fontSize="14" fontFamily="monospace">{String(Math.round(resistance / 10)).padStart(2, "0")}.0</text><path d={`M210 108 C210 138 210 ${156 + pulledDistance} 210 ${187 + pulledDistance}`} className="machine-cable"/></g>}
     </svg>
     <button className="machine-handle" style={{ transform: `translate(-50%, ${pulledDistance}px)` }} aria-label={`${equipmentInfo.label} ${equipmentInfo.resistance} ${resistance}% 조절`} onPointerDown={startPull} onPointerMove={movePull} onPointerUp={endPull} onPointerCancel={endPull}><i/><span>{equipmentInfo.action}</span></button>
-    <div className="machine-resistance"><span>{equipmentInfo.resistance.toUpperCase()}</span><b>{resistance}<small>%</small></b><input type="range" min="0" max="100" value={resistance} onChange={(event) => onResistance(Number(event.target.value))} aria-label={`${equipmentInfo.label} ${equipmentInfo.resistance} 조절`}/><button onClick={() => onResistance(goal === "strength" ? 68 : goal === "endurance" ? 42 : 54)}>세션값</button></div>
+    <div className="machine-resistance"><span>{equipmentInfo.resistance.toUpperCase()}</span><b>{resistance}<small>%</small></b><input type="range" min="0" max="100" value={resistance} onChange={(event) => onResistance(Number(event.target.value))} aria-label={`${equipmentInfo.label} ${equipmentInfo.resistance} 조절`}/><div className="machine-resistance-presets" role="group" aria-label={`${equipmentInfo.label} 빠른 ${equipmentInfo.resistance} 프리셋`}>{presets.map((preset) => <button key={preset.value} className={activePreset?.value === preset.value ? "is-selected" : ""} onClick={() => onResistance(preset.value)} aria-pressed={activePreset?.value === preset.value} aria-label={`${equipmentInfo.label} ${preset.label} ${preset.value}% 프리셋`}><span>{preset.label}</span><b>{preset.value}%</b></button>)}</div><small className="machine-preset-guidance">{activePreset ? activePreset.guidance : "세션 목표에 맞춰 조절"}</small></div>
     <div className="machine-equipment-control" role="group" aria-label="메인 3D 운동 기구 선택">{(Object.keys(equipmentCopy) as HeroEquipment[]).map((item) => <button key={item} className={equipment === item ? "is-selected" : ""} onClick={() => onEquipment(item)} aria-pressed={equipment === item}>{equipmentCopy[item].label}</button>)}</div>
     <div className="machine-reward-meter" aria-label={`주간 달성률 ${completion}퍼센트, 웨이트 스택 ${rewardStackCount}단계`}><span>WEEKLY STACK</span><div>{Array.from({ length: 7 }, (_, index) => <i key={index} className={index < rewardStackCount ? "is-earned" : ""} />)}</div><b>{completion}%</b></div>
     <div className="machine-route-nodes" aria-label="세션 블록 편집">{nodes.map((label, index) => <button key={`${label}-${index}`} className={`machine-route-node node-${index + 1}`} onClick={() => onOpenNode(index)} aria-haspopup="dialog" aria-label={`${label} 블록 상세 및 편집`}>{String(index + 1).padStart(2, "0")}</button>)}</div>

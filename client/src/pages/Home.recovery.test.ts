@@ -118,6 +118,19 @@ describe("Home recovery alternative flow", () => {
     expect((screen.getByLabelText(/주관적 강도 RPE/) as HTMLInputElement).value).toBe("8");
   });
 
+  it("offers equipment-specific resistance presets and updates the current intensity", async () => {
+    render(createElement(Home));
+    const cableMachine = await waitFor(() => screen.getByLabelText("직접 조작 가능한 3D 케이블 운동 장비"));
+    fireEvent.click(within(cableMachine).getByRole("button", { name: "케이블 집중 76% 프리셋" }));
+    expect((within(cableMachine).getByLabelText("케이블 저항 조절") as HTMLInputElement).value).toBe("76");
+    expect(screen.getByText("집중 · RPE 8")).toBeTruthy();
+
+    fireEvent.click(within(cableMachine).getByRole("button", { name: "트레드밀" }));
+    const treadmillMachine = await waitFor(() => screen.getByLabelText("직접 조작 가능한 3D 트레드밀 운동 장비"));
+    fireEvent.click(within(treadmillMachine).getByRole("button", { name: "트레드밀 페이스업 68% 프리셋" }));
+    expect((within(treadmillMachine).getByLabelText("트레드밀 페이스 조절") as HTMLInputElement).value).toBe("68");
+  });
+
   it("renders the action-first start panel and opens the current session design flow", () => {
     render(createElement(Home));
     expect(screen.getByRole("heading", { name: /오늘은\s*무엇을 움직일까요\?/ })).toBeTruthy();
