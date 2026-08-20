@@ -162,6 +162,26 @@ describe("Home recovery alternative flow", () => {
     expect(screen.getByRole("heading", { name: "15분 전신 균형 세션 · 집·매트" })).toBeTruthy();
   });
 
+  it("provides a low-pressure first record prompt and a quick recovery start", () => {
+    render(createElement(Home));
+
+    expect(screen.getByRole("button", { name: /첫 기록 남기기/ })).toBeTruthy();
+    expect(screen.getByLabelText("빠른 회복 시작")).toBeTruthy();
+
+    fireEvent.click(screen.getByRole("button", { name: /첫 기록 남기기/ }));
+    expect(screen.getByText(/모든 수치를 완벽히 기억할 필요는 없습니다/)).toBeTruthy();
+  });
+
+  it("closes the training log with the Escape key", () => {
+    render(createElement(Home));
+
+    fireEvent.click(screen.getByRole("button", { name: /첫 기록 남기기/ }));
+    expect(screen.getByRole("dialog", { name: "운동 기록 추가" })).toBeTruthy();
+
+    fireEvent.keyDown(window, { key: "Escape" });
+    expect(screen.queryByRole("dialog", { name: "운동 기록 추가" })).toBeNull();
+  });
+
   it("renders all four conservative cardio interval templates", () => {
     render(createElement(Home));
     expect(screen.getByText("CARDIO INTERVALS")).toBeTruthy();

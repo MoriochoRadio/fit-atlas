@@ -46,6 +46,13 @@ describe("local backup format", () => {
     expect(readLocalProfile()).toEqual(defaultProfilePreferences);
   });
 
+  it("reports a storage failure instead of throwing when browser persistence is unavailable", () => {
+    Object.defineProperty(globalThis, "window", { value: { localStorage: { getItem: () => null, setItem: () => { throw new Error("quota exceeded"); } } }, configurable: true });
+
+    expect(saveTrainingLogs([])).toBe(false);
+    expect(saveLocalProfile(defaultProfilePreferences)).toBe(false);
+  });
+
   it("keeps legacy records without distance fields and restores new meter-based distance records", () => {
     const legacy = parseBackup(JSON.stringify(createBackup([{ id: "legacy", date: "2026-08-14", exercise: "푸시업", sets: 2, reps: 8, load: 0, minutes: 10, intensity: 4 }], defaultProfilePreferences)));
     const modern = parseBackup(JSON.stringify(createBackup([{ id: "swim", date: "2026-08-14", exercise: "이지 수영", sets: 1, reps: 1, load: 0, minutes: 12, intensity: 4, distance: 400, distanceUnit: "m" }], defaultProfilePreferences)));

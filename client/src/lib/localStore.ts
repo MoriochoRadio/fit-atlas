@@ -11,6 +11,15 @@ const CHECKIN_KEY = "fit-atlas-daily-checkin";
 const WEEKLY_PLAN_KEY = "fit-atlas-weekly-plan";
 const EXPLORE_PREFERENCES_KEY = "fit-atlas-explore-preferences";
 
+function persistLocalValue(key: string, value: unknown) {
+  try {
+    window.localStorage.setItem(key, JSON.stringify(value));
+    return true;
+  } catch {
+    return false;
+  }
+}
+
 export type FitAtlasBackup = {
   version: 4;
   exportedAt: string;
@@ -31,7 +40,7 @@ export function readTrainingLogs(): TrainingLog[] {
 }
 
 export function saveTrainingLogs(logs: TrainingLog[]) {
-  window.localStorage.setItem(LOGS_KEY, JSON.stringify(logs));
+  return persistLocalValue(LOGS_KEY, logs);
 }
 
 export function readLocalProfile() {
@@ -39,7 +48,7 @@ export function readLocalProfile() {
 }
 
 export function saveLocalProfile(profile: ProfilePreferences) {
-  window.localStorage.setItem(PROFILE_KEY, JSON.stringify(profile));
+  return persistLocalValue(PROFILE_KEY, profile);
 }
 
 export function readLocalCheckin() {
@@ -47,7 +56,7 @@ export function readLocalCheckin() {
 }
 
 export function saveLocalCheckin(checkin: DailyCheckin) {
-  window.localStorage.setItem(CHECKIN_KEY, JSON.stringify(checkin));
+  return persistLocalValue(CHECKIN_KEY, checkin);
 }
 
 export function readLocalWeeklyPlan() {
@@ -55,7 +64,7 @@ export function readLocalWeeklyPlan() {
 }
 
 export function saveLocalWeeklyPlan(plan: WeeklyPlan) {
-  window.localStorage.setItem(WEEKLY_PLAN_KEY, JSON.stringify(plan));
+  return persistLocalValue(WEEKLY_PLAN_KEY, plan);
 }
 
 export function readLocalExplorePreferences() {
@@ -63,7 +72,7 @@ export function readLocalExplorePreferences() {
 }
 
 export function saveLocalExplorePreferences(preferences: ExplorePreferences) {
-  window.localStorage.setItem(EXPLORE_PREFERENCES_KEY, JSON.stringify(preferences));
+  return persistLocalValue(EXPLORE_PREFERENCES_KEY, preferences);
 }
 
 export function createBackup(logs: TrainingLog[], profile: ProfilePreferences, checkin: DailyCheckin = defaultDailyCheckin, weeklyPlan: WeeklyPlan = createWeeklyPlan(), explorePreferences: ExplorePreferences = defaultExplorePreferences): FitAtlasBackup {
