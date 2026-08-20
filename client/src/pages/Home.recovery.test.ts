@@ -81,6 +81,22 @@ describe("Home recovery alternative flow", () => {
     expect(document.querySelectorAll(".muscle-zone.is-primary").length).toBeGreaterThan(0);
   });
 
+  it("lets the hero cable machine rotate, adjust resistance, and open a session node", async () => {
+    render(createElement(Home));
+    const machine = await waitFor(() => screen.getByLabelText("직접 조작 가능한 3D 케이블 운동 장비"));
+    const canvas = machine.querySelector("svg") as SVGSVGElement;
+    fireEvent.pointerDown(canvas, { pointerId: 4, clientX: 90 });
+    fireEvent.pointerMove(canvas, { pointerId: 4, clientX: 150 });
+    fireEvent.pointerUp(canvas, { pointerId: 4, clientX: 150 });
+    expect(canvas.getAttribute("style")).toContain("rotateY(21deg)");
+
+    const resistance = within(machine).getByLabelText("케이블 저항 조절") as HTMLInputElement;
+    fireEvent.change(resistance, { target: { value: "77" } });
+    expect(resistance.value).toBe("77");
+    fireEvent.click(within(machine).getAllByRole("button", { name: /블록 상세 및 편집/ })[0]!);
+    expect(screen.getByRole("dialog")).toBeTruthy();
+  });
+
   it("renders the action-first start panel and opens the current session design flow", () => {
     render(createElement(Home));
     expect(screen.getByRole("heading", { name: /오늘은\s*무엇을 움직일까요\?/ })).toBeTruthy();
