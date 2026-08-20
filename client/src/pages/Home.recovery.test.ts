@@ -305,6 +305,18 @@ describe("Home recovery alternative flow", () => {
     expect(document.querySelector(".site-shell")?.className).toContain("atlas-motion-strength");
   });
 
+  it("reveals session adjustment guidance only on request and exposes wellness quick navigation", () => {
+    render(createElement(Home));
+    const guidanceToggle = screen.getByRole("button", { name: "피로·통증 조절 기준 보기" });
+    expect(guidanceToggle.getAttribute("aria-expanded")).toBe("false");
+    expect(screen.queryByText(/피로·통증·수면 반응이 좋지 않으면/)).toBeNull();
+    fireEvent.click(guidanceToggle);
+    expect(guidanceToggle.getAttribute("aria-expanded")).toBe("true");
+    expect(screen.getByText(/피로·통증·수면 반응이 좋지 않으면/)).toBeTruthy();
+    const wellnessNavigation = screen.getByRole("navigation", { name: "웰니스 화면 빠른 이동" });
+    ["회복 시작", "생활 습관", "유산소", "무점프", "안전"].forEach((name) => expect(within(wellnessNavigation).getByRole("button", { name })).toBeTruthy());
+  });
+
   it("lets the user change and restore a preferred atlas theme locally", () => {
     render(createElement(Home));
     const oceanTheme = screen.getByRole("button", { name: "오션 테마 선택" });
