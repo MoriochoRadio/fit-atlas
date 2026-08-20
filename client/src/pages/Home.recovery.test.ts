@@ -202,13 +202,30 @@ describe("Home recovery alternative flow", () => {
   it("toggles scene transition sound from the dedicated settings dialog", async () => {
     render(createElement(Home));
     const topbar = document.querySelector(".topbar");
-    fireEvent.click(within(topbar as HTMLElement).getByRole("button", { name: "장면 설정" }));
+    fireEvent.click(within(topbar as HTMLElement).getAllByRole("button", { name: "장면 설정" }).find((button) => button.classList.contains("desktop-only"))!);
     const dialog = await waitFor(() => screen.getByRole("dialog", { name: /장면 전환 설정/ }));
     const soundToggle = within(dialog).getByRole("checkbox", { name: /장면 전환 효과음/ }) as HTMLInputElement;
     expect(soundToggle.checked).toBe(true);
     fireEvent.click(soundToggle);
     expect(soundToggle.checked).toBe(false);
     expect(JSON.parse(window.localStorage.getItem("fit-atlas-scene-experience") ?? "{}")).toMatchObject({ soundEnabled: false });
+  });
+
+  it("opens scene settings from the mobile navigation entry without leaving its menu behind", async () => {
+    render(createElement(Home));
+    fireEvent.click(screen.getByRole("button", { name: "메뉴 열기" }));
+    const navigation = screen.getByRole("navigation", { name: "주요 메뉴" });
+    const mobileSettings = within(navigation).getAllByRole("button", { name: "장면 설정" }).find((button) => button.classList.contains("mobile-only"));
+    fireEvent.click(mobileSettings!);
+    await waitFor(() => expect(screen.getByRole("dialog", { name: /장면 전환 설정/ })).toBeTruthy());
+    expect(navigation.classList.contains("is-open")).toBe(false);
+  });
+
+  it("synchronizes the active scene when browser history changes", async () => {
+    render(createElement(Home));
+    window.history.pushState(null, "", "#wellness");
+    window.dispatchEvent(new PopStateEvent("popstate"));
+    await waitFor(() => expect(document.querySelector(".site-shell")?.classList.contains("scene-wellness")).toBe(true));
   });
 
   it("restores the last scene when the app opens without an explicit scene hash", async () => {

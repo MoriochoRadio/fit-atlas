@@ -194,7 +194,11 @@ export default function Home() {
     };
     syncSceneFromHash();
     window.addEventListener("hashchange", syncSceneFromHash);
-    return () => window.removeEventListener("hashchange", syncSceneFromHash);
+    window.addEventListener("popstate", syncSceneFromHash);
+    return () => {
+      window.removeEventListener("hashchange", syncSceneFromHash);
+      window.removeEventListener("popstate", syncSceneFromHash);
+    };
   }, []);
 
   useEffect(() => {
@@ -385,6 +389,7 @@ export default function Home() {
     if (scene !== activeScene && sceneExperience.soundEnabled) playSceneTransitionSound();
     setActiveScene(scene);
     setMenuOpen(false);
+    setSceneSettingsOpen(false);
   };
 
   const startEquipmentSession = () => {
@@ -744,7 +749,7 @@ export default function Home() {
       <header className="topbar">
         <a className="brand" href="#top" aria-label="Fit Atlas 홈" onClick={(event) => { event.preventDefault(); navigateToScene("home"); }}><span className="brand-mark"><Activity size={17} /></span><span>FIT ATLAS</span></a>
         <nav className={menuOpen ? "nav is-open" : "nav"} aria-label="주요 메뉴">
-          <a href="#explore" aria-current={activeScene === "explore" ? "page" : undefined} onClick={(event) => { event.preventDefault(); navigateToScene("explore"); }}>운동 탐색</a><a href="#anatomy" aria-current={activeScene === "anatomy" ? "page" : undefined} onClick={(event) => { event.preventDefault(); navigateToScene("anatomy"); }}>바디 맵</a><a href="#progress" aria-current={activeScene === "progress" ? "page" : undefined} onClick={(event) => { event.preventDefault(); navigateToScene("progress"); }}>기록 분석</a><a href="#wellness" aria-current={activeScene === "wellness" ? "page" : undefined} onClick={(event) => { event.preventDefault(); navigateToScene("wellness"); }}>웰니스</a>
+          <a href="#explore" aria-current={activeScene === "explore" ? "page" : undefined} onClick={(event) => { event.preventDefault(); navigateToScene("explore"); }}>운동 탐색</a><a href="#anatomy" aria-current={activeScene === "anatomy" ? "page" : undefined} onClick={(event) => { event.preventDefault(); navigateToScene("anatomy"); }}>바디 맵</a><a href="#progress" aria-current={activeScene === "progress" ? "page" : undefined} onClick={(event) => { event.preventDefault(); navigateToScene("progress"); }}>기록 분석</a><a href="#wellness" aria-current={activeScene === "wellness" ? "page" : undefined} onClick={(event) => { event.preventDefault(); navigateToScene("wellness"); }}>웰니스</a><button type="button" className="mobile-only mobile-scene-settings" onClick={() => { setMenuOpen(false); setSceneSettingsOpen(true); }}>장면 설정</button>
         </nav>
         <div className="topbar-actions"><button className="ghost-button desktop-only" onClick={() => setProfileOpen(true)}>내 프로필</button><button className="ghost-button desktop-only" onClick={() => setSceneSettingsOpen(true)}>장면 설정</button><button className="ghost-button desktop-only" onClick={() => downloadBackup(logs, profileForm, checkin, weeklyPlan, explorePreferences)}>백업</button><label className="login-button desktop-only">가져오기<input className="sr-only" type="file" accept="application/json" onChange={async (event) => { const file = event.target.files?.[0]; if (!file) return; try { const backup = parseBackup(await file.text()); setLogs(backup.logs); setProfileForm(backup.profile); setCheckin(backup.checkin); setWeeklyPlan(backup.weeklyPlan); setExplorePreferences(backup.explorePreferences); saveLocalProfile(backup.profile); saveLocalCheckin(backup.checkin); saveLocalWeeklyPlan(backup.weeklyPlan); saveLocalExplorePreferences(backup.explorePreferences); toast.success("백업을 복원했습니다."); } catch { toast.error("백업 파일을 읽지 못했습니다."); } event.currentTarget.value = ""; }} /></label><button className="dark-button" onClick={() => setLogOpen(true)}><Plus size={16} /> 운동 기록</button><button className="menu-button" onClick={() => setMenuOpen(!menuOpen)} aria-label="메뉴 열기"><Menu size={20} /></button></div>
       </header>
