@@ -21,6 +21,7 @@ import { wellnessDetails } from "@/lib/wellnessDetails";
 import { getMovementVisual } from "@/lib/movementVisuals";
 import { getExerciseTextGuide, type ExerciseTextGuide } from "@/lib/exerciseTextGuide";
 import { getAsciiDiagramPresentation, getAsciiMovementDiagram } from "@/lib/asciiMovementDiagrams";
+import { getRomRecommendation } from "@/lib/romRecommendations";
 import { getExerciseEvidenceScope } from "@/lib/exerciseEvidence";
 import { MovementVisualGuide, RecoveryPathwayPanel, RecoveryStageGrid, SeatedRecoveryPanel, WellnessDetailPanel } from "@/components/GuidancePanels";
 import { getRoutineTemplate, type RoutineGoal } from "@/lib/routineTemplates";
@@ -32,6 +33,9 @@ import { preferredCategoryOptions, preferredEnvironmentOptions, preferredEquipme
 
 type LogEntry = TrainingLog;
 type CinematicScene = "home" | "explore" | "anatomy" | "progress" | "wellness";
+type RomFilter = "전체" | "작음" | "보통" | "큼";
+type RomRecommendationTarget = { exerciseName: string; presentation: ReturnType<typeof getAsciiDiagramPresentation> };
+const AsciiInteractionContext = React.createContext<{ showAxis: boolean; onOpenRom: (exerciseName: string, presentation: ReturnType<typeof getAsciiDiagramPresentation>) => void }>({ showAxis: true, onOpenRom: () => undefined });
 
 const categories = preferredCategoryOptions;
 const goalCopy = { 근력증가: "strength", 체력증가: "endurance", 다이어트: "weight_management" } as const;
@@ -61,6 +65,9 @@ export default function Home() {
   const [difficulty, setDifficulty] = useState("전체");
   const [equipment, setEquipment] = useState("전체");
   const [sort, setSort] = useState<ExerciseSort>("recommended");
+  const [romFilter, setRomFilter] = useState<RomFilter>("전체");
+  const [axisVisible, setAxisVisible] = useState(true);
+  const [romRecommendationTarget, setRomRecommendationTarget] = useState<RomRecommendationTarget | null>(null);
   const [catalogEntries, setCatalogEntries] = useState(() => getInitialCatalogEntries());
   const [loadedCatalogPages, setLoadedCatalogPages] = useState(1);
   const [visibleExerciseCount, setVisibleExerciseCount] = useState<number>(initialVisibleExerciseCount);
@@ -128,10 +135,11 @@ export default function Home() {
       if (logOpen) setLogOpen(false);
       if (profileOpen) setProfileOpen(false);
       if (menuOpen) setMenuOpen(false);
+      if (romRecommendationTarget) setRomRecommendationTarget(null);
     };
     window.addEventListener("keydown", closeWithEscape);
     return () => window.removeEventListener("keydown", closeWithEscape);
-  }, [logOpen, menuOpen, profileOpen]);
+  }, [logOpen, menuOpen, profileOpen, romRecommendationTarget]);
 
   useEffect(() => {
     const savedIds = [...explorePreferences.favoriteExerciseIds, ...explorePreferences.recentExerciseIds];
@@ -148,7 +156,14 @@ export default function Home() {
 
   const catalogExercises = useMemo(() => entriesToExercises(catalogEntries), [catalogEntries]);
   const detailsByExerciseId = useMemo(() => new Map(catalogEntries.map(({ exercise, detail }) => [exercise.id, detail])), [catalogEntries]);
-  const filteredExercises = useMemo(() => sortExercises(filterExercises(catalogExercises, { keyword, category, focus, region: regionFilter, difficulty, equipment }), sort), [catalogExercises, category, difficulty, equipment, focus, keyword, regionFilter, sort]);
+  const filteredExercises = useMemo(() => {
+    const matches = filterExercises(catalogExercises, { keyword, category, focus, region: regionFilter, difficulty, equipment });
+    const romMatches = romFilter === "전체" ? matches : matches.filter((exercise) => {
+      const detail = detailsByExerciseId.get(exercise.id);
+      return detail ? getAsciiDiagramPresentation(getExerciseTextGuide(exercise, detail)).rom === romFilter : false;
+    });
+    return sortExercises(romMatches, sort);
+  }, [catalogExercises, category, detailsByExerciseId, difficulty, equipment, focus, keyword, regionFilter, romFilter, sort]);
   const visibleExercises = useMemo(() => filteredExercises.slice(0, visibleExerciseCount), [filteredExercises, visibleExerciseCount]);
   const catalogStats = catalogSummary;
   const savedExerciseById = useMemo(() => new Map(savedCatalogEntries.map(({ exercise }) => [exercise.id, exercise])), [savedCatalogEntries]);
@@ -216,10 +231,10 @@ export default function Home() {
 
   useEffect(() => {
     setVisibleExerciseCount(initialVisibleExerciseCount);
-  }, [category, difficulty, equipment, focus, keyword, regionFilter, sort]);
+  }, [category, difficulty, equipment, focus, keyword, regionFilter, romFilter, sort]);
 
   useEffect(() => {
-    const needsFullCatalog = Boolean(keyword || category !== "전체" || focus !== "전체" || regionFilter !== "전체" || difficulty !== "전체" || equipment !== "전체");
+    const needsFullCatalog = Boolean(keyword || category !== "전체" || focus !== "전체" || regionFilter !== "전체" || difficulty !== "전체" || equipment !== "전체" || romFilter !== "전체");
     if (!needsFullCatalog || loadedCatalogPages === getCatalogPageCount()) return;
     let cancelled = false;
     setCatalogLoading(true);
@@ -233,7 +248,7 @@ export default function Home() {
       if (!cancelled) setCatalogLoading(false);
     });
     return () => { cancelled = true; };
-  }, [category, difficulty, equipment, focus, keyword, loadedCatalogPages, regionFilter]);
+  }, [category, difficulty, equipment, focus, keyword, loadedCatalogPages, regionFilter, romFilter]);
 
   useEffect(() => {
     if (!logOpen || loadedCatalogPages === getCatalogPageCount()) return;
@@ -323,6 +338,7 @@ export default function Home() {
     setDifficulty("전체");
     setEquipment(profileForm.preferredEquipment === "bodyweight" ? "장비 없음" : profileForm.preferredEquipment === "flexible" ? "전체" : "장비 필요");
     setSort("recommended");
+    setRomFilter("전체");
     document.getElementById("explore")?.scrollIntoView({ behavior: "smooth" });
     toast.success("저장한 선호 조건으로 운동을 찾습니다.");
   };
@@ -335,6 +351,7 @@ export default function Home() {
     setDifficulty("전체");
     setEquipment("전체");
     setSort("recommended");
+    setRomFilter("전체");
   };
 
   const openSavedExercise = (exercise: Exercise) => {
@@ -345,6 +362,7 @@ export default function Home() {
     setDifficulty("전체");
     setEquipment("전체");
     setSort("recommended");
+    setRomFilter("전체");
     document.getElementById("explore")?.scrollIntoView({ behavior: "smooth" });
   };
 
@@ -356,6 +374,7 @@ export default function Home() {
     setDifficulty("전체");
     setEquipment(path.equipment);
     setSort("recommended");
+    setRomFilter("전체");
     setActiveScene("explore");
   };
 
@@ -367,7 +386,7 @@ export default function Home() {
 
 
   return (
-    <div className={`site-shell scene-${activeScene}`}>
+    <AsciiInteractionContext.Provider value={{ showAxis: axisVisible, onOpenRom: (exerciseName, presentation) => setRomRecommendationTarget({ exerciseName, presentation }) }}><div className={`site-shell scene-${activeScene}`}>
       <div className="cinematic-backdrop" aria-hidden="true"><span className="cinematic-orb orb-one" /><span className="cinematic-orb orb-two" /><span className="cinematic-gridlines" /><span className="cinematic-hud">SCENE / {activeScene.toUpperCase()}</span></div>
       <header className="topbar">
         <a className="brand" href="#top" aria-label="Fit Atlas 홈"><span className="brand-mark"><Activity size={17} /></span><span>FIT ATLAS</span></a>
@@ -376,6 +395,7 @@ export default function Home() {
         </nav>
         <div className="topbar-actions"><button className="ghost-button desktop-only" onClick={() => setProfileOpen(true)}>내 프로필</button><button className="ghost-button desktop-only" onClick={() => downloadBackup(logs, profileForm, checkin, weeklyPlan, explorePreferences)}>백업</button><label className="login-button desktop-only">가져오기<input className="sr-only" type="file" accept="application/json" onChange={async (event) => { const file = event.target.files?.[0]; if (!file) return; try { const backup = parseBackup(await file.text()); setLogs(backup.logs); setProfileForm(backup.profile); setCheckin(backup.checkin); setWeeklyPlan(backup.weeklyPlan); setExplorePreferences(backup.explorePreferences); saveLocalProfile(backup.profile); saveLocalCheckin(backup.checkin); saveLocalWeeklyPlan(backup.weeklyPlan); saveLocalExplorePreferences(backup.explorePreferences); toast.success("백업을 복원했습니다."); } catch { toast.error("백업 파일을 읽지 못했습니다."); } event.currentTarget.value = ""; }} /></label><button className="dark-button" onClick={() => setLogOpen(true)}><Plus size={16} /> 운동 기록</button><button className="menu-button" onClick={() => setMenuOpen(!menuOpen)} aria-label="메뉴 열기"><Menu size={20} /></button></div>
       </header>
+      <div className="axis-control-top"><button className={axisVisible ? "axis-toggle-button is-on" : "axis-toggle-button"} onClick={() => setAxisVisible((current) => !current)} aria-pressed={axisVisible}><Activity size={15} /> 중심축 {axisVisible ? "표시" : "숨김"}</button></div>
 
       <main id="top">
         <section className="hero">
@@ -410,7 +430,7 @@ export default function Home() {
         <section className="routine-section section-pad"><SectionTitle eyebrow="ROUTINE LIBRARY" title="목표를 루틴으로, 루틴을 리듬으로." description="4주 템플릿은 일반적인 시작 구조입니다. 주차를 통과하기보다 통증·피로·수면 반응에 맞춰 머무르거나 가볍게 조절하세요." /><div className="routine-goals">{(["strength", "endurance", "weight_management", "general_health"] as RoutineGoal[]).map((item) => <button key={item} className={routineGoal === item ? "is-selected" : ""} onClick={() => setRoutineGoal(item)}>{{ strength: "근력", endurance: "심폐", weight_management: "체중 관리", general_health: "전신 건강" }[item]}</button>)}</div><div className="routine-card"><div className="routine-intro"><p className="eyebrow">{routineGoal.replace("_", " ").toUpperCase()}</p><h3>{routine.title}</h3><p>{routine.intro}</p><div className="routine-safety"><ShieldCheck size={16} />{routine.safetyNote}</div></div><div className="routine-weeks">{routine.weeks.map((week) => <article key={week.week}><span>W{week.week}</span><div><p className="small-label">{week.theme} · {week.sessions}</p><ul>{week.focus.map((item) => <li key={item}>{item}</li>)}</ul><p>{week.note}</p></div></article>)}</div></div></section>
 
         <section id="explore" className="explore-section section-pad">
-          <SectionTitle eyebrow="EXERCISE LIBRARY" title="움직임을 지식으로 익히세요." description={`개인용 정적 큐레이션: ${catalogStats.categoryCount}개 카테고리 · ${catalogStats.exerciseCount}개 운동. 카테고리와 목적, 장비로 탐색하고 올바른 자세·효과·안전 단서를 확인하세요.`} action={<span className="library-count">{filteredExercises.length} MATCHES · {catalogExercises.length}/{catalogStats.exerciseCount}</span>} />
+          <SectionTitle eyebrow="EXERCISE LIBRARY" title="움직임을 지식으로 익히세요." description={`개인용 정적 큐레이션: ${catalogStats.categoryCount}개 카테고리 · ${catalogStats.exerciseCount}개 운동. 카테고리와 목적, 장비로 탐색하고 올바른 자세·효과·안전 단서를 확인하세요.`} action={<div className="library-actions"><span className="library-count">{filteredExercises.length} MATCHES · {catalogExercises.length}/{catalogStats.exerciseCount}</span><div className="rom-filter" role="group" aria-label="가동 범위 ROM 필터">{(["전체", "작음", "보통", "큼"] as RomFilter[]).map((item) => <button key={item} className={romFilter === item ? "is-selected" : ""} aria-pressed={romFilter === item} onClick={() => setRomFilter(item)}>{item === "전체" ? "ROM 전체" : `ROM · ${item}`}</button>)}</div></div>} />
           <section className="explore-launcher" aria-label="빠른 운동 시작"><div className="explore-launcher-head"><div><p className="eyebrow">01 / CHOOSE A START</p><h3>어떻게 움직이고 싶나요?</h3></div><p>한 가지 시작점을 고르면 결과를 바로 좁힙니다. 이후 부위·난이도·장비 조건을 더할 수 있습니다.</p></div><div className="explore-paths">{explorePaths.map((path) => { const Icon = path.icon; const isSelected = category === path.category && focus === path.focus && equipment === path.equipment; return <button key={path.id} className={isSelected ? "is-selected" : ""} aria-pressed={isSelected} onClick={() => applyExplorePath(path)}><Icon size={20} /><span>{path.label}</span><small>{path.description}</small><ArrowRight size={16} /></button>; })}</div><div className="explore-selection-state"><span>현재 조건</span><b>{category === "전체" && focus === "전체" && equipment === "전체" ? "모든 운동 보기" : [category !== "전체" ? category : null, focus !== "전체" ? focus : null, equipment !== "전체" ? equipment : null].filter(Boolean).join(" · ")}</b><p><strong>{filteredExercises.length}개</strong> 운동을 바로 살펴볼 수 있습니다.</p></div></section>
           <div className="search-panel"><div className="search-field"><Search size={18} /><input value={keyword} onChange={(event) => setKeyword(event.target.value)} placeholder="운동, 부위, 장비 검색" aria-label="운동 검색" /></div><div className="quick-category-filter" role="group" aria-label="운동 종류 빠른 필터"><div className="quick-category-head"><div><p className="small-label">EXERCISE TYPE</p><b>운동 종류 빠른 선택</b><span aria-live="polite">{category === "전체" ? `전체 ${filteredExercises.length}개 표시` : `${category} ${filteredExercises.length}개 표시`}</span></div><div className="filter-head-actions"><button className="preference-filter-button" onClick={applySavedExplorePreferences}>선호 조건 적용</button>{(keyword || category !== "전체" || focus !== "전체" || regionFilter !== "전체" || difficulty !== "전체" || equipment !== "전체" || sort !== "recommended") && <button className="filter-reset" onClick={resetExploreFilters}>조건 초기화</button>}</div></div><div className="quick-category-options">{categories.map((item) => <button key={item} className={category === item ? "filter-active" : ""} aria-pressed={category === item} onClick={() => setCategory(item)}>{item === "전체" ? "전체 보기" : item}</button>)}</div></div><div className="filter-row"><label className="sort-select">정렬<select value={sort} onChange={(event) => setSort(event.target.value as ExerciseSort)} aria-label="정렬 기준"><option value="recommended">추천순 · 입문·짧은 시간 우선</option><option value="difficulty">난이도순 · 입문부터</option><option value="duration">소요 시간순 · 짧은 시간부터</option></select></label><select value={regionFilter} onChange={(event) => setRegionFilter(event.target.value)} aria-label="부위 필터"><option>전체</option>{Object.keys(recoveryGuides).map((region) => <option key={region}>{region}</option>)}</select><select value={focus} onChange={(event) => setFocus(event.target.value)} aria-label="목적 필터"><option>전체</option><option>근력</option><option>체력</option><option>심폐</option><option>가동성</option><option>균형</option><option>협응</option><option>파워</option></select><select value={difficulty} onChange={(event) => setDifficulty(event.target.value)} aria-label="난이도 필터"><option>전체</option><option>입문</option><option>중급</option><option>상급</option></select><select value={equipment} onChange={(event) => setEquipment(event.target.value)} aria-label="장비 필터"><option>전체</option><option>장비 없음</option><option>장비 필요</option></select></div></div>
           <div className="saved-exercise-panels" aria-label="빠른 운동 탐색"><section className="saved-exercise-panel"><div><p className="small-label"><History size={13} /> RECENTLY VIEWED</p><h3>최근 본 운동</h3></div>{recentExercises.length ? <div className="saved-exercise-list">{recentExercises.map((exercise) => <button key={exercise.id} onClick={() => openSavedExercise(exercise)}><span>{exercise.category}</span><b>{exercise.name}</b><ArrowRight size={14} /></button>)}</div> : <p>운동 카드에서 <strong>자세·근거 보기</strong>를 열면 여기에 저장됩니다.</p>}</section><section className="saved-exercise-panel"><div><p className="small-label"><Star size={13} /> FAVORITES</p><h3>즐겨찾기</h3></div>{favoriteExercises.length ? <div className="saved-exercise-list">{favoriteExercises.map((exercise) => <button key={exercise.id} onClick={() => openSavedExercise(exercise)}><span>{exercise.category}</span><b>{exercise.name}</b><ArrowRight size={14} /></button>)}</div> : <p>운동 카드 오른쪽 위의 <strong>별표</strong>로 자주 찾는 운동을 모아 보세요.</p>}</section></div>
@@ -449,11 +469,11 @@ export default function Home() {
       </main>
 
       <footer className="site-footer"><div className="brand"><span className="brand-mark"><Activity size={17} /></span><span>FIT ATLAS</span></div><p>움직임을 위한 지식, 일관성을 위한 기록.</p><p>© 2026 Fit Atlas. Educational information only.</p></footer>
-      {storageUnavailable && <div className="storage-warning" role="status"><ShieldCheck size={16} /><p><strong>이 브라우저에서 자동 저장이 제한되었습니다.</strong> 현재 화면의 변경 사항은 유지되지만, 탭을 닫으면 사라질 수 있습니다. 브라우저 저장 공간 또는 개인정보 보호 설정을 확인한 뒤 다시 시도해 주세요.</p></div>}
+      {storageUnavailable && <div className="storage-warning" role="status"><ShieldCheck size={16} /><p><strong>이 브라우저에서 자동 저장이 제한되었습니다.</strong> 현재 화면의 변경 사항은 유지되지만, 탭을 닫으면 사라질 수 있습니다. 브라우저 저장 공간 또는 개인정보 보호 설정을 확인한 뒤 다시 시도해 주세요.</p></div>}{romRecommendationTarget && <RomRecommendationDialog target={romRecommendationTarget} onClose={() => setRomRecommendationTarget(null)} />}
 
       {logOpen && <div className="modal-backdrop" role="presentation" onMouseDown={() => setLogOpen(false)}><section className="log-modal" role="dialog" aria-modal="true" aria-labelledby="log-title" onMouseDown={(event) => event.stopPropagation()}><div className="modal-head"><div><p className="eyebrow">TRAINING LOG</p><h2 id="log-title">운동 기록 추가</h2></div><button onClick={() => setLogOpen(false)} className="icon-button" aria-label="닫기"><X size={19} /></button></div><div className="form-steps" aria-label="기록 입력 순서"><span className="is-active">1 기본</span><span>2 강도</span><span>3 저장</span></div><p className="log-helper">모든 수치를 완벽히 기억할 필요는 없습니다. <strong>종목·시간·RPE</strong>부터 남기고, 세트·횟수·중량은 기억나는 만큼 입력하세요.</p><div className="log-form"><div className="form-grid"><label>운동 날짜<input type="date" max={new Date().toISOString().slice(0, 10)} value={form.date} onChange={(event) => setForm({ ...form, date: event.target.value })} /></label><label>운동<select value={form.exercise} onChange={(event) => setForm({ ...form, exercise: event.target.value })}>{catalogExercises.map((exercise) => <option key={exercise.id}>{exercise.name}</option>)}</select></label></div><div className="form-grid"><label>세트<input inputMode="numeric" value={form.sets} onChange={(event) => setForm({ ...form, sets: event.target.value })} /></label><label>횟수<input inputMode="numeric" value={form.reps} onChange={(event) => setForm({ ...form, reps: event.target.value })} /></label><label>중량 (kg)<input inputMode="decimal" value={form.load} onChange={(event) => setForm({ ...form, load: event.target.value })} /></label><label>운동 시간 (분)<input inputMode="numeric" value={form.minutes} onChange={(event) => setForm({ ...form, minutes: event.target.value })} /></label><label>거리 · 선택<input inputMode="decimal" placeholder="러닝·사이클·로잉·수영" value={form.distance} onChange={(event) => setForm({ ...form, distance: event.target.value })} /><select value={form.distanceUnit} onChange={(event) => setForm({ ...form, distanceUnit: event.target.value as "km" | "m" })}><option value="km">km</option><option value="m">m</option></select></label></div><label>주관적 강도 RPE <span>{form.intensity}/10</span><input type="range" min="1" max="10" value={form.intensity} onChange={(event) => setForm({ ...form, intensity: event.target.value })} /></label><p className="form-safety"><ShieldCheck size={15} /> 거리 단위는 러닝·사이클에는 km, 로잉·수영에는 m를 사용하세요. 수치가 불확실하면 낮게 추정하거나 다음 기록부터 보완해도 됩니다.</p><button className="dark-button form-submit" onClick={addLog}>이 기록 저장하기 <ArrowRight size={16} /></button></div></section></div>}
-      {profileOpen && <div className="modal-backdrop" role="presentation" onMouseDown={() => setProfileOpen(false)}><section className="log-modal profile-modal" role="dialog" aria-modal="true" aria-labelledby="profile-title" onMouseDown={(event) => event.stopPropagation()}><div className="modal-head"><div><p className="eyebrow">PERSONALIZATION</p><h2 id="profile-title">운동 기준 설정</h2></div><button onClick={() => setProfileOpen(false)} className="icon-button" aria-label="닫기"><X size={19} /></button></div><p className="modal-description">입력값은 이 기기에만 저장되며 보수적인 시작 난이도와 안내 맥락을 정하는 데만 사용합니다. 질환·통증·임신 상태 등 의료 정보에 대한 진단은 제공하지 않습니다.</p><div className="log-form"><div className="form-grid"><label>연령<input inputMode="numeric" placeholder="예: 30" value={profileForm.age} onChange={(event) => setProfileForm({ ...profileForm, age: event.target.value })} /></label><label>체중 (kg)<input inputMode="decimal" placeholder="예: 68" value={profileForm.weightKg} onChange={(event) => setProfileForm({ ...profileForm, weightKg: event.target.value })} /></label></div><label>성별<select value={profileForm.sex} onChange={(event) => setProfileForm({ ...profileForm, sex: event.target.value })}><option value="undisclosed">응답하지 않음</option><option value="female">여성</option><option value="male">남성</option><option value="nonbinary">논바이너리</option></select></label><div className="form-grid"><label>주요 목표<select value={profileForm.primaryGoal} onChange={(event) => setProfileForm({ ...profileForm, primaryGoal: event.target.value })}><option value="strength">근력 증가</option><option value="endurance">체력 증가</option><option value="weight_management">체중 관리</option><option value="general_health">건강 증진</option></select></label><label>경험 수준<select value={profileForm.experience} onChange={(event) => setProfileForm({ ...profileForm, experience: event.target.value })}><option value="beginner">입문</option><option value="intermediate">중급</option><option value="advanced">상급</option></select></label></div><div className="form-grid"><label>선호 운동 종류<select aria-label="선호 운동 종류" value={profileForm.preferredCategory} onChange={(event) => setProfileForm({ ...profileForm, preferredCategory: event.target.value as typeof profileForm.preferredCategory })}>{preferredCategoryOptions.map((item) => <option key={item} value={item}>{item === "전체" ? "특정 종류 없음" : item}</option>)}</select></label><label>선호 장비<select aria-label="선호 장비" value={profileForm.preferredEquipment} onChange={(event) => setProfileForm({ ...profileForm, preferredEquipment: event.target.value as typeof profileForm.preferredEquipment })}>{preferredEquipmentOptions.map((item) => <option key={item} value={item}>{{ flexible: "상황에 맞게", bodyweight: "장비 없이", basic_home: "간단한 홈 장비", gym: "헬스장 장비" }[item]}</option>)}</select></label></div><label>주 활동 환경<select aria-label="주 활동 환경" value={profileForm.preferredEnvironment} onChange={(event) => setProfileForm({ ...profileForm, preferredEnvironment: event.target.value as typeof profileForm.preferredEnvironment })}>{preferredEnvironmentOptions.map((item) => <option key={item} value={item}>{{ home: "집·매트", gym: "헬스장", outdoor: "야외·걷기" }[item]}</option>)}</select></label><label>선택적 안전 모드<select value={profileForm.recoveryContext} onChange={(event) => setProfileForm({ ...profileForm, recoveryContext: event.target.value })}><option value="none">해당 없음</option><option value="reduced_readiness">낮은 에너지·회복 저하·생애주기 변화</option><option value="pregnancy_postpartum">임신·산후 — 의료진 확인 우선</option></select></label><button className="dark-button form-submit" onClick={saveProfileSettings}>설정 저장 <ArrowRight size={16} /></button></div></section></div>}
-    </div>
+      {profileOpen && <div className="modal-backdrop" role="presentation" onMouseDown={() => setProfileOpen(false)}><section className="log-modal profile-modal" role="dialog" aria-modal="true" aria-labelledby="profile-title" onMouseDown={(event) => event.stopPropagation()}><div className="modal-head"><div><p className="eyebrow">PERSONALIZATION</p><h2 id="profile-title">운동 기준 설정</h2></div><button onClick={() => setProfileOpen(false)} className="icon-button" aria-label="닫기"><X size={19} /></button></div><p className="modal-description">입력값은 이 기기에만 저장되며 보수적인 시작 난이도와 안내 맥락을 정하는 데만 사용합니다. 질환·통증·임신 상태 등 의료 정보에 대한 진단은 제공하지 않습니다.</p><div className="log-form"><div className="form-grid"><label>연령<input inputMode="numeric" placeholder="예: 30" value={profileForm.age} onChange={(event) => setProfileForm({ ...profileForm, age: event.target.value })} /></label><label>체중 (kg)<input inputMode="decimal" placeholder="예: 68" value={profileForm.weightKg} onChange={(event) => setProfileForm({ ...profileForm, weightKg: event.target.value })} /></label></div><label>성별<select value={profileForm.sex} onChange={(event) => setProfileForm({ ...profileForm, sex: event.target.value })}><option value="undisclosed">응답하지 않음</option><option value="female">여성</option><option value="male">남성</option><option value="nonbinary">논바이너리</option></select></label><div className="form-grid"><label>주요 목표<select value={profileForm.primaryGoal} onChange={(event) => setProfileForm({ ...profileForm, primaryGoal: event.target.value })}><option value="strength">근력 증가</option><option value="endurance">체력 증가</option><option value="weight_management">체중 관리</option><option value="general_health">건강 증진</option></select></label><label>경험 수준<select value={profileForm.experience} onChange={(event) => setProfileForm({ ...profileForm, experience: event.target.value })}><option value="beginner">입문</option><option value="intermediate">중급</option><option value="advanced">상급</option></select></label></div><div className="form-grid"><label>선호 운동 종류<select aria-label="선호 운동 종류" value={profileForm.preferredCategory} onChange={(event) => setProfileForm({ ...profileForm, preferredCategory: event.target.value as typeof profileForm.preferredCategory })}>{preferredCategoryOptions.map((item) => <option key={item} value={item}>{item === "전체" ? "특정 종류 없음" : item}</option>)}</select></label><label>선호 장비<select aria-label="선호 장비" value={profileForm.preferredEquipment} onChange={(event) => setProfileForm({ ...profileForm, preferredEquipment: event.target.value as typeof profileForm.preferredEquipment })}>{preferredEquipmentOptions.map((item) => <option key={item} value={item}>{{ flexible: "상황에 맞게", bodyweight: "장비 없이", basic_home: "간단한 홈 장비", gym: "헬스장 장비" }[item]}</option>)}</select></label></div><label>주 활동 환경<select aria-label="주 활동 환경" value={profileForm.preferredEnvironment} onChange={(event) => setProfileForm({ ...profileForm, preferredEnvironment: event.target.value as typeof profileForm.preferredEnvironment })}>{preferredEnvironmentOptions.map((item) => <option key={item} value={item}>{{ home: "집·매트", gym: "헬스장", outdoor: "야외·걷기" }[item]}</option>)}</select></label><label>선택적 안전 모드<select value={profileForm.recoveryContext} onChange={(event) => setProfileForm({ ...profileForm, recoveryContext: event.target.value })}><option value="none">해당 없음</option><option value="reduced_readiness">낮은 에너지·회복 저하·생애주기 변화</option><option value="pregnancy_postpartum">임신·산후 — 의료진 확인 우선</option></select></label><button className="dark-button form-submit" onClick={saveProfileSettings}>설정 저장 <ArrowRight size={16} /></button></div></section></div>}{romRecommendationTarget && <RomRecommendationDialog target={romRecommendationTarget} onClose={() => setRomRecommendationTarget(null)} />}
+    </div></AsciiInteractionContext.Provider>
   );
 }
 
@@ -468,7 +488,13 @@ function ExerciseCard({ exercise, detail, isFavorite, onToggleFavorite, onViewed
 function TextExerciseGuide({ guide, exerciseName }: { guide: ExerciseTextGuide; exerciseName: string }) {
   const ascii = getAsciiMovementDiagram(exerciseName, guide);
   const presentation = getAsciiDiagramPresentation(guide);
-  return <section className="text-exercise-guide" aria-label={`${exerciseName} 사진 없는 자세 안내`}><div className="text-guide-head"><div><p className="small-label">TEXT MOVEMENT MAP</p><h4>읽으며 따라 하는 자세 지도</h4></div><span>사진 없이도<br />① → ② → ③</span></div>{ascii && <section className={`ascii-movement-diagram theme-${presentation.categoryTheme} region-${presentation.regionTheme}`} aria-label={`${exerciseName} ASCII 동작 도식`}><div className="ascii-legend"><p className="small-label">ASCII MOTION SKETCH</p><div><span>{presentation.categoryLabel}</span><span>● {presentation.regionLabel}</span></div><p><b>화살표 범례</b> {presentation.motionLabel}</p><p>{ascii.description}</p></div><div className="ascii-axis-rom" aria-label={`중심축 ${presentation.jointFocus}, 가동 범위 ${presentation.rom}`}><div className="axis-points" aria-hidden="true"><i /><b /><i /></div><p><b>중심축</b> {presentation.jointFocus}</p><span className={`rom-badge rom-${presentation.rom}`}>ROM · {presentation.rom}</span><small>{presentation.romDescription}</small></div><div className="ascii-stages">{ascii.stages.map((stage, index) => <article key={stage.label}><span>0{index + 1} · {stage.label}</span><pre aria-label={`${stage.label} ASCII 도식: ${stage.cue}`}>{stage.art}</pre><i aria-hidden="true">{presentation.stageArrows[index]}</i><b>{stage.cue}</b></article>)}</div></section>}<ol className="text-guide-sequence">{guide.sequence.map((step, index) => <li key={step}><span>0{index + 1}</span><div><b>{["시작 자세", "움직임", "마무리 확인"][index]}</b><p>{step}</p></div></li>)}</ol><div className="text-guide-facts"><article><span>◎ 주로 쓰는 근육</span><p>{guide.primaryMuscles.join(" · ")}</p></article><article><span>＋ 함께 쓰는 근육</span><p>{guide.supportingMuscles.join(" · ")}</p></article><article><span>↔ 호흡</span><p>{guide.breathing.replace("↔ ", "")}</p></article><article><span>↓ 어렵다면</span><p>{guide.adjustment.replace("↓ ", "")}</p></article></div><p className="text-guide-stop">{guide.stop}</p></section>;
+  const { showAxis, onOpenRom } = React.useContext(AsciiInteractionContext);
+  return <section className="text-exercise-guide" aria-label={`${exerciseName} 사진 없는 자세 안내`}><div className="text-guide-head"><div><p className="small-label">TEXT MOVEMENT MAP</p><h4>읽으며 따라 하는 자세 지도</h4></div><span>사진 없이도<br />① → ② → ③</span></div>{ascii && <section className={`ascii-movement-diagram theme-${presentation.categoryTheme} region-${presentation.regionTheme}`} aria-label={`${exerciseName} ASCII 동작 도식`}><div className="ascii-legend"><p className="small-label">ASCII MOTION SKETCH</p><div><span>{presentation.categoryLabel}</span><span>● {presentation.regionLabel}</span></div><p><b>화살표 범례</b> {presentation.motionLabel}</p><p>{ascii.description}</p></div><div className="ascii-axis-rom" aria-label={`중심축 ${presentation.jointFocus}, 가동 범위 ${presentation.rom}`}>{showAxis && <><div className="axis-points" aria-hidden="true"><i /><b /><i /></div><p><b>중심축</b> {presentation.jointFocus}</p></>}<button className={`rom-badge rom-${presentation.rom}`} onClick={() => onOpenRom(exerciseName, presentation)} aria-haspopup="dialog">ROM · {presentation.rom}</button><small>{presentation.romDescription}</small></div><div className="ascii-stages">{ascii.stages.map((stage, index) => <article key={stage.label}><span>0{index + 1} · {stage.label}</span><pre aria-label={`${stage.label} ASCII 도식: ${stage.cue}`}>{stage.art}</pre><i aria-hidden="true">{presentation.stageArrows[index]}</i><b>{stage.cue}</b></article>)}</div></section>}<ol className="text-guide-sequence">{guide.sequence.map((step, index) => <li key={step}><span>0{index + 1}</span><div><b>{["시작 자세", "움직임", "마무리 확인"][index]}</b><p>{step}</p></div></li>)}</ol><div className="text-guide-facts"><article><span>◎ 주로 쓰는 근육</span><p>{guide.primaryMuscles.join(" · ")}</p></article><article><span>＋ 함께 쓰는 근육</span><p>{guide.supportingMuscles.join(" · ")}</p></article><article><span>↔ 호흡</span><p>{guide.breathing.replace("↔ ", "")}</p></article><article><span>↓ 어렵다면</span><p>{guide.adjustment.replace("↓ ", "")}</p></article></div><p className="text-guide-stop">{guide.stop}</p></section>;
+}
+
+function RomRecommendationDialog({ target, onClose }: { target: RomRecommendationTarget; onClose: () => void }) {
+  const recommendation = getRomRecommendation(target.presentation);
+  return <div className="modal-backdrop" role="presentation" onMouseDown={onClose}><section className="log-modal rom-recommendation-modal" role="dialog" aria-modal="true" aria-labelledby="rom-recommendation-title" onMouseDown={(event) => event.stopPropagation()}><div className="modal-head"><div><p className="eyebrow">ROM ADJUSTMENT GUIDE</p><h2 id="rom-recommendation-title">{target.exerciseName} · {recommendation.title}</h2></div><button onClick={onClose} className="icon-button" aria-label="닫기"><X size={19} /></button></div><p className="modal-description">{recommendation.intro}</p><div className="rom-recommendation-grid"><article><p className="small-label">가볍게 풀기</p><ul>{recommendation.stretch.map((item) => <li key={item}>{item}</li>)}</ul></article><article><p className="small-label">대체 운동 방식</p><ul>{recommendation.alternatives.map((item) => <li key={item}>{item}</li>)}</ul></article></div><p className="text-guide-stop">{recommendation.caution}</p></section></div>;
 }
 
 function Metric({ icon, label, value, caption }: { icon: React.ReactNode; label: string; value: string; caption: string }) { return <div className="metric-card"><span className="metric-icon">{icon}</span><p>{label}</p><b>{value}</b><small>{caption}</small></div>; }

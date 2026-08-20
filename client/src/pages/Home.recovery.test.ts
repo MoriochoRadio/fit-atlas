@@ -144,6 +144,19 @@ describe("Home recovery alternative flow", () => {
     expect(within(card!).getByText("ASCII MOTION SKETCH")).toBeTruthy();
     expect(within(card!).getByText("중심축")).toBeTruthy();
     expect(within(card!).getByText("ROM · 큼")).toBeTruthy();
+    fireEvent.click(within(card!).getByRole("button", { name: "ROM · 큼" }));
+    expect(screen.getAllByText(/맨몸 스쿼트 · 큰 ROM/).length).toBeGreaterThan(0);
+    expect(screen.getAllByText("대체 운동 방식").length).toBeGreaterThan(0);
+  });
+
+  it("filters the library by ROM size and lets the top control hide joint axes", () => {
+    render(createElement(Home));
+    const axisToggle = screen.getByRole("button", { name: "중심축 표시" });
+    fireEvent.click(axisToggle);
+    expect(axisToggle.getAttribute("aria-pressed")).toBe("false");
+    const smallRomFilter = screen.getByRole("button", { name: "ROM · 작음" });
+    fireEvent.click(smallRomFilter);
+    expect(smallRomFilter.getAttribute("aria-pressed")).toBe("true");
   });
 
   it("renders the expanded machine visual guide with a safe adjustment cue", async () => {
