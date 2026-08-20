@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { createBackup, parseBackup, readLocalExplorePreferences, readLocalProfile, readLocalWeeklyPlan, readTrainingLogs, saveLocalExplorePreferences, saveLocalProfile, saveLocalWeeklyPlan, saveTrainingLogs } from "./localStore";
+import { createBackup, parseBackup, readAxisVisibility, readLocalExplorePreferences, readLocalProfile, readLocalWeeklyPlan, readTrainingLogs, saveAxisVisibility, saveLocalExplorePreferences, saveLocalProfile, saveLocalWeeklyPlan, saveTrainingLogs } from "./localStore";
 import { defaultProfilePreferences } from "./profilePreferences";
 import { createWeeklyPlan } from "./weeklyPlan";
 
@@ -36,10 +36,12 @@ describe("local backup format", () => {
     saveLocalWeeklyPlan(weeklyPlan);
     const explorePreferences = { favoriteExerciseIds: ["squat"], recentExerciseIds: ["run", "squat"] };
     saveLocalExplorePreferences(explorePreferences);
+    saveAxisVisibility(false);
     expect(readTrainingLogs()).toEqual(logs);
     expect(readLocalProfile()).toEqual(profile);
     expect(readLocalWeeklyPlan()).toEqual(weeklyPlan);
     expect(readLocalExplorePreferences()).toEqual(explorePreferences);
+    expect(readAxisVisibility()).toBe(false);
     storage.setItem("fit-atlas-logs", "not-json");
     storage.setItem("fit-atlas-profile", "not-json");
     expect(readTrainingLogs()).toEqual([]);
@@ -51,6 +53,7 @@ describe("local backup format", () => {
 
     expect(saveTrainingLogs([])).toBe(false);
     expect(saveLocalProfile(defaultProfilePreferences)).toBe(false);
+    expect(saveAxisVisibility(false)).toBe(false);
   });
 
   it("keeps legacy records without distance fields and restores new meter-based distance records", () => {

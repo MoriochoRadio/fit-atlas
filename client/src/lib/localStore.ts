@@ -10,6 +10,7 @@ const PROFILE_KEY = "fit-atlas-profile";
 const CHECKIN_KEY = "fit-atlas-daily-checkin";
 const WEEKLY_PLAN_KEY = "fit-atlas-weekly-plan";
 const EXPLORE_PREFERENCES_KEY = "fit-atlas-explore-preferences";
+const AXIS_VISIBILITY_KEY = "fit-atlas-axis-visibility";
 
 function persistLocalValue(key: string, value: unknown) {
   try {
@@ -73,6 +74,19 @@ export function readLocalExplorePreferences() {
 
 export function saveLocalExplorePreferences(preferences: ExplorePreferences) {
   return persistLocalValue(EXPLORE_PREFERENCES_KEY, preferences);
+}
+
+export function readAxisVisibility() {
+  try {
+    const value = JSON.parse(window.localStorage.getItem(AXIS_VISIBILITY_KEY) ?? "true");
+    return typeof value === "boolean" ? value : true;
+  } catch {
+    return true;
+  }
+}
+
+export function saveAxisVisibility(visible: boolean) {
+  return persistLocalValue(AXIS_VISIBILITY_KEY, visible);
 }
 
 export function createBackup(logs: TrainingLog[], profile: ProfilePreferences, checkin: DailyCheckin = defaultDailyCheckin, weeklyPlan: WeeklyPlan = createWeeklyPlan(), explorePreferences: ExplorePreferences = defaultExplorePreferences): FitAtlasBackup {

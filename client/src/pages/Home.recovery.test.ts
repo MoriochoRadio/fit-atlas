@@ -147,6 +147,12 @@ describe("Home recovery alternative flow", () => {
     fireEvent.click(within(card!).getByRole("button", { name: "ROM · 큼" }));
     expect(screen.getAllByText(/맨몸 스쿼트 · 큰 ROM/).length).toBeGreaterThan(0);
     expect(screen.getAllByText("대체 운동 방식").length).toBeGreaterThan(0);
+    const alternativeLink = screen.getAllByRole("button", { name: /리버스 런지/ }).find((element) => element.className.includes("alternative-exercise-link"));
+    expect(alternativeLink).toBeTruthy();
+    fireEvent.click(alternativeLink!);
+    await waitFor(() => expect(screen.getByRole("heading", { name: "리버스 런지" })).toBeTruthy());
+    const alternativeCard = screen.getByRole("heading", { name: "리버스 런지" }).closest("article");
+    expect(within(alternativeCard!).getByText("읽으며 따라 하는 자세 지도")).toBeTruthy();
   });
 
   it("filters the library by ROM size and lets the top control hide joint axes", () => {
@@ -154,9 +160,19 @@ describe("Home recovery alternative flow", () => {
     const axisToggle = screen.getByRole("button", { name: "중심축 표시" });
     fireEvent.click(axisToggle);
     expect(axisToggle.getAttribute("aria-pressed")).toBe("false");
+    cleanup();
+    render(createElement(Home));
+    expect(screen.getByRole("button", { name: "중심축 숨김" }).getAttribute("aria-pressed")).toBe("false");
     const smallRomFilter = screen.getByRole("button", { name: "ROM · 작음" });
     fireEvent.click(smallRomFilter);
     expect(smallRomFilter.getAttribute("aria-pressed")).toBe("true");
+  });
+
+  it("prioritizes a conservative ROM path when today’s pain signal is high", () => {
+    render(createElement(Home));
+    fireEvent.change(screen.getByRole("slider", { name: /통증/ }), { target: { value: "4" } });
+    expect(screen.getAllByText("통증 신호가 크면 ROM 추천을 잠시 멈추세요").length).toBeGreaterThan(0);
+    expect(screen.getByRole("button", { name: "회복 가이드 보기" })).toBeTruthy();
   });
 
   it("renders the expanded machine visual guide with a safe adjustment cue", async () => {

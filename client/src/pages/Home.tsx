@@ -10,7 +10,7 @@ import React, { useEffect, useMemo, useState } from "react";
 import { toast } from "sonner";
 import { getCalendarDays, getFourWeekTrends, getPersonalRecords, getTotalMinutes, getTotalVolume, getWeeklyVolume, type TrainingLog } from "@/lib/trainingMetrics";
 import { getPersonalizedProgram } from "@/lib/personalization";
-import { downloadBackup, parseBackup, readLocalCheckin, readLocalExplorePreferences, readLocalProfile, readLocalWeeklyPlan, readTrainingLogs, saveLocalCheckin, saveLocalExplorePreferences, saveLocalProfile, saveLocalWeeklyPlan, saveTrainingLogs } from "@/lib/localStore";
+import { downloadBackup, parseBackup, readAxisVisibility, readLocalCheckin, readLocalExplorePreferences, readLocalProfile, readLocalWeeklyPlan, readTrainingLogs, saveAxisVisibility, saveLocalCheckin, saveLocalExplorePreferences, saveLocalProfile, saveLocalWeeklyPlan, saveTrainingLogs } from "@/lib/localStore";
 import { recordRecentExercise, toggleFavoriteExercise, type ExplorePreferences } from "@/lib/explorePreferences";
 import { filterExercises } from "@/lib/exerciseFilters";
 import { sortExercises, type ExerciseSort } from "@/lib/exerciseSorting";
@@ -22,6 +22,7 @@ import { getMovementVisual } from "@/lib/movementVisuals";
 import { getExerciseTextGuide, type ExerciseTextGuide } from "@/lib/exerciseTextGuide";
 import { getAsciiDiagramPresentation, getAsciiMovementDiagram } from "@/lib/asciiMovementDiagrams";
 import { getRomRecommendation } from "@/lib/romRecommendations";
+import { getRomReadinessRecommendation } from "@/lib/romReadiness";
 import { getExerciseEvidenceScope } from "@/lib/exerciseEvidence";
 import { MovementVisualGuide, RecoveryPathwayPanel, RecoveryStageGrid, SeatedRecoveryPanel, WellnessDetailPanel } from "@/components/GuidancePanels";
 import { getRoutineTemplate, type RoutineGoal } from "@/lib/routineTemplates";
@@ -35,7 +36,7 @@ type LogEntry = TrainingLog;
 type CinematicScene = "home" | "explore" | "anatomy" | "progress" | "wellness";
 type RomFilter = "전체" | "작음" | "보통" | "큼";
 type RomRecommendationTarget = { exerciseName: string; presentation: ReturnType<typeof getAsciiDiagramPresentation> };
-const AsciiInteractionContext = React.createContext<{ showAxis: boolean; onOpenRom: (exerciseName: string, presentation: ReturnType<typeof getAsciiDiagramPresentation>) => void }>({ showAxis: true, onOpenRom: () => undefined });
+const AsciiInteractionContext = React.createContext<{ showAxis: boolean; pendingExerciseName: string | null; clearPendingExercise: () => void; onOpenRom: (exerciseName: string, presentation: ReturnType<typeof getAsciiDiagramPresentation>) => void; onExploreAlternative: (exerciseName: string) => void }>({ showAxis: true, pendingExerciseName: null, clearPendingExercise: () => undefined, onOpenRom: () => undefined, onExploreAlternative: () => undefined });
 
 const categories = preferredCategoryOptions;
 const goalCopy = { 근력증가: "strength", 체력증가: "endurance", 다이어트: "weight_management" } as const;
@@ -66,8 +67,9 @@ export default function Home() {
   const [equipment, setEquipment] = useState("전체");
   const [sort, setSort] = useState<ExerciseSort>("recommended");
   const [romFilter, setRomFilter] = useState<RomFilter>("전체");
-  const [axisVisible, setAxisVisible] = useState(true);
+  const [axisVisible, setAxisVisible] = useState(() => typeof window === "undefined" ? true : readAxisVisibility());
   const [romRecommendationTarget, setRomRecommendationTarget] = useState<RomRecommendationTarget | null>(null);
+  const [pendingExerciseName, setPendingExerciseName] = useState<string | null>(null);
   const [catalogEntries, setCatalogEntries] = useState(() => getInitialCatalogEntries());
   const [loadedCatalogPages, setLoadedCatalogPages] = useState(1);
   const [visibleExerciseCount, setVisibleExerciseCount] = useState<number>(initialVisibleExerciseCount);
@@ -124,6 +126,10 @@ export default function Home() {
   useEffect(() => {
     if (!saveLocalExplorePreferences(explorePreferences)) setStorageUnavailable(true);
   }, [explorePreferences]);
+
+  useEffect(() => {
+    if (!saveAxisVisibility(axisVisible)) setStorageUnavailable(true);
+  }, [axisVisible]);
 
   useEffect(() => {
     if (!logOpen) setLinkedPlanSessionId(null);
@@ -192,6 +198,7 @@ export default function Home() {
   const pr = useMemo(() => getPersonalRecords(logs), [logs]);
   const insights = useMemo(() => getInsightSummary(logs, new Date(), catalogExercises), [catalogExercises, logs]);
   const checkinRecommendation = useMemo(() => getCheckinRecommendation(checkin), [checkin]);
+  const romReadiness = useMemo(() => getRomReadinessRecommendation(checkin), [checkin]);
   const sessionPlan = useMemo(() => buildSession({ goal: sessionGoal, environment: sessionEnvironment, duration: sessionDuration, checkin }), [checkin, sessionDuration, sessionEnvironment, sessionGoal]);
   const weeklyPlanInsight = useMemo(() => getWeeklyPlanInsight(weeklyPlan, logs, checkin), [checkin, logs, weeklyPlan]);
 
@@ -378,6 +385,24 @@ export default function Home() {
     setActiveScene("explore");
   };
 
+  const applyRomReadiness = () => {
+    if (!romReadiness.rom) {
+      setActiveScene("wellness");
+      document.getElementById("recovery")?.scrollIntoView({ behavior: "smooth" });
+      return;
+    }
+    setKeyword("");
+    setCategory("전체");
+    setFocus("전체");
+    setRegionFilter("전체");
+    setDifficulty("전체");
+    setEquipment("전체");
+    setSort("recommended");
+    setRomFilter(romReadiness.rom);
+    setActiveScene("explore");
+    document.getElementById("explore")?.scrollIntoView({ behavior: "smooth" });
+  };
+
   const applySessionQuickStart = (preset: (typeof sessionQuickStarts)[number]) => {
     setSessionGoal(preset.goal);
     setSessionEnvironment(preset.environment);
@@ -386,7 +411,7 @@ export default function Home() {
 
 
   return (
-    <AsciiInteractionContext.Provider value={{ showAxis: axisVisible, onOpenRom: (exerciseName, presentation) => setRomRecommendationTarget({ exerciseName, presentation }) }}><div className={`site-shell scene-${activeScene}`}>
+    <AsciiInteractionContext.Provider value={{ showAxis: axisVisible, pendingExerciseName, clearPendingExercise: () => setPendingExerciseName(null), onOpenRom: (exerciseName, presentation) => setRomRecommendationTarget({ exerciseName, presentation }), onExploreAlternative: (exerciseName) => { setRomRecommendationTarget(null); setKeyword(exerciseName); setCategory("전체"); setFocus("전체"); setRegionFilter("전체"); setDifficulty("전체"); setEquipment("전체"); setRomFilter("전체"); setPendingExerciseName(exerciseName); setActiveScene("explore"); window.setTimeout(() => document.getElementById("explore")?.scrollIntoView({ behavior: "smooth" }), 0); } }}><div className={`site-shell scene-${activeScene}`}>
       <div className="cinematic-backdrop" aria-hidden="true"><span className="cinematic-orb orb-one" /><span className="cinematic-orb orb-two" /><span className="cinematic-gridlines" /><span className="cinematic-hud">SCENE / {activeScene.toUpperCase()}</span></div>
       <header className="topbar">
         <a className="brand" href="#top" aria-label="Fit Atlas 홈"><span className="brand-mark"><Activity size={17} /></span><span>FIT ATLAS</span></a>
@@ -430,7 +455,7 @@ export default function Home() {
         <section className="routine-section section-pad"><SectionTitle eyebrow="ROUTINE LIBRARY" title="목표를 루틴으로, 루틴을 리듬으로." description="4주 템플릿은 일반적인 시작 구조입니다. 주차를 통과하기보다 통증·피로·수면 반응에 맞춰 머무르거나 가볍게 조절하세요." /><div className="routine-goals">{(["strength", "endurance", "weight_management", "general_health"] as RoutineGoal[]).map((item) => <button key={item} className={routineGoal === item ? "is-selected" : ""} onClick={() => setRoutineGoal(item)}>{{ strength: "근력", endurance: "심폐", weight_management: "체중 관리", general_health: "전신 건강" }[item]}</button>)}</div><div className="routine-card"><div className="routine-intro"><p className="eyebrow">{routineGoal.replace("_", " ").toUpperCase()}</p><h3>{routine.title}</h3><p>{routine.intro}</p><div className="routine-safety"><ShieldCheck size={16} />{routine.safetyNote}</div></div><div className="routine-weeks">{routine.weeks.map((week) => <article key={week.week}><span>W{week.week}</span><div><p className="small-label">{week.theme} · {week.sessions}</p><ul>{week.focus.map((item) => <li key={item}>{item}</li>)}</ul><p>{week.note}</p></div></article>)}</div></div></section>
 
         <section id="explore" className="explore-section section-pad">
-          <SectionTitle eyebrow="EXERCISE LIBRARY" title="움직임을 지식으로 익히세요." description={`개인용 정적 큐레이션: ${catalogStats.categoryCount}개 카테고리 · ${catalogStats.exerciseCount}개 운동. 카테고리와 목적, 장비로 탐색하고 올바른 자세·효과·안전 단서를 확인하세요.`} action={<div className="library-actions"><span className="library-count">{filteredExercises.length} MATCHES · {catalogExercises.length}/{catalogStats.exerciseCount}</span><div className="rom-filter" role="group" aria-label="가동 범위 ROM 필터">{(["전체", "작음", "보통", "큼"] as RomFilter[]).map((item) => <button key={item} className={romFilter === item ? "is-selected" : ""} aria-pressed={romFilter === item} onClick={() => setRomFilter(item)}>{item === "전체" ? "ROM 전체" : `ROM · ${item}`}</button>)}</div></div>} />
+          <SectionTitle eyebrow="EXERCISE LIBRARY" title="움직임을 지식으로 익히세요." description={`개인용 정적 큐레이션: ${catalogStats.categoryCount}개 카테고리 · ${catalogStats.exerciseCount}개 운동. 카테고리와 목적, 장비로 탐색하고 올바른 자세·효과·안전 단서를 확인하세요.`} action={<div className="library-actions"><span className="library-count">{filteredExercises.length} MATCHES · {catalogExercises.length}/{catalogStats.exerciseCount}</span><div className="rom-filter" role="group" aria-label="가동 범위 ROM 필터">{(["전체", "작음", "보통", "큼"] as RomFilter[]).map((item) => <button key={item} className={romFilter === item ? "is-selected" : ""} aria-pressed={romFilter === item} onClick={() => setRomFilter(item)}>{item === "전체" ? "ROM 전체" : `ROM · ${item}`}</button>)}</div><div className="rom-readiness-inline"><span>오늘의 ROM</span><b>{romReadiness.title}</b><p>통증 {checkin.pain}/5 · 에너지 {checkin.energy}/5</p><button onClick={applyRomReadiness}>{romReadiness.actionLabel} <ArrowRight size={13} /></button></div></div>} />
           <section className="explore-launcher" aria-label="빠른 운동 시작"><div className="explore-launcher-head"><div><p className="eyebrow">01 / CHOOSE A START</p><h3>어떻게 움직이고 싶나요?</h3></div><p>한 가지 시작점을 고르면 결과를 바로 좁힙니다. 이후 부위·난이도·장비 조건을 더할 수 있습니다.</p></div><div className="explore-paths">{explorePaths.map((path) => { const Icon = path.icon; const isSelected = category === path.category && focus === path.focus && equipment === path.equipment; return <button key={path.id} className={isSelected ? "is-selected" : ""} aria-pressed={isSelected} onClick={() => applyExplorePath(path)}><Icon size={20} /><span>{path.label}</span><small>{path.description}</small><ArrowRight size={16} /></button>; })}</div><div className="explore-selection-state"><span>현재 조건</span><b>{category === "전체" && focus === "전체" && equipment === "전체" ? "모든 운동 보기" : [category !== "전체" ? category : null, focus !== "전체" ? focus : null, equipment !== "전체" ? equipment : null].filter(Boolean).join(" · ")}</b><p><strong>{filteredExercises.length}개</strong> 운동을 바로 살펴볼 수 있습니다.</p></div></section>
           <div className="search-panel"><div className="search-field"><Search size={18} /><input value={keyword} onChange={(event) => setKeyword(event.target.value)} placeholder="운동, 부위, 장비 검색" aria-label="운동 검색" /></div><div className="quick-category-filter" role="group" aria-label="운동 종류 빠른 필터"><div className="quick-category-head"><div><p className="small-label">EXERCISE TYPE</p><b>운동 종류 빠른 선택</b><span aria-live="polite">{category === "전체" ? `전체 ${filteredExercises.length}개 표시` : `${category} ${filteredExercises.length}개 표시`}</span></div><div className="filter-head-actions"><button className="preference-filter-button" onClick={applySavedExplorePreferences}>선호 조건 적용</button>{(keyword || category !== "전체" || focus !== "전체" || regionFilter !== "전체" || difficulty !== "전체" || equipment !== "전체" || sort !== "recommended") && <button className="filter-reset" onClick={resetExploreFilters}>조건 초기화</button>}</div></div><div className="quick-category-options">{categories.map((item) => <button key={item} className={category === item ? "filter-active" : ""} aria-pressed={category === item} onClick={() => setCategory(item)}>{item === "전체" ? "전체 보기" : item}</button>)}</div></div><div className="filter-row"><label className="sort-select">정렬<select value={sort} onChange={(event) => setSort(event.target.value as ExerciseSort)} aria-label="정렬 기준"><option value="recommended">추천순 · 입문·짧은 시간 우선</option><option value="difficulty">난이도순 · 입문부터</option><option value="duration">소요 시간순 · 짧은 시간부터</option></select></label><select value={regionFilter} onChange={(event) => setRegionFilter(event.target.value)} aria-label="부위 필터"><option>전체</option>{Object.keys(recoveryGuides).map((region) => <option key={region}>{region}</option>)}</select><select value={focus} onChange={(event) => setFocus(event.target.value)} aria-label="목적 필터"><option>전체</option><option>근력</option><option>체력</option><option>심폐</option><option>가동성</option><option>균형</option><option>협응</option><option>파워</option></select><select value={difficulty} onChange={(event) => setDifficulty(event.target.value)} aria-label="난이도 필터"><option>전체</option><option>입문</option><option>중급</option><option>상급</option></select><select value={equipment} onChange={(event) => setEquipment(event.target.value)} aria-label="장비 필터"><option>전체</option><option>장비 없음</option><option>장비 필요</option></select></div></div>
           <div className="saved-exercise-panels" aria-label="빠른 운동 탐색"><section className="saved-exercise-panel"><div><p className="small-label"><History size={13} /> RECENTLY VIEWED</p><h3>최근 본 운동</h3></div>{recentExercises.length ? <div className="saved-exercise-list">{recentExercises.map((exercise) => <button key={exercise.id} onClick={() => openSavedExercise(exercise)}><span>{exercise.category}</span><b>{exercise.name}</b><ArrowRight size={14} /></button>)}</div> : <p>운동 카드에서 <strong>자세·근거 보기</strong>를 열면 여기에 저장됩니다.</p>}</section><section className="saved-exercise-panel"><div><p className="small-label"><Star size={13} /> FAVORITES</p><h3>즐겨찾기</h3></div>{favoriteExercises.length ? <div className="saved-exercise-list">{favoriteExercises.map((exercise) => <button key={exercise.id} onClick={() => openSavedExercise(exercise)}><span>{exercise.category}</span><b>{exercise.name}</b><ArrowRight size={14} /></button>)}</div> : <p>운동 카드 오른쪽 위의 <strong>별표</strong>로 자주 찾는 운동을 모아 보세요.</p>}</section></div>
@@ -482,6 +507,13 @@ function ExerciseCard({ exercise, detail, isFavorite, onToggleFavorite, onViewed
   const visual = getMovementVisual(exercise.id);
   const textGuide = getExerciseTextGuide(exercise, detail);
   const evidence = getExerciseEvidenceScope(exercise);
+  const { pendingExerciseName, clearPendingExercise } = React.useContext(AsciiInteractionContext);
+  useEffect(() => {
+    if (pendingExerciseName !== exercise.name) return;
+    setExpanded(true);
+    onViewed();
+    clearPendingExercise();
+  }, [clearPendingExercise, exercise.name, onViewed, pendingExerciseName]);
   return <article className="exercise-card"><div className="exercise-top"><span>{exercise.category}</span><div className="exercise-card-actions"><span className="difficulty">{exercise.difficulty}</span><button className={isFavorite ? "favorite-toggle is-favorite" : "favorite-toggle"} aria-label={`${exercise.name} ${isFavorite ? "즐겨찾기 해제" : "즐겨찾기 추가"}`} aria-pressed={isFavorite} onClick={onToggleFavorite}><Star size={15} fill={isFavorite ? "currentColor" : "none"} /></button></div></div><h3>{exercise.name}</h3><p className="english-name">{exercise.englishName}</p><p className="exercise-description">{exercise.description}</p><div className="tag-row">{exercise.regions.map((region) => <span key={region}>{region}</span>)}<span className="focus-tag">{exercise.focus}</span></div><div className="exercise-meta"><span><Timer size={14} />{exercise.minutes}</span><span><Dumbbell size={14} />{exercise.equipment}</span></div>{expanded && <div className="exercise-detail"><p className="small-label">TRAINING BENEFITS</p><div className="benefit-row">{exercise.benefits.map((benefit) => <span key={benefit}>{benefit}</span>)}</div><TextExerciseGuide guide={textGuide} exerciseName={exercise.name} />{visual && <section className="visual-guide-block" aria-label={`${exercise.name} 단계형 자세 안내`}><div className="visual-guide-note"><span>01 · 02 · 03</span><p>그림의 순서대로 짧게 리허설한 뒤, <strong>통증·불안정·호흡 흐트러짐</strong>이 있으면 아래의 쉬운 변형으로 조절하세요.</p></div><MovementVisualGuide title={visual.title} frames={visual.frames} /></section>}<p className="small-label">SETUP</p><ol>{detail.setup.map((step, stepIndex) => <li key={step}><b>{stepIndex + 1}.</b>{step}</li>)}</ol><p className="small-label">FORM CUES</p><ol>{exercise.cues.map((cue, cueIndex) => <li key={cue}><b>{cueIndex + 1}.</b>{cue}</li>)}</ol><div className="detail-grid"><div><p className="small-label">EASIER</p><ul>{detail.regressions.map((item) => <li key={item}>{item}</li>)}</ul></div><div><p className="small-label">NEXT STEP</p><ul>{detail.progressions.map((item) => <li key={item}>{item}</li>)}</ul></div></div><p className="small-label">COMMON ERRORS</p><ul className="detail-errors">{detail.commonMistakes.map((item) => <li key={item}>{item}</li>)}</ul><p className="exercise-finish"><b>마무리</b>{detail.finish}</p><p className="exercise-warning">{exercise.warning}</p><section className="evidence-scope" aria-label={`${exercise.name} 근거 적용 범위`}><p className="small-label">EVIDENCE SCOPE</p><p>{evidence.sourceLabel}</p><p>{evidence.guidanceLabel}</p><small>{evidence.limit}</small></section><a href={exercise.reference.url} target="_blank" rel="noreferrer">{exercise.reference.label} <ArrowRight size={13} /></a></div>}<button className="card-expand" onClick={() => { const nextExpanded = !expanded; setExpanded(nextExpanded); if (nextExpanded) onViewed(); }}>{expanded ? "간단히 보기" : "자세·근거 보기"}<ChevronRight size={15} className={expanded ? "rotate-icon" : ""} /></button></article>;
 }
 
@@ -494,7 +526,8 @@ function TextExerciseGuide({ guide, exerciseName }: { guide: ExerciseTextGuide; 
 
 function RomRecommendationDialog({ target, onClose }: { target: RomRecommendationTarget; onClose: () => void }) {
   const recommendation = getRomRecommendation(target.presentation);
-  return <div className="modal-backdrop" role="presentation" onMouseDown={onClose}><section className="log-modal rom-recommendation-modal" role="dialog" aria-modal="true" aria-labelledby="rom-recommendation-title" onMouseDown={(event) => event.stopPropagation()}><div className="modal-head"><div><p className="eyebrow">ROM ADJUSTMENT GUIDE</p><h2 id="rom-recommendation-title">{target.exerciseName} · {recommendation.title}</h2></div><button onClick={onClose} className="icon-button" aria-label="닫기"><X size={19} /></button></div><p className="modal-description">{recommendation.intro}</p><div className="rom-recommendation-grid"><article><p className="small-label">가볍게 풀기</p><ul>{recommendation.stretch.map((item) => <li key={item}>{item}</li>)}</ul></article><article><p className="small-label">대체 운동 방식</p><ul>{recommendation.alternatives.map((item) => <li key={item}>{item}</li>)}</ul></article></div><p className="text-guide-stop">{recommendation.caution}</p></section></div>;
+  const { onExploreAlternative } = React.useContext(AsciiInteractionContext);
+  return <div className="modal-backdrop" role="presentation" onMouseDown={onClose}><section className="log-modal rom-recommendation-modal" role="dialog" aria-modal="true" aria-labelledby="rom-recommendation-title" onMouseDown={(event) => event.stopPropagation()}><div className="modal-head"><div><p className="eyebrow">ROM ADJUSTMENT GUIDE</p><h2 id="rom-recommendation-title">{target.exerciseName} · {recommendation.title}</h2></div><button onClick={onClose} className="icon-button" aria-label="닫기"><X size={19} /></button></div><p className="modal-description">{recommendation.intro}</p><div className="rom-recommendation-grid"><article><p className="small-label">가볍게 풀기</p><ul>{recommendation.stretch.map((item) => <li key={item}>{item}</li>)}</ul></article><article><p className="small-label">대체 운동 방식</p><ul>{recommendation.alternatives.map((item) => <li key={item.name}><button className="alternative-exercise-link" onClick={() => onExploreAlternative(item.name)}><b>{item.name}</b><span>{item.rationale}</span><ArrowRight size={14} /></button></li>)}</ul></article></div><p className="text-guide-stop">{recommendation.caution}</p></section></div>;
 }
 
 function Metric({ icon, label, value, caption }: { icon: React.ReactNode; label: string; value: string; caption: string }) { return <div className="metric-card"><span className="metric-icon">{icon}</span><p>{label}</p><b>{value}</b><small>{caption}</small></div>; }
