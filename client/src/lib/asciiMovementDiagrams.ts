@@ -1,0 +1,60 @@
+type AsciiStage = { label: string; art: string; cue: string };
+
+export type AsciiMovementDiagram = {
+  title: string;
+  description: string;
+  stages: [AsciiStage, AsciiStage, AsciiStage];
+};
+
+const pose = (...lines: string[]) => lines.join("\n");
+
+const stand = pose("  O", " /|\\", " / \\", "─────");
+const squat = pose("  O", " /|\\", "_/ \\_", "─────");
+const plank = pose("O────", "  |  ", " / \\ ", "─────");
+const push = pose("O─── ", "  |\\  ", " /  \\ ", "─────");
+const hinge = pose(" O  ", "  \\_ ", " /|  ", " /_  ");
+const bench = pose(" O──", "  |  ", " /|\\ ", "─────");
+const pull = pose(" ─── ", "  O  ", " /|\\ ", " / \\");
+const press = pose("   O", "  /|\\", "  /   ", "──┴──");
+const erg = pose(" O  ↔", "  \\_ ", " /|  ", " /_  ");
+const bike = pose("  O ", " /|_", " / \\○", "───○─");
+const bridge = pose("O___", "  /\\ ", " /_   ", "─────");
+const birdDog = pose(" O──", " /|  ", "/  \\", "─────");
+const step = pose("  O ", " /| ", " / \\_", "───▔▔");
+
+export const asciiMovementDiagrams: Record<string, AsciiMovementDiagram> = {
+  squat: { title: "스쿼트 ASCII 도식", description: "발 전체로 지면을 느끼며 앉았다가 일어나는 흐름입니다.", stages: [{ label: "시작", art: stand, cue: "발 전체를 바닥에" }, { label: "앉기", art: squat, cue: "엉덩이·무릎을 함께" }, { label: "일어서기", art: stand, cue: "바닥을 밀어 올라오기" }] },
+  "bodyweight-squat": { title: "맨몸 스쿼트 ASCII 도식", description: "낮은 범위부터 균형을 유지하는 앉기·일어서기 흐름입니다.", stages: [{ label: "준비", art: stand, cue: "발 간격을 편안하게" }, { label: "내려가기", art: squat, cue: "통증 없는 범위로" }, { label: "복귀", art: stand, cue: "발 전체로 밀기" }] },
+  pushup: { title: "푸시업 ASCII 도식", description: "긴 몸통 선을 유지한 채 바닥을 밀어내는 흐름입니다.", stages: [{ label: "시작", art: plank, cue: "머리부터 발까지 긴 선" }, { label: "내리기", art: push, cue: "팔꿈치는 편안한 대각선" }, { label: "밀기", art: plank, cue: "바닥을 멀리 밀기" }] },
+  rdl: { title: "힙 힌지 ASCII 도식", description: "무릎보다 엉덩이를 뒤로 보내는 접기·펴기 흐름입니다.", stages: [{ label: "시작", art: stand, cue: "부하를 몸 가까이" }, { label: "접기", art: hinge, cue: "엉덩이를 뒤로" }, { label: "일어서기", art: stand, cue: "둔근으로 바닥 밀기" }] },
+  "dumbbell-bench": { title: "덤벨 벤치 프레스 ASCII 도식", description: "벤치에서 몸통을 안정시킨 뒤 덤벨을 제어해 미는 흐름입니다.", stages: [{ label: "준비", art: bench, cue: "발·등을 안정적으로" }, { label: "내리기", art: bench, cue: "손목을 편안히 제어" }, { label: "밀기", art: press, cue: "어깨 통증 없는 경로" }] },
+  latpulldown: { title: "랫 풀다운 ASCII 도식", description: "어깨를 먼저 내린 뒤 팔꿈치를 아래로 보내는 당기기 흐름입니다.", stages: [{ label: "준비", art: pull, cue: "허벅지 지지·가벼운 중량" }, { label: "당기기", art: pull, cue: "어깨를 내리고 팔꿈치 아래로" }, { label: "복귀", art: stand, cue: "반동 없이 장력 제어" }] },
+  "leg-press": { title: "레그 프레스 ASCII 도식", description: "등받이 지지에서 발 전체로 플랫폼을 미는 흐름입니다.", stages: [{ label: "설정", art: bench, cue: "등·골반을 등받이에" }, { label: "밀기", art: press, cue: "무릎을 끝까지 잠그지 않기" }, { label: "복귀", art: bench, cue: "허리 뜨기 전 범위에서" }] },
+  "row-erg-easy": { title: "로잉 에르고미터 ASCII 도식", description: "다리·몸통·팔 순서로 밀고, 반대 순서로 돌아오는 흐름입니다.", stages: [{ label: "캐치", art: erg, cue: "낮은 저항·몸통 길게" }, { label: "드라이브", art: erg, cue: "다리·몸통·팔 순서" }, { label: "복귀", art: erg, cue: "팔·몸통·다리 순서" }] },
+  bike: { title: "사이클 ASCII 도식", description: "안정된 상체로 부드러운 페달 리듬을 유지하는 흐름입니다.", stages: [{ label: "설정", art: bike, cue: "안장·브레이크 확인" }, { label: "페달", art: bike, cue: "어깨 힘을 빼고 부드럽게" }, { label: "조절", art: bike, cue: "호흡이 거칠면 저항 낮추기" }] },
+  "front-plank": { title: "프런트 플랭크 ASCII 도식", description: "팔꿈치 지지에서 몸통을 길게 유지하는 정적 지지 흐름입니다.", stages: [{ label: "준비", art: plank, cue: "팔꿈치를 어깨 아래" }, { label: "지지", art: plank, cue: "골반을 편안한 높이로" }, { label: "종료", art: plank, cue: "정렬 흐트러지기 전 쉬기" }] },
+  "barbell-hip-thrust": { title: "힙 쓰러스트 ASCII 도식", description: "벤치 지지에서 둔근으로 골반을 들어 올리는 흐름입니다.", stages: [{ label: "준비", art: bridge, cue: "발·벤치 위치 확인" }, { label: "들기", art: bridge, cue: "갈비뼈 들지 않고 둔근으로" }, { label: "복귀", art: bridge, cue: "골반을 먼저 낮추기" }] },
+  "bird-dog": { title: "버드 독 ASCII 도식", description: "네발 지지에서 반대 손·발을 짧게 뻗는 협응 흐름입니다.", stages: [{ label: "준비", art: birdDog, cue: "손·무릎 아래 지지" }, { label: "뻗기", art: birdDog, cue: "반대손·발을 짧게" }, { label: "복귀", art: birdDog, cue: "골반 흔들림 없이 교대" }] },
+  "assisted-pullup": { title: "어시스트 풀업 ASCII 도식", description: "보조 지지를 확인한 뒤 어깨를 내리고 당기는 흐름입니다.", stages: [{ label: "준비", art: pull, cue: "보조 중량·발 지지 확인" }, { label: "당기기", art: pull, cue: "목 길게·어깨를 먼저 내리기" }, { label: "복귀", art: stand, cue: "천천히 내려오기" }] },
+  "step-up": { title: "스텝업 ASCII 도식", description: "낮은 스텝에서 앞발 전체로 올라가고 천천히 내려오는 흐름입니다.", stages: [{ label: "준비", art: step, cue: "낮은 스텝·지지대 확인" }, { label: "올라가기", art: step, cue: "앞발 전체로 바닥 밀기" }, { label: "내려오기", art: stand, cue: "속도보다 안정 우선" }] },
+};
+
+const asciiDiagramIdByExerciseName: Record<string, string> = {
+  "바벨 백 스쿼트": "squat",
+  "맨몸 스쿼트": "bodyweight-squat",
+  "푸시업": "pushup",
+  "덤벨 벤치 프레스": "dumbbell-bench",
+  "랫 풀다운": "latpulldown",
+  "레그 프레스": "leg-press",
+  "로잉 에르고미터": "row-erg-easy",
+  "스테디 사이클": "bike",
+  "프런트 플랭크": "front-plank",
+  "바벨 힙 쓰러스트": "barbell-hip-thrust",
+  "버드 독": "bird-dog",
+  "어시스트 풀업": "assisted-pullup",
+  "스텝업": "step-up",
+};
+
+export function getAsciiMovementDiagram(exerciseId: string) {
+  return asciiMovementDiagrams[exerciseId] ?? asciiMovementDiagrams[asciiDiagramIdByExerciseName[exerciseId]];
+}

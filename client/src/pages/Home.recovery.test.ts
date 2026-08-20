@@ -133,12 +133,15 @@ describe("Home recovery alternative flow", () => {
     fireEvent.click(within(card!).getByRole("button", { name: "자세·근거 보기" }));
 
     expect(within(card!).getByText("맨몸 스쿼트 흐름")).toBeTruthy();
-    expect(within(card!).getAllByText(/발 전체를 바닥에|엉덩이·무릎을 함께|통증 없는 범위로/)).toHaveLength(3);
+    expect(within(card!).getAllByText(/발 전체를 바닥에|엉덩이·무릎을 함께|통증 없는 범위로/).length).toBeGreaterThanOrEqual(3);
     expect(within(card!).getByLabelText("맨몸 스쿼트 사진 없는 자세 안내")).toBeTruthy();
     expect(within(card!).getByText("읽으며 따라 하는 자세 지도")).toBeTruthy();
     expect(within(card!).getByText("◎ 주로 쓰는 근육")).toBeTruthy();
     expect(within(card!).getByText("↔ 호흡")).toBeTruthy();
     expect(within(card!).getByText("↓ 어렵다면")).toBeTruthy();
+    expect(within(card!).getByLabelText("맨몸 스쿼트 ASCII 동작 도식")).toBeTruthy();
+    expect(within(card!).getByText(/낮은 범위부터 균형을 유지하는 앉기·일어서기 흐름/)).toBeTruthy();
+    expect(within(card!).getByText("ASCII MOTION SKETCH")).toBeTruthy();
   });
 
   it("renders the expanded machine visual guide with a safe adjustment cue", async () => {
