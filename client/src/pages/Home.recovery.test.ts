@@ -134,6 +134,11 @@ describe("Home recovery alternative flow", () => {
 
     expect(within(card!).getByText("맨몸 스쿼트 흐름")).toBeTruthy();
     expect(within(card!).getAllByText(/발 전체를 바닥에|엉덩이·무릎을 함께|통증 없는 범위로/)).toHaveLength(3);
+    expect(within(card!).getByLabelText("맨몸 스쿼트 사진 없는 자세 안내")).toBeTruthy();
+    expect(within(card!).getByText("읽으며 따라 하는 자세 지도")).toBeTruthy();
+    expect(within(card!).getByText("◎ 주로 쓰는 근육")).toBeTruthy();
+    expect(within(card!).getByText("↔ 호흡")).toBeTruthy();
+    expect(within(card!).getByText("↓ 어렵다면")).toBeTruthy();
   });
 
   it("renders the expanded machine visual guide with a safe adjustment cue", async () => {
@@ -160,7 +165,7 @@ describe("Home recovery alternative flow", () => {
     fireEvent.click(within(card!).getByRole("button", { name: "자세·근거 보기" }));
 
     expect(within(card!).getByText("복싱 가드 스텝 리셋 흐름")).toBeTruthy();
-    expect(within(card!).getByText(/대련·스파링·타격은 포함하지 않습니다/)).toBeTruthy();
+    expect(within(card!).getAllByText(/대련·스파링·타격은 포함하지 않습니다/).length).toBeGreaterThan(0);
   });
 
   it("switches the seated-work recovery routine and bridges to a light home session", () => {
