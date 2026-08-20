@@ -75,6 +75,18 @@ describe("Home recovery alternative flow", () => {
 
     expect(within(launcher).getByText("30분 · 헬스장 · 기초 근력")).toBeTruthy();
     expect(screen.getByRole("heading", { name: "30분 기초 근력 세션 · 헬스장" })).toBeTruthy();
+    expect(document.querySelector(".site-shell")?.className).toContain("atlas-motion-strength");
+  });
+
+  it("lets the user change and restore a preferred atlas theme locally", () => {
+    render(createElement(Home));
+    const oceanTheme = screen.getByRole("button", { name: "오션 테마 선택" });
+    fireEvent.click(oceanTheme);
+    expect(oceanTheme.getAttribute("aria-pressed")).toBe("true");
+    expect(document.querySelector(".site-shell")?.className).toContain("atlas-theme-ocean");
+    cleanup();
+    render(createElement(Home));
+    expect(screen.getByRole("button", { name: "오션 테마 선택" }).getAttribute("aria-pressed")).toBe("true");
   });
 
   it("toggles the mobile navigation state without changing the active content flow", () => {

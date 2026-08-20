@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { createBackup, parseBackup, readAxisVisibility, readLocalExplorePreferences, readLocalProfile, readLocalWeeklyPlan, readTrainingLogs, saveAxisVisibility, saveLocalExplorePreferences, saveLocalProfile, saveLocalWeeklyPlan, saveTrainingLogs } from "./localStore";
+import { createBackup, parseBackup, readAtlasTheme, readAxisVisibility, readLocalExplorePreferences, readLocalProfile, readLocalWeeklyPlan, readTrainingLogs, saveAtlasTheme, saveAxisVisibility, saveLocalExplorePreferences, saveLocalProfile, saveLocalWeeklyPlan, saveTrainingLogs } from "./localStore";
 import { defaultProfilePreferences } from "./profilePreferences";
 import { createWeeklyPlan } from "./weeklyPlan";
 
@@ -37,15 +37,27 @@ describe("local backup format", () => {
     const explorePreferences = { favoriteExerciseIds: ["squat"], recentExerciseIds: ["run", "squat"] };
     saveLocalExplorePreferences(explorePreferences);
     saveAxisVisibility(false);
+    saveAtlasTheme("ocean");
     expect(readTrainingLogs()).toEqual(logs);
     expect(readLocalProfile()).toEqual(profile);
     expect(readLocalWeeklyPlan()).toEqual(weeklyPlan);
     expect(readLocalExplorePreferences()).toEqual(explorePreferences);
     expect(readAxisVisibility()).toBe(false);
+    expect(readAtlasTheme()).toBe("ocean");
     storage.setItem("fit-atlas-logs", "not-json");
     storage.setItem("fit-atlas-profile", "not-json");
     expect(readTrainingLogs()).toEqual([]);
     expect(readLocalProfile()).toEqual(defaultProfilePreferences);
+  });
+
+  it("restores only supported atlas theme identifiers and safely falls back for malformed values", () => {
+    const storage = installLocalStorage();
+    storage.setItem("fit-atlas-atlas-theme", JSON.stringify("coral"));
+    expect(readAtlasTheme()).toBe("coral");
+    storage.setItem("fit-atlas-atlas-theme", JSON.stringify("unknown"));
+    expect(readAtlasTheme()).toBe("lime");
+    storage.setItem("fit-atlas-atlas-theme", "not-json");
+    expect(readAtlasTheme()).toBe("lime");
   });
 
   it("reports a storage failure instead of throwing when browser persistence is unavailable", () => {
@@ -54,6 +66,7 @@ describe("local backup format", () => {
     expect(saveTrainingLogs([])).toBe(false);
     expect(saveLocalProfile(defaultProfilePreferences)).toBe(false);
     expect(saveAxisVisibility(false)).toBe(false);
+    expect(saveAtlasTheme("plum")).toBe(false);
   });
 
   it("keeps legacy records without distance fields and restores new meter-based distance records", () => {

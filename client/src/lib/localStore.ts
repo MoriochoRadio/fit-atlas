@@ -13,6 +13,11 @@ const WEEKLY_PLAN_KEY = "fit-atlas-weekly-plan";
 const EXPLORE_PREFERENCES_KEY = "fit-atlas-explore-preferences";
 const AXIS_VISIBILITY_KEY = "fit-atlas-axis-visibility";
 const ROM_STATUS_HISTORY_KEY = "fit-atlas-rom-status-history";
+const ATLAS_THEME_KEY = "fit-atlas-atlas-theme";
+
+export const atlasThemes = ["lime", "ocean", "coral", "plum"] as const;
+export type AtlasTheme = (typeof atlasThemes)[number];
+export const defaultAtlasTheme: AtlasTheme = "lime";
 
 function persistLocalValue(key: string, value: unknown) {
   try {
@@ -89,6 +94,19 @@ export function readAxisVisibility() {
 
 export function saveAxisVisibility(visible: boolean) {
   return persistLocalValue(AXIS_VISIBILITY_KEY, visible);
+}
+
+export function readAtlasTheme(): AtlasTheme {
+  try {
+    const value = JSON.parse(window.localStorage.getItem(ATLAS_THEME_KEY) ?? JSON.stringify(defaultAtlasTheme));
+    return atlasThemes.includes(value) ? value : defaultAtlasTheme;
+  } catch {
+    return defaultAtlasTheme;
+  }
+}
+
+export function saveAtlasTheme(theme: AtlasTheme) {
+  return persistLocalValue(ATLAS_THEME_KEY, theme);
 }
 
 export function readLocalRomStatusHistory() {

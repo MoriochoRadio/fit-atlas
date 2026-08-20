@@ -10,7 +10,7 @@ import React, { useEffect, useMemo, useRef, useState } from "react";
 import { toast } from "sonner";
 import { getCalendarDays, getFourWeekTrends, getPersonalRecords, getTotalMinutes, getTotalVolume, getWeeklyVolume, type TrainingLog } from "@/lib/trainingMetrics";
 import { getPersonalizedProgram } from "@/lib/personalization";
-import { downloadBackup, parseBackup, readAxisVisibility, readLocalCheckin, readLocalExplorePreferences, readLocalProfile, readLocalRomStatusHistory, readLocalWeeklyPlan, readTrainingLogs, saveAxisVisibility, saveLocalCheckin, saveLocalExplorePreferences, saveLocalProfile, saveLocalRomStatusHistory, saveLocalWeeklyPlan, saveTrainingLogs } from "@/lib/localStore";
+import { atlasThemes, defaultAtlasTheme, downloadBackup, parseBackup, readAtlasTheme, readAxisVisibility, readLocalCheckin, readLocalExplorePreferences, readLocalProfile, readLocalRomStatusHistory, readLocalWeeklyPlan, readTrainingLogs, saveAtlasTheme, saveAxisVisibility, saveLocalCheckin, saveLocalExplorePreferences, saveLocalProfile, saveLocalRomStatusHistory, saveLocalWeeklyPlan, saveTrainingLogs, type AtlasTheme } from "@/lib/localStore";
 import { recordRecentExercise, toggleFavoriteExercise, type ExplorePreferences } from "@/lib/explorePreferences";
 import { filterExercises } from "@/lib/exerciseFilters";
 import { sortExercises, type ExerciseSort } from "@/lib/exerciseSorting";
@@ -54,6 +54,12 @@ const sessionQuickStarts: { id: string; label: string; detail: string; goal: Ses
   { id: "quick-gym", label: "30분 헬스장", detail: "기초 근력에 집중", goal: "strength", environment: "gym", duration: 30 },
   { id: "quick-outdoor", label: "30분 야외", detail: "심폐 리듬 만들기", goal: "endurance", environment: "outdoor", duration: 30 },
 ] as const;
+const atlasThemeCopy: Record<AtlasTheme, { label: string; description: string }> = {
+  lime: { label: "라임", description: "선명한 시작 신호" },
+  ocean: { label: "오션", description: "차분한 호흡 리듬" },
+  coral: { label: "코랄", description: "따뜻한 에너지" },
+  plum: { label: "플럼", description: "집중과 회복" },
+};
 
 function SectionTitle({ eyebrow, title, description, action }: { eyebrow: string; title: string; description: string; action?: React.ReactNode }) {
   return <div className="section-heading"><div><p className="eyebrow">{eyebrow}</p><h2>{title}</h2><p className="section-description">{description}</p></div>{action}</div>;
@@ -69,6 +75,7 @@ export default function Home() {
   const [sort, setSort] = useState<ExerciseSort>("recommended");
   const [romFilter, setRomFilter] = useState<RomFilter>("전체");
   const [filtersOpen, setFiltersOpen] = useState(false);
+  const [atlasTheme, setAtlasTheme] = useState<AtlasTheme>(() => typeof window === "undefined" ? defaultAtlasTheme : readAtlasTheme());
   const [axisVisible, setAxisVisible] = useState(() => typeof window === "undefined" ? true : readAxisVisibility());
   const [romRecommendationTarget, setRomRecommendationTarget] = useState<RomRecommendationTarget | null>(null);
   const [pendingExerciseName, setPendingExerciseName] = useState<string | null>(null);
@@ -157,6 +164,10 @@ export default function Home() {
   }, [axisVisible]);
 
   useEffect(() => {
+    if (!saveAtlasTheme(atlasTheme)) setStorageUnavailable(true);
+  }, [atlasTheme]);
+
+  useEffect(() => {
     if (!logOpen) setLinkedPlanSessionId(null);
   }, [logOpen]);
 
@@ -228,6 +239,7 @@ export default function Home() {
   const fourWeekRomStatus = useMemo(() => getFourWeekRomStatus(romStatusHistory, weeklyPlan), [romStatusHistory, weeklyPlan]);
   const sessionPlan = useMemo(() => buildSession({ goal: sessionGoal, environment: sessionEnvironment, duration: sessionDuration, checkin }), [checkin, sessionDuration, sessionEnvironment, sessionGoal]);
   const weeklyPlanInsight = useMemo(() => getWeeklyPlanInsight(weeklyPlan, logs, checkin), [checkin, logs, weeklyPlan]);
+  const atlasRoute = { all_round: { label: "BALANCE ROUTE", description: "전신 연결과 리듬" }, strength: { label: "POWER ROUTE", description: "점진적 힘과 안정" }, endurance: { label: "FLOW ROUTE", description: "호흡과 지속 리듬" } }[sessionGoal];
 
   const addLog = () => {
     const today = new Date().toISOString().slice(0, 10);
@@ -457,7 +469,7 @@ export default function Home() {
 
 
   return (
-    <AsciiInteractionContext.Provider value={{ showAxis: axisVisible, pendingExerciseName, clearPendingExercise: () => setPendingExerciseName(null), onOpenRom: (exerciseName, presentation) => setRomRecommendationTarget({ exerciseName, presentation }), onExploreAlternative: (exerciseName) => { setRomRecommendationTarget(null); setKeyword(exerciseName); setCategory("전체"); setFocus("전체"); setRegionFilter("전체"); setDifficulty("전체"); setEquipment("전체"); setRomFilter("전체"); setPendingExerciseName(exerciseName); setActiveScene("explore"); window.setTimeout(() => document.getElementById("explore")?.scrollIntoView({ behavior: "smooth" }), 0); }, onAddToTodayRoutine: (exerciseName) => { setWeeklyPlan((current) => addRomAlternativeToWeeklyPlan(current, exerciseName)); toast.success(`${exerciseName}을 오늘의 운동 루틴에 추가했습니다.`); } }}><div className={`site-shell scene-${activeScene}`}>
+    <AsciiInteractionContext.Provider value={{ showAxis: axisVisible, pendingExerciseName, clearPendingExercise: () => setPendingExerciseName(null), onOpenRom: (exerciseName, presentation) => setRomRecommendationTarget({ exerciseName, presentation }), onExploreAlternative: (exerciseName) => { setRomRecommendationTarget(null); setKeyword(exerciseName); setCategory("전체"); setFocus("전체"); setRegionFilter("전체"); setDifficulty("전체"); setEquipment("전체"); setRomFilter("전체"); setPendingExerciseName(exerciseName); setActiveScene("explore"); window.setTimeout(() => document.getElementById("explore")?.scrollIntoView({ behavior: "smooth" }), 0); }, onAddToTodayRoutine: (exerciseName) => { setWeeklyPlan((current) => addRomAlternativeToWeeklyPlan(current, exerciseName)); toast.success(`${exerciseName}을 오늘의 운동 루틴에 추가했습니다.`); } }}><div className={`site-shell scene-${activeScene} atlas-theme-${atlasTheme} atlas-motion-${sessionGoal} atlas-environment-${sessionEnvironment}`}>
       <div className="cinematic-backdrop" aria-hidden="true"><span className="cinematic-orb orb-one" /><span className="cinematic-orb orb-two" /><span className="cinematic-gridlines" /><span className="cinematic-hud">SCENE / {activeScene.toUpperCase()}</span></div>
       {celebrationOpen && <div className="completion-celebration" role="status" aria-live="polite"><div className="celebration-confetti" aria-hidden="true">✦ ✦ ✦ ✦ ✦ ✦ ✦</div><div><p className="eyebrow">ROUTINE COMPLETE</p><h2>오늘의 루틴을 모두 마쳤습니다.</h2><p>완료율 100%입니다. 다음 세션은 반응을 확인하며 한 가지 변수만 천천히 조절하세요.</p></div><button onClick={() => setCelebrationOpen(false)} aria-label="축하 메시지 닫기">확인</button></div>}
       <header className="topbar">
@@ -482,9 +494,10 @@ export default function Home() {
           </div>
           <div className="hero-atlas" aria-label={`오늘의 ${sessionDuration}분 ${sessionGoal === "strength" ? "기초 근력" : sessionGoal === "endurance" ? "심폐 리듬" : "전신 균형"} 세션 요약`}>
             <div className="atlas-visual-head"><span>ATLAS / TODAY</span><span className="atlas-ready"><i /> READY</span></div>
-            <div className="motion-map" aria-hidden="true"><span className="route-node node-a">01</span><span className="route-node node-b">02</span><span className="route-node node-c">03</span></div>
-            <article className="hero-session-card"><p>YOUR SESSION</p><b>{sessionDuration}<small> MIN</small></b><span>{sessionGoal === "strength" ? "기초 근력" : sessionGoal === "endurance" ? "심폐 리듬" : "전신 균형"} · {{ home: "집·매트", gym: "헬스장", outdoor: "야외·걷기" }[sessionEnvironment]}</span></article>
+            <div className="motion-map" aria-hidden="true"><span className="motion-scan" /><span className="route-node node-a">01</span><span className="route-node node-b">02</span><span className="route-node node-c">03</span></div>
+            <article className="hero-session-card"><p>{atlasRoute.label}</p><b>{sessionDuration}<small> MIN</small></b><span>{sessionGoal === "strength" ? "기초 근력" : sessionGoal === "endurance" ? "심폐 리듬" : "전신 균형"} · {{ home: "집·매트", gym: "헬스장", outdoor: "야외·걷기" }[sessionEnvironment]}</span><small className="session-route-description">{atlasRoute.description}</small></article>
             <div className="atlas-stat stat-one"><span>ATLAS</span><b>{catalogStats.exerciseCount}</b><small>큐레이션 운동</small></div><div className="atlas-stat stat-two"><span>PATHS</span><b>{catalogStats.categoryCount}</b><small>운동 카테고리</small></div><div className="atlas-caption">PLAN / MOVE<br />/ ADJUST</div>
+            <div className="atlas-theme-control" role="group" aria-label="아틀라스 색상 테마 선택"><div><p>ATLAS THEME</p><span>{atlasThemeCopy[atlasTheme].description}</span></div><div className="atlas-theme-options">{atlasThemes.map((theme) => <button key={theme} className={atlasTheme === theme ? "is-selected" : ""} onClick={() => setAtlasTheme(theme)} aria-pressed={atlasTheme === theme} aria-label={`${atlasThemeCopy[theme].label} 테마 선택`}><i /><span>{atlasThemeCopy[theme].label}</span></button>)}</div></div>
           </div>
           <div className="hero-footer"><span><ShieldCheck size={15} /> 연구 근거를 명시한 콘텐츠</span><span><HeartPulse size={15} /> 의료 진단을 대체하지 않는 안전 설계</span></div>
         </section>
