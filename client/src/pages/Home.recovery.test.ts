@@ -90,6 +90,26 @@ describe("Home recovery alternative flow", () => {
     expect(screen.getByRole("button", { name: "오션 테마 선택" }).getAttribute("aria-pressed")).toBe("true");
   });
 
+  it("opens an atlas node editor, stores a block edit, and changes the route speed", () => {
+    render(createElement(Home));
+    fireEvent.click(screen.getByRole("button", { name: "준비 블록 상세 및 편집" }));
+    expect(screen.getByRole("heading", { name: "준비 블록 편집" })).toBeTruthy();
+    fireEvent.change(screen.getByLabelText("블록 이름"), { target: { value: "리듬 준비" } });
+    fireEvent.change(screen.getByLabelText("움직임 · 한 줄에 하나씩"), { target: { value: "편안한 걷기\n캣·카우 · 6회" } });
+    fireEvent.click(screen.getByRole("button", { name: /블록 저장/ }));
+    expect(screen.queryByRole("dialog", { name: /블록 편집/ })).toBeNull();
+    expect(screen.getByText("리듬 준비 · 약 5분")).toBeTruthy();
+    fireEvent.click(screen.getByRole("button", { name: /빠름/ }));
+    expect(document.querySelector(".site-shell")?.className).toContain("atlas-speed-fast");
+  });
+
+  it("increases atlas visual density after the current weekly plan is completed", () => {
+    render(createElement(Home));
+    expect(document.querySelector(".site-shell")?.className).toContain("atlas-performance-starting");
+    screen.getAllByRole("button", { name: /완료 처리/ }).forEach((button) => fireEvent.click(button));
+    expect(document.querySelector(".site-shell")?.className).toContain("atlas-performance-surge");
+  });
+
   it("toggles the mobile navigation state without changing the active content flow", () => {
     render(createElement(Home));
     const menu = screen.getByRole("navigation", { name: "주요 메뉴" });

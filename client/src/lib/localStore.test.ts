@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { createBackup, parseBackup, readAtlasTheme, readAxisVisibility, readLocalExplorePreferences, readLocalProfile, readLocalWeeklyPlan, readTrainingLogs, saveAtlasTheme, saveAxisVisibility, saveLocalExplorePreferences, saveLocalProfile, saveLocalWeeklyPlan, saveTrainingLogs } from "./localStore";
+import { createBackup, parseBackup, readAtlasInteractionPreferences, readAtlasTheme, readAxisVisibility, readLocalExplorePreferences, readLocalProfile, readLocalWeeklyPlan, readTrainingLogs, saveAtlasInteractionPreferences, saveAtlasTheme, saveAxisVisibility, saveLocalExplorePreferences, saveLocalProfile, saveLocalWeeklyPlan, saveTrainingLogs } from "./localStore";
 import { defaultProfilePreferences } from "./profilePreferences";
 import { createWeeklyPlan } from "./weeklyPlan";
 
@@ -38,12 +38,14 @@ describe("local backup format", () => {
     saveLocalExplorePreferences(explorePreferences);
     saveAxisVisibility(false);
     saveAtlasTheme("ocean");
+    saveAtlasInteractionPreferences({ motionSpeed: "fast", blockEdits: { "strength-gym-30-1": { label: "당기기", minutes: 12, items: ["랫 풀다운 · 2세트"] } } });
     expect(readTrainingLogs()).toEqual(logs);
     expect(readLocalProfile()).toEqual(profile);
     expect(readLocalWeeklyPlan()).toEqual(weeklyPlan);
     expect(readLocalExplorePreferences()).toEqual(explorePreferences);
     expect(readAxisVisibility()).toBe(false);
     expect(readAtlasTheme()).toBe("ocean");
+    expect(readAtlasInteractionPreferences()).toEqual({ motionSpeed: "fast", blockEdits: { "strength-gym-30-1": { label: "당기기", minutes: 12, items: ["랫 풀다운 · 2세트"] } } });
     storage.setItem("fit-atlas-logs", "not-json");
     storage.setItem("fit-atlas-profile", "not-json");
     expect(readTrainingLogs()).toEqual([]);
@@ -60,6 +62,14 @@ describe("local backup format", () => {
     expect(readAtlasTheme()).toBe("lime");
   });
 
+  it("restores valid atlas interaction preferences and filters malformed node edits", () => {
+    const storage = installLocalStorage();
+    storage.setItem("fit-atlas-atlas-interaction", JSON.stringify({ motionSpeed: "slow", blockEdits: { valid: { label: "준비", minutes: 5, items: ["걷기"] }, broken: { label: 5 } } }));
+    expect(readAtlasInteractionPreferences()).toEqual({ motionSpeed: "slow", blockEdits: { valid: { label: "준비", minutes: 5, items: ["걷기"] } } });
+    storage.setItem("fit-atlas-atlas-interaction", "not-json");
+    expect(readAtlasInteractionPreferences()).toEqual({ motionSpeed: "normal", blockEdits: {} });
+  });
+
   it("reports a storage failure instead of throwing when browser persistence is unavailable", () => {
     Object.defineProperty(globalThis, "window", { value: { localStorage: { getItem: () => null, setItem: () => { throw new Error("quota exceeded"); } } }, configurable: true });
 
@@ -67,6 +77,7 @@ describe("local backup format", () => {
     expect(saveLocalProfile(defaultProfilePreferences)).toBe(false);
     expect(saveAxisVisibility(false)).toBe(false);
     expect(saveAtlasTheme("plum")).toBe(false);
+    expect(saveAtlasInteractionPreferences({ motionSpeed: "normal", blockEdits: {} })).toBe(false);
   });
 
   it("keeps legacy records without distance fields and restores new meter-based distance records", () => {

@@ -14,10 +14,16 @@ const EXPLORE_PREFERENCES_KEY = "fit-atlas-explore-preferences";
 const AXIS_VISIBILITY_KEY = "fit-atlas-axis-visibility";
 const ROM_STATUS_HISTORY_KEY = "fit-atlas-rom-status-history";
 const ATLAS_THEME_KEY = "fit-atlas-atlas-theme";
+const ATLAS_INTERACTION_KEY = "fit-atlas-atlas-interaction";
 
 export const atlasThemes = ["lime", "ocean", "coral", "plum"] as const;
 export type AtlasTheme = (typeof atlasThemes)[number];
 export const defaultAtlasTheme: AtlasTheme = "lime";
+export const atlasMotionSpeeds = ["slow", "normal", "fast"] as const;
+export type AtlasMotionSpeed = (typeof atlasMotionSpeeds)[number];
+export type AtlasBlockEdit = { label: string; minutes: number; items: string[] };
+export type AtlasInteractionPreferences = { motionSpeed: AtlasMotionSpeed; blockEdits: Record<string, AtlasBlockEdit> };
+export const defaultAtlasInteractionPreferences: AtlasInteractionPreferences = { motionSpeed: "normal", blockEdits: {} };
 
 function persistLocalValue(key: string, value: unknown) {
   try {
@@ -107,6 +113,32 @@ export function readAtlasTheme(): AtlasTheme {
 
 export function saveAtlasTheme(theme: AtlasTheme) {
   return persistLocalValue(ATLAS_THEME_KEY, theme);
+}
+
+function readAtlasBlockEdit(value: unknown): AtlasBlockEdit | null {
+  if (!value || typeof value !== "object") return null;
+  const entry = value as { label?: unknown; minutes?: unknown; items?: unknown };
+  if (typeof entry.label !== "string" || typeof entry.minutes !== "number" || !Number.isFinite(entry.minutes) || !Array.isArray(entry.items) || !entry.items.every((item) => typeof item === "string")) return null;
+  return { label: entry.label.slice(0, 40), minutes: Math.min(90, Math.max(1, Math.round(entry.minutes))), items: entry.items.filter(Boolean).slice(0, 8) };
+}
+
+export function readAtlasInteractionPreferences(): AtlasInteractionPreferences {
+  try {
+    const value = JSON.parse(window.localStorage.getItem(ATLAS_INTERACTION_KEY) ?? "{}");
+    const motionSpeed = atlasMotionSpeeds.includes(value?.motionSpeed) ? value.motionSpeed : defaultAtlasInteractionPreferences.motionSpeed;
+    const rawEdits = value?.blockEdits && typeof value.blockEdits === "object" ? value.blockEdits as Record<string, unknown> : {};
+    const blockEdits = Object.fromEntries(Object.entries(rawEdits).flatMap(([key, item]) => {
+      const edit = readAtlasBlockEdit(item);
+      return edit ? [[key, edit]] : [];
+    }));
+    return { motionSpeed, blockEdits };
+  } catch {
+    return defaultAtlasInteractionPreferences;
+  }
+}
+
+export function saveAtlasInteractionPreferences(preferences: AtlasInteractionPreferences) {
+  return persistLocalValue(ATLAS_INTERACTION_KEY, preferences);
 }
 
 export function readLocalRomStatusHistory() {
