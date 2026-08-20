@@ -57,15 +57,16 @@ describe("Home recovery alternative flow", () => {
     expect(screen.getByRole("heading", { name: "30분 전신 균형 세션 · 집·매트" })).toBeTruthy();
   });
 
-  it("summarizes weekly completion, exercise records, and atlas signal in one compact report", () => {
+  it("shows weekly completion flow, lets the user change the weekly goal, and gives the next direction", () => {
     render(createElement(Home));
-    const report = screen.getByLabelText("주간 아틀라스 요약 리포트");
-    expect(within(report).getByRole("heading", { name: "이번 주 흐름" })).toBeTruthy();
-    expect(report.querySelector(".weekly-signal-orbit b")?.textContent).toBe("0%");
-    expect(within(report).getByText("준비 신호")).toBeTruthy();
+    const report = screen.getByLabelText("주간 아틀라스 상세 리포트");
+    expect(within(report).getByRole("heading", { name: "주간 완료 흐름" })).toBeTruthy();
+    expect(within(report).getByRole("img", { name: /월요일 계획 0개 중 완료 0개/ })).toBeTruthy();
+    expect(within(report).getByText("가장 부담이 적은 한 세션을 선택해 이번 주의 첫 신호를 만드세요.")).toBeTruthy();
+    fireEvent.click(within(report).getByRole("button", { name: "근력" }));
+    expect(within(report).getByRole("button", { name: "근력" }).getAttribute("aria-pressed")).toBe("true");
     screen.getAllByRole("button", { name: /완료 처리/ }).forEach((button) => fireEvent.click(button));
-    expect(report.querySelector(".weekly-signal-orbit b")?.textContent).toBe("100%");
-    expect(within(report).getByText("고밀도 신호")).toBeTruthy();
+    expect(within(report).getByText("이번 주 계획을 마쳤습니다. 다음 세션에서는 시간·반복·저항 중 하나만 작게 조절하세요.")).toBeTruthy();
   });
 
   it("applies a quick exercise start path and makes the chosen condition visible", () => {

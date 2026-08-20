@@ -295,6 +295,17 @@ export default function Home() {
   }, [weeklyPlanInsight]);
   const weeklyCompletionPercent = weeklyPlanInsight.total ? Math.round((weeklyPlanInsight.completed / weeklyPlanInsight.total) * 100) : 0;
   const atlasSignalSummary = atlasPerformance === "surge" ? { title: "고밀도 신호", detail: "완료·기록 흐름이 충분히 쌓였습니다." } : atlasPerformance === "active" ? { title: "활성 신호", detail: "이번 주 리듬을 이어가고 있습니다." } : { title: "준비 신호", detail: "첫 완료 또는 기록부터 시작하세요." };
+  const weeklyCompletionFlow = useMemo(() => ["월", "화", "수", "목", "금", "토", "일"].map((weekday) => {
+    const sessions = weeklyPlan.sessions.filter((session) => session.weekday === weekday);
+    return { weekday, planned: sessions.length, completed: sessions.filter((session) => session.completed).length };
+  }), [weeklyPlan.sessions]);
+  const weeklyDirection = useMemo(() => {
+    if (checkinRecommendation.mode === "stop_and_assess") return "통증 신호가 있으면 다음 운동보다 회복과 필요한 평가를 먼저 선택하세요.";
+    if (weeklyPlanInsight.total === 0 || weeklyPlanInsight.completed === 0) return "가장 부담이 적은 한 세션을 선택해 이번 주의 첫 신호를 만드세요.";
+    if (weeklyPlanInsight.completed === weeklyPlanInsight.total) return "이번 주 계획을 마쳤습니다. 다음 세션에서는 시간·반복·저항 중 하나만 작게 조절하세요.";
+    if (weeklyPlanInsight.loggedThisWeek === 0) return "완료한 세션 하나의 시간과 강도만 기록해 다음 주의 기준을 남겨 보세요.";
+    return `남은 ${weeklyPlanInsight.remaining}개 세션은 현재 리듬을 유지하며 나누어 진행하세요.`;
+  }, [checkinRecommendation.mode, weeklyPlanInsight]);
   const activeAtlasBlock = activeAtlasNode === null ? null : atlasBlocks[activeAtlasNode] ?? null;
   const atlasRoute = { all_round: { label: "BALANCE ROUTE", description: "전신 연결과 리듬" }, strength: { label: "POWER ROUTE", description: "점진적 힘과 안정" }, endurance: { label: "FLOW ROUTE", description: "호흡과 지속 리듬" } }[sessionGoal];
 
@@ -589,6 +600,7 @@ export default function Home() {
         </section>
 
         <section className={`weekly-atlas-report signal-${atlasPerformance}`} aria-label="주간 아틀라스 요약 리포트"><div className="weekly-report-head"><div><p className="eyebrow">WEEKLY ATLAS</p><h2>이번 주 흐름</h2></div><span>{atlasSignalSummary.title}</span></div><div className="weekly-report-body"><div className="weekly-signal-orbit" style={{ "--report-progress": `${weeklyCompletionPercent}%` } as React.CSSProperties}><b>{weeklyCompletionPercent}<small>%</small></b><span>완료</span></div><div className="weekly-report-metrics"><article><span>완료 세션</span><b>{weeklyPlanInsight.completed}<small>/{weeklyPlanInsight.total || 0}</small></b></article><article><span>운동 기록</span><b>{weeklyPlanInsight.loggedThisWeek}</b></article><article><span>아틀라스</span><b>{atlasPerformance === "surge" ? "HIGH" : atlasPerformance === "active" ? "FLOW" : "READY"}</b></article></div><p>{atlasSignalSummary.detail}</p></div></section>
+        <WeeklyAtlasDetailReport flow={weeklyCompletionFlow} goal={weeklyPlan.goal} onGoal={(nextGoal) => { if (nextGoal === weeklyPlan.goal) return; setWeeklyPlan((current) => setWeeklyGoal(current, nextGoal)); toast.success(`이번 주 목표를 ${{ all_round: "전신", strength: "근력", endurance: "심폐" }[nextGoal]} 중심으로 변경했습니다.`); }} direction={weeklyDirection} />
 
         <section className="start-dock" aria-label="오늘의 주요 행동"><div className="start-dock-intro"><p className="eyebrow">START HERE</p><h2>오늘, 무엇을<br /><em>시작할까요?</em></h2><p>복잡한 설정 없이 현재 목적에 맞는 한 가지 경로를 선택하세요.</p></div><div className="start-dock-actions"><a className="start-action start-action-explore" href="#explore" onClick={() => setActiveScene("explore")}><span><BookOpen size={19} /> 운동 찾기</span><b>1,008개 운동<br />자세·부위·근거</b><ArrowRight size={18} /></a><button className="start-action start-action-session" onClick={() => { setSessionGoal("all_round"); document.getElementById("session")?.scrollIntoView({ behavior: "smooth" }); }}><span><Timer size={19} /> 오늘 세션</span><b>{sessionDuration}분 맞춤<br />운동 설계</b><ArrowRight size={18} /></button><button className="start-action start-action-record" onClick={() => setLogOpen(true)}><span><History size={19} /> 운동 기록</span><b>{logs.length}개 기록<br />변화 확인</b><Plus size={18} /></button><a className="start-action start-action-recover" href="#recovery" onClick={() => setActiveScene("wellness")}><span><HeartPulse size={19} /> 회복 가이드</span><b>불편감·피로<br />가벼운 회복</b><ArrowRight size={18} /></a></div></section>
 
@@ -689,6 +701,10 @@ function AtlasNodeDialog({ block, index, draft, onDraft, onClose, onSave, onRese
 }
 
 function Metric({ icon, label, value, caption }: { icon: React.ReactNode; label: string; value: string; caption: string }) { return <div className="metric-card"><span className="metric-icon">{icon}</span><p>{label}</p><b>{value}</b><small>{caption}</small></div>; }
+
+function WeeklyAtlasDetailReport({ flow, goal, onGoal, direction }: { flow: { weekday: string; planned: number; completed: number }[]; goal: WeeklyPlan["goal"]; onGoal: (goal: WeeklyPlan["goal"]) => void; direction: string }) {
+  return <section className="weekly-atlas-detail-report" aria-label="주간 아틀라스 상세 리포트"><div className="weekly-detail-head"><div><p className="eyebrow">WEEKLY FLOW</p><h2>주간 완료 흐름</h2></div><p>완료 / 계획</p></div><div className="weekly-flow-chart" role="img" aria-label={flow.map((day) => `${day.weekday}요일 계획 ${day.planned}개 중 완료 ${day.completed}개`).join(", ")}>{flow.map((day) => <article key={day.weekday} className={day.completed ? "is-complete" : day.planned ? "is-planned" : ""}><span>{day.weekday}</span><div><i style={{ height: `${day.planned ? 38 + Math.min(day.planned, 3) * 16 : 4}%` }} /><b style={{ height: `${day.planned ? Math.max((day.completed / day.planned) * 100, day.completed ? 16 : 4) : 4}%` }} /></div><small>{day.completed}/{day.planned}</small></article>)}</div><div className="weekly-detail-bottom"><div className="weekly-goal-editor" role="group" aria-label="이번 주 운동 목표"><span>이번 주 목표</span>{(["all_round", "strength", "endurance"] as WeeklyPlan["goal"][]).map((item) => <button key={item} className={goal === item ? "is-selected" : ""} aria-pressed={goal === item} onClick={() => onGoal(item)}>{{ all_round: "전신", strength: "근력", endurance: "심폐" }[item]}</button>)}</div><p className="weekly-direction"><Sparkles size={16} /><span>{direction}</span></p></div></section>;
+}
 
 function RomStatusDashboard({ days, dashboardRef, exporting, onExport, routineCompletion, exportMeta, onChangeMeta, monthlySummary }: { days: ReturnType<typeof getCurrentWeekRomStatus>; dashboardRef: React.RefObject<HTMLElement | null>; exporting: boolean; onExport: () => void; routineCompletion: { completed: number; total: number }; exportMeta: { period: string; note: string }; onChangeMeta: (key: "period" | "note", value: string) => void; monthlySummary: ReturnType<typeof getFourWeekRomStatus> }) {
   const recorded = days.filter((day) => day.record);
