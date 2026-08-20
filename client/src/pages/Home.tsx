@@ -321,14 +321,14 @@ export default function Home() {
         <section className="hero">
           <div className="hero-noise" />
           <div className="hero-copy">
-            <p className="eyebrow light">THE INTELLIGENT BODY COMPANION</p>
-            <h1>몸을 이해할수록,<br /><em>움직임은 정교해집니다.</em></h1>
-            <p className="hero-description">운동 과학, 해부학적 인사이트, 개인화된 기록을 하나의 정교한 경험으로 연결합니다. 무엇을, 왜, 어떻게 해야 하는지 맥락까지 살펴보세요.</p>
+            <p className="eyebrow light">TRAINING INTELLIGENCE / 1008 MOVEMENTS</p>
+            <h1>더 강하게.<br /><em>더 정확하게.</em></h1>
+            <p className="hero-description">운동 과학과 실제 훈련 흐름을 하나로 연결합니다. 오늘의 컨디션에 맞는 동작을 찾고, 기록으로 다음 세션을 더 정교하게 설계하세요.</p>
             <p className="local-first-note"><ShieldCheck size={14} /> 기록·프로필은 이 브라우저에만 저장됩니다. 다른 기기에서는 <strong>백업·가져오기</strong>를 사용하세요.</p>
-            <div className="hero-actions"><a href="#explore" className="light-button">운동 백과사전 보기 <ArrowRight size={16} /></a><button className="text-button" onClick={() => document.getElementById("anatomy")?.scrollIntoView({ behavior: "smooth" })}>바디 맵 탐색 <ChevronRight size={17} /></button></div>
+            <div className="hero-actions"><a href="#explore" className="light-button">운동 시작하기 <ArrowRight size={16} /></a><button className="text-button" onClick={() => document.getElementById("anatomy")?.scrollIntoView({ behavior: "smooth" })}>내 몸의 움직임 보기 <ChevronRight size={17} /></button></div>
           </div>
           <div className="hero-atlas">
-            <div className="atlas-rings" /><div className="atlas-core"><Dumbbell size={52} strokeWidth={1.1} /></div><div className="atlas-stat stat-one"><span>GUIDED</span><b>{catalogStats.exerciseCount}</b><small>큐레이션 운동</small></div><div className="atlas-stat stat-two"><span>FOCUS</span><b>{catalogStats.categoryCount}</b><small>운동 카테고리</small></div><div className="atlas-caption">FITNESS, MAPPED<br />WITH INTENTION.</div>
+            <img className="hero-performance-image" src="/manus-storage/fit-atlas-performance-hero_9e3d3d3c.jpg" alt="바벨 프런트 스쿼트를 수행하는 운동선수" /><div className="hero-image-shade" /><div className="hero-performance-tag"><span>PERFORM</span><b>01</b><small>STRENGTH SESSION</small></div><div className="atlas-stat stat-one"><span>TRAIN</span><b>{catalogStats.exerciseCount}</b><small>큐레이션 운동</small></div><div className="atlas-stat stat-two"><span>FOCUS</span><b>{catalogStats.categoryCount}</b><small>운동 카테고리</small></div><div className="atlas-caption">TRAIN / RECOVER<br />/ REPEAT</div>
           </div>
           <div className="hero-footer"><span><ShieldCheck size={15} /> 연구 근거를 명시한 콘텐츠</span><span><HeartPulse size={15} /> 의료 진단을 대체하지 않는 안전 설계</span></div>
         </section>
