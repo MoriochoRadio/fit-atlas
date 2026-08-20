@@ -28,6 +28,7 @@ describe("Home recovery alternative flow", () => {
     fireEvent.click(ankleAlternative!);
 
     expect((screen.getByLabelText("운동 검색") as HTMLInputElement).value).toBe("발목 니투월 락");
+    fireEvent.click(screen.getByRole("button", { name: "부위·목적·난이도 상세 조건" }));
     expect((screen.getByLabelText("부위 필터") as HTMLSelectElement).value).toBe("하체");
     expect(scrollIntoView).toHaveBeenCalledWith({ behavior: "smooth" });
   });
@@ -325,6 +326,7 @@ describe("Home recovery alternative flow", () => {
     const typeFilter = screen.getByRole("group", { name: "운동 종류 빠른 필터" });
     fireEvent.click(within(typeFilter).getByRole("button", { name: "선호 조건 적용" }));
     expect(within(typeFilter).getByRole("button", { name: "맨몸운동" }).getAttribute("aria-pressed")).toBe("true");
+    fireEvent.click(screen.getByRole("button", { name: "부위·목적·난이도 상세 조건" }));
     expect((screen.getByLabelText("장비 필터") as HTMLSelectElement).value).toBe("장비 없음");
   });
 
@@ -338,6 +340,7 @@ describe("Home recovery alternative flow", () => {
     expect(bodyweight.getAttribute("aria-pressed")).toBe("true");
     expect(within(typeFilter).getByText(/맨몸운동 \d+개 표시/)).toBeTruthy();
 
+    fireEvent.click(screen.getByRole("button", { name: "부위·목적·난이도 상세 조건" }));
     fireEvent.change(screen.getByLabelText("장비 필터"), { target: { value: "장비 필요" } });
     expect((screen.getByLabelText("장비 필터") as HTMLSelectElement).value).toBe("장비 필요");
     expect(bodyweight.getAttribute("aria-pressed")).toBe("true");
@@ -352,6 +355,7 @@ describe("Home recovery alternative flow", () => {
     const typeFilter = screen.getByRole("group", { name: "운동 종류 빠른 필터" });
     fireEvent.click(within(typeFilter).getByRole("button", { name: "요가·필라테스" }));
 
+    fireEvent.click(screen.getByRole("button", { name: "부위·목적·난이도 상세 조건" }));
     const sort = screen.getByLabelText("정렬 기준") as HTMLSelectElement;
     expect(sort.value).toBe("recommended");
     fireEvent.change(sort, { target: { value: "duration" } });
@@ -360,5 +364,15 @@ describe("Home recovery alternative flow", () => {
 
     fireEvent.click(within(typeFilter).getByRole("button", { name: "조건 초기화" }));
     expect(sort.value).toBe("recommended");
+  });
+
+  it("keeps detailed exercise filters out of the initial path until the user asks for them", () => {
+    render(createElement(Home));
+    const advanced = screen.getByRole("button", { name: "부위·목적·난이도 상세 조건" });
+    expect(advanced.getAttribute("aria-expanded")).toBe("false");
+    expect(screen.queryByLabelText("부위 필터")).toBeNull();
+    fireEvent.click(advanced);
+    expect(advanced.getAttribute("aria-expanded")).toBe("true");
+    expect(screen.getByLabelText("부위 필터")).toBeTruthy();
   });
 });
