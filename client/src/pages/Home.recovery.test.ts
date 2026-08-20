@@ -132,6 +132,18 @@ describe("Home recovery alternative flow", () => {
     expect(screen.getByRole("heading", { name: "30분 전신 균형 세션 · 집·매트" })).toBeTruthy();
   });
 
+  it("keeps hero status, machine controls, session readout, and atlas controls on separate surfaces", async () => {
+    render(createElement(Home));
+    const workspace = document.querySelector(".hero-workspace");
+    expect(workspace).toBeTruthy();
+    expect(screen.getByLabelText("오늘 운동 상태 요약")).toBeTruthy();
+    expect(within(workspace as HTMLElement).getByLabelText("직접 조작 가능한 3D 케이블 운동 장비")).toBeTruthy();
+    expect(within(workspace as HTMLElement).getByText("BALANCE ROUTE")).toBeTruthy();
+    expect(within(workspace as HTMLElement).getByRole("group", { name: "아틀라스 제어" })).toBeTruthy();
+    expect(document.querySelector(".hero-atlas .hero-session-card")).toBeNull();
+    expect(document.querySelector(".hero-atlas .atlas-theme-control")).toBeNull();
+  });
+
   it("shows weekly completion flow, lets the user change the weekly goal, and gives the next direction", () => {
     render(createElement(Home));
     const report = screen.getByLabelText("주간 아틀라스 상세 리포트");
