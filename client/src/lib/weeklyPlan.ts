@@ -98,6 +98,15 @@ export function addDesignedSession(plan: WeeklyPlan, session: SessionPlan, goal:
   return { ...current, sessions: [...current.sessions, next] };
 }
 
+export function addRomAlternativeToWeeklyPlan(plan: WeeklyPlan, exerciseName: string, referenceDate = new Date()): WeeklyPlan {
+  const current = readWeeklyPlan(JSON.stringify(plan), referenceDate);
+  const today = weekdayNames[referenceDate.getDay()];
+  const id = `rom-${dayKey(referenceDate)}-${exerciseName.replace(/\s+/g, "-")}`;
+  if (current.sessions.some((session) => session.id === id)) return current;
+  const next: WeeklyPlanSession = { id, label: `오늘의 ROM 조절 · ${exerciseName}`, weekday: today, goal: "all_round", environment: "home", duration: 15, completed: false, addedFromDesigner: true };
+  return { ...current, sessions: [...current.sessions, next] };
+}
+
 export function getWeeklyPlanInsight(plan: WeeklyPlan, logs: TrainingLog[], checkin: DailyCheckin, referenceDate = new Date()) {
   const completed = plan.sessions.filter((session) => session.completed).length;
   const loggedThisWeek = logs.filter((log) => log.date >= plan.weekStart && log.date <= dayKey(referenceDate)).length;

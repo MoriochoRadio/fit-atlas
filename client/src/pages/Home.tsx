@@ -10,7 +10,7 @@ import React, { useEffect, useMemo, useState } from "react";
 import { toast } from "sonner";
 import { getCalendarDays, getFourWeekTrends, getPersonalRecords, getTotalMinutes, getTotalVolume, getWeeklyVolume, type TrainingLog } from "@/lib/trainingMetrics";
 import { getPersonalizedProgram } from "@/lib/personalization";
-import { downloadBackup, parseBackup, readAxisVisibility, readLocalCheckin, readLocalExplorePreferences, readLocalProfile, readLocalWeeklyPlan, readTrainingLogs, saveAxisVisibility, saveLocalCheckin, saveLocalExplorePreferences, saveLocalProfile, saveLocalWeeklyPlan, saveTrainingLogs } from "@/lib/localStore";
+import { downloadBackup, parseBackup, readAxisVisibility, readLocalCheckin, readLocalExplorePreferences, readLocalProfile, readLocalRomStatusHistory, readLocalWeeklyPlan, readTrainingLogs, saveAxisVisibility, saveLocalCheckin, saveLocalExplorePreferences, saveLocalProfile, saveLocalRomStatusHistory, saveLocalWeeklyPlan, saveTrainingLogs } from "@/lib/localStore";
 import { recordRecentExercise, toggleFavoriteExercise, type ExplorePreferences } from "@/lib/explorePreferences";
 import { filterExercises } from "@/lib/exerciseFilters";
 import { sortExercises, type ExerciseSort } from "@/lib/exerciseSorting";
@@ -23,12 +23,13 @@ import { getExerciseTextGuide, type ExerciseTextGuide } from "@/lib/exerciseText
 import { getAsciiDiagramPresentation, getAsciiMovementDiagram } from "@/lib/asciiMovementDiagrams";
 import { getRomRecommendation } from "@/lib/romRecommendations";
 import { getRomReadinessRecommendation } from "@/lib/romReadiness";
+import { createRomStatusRecord, getCurrentWeekRomStatus, mergeRomStatusHistory, type RomStatusRecord } from "@/lib/romStatusHistory";
 import { getExerciseEvidenceScope } from "@/lib/exerciseEvidence";
 import { MovementVisualGuide, RecoveryPathwayPanel, RecoveryStageGrid, SeatedRecoveryPanel, WellnessDetailPanel } from "@/components/GuidancePanels";
 import { getRoutineTemplate, type RoutineGoal } from "@/lib/routineTemplates";
 import { getCheckinRecommendation, type DailyCheckin } from "@/lib/dailyCheckin";
 import { buildSession, type SessionEnvironment, type SessionGoal, type SessionDuration } from "@/lib/sessionBuilder";
-import { addDesignedSession, completeWeeklySessionWithRecord, getWeeklyPlanInsight, setWeeklyGoal, toggleWeeklySession, type WeeklyPlan } from "@/lib/weeklyPlan";
+import { addDesignedSession, addRomAlternativeToWeeklyPlan, completeWeeklySessionWithRecord, getWeeklyPlanInsight, setWeeklyGoal, toggleWeeklySession, type WeeklyPlan } from "@/lib/weeklyPlan";
 import type { RecoveryContext, SeatedRecoveryDuration } from "@/lib/seatedRecovery";
 import { preferredCategoryOptions, preferredEnvironmentOptions, preferredEquipmentOptions } from "@/lib/profilePreferences";
 
@@ -36,7 +37,7 @@ type LogEntry = TrainingLog;
 type CinematicScene = "home" | "explore" | "anatomy" | "progress" | "wellness";
 type RomFilter = "전체" | "작음" | "보통" | "큼";
 type RomRecommendationTarget = { exerciseName: string; presentation: ReturnType<typeof getAsciiDiagramPresentation> };
-const AsciiInteractionContext = React.createContext<{ showAxis: boolean; pendingExerciseName: string | null; clearPendingExercise: () => void; onOpenRom: (exerciseName: string, presentation: ReturnType<typeof getAsciiDiagramPresentation>) => void; onExploreAlternative: (exerciseName: string) => void }>({ showAxis: true, pendingExerciseName: null, clearPendingExercise: () => undefined, onOpenRom: () => undefined, onExploreAlternative: () => undefined });
+const AsciiInteractionContext = React.createContext<{ showAxis: boolean; pendingExerciseName: string | null; clearPendingExercise: () => void; onOpenRom: (exerciseName: string, presentation: ReturnType<typeof getAsciiDiagramPresentation>) => void; onExploreAlternative: (exerciseName: string) => void; onAddToTodayRoutine: (exerciseName: string) => void }>({ showAxis: true, pendingExerciseName: null, clearPendingExercise: () => undefined, onOpenRom: () => undefined, onExploreAlternative: () => undefined, onAddToTodayRoutine: () => undefined });
 
 const categories = preferredCategoryOptions;
 const goalCopy = { 근력증가: "strength", 체력증가: "endurance", 다이어트: "weight_management" } as const;
@@ -99,6 +100,7 @@ export default function Home() {
     const today = new Date().toISOString().slice(0, 10);
     return saved && saved.date === today ? saved : { ...(saved ?? { energy: 3, sleep: 3, stress: 3, pain: 1 }), date: today };
   });
+  const [romStatusHistory, setRomStatusHistory] = useState<RomStatusRecord[]>(() => typeof window === "undefined" ? [] : readLocalRomStatusHistory());
 
   useEffect(() => {
     if (!saveTrainingLogs(logs)) setStorageUnavailable(true);
@@ -117,7 +119,16 @@ export default function Home() {
 
   useEffect(() => {
     if (!saveLocalCheckin(checkin)) setStorageUnavailable(true);
+    setRomStatusHistory((current) => mergeRomStatusHistory(current, createRomStatusRecord(checkin)));
   }, [checkin]);
+
+  useEffect(() => {
+    document.querySelectorAll<HTMLInputElement>(".checkin-controls input[type='range']").forEach((input) => { input.step = "0.5"; });
+  }, []);
+
+  useEffect(() => {
+    if (!saveLocalRomStatusHistory(romStatusHistory)) setStorageUnavailable(true);
+  }, [romStatusHistory]);
 
   useEffect(() => {
     if (!saveLocalWeeklyPlan(weeklyPlan)) setStorageUnavailable(true);
@@ -199,6 +210,7 @@ export default function Home() {
   const insights = useMemo(() => getInsightSummary(logs, new Date(), catalogExercises), [catalogExercises, logs]);
   const checkinRecommendation = useMemo(() => getCheckinRecommendation(checkin), [checkin]);
   const romReadiness = useMemo(() => getRomReadinessRecommendation(checkin), [checkin]);
+  const weekRomStatus = useMemo(() => getCurrentWeekRomStatus(romStatusHistory), [romStatusHistory]);
   const sessionPlan = useMemo(() => buildSession({ goal: sessionGoal, environment: sessionEnvironment, duration: sessionDuration, checkin }), [checkin, sessionDuration, sessionEnvironment, sessionGoal]);
   const weeklyPlanInsight = useMemo(() => getWeeklyPlanInsight(weeklyPlan, logs, checkin), [checkin, logs, weeklyPlan]);
 
@@ -411,7 +423,7 @@ export default function Home() {
 
 
   return (
-    <AsciiInteractionContext.Provider value={{ showAxis: axisVisible, pendingExerciseName, clearPendingExercise: () => setPendingExerciseName(null), onOpenRom: (exerciseName, presentation) => setRomRecommendationTarget({ exerciseName, presentation }), onExploreAlternative: (exerciseName) => { setRomRecommendationTarget(null); setKeyword(exerciseName); setCategory("전체"); setFocus("전체"); setRegionFilter("전체"); setDifficulty("전체"); setEquipment("전체"); setRomFilter("전체"); setPendingExerciseName(exerciseName); setActiveScene("explore"); window.setTimeout(() => document.getElementById("explore")?.scrollIntoView({ behavior: "smooth" }), 0); } }}><div className={`site-shell scene-${activeScene}`}>
+    <AsciiInteractionContext.Provider value={{ showAxis: axisVisible, pendingExerciseName, clearPendingExercise: () => setPendingExerciseName(null), onOpenRom: (exerciseName, presentation) => setRomRecommendationTarget({ exerciseName, presentation }), onExploreAlternative: (exerciseName) => { setRomRecommendationTarget(null); setKeyword(exerciseName); setCategory("전체"); setFocus("전체"); setRegionFilter("전체"); setDifficulty("전체"); setEquipment("전체"); setRomFilter("전체"); setPendingExerciseName(exerciseName); setActiveScene("explore"); window.setTimeout(() => document.getElementById("explore")?.scrollIntoView({ behavior: "smooth" }), 0); }, onAddToTodayRoutine: (exerciseName) => { setWeeklyPlan((current) => addRomAlternativeToWeeklyPlan(current, exerciseName)); toast.success(`${exerciseName}을 오늘의 운동 루틴에 추가했습니다.`); } }}><div className={`site-shell scene-${activeScene}`}>
       <div className="cinematic-backdrop" aria-hidden="true"><span className="cinematic-orb orb-one" /><span className="cinematic-orb orb-two" /><span className="cinematic-gridlines" /><span className="cinematic-hud">SCENE / {activeScene.toUpperCase()}</span></div>
       <header className="topbar">
         <a className="brand" href="#top" aria-label="Fit Atlas 홈"><span className="brand-mark"><Activity size={17} /></span><span>FIT ATLAS</span></a>
@@ -474,6 +486,7 @@ export default function Home() {
 
         <section id="progress" className="progress-section section-pad">
           <SectionTitle eyebrow="TRAINING LOG" title="기록은 감이 아닌 방향을 만듭니다." description="종목·세트·횟수·중량·시간·강도를 기록하면 누적 볼륨과 개인 최고 기록을 확인할 수 있습니다." action={<button className="dark-button" onClick={() => setLogOpen(true)}><Plus size={16} /> 새 기록</button>} />
+          <RomStatusDashboard days={weekRomStatus} />
           <div className="metric-row"><Metric icon={<Dumbbell size={18} />} label="누적 볼륨" value={logs.length ? `${totalVolume.toLocaleString()} kg` : "—"} caption={logs.length ? "기록된 세트 기준" : "기록을 추가해 시작"} /><Metric icon={<Timer size={18} />} label="운동 시간" value={logs.length ? `${totalMinutes}분` : "—"} caption={logs.length ? "누적 기록 기준" : "아직 기록 없음"} /><Metric icon={<Activity size={18} />} label="세션 수" value={`${logs.length}`} caption="기록된 운동" /><Metric icon={<CalendarDays size={18} />} label="이번 주" value={`${insights.load.sessions}`} caption="최근 7일 기록" /></div>
           <div className="insight-row"><article><p className="small-label">TRAINING LOAD</p><h3>{insights.load.load ? `${insights.load.load} 부하점수` : "기록 대기"}</h3><p>{insights.loadLabel}</p></article><article><p className="small-label">CONSISTENCY</p><h3>{insights.consistency.activeDays ? `주 평균 ${insights.consistency.weeklyAverage}일` : "습관 만들기"}</h3><p>{insights.consistencyLabel}</p></article><article><p className="small-label">BODY BALANCE</p><h3>{insights.balance[0]?.region ?? "부위 분석 대기"}</h3><p>{insights.balanceLabel}</p>{insights.balance.length > 0 && <div className="balance-tags">{insights.balance.slice(0, 4).map((item) => <span key={item.region}>{item.region}</span>)}</div>}</article></div>
           <div className="aerobic-trend-row"><article><p className="small-label">AEROBIC INTENSITY · RPE</p><h3>{insights.aerobic.band}{insights.aerobic.sessions ? ` · RPE ${insights.aerobic.averageRpe}` : ""}</h3><p>{insights.aerobic.label}</p></article><article><p className="small-label">EXERCISE TREND · 7 DAYS</p><h3>{insights.trend.direction} · {insights.prTrend.direction}</h3><p>{insights.trend.label}<br />{insights.streak.label} · {insights.prTrend.label}</p></article></div>
@@ -526,11 +539,17 @@ function TextExerciseGuide({ guide, exerciseName }: { guide: ExerciseTextGuide; 
 
 function RomRecommendationDialog({ target, onClose }: { target: RomRecommendationTarget; onClose: () => void }) {
   const recommendation = getRomRecommendation(target.presentation);
-  const { onExploreAlternative } = React.useContext(AsciiInteractionContext);
-  return <div className="modal-backdrop" role="presentation" onMouseDown={onClose}><section className="log-modal rom-recommendation-modal" role="dialog" aria-modal="true" aria-labelledby="rom-recommendation-title" onMouseDown={(event) => event.stopPropagation()}><div className="modal-head"><div><p className="eyebrow">ROM ADJUSTMENT GUIDE</p><h2 id="rom-recommendation-title">{target.exerciseName} · {recommendation.title}</h2></div><button onClick={onClose} className="icon-button" aria-label="닫기"><X size={19} /></button></div><p className="modal-description">{recommendation.intro}</p><div className="rom-recommendation-grid"><article><p className="small-label">가볍게 풀기</p><ul>{recommendation.stretch.map((item) => <li key={item}>{item}</li>)}</ul></article><article><p className="small-label">대체 운동 방식</p><ul>{recommendation.alternatives.map((item) => <li key={item.name}><button className="alternative-exercise-link" onClick={() => onExploreAlternative(item.name)}><b>{item.name}</b><span>{item.rationale}</span><ArrowRight size={14} /></button></li>)}</ul></article></div><p className="text-guide-stop">{recommendation.caution}</p></section></div>;
+  const { onAddToTodayRoutine, onExploreAlternative } = React.useContext(AsciiInteractionContext);
+  return <div className="modal-backdrop" role="presentation" onMouseDown={onClose}><section className="log-modal rom-recommendation-modal" role="dialog" aria-modal="true" aria-labelledby="rom-recommendation-title" onMouseDown={(event) => event.stopPropagation()}><div className="modal-head"><div><p className="eyebrow">ROM ADJUSTMENT GUIDE</p><h2 id="rom-recommendation-title">{target.exerciseName} · {recommendation.title}</h2></div><button onClick={onClose} className="icon-button" aria-label="닫기"><X size={19} /></button></div><p className="modal-description">{recommendation.intro}</p><div className="rom-recommendation-grid"><article><p className="small-label">가볍게 풀기</p><ul>{recommendation.stretch.map((item) => <li key={item}>{item}</li>)}</ul></article><article><p className="small-label">대체 운동 방식</p><ul>{recommendation.alternatives.map((item) => <li key={item.name}><div className="alternative-exercise-actions"><button className="alternative-exercise-link" onClick={() => onExploreAlternative(item.name)}><b>{item.name}</b><span>{item.rationale}</span><ArrowRight size={14} /></button><button className="alternative-routine-add" onClick={() => onAddToTodayRoutine(item.name)}><Plus size={13} /> 오늘 루틴</button></div></li>)}</ul></article></div><p className="text-guide-stop">{recommendation.caution}</p></section></div>;
 }
 
 function Metric({ icon, label, value, caption }: { icon: React.ReactNode; label: string; value: string; caption: string }) { return <div className="metric-card"><span className="metric-icon">{icon}</span><p>{label}</p><b>{value}</b><small>{caption}</small></div>; }
+
+function RomStatusDashboard({ days }: { days: ReturnType<typeof getCurrentWeekRomStatus> }) {
+  const recorded = days.filter((day) => day.record);
+  const averagePain = recorded.length ? (recorded.reduce((sum, day) => sum + (day.record?.pain ?? 0), 0) / recorded.length).toFixed(1) : "—";
+  return <section className="rom-status-dashboard" aria-label="주간 피로 통증 및 추천 ROM 대시보드"><div className="rom-status-head"><div><p className="small-label">WEEKLY READINESS · LOCAL ONLY</p><h3>이번 주 피로·통증·ROM 흐름</h3><p>체크인한 날짜만 표시합니다. 빈 칸은 입력이 없는 날이며, 점수는 진단이 아닌 오늘의 운동 조절 참고용입니다.</p></div><div><b>{recorded.length}/7</b><span>일 입력 · 평균 통증 {averagePain}</span></div></div><div className="rom-status-week">{days.map((day) => <article key={day.date} className={day.record ? `has-status rom-${day.record.recommendedRom}` : ""}><span>{day.label}</span>{day.record ? <><div className="rom-status-bars" aria-label={`${day.label} 에너지 ${day.record.energy}, 통증 ${day.record.pain}`}><i className="energy" style={{ height: `${day.record.energy * 20}%` }} /><i className="pain" style={{ height: `${day.record.pain * 20}%` }} /></div><b>{day.record.recommendedRom}</b><small>E {day.record.energy} · P {day.record.pain}</small></> : <p>입력<br />대기</p>}</article>)}</div><div className="rom-status-legend"><span><i className="energy" />에너지</span><span><i className="pain" />통증</span><span>ROM · 작음 / 보통 / 회복</span></div></section>;
+}
 
 function WeeklyPlanPanel({ plan, insight, onGoal, onToggle, onStartLog, onAdd }: { plan: WeeklyPlan; insight: ReturnType<typeof getWeeklyPlanInsight>; onGoal: (goal: WeeklyPlan["goal"]) => void; onToggle: (sessionId: string) => void; onStartLog: (session: WeeklyPlan["sessions"][number]) => void; onAdd: () => void }) {
   const completion = insight.total ? Math.round((insight.completed / insight.total) * 100) : 0;

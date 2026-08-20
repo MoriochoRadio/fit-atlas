@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { addDesignedSession, completeWeeklySessionWithRecord, createWeeklyPlan, getWeeklyPlanInsight, getWeekStart, readWeeklyPlan, setWeeklyGoal, toggleWeeklySession } from "./weeklyPlan";
+import { addDesignedSession, addRomAlternativeToWeeklyPlan, completeWeeklySessionWithRecord, createWeeklyPlan, getWeeklyPlanInsight, getWeekStart, readWeeklyPlan, setWeeklyGoal, toggleWeeklySession } from "./weeklyPlan";
 
 const referenceDate = new Date("2026-08-14T12:00:00Z");
 const checkin = { date: "2026-08-14", energy: 4, sleep: 4, stress: 2, pain: 1 } as const;
@@ -31,5 +31,12 @@ describe("weekly plan", () => {
     const withDesigner = addDesignedSession(plan, { title: "15분 전신 균형 세션", summary: "", adjustment: "", blocks: [], safetyNote: "" }, "all_round", "home", 15, referenceDate);
     expect(withDesigner.sessions.at(-1)).toMatchObject({ weekday: "금", addedFromDesigner: true });
     expect(getWeeklyPlanInsight(withDesigner, [], { ...checkin, pain: 4 }, referenceDate).label).toContain("통증 신호");
+  });
+
+  it("adds a ROM alternative to today’s routine once without duplicating it", () => {
+    const plan = createWeeklyPlan("all_round", referenceDate);
+    const withAlternative = addRomAlternativeToWeeklyPlan(plan, "데드버그", referenceDate);
+    expect(withAlternative.sessions.at(-1)).toMatchObject({ label: "오늘의 ROM 조절 · 데드버그", weekday: "금", duration: 15 });
+    expect(addRomAlternativeToWeeklyPlan(withAlternative, "데드버그", referenceDate).sessions).toHaveLength(withAlternative.sessions.length);
   });
 });

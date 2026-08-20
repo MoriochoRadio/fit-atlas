@@ -25,7 +25,7 @@ export function readDailyCheckin(serialized: string | null): DailyCheckin {
   try {
     const value = JSON.parse(serialized ?? "null") as Partial<DailyCheckin> | null;
     if (!value || typeof value.date !== "string") return defaultDailyCheckin;
-    const safe = (number: unknown, fallback: number) => typeof number === "number" && Number.isInteger(number) && number >= 1 && number <= 5 ? number : fallback;
+    const safe = (number: unknown, fallback: number) => typeof number === "number" && Number.isFinite(number) && Math.round(number * 2) === number * 2 && number >= 1 && number <= 5 ? number : fallback;
     return { date: value.date, energy: safe(value.energy, 3), sleep: safe(value.sleep, 3), stress: safe(value.stress, 3), pain: safe(value.pain, 1) };
   } catch {
     return defaultDailyCheckin;

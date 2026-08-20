@@ -4,6 +4,7 @@ import type { TrainingLog } from "./trainingMetrics";
 import { defaultDailyCheckin, readDailyCheckin, type DailyCheckin } from "./dailyCheckin";
 import { createWeeklyPlan, readWeeklyPlan, type WeeklyPlan } from "./weeklyPlan";
 import { defaultExplorePreferences, readExplorePreferences, type ExplorePreferences } from "./explorePreferences";
+import { readRomStatusHistory, type RomStatusRecord } from "./romStatusHistory";
 
 const LOGS_KEY = "fit-atlas-logs";
 const PROFILE_KEY = "fit-atlas-profile";
@@ -11,6 +12,7 @@ const CHECKIN_KEY = "fit-atlas-daily-checkin";
 const WEEKLY_PLAN_KEY = "fit-atlas-weekly-plan";
 const EXPLORE_PREFERENCES_KEY = "fit-atlas-explore-preferences";
 const AXIS_VISIBILITY_KEY = "fit-atlas-axis-visibility";
+const ROM_STATUS_HISTORY_KEY = "fit-atlas-rom-status-history";
 
 function persistLocalValue(key: string, value: unknown) {
   try {
@@ -87,6 +89,14 @@ export function readAxisVisibility() {
 
 export function saveAxisVisibility(visible: boolean) {
   return persistLocalValue(AXIS_VISIBILITY_KEY, visible);
+}
+
+export function readLocalRomStatusHistory() {
+  return typeof window === "undefined" ? [] : readRomStatusHistory(window.localStorage.getItem(ROM_STATUS_HISTORY_KEY));
+}
+
+export function saveLocalRomStatusHistory(records: RomStatusRecord[]) {
+  return persistLocalValue(ROM_STATUS_HISTORY_KEY, records);
 }
 
 export function createBackup(logs: TrainingLog[], profile: ProfilePreferences, checkin: DailyCheckin = defaultDailyCheckin, weeklyPlan: WeeklyPlan = createWeeklyPlan(), explorePreferences: ExplorePreferences = defaultExplorePreferences): FitAtlasBackup {

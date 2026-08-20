@@ -155,6 +155,21 @@ describe("Home recovery alternative flow", () => {
     expect(within(alternativeCard!).getByText("읽으며 따라 하는 자세 지도")).toBeTruthy();
   });
 
+  it("adds a ROM alternative to today’s routine and reflects half-step check-ins in the weekly dashboard", async () => {
+    render(createElement(Home));
+    fireEvent.change(screen.getByLabelText("운동 검색"), { target: { value: "맨몸 스쿼트" } });
+    await waitFor(() => expect(screen.getByRole("heading", { name: "맨몸 스쿼트" })).toBeTruthy());
+    const card = screen.getByRole("heading", { name: "맨몸 스쿼트" }).closest("article");
+    fireEvent.click(within(card!).getByRole("button", { name: "자세·근거 보기" }));
+    fireEvent.click(within(card!).getByRole("button", { name: "ROM · 큼" }));
+    const routineAdd = screen.getAllByRole("button", { name: /오늘 루틴/ }).find((element) => element.className.includes("alternative-routine-add"));
+    expect(routineAdd).toBeTruthy();
+    fireEvent.click(routineAdd!);
+    expect(screen.getByText("오늘의 ROM 조절 · 리버스 런지")).toBeTruthy();
+    fireEvent.change(screen.getByRole("slider", { name: /통증/ }), { target: { value: "2.5" } });
+    expect(screen.getByLabelText("주간 피로 통증 및 추천 ROM 대시보드")).toBeTruthy();
+  });
+
   it("filters the library by ROM size and lets the top control hide joint axes", () => {
     render(createElement(Home));
     const axisToggle = screen.getByRole("button", { name: "중심축 표시" });
