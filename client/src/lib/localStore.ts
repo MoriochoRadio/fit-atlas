@@ -15,6 +15,7 @@ const AXIS_VISIBILITY_KEY = "fit-atlas-axis-visibility";
 const ROM_STATUS_HISTORY_KEY = "fit-atlas-rom-status-history";
 const ATLAS_THEME_KEY = "fit-atlas-atlas-theme";
 const ATLAS_INTERACTION_KEY = "fit-atlas-atlas-interaction";
+const SCENE_EXPERIENCE_KEY = "fit-atlas-scene-experience";
 
 export const atlasThemes = ["lime", "ocean", "coral", "plum"] as const;
 export type AtlasTheme = (typeof atlasThemes)[number];
@@ -27,6 +28,10 @@ export type AtlasBlockEdit = { label: string; minutes: number; items: string[] }
 export type AtlasRecentEquipmentSession = { equipment: HeroEquipment; resistance: number; startedAt: number };
 export type AtlasInteractionPreferences = { motionSpeed: AtlasMotionSpeed; blockEdits: Record<string, AtlasBlockEdit>; heroEquipment: HeroEquipment; resistance: number; recentEquipmentSession: AtlasRecentEquipmentSession | null };
 export const defaultAtlasInteractionPreferences: AtlasInteractionPreferences = { motionSpeed: "normal", blockEdits: {}, heroEquipment: "cable", resistance: 54, recentEquipmentSession: null };
+export const cinematicScenes = ["home", "session", "explore", "anatomy", "progress", "wellness"] as const;
+export type CinematicScenePreference = (typeof cinematicScenes)[number];
+export type SceneExperiencePreferences = { soundEnabled: boolean; lastScene: CinematicScenePreference };
+export const defaultSceneExperiencePreferences: SceneExperiencePreferences = { soundEnabled: true, lastScene: "home" };
 
 function persistLocalValue(key: string, value: unknown) {
   try {
@@ -148,6 +153,22 @@ export function readAtlasInteractionPreferences(): AtlasInteractionPreferences {
 
 export function saveAtlasInteractionPreferences(preferences: AtlasInteractionPreferences) {
   return persistLocalValue(ATLAS_INTERACTION_KEY, preferences);
+}
+
+export function readSceneExperiencePreferences(): SceneExperiencePreferences {
+  try {
+    const value = JSON.parse(window.localStorage.getItem(SCENE_EXPERIENCE_KEY) ?? "{}");
+    return {
+      soundEnabled: typeof value?.soundEnabled === "boolean" ? value.soundEnabled : defaultSceneExperiencePreferences.soundEnabled,
+      lastScene: cinematicScenes.includes(value?.lastScene) ? value.lastScene : defaultSceneExperiencePreferences.lastScene,
+    };
+  } catch {
+    return defaultSceneExperiencePreferences;
+  }
+}
+
+export function saveSceneExperiencePreferences(preferences: SceneExperiencePreferences) {
+  return persistLocalValue(SCENE_EXPERIENCE_KEY, preferences);
 }
 
 export function readLocalRomStatusHistory() {

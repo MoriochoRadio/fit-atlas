@@ -199,6 +199,47 @@ describe("Home recovery alternative flow", () => {
     expect(screen.getByRole("heading", { name: "움직임을 지식으로 익히세요." })).toBeTruthy();
   });
 
+  it("toggles scene transition sound from the dedicated settings dialog", async () => {
+    render(createElement(Home));
+    const topbar = document.querySelector(".topbar");
+    fireEvent.click(within(topbar as HTMLElement).getByRole("button", { name: "장면 설정" }));
+    const dialog = await waitFor(() => screen.getByRole("dialog", { name: /장면 전환 설정/ }));
+    const soundToggle = within(dialog).getByRole("checkbox", { name: /장면 전환 효과음/ }) as HTMLInputElement;
+    expect(soundToggle.checked).toBe(true);
+    fireEvent.click(soundToggle);
+    expect(soundToggle.checked).toBe(false);
+    expect(JSON.parse(window.localStorage.getItem("fit-atlas-scene-experience") ?? "{}")).toMatchObject({ soundEnabled: false });
+  });
+
+  it("restores the last scene when the app opens without an explicit scene hash", async () => {
+    const firstVisit = render(createElement(Home));
+    const primaryNav = screen.getByRole("navigation", { name: "주요 메뉴" });
+    fireEvent.click(within(primaryNav).getByRole("link", { name: "기록 분석" }));
+    await waitFor(() => expect(document.querySelector(".site-shell")?.classList.contains("scene-progress")).toBe(true));
+    firstVisit.unmount();
+    window.history.replaceState(null, "", "/");
+
+    render(createElement(Home));
+    await waitFor(() => expect(document.querySelector(".site-shell")?.classList.contains("scene-progress")).toBe(true));
+  });
+
+  it("saves, applies, and deletes a named exercise filter preset", async () => {
+    render(createElement(Home));
+    const primaryNav = screen.getByRole("navigation", { name: "주요 메뉴" });
+    fireEvent.click(within(primaryNav).getByRole("link", { name: "운동 탐색" }));
+    await waitFor(() => expect(document.querySelector(".site-shell")?.classList.contains("scene-explore")).toBe(true));
+    fireEvent.click(screen.getByRole("button", { name: "맨몸운동" }));
+    fireEvent.change(screen.getByLabelText("필터 프리셋 이름"), { target: { value: "집 운동" } });
+    fireEvent.click(screen.getByRole("button", { name: "현재 조건 저장" }));
+    const preset = await waitFor(() => screen.getAllByRole("button", { name: /집 운동/ }).find((button) => !button.getAttribute("aria-label")));
+    expect(preset).toBeTruthy();
+    fireEvent.click(screen.getByRole("button", { name: "러닝" }));
+    fireEvent.click(preset!);
+    expect(screen.getByRole("button", { name: "맨몸운동" }).getAttribute("aria-pressed")).toBe("true");
+    fireEvent.click(screen.getByRole("button", { name: "집 운동 프리셋 삭제" }));
+    expect(screen.queryByRole("button", { name: "집 운동 프리셋 삭제" })).toBeNull();
+  });
+
   it("restores a recently started equipment session and resumes its matching goal", async () => {
     render(createElement(Home));
     const cableMachine = await waitFor(() => screen.getByLabelText("직접 조작 가능한 3D 케이블 운동 장비"));

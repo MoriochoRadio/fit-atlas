@@ -4,13 +4,13 @@ import type { BodyRegion, Exercise, ExerciseDetail } from "@/lib/catalogTypes";
 import { aerobicIntervalTemplates } from "@/lib/aerobicIntervals";
 import { lowNoiseCircuitTemplates } from "@/lib/lowNoiseCircuits";
 import { lifeStageGuides, startChecklist } from "@/lib/lifeStageGuidance";
-import { Activity, ArrowRight, BarChart3, BookOpen, Brain, CalendarDays, Check, ChevronDown, ChevronRight, Download, Dumbbell, HeartPulse, History, Loader2, Menu, Plus, Search, ShieldCheck, Sparkles, Star, Timer, X } from "lucide-react";
+import { Activity, ArrowRight, BarChart3, BookOpen, Brain, CalendarDays, Check, ChevronDown, ChevronRight, Dumbbell, HeartPulse, History, Loader2, Menu, Plus, Search, ShieldCheck, Sparkles, Star, Timer, X } from "lucide-react";
 import React, { lazy, Suspense, useEffect, useMemo, useRef, useState } from "react";
 import { toast } from "sonner";
 import { getCalendarDays, getFourWeekTrends, getPersonalRecords, getTotalMinutes, getTotalVolume, getWeeklyVolume, type TrainingLog } from "@/lib/trainingMetrics";
 import { getPersonalizedProgram } from "@/lib/personalization";
-import { atlasMotionSpeeds, atlasThemes, defaultAtlasInteractionPreferences, defaultAtlasTheme, downloadBackup, parseBackup, readAtlasInteractionPreferences, readAtlasTheme, readAxisVisibility, readLocalCheckin, readLocalExplorePreferences, readLocalProfile, readLocalRomStatusHistory, readLocalWeeklyPlan, readTrainingLogs, saveAtlasInteractionPreferences, saveAtlasTheme, saveAxisVisibility, saveLocalCheckin, saveLocalExplorePreferences, saveLocalProfile, saveLocalRomStatusHistory, saveLocalWeeklyPlan, saveTrainingLogs, type AtlasMotionSpeed, type AtlasTheme, type HeroEquipment } from "@/lib/localStore";
-import { recordRecentExercise, toggleFavoriteExercise, type ExplorePreferences } from "@/lib/explorePreferences";
+import { atlasMotionSpeeds, atlasThemes, defaultAtlasInteractionPreferences, defaultAtlasTheme, defaultSceneExperiencePreferences, downloadBackup, parseBackup, readAtlasInteractionPreferences, readAtlasTheme, readAxisVisibility, readLocalCheckin, readLocalExplorePreferences, readLocalProfile, readLocalRomStatusHistory, readLocalWeeklyPlan, readSceneExperiencePreferences, readTrainingLogs, saveAtlasInteractionPreferences, saveAtlasTheme, saveAxisVisibility, saveLocalCheckin, saveLocalExplorePreferences, saveLocalProfile, saveLocalRomStatusHistory, saveLocalWeeklyPlan, saveSceneExperiencePreferences, saveTrainingLogs, type AtlasMotionSpeed, type AtlasTheme, type HeroEquipment, type SceneExperiencePreferences } from "@/lib/localStore";
+import { defaultExplorePreferences, recordRecentExercise, removeExploreFilterPreset, saveExploreFilterPreset, toggleFavoriteExercise, type ExploreFilterPreset, type ExplorePreferences } from "@/lib/explorePreferences";
 import { filterExercises } from "@/lib/exerciseFilters";
 import { sortExercises, type ExerciseSort } from "@/lib/exerciseSorting";
 import { recoveryProtocols, recoveryStageGuides } from "@/lib/recoveryProtocols";
@@ -34,7 +34,7 @@ import { preferredCategoryOptions, preferredEnvironmentOptions, preferredEquipme
 
 type LogEntry = TrainingLog;
 type CinematicScene = "home" | "session" | "explore" | "anatomy" | "progress" | "wellness";
-const sceneByHash: Record<string, CinematicScene> = { "#session": "session", "#explore": "explore", "#anatomy": "anatomy", "#progress": "progress", "#wellness": "wellness" };
+const sceneByHash: Record<string, CinematicScene> = { "#top": "home", "#session": "session", "#explore": "explore", "#anatomy": "anatomy", "#progress": "progress", "#wellness": "wellness" };
 type RomFilter = "전체" | "작음" | "보통" | "큼";
 type RomRecommendationTarget = { exerciseName: string; presentation: ReturnType<typeof getAsciiDiagramPresentation> };
 type AnatomyMuscleRoles = { primary: BodyRegion[]; supporting: BodyRegion[] } | null;
@@ -52,6 +52,15 @@ const HeroRecentEquipmentResume = (props: React.ComponentProps<typeof LazyHeroRe
 const LazyHeroAtlasControl = lazy(() => import("@/components/HeroAtlasControl").then((module) => ({ default: module.HeroAtlasControl })));
 type HeroAtlasControlProps = { theme: AtlasTheme; motionSpeed: AtlasMotionSpeed; onTheme: (theme: AtlasTheme) => void; onMotionSpeed: (speed: AtlasMotionSpeed) => void; performanceText: string; feedback: string };
 const HeroAtlasControl = (props: HeroAtlasControlProps) => <Suspense fallback={<div className="atlas-theme-control" role="status">아틀라스 제어를 준비하는 중</div>}><LazyHeroAtlasControl {...props} /></Suspense>;
+const LazyExplorePresetPanel = lazy(() => import("@/components/ExplorePresetPanel").then((module) => ({ default: module.ExplorePresetPanel })));
+type ExplorePresetPanelProps = React.ComponentProps<typeof LazyExplorePresetPanel>;
+const ExplorePresetPanel = (props: ExplorePresetPanelProps) => <Suspense fallback={<div className="explore-preset-panel" role="status">필터 프리셋을 준비하는 중</div>}><LazyExplorePresetPanel {...props} /></Suspense>;
+const LazySceneExperienceDialog = lazy(() => import("@/components/SceneExperienceDialog").then((module) => ({ default: module.SceneExperienceDialog })));
+type SceneExperienceDialogProps = React.ComponentProps<typeof LazySceneExperienceDialog>;
+const SceneExperienceDialog = (props: SceneExperienceDialogProps) => <Suspense fallback={null}><LazySceneExperienceDialog {...props} /></Suspense>;
+const LazyRomStatusDashboard = lazy(() => import("@/components/RomStatusDashboard").then((module) => ({ default: module.RomStatusDashboard })));
+type RomStatusDashboardProps = React.ComponentProps<typeof LazyRomStatusDashboard>;
+const RomStatusDashboard = (props: RomStatusDashboardProps) => <Suspense fallback={<div className="rom-status-dashboard" role="status">주간 상태 흐름을 준비하는 중</div>}><LazyRomStatusDashboard {...props} /></Suspense>;
 const goalCopy = { 근력증가: "strength", 체력증가: "endurance", 다이어트: "weight_management" } as const;
 const catalogPageSize = catalogSummary.pageSize;
 const initialVisibleExerciseCount = 18;
@@ -74,6 +83,30 @@ const equipmentSessionSetup: Record<HeroEquipment, { goal: SessionGoal; label: s
 
 function SectionTitle({ eyebrow, title, description, action }: { eyebrow: string; title: string; description: string; action?: React.ReactNode }) {
   return <div className="section-heading"><div><p className="eyebrow">{eyebrow}</p><h2>{title}</h2><p className="section-description">{description}</p></div>{action}</div>;
+}
+
+function playSceneTransitionSound() {
+  if (typeof window === "undefined") return;
+  const AudioContextConstructor = window.AudioContext ?? (window as Window & { webkitAudioContext?: typeof AudioContext }).webkitAudioContext;
+  if (!AudioContextConstructor) return;
+  try {
+    const context = new AudioContextConstructor();
+    const oscillator = context.createOscillator();
+    const gain = context.createGain();
+    const now = context.currentTime;
+    oscillator.type = "sine";
+    oscillator.frequency.setValueAtTime(330, now);
+    oscillator.frequency.exponentialRampToValueAtTime(520, now + .16);
+    gain.gain.setValueAtTime(.0001, now);
+    gain.gain.exponentialRampToValueAtTime(.045, now + .025);
+    gain.gain.exponentialRampToValueAtTime(.0001, now + .21);
+    oscillator.connect(gain).connect(context.destination);
+    oscillator.start(now);
+    oscillator.stop(now + .22);
+    window.setTimeout(() => void context.close(), 280);
+  } catch {
+    // Audio output is optional and must never block scene navigation.
+  }
 }
 
 export default function Home() {
@@ -99,7 +132,8 @@ export default function Home() {
   const [loadedCatalogPages, setLoadedCatalogPages] = useState(1);
   const [visibleExerciseCount, setVisibleExerciseCount] = useState<number>(initialVisibleExerciseCount);
   const [catalogLoading, setCatalogLoading] = useState(false);
-  const [explorePreferences, setExplorePreferences] = useState<ExplorePreferences>(() => typeof window === "undefined" ? { favoriteExerciseIds: [], recentExerciseIds: [] } : readLocalExplorePreferences());
+  const [explorePreferences, setExplorePreferences] = useState<ExplorePreferences>(() => typeof window === "undefined" ? defaultExplorePreferences : readLocalExplorePreferences());
+  const [presetName, setPresetName] = useState("");
   const [savedCatalogEntries, setSavedCatalogEntries] = useState(() => getInitialCatalogEntries().filter(() => false));
   const [activeRegion, setActiveRegion] = useState<BodyRegion>("등");
   const [selectedAnatomyRegions, setSelectedAnatomyRegions] = useState<BodyRegion[]>(["등"]);
@@ -115,9 +149,14 @@ export default function Home() {
   const [logOpen, setLogOpen] = useState(false);
   const [linkedPlanSessionId, setLinkedPlanSessionId] = useState<string | null>(null);
   const [profileOpen, setProfileOpen] = useState(false);
+  const [sceneSettingsOpen, setSceneSettingsOpen] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const [storageUnavailable, setStorageUnavailable] = useState(false);
-  const [activeScene, setActiveScene] = useState<CinematicScene>("home");
+  const [sceneExperience, setSceneExperience] = useState<SceneExperiencePreferences>(() => typeof window === "undefined" ? defaultSceneExperiencePreferences : readSceneExperiencePreferences());
+  const [activeScene, setActiveScene] = useState<CinematicScene>(() => {
+    if (typeof window === "undefined") return "home";
+    return sceneByHash[window.location.hash] ?? readSceneExperiencePreferences().lastScene;
+  });
   const [logs, setLogs] = useState<LogEntry[]>(() => typeof window === "undefined" ? [] : readTrainingLogs());
   const [form, setForm] = useState(() => ({ date: new Date().toISOString().slice(0, 10), exercise: "바벨 백 스쿼트", sets: "3", reps: "8", load: "40", minutes: "35", distance: "", distanceUnit: "km" as "km" | "m", intensity: "6" }));
   const [profileForm, setProfileForm] = useState(() => typeof window === "undefined" ? readLocalProfile() : readLocalProfile());
@@ -149,7 +188,10 @@ export default function Home() {
   }, [activeScene]);
 
   useEffect(() => {
-    const syncSceneFromHash = () => setActiveScene(sceneByHash[window.location.hash] ?? "home");
+    const syncSceneFromHash = () => {
+      const hashScene = sceneByHash[window.location.hash];
+      if (hashScene) setActiveScene(hashScene);
+    };
     syncSceneFromHash();
     window.addEventListener("hashchange", syncSceneFromHash);
     return () => window.removeEventListener("hashchange", syncSceneFromHash);
@@ -195,6 +237,14 @@ export default function Home() {
     if (!saveAtlasInteractionPreferences(atlasInteraction)) setStorageUnavailable(true);
   }, [atlasInteraction]);
 
+  useEffect(() => {
+    setSceneExperience((current) => current.lastScene === activeScene ? current : { ...current, lastScene: activeScene });
+  }, [activeScene]);
+
+  useEffect(() => {
+    if (!saveSceneExperiencePreferences(sceneExperience)) setStorageUnavailable(true);
+  }, [sceneExperience]);
+
   const playAtlasTransition = (kind: "theme" | "route", feedback: string) => {
     if (atlasTransitionTimer.current) window.clearTimeout(atlasTransitionTimer.current);
     setAtlasTransition(null);
@@ -232,13 +282,14 @@ export default function Home() {
       if (event.key !== "Escape") return;
       if (logOpen) setLogOpen(false);
       if (profileOpen) setProfileOpen(false);
+      if (sceneSettingsOpen) setSceneSettingsOpen(false);
       if (menuOpen) setMenuOpen(false);
       if (romRecommendationTarget) setRomRecommendationTarget(null);
       if (activeAtlasNode !== null) setActiveAtlasNode(null);
     };
     window.addEventListener("keydown", closeWithEscape);
     return () => window.removeEventListener("keydown", closeWithEscape);
-  }, [activeAtlasNode, logOpen, menuOpen, profileOpen, romRecommendationTarget]);
+  }, [activeAtlasNode, logOpen, menuOpen, profileOpen, romRecommendationTarget, sceneSettingsOpen]);
 
   useEffect(() => {
     const savedIds = [...explorePreferences.favoriteExerciseIds, ...explorePreferences.recentExerciseIds];
@@ -331,6 +382,7 @@ export default function Home() {
   const navigateToScene = (scene: CinematicScene) => {
     const nextHash = scene === "home" ? "#top" : `#${scene}`;
     if (window.location.hash !== nextHash) window.history.pushState(null, "", nextHash);
+    if (scene !== activeScene && sceneExperience.soundEnabled) playSceneTransitionSound();
     setActiveScene(scene);
     setMenuOpen(false);
   };
@@ -587,6 +639,38 @@ export default function Home() {
     setRomFilter("전체");
   };
 
+  const saveCurrentExplorePreset = () => {
+    const name = presetName.trim();
+    if (!name) {
+      toast.error("프리셋 이름을 입력해 주세요.");
+      return;
+    }
+    const existing = explorePreferences.filterPresets.find((preset) => preset.name === name);
+    const preset: ExploreFilterPreset = { id: existing?.id ?? `preset-${Date.now()}`, name: name.slice(0, 28), keyword, category, focus, region: regionFilter, difficulty, equipment, sort, rom: romFilter };
+    setExplorePreferences((current) => saveExploreFilterPreset(current, preset));
+    setPresetName("");
+    toast.success(`${preset.name} 필터 프리셋을 저장했습니다.`);
+  };
+
+  const applyExploreFilterPreset = (preset: ExploreFilterPreset) => {
+    setKeyword(preset.keyword);
+    setCategory(categories.includes(preset.category as (typeof categories)[number]) ? preset.category as (typeof categories)[number] : "전체");
+    setFocus(preset.focus || "전체");
+    setRegionFilter(preset.region || "전체");
+    setDifficulty(preset.difficulty || "전체");
+    setEquipment(preset.equipment || "전체");
+    setSort((["recommended", "difficulty", "duration"] as ExerciseSort[]).includes(preset.sort as ExerciseSort) ? preset.sort as ExerciseSort : "recommended");
+    setRomFilter((["전체", "작음", "보통", "큼"] as RomFilter[]).includes(preset.rom as RomFilter) ? preset.rom as RomFilter : "전체");
+    setVisibleExerciseCount(initialVisibleExerciseCount);
+    setFiltersOpen(true);
+    toast.success(`${preset.name} 조건을 적용했습니다.`);
+  };
+
+  const deleteExploreFilterPreset = (preset: ExploreFilterPreset) => {
+    setExplorePreferences((current) => removeExploreFilterPreset(current, preset.id));
+    toast.success(`${preset.name} 프리셋을 삭제했습니다.`);
+  };
+
   const openSavedExercise = (exercise: Exercise) => {
     setKeyword(exercise.name);
     setCategory("전체");
@@ -662,7 +746,7 @@ export default function Home() {
         <nav className={menuOpen ? "nav is-open" : "nav"} aria-label="주요 메뉴">
           <a href="#explore" aria-current={activeScene === "explore" ? "page" : undefined} onClick={(event) => { event.preventDefault(); navigateToScene("explore"); }}>운동 탐색</a><a href="#anatomy" aria-current={activeScene === "anatomy" ? "page" : undefined} onClick={(event) => { event.preventDefault(); navigateToScene("anatomy"); }}>바디 맵</a><a href="#progress" aria-current={activeScene === "progress" ? "page" : undefined} onClick={(event) => { event.preventDefault(); navigateToScene("progress"); }}>기록 분석</a><a href="#wellness" aria-current={activeScene === "wellness" ? "page" : undefined} onClick={(event) => { event.preventDefault(); navigateToScene("wellness"); }}>웰니스</a>
         </nav>
-        <div className="topbar-actions"><button className="ghost-button desktop-only" onClick={() => setProfileOpen(true)}>내 프로필</button><button className="ghost-button desktop-only" onClick={() => downloadBackup(logs, profileForm, checkin, weeklyPlan, explorePreferences)}>백업</button><label className="login-button desktop-only">가져오기<input className="sr-only" type="file" accept="application/json" onChange={async (event) => { const file = event.target.files?.[0]; if (!file) return; try { const backup = parseBackup(await file.text()); setLogs(backup.logs); setProfileForm(backup.profile); setCheckin(backup.checkin); setWeeklyPlan(backup.weeklyPlan); setExplorePreferences(backup.explorePreferences); saveLocalProfile(backup.profile); saveLocalCheckin(backup.checkin); saveLocalWeeklyPlan(backup.weeklyPlan); saveLocalExplorePreferences(backup.explorePreferences); toast.success("백업을 복원했습니다."); } catch { toast.error("백업 파일을 읽지 못했습니다."); } event.currentTarget.value = ""; }} /></label><button className="dark-button" onClick={() => setLogOpen(true)}><Plus size={16} /> 운동 기록</button><button className="menu-button" onClick={() => setMenuOpen(!menuOpen)} aria-label="메뉴 열기"><Menu size={20} /></button></div>
+        <div className="topbar-actions"><button className="ghost-button desktop-only" onClick={() => setProfileOpen(true)}>내 프로필</button><button className="ghost-button desktop-only" onClick={() => setSceneSettingsOpen(true)}>장면 설정</button><button className="ghost-button desktop-only" onClick={() => downloadBackup(logs, profileForm, checkin, weeklyPlan, explorePreferences)}>백업</button><label className="login-button desktop-only">가져오기<input className="sr-only" type="file" accept="application/json" onChange={async (event) => { const file = event.target.files?.[0]; if (!file) return; try { const backup = parseBackup(await file.text()); setLogs(backup.logs); setProfileForm(backup.profile); setCheckin(backup.checkin); setWeeklyPlan(backup.weeklyPlan); setExplorePreferences(backup.explorePreferences); saveLocalProfile(backup.profile); saveLocalCheckin(backup.checkin); saveLocalWeeklyPlan(backup.weeklyPlan); saveLocalExplorePreferences(backup.explorePreferences); toast.success("백업을 복원했습니다."); } catch { toast.error("백업 파일을 읽지 못했습니다."); } event.currentTarget.value = ""; }} /></label><button className="dark-button" onClick={() => setLogOpen(true)}><Plus size={16} /> 운동 기록</button><button className="menu-button" onClick={() => setMenuOpen(!menuOpen)} aria-label="메뉴 열기"><Menu size={20} /></button></div>
       </header>
       <div className="axis-control-top"><button className={axisVisible ? "axis-toggle-button is-on" : "axis-toggle-button"} onClick={() => setAxisVisible((current) => !current)} aria-pressed={axisVisible}><Activity size={15} /> 중심축 {axisVisible ? "표시" : "숨김"}</button></div>
 
@@ -717,6 +801,7 @@ export default function Home() {
           <SectionTitle eyebrow="EXERCISE LIBRARY" title="움직임을 지식으로 익히세요." description={`개인용 정적 큐레이션: ${catalogStats.categoryCount}개 카테고리 · ${catalogStats.exerciseCount}개 운동. 카테고리와 목적, 장비로 탐색하고 올바른 자세·효과·안전 단서를 확인하세요.`} action={<div className="library-actions"><span className="library-count">{filteredExercises.length} MATCHES · {catalogExercises.length}/{catalogStats.exerciseCount}</span><div className="rom-filter" role="group" aria-label="가동 범위 ROM 필터">{(["전체", "작음", "보통", "큼"] as RomFilter[]).map((item) => <button key={item} className={romFilter === item ? "is-selected" : ""} aria-pressed={romFilter === item} onClick={() => setRomFilter(item)}>{item === "전체" ? "ROM 전체" : `ROM · ${item}`}</button>)}</div><div className="rom-readiness-inline"><span>오늘의 ROM</span><b>{romReadiness.title}</b><p>통증 {checkin.pain}/5 · 에너지 {checkin.energy}/5</p><button onClick={applyRomReadiness}>{romReadiness.actionLabel} <ArrowRight size={13} /></button></div></div>} />
           <section className="explore-launcher" aria-label="빠른 운동 시작"><div className="explore-launcher-head"><div><p className="eyebrow">01 / CHOOSE A START</p><h3>어떻게 움직이고 싶나요?</h3></div><p>한 가지 시작점을 고르면 결과를 바로 좁힙니다. 이후 부위·난이도·장비 조건을 더할 수 있습니다.</p></div><div className="explore-paths">{explorePaths.map((path) => { const Icon = path.icon; const isSelected = category === path.category && focus === path.focus && equipment === path.equipment; return <button key={path.id} className={isSelected ? "is-selected" : ""} aria-pressed={isSelected} onClick={() => applyExplorePath(path)}><Icon size={20} /><span>{path.label}</span><small>{path.description}</small><ArrowRight size={16} /></button>; })}</div><div className="explore-selection-state"><span>현재 조건</span><b>{category === "전체" && focus === "전체" && equipment === "전체" ? "모든 운동 보기" : [category !== "전체" ? category : null, focus !== "전체" ? focus : null, equipment !== "전체" ? equipment : null].filter(Boolean).join(" · ")}</b><p><strong>{filteredExercises.length}개</strong> 운동을 바로 살펴볼 수 있습니다.</p></div></section>
           <div className="search-panel"><div className="search-field"><Search size={18} /><input value={keyword} onChange={(event) => setKeyword(event.target.value)} placeholder="운동, 부위, 장비 검색" aria-label="운동 검색" /></div><div className="quick-category-filter" role="group" aria-label="운동 종류 빠른 필터"><div className="quick-category-head"><div><p className="small-label">EXERCISE TYPE</p><b>운동 종류 빠른 선택</b><span aria-live="polite">{category === "전체" ? `전체 ${filteredExercises.length}개 표시` : `${category} ${filteredExercises.length}개 표시`}</span></div><div className="filter-head-actions"><button className="preference-filter-button" onClick={applySavedExplorePreferences}>선호 조건 적용</button>{(keyword || category !== "전체" || focus !== "전체" || regionFilter !== "전체" || difficulty !== "전체" || equipment !== "전체" || sort !== "recommended") && <button className="filter-reset" onClick={resetExploreFilters}>조건 초기화</button>}</div></div><div className="quick-category-options">{categories.map((item) => <button key={item} className={category === item ? "filter-active" : ""} aria-pressed={category === item} onClick={() => setCategory(item)}>{item === "전체" ? "전체 보기" : item}</button>)}</div></div><div className="advanced-filter-control"><button onClick={() => setFiltersOpen((open) => !open)} aria-expanded={filtersOpen} aria-controls="advanced-exercise-filters">{filtersOpen ? "상세 조건 닫기" : "부위·목적·난이도 상세 조건"}<ChevronDown size={15} /></button></div>{filtersOpen && <div id="advanced-exercise-filters" className="filter-row"><label className="sort-select">정렬<select value={sort} onChange={(event) => setSort(event.target.value as ExerciseSort)} aria-label="정렬 기준"><option value="recommended">추천순 · 입문·짧은 시간 우선</option><option value="difficulty">난이도순 · 입문부터</option><option value="duration">소요 시간순 · 짧은 시간부터</option></select></label><select value={regionFilter} onChange={(event) => setRegionFilter(event.target.value)} aria-label="부위 필터"><option>전체</option>{Object.keys(recoveryGuides).map((region) => <option key={region}>{region}</option>)}</select><select value={focus} onChange={(event) => setFocus(event.target.value)} aria-label="목적 필터"><option>전체</option><option>근력</option><option>체력</option><option>심폐</option><option>가동성</option><option>균형</option><option>협응</option><option>파워</option></select><select value={difficulty} onChange={(event) => setDifficulty(event.target.value)} aria-label="난이도 필터"><option>전체</option><option>입문</option><option>중급</option><option>상급</option></select><select value={equipment} onChange={(event) => setEquipment(event.target.value)} aria-label="장비 필터"><option>전체</option><option>장비 없음</option><option>장비 필요</option></select></div>}</div>
+          <ExplorePresetPanel presetName={presetName} presets={explorePreferences.filterPresets} onPresetName={setPresetName} onSave={saveCurrentExplorePreset} onApply={applyExploreFilterPreset} onDelete={deleteExploreFilterPreset} />
           <div className="saved-exercise-panels" aria-label="빠른 운동 탐색"><section className="saved-exercise-panel"><div><p className="small-label"><History size={13} /> RECENTLY VIEWED</p><h3>최근 본 운동</h3></div>{recentExercises.length ? <div className="saved-exercise-list">{recentExercises.map((exercise) => <button key={exercise.id} onClick={() => openSavedExercise(exercise)}><span>{exercise.category}</span><b>{exercise.name}</b><ArrowRight size={14} /></button>)}</div> : <p>운동 카드에서 <strong>자세·근거 보기</strong>를 열면 여기에 저장됩니다.</p>}</section><section className="saved-exercise-panel"><div><p className="small-label"><Star size={13} /> FAVORITES</p><h3>즐겨찾기</h3></div>{favoriteExercises.length ? <div className="saved-exercise-list">{favoriteExercises.map((exercise) => <button key={exercise.id} onClick={() => openSavedExercise(exercise)}><span>{exercise.category}</span><b>{exercise.name}</b><ArrowRight size={14} /></button>)}</div> : <p>운동 카드 오른쪽 위의 <strong>별표</strong>로 자주 찾는 운동을 모아 보세요.</p>}</section></div>
           <div className="exercise-grid">{visibleExercises.map((exercise, index) => <ExerciseCard key={exercise.id} exercise={exercise} detail={detailsByExerciseId.get(exercise.id)!} index={index} isFavorite={explorePreferences.favoriteExerciseIds.includes(exercise.id)} onToggleFavorite={() => setExplorePreferences((current) => toggleFavoriteExercise(current, exercise.id))} onViewed={() => { setExplorePreferences((current) => recordRecentExercise(current, exercise.id)); setAnatomyExercise(exercise); }} />)}</div>
           {filteredExercises.length === 0 && <div className="empty-library"><Search size={26} /><p>조건에 맞는 운동을 찾지 못했습니다. 검색어나 필터를 조정해 보세요.</p></div>}
@@ -758,6 +843,7 @@ export default function Home() {
 
       {logOpen && <div className="modal-backdrop" role="presentation" onMouseDown={() => setLogOpen(false)}><section className="log-modal" role="dialog" aria-modal="true" aria-labelledby="log-title" onMouseDown={(event) => event.stopPropagation()}><div className="modal-head"><div><p className="eyebrow">TRAINING LOG</p><h2 id="log-title">운동 기록 추가</h2></div><button onClick={() => setLogOpen(false)} className="icon-button" aria-label="닫기"><X size={19} /></button></div><div className="form-steps" aria-label="기록 입력 순서"><span className="is-active">1 기본</span><span>2 강도</span><span>3 저장</span></div><p className="log-helper">모든 수치를 완벽히 기억할 필요는 없습니다. <strong>종목·시간·RPE</strong>부터 남기고, 세트·횟수·중량은 기억나는 만큼 입력하세요.</p><div className="log-form"><div className="form-grid"><label>운동 날짜<input type="date" max={new Date().toISOString().slice(0, 10)} value={form.date} onChange={(event) => setForm({ ...form, date: event.target.value })} /></label><label>운동<select value={form.exercise} onChange={(event) => setForm({ ...form, exercise: event.target.value })}>{catalogExercises.map((exercise) => <option key={exercise.id}>{exercise.name}</option>)}</select></label></div><div className="form-grid"><label>세트<input inputMode="numeric" value={form.sets} onChange={(event) => setForm({ ...form, sets: event.target.value })} /></label><label>횟수<input inputMode="numeric" value={form.reps} onChange={(event) => setForm({ ...form, reps: event.target.value })} /></label><label>중량 (kg)<input inputMode="decimal" value={form.load} onChange={(event) => setForm({ ...form, load: event.target.value })} /></label><label>운동 시간 (분)<input inputMode="numeric" value={form.minutes} onChange={(event) => setForm({ ...form, minutes: event.target.value })} /></label><label>거리 · 선택<input inputMode="decimal" placeholder="러닝·사이클·로잉·수영" value={form.distance} onChange={(event) => setForm({ ...form, distance: event.target.value })} /><select value={form.distanceUnit} onChange={(event) => setForm({ ...form, distanceUnit: event.target.value as "km" | "m" })}><option value="km">km</option><option value="m">m</option></select></label></div><label>주관적 강도 RPE <span>{form.intensity}/10</span><input type="range" min="1" max="10" value={form.intensity} onChange={(event) => setForm({ ...form, intensity: event.target.value })} /></label><p className="form-safety"><ShieldCheck size={15} /> 거리 단위는 러닝·사이클에는 km, 로잉·수영에는 m를 사용하세요. 수치가 불확실하면 낮게 추정하거나 다음 기록부터 보완해도 됩니다.</p><button className="dark-button form-submit" onClick={addLog}>이 기록 저장하기 <ArrowRight size={16} /></button></div></section></div>}
       {profileOpen && <div className="modal-backdrop" role="presentation" onMouseDown={() => setProfileOpen(false)}><section className="log-modal profile-modal" role="dialog" aria-modal="true" aria-labelledby="profile-title" onMouseDown={(event) => event.stopPropagation()}><div className="modal-head"><div><p className="eyebrow">PERSONALIZATION</p><h2 id="profile-title">운동 기준 설정</h2></div><button onClick={() => setProfileOpen(false)} className="icon-button" aria-label="닫기"><X size={19} /></button></div><p className="modal-description">입력값은 이 기기에만 저장되며 보수적인 시작 난이도와 안내 맥락을 정하는 데만 사용합니다. 질환·통증·임신 상태 등 의료 정보에 대한 진단은 제공하지 않습니다.</p><div className="log-form"><div className="form-grid"><label>연령<input inputMode="numeric" placeholder="예: 30" value={profileForm.age} onChange={(event) => setProfileForm({ ...profileForm, age: event.target.value })} /></label><label>체중 (kg)<input inputMode="decimal" placeholder="예: 68" value={profileForm.weightKg} onChange={(event) => setProfileForm({ ...profileForm, weightKg: event.target.value })} /></label></div><label>성별<select value={profileForm.sex} onChange={(event) => setProfileForm({ ...profileForm, sex: event.target.value })}><option value="undisclosed">응답하지 않음</option><option value="female">여성</option><option value="male">남성</option><option value="nonbinary">논바이너리</option></select></label><div className="form-grid"><label>주요 목표<select value={profileForm.primaryGoal} onChange={(event) => setProfileForm({ ...profileForm, primaryGoal: event.target.value })}><option value="strength">근력 증가</option><option value="endurance">체력 증가</option><option value="weight_management">체중 관리</option><option value="general_health">건강 증진</option></select></label><label>경험 수준<select value={profileForm.experience} onChange={(event) => setProfileForm({ ...profileForm, experience: event.target.value })}><option value="beginner">입문</option><option value="intermediate">중급</option><option value="advanced">상급</option></select></label></div><div className="form-grid"><label>선호 운동 종류<select aria-label="선호 운동 종류" value={profileForm.preferredCategory} onChange={(event) => setProfileForm({ ...profileForm, preferredCategory: event.target.value as typeof profileForm.preferredCategory })}>{preferredCategoryOptions.map((item) => <option key={item} value={item}>{item === "전체" ? "특정 종류 없음" : item}</option>)}</select></label><label>선호 장비<select aria-label="선호 장비" value={profileForm.preferredEquipment} onChange={(event) => setProfileForm({ ...profileForm, preferredEquipment: event.target.value as typeof profileForm.preferredEquipment })}>{preferredEquipmentOptions.map((item) => <option key={item} value={item}>{{ flexible: "상황에 맞게", bodyweight: "장비 없이", basic_home: "간단한 홈 장비", gym: "헬스장 장비" }[item]}</option>)}</select></label></div><label>주 활동 환경<select aria-label="주 활동 환경" value={profileForm.preferredEnvironment} onChange={(event) => setProfileForm({ ...profileForm, preferredEnvironment: event.target.value as typeof profileForm.preferredEnvironment })}>{preferredEnvironmentOptions.map((item) => <option key={item} value={item}>{{ home: "집·매트", gym: "헬스장", outdoor: "야외·걷기" }[item]}</option>)}</select></label><label>선택적 안전 모드<select value={profileForm.recoveryContext} onChange={(event) => setProfileForm({ ...profileForm, recoveryContext: event.target.value })}><option value="none">해당 없음</option><option value="reduced_readiness">낮은 에너지·회복 저하·생애주기 변화</option><option value="pregnancy_postpartum">임신·산후 — 의료진 확인 우선</option></select></label><button className="dark-button form-submit" onClick={saveProfileSettings}>설정 저장 <ArrowRight size={16} /></button></div></section></div>}{romRecommendationTarget && <RomRecommendationDialog target={romRecommendationTarget} onClose={() => setRomRecommendationTarget(null)} />}
+      {sceneSettingsOpen && <SceneExperienceDialog preferences={sceneExperience} onChangeSound={(soundEnabled) => setSceneExperience((current) => ({ ...current, soundEnabled }))} onClose={() => setSceneSettingsOpen(false)} />}
       {activeAtlasBlock && activeAtlasNode !== null && <AtlasNodeDialog block={activeAtlasBlock} index={activeAtlasNode} draft={atlasNodeDraft} onDraft={setAtlasNodeDraft} onClose={() => setActiveAtlasNode(null)} onSave={saveAtlasNode} onReset={resetAtlasNode} />}
     </div></AsciiInteractionContext.Provider>
   );
@@ -796,12 +882,6 @@ function AtlasNodeDialog({ block, index, draft, onDraft, onClose, onSave, onRese
 }
 
 function Metric({ icon, label, value, caption }: { icon: React.ReactNode; label: string; value: string; caption: string }) { return <div className="metric-card"><span className="metric-icon">{icon}</span><p>{label}</p><b>{value}</b><small>{caption}</small></div>; }
-
-function RomStatusDashboard({ days, dashboardRef, exporting, onExport, routineCompletion, exportMeta, onChangeMeta, monthlySummary }: { days: ReturnType<typeof getCurrentWeekRomStatus>; dashboardRef: React.RefObject<HTMLElement | null>; exporting: boolean; onExport: () => void; routineCompletion: { completed: number; total: number }; exportMeta: { period: string; note: string }; onChangeMeta: (key: "period" | "note", value: string) => void; monthlySummary: ReturnType<typeof getFourWeekRomStatus> }) {
-  const recorded = days.filter((day) => day.record);
-  const averagePain = recorded.length ? (recorded.reduce((sum, day) => sum + (day.record?.pain ?? 0), 0) / recorded.length).toFixed(1) : "—";
-  return <section ref={dashboardRef} className="rom-status-dashboard" aria-label="주간 피로 통증 및 추천 ROM 대시보드"><div className="rom-status-head"><div><p className="small-label">WEEKLY READINESS · LOCAL ONLY</p><h3>이번 주 피로·통증·ROM 흐름</h3><p>체크인한 날짜만 표시합니다. 빈 칸은 입력이 없는 날이며, 점수는 진단이 아닌 오늘의 운동 조절 참고용입니다.</p></div><div><button className="rom-export-button" onClick={onExport} disabled={exporting} aria-label="주간 상태 그래프 PNG로 내보내기">{exporting ? <Loader2 size={14} className="animate-spin" /> : <Download size={14} />}{exporting ? "이미지 준비 중" : "PNG 저장"}</button><b>{recorded.length}/7</b><span>일 입력 · 평균 통증 {averagePain}</span><span>루틴 완료 {routineCompletion.completed}/{routineCompletion.total} · {routineCompletion.total ? Math.round((routineCompletion.completed / routineCompletion.total) * 100) : 0}%</span></div></div><div className="dashboard-export-note"><label>기록 기간<input value={exportMeta.period} maxLength={40} onChange={(event) => onChangeMeta("period", event.target.value)} aria-label="PNG 기록 기간" /></label><label>메모<textarea value={exportMeta.note} maxLength={120} onChange={(event) => onChangeMeta("note", event.target.value)} placeholder="예: 무릎 상태를 확인하며 작은 범위로 진행" aria-label="PNG 기록 메모" /></label><small>입력한 기간·메모는 PNG에 함께 저장됩니다.</small></div><div className="rom-status-week">{days.map((day) => <article key={day.date} className={day.record ? `has-status rom-${day.record.recommendedRom}` : ""}><span>{day.label}</span>{day.record ? <><div className="rom-status-bars" aria-label={`${day.label} 에너지 ${day.record.energy}, 통증 ${day.record.pain}`}><i className="energy" style={{ height: `${day.record.energy * 20}%` }} /><i className="pain" style={{ height: `${day.record.pain * 20}%` }} /></div><b>{day.record.recommendedRom}</b><small>E {day.record.energy} · P {day.record.pain}</small></> : <p>입력<br />대기</p>}</article>)}</div><div className="rom-status-legend"><span><i className="energy" />에너지</span><span><i className="pain" />통증</span><span>ROM · 작음 / 보통 / 회복</span></div><section className="monthly-rom-summary" aria-label="최근 4주 완료율 및 피로도 변화"><div><p className="small-label">4-WEEK SUMMARY</p><h4>완료율과 피로 변화</h4><p>기록이 있는 주만 수치를 표시하며, 이전 주의 완료율은 로컬에 남은 실제 계획 데이터가 있을 때만 보여 줍니다.</p></div><div className="monthly-rom-bars">{monthlySummary.map((week) => <article key={week.label}><span>{week.label}</span>{week.recordedDays ? <div className="monthly-bar-pair"><i className="completion" style={{ height: `${week.completionRate ?? 0}%` }} title={week.completionRate === null ? "완료 기록 대기" : `완료율 ${week.completionRate}%`} /><i className="fatigue" style={{ height: `${(week.fatigueAverage ?? 0) * 20}%` }} title={`평균 피로 ${week.fatigueAverage ?? "—"}`} /></div> : <div className="monthly-bar-empty">—</div>}<b>{week.completionRate === null ? "완료—" : `${week.completionRate}%`}</b><small>{week.fatigueAverage === null ? "피로—" : `피로 ${week.fatigueAverage}`}</small></article>)}</div><div className="monthly-rom-legend"><span><i className="completion" />완료율</span><span><i className="fatigue" />피로</span></div></section></section>;
-}
 
 function WeeklyPlanPanel({ plan, insight, onGoal, onToggle, onStartLog, onAdd }: { plan: WeeklyPlan; insight: ReturnType<typeof getWeeklyPlanInsight>; onGoal: (goal: WeeklyPlan["goal"]) => void; onToggle: (sessionId: string) => void; onStartLog: (session: WeeklyPlan["sessions"][number]) => void; onAdd: () => void }) {
   const completion = insight.total ? Math.round((insight.completed / insight.total) * 100) : 0;
