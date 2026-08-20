@@ -191,6 +191,15 @@ describe("Home recovery alternative flow", () => {
     expect(screen.getAllByText("루틴 완료 1/3 · 33%").length).toBeGreaterThan(0);
   });
 
+  it("celebrates full routine completion and includes period and note fields in the export dashboard", () => {
+    render(createElement(Home));
+    expect(screen.getByLabelText("PNG 기록 기간")).toBeTruthy();
+    expect(screen.getByLabelText("PNG 기록 메모")).toBeTruthy();
+    expect(screen.getByLabelText("최근 4주 완료율 및 피로도 변화")).toBeTruthy();
+    screen.getAllByRole("button", { name: /완료 처리/ }).forEach((button) => fireEvent.click(button));
+    expect(screen.getByText("오늘의 루틴을 모두 마쳤습니다.")).toBeTruthy();
+  });
+
   it("prioritizes a conservative ROM path when today’s pain signal is high", () => {
     render(createElement(Home));
     fireEvent.change(screen.getByRole("slider", { name: /통증/ }), { target: { value: "4" } });

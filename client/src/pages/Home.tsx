@@ -23,7 +23,7 @@ import { getExerciseTextGuide, type ExerciseTextGuide } from "@/lib/exerciseText
 import { getAsciiDiagramPresentation, getAsciiMovementDiagram } from "@/lib/asciiMovementDiagrams";
 import { getRomRecommendation } from "@/lib/romRecommendations";
 import { getRomReadinessRecommendation } from "@/lib/romReadiness";
-import { createRomStatusRecord, getCurrentWeekRomStatus, mergeRomStatusHistory, type RomStatusRecord } from "@/lib/romStatusHistory";
+import { createRomStatusRecord, getCurrentWeekRomStatus, getFourWeekRomStatus, mergeRomStatusHistory, type RomStatusRecord } from "@/lib/romStatusHistory";
 import { getExerciseEvidenceScope } from "@/lib/exerciseEvidence";
 import { MovementVisualGuide, RecoveryPathwayPanel, RecoveryStageGrid, SeatedRecoveryPanel, WellnessDetailPanel } from "@/components/GuidancePanels";
 import { getRoutineTemplate, type RoutineGoal } from "@/lib/routineTemplates";
@@ -102,7 +102,11 @@ export default function Home() {
   });
   const [romStatusHistory, setRomStatusHistory] = useState<RomStatusRecord[]>(() => typeof window === "undefined" ? [] : readLocalRomStatusHistory());
   const [romDashboardExporting, setRomDashboardExporting] = useState(false);
+  const [dashboardExportMeta, setDashboardExportMeta] = useState(() => ({ period: "최근 7일", note: "" }));
+  const [celebrationOpen, setCelebrationOpen] = useState(false);
   const romDashboardRef = useRef<HTMLElement | null>(null);
+  const completionEffectInitialized = useRef(false);
+  const previouslyComplete = useRef(false);
 
   useEffect(() => {
     if (!saveTrainingLogs(logs)) setStorageUnavailable(true);
@@ -134,6 +138,13 @@ export default function Home() {
 
   useEffect(() => {
     if (!saveLocalWeeklyPlan(weeklyPlan)) setStorageUnavailable(true);
+  }, [weeklyPlan]);
+
+  useEffect(() => {
+    const isComplete = weeklyPlan.sessions.length > 0 && weeklyPlan.sessions.every((session) => session.completed);
+    if (completionEffectInitialized.current && isComplete && !previouslyComplete.current) setCelebrationOpen(true);
+    completionEffectInitialized.current = true;
+    previouslyComplete.current = isComplete;
   }, [weeklyPlan]);
 
   useEffect(() => {
@@ -213,6 +224,7 @@ export default function Home() {
   const checkinRecommendation = useMemo(() => getCheckinRecommendation(checkin), [checkin]);
   const romReadiness = useMemo(() => getRomReadinessRecommendation(checkin), [checkin]);
   const weekRomStatus = useMemo(() => getCurrentWeekRomStatus(romStatusHistory), [romStatusHistory]);
+  const fourWeekRomStatus = useMemo(() => getFourWeekRomStatus(romStatusHistory, weeklyPlan), [romStatusHistory, weeklyPlan]);
   const sessionPlan = useMemo(() => buildSession({ goal: sessionGoal, environment: sessionEnvironment, duration: sessionDuration, checkin }), [checkin, sessionDuration, sessionEnvironment, sessionGoal]);
   const weeklyPlanInsight = useMemo(() => getWeeklyPlanInsight(weeklyPlan, logs, checkin), [checkin, logs, weeklyPlan]);
 
@@ -431,7 +443,8 @@ export default function Home() {
       const canvas = await html2canvas(romDashboardRef.current, { backgroundColor: "#0e1d18", scale: 2, useCORS: true });
       const link = document.createElement("a");
       link.href = canvas.toDataURL("image/png");
-      link.download = `fit-atlas-rom-week-${new Date().toISOString().slice(0, 10)}.png`;
+      const periodSlug = dashboardExportMeta.period.trim().replace(/[^0-9A-Za-z가-힣]+/g, "-").replace(/^-|-$/g, "") || "weekly";
+      link.download = `fit-atlas-rom-${periodSlug}-${new Date().toISOString().slice(0, 10)}.png`;
       link.click();
       toast.success("주간 상태 그래프를 PNG로 저장했습니다.");
     } catch {
@@ -445,6 +458,7 @@ export default function Home() {
   return (
     <AsciiInteractionContext.Provider value={{ showAxis: axisVisible, pendingExerciseName, clearPendingExercise: () => setPendingExerciseName(null), onOpenRom: (exerciseName, presentation) => setRomRecommendationTarget({ exerciseName, presentation }), onExploreAlternative: (exerciseName) => { setRomRecommendationTarget(null); setKeyword(exerciseName); setCategory("전체"); setFocus("전체"); setRegionFilter("전체"); setDifficulty("전체"); setEquipment("전체"); setRomFilter("전체"); setPendingExerciseName(exerciseName); setActiveScene("explore"); window.setTimeout(() => document.getElementById("explore")?.scrollIntoView({ behavior: "smooth" }), 0); }, onAddToTodayRoutine: (exerciseName) => { setWeeklyPlan((current) => addRomAlternativeToWeeklyPlan(current, exerciseName)); toast.success(`${exerciseName}을 오늘의 운동 루틴에 추가했습니다.`); } }}><div className={`site-shell scene-${activeScene}`}>
       <div className="cinematic-backdrop" aria-hidden="true"><span className="cinematic-orb orb-one" /><span className="cinematic-orb orb-two" /><span className="cinematic-gridlines" /><span className="cinematic-hud">SCENE / {activeScene.toUpperCase()}</span></div>
+      {celebrationOpen && <div className="completion-celebration" role="status" aria-live="polite"><div className="celebration-confetti" aria-hidden="true">✦ ✦ ✦ ✦ ✦ ✦ ✦</div><div><p className="eyebrow">ROUTINE COMPLETE</p><h2>오늘의 루틴을 모두 마쳤습니다.</h2><p>완료율 100%입니다. 다음 세션은 반응을 확인하며 한 가지 변수만 천천히 조절하세요.</p></div><button onClick={() => setCelebrationOpen(false)} aria-label="축하 메시지 닫기">확인</button></div>}
       <header className="topbar">
         <a className="brand" href="#top" aria-label="Fit Atlas 홈"><span className="brand-mark"><Activity size={17} /></span><span>FIT ATLAS</span></a>
         <nav className={menuOpen ? "nav is-open" : "nav"} aria-label="주요 메뉴">
@@ -506,7 +520,7 @@ export default function Home() {
 
         <section id="progress" className="progress-section section-pad">
           <SectionTitle eyebrow="TRAINING LOG" title="기록은 감이 아닌 방향을 만듭니다." description="종목·세트·횟수·중량·시간·강도를 기록하면 누적 볼륨과 개인 최고 기록을 확인할 수 있습니다." action={<button className="dark-button" onClick={() => setLogOpen(true)}><Plus size={16} /> 새 기록</button>} />
-          <RomStatusDashboard days={weekRomStatus} dashboardRef={romDashboardRef} exporting={romDashboardExporting} onExport={() => void exportRomStatusDashboard()} routineCompletion={{ completed: weeklyPlanInsight.completed, total: weeklyPlanInsight.total }} />
+          <RomStatusDashboard days={weekRomStatus} dashboardRef={romDashboardRef} exporting={romDashboardExporting} onExport={() => void exportRomStatusDashboard()} routineCompletion={{ completed: weeklyPlanInsight.completed, total: weeklyPlanInsight.total }} exportMeta={dashboardExportMeta} onChangeMeta={(key, value) => setDashboardExportMeta((current) => ({ ...current, [key]: value }))} monthlySummary={fourWeekRomStatus} />
           <div className="metric-row"><Metric icon={<Dumbbell size={18} />} label="누적 볼륨" value={logs.length ? `${totalVolume.toLocaleString()} kg` : "—"} caption={logs.length ? "기록된 세트 기준" : "기록을 추가해 시작"} /><Metric icon={<Timer size={18} />} label="운동 시간" value={logs.length ? `${totalMinutes}분` : "—"} caption={logs.length ? "누적 기록 기준" : "아직 기록 없음"} /><Metric icon={<Activity size={18} />} label="세션 수" value={`${logs.length}`} caption="기록된 운동" /><Metric icon={<CalendarDays size={18} />} label="이번 주" value={`${insights.load.sessions}`} caption="최근 7일 기록" /></div>
           <div className="insight-row"><article><p className="small-label">TRAINING LOAD</p><h3>{insights.load.load ? `${insights.load.load} 부하점수` : "기록 대기"}</h3><p>{insights.loadLabel}</p></article><article><p className="small-label">CONSISTENCY</p><h3>{insights.consistency.activeDays ? `주 평균 ${insights.consistency.weeklyAverage}일` : "습관 만들기"}</h3><p>{insights.consistencyLabel}</p></article><article><p className="small-label">BODY BALANCE</p><h3>{insights.balance[0]?.region ?? "부위 분석 대기"}</h3><p>{insights.balanceLabel}</p>{insights.balance.length > 0 && <div className="balance-tags">{insights.balance.slice(0, 4).map((item) => <span key={item.region}>{item.region}</span>)}</div>}</article></div>
           <div className="aerobic-trend-row"><article><p className="small-label">AEROBIC INTENSITY · RPE</p><h3>{insights.aerobic.band}{insights.aerobic.sessions ? ` · RPE ${insights.aerobic.averageRpe}` : ""}</h3><p>{insights.aerobic.label}</p></article><article><p className="small-label">EXERCISE TREND · 7 DAYS</p><h3>{insights.trend.direction} · {insights.prTrend.direction}</h3><p>{insights.trend.label}<br />{insights.streak.label} · {insights.prTrend.label}</p></article></div>
@@ -565,10 +579,10 @@ function RomRecommendationDialog({ target, onClose }: { target: RomRecommendatio
 
 function Metric({ icon, label, value, caption }: { icon: React.ReactNode; label: string; value: string; caption: string }) { return <div className="metric-card"><span className="metric-icon">{icon}</span><p>{label}</p><b>{value}</b><small>{caption}</small></div>; }
 
-function RomStatusDashboard({ days, dashboardRef, exporting, onExport, routineCompletion }: { days: ReturnType<typeof getCurrentWeekRomStatus>; dashboardRef: React.RefObject<HTMLElement | null>; exporting: boolean; onExport: () => void; routineCompletion: { completed: number; total: number } }) {
+function RomStatusDashboard({ days, dashboardRef, exporting, onExport, routineCompletion, exportMeta, onChangeMeta, monthlySummary }: { days: ReturnType<typeof getCurrentWeekRomStatus>; dashboardRef: React.RefObject<HTMLElement | null>; exporting: boolean; onExport: () => void; routineCompletion: { completed: number; total: number }; exportMeta: { period: string; note: string }; onChangeMeta: (key: "period" | "note", value: string) => void; monthlySummary: ReturnType<typeof getFourWeekRomStatus> }) {
   const recorded = days.filter((day) => day.record);
   const averagePain = recorded.length ? (recorded.reduce((sum, day) => sum + (day.record?.pain ?? 0), 0) / recorded.length).toFixed(1) : "—";
-  return <section ref={dashboardRef} className="rom-status-dashboard" aria-label="주간 피로 통증 및 추천 ROM 대시보드"><div className="rom-status-head"><div><p className="small-label">WEEKLY READINESS · LOCAL ONLY</p><h3>이번 주 피로·통증·ROM 흐름</h3><p>체크인한 날짜만 표시합니다. 빈 칸은 입력이 없는 날이며, 점수는 진단이 아닌 오늘의 운동 조절 참고용입니다.</p></div><div><button className="rom-export-button" onClick={onExport} disabled={exporting} aria-label="주간 상태 그래프 PNG로 내보내기">{exporting ? <Loader2 size={14} className="animate-spin" /> : <Download size={14} />}{exporting ? "이미지 준비 중" : "PNG 저장"}</button><b>{recorded.length}/7</b><span>일 입력 · 평균 통증 {averagePain}</span><span>루틴 완료 {routineCompletion.completed}/{routineCompletion.total} · {routineCompletion.total ? Math.round((routineCompletion.completed / routineCompletion.total) * 100) : 0}%</span></div></div><div className="rom-status-week">{days.map((day) => <article key={day.date} className={day.record ? `has-status rom-${day.record.recommendedRom}` : ""}><span>{day.label}</span>{day.record ? <><div className="rom-status-bars" aria-label={`${day.label} 에너지 ${day.record.energy}, 통증 ${day.record.pain}`}><i className="energy" style={{ height: `${day.record.energy * 20}%` }} /><i className="pain" style={{ height: `${day.record.pain * 20}%` }} /></div><b>{day.record.recommendedRom}</b><small>E {day.record.energy} · P {day.record.pain}</small></> : <p>입력<br />대기</p>}</article>)}</div><div className="rom-status-legend"><span><i className="energy" />에너지</span><span><i className="pain" />통증</span><span>ROM · 작음 / 보통 / 회복</span></div></section>;
+  return <section ref={dashboardRef} className="rom-status-dashboard" aria-label="주간 피로 통증 및 추천 ROM 대시보드"><div className="rom-status-head"><div><p className="small-label">WEEKLY READINESS · LOCAL ONLY</p><h3>이번 주 피로·통증·ROM 흐름</h3><p>체크인한 날짜만 표시합니다. 빈 칸은 입력이 없는 날이며, 점수는 진단이 아닌 오늘의 운동 조절 참고용입니다.</p></div><div><button className="rom-export-button" onClick={onExport} disabled={exporting} aria-label="주간 상태 그래프 PNG로 내보내기">{exporting ? <Loader2 size={14} className="animate-spin" /> : <Download size={14} />}{exporting ? "이미지 준비 중" : "PNG 저장"}</button><b>{recorded.length}/7</b><span>일 입력 · 평균 통증 {averagePain}</span><span>루틴 완료 {routineCompletion.completed}/{routineCompletion.total} · {routineCompletion.total ? Math.round((routineCompletion.completed / routineCompletion.total) * 100) : 0}%</span></div></div><div className="dashboard-export-note"><label>기록 기간<input value={exportMeta.period} maxLength={40} onChange={(event) => onChangeMeta("period", event.target.value)} aria-label="PNG 기록 기간" /></label><label>메모<textarea value={exportMeta.note} maxLength={120} onChange={(event) => onChangeMeta("note", event.target.value)} placeholder="예: 무릎 상태를 확인하며 작은 범위로 진행" aria-label="PNG 기록 메모" /></label><small>입력한 기간·메모는 PNG에 함께 저장됩니다.</small></div><div className="rom-status-week">{days.map((day) => <article key={day.date} className={day.record ? `has-status rom-${day.record.recommendedRom}` : ""}><span>{day.label}</span>{day.record ? <><div className="rom-status-bars" aria-label={`${day.label} 에너지 ${day.record.energy}, 통증 ${day.record.pain}`}><i className="energy" style={{ height: `${day.record.energy * 20}%` }} /><i className="pain" style={{ height: `${day.record.pain * 20}%` }} /></div><b>{day.record.recommendedRom}</b><small>E {day.record.energy} · P {day.record.pain}</small></> : <p>입력<br />대기</p>}</article>)}</div><div className="rom-status-legend"><span><i className="energy" />에너지</span><span><i className="pain" />통증</span><span>ROM · 작음 / 보통 / 회복</span></div><section className="monthly-rom-summary" aria-label="최근 4주 완료율 및 피로도 변화"><div><p className="small-label">4-WEEK SUMMARY</p><h4>완료율과 피로 변화</h4><p>기록이 있는 주만 수치를 표시하며, 이전 주의 완료율은 로컬에 남은 실제 계획 데이터가 있을 때만 보여 줍니다.</p></div><div className="monthly-rom-bars">{monthlySummary.map((week) => <article key={week.label}><span>{week.label}</span>{week.recordedDays ? <div className="monthly-bar-pair"><i className="completion" style={{ height: `${week.completionRate ?? 0}%` }} title={week.completionRate === null ? "완료 기록 대기" : `완료율 ${week.completionRate}%`} /><i className="fatigue" style={{ height: `${(week.fatigueAverage ?? 0) * 20}%` }} title={`평균 피로 ${week.fatigueAverage ?? "—"}`} /></div> : <div className="monthly-bar-empty">—</div>}<b>{week.completionRate === null ? "완료—" : `${week.completionRate}%`}</b><small>{week.fatigueAverage === null ? "피로—" : `피로 ${week.fatigueAverage}`}</small></article>)}</div><div className="monthly-rom-legend"><span><i className="completion" />완료율</span><span><i className="fatigue" />피로</span></div></section></section>;
 }
 
 function WeeklyPlanPanel({ plan, insight, onGoal, onToggle, onStartLog, onAdd }: { plan: WeeklyPlan; insight: ReturnType<typeof getWeeklyPlanInsight>; onGoal: (goal: WeeklyPlan["goal"]) => void; onToggle: (sessionId: string) => void; onStartLog: (session: WeeklyPlan["sessions"][number]) => void; onAdd: () => void }) {
