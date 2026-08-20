@@ -45,8 +45,9 @@ describe("Home recovery alternative flow", () => {
 
   it("synchronizes the 3D muscle model and text list, then opens a related exercise detail", async () => {
     render(createElement(Home));
-    const model = await waitFor(() => screen.getByLabelText("클릭 가능한 3D 근육 인체 모델"));
+    const model = await waitFor(() => screen.getByLabelText("클릭·드래그 가능한 3D 근육 인체 모델"));
 
+    fireEvent.click(screen.getByLabelText("등 광배근 선택 해제"));
     fireEvent.click(screen.getByLabelText("등 광배근 선택"));
     expect(within(model).getByRole("button", { name: "후면" }).getAttribute("aria-pressed")).toBe("true");
     expect(screen.getByRole("button", { name: "등" }).getAttribute("aria-pressed")).toBe("true");
@@ -58,6 +59,26 @@ describe("Home recovery alternative flow", () => {
     fireEvent.click(relatedExercise);
     await waitFor(() => expect((screen.getByLabelText("운동 검색") as HTMLInputElement).value).toBe(exerciseName));
     expect(scrollIntoView).toHaveBeenCalledWith({ behavior: "smooth" });
+  });
+
+  it("rotates the muscle model, filters with multiple regions, and exposes exercise muscle roles", async () => {
+    render(createElement(Home));
+    const model = await waitFor(() => screen.getByLabelText("클릭·드래그 가능한 3D 근육 인체 모델"));
+    const modelSvg = model.querySelector("svg") as SVGSVGElement;
+    const multiSelect = screen.getByRole("group", { name: "근육 부위 다중 선택" });
+    fireEvent.pointerDown(modelSvg, { pointerId: 1, clientX: 80 });
+    fireEvent.pointerMove(modelSvg, { pointerId: 1, clientX: 145 });
+    fireEvent.pointerUp(modelSvg, { pointerId: 1, clientX: 145 });
+    expect(modelSvg.getAttribute("style")).toContain("rotateY(233.3deg)");
+
+    fireEvent.click(within(multiSelect).getByRole("button", { name: "가슴" }));
+    expect(within(multiSelect).getByRole("button", { name: "등" }).getAttribute("aria-pressed")).toBe("true");
+    expect(within(multiSelect).getByRole("button", { name: "가슴" }).getAttribute("aria-pressed")).toBe("true");
+    expect(screen.getByText("선택한 모든 부위를 함께 자극하는 복합 운동만 표시합니다.")).toBeTruthy();
+
+    fireEvent.click(screen.getAllByRole("button", { name: "자세·근거 보기" })[0]!);
+    await waitFor(() => expect(screen.getByLabelText(/근육 역할/)).toBeTruthy());
+    expect(document.querySelectorAll(".muscle-zone.is-primary").length).toBeGreaterThan(0);
   });
 
   it("renders the action-first start panel and opens the current session design flow", () => {

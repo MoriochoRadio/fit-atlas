@@ -1,7 +1,8 @@
+import { useEffect, useMemo, useRef, useState } from "react";
 import type { BodyRegion } from "@/lib/catalogTypes";
-import { useEffect, useState } from "react";
 
 type MuscleRegion = { name: BodyRegion; front?: string; back?: string; label: string };
+type MuscleRoles = { primary: BodyRegion[]; supporting: BodyRegion[] } | null;
 
 const muscleRegions: MuscleRegion[] = [
   { name: "가슴", label: "대흉근", front: "M81 107 C68 101 57 108 55 128 C67 140 80 143 94 137 L101 116 Z M109 116 L116 137 C130 143 143 140 155 128 C153 108 142 101 129 107 Z" },
@@ -13,26 +14,59 @@ const muscleRegions: MuscleRegion[] = [
   { name: "하체", label: "대퇴·종아리", front: "M76 218 L102 220 L98 358 L72 358 Z M106 220 L132 218 L136 358 L110 358 Z", back: "M76 246 L102 247 L98 358 L72 358 Z M106 247 L132 246 L136 358 L110 358 Z" },
 ];
 
-function viewForRegion(region: BodyRegion) { return region === "등" || region === "둔근" ? "back" : "front" as const; }
+function defaultRotation(region: BodyRegion) { return region === "등" || region === "둔근" ? 180 : 0; }
+function normalizedRotation(rotation: number) { return ((rotation % 360) + 360) % 360; }
+function isBackView(rotation: number) { const normalized = normalizedRotation(rotation); return normalized > 70 && normalized < 290; }
 
-export function AnatomyMap({ activeRegion, onSelect }: { activeRegion: BodyRegion; onSelect: (region: BodyRegion) => void }) {
-  const [view, setView] = useState<"front" | "back">(() => viewForRegion(activeRegion));
-  useEffect(() => { setView(viewForRegion(activeRegion)); }, [activeRegion]);
-  const chooseRegion = (region: BodyRegion) => { setView(viewForRegion(region)); onSelect(region); };
-  const displayedMuscles = muscleRegions.filter((region) => view === "front" ? Boolean(region.front) : Boolean(region.back));
+export function AnatomyMap({ activeRegion, selectedRegions, onToggleRegion, muscleRoles }: { activeRegion: BodyRegion; selectedRegions: BodyRegion[]; onToggleRegion: (region: BodyRegion) => void; muscleRoles?: MuscleRoles }) {
+  const [rotation, setRotation] = useState(() => defaultRotation(activeRegion));
+  const [dragging, setDragging] = useState(false);
+  const dragStart = useRef<{ x: number; rotation: number } | null>(null);
+  const didDrag = useRef(false);
+  const view = isBackView(rotation) ? "back" : "front";
+  const displayedMuscles = useMemo(() => muscleRegions.filter((region) => view === "front" ? Boolean(region.front) : Boolean(region.back)), [view]);
 
-  return <div className={`anatomy-stage anatomy-3d-stage view-${view}`} aria-label="클릭 가능한 3D 근육 인체 모델">
+  useEffect(() => {
+    if (!selectedRegions.includes(activeRegion)) return;
+    setRotation(defaultRotation(activeRegion));
+  }, [activeRegion, selectedRegions]);
+
+  const startDrag = (event: React.PointerEvent<SVGSVGElement>) => {
+    dragStart.current = { x: event.clientX, rotation };
+    didDrag.current = false;
+    setDragging(true);
+    event.currentTarget.setPointerCapture?.(event.pointerId);
+  };
+  const moveDrag = (event: React.PointerEvent<SVGSVGElement>) => {
+    if (!dragStart.current) return;
+    const delta = event.clientX - dragStart.current.x;
+    if (Math.abs(delta) > 4) didDrag.current = true;
+    setRotation(dragStart.current.rotation + delta * .82);
+  };
+  const endDrag = (event: React.PointerEvent<SVGSVGElement>) => {
+    dragStart.current = null;
+    setDragging(false);
+    event.currentTarget.releasePointerCapture?.(event.pointerId);
+    window.setTimeout(() => { didDrag.current = false; }, 0);
+  };
+  const toggleRegion = (region: BodyRegion) => { if (!didDrag.current) onToggleRegion(region); };
+  const selectedLabel = selectedRegions.length > 1 ? `${selectedRegions.length}개 부위` : activeRegion;
+
+  return <div className={`anatomy-stage anatomy-3d-stage view-${view} ${dragging ? "is-dragging" : ""}`} aria-label="클릭·드래그 가능한 3D 근육 인체 모델">
     <div className="anatomy-orbit anatomy-orbit-one" /><div className="anatomy-orbit anatomy-orbit-two" />
-    <div className="anatomy-view-control" role="group" aria-label="인체 모델 보기"><button className={view === "front" ? "is-selected" : ""} aria-pressed={view === "front"} onClick={() => setView("front")}>전면</button><button className={view === "back" ? "is-selected" : ""} aria-pressed={view === "back"} onClick={() => setView("back")}>후면</button></div>
-    <svg className="muscle-model-3d" viewBox="0 0 210 390" role="img" aria-labelledby="anatomy-title anatomy-description">
-      <title id="anatomy-title">클릭 가능한 3D 스타일 인체 근육 모델</title><desc id="anatomy-description">근육 부위를 클릭하면 관련 운동과 회복 안내가 바뀝니다. 현재 선택 부위는 {activeRegion}입니다.</desc>
-      <defs><linearGradient id="body-volume" x1="0" x2="1"><stop stopColor="#d9e1d9" /><stop offset=".5" stopColor="#fcfdf9" /><stop offset="1" stopColor="#b9c6ba" /></linearGradient><linearGradient id="muscle-volume" x1="0" x2="1"><stop stopColor="#8fa957" /><stop offset=".5" stopColor="#d7ff4f" /><stop offset="1" stopColor="#5c7334" /></linearGradient><filter id="body-shadow"><feDropShadow dx="8" dy="12" stdDeviation="8" floodColor="#17312c" floodOpacity=".22" /></filter></defs>
+    <div className="anatomy-view-control" role="group" aria-label="인체 모델 보기"><button className={view === "front" ? "is-selected" : ""} aria-pressed={view === "front"} onClick={() => setRotation(0)}>전면</button><button className={view === "back" ? "is-selected" : ""} aria-pressed={view === "back"} onClick={() => setRotation(180)}>후면</button></div>
+    <svg className="muscle-model-3d" style={{ transform: `rotateX(2deg) rotateY(${rotation}deg)` }} viewBox="0 0 210 390" role="img" aria-labelledby="anatomy-title anatomy-description" onPointerDown={startDrag} onPointerMove={moveDrag} onPointerUp={endDrag} onPointerCancel={endDrag}>
+      <title id="anatomy-title">클릭과 드래그가 가능한 3D 스타일 인체 근육 모델</title><desc id="anatomy-description">좌우로 드래그해 인체를 회전하고, 근육을 클릭해 여러 부위를 선택할 수 있습니다. 현재 선택 부위는 {selectedRegions.join("·")}입니다.</desc>
+      <defs><linearGradient id="body-volume" x1="0" x2="1"><stop stopColor="#d9e1d9" /><stop offset=".5" stopColor="#fcfdf9" /><stop offset="1" stopColor="#b9c6ba" /></linearGradient><linearGradient id="muscle-volume" x1="0" x2="1"><stop stopColor="#8fa957" /><stop offset=".5" stopColor="#d7ff4f" /><stop offset="1" stopColor="#5c7334" /></linearGradient><linearGradient id="primary-volume" x1="0" x2="1"><stop stopColor="#d95745" /><stop offset=".5" stopColor="#ff846d" /><stop offset="1" stopColor="#a9322a" /></linearGradient><linearGradient id="support-volume" x1="0" x2="1"><stop stopColor="#4f92bd" /><stop offset=".5" stopColor="#8cd4ff" /><stop offset="1" stopColor="#27678f" /></linearGradient><filter id="body-shadow"><feDropShadow dx="8" dy="12" stdDeviation="8" floodColor="#17312c" floodOpacity=".22" /></filter></defs>
       <ellipse className="model-ground-shadow" cx="105" cy="370" rx="55" ry="10" />
       <g className="muscle-model-body" filter="url(#body-shadow)"><circle cx="105" cy="52" r="31" className="model-skin" /><path d="M82 82 Q105 68 128 82 L145 108 L136 215 L141 247 L142 360 L113 360 L105 257 L97 360 L68 360 L69 247 L74 215 L65 108 Z" className="model-silhouette" />
-        {displayedMuscles.map((region) => <path key={region.name} d={view === "front" ? region.front : region.back} className={`muscle-zone muscle-${region.name} ${activeRegion === region.name ? "is-active" : ""}`} role="button" tabIndex={0} aria-label={`${region.name} ${region.label} 선택`} onClick={() => chooseRegion(region.name)} onKeyDown={(event) => { if (event.key === "Enter" || event.key === " ") { event.preventDefault(); chooseRegion(region.name); } }} />)}
+        {displayedMuscles.map((region) => {
+          const role = muscleRoles?.primary.includes(region.name) ? "is-primary" : muscleRoles?.supporting.includes(region.name) ? "is-supporting" : "";
+          return <path key={region.name} d={view === "front" ? region.front : region.back} className={`muscle-zone muscle-${region.name} ${selectedRegions.includes(region.name) ? "is-active" : ""} ${role}`} role="button" tabIndex={0} aria-pressed={selectedRegions.includes(region.name)} aria-label={`${region.name} ${region.label} ${selectedRegions.includes(region.name) ? "선택 해제" : "선택"}`} onClick={() => toggleRegion(region.name)} onKeyDown={(event) => { if (event.key === "Enter" || event.key === " ") { event.preventDefault(); onToggleRegion(region.name); } }} />;
+        })}
       </g>
     </svg>
-    <div className="anatomy-model-readout"><span>{view === "front" ? "FRONT / 3D" : "BACK / 3D"}</span><b>{activeRegion}</b><small>{muscleRegions.find((region) => region.name === activeRegion)?.label}</small></div>
-    <div className="anatomy-label">MODEL 또는 왼쪽 부위 선택</div>
+    <div className="anatomy-model-readout"><span>{view === "front" ? "FRONT / DRAG 3D" : "BACK / DRAG 3D"}</span><b>{selectedLabel}</b><small>{muscleRoles ? "주동근 코랄 · 협응근 블루" : "드래그하여 회전 · 복수 선택 가능"}</small></div>
+    <div className="anatomy-label">좌우로 드래그 · 근육을 눌러 복수 선택</div>
   </div>;
 }
