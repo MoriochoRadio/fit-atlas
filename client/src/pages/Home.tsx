@@ -33,6 +33,7 @@ type LogEntry = TrainingLog;
 const categories = preferredCategoryOptions;
 const goalCopy = { 근력증가: "strength", 체력증가: "endurance", 다이어트: "weight_management" } as const;
 const catalogPageSize = catalogSummary.pageSize;
+const initialVisibleExerciseCount = 18;
 
 function SectionTitle({ eyebrow, title, description, action }: { eyebrow: string; title: string; description: string; action?: React.ReactNode }) {
   return <div className="section-heading"><div><p className="eyebrow">{eyebrow}</p><h2>{title}</h2><p className="section-description">{description}</p></div>{action}</div>;
@@ -48,7 +49,7 @@ export default function Home() {
   const [sort, setSort] = useState<ExerciseSort>("recommended");
   const [catalogEntries, setCatalogEntries] = useState(() => getInitialCatalogEntries());
   const [loadedCatalogPages, setLoadedCatalogPages] = useState(1);
-  const [visibleExerciseCount, setVisibleExerciseCount] = useState<number>(catalogPageSize);
+  const [visibleExerciseCount, setVisibleExerciseCount] = useState<number>(initialVisibleExerciseCount);
   const [catalogLoading, setCatalogLoading] = useState(false);
   const [explorePreferences, setExplorePreferences] = useState<ExplorePreferences>(() => typeof window === "undefined" ? { favoriteExerciseIds: [], recentExerciseIds: [] } : readLocalExplorePreferences());
   const [savedCatalogEntries, setSavedCatalogEntries] = useState(() => getInitialCatalogEntries().filter(() => false));
@@ -176,7 +177,7 @@ export default function Home() {
   };
 
   useEffect(() => {
-    setVisibleExerciseCount(catalogPageSize);
+    setVisibleExerciseCount(initialVisibleExerciseCount);
   }, [category, difficulty, equipment, focus, keyword, regionFilter, sort]);
 
   useEffect(() => {
@@ -206,7 +207,7 @@ export default function Home() {
 
   const loadMoreExercises = async () => {
     if (visibleExerciseCount < filteredExercises.length) {
-      setVisibleExerciseCount((current) => current + catalogPageSize);
+      setVisibleExerciseCount((current) => current + initialVisibleExerciseCount);
       return;
     }
     if (loadedCatalogPages >= getCatalogPageCount() || catalogLoading) return;
@@ -215,7 +216,7 @@ export default function Home() {
       const nextPage = await loadCatalogPage(loadedCatalogPages);
       setCatalogEntries((current) => [...current, ...nextPage]);
       setLoadedCatalogPages((current) => current + 1);
-      setVisibleExerciseCount((current) => current + catalogPageSize);
+      setVisibleExerciseCount((current) => current + initialVisibleExerciseCount);
     } catch {
       toast.error("다음 운동 목록을 불러오지 못했습니다. 다시 시도해 주세요.");
     } finally {
@@ -333,6 +334,8 @@ export default function Home() {
         </section>
 
         <section className="quick-strip"><div><span className="strip-index">01</span><b>EXPLORE</b><p>운동의 자세·부위·근거</p></div><div><span className="strip-index">02</span><b>PERSONALIZE</b><p>목표 기반 프로그램</p></div><div><span className="strip-index">03</span><b>PROGRESS</b><p>기록과 성과 분석</p></div><div><span className="strip-index">04</span><b>RECOVER</b><p>회복과 웰니스</p></div></section>
+
+        <section className="atlas-brief" aria-label="오늘의 운동 아틀라스"><div className="atlas-brief-heading"><div><p className="eyebrow">TODAY'S ATLAS</p><h2>한 번의 선택이<br /><em>다음 움직임</em>을 만듭니다.</h2></div><p>현재 컨디션, 축적된 기록, 방대한 카탈로그를 한 흐름으로 연결해 지금 필요한 시작점을 찾으세요.</p></div><div className="atlas-brief-grid"><article className="atlas-brief-primary"><div className="atlas-brief-label"><Brain size={16} /><span>READINESS / LOCAL</span></div><h3>{checkinRecommendation.title}</h3><p>{checkinRecommendation.guidance}</p><button onClick={() => document.getElementById("program")?.scrollIntoView({ behavior: "smooth" })}>오늘의 기준 보기 <ArrowRight size={15} /></button></article><article><span>01 / LIBRARY</span><b>{catalogStats.exerciseCount.toLocaleString()}</b><p>독립 운동 종목</p><button onClick={() => document.getElementById("explore")?.scrollIntoView({ behavior: "smooth" })}>탐색 시작 <ArrowRight size={14} /></button></article><article><span>02 / RECORDS</span><b>{logs.length.toLocaleString()}</b><p>이 브라우저의 기록</p><button onClick={() => document.getElementById("progress")?.scrollIntoView({ behavior: "smooth" })}>흐름 확인 <ArrowRight size={14} /></button></article><article><span>03 / NEXT STEP</span><b>{sessionDuration}</b><p>분으로 설계하는 세션</p><button onClick={() => { setSessionGoal("all_round"); document.getElementById("session")?.scrollIntoView({ behavior: "smooth" }); }}>세션 열기 <ArrowRight size={14} /></button></article></div></section>
 
         <section id="program" className="program-section section-pad">
           <SectionTitle eyebrow="PERSONALIZE" title="오늘의 움직임을, 당신의 목표에 맞게." description="간단한 목표 선택으로 시작하는 보수적이고 점진적인 운동 제안입니다. 실제 서비스에서는 프로필·운동 이력·피로도까지 반영합니다." />

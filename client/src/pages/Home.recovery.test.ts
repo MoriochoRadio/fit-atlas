@@ -41,16 +41,37 @@ describe("Home recovery alternative flow", () => {
     expect(screen.getByRole("option", { name: "m" })).toBeTruthy();
   });
 
+  it("renders the daily movement atlas and opens the current session design flow", () => {
+    render(createElement(Home));
+    const atlas = screen.getByLabelText("오늘의 운동 아틀라스");
+    expect(within(atlas).getByText("TODAY'S ATLAS")).toBeTruthy();
+    expect(within(atlas).getByText("독립 운동 종목")).toBeTruthy();
+    fireEvent.click(within(atlas).getByRole("button", { name: /세션 열기/ }));
+
+    expect(scrollIntoView).toHaveBeenCalledWith({ behavior: "smooth" });
+    expect(screen.getByRole("heading", { name: "30분 전신 균형 세션 · 집·매트" })).toBeTruthy();
+  });
+
+  it("toggles the mobile navigation state without changing the active content flow", () => {
+    render(createElement(Home));
+    const menu = screen.getByRole("navigation", { name: "주요 메뉴" });
+    expect(menu.className).toBe("nav");
+    fireEvent.click(screen.getByRole("button", { name: "메뉴 열기" }));
+    expect(menu.className).toBe("nav is-open");
+  });
+
   it("renders the first catalog page first, then appends the next page on demand", async () => {
     render(createElement(Home));
-    expect(screen.getByText("100개 표시 · 100/1008개 카탈로그를 불러왔습니다.")).toBeTruthy();
+    expect(screen.getByText("18개 표시 · 100/1008개 카탈로그를 불러왔습니다.")).toBeTruthy();
 
     fireEvent.click(screen.getByRole("button", { name: /운동 100개 더 보기/ }));
-    await waitFor(() => expect(screen.getByText("200개 표시 · 200/1008개 카탈로그를 불러왔습니다.")).toBeTruthy());
+    await waitFor(() => expect(screen.getByText("36개 표시 · 100/1008개 카탈로그를 불러왔습니다.")).toBeTruthy());
   });
 
   it("saves a favorite and a recently viewed exercise from its card", async () => {
     render(createElement(Home));
+    fireEvent.change(screen.getByLabelText("운동 검색"), { target: { value: "바벨 백 스쿼트" } });
+    await waitFor(() => expect(screen.getByRole("heading", { name: "바벨 백 스쿼트" })).toBeTruthy());
     const card = screen.getByRole("heading", { name: "바벨 백 스쿼트" }).closest("article");
     expect(card).toBeTruthy();
 
