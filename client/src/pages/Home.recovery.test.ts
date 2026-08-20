@@ -34,19 +34,20 @@ describe("Home recovery alternative flow", () => {
 
   it("renders distance units and the four-week rhythm card in the local record experience", () => {
     render(createElement(Home));
-    fireEvent.click(screen.getByRole("button", { name: /운동 기록/ }));
+    const topbar = document.querySelector(".topbar");
+    fireEvent.click(within(topbar as HTMLElement).getByRole("button", { name: /운동 기록/ }));
     expect(screen.getByText("4-WEEK RHYTHM")).toBeTruthy();
     expect(screen.getByText("거리 · 선택")).toBeTruthy();
     expect(screen.getByRole("option", { name: "km" })).toBeTruthy();
     expect(screen.getByRole("option", { name: "m" })).toBeTruthy();
   });
 
-  it("renders the daily movement atlas and opens the current session design flow", () => {
+  it("renders the action-first start panel and opens the current session design flow", () => {
     render(createElement(Home));
-    const atlas = screen.getByLabelText("오늘의 운동 아틀라스");
-    expect(within(atlas).getByText("TODAY'S ATLAS")).toBeTruthy();
-    expect(within(atlas).getByText("독립 운동 종목")).toBeTruthy();
-    fireEvent.click(within(atlas).getByRole("button", { name: /세션 열기/ }));
+    const startDock = screen.getByLabelText("오늘의 주요 행동");
+    expect(within(startDock).getByText("운동 찾기")).toBeTruthy();
+    expect(within(startDock).getByText("회복 가이드")).toBeTruthy();
+    fireEvent.click(within(startDock).getByRole("button", { name: /오늘 세션/ }));
 
     expect(scrollIntoView).toHaveBeenCalledWith({ behavior: "smooth" });
     expect(screen.getByRole("heading", { name: "30분 전신 균형 세션 · 집·매트" })).toBeTruthy();
