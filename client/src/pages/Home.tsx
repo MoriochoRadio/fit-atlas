@@ -46,6 +46,11 @@ const LazyHeroGymMachine3D = lazy(() => import("@/components/HeroGymMachine3D").
 const HeroGymMachine3D = ({ goal, environment, completion, equipment, resistance, nodes, onEquipment, onResistance, onOpenNode }: { goal: SessionGoal; environment: SessionEnvironment; completion: number; equipment: HeroEquipment; resistance: number; nodes: string[]; onEquipment: (equipment: HeroEquipment) => void; onResistance: (resistance: number) => void; onOpenNode: (index: number) => void }) => <Suspense fallback={<div className="hero-machine-loading" role="status">오늘의 장비를 준비하는 중</div>}><LazyHeroGymMachine3D goal={goal} environment={environment} completion={completion} equipment={equipment} resistance={resistance} nodes={nodes} onEquipment={onEquipment} onResistance={onResistance} onOpenNode={onOpenNode} /></Suspense>;
 const LazyWeeklyAtlasDetailReport = lazy(() => import("@/components/WeeklyAtlasDetailReport").then((module) => ({ default: module.WeeklyAtlasDetailReport })));
 const WeeklyAtlasDetailReport = (props: React.ComponentProps<typeof LazyWeeklyAtlasDetailReport>) => <Suspense fallback={<div className="weekly-atlas-detail-report weekly-atlas-loading" role="status">주간 흐름을 준비하는 중</div>}><LazyWeeklyAtlasDetailReport {...props} /></Suspense>;
+const LazyHeroRecentEquipmentResume = lazy(() => import("@/components/HeroRecentEquipmentResume").then((module) => ({ default: module.HeroRecentEquipmentResume })));
+const HeroRecentEquipmentResume = (props: React.ComponentProps<typeof LazyHeroRecentEquipmentResume>) => <Suspense fallback={null}><LazyHeroRecentEquipmentResume {...props} /></Suspense>;
+const LazyHeroAtlasControl = lazy(() => import("@/components/HeroAtlasControl").then((module) => ({ default: module.HeroAtlasControl })));
+type HeroAtlasControlProps = { theme: AtlasTheme; motionSpeed: AtlasMotionSpeed; onTheme: (theme: AtlasTheme) => void; onMotionSpeed: (speed: AtlasMotionSpeed) => void; performanceText: string; feedback: string };
+const HeroAtlasControl = (props: HeroAtlasControlProps) => <Suspense fallback={<div className="atlas-theme-control" role="status">아틀라스 제어를 준비하는 중</div>}><LazyHeroAtlasControl {...props} /></Suspense>;
 const goalCopy = { 근력증가: "strength", 체력증가: "endurance", 다이어트: "weight_management" } as const;
 const catalogPageSize = catalogSummary.pageSize;
 const initialVisibleExerciseCount = 18;
@@ -60,16 +65,10 @@ const sessionQuickStarts: { id: string; label: string; detail: string; goal: Ses
   { id: "quick-gym", label: "30분 헬스장", detail: "기초 근력에 집중", goal: "strength", environment: "gym", duration: 30 },
   { id: "quick-outdoor", label: "30분 야외", detail: "심폐 리듬 만들기", goal: "endurance", environment: "outdoor", duration: 30 },
 ] as const;
-const atlasThemeCopy: Record<AtlasTheme, { label: string; description: string }> = {
-  lime: { label: "라임", description: "선명한 시작 신호" },
-  ocean: { label: "오션", description: "차분한 호흡 리듬" },
-  coral: { label: "코랄", description: "따뜻한 에너지" },
-  plum: { label: "플럼", description: "집중과 회복" },
-};
-const atlasMotionSpeedCopy: Record<AtlasMotionSpeed, { label: string; rate: string }> = {
-  slow: { label: "느림", rate: "0.7×" },
-  normal: { label: "보통", rate: "1.0×" },
-  fast: { label: "빠름", rate: "1.4×" },
+const equipmentSessionSetup: Record<HeroEquipment, { goal: SessionGoal; label: string; goalLabel: string }> = {
+  cable: { goal: "strength", label: "케이블 머신", goalLabel: "기초 근력" },
+  dumbbell: { goal: "all_round", label: "덤벨", goalLabel: "전신 균형" },
+  treadmill: { goal: "endurance", label: "트레드밀", goalLabel: "심폐 리듬" },
 };
 
 function SectionTitle({ eyebrow, title, description, action }: { eyebrow: string; title: string; description: string; action?: React.ReactNode }) {
@@ -326,15 +325,21 @@ export default function Home() {
   const atlasRoute = { all_round: { label: "BALANCE ROUTE", description: "전신 연결과 리듬" }, strength: { label: "POWER ROUTE", description: "점진적 힘과 안정" }, endurance: { label: "FLOW ROUTE", description: "호흡과 지속 리듬" } }[sessionGoal];
 
   const startEquipmentSession = () => {
-    const setup: Record<HeroEquipment, { goal: SessionGoal; label: string; goalLabel: string }> = {
-      cable: { goal: "strength", label: "케이블 머신", goalLabel: "기초 근력" },
-      dumbbell: { goal: "all_round", label: "덤벨", goalLabel: "전신 균형" },
-      treadmill: { goal: "endurance", label: "트레드밀", goalLabel: "심폐 리듬" },
-    };
-    const selected = setup[atlasInteraction.heroEquipment];
+    const selected = equipmentSessionSetup[atlasInteraction.heroEquipment];
     setSessionGoal(selected.goal);
+    setAtlasInteraction((current) => ({ ...current, recentEquipmentSession: { equipment: current.heroEquipment, resistance: current.resistance, startedAt: Date.now() } }));
     document.getElementById("session")?.scrollIntoView({ behavior: "smooth" });
     toast.success(`${selected.label} 기준 ${selected.goalLabel} ${sessionDuration}분 세션으로 연결했습니다.`);
+  };
+
+  const resumeRecentEquipmentSession = () => {
+    const recent = atlasInteraction.recentEquipmentSession;
+    if (!recent) return;
+    const selected = equipmentSessionSetup[recent.equipment];
+    setSessionGoal(selected.goal);
+    setAtlasInteraction((current) => ({ ...current, heroEquipment: recent.equipment, resistance: recent.resistance, recentEquipmentSession: { ...recent, startedAt: Date.now() } }));
+    document.getElementById("session")?.scrollIntoView({ behavior: "smooth" });
+    toast.success(`최근 ${selected.label} ${recent.resistance}% 설정으로 ${selected.goalLabel} 세션을 다시 시작합니다.`);
   };
 
   const openAtlasNode = (index: number) => {
@@ -661,7 +666,7 @@ export default function Home() {
             <p className="eyebrow light">TODAY</p>
             <h1>오늘은<br /><em>무엇을 움직일까요?</em></h1>
             <div className="hero-actions"><button className="light-button" onClick={() => document.getElementById("session")?.scrollIntoView({ behavior: "smooth" })}>오늘 세션 <ArrowRight size={16} /></button><a href="#explore" className="text-button" onClick={() => setActiveScene("explore")}>운동 탐색 <ChevronRight size={17} /></a></div>
-            <div className="hero-context" aria-label="오늘 운동 상태 요약"><article><span>오늘의 강도</span><b>{machineSessionIntensity.label} · RPE {machineSessionIntensity.rpe}</b><small>{machineSessionIntensity.target} {atlasInteraction.resistance}%</small></article><article><span>이번 주 흐름</span><b>{weeklyCompletionPercent}% 완료</b><small>{weeklyPlanInsight.completed}/{weeklyPlanInsight.total || 0} 세션</small></article></div>
+            <div className="hero-context" aria-label="오늘 운동 상태 요약"><article><span>오늘의 강도</span><b>{machineSessionIntensity.label} · RPE {machineSessionIntensity.rpe}</b><small>{machineSessionIntensity.target} {atlasInteraction.resistance}%</small></article><article><span>이번 주 흐름</span><b>{weeklyCompletionPercent}% 완료</b><small>{weeklyPlanInsight.completed}/{weeklyPlanInsight.total || 0} 세션</small></article>{atlasInteraction.recentEquipmentSession && <HeroRecentEquipmentResume label={equipmentSessionSetup[atlasInteraction.recentEquipmentSession.equipment].label} resistance={atlasInteraction.recentEquipmentSession.resistance} onResume={resumeRecentEquipmentSession} />}</div>
           </div>
           <div className="hero-workspace">
             <div className="hero-atlas" aria-label={`오늘의 ${sessionDuration}분 ${sessionGoal === "strength" ? "기초 근력" : sessionGoal === "endurance" ? "심폐 리듬" : "전신 균형"} 세션 요약`}>
@@ -670,7 +675,7 @@ export default function Home() {
             </div>
             <div className="hero-workspace-bottom">
               <article className="hero-session-card"><p>{atlasRoute.label}</p><b>{sessionDuration}<small> MIN</small></b><span>{sessionGoal === "strength" ? "기초 근력" : sessionGoal === "endurance" ? "심폐 리듬" : "전신 균형"} · {{ home: "집·매트", gym: "헬스장", outdoor: "야외·걷기" }[sessionEnvironment]}</span><small className="session-route-description">{atlasRoute.description} · {machineSessionIntensity.target} {atlasInteraction.resistance}% · {machineSessionIntensity.label} RPE {machineSessionIntensity.rpe}</small><button className="hero-session-start" onClick={startEquipmentSession}>이 장비로 세션 설계 <ArrowRight size={14} /></button></article>
-              <div className="atlas-theme-control" role="group" aria-label="아틀라스 제어"><div><p>ATLAS THEME</p><span>{atlasThemeCopy[atlasTheme].label} · {atlasThemeCopy[atlasTheme].description}</span></div><div className="atlas-theme-options" aria-label="아틀라스 색상 테마 선택">{atlasThemes.map((theme) => <button key={theme} className={atlasTheme === theme ? "is-selected" : ""} onClick={() => { if (theme === atlasTheme) return; setAtlasTheme(theme); playAtlasTransition("theme", `${atlasThemeCopy[theme].label} 테마를 적용했습니다.`); }} aria-pressed={atlasTheme === theme} aria-label={`${atlasThemeCopy[theme].label} 테마 선택`}><i /><span>{atlasThemeCopy[theme].label}</span></button>)}</div><div className="atlas-speed-control" role="group" aria-label="아틀라스 궤적 재생 속도">{atlasMotionSpeeds.map((speed) => <button key={speed} className={atlasInteraction.motionSpeed === speed ? "is-selected" : ""} onClick={() => { if (speed === atlasInteraction.motionSpeed) return; setAtlasInteraction((current) => ({ ...current, motionSpeed: speed })); playAtlasTransition("route", `${atlasMotionSpeedCopy[speed].label} 속도로 경로를 재생합니다.`); }} aria-pressed={atlasInteraction.motionSpeed === speed}><span>{atlasMotionSpeedCopy[speed].label}</span><b>{atlasMotionSpeedCopy[speed].rate}</b></button>)}</div><span className="atlas-performance-status">이번 주 {weeklyPlanInsight.completed}/{weeklyPlanInsight.total || 0} · {atlasPerformance === "surge" ? "신호 밀도 높음" : atlasPerformance === "active" ? "신호 흐름 활성" : "신호 준비 중"}</span><span className="atlas-feedback" role="status" aria-live="polite">{atlasFeedback}</span></div>
+              <HeroAtlasControl theme={atlasTheme} motionSpeed={atlasInteraction.motionSpeed} onTheme={(theme) => { if (theme === atlasTheme) return; setAtlasTheme(theme); playAtlasTransition("theme", `${{ lime: "라임", ocean: "오션", coral: "코랄", plum: "플럼" }[theme]} 테마를 적용했습니다.`); }} onMotionSpeed={(speed) => { if (speed === atlasInteraction.motionSpeed) return; setAtlasInteraction((current) => ({ ...current, motionSpeed: speed })); playAtlasTransition("route", `${{ slow: "느림", normal: "보통", fast: "빠름" }[speed]} 속도로 경로를 재생합니다.`); }} performanceText={`이번 주 ${weeklyPlanInsight.completed}/${weeklyPlanInsight.total || 0} · ${atlasPerformance === "surge" ? "신호 밀도 높음" : atlasPerformance === "active" ? "신호 흐름 활성" : "신호 준비 중"}`} feedback={atlasFeedback} />
             </div>
           </div>
         </section>

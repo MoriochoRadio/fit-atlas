@@ -24,8 +24,9 @@ export type AtlasMotionSpeed = (typeof atlasMotionSpeeds)[number];
 export const heroEquipmentOptions = ["cable", "dumbbell", "treadmill"] as const;
 export type HeroEquipment = (typeof heroEquipmentOptions)[number];
 export type AtlasBlockEdit = { label: string; minutes: number; items: string[] };
-export type AtlasInteractionPreferences = { motionSpeed: AtlasMotionSpeed; blockEdits: Record<string, AtlasBlockEdit>; heroEquipment: HeroEquipment; resistance: number };
-export const defaultAtlasInteractionPreferences: AtlasInteractionPreferences = { motionSpeed: "normal", blockEdits: {}, heroEquipment: "cable", resistance: 54 };
+export type AtlasRecentEquipmentSession = { equipment: HeroEquipment; resistance: number; startedAt: number };
+export type AtlasInteractionPreferences = { motionSpeed: AtlasMotionSpeed; blockEdits: Record<string, AtlasBlockEdit>; heroEquipment: HeroEquipment; resistance: number; recentEquipmentSession: AtlasRecentEquipmentSession | null };
+export const defaultAtlasInteractionPreferences: AtlasInteractionPreferences = { motionSpeed: "normal", blockEdits: {}, heroEquipment: "cable", resistance: 54, recentEquipmentSession: null };
 
 function persistLocalValue(key: string, value: unknown) {
   try {
@@ -130,12 +131,16 @@ export function readAtlasInteractionPreferences(): AtlasInteractionPreferences {
     const motionSpeed = atlasMotionSpeeds.includes(value?.motionSpeed) ? value.motionSpeed : defaultAtlasInteractionPreferences.motionSpeed;
     const heroEquipment = heroEquipmentOptions.includes(value?.heroEquipment) ? value.heroEquipment : defaultAtlasInteractionPreferences.heroEquipment;
     const resistance = typeof value?.resistance === "number" && Number.isFinite(value.resistance) ? Math.max(0, Math.min(100, Math.round(value.resistance))) : defaultAtlasInteractionPreferences.resistance;
+    const rawRecentSession = value?.recentEquipmentSession;
+    const recentEquipmentSession = rawRecentSession && typeof rawRecentSession === "object" && heroEquipmentOptions.includes(rawRecentSession.equipment) && typeof rawRecentSession.resistance === "number" && Number.isFinite(rawRecentSession.resistance) && typeof rawRecentSession.startedAt === "number" && Number.isFinite(rawRecentSession.startedAt) && rawRecentSession.startedAt > 0
+      ? { equipment: rawRecentSession.equipment, resistance: Math.max(0, Math.min(100, Math.round(rawRecentSession.resistance))), startedAt: Math.round(rawRecentSession.startedAt) }
+      : null;
     const rawEdits = value?.blockEdits && typeof value.blockEdits === "object" ? value.blockEdits as Record<string, unknown> : {};
     const blockEdits = Object.fromEntries(Object.entries(rawEdits).flatMap(([key, item]) => {
       const edit = readAtlasBlockEdit(item);
       return edit ? [[key, edit]] : [];
     }));
-    return { motionSpeed, blockEdits, heroEquipment, resistance };
+    return { motionSpeed, blockEdits, heroEquipment, resistance, recentEquipmentSession };
   } catch {
     return defaultAtlasInteractionPreferences;
   }
