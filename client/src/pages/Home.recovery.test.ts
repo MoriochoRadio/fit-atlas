@@ -136,6 +136,20 @@ describe("Home recovery alternative flow", () => {
     expect(within(card!).getAllByText(/발 전체를 바닥에|엉덩이·무릎을 함께|통증 없는 범위로/)).toHaveLength(3);
   });
 
+  it("renders the expanded machine visual guide with a safe adjustment cue", async () => {
+    render(createElement(Home));
+    fireEvent.change(screen.getByLabelText("운동 검색"), { target: { value: "랫 풀다운" } });
+
+    await waitFor(() => expect(screen.getByRole("heading", { name: "랫 풀다운" })).toBeTruthy());
+    const card = screen.getByRole("heading", { name: "랫 풀다운" }).closest("article");
+    expect(card).toBeTruthy();
+    fireEvent.click(within(card!).getByRole("button", { name: "자세·근거 보기" }));
+
+    expect(within(card!).getByText("랫 풀다운 흐름")).toBeTruthy();
+    expect(within(card!).getByText(/통증·불안정·호흡 흐트러짐/)).toBeTruthy();
+    expect(within(card!).getAllByText(/반동 없이 장력 제어/).length).toBeGreaterThan(0);
+  });
+
   it("loads a non-contact combat starter drill with its visual guide and safety scope", async () => {
     render(createElement(Home));
     fireEvent.change(screen.getByLabelText("운동 검색"), { target: { value: "복싱 가드 스텝" } });

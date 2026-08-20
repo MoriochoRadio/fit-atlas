@@ -1,7 +1,7 @@
 export type MovementFrame = {
   label: string;
   cue: string;
-  pose: "stand" | "squat" | "hinge" | "push" | "plank" | "run" | "balance" | "row" | "lunge" | "jump" | "shuffle" | "walk" | "erg" | "bench" | "deadbug" | "sideplank" | "carry";
+  pose: "stand" | "squat" | "hinge" | "push" | "plank" | "run" | "balance" | "row" | "lunge" | "jump" | "shuffle" | "walk" | "erg" | "bench" | "deadbug" | "sideplank" | "carry" | "bike" | "swim" | "pulldown" | "legpress" | "bridge" | "bird-dog" | "pullup" | "press" | "step";
 };
 
 export type MovementVisual = {
@@ -45,6 +45,23 @@ export const movementVisuals: Record<string, MovementVisual> = {
   "kettlebell-suitcase-carry": { title: "수트케이스 캐리 흐름", frames: [{ label: "준비", cue: "가벼운 부하·짧은 경로", pose: "carry" }, { label: "보행", cue: "몸통 기울임 없이 짧게", pose: "carry" }, { label: "정지", cue: "방향 전환 전 속도 낮추기", pose: "stand" }] },
   "tennis-ready-split-step-easy": { title: "테니스 레디 스플릿 스텝 흐름", frames: [{ label: "준비", cue: "발 전체·무릎 편안히", pose: "stand" }, { label: "작은 벌림", cue: "점프 없이 조용히", pose: "shuffle" }, { label: "리셋", cue: "중앙 준비 자세로", pose: "balance" }] },
   "boxing-guard-step-reset-easy": { title: "복싱 가드 스텝 리셋 흐름", frames: [{ label: "가드", cue: "주먹·어깨 힘 빼기", pose: "stand" }, { label: "짧은 스텝", cue: "발을 교차하지 않기", pose: "shuffle" }, { label: "리셋", cue: "중립에서 호흡 확인", pose: "balance" }] },
+  bike: { title: "스테디 사이클 흐름", frames: [{ label: "설정", cue: "안장 높이·브레이크 먼저 확인", pose: "bike" }, { label: "페달", cue: "어깨 힘 빼고 부드럽게", pose: "bike" }, { label: "조절", cue: "호흡이 거칠면 저항 낮추기", pose: "bike" }] },
+  swimming: { title: "자유형 지속 수영 흐름", frames: [{ label: "준비", cue: "감시·수심·컨디션 먼저 확인", pose: "swim" }, { label: "이동", cue: "편안한 호흡 리듬 우선", pose: "swim" }, { label: "휴식", cue: "한 길이 뒤 충분히 호흡", pose: "swim" }] },
+  "pool-easy-swim": { title: "이지 수영 흐름", frames: [{ label: "확인", cue: "동반자·안전 구역 확인", pose: "swim" }, { label: "한 길이", cue: "짧고 편안한 호흡으로", pose: "swim" }, { label: "회복", cue: "벽에서 충분히 쉬기", pose: "swim" }] },
+  latpulldown: { title: "랫 풀다운 흐름", frames: [{ label: "준비", cue: "허벅지 지지·가벼운 중량", pose: "pulldown" }, { label: "당기기", cue: "어깨를 내린 뒤 팔꿈치 아래로", pose: "pulldown" }, { label: "복귀", cue: "반동 없이 장력 제어", pose: "pulldown" }] },
+  "assisted-pullup": { title: "어시스트 풀업 흐름", frames: [{ label: "준비", cue: "보조 중량·발 지지 확인", pose: "pullup" }, { label: "당기기", cue: "목 길게·어깨를 먼저 내리기", pose: "pullup" }, { label: "복귀", cue: "천천히 내려 팔꿈치 펴기", pose: "pullup" }] },
+  "leg-press": { title: "레그 프레스 흐름", frames: [{ label: "설정", cue: "등·골반을 등받이에 밀착", pose: "legpress" }, { label: "밀기", cue: "발 전체로 부드럽게", pose: "legpress" }, { label: "복귀", cue: "허리 뜨기 전 범위에서", pose: "legpress" }] },
+  "machine-leg-press-easy": { title: "머신 레그 프레스 이지 흐름", frames: [{ label: "설정", cue: "가벼운 중량·안전장치 확인", pose: "legpress" }, { label: "밀기", cue: "무릎을 끝까지 잠그지 않기", pose: "legpress" }, { label: "복귀", cue: "작은 범위부터 천천히", pose: "legpress" }] },
+  "leg-curl": { title: "시티드 레그 컬 흐름", frames: [{ label: "준비", cue: "무릎 축·패드 위치 맞추기", pose: "legpress" }, { label: "당기기", cue: "허벅지를 들지 않기", pose: "legpress" }, { label: "복귀", cue: "천천히 늘어나는 감각", pose: "legpress" }] },
+  "machine-shoulder-press": { title: "머신 숄더 프레스 흐름", frames: [{ label: "설정", cue: "등받이·손잡이 높이 조절", pose: "press" }, { label: "밀기", cue: "목 힘을 빼고 위로", pose: "press" }, { label: "복귀", cue: "어깨 통증 없는 범위", pose: "press" }] },
+  "barbell-hip-thrust": { title: "바벨 힙 쓰러스트 흐름", frames: [{ label: "준비", cue: "벤치·패드·발 위치 확인", pose: "bridge" }, { label: "들기", cue: "갈비뼈 들지 말고 둔근으로", pose: "bridge" }, { label: "복귀", cue: "허리보다 골반을 먼저 낮추기", pose: "bridge" }] },
+  "front-plank": { title: "프런트 플랭크 흐름", frames: [{ label: "준비", cue: "팔꿈치를 어깨 아래", pose: "plank" }, { label: "지지", cue: "골반을 편안한 높이로", pose: "plank" }, { label: "종료", cue: "정렬 흐트러지기 전 쉬기", pose: "plank" }] },
+  "bird-dog": { title: "버드 독 흐름", frames: [{ label: "준비", cue: "손·무릎 아래 지지 확인", pose: "bird-dog" }, { label: "뻗기", cue: "반대손·발을 짧게", pose: "bird-dog" }, { label: "복귀", cue: "골반 흔들림 없이 교대", pose: "bird-dog" }] },
+  "step-up": { title: "스텝업 흐름", frames: [{ label: "준비", cue: "낮은 스텝·지지대 확인", pose: "step" }, { label: "올라가기", cue: "앞발 전체로 바닥 밀기", pose: "step" }, { label: "내려오기", cue: "천천히 발 위치 확인", pose: "step" }] },
+  "rail-supported-step-up": { title: "난간 지지 스텝업 흐름", frames: [{ label: "준비", cue: "난간·스텝 흔들림 확인", pose: "step" }, { label: "올라가기", cue: "난간은 균형 보조로만", pose: "step" }, { label: "내려오기", cue: "속도보다 안정 우선", pose: "step" }] },
+  "dumbbell-step-up": { title: "덤벨 스텝업 흐름", frames: [{ label: "준비", cue: "가벼운 덤벨·낮은 스텝", pose: "step" }, { label: "올라가기", cue: "몸통 기울임 없이", pose: "step" }, { label: "내려오기", cue: "균형 후 반대발 전환", pose: "step" }] },
+  "kettlebell-swing-prep": { title: "케틀벨 스윙 프렙 흐름", frames: [{ label: "준비", cue: "가벼운 케틀벨·안전한 공간", pose: "hinge" }, { label: "힌지", cue: "팔이 아닌 엉덩이를 뒤로", pose: "hinge" }, { label: "확인", cue: "허리 반응 전 범위 줄이기", pose: "stand" }] },
+  "bike-standing-transition-prep": { title: "사이클 스탠딩 전환 프렙 흐름", frames: [{ label: "준비", cue: "낮은 저항·평평한 구간", pose: "bike" }, { label: "전환", cue: "짧게 엉덩이를 들어보기", pose: "bike" }, { label: "복귀", cue: "안정된 뒤 안장에 앉기", pose: "bike" }] },
 };
 
 export function getMovementVisual(exerciseId: string) {
