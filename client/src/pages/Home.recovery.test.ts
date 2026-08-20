@@ -14,13 +14,14 @@ describe("Home recovery alternative flow", () => {
 
   beforeEach(() => {
     window.localStorage.clear();
+    window.history.replaceState(null, "", "#top");
     scrollIntoView.mockReset();
     Object.defineProperty(Element.prototype, "scrollIntoView", { configurable: true, value: scrollIntoView });
   });
 
   afterEach(() => cleanup());
 
-  it("updates the Home search and region filter, then scrolls to the library when a pathway alternative is clicked", () => {
+  it("updates the search and region filter, then opens the independent library scene when a pathway alternative is clicked", async () => {
     render(createElement(Home));
     fireEvent.click(screen.getByRole("button", { name: "발목 불편" }));
     const ankleAlternative = screen.getAllByRole("button").find((button) => button.textContent?.includes("발목 니투월 락"));
@@ -30,7 +31,7 @@ describe("Home recovery alternative flow", () => {
     expect((screen.getByLabelText("운동 검색") as HTMLInputElement).value).toBe("발목 니투월 락");
     fireEvent.click(screen.getByRole("button", { name: "부위·목적·난이도 상세 조건" }));
     expect((screen.getByLabelText("부위 필터") as HTMLSelectElement).value).toBe("하체");
-    expect(scrollIntoView).toHaveBeenCalledWith({ behavior: "smooth" });
+    await waitFor(() => expect(document.querySelector(".site-shell")?.classList.contains("scene-explore")).toBe(true));
   });
 
   it("renders distance units and the four-week rhythm card in the local record experience", () => {
@@ -58,7 +59,7 @@ describe("Home recovery alternative flow", () => {
     expect(exerciseName).toBeTruthy();
     fireEvent.click(relatedExercise);
     await waitFor(() => expect((screen.getByLabelText("운동 검색") as HTMLInputElement).value).toBe(exerciseName));
-    expect(scrollIntoView).toHaveBeenCalledWith({ behavior: "smooth" });
+    expect(document.querySelector(".site-shell")?.classList.contains("scene-explore")).toBe(true);
   });
 
   it("rotates the muscle model, filters with multiple regions, and exposes exercise muscle roles", async () => {
@@ -131,7 +132,7 @@ describe("Home recovery alternative flow", () => {
     expect((within(treadmillMachine).getByLabelText("트레드밀 페이스 조절") as HTMLInputElement).value).toBe("68");
   });
 
-  it("renders the action-first start panel and opens the current session design flow", () => {
+  it("renders the action-first start panel and opens the independent current session scene", async () => {
     render(createElement(Home));
     expect(screen.getByRole("heading", { name: /오늘은\s*무엇을 움직일까요\?/ })).toBeTruthy();
     expect(screen.getByLabelText("오늘의 30분 전신 균형 세션 요약")).toBeTruthy();
@@ -141,7 +142,7 @@ describe("Home recovery alternative flow", () => {
     expect(within(startDock).getByText("회복 가이드")).toBeTruthy();
     fireEvent.click(within(startDock).getByRole("button", { name: /오늘 세션/ }));
 
-    expect(scrollIntoView).toHaveBeenCalledWith({ behavior: "smooth" });
+    await waitFor(() => expect(document.querySelector(".site-shell")?.classList.contains("scene-session")).toBe(true));
     expect(screen.getByRole("heading", { name: "30분 전신 균형 세션 · 집·매트" })).toBeTruthy();
   });
 
@@ -165,8 +166,37 @@ describe("Home recovery alternative flow", () => {
 
     fireEvent.click(within(treadmillMachine.closest(".hero-workspace") as HTMLElement).getByRole("button", { name: "이 장비로 세션 설계" }));
 
-    expect(scrollIntoView).toHaveBeenCalledWith({ behavior: "smooth" });
+    await waitFor(() => expect(document.querySelector(".site-shell")?.classList.contains("scene-session")).toBe(true));
     expect(screen.getByRole("heading", { name: "30분 심폐 리듬 세션 · 집·매트" })).toBeTruthy();
+  });
+
+  it("switches the main navigation through independent explore, body, progress, and wellness scenes", async () => {
+    render(createElement(Home));
+    const primaryNav = screen.getByRole("navigation", { name: "주요 메뉴" });
+
+    fireEvent.click(within(primaryNav).getByRole("link", { name: "운동 탐색" }));
+    await waitFor(() => expect(document.querySelector(".site-shell")?.classList.contains("scene-explore")).toBe(true));
+    expect(screen.getByRole("heading", { name: "움직임을 지식으로 익히세요." })).toBeTruthy();
+
+    fireEvent.click(within(primaryNav).getByRole("link", { name: "바디 맵" }));
+    await waitFor(() => expect(document.querySelector(".site-shell")?.classList.contains("scene-anatomy")).toBe(true));
+    expect(screen.getByRole("heading", { name: "부위를 누르면, 필요한 움직임이 보입니다." })).toBeTruthy();
+
+    fireEvent.click(within(primaryNav).getByRole("link", { name: "기록 분석" }));
+    await waitFor(() => expect(document.querySelector(".site-shell")?.classList.contains("scene-progress")).toBe(true));
+    expect(screen.getByRole("heading", { name: "기록은 감이 아닌 방향을 만듭니다." })).toBeTruthy();
+
+    fireEvent.click(within(primaryNav).getByRole("link", { name: "웰니스" }));
+    await waitFor(() => expect(document.querySelector(".site-shell")?.classList.contains("scene-wellness")).toBe(true));
+    expect(screen.getByRole("heading", { name: "오래 앉은 뒤, 다음 작업을 위한 짧은 전환." })).toBeTruthy();
+  });
+
+  it("opens a direct scene URL as the matching independent surface", async () => {
+    window.history.replaceState(null, "", "#explore");
+    render(createElement(Home));
+
+    await waitFor(() => expect(document.querySelector(".site-shell")?.classList.contains("scene-explore")).toBe(true));
+    expect(screen.getByRole("heading", { name: "움직임을 지식으로 익히세요." })).toBeTruthy();
   });
 
   it("restores a recently started equipment session and resumes its matching goal", async () => {
@@ -411,7 +441,7 @@ describe("Home recovery alternative flow", () => {
     expect(within(card!).getAllByText(/대련·스파링·타격은 포함하지 않습니다/).length).toBeGreaterThan(0);
   });
 
-  it("switches the seated-work recovery routine and bridges to a light home session", () => {
+  it("switches the seated-work recovery routine and bridges to a light home session", async () => {
     render(createElement(Home));
     const recoveryPanel = screen.getByLabelText("장시간 앉기 뒤 회복 루틴");
     expect(within(recoveryPanel).getByText("5분 자리 리셋")).toBeTruthy();
@@ -420,7 +450,7 @@ describe("Home recovery alternative flow", () => {
     expect(within(recoveryPanel).getByText("10분 자리 회복·재시작")).toBeTruthy();
     fireEvent.click(within(recoveryPanel).getByRole("button", { name: /15분 가벼운 세션 설계/ }));
 
-    expect(scrollIntoView).toHaveBeenCalledWith({ behavior: "smooth" });
+    await waitFor(() => expect(document.querySelector(".site-shell")?.classList.contains("scene-session")).toBe(true));
     expect(screen.getByRole("heading", { name: "15분 전신 균형 세션 · 집·매트" })).toBeTruthy();
   });
 
