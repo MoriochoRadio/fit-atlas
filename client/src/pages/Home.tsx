@@ -1,4 +1,3 @@
-import { AnatomyMap } from "@/components/AnatomyMap";
 import { recoveryGuides, wellnessCards } from "@/lib/catalogContent";
 import { catalogSummary, entriesToExercises, getCatalogPageCount, getInitialCatalogEntries, loadCatalogEntriesByIds, loadCatalogPage, loadFullCatalog } from "@/lib/catalogLoader";
 import type { BodyRegion, Exercise, ExerciseDetail } from "@/lib/catalogTypes";
@@ -6,7 +5,7 @@ import { aerobicIntervalTemplates } from "@/lib/aerobicIntervals";
 import { lowNoiseCircuitTemplates } from "@/lib/lowNoiseCircuits";
 import { lifeStageGuides, startChecklist } from "@/lib/lifeStageGuidance";
 import { Activity, ArrowRight, BarChart3, BookOpen, Brain, CalendarDays, Check, ChevronDown, ChevronRight, Download, Dumbbell, HeartPulse, History, Loader2, Menu, Plus, Search, ShieldCheck, Sparkles, Star, Timer, X } from "lucide-react";
-import React, { useEffect, useMemo, useRef, useState } from "react";
+import React, { lazy, Suspense, useEffect, useMemo, useRef, useState } from "react";
 import { toast } from "sonner";
 import { getCalendarDays, getFourWeekTrends, getPersonalRecords, getTotalMinutes, getTotalVolume, getWeeklyVolume, type TrainingLog } from "@/lib/trainingMetrics";
 import { getPersonalizedProgram } from "@/lib/personalization";
@@ -40,6 +39,8 @@ type RomRecommendationTarget = { exerciseName: string; presentation: ReturnType<
 const AsciiInteractionContext = React.createContext<{ showAxis: boolean; pendingExerciseName: string | null; clearPendingExercise: () => void; onOpenRom: (exerciseName: string, presentation: ReturnType<typeof getAsciiDiagramPresentation>) => void; onExploreAlternative: (exerciseName: string) => void; onAddToTodayRoutine: (exerciseName: string) => void }>({ showAxis: true, pendingExerciseName: null, clearPendingExercise: () => undefined, onOpenRom: () => undefined, onExploreAlternative: () => undefined, onAddToTodayRoutine: () => undefined });
 
 const categories = preferredCategoryOptions;
+const LazyAnatomyMap = lazy(() => import("@/components/AnatomyMap").then((module) => ({ default: module.AnatomyMap })));
+const AnatomyMap = ({ activeRegion, onSelect }: { activeRegion: BodyRegion; onSelect: (region: BodyRegion) => void }) => <Suspense fallback={<div className="anatomy-model-loading" role="status">근육 모델 불러오는 중</div>}><LazyAnatomyMap activeRegion={activeRegion} onSelect={onSelect} /></Suspense>;
 const goalCopy = { 근력증가: "strength", 체력증가: "endurance", 다이어트: "weight_management" } as const;
 const catalogPageSize = catalogSummary.pageSize;
 const initialVisibleExerciseCount = 18;
@@ -423,6 +424,29 @@ export default function Home() {
     }
   };
 
+  const openAnatomyExercise = (exercise: Exercise) => {
+    setKeyword(exercise.name);
+    setCategory("전체");
+    setFocus("전체");
+    setRegionFilter("전체");
+    setDifficulty("전체");
+    setEquipment("전체");
+    setRomFilter("전체");
+    setPendingExerciseName(exercise.name);
+    setActiveScene("explore");
+    window.setTimeout(() => document.getElementById("explore")?.scrollIntoView({ behavior: "smooth" }), 0);
+    toast.success(`${exercise.name}의 자세·방법·안전 단서를 엽니다.`);
+  };
+
+  const selectAnatomyRegion = (region: BodyRegion) => {
+    setActiveRegion(region);
+    if (loadedCatalogPages >= getCatalogPageCount()) return;
+    void loadFullCatalog().then((entries) => {
+      setCatalogEntries(entries);
+      setLoadedCatalogPages(getCatalogPageCount());
+    });
+  };
+
   const exploreRecoveryAlternative = async (exerciseId: string) => {
     let availableExercises = catalogExercises;
     if (!availableExercises.some((exercise) => exercise.id === exerciseId)) {
@@ -630,7 +654,7 @@ export default function Home() {
 
         <section id="anatomy" className="anatomy-section section-pad">
           <SectionTitle eyebrow="BODY ATLAS" title="부위를 누르면, 필요한 움직임이 보입니다." description="신체 지도의 부위를 선택해 연관 운동과 회복 관점을 확인하세요. 통증 정보는 교육 목적이며 진단이나 치료가 아닙니다." />
-          <div className="anatomy-grid"><div className="body-map-card"><div className="map-head"><span>INTERACTIVE MUSCLE MAP</span><span className="live-dot">LIVE GUIDE</span></div><AnatomyMap activeRegion={activeRegion} onSelect={setActiveRegion} /><div className="region-selector">{(Object.keys(recoveryGuides) as BodyRegion[]).map((region) => <button key={region} className={activeRegion === region ? "is-active" : ""} onClick={() => setActiveRegion(region)}>{region}</button>)}</div></div><div className="anatomy-info"><div className="region-title"><p className="eyebrow">SELECTED REGION</p><h3>{activeRegion}</h3></div><div className="related-list"><p className="small-label">RELATED EXERCISES</p>{regionExercises.slice(0, 3).map((exercise) => <div key={exercise.id}><span>{exercise.category}</span><b>{exercise.name}</b><ArrowRight size={15} /></div>)}</div><div className="safety-callout"><ShieldCheck size={18} /><p><strong>안전한 탐색</strong><br />날카로운 통증, 저림, 근력 저하, 외상 후 변화는 자가 관리보다 의료 평가를 우선하세요.</p></div></div></div>
+          <div className="anatomy-grid"><div className="body-map-card"><div className="map-head"><span>INTERACTIVE 3D MUSCLE MODEL</span><span className="live-dot">TWO-WAY SELECT</span></div><AnatomyMap activeRegion={activeRegion} onSelect={selectAnatomyRegion} /><div className="region-selector" role="group" aria-label="근육 부위 선택">{(Object.keys(recoveryGuides) as BodyRegion[]).map((region) => <button key={region} className={activeRegion === region ? "is-active" : ""} aria-pressed={activeRegion === region} onClick={() => selectAnatomyRegion(region)}>{region}</button>)}</div></div><div className="anatomy-info"><div className="region-title"><p className="eyebrow">SELECTED MUSCLE / REGION</p><h3>{activeRegion}</h3><p>모델 또는 왼쪽 목록에서 부위를 고르면 관련 운동과 안내가 함께 바뀝니다.</p></div><div className="related-list"><div className="related-list-head"><p className="small-label">RELATED EXERCISES</p><span>{regionExercises.length}개</span></div>{regionExercises.length ? <div className="anatomy-exercise-list">{regionExercises.slice(0, 16).map((exercise) => <button key={exercise.id} onClick={() => openAnatomyExercise(exercise)}><span>{exercise.category}</span><b>{exercise.name}</b><ArrowRight size={15} /></button>)}</div> : <p className="anatomy-list-empty">이 부위의 운동을 불러오는 중입니다.</p>}</div><div className="safety-callout"><ShieldCheck size={18} /><p><strong>안전한 탐색</strong><br />날카로운 통증, 저림, 근력 저하, 외상 후 변화는 자가 관리보다 의료 평가를 우선하세요.</p></div></div></div>
           <div className="recovery-card"><div><p className="eyebrow">RECOVERY GUIDE · {activeRegion}</p><h3>{recovery.title}</h3><p>{recovery.intro}</p></div><ol>{recovery.steps.map((step, index) => <li key={step}><span>0{index + 1}</span>{step}</li>)}</ol><div className="recovery-caution"><HeartPulse size={17} /> {recovery.caution}</div></div>
           <RecoveryProtocolPanel region={activeRegion} />
           <RecoveryPathwayPanel pathways={recoveryPathways} pathway={activeRecoveryPathway} alternatives={pathwayAlternatives} onChoose={(id) => { setActiveRecoveryPathwayId(id); setActiveRegion(getRecoveryPathway(id).region); }} onExplore={exploreRecoveryAlternative} />

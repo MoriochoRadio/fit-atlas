@@ -43,6 +43,23 @@ describe("Home recovery alternative flow", () => {
     expect(screen.getByRole("option", { name: "m" })).toBeTruthy();
   });
 
+  it("synchronizes the 3D muscle model and text list, then opens a related exercise detail", async () => {
+    render(createElement(Home));
+    const model = await waitFor(() => screen.getByLabelText("클릭 가능한 3D 근육 인체 모델"));
+
+    fireEvent.click(screen.getByLabelText("등 광배근 선택"));
+    expect(within(model).getByRole("button", { name: "후면" }).getAttribute("aria-pressed")).toBe("true");
+    expect(screen.getByRole("button", { name: "등" }).getAttribute("aria-pressed")).toBe("true");
+    expect(screen.getByRole("heading", { name: "등" })).toBeTruthy();
+
+    const relatedExercise = document.querySelector(".anatomy-exercise-list button") as HTMLButtonElement;
+    const exerciseName = relatedExercise.querySelector("b")?.textContent;
+    expect(exerciseName).toBeTruthy();
+    fireEvent.click(relatedExercise);
+    await waitFor(() => expect((screen.getByLabelText("운동 검색") as HTMLInputElement).value).toBe(exerciseName));
+    expect(scrollIntoView).toHaveBeenCalledWith({ behavior: "smooth" });
+  });
+
   it("renders the action-first start panel and opens the current session design flow", () => {
     render(createElement(Home));
     expect(screen.getByRole("heading", { name: /오늘은\s*무엇을 움직일까요\?/ })).toBeTruthy();
