@@ -183,6 +183,14 @@ describe("Home recovery alternative flow", () => {
     expect(smallRomFilter.getAttribute("aria-pressed")).toBe("true");
   });
 
+  it("reflects today routine completion in the weekly status dashboard and exposes PNG export", () => {
+    render(createElement(Home));
+    expect(screen.getByRole("button", { name: "주간 상태 그래프 PNG로 내보내기" })).toBeTruthy();
+    const completionToggle = screen.getAllByRole("button", { name: /완료 처리/ })[0];
+    fireEvent.click(completionToggle);
+    expect(screen.getAllByText("루틴 완료 1/3 · 33%").length).toBeGreaterThan(0);
+  });
+
   it("prioritizes a conservative ROM path when today’s pain signal is high", () => {
     render(createElement(Home));
     fireEvent.change(screen.getByRole("slider", { name: /통증/ }), { target: { value: "4" } });
