@@ -63,6 +63,16 @@ describe("Home recovery alternative flow", () => {
     expect(screen.getByRole("button", { name: "러닝" }).getAttribute("aria-pressed")).toBe("true");
   });
 
+  it("applies a quick session start and makes the current session conditions visible", () => {
+    render(createElement(Home));
+    const launcher = screen.getByLabelText("빠른 오늘 세션 시작");
+
+    fireEvent.click(within(launcher).getByRole("button", { name: /30분 헬스장/ }));
+
+    expect(within(launcher).getByText("30분 · 헬스장 · 기초 근력")).toBeTruthy();
+    expect(screen.getByRole("heading", { name: "30분 기초 근력 세션 · 헬스장" })).toBeTruthy();
+  });
+
   it("toggles the mobile navigation state without changing the active content flow", () => {
     render(createElement(Home));
     const menu = screen.getByRole("navigation", { name: "주요 메뉴" });
