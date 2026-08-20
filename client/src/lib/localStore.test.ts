@@ -38,14 +38,14 @@ describe("local backup format", () => {
     saveLocalExplorePreferences(explorePreferences);
     saveAxisVisibility(false);
     saveAtlasTheme("ocean");
-    saveAtlasInteractionPreferences({ motionSpeed: "fast", blockEdits: { "strength-gym-30-1": { label: "당기기", minutes: 12, items: ["랫 풀다운 · 2세트"] } } });
+    saveAtlasInteractionPreferences({ motionSpeed: "fast", blockEdits: { "strength-gym-30-1": { label: "당기기", minutes: 12, items: ["랫 풀다운 · 2세트"] } }, heroEquipment: "dumbbell", resistance: 72 });
     expect(readTrainingLogs()).toEqual(logs);
     expect(readLocalProfile()).toEqual(profile);
     expect(readLocalWeeklyPlan()).toEqual(weeklyPlan);
     expect(readLocalExplorePreferences()).toEqual(explorePreferences);
     expect(readAxisVisibility()).toBe(false);
     expect(readAtlasTheme()).toBe("ocean");
-    expect(readAtlasInteractionPreferences()).toEqual({ motionSpeed: "fast", blockEdits: { "strength-gym-30-1": { label: "당기기", minutes: 12, items: ["랫 풀다운 · 2세트"] } } });
+    expect(readAtlasInteractionPreferences()).toEqual({ motionSpeed: "fast", blockEdits: { "strength-gym-30-1": { label: "당기기", minutes: 12, items: ["랫 풀다운 · 2세트"] } }, heroEquipment: "dumbbell", resistance: 72 });
     storage.setItem("fit-atlas-logs", "not-json");
     storage.setItem("fit-atlas-profile", "not-json");
     expect(readTrainingLogs()).toEqual([]);
@@ -64,10 +64,10 @@ describe("local backup format", () => {
 
   it("restores valid atlas interaction preferences and filters malformed node edits", () => {
     const storage = installLocalStorage();
-    storage.setItem("fit-atlas-atlas-interaction", JSON.stringify({ motionSpeed: "slow", blockEdits: { valid: { label: "준비", minutes: 5, items: ["걷기"] }, broken: { label: 5 } } }));
-    expect(readAtlasInteractionPreferences()).toEqual({ motionSpeed: "slow", blockEdits: { valid: { label: "준비", minutes: 5, items: ["걷기"] } } });
+    storage.setItem("fit-atlas-atlas-interaction", JSON.stringify({ motionSpeed: "slow", heroEquipment: "treadmill", resistance: 115, blockEdits: { valid: { label: "준비", minutes: 5, items: ["걷기"] }, broken: { label: 5 } } }));
+    expect(readAtlasInteractionPreferences()).toEqual({ motionSpeed: "slow", blockEdits: { valid: { label: "준비", minutes: 5, items: ["걷기"] } }, heroEquipment: "treadmill", resistance: 100 });
     storage.setItem("fit-atlas-atlas-interaction", "not-json");
-    expect(readAtlasInteractionPreferences()).toEqual({ motionSpeed: "normal", blockEdits: {} });
+    expect(readAtlasInteractionPreferences()).toEqual({ motionSpeed: "normal", blockEdits: {}, heroEquipment: "cable", resistance: 54 });
   });
 
   it("reports a storage failure instead of throwing when browser persistence is unavailable", () => {
@@ -77,7 +77,7 @@ describe("local backup format", () => {
     expect(saveLocalProfile(defaultProfilePreferences)).toBe(false);
     expect(saveAxisVisibility(false)).toBe(false);
     expect(saveAtlasTheme("plum")).toBe(false);
-    expect(saveAtlasInteractionPreferences({ motionSpeed: "normal", blockEdits: {} })).toBe(false);
+    expect(saveAtlasInteractionPreferences({ motionSpeed: "normal", blockEdits: {}, heroEquipment: "cable", resistance: 54 })).toBe(false);
   });
 
   it("keeps legacy records without distance fields and restores new meter-based distance records", () => {

@@ -1,0 +1,8 @@
+import { Sparkles } from "lucide-react";
+import type { WeeklyPlan } from "@/lib/weeklyPlan";
+
+type WeeklyFlowDay = { weekday: string; planned: number; completed: number };
+
+export function WeeklyAtlasDetailReport({ flow, goal, onGoal, direction }: { flow: WeeklyFlowDay[]; goal: WeeklyPlan["goal"]; onGoal: (goal: WeeklyPlan["goal"]) => void; direction: string }) {
+  return <section className="weekly-atlas-detail-report" aria-label="주간 아틀라스 상세 리포트"><div className="weekly-detail-head"><div><p className="eyebrow">WEEKLY FLOW</p><h2>주간 완료 흐름</h2></div><p>완료 / 계획</p></div><div className="weekly-flow-chart" role="img" aria-label={flow.map((day) => `${day.weekday}요일 계획 ${day.planned}개 중 완료 ${day.completed}개`).join(", ")}>{flow.map((day) => <article key={day.weekday} className={day.completed ? "is-complete" : day.planned ? "is-planned" : ""}><span>{day.weekday}</span><div><i style={{ height: `${day.planned ? 38 + Math.min(day.planned, 3) * 16 : 4}%` }} /><b style={{ height: `${day.planned ? Math.max((day.completed / day.planned) * 100, day.completed ? 16 : 4) : 4}%` }} /></div><small>{day.completed}/{day.planned}</small></article>)}</div><div className="weekly-detail-bottom"><div className="weekly-goal-editor" role="group" aria-label="이번 주 운동 목표"><span>이번 주 목표</span>{(["all_round", "strength", "endurance"] as WeeklyPlan["goal"][]).map((item) => <button key={item} className={goal === item ? "is-selected" : ""} aria-pressed={goal === item} onClick={() => onGoal(item)}>{{ all_round: "전신", strength: "근력", endurance: "심폐" }[item]}</button>)}</div><p className="weekly-direction"><Sparkles size={16} /><span>{direction}</span></p></div></section>;
+}

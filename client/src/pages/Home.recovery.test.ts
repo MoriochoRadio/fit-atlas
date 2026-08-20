@@ -97,6 +97,27 @@ describe("Home recovery alternative flow", () => {
     expect(screen.getByRole("dialog")).toBeTruthy();
   });
 
+  it("switches the hero equipment and applies its resistance to the current session record", async () => {
+    render(createElement(Home));
+    const cableMachine = await waitFor(() => screen.getByLabelText("직접 조작 가능한 3D 케이블 운동 장비"));
+    const equipmentControl = within(cableMachine).getByRole("group", { name: "메인 3D 운동 기구 선택" });
+
+    fireEvent.click(within(equipmentControl).getByRole("button", { name: "덤벨" }));
+    const dumbbellMachine = await waitFor(() => screen.getByLabelText("직접 조작 가능한 3D 덤벨 운동 장비"));
+    expect(within(dumbbellMachine).getByRole("button", { name: "덤벨" }).getAttribute("aria-pressed")).toBe("true");
+    const resistance = within(dumbbellMachine).getByLabelText("덤벨 부하 조절") as HTMLInputElement;
+    fireEvent.change(resistance, { target: { value: "77" } });
+
+    await waitFor(() => expect(screen.getAllByText(/전신 부하 77% · 집중 RPE 8/).length).toBeGreaterThan(0));
+    const [energy, sleep, stress, pain] = Array.from(document.querySelectorAll(".checkin-controls input")) as HTMLInputElement[];
+    fireEvent.change(energy!, { target: { value: "5" } });
+    fireEvent.change(sleep!, { target: { value: "5" } });
+    fireEvent.change(stress!, { target: { value: "1" } });
+    fireEvent.change(pain!, { target: { value: "1" } });
+    fireEvent.click(screen.getByRole("button", { name: "운동 기록 열기" }));
+    expect((screen.getByLabelText(/주관적 강도 RPE/) as HTMLInputElement).value).toBe("8");
+  });
+
   it("renders the action-first start panel and opens the current session design flow", () => {
     render(createElement(Home));
     expect(screen.getByRole("heading", { name: /오늘은\s*무엇을 움직일까요\?/ })).toBeTruthy();

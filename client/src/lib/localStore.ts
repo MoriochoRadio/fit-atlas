@@ -21,9 +21,11 @@ export type AtlasTheme = (typeof atlasThemes)[number];
 export const defaultAtlasTheme: AtlasTheme = "lime";
 export const atlasMotionSpeeds = ["slow", "normal", "fast"] as const;
 export type AtlasMotionSpeed = (typeof atlasMotionSpeeds)[number];
+export const heroEquipmentOptions = ["cable", "dumbbell", "treadmill"] as const;
+export type HeroEquipment = (typeof heroEquipmentOptions)[number];
 export type AtlasBlockEdit = { label: string; minutes: number; items: string[] };
-export type AtlasInteractionPreferences = { motionSpeed: AtlasMotionSpeed; blockEdits: Record<string, AtlasBlockEdit> };
-export const defaultAtlasInteractionPreferences: AtlasInteractionPreferences = { motionSpeed: "normal", blockEdits: {} };
+export type AtlasInteractionPreferences = { motionSpeed: AtlasMotionSpeed; blockEdits: Record<string, AtlasBlockEdit>; heroEquipment: HeroEquipment; resistance: number };
+export const defaultAtlasInteractionPreferences: AtlasInteractionPreferences = { motionSpeed: "normal", blockEdits: {}, heroEquipment: "cable", resistance: 54 };
 
 function persistLocalValue(key: string, value: unknown) {
   try {
@@ -126,12 +128,14 @@ export function readAtlasInteractionPreferences(): AtlasInteractionPreferences {
   try {
     const value = JSON.parse(window.localStorage.getItem(ATLAS_INTERACTION_KEY) ?? "{}");
     const motionSpeed = atlasMotionSpeeds.includes(value?.motionSpeed) ? value.motionSpeed : defaultAtlasInteractionPreferences.motionSpeed;
+    const heroEquipment = heroEquipmentOptions.includes(value?.heroEquipment) ? value.heroEquipment : defaultAtlasInteractionPreferences.heroEquipment;
+    const resistance = typeof value?.resistance === "number" && Number.isFinite(value.resistance) ? Math.max(0, Math.min(100, Math.round(value.resistance))) : defaultAtlasInteractionPreferences.resistance;
     const rawEdits = value?.blockEdits && typeof value.blockEdits === "object" ? value.blockEdits as Record<string, unknown> : {};
     const blockEdits = Object.fromEntries(Object.entries(rawEdits).flatMap(([key, item]) => {
       const edit = readAtlasBlockEdit(item);
       return edit ? [[key, edit]] : [];
     }));
-    return { motionSpeed, blockEdits };
+    return { motionSpeed, blockEdits, heroEquipment, resistance };
   } catch {
     return defaultAtlasInteractionPreferences;
   }
