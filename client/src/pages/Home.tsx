@@ -480,8 +480,11 @@ export default function Home() {
             <p className="local-first-note"><ShieldCheck size={14} /> 기록·프로필은 이 브라우저에만 저장됩니다. 다른 기기에서는 <strong>백업·가져오기</strong>를 사용하세요.</p>
             <div className="hero-actions"><a href="#explore" className="light-button" onClick={() => setActiveScene("explore")}>운동 시작하기 <ArrowRight size={16} /></a><button className="text-button" onClick={() => { setActiveScene("anatomy"); document.getElementById("anatomy")?.scrollIntoView({ behavior: "smooth" }); }}>내 몸의 움직임 보기 <ChevronRight size={17} /></button></div>
           </div>
-          <div className="hero-atlas">
-            <img className="hero-performance-image" src="/manus-storage/fit-atlas-performance-hero_9e3d3d3c.jpg" alt="바벨 프런트 스쿼트를 수행하는 운동선수" /><div className="hero-image-shade" /><div className="hero-performance-tag"><span>FOCUS</span><b>01</b><small>YOUR NEXT SESSION</small></div><div className="atlas-stat stat-one"><span>ATLAS</span><b>{catalogStats.exerciseCount}</b><small>큐레이션 운동</small></div><div className="atlas-stat stat-two"><span>PATHS</span><b>{catalogStats.categoryCount}</b><small>운동 카테고리</small></div><div className="atlas-caption">MOVE WITH<br />/ INTENTION</div>
+          <div className="hero-atlas" aria-label={`오늘의 ${sessionDuration}분 ${sessionGoal === "strength" ? "기초 근력" : sessionGoal === "endurance" ? "심폐 리듬" : "전신 균형"} 세션 요약`}>
+            <div className="atlas-visual-head"><span>ATLAS / TODAY</span><span className="atlas-ready"><i /> READY</span></div>
+            <div className="motion-map" aria-hidden="true"><span className="route-node node-a">01</span><span className="route-node node-b">02</span><span className="route-node node-c">03</span></div>
+            <article className="hero-session-card"><p>YOUR SESSION</p><b>{sessionDuration}<small> MIN</small></b><span>{sessionGoal === "strength" ? "기초 근력" : sessionGoal === "endurance" ? "심폐 리듬" : "전신 균형"} · {{ home: "집·매트", gym: "헬스장", outdoor: "야외·걷기" }[sessionEnvironment]}</span></article>
+            <div className="atlas-stat stat-one"><span>ATLAS</span><b>{catalogStats.exerciseCount}</b><small>큐레이션 운동</small></div><div className="atlas-stat stat-two"><span>PATHS</span><b>{catalogStats.categoryCount}</b><small>운동 카테고리</small></div><div className="atlas-caption">PLAN / MOVE<br />/ ADJUST</div>
           </div>
           <div className="hero-footer"><span><ShieldCheck size={15} /> 연구 근거를 명시한 콘텐츠</span><span><HeartPulse size={15} /> 의료 진단을 대체하지 않는 안전 설계</span></div>
         </section>

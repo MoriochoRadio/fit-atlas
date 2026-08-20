@@ -46,6 +46,8 @@ describe("Home recovery alternative flow", () => {
   it("renders the action-first start panel and opens the current session design flow", () => {
     render(createElement(Home));
     expect(screen.getByRole("heading", { name: /오늘의 움직임을\s*차분하게 설계하세요\./ })).toBeTruthy();
+    expect(screen.getByLabelText("오늘의 30분 전신 균형 세션 요약")).toBeTruthy();
+    expect(screen.queryByRole("img", { name: /운동선수/ })).toBeNull();
     const startDock = screen.getByLabelText("오늘의 주요 행동");
     expect(within(startDock).getByText("운동 찾기")).toBeTruthy();
     expect(within(startDock).getByText("회복 가이드")).toBeTruthy();
