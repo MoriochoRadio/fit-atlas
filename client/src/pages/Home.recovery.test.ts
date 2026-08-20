@@ -53,6 +53,16 @@ describe("Home recovery alternative flow", () => {
     expect(screen.getByRole("heading", { name: "30분 전신 균형 세션 · 집·매트" })).toBeTruthy();
   });
 
+  it("applies a quick exercise start path and makes the chosen condition visible", () => {
+    render(createElement(Home));
+    const launcher = screen.getByLabelText("빠른 운동 시작");
+
+    fireEvent.click(within(launcher).getByRole("button", { name: /달리기·유산소/ }));
+
+    expect(within(launcher).getByText("러닝 · 심폐")).toBeTruthy();
+    expect(screen.getByRole("button", { name: "러닝" }).getAttribute("aria-pressed")).toBe("true");
+  });
+
   it("toggles the mobile navigation state without changing the active content flow", () => {
     render(createElement(Home));
     const menu = screen.getByRole("navigation", { name: "주요 메뉴" });

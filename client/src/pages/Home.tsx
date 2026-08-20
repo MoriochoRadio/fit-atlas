@@ -35,6 +35,12 @@ const categories = preferredCategoryOptions;
 const goalCopy = { 근력증가: "strength", 체력증가: "endurance", 다이어트: "weight_management" } as const;
 const catalogPageSize = catalogSummary.pageSize;
 const initialVisibleExerciseCount = 18;
+const explorePaths = [
+  { id: "home", label: "집에서 맨몸", description: "장비 없이 바로 시작", category: "맨몸운동", focus: "전체", equipment: "장비 없음", icon: Activity },
+  { id: "gym", label: "헬스장 기구", description: "기구·케이블 중심", category: "헬스기구", focus: "전체", equipment: "장비 필요", icon: Dumbbell },
+  { id: "cardio", label: "달리기·유산소", description: "심폐 리듬 만들기", category: "러닝", focus: "심폐", equipment: "전체", icon: HeartPulse },
+  { id: "mobility", label: "가볍게 회복", description: "가동성·저강도 움직임", category: "전체", focus: "가동성", equipment: "전체", icon: Sparkles },
+] as const;
 
 function SectionTitle({ eyebrow, title, description, action }: { eyebrow: string; title: string; description: string; action?: React.ReactNode }) {
   return <div className="section-heading"><div><p className="eyebrow">{eyebrow}</p><h2>{title}</h2><p className="section-description">{description}</p></div>{action}</div>;
@@ -319,6 +325,17 @@ export default function Home() {
     document.getElementById("explore")?.scrollIntoView({ behavior: "smooth" });
   };
 
+  const applyExplorePath = (path: (typeof explorePaths)[number]) => {
+    setKeyword("");
+    setCategory(path.category as (typeof categories)[number]);
+    setFocus(path.focus);
+    setRegionFilter("전체");
+    setDifficulty("전체");
+    setEquipment(path.equipment);
+    setSort("recommended");
+    setActiveScene("explore");
+  };
+
 
   return (
     <div className={`site-shell scene-${activeScene}`}>
@@ -365,6 +382,7 @@ export default function Home() {
 
         <section id="explore" className="explore-section section-pad">
           <SectionTitle eyebrow="EXERCISE LIBRARY" title="움직임을 지식으로 익히세요." description={`개인용 정적 큐레이션: ${catalogStats.categoryCount}개 카테고리 · ${catalogStats.exerciseCount}개 운동. 카테고리와 목적, 장비로 탐색하고 올바른 자세·효과·안전 단서를 확인하세요.`} action={<span className="library-count">{filteredExercises.length} MATCHES · {catalogExercises.length}/{catalogStats.exerciseCount}</span>} />
+          <section className="explore-launcher" aria-label="빠른 운동 시작"><div className="explore-launcher-head"><div><p className="eyebrow">01 / CHOOSE A START</p><h3>어떻게 움직이고 싶나요?</h3></div><p>한 가지 시작점을 고르면 결과를 바로 좁힙니다. 이후 부위·난이도·장비 조건을 더할 수 있습니다.</p></div><div className="explore-paths">{explorePaths.map((path) => { const Icon = path.icon; const isSelected = category === path.category && focus === path.focus && equipment === path.equipment; return <button key={path.id} className={isSelected ? "is-selected" : ""} aria-pressed={isSelected} onClick={() => applyExplorePath(path)}><Icon size={20} /><span>{path.label}</span><small>{path.description}</small><ArrowRight size={16} /></button>; })}</div><div className="explore-selection-state"><span>현재 조건</span><b>{category === "전체" && focus === "전체" && equipment === "전체" ? "모든 운동 보기" : [category !== "전체" ? category : null, focus !== "전체" ? focus : null, equipment !== "전체" ? equipment : null].filter(Boolean).join(" · ")}</b><p><strong>{filteredExercises.length}개</strong> 운동을 바로 살펴볼 수 있습니다.</p></div></section>
           <div className="search-panel"><div className="search-field"><Search size={18} /><input value={keyword} onChange={(event) => setKeyword(event.target.value)} placeholder="운동, 부위, 장비 검색" aria-label="운동 검색" /></div><div className="quick-category-filter" role="group" aria-label="운동 종류 빠른 필터"><div className="quick-category-head"><div><p className="small-label">EXERCISE TYPE</p><b>운동 종류 빠른 선택</b><span aria-live="polite">{category === "전체" ? `전체 ${filteredExercises.length}개 표시` : `${category} ${filteredExercises.length}개 표시`}</span></div><div className="filter-head-actions"><button className="preference-filter-button" onClick={applySavedExplorePreferences}>선호 조건 적용</button>{(keyword || category !== "전체" || focus !== "전체" || regionFilter !== "전체" || difficulty !== "전체" || equipment !== "전체" || sort !== "recommended") && <button className="filter-reset" onClick={resetExploreFilters}>조건 초기화</button>}</div></div><div className="quick-category-options">{categories.map((item) => <button key={item} className={category === item ? "filter-active" : ""} aria-pressed={category === item} onClick={() => setCategory(item)}>{item === "전체" ? "전체 보기" : item}</button>)}</div></div><div className="filter-row"><label className="sort-select">정렬<select value={sort} onChange={(event) => setSort(event.target.value as ExerciseSort)} aria-label="정렬 기준"><option value="recommended">추천순 · 입문·짧은 시간 우선</option><option value="difficulty">난이도순 · 입문부터</option><option value="duration">소요 시간순 · 짧은 시간부터</option></select></label><select value={regionFilter} onChange={(event) => setRegionFilter(event.target.value)} aria-label="부위 필터"><option>전체</option>{Object.keys(recoveryGuides).map((region) => <option key={region}>{region}</option>)}</select><select value={focus} onChange={(event) => setFocus(event.target.value)} aria-label="목적 필터"><option>전체</option><option>근력</option><option>체력</option><option>심폐</option><option>가동성</option><option>균형</option><option>협응</option><option>파워</option></select><select value={difficulty} onChange={(event) => setDifficulty(event.target.value)} aria-label="난이도 필터"><option>전체</option><option>입문</option><option>중급</option><option>상급</option></select><select value={equipment} onChange={(event) => setEquipment(event.target.value)} aria-label="장비 필터"><option>전체</option><option>장비 없음</option><option>장비 필요</option></select></div></div>
           <div className="saved-exercise-panels" aria-label="빠른 운동 탐색"><section className="saved-exercise-panel"><div><p className="small-label"><History size={13} /> RECENTLY VIEWED</p><h3>최근 본 운동</h3></div>{recentExercises.length ? <div className="saved-exercise-list">{recentExercises.map((exercise) => <button key={exercise.id} onClick={() => openSavedExercise(exercise)}><span>{exercise.category}</span><b>{exercise.name}</b><ArrowRight size={14} /></button>)}</div> : <p>운동 카드에서 <strong>자세·근거 보기</strong>를 열면 여기에 저장됩니다.</p>}</section><section className="saved-exercise-panel"><div><p className="small-label"><Star size={13} /> FAVORITES</p><h3>즐겨찾기</h3></div>{favoriteExercises.length ? <div className="saved-exercise-list">{favoriteExercises.map((exercise) => <button key={exercise.id} onClick={() => openSavedExercise(exercise)}><span>{exercise.category}</span><b>{exercise.name}</b><ArrowRight size={14} /></button>)}</div> : <p>운동 카드 오른쪽 위의 <strong>별표</strong>로 자주 찾는 운동을 모아 보세요.</p>}</section></div>
           <div className="exercise-grid">{visibleExercises.map((exercise, index) => <ExerciseCard key={exercise.id} exercise={exercise} detail={detailsByExerciseId.get(exercise.id)!} index={index} isFavorite={explorePreferences.favoriteExerciseIds.includes(exercise.id)} onToggleFavorite={() => setExplorePreferences((current) => toggleFavoriteExercise(current, exercise.id))} onViewed={() => setExplorePreferences((current) => recordRecentExercise(current, exercise.id))} />)}</div>
