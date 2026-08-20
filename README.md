@@ -1,92 +1,120 @@
 # Fit Atlas
 
-**운동 백과사전 · 개인화 루틴 · 기록 분석 · 회복 가이드를 한 화면에서 다루는 로컬 우선 웹앱.**
-서버도 계정도 없이, 브라우저만으로 동작합니다.
+> **운동 백과사전 · 개인화 세션 · 기록 분석 · 회복 · 웰니스를 하나의 브라우저 로컬 앱으로 연결합니다.**
 
-### 👉 **[바로 사용하기 — moriochoradio.github.io/fit-atlas](https://moriochoradio.github.io/fit-atlas/)**
+[**GitHub Pages에서 열기**](https://moriochoradio.github.io/fit-atlas/) · [요구사항 QA](./docs/qa_requirements.md) · [작업 이력](./docs/todo.md)
 
----
+Fit Atlas는 개인 또는 소수 사용자를 위한 **정적·로컬 우선 피트니스 웹앱**입니다. 계정, 서버, 데이터베이스 없이 브라우저에서 동작하며, 운동 기록과 프로필은 사용자의 기기에만 저장됩니다.
 
-## 무엇을 하는 앱인가
+## 현재 상태
 
-| 영역 | 내용 |
+| 항목 | 현재 구현 |
 |---|---|
-| **운동 백과사전** | 9개 카테고리 **96개 종목**. 종목마다 자세 단서, 타깃 부위, 기대 효과, 주의 사항, 공신력 있는 출처 링크 |
-| **바디 맵** | 신체 부위를 눌러 해당 부위 운동과 회복 가이드로 이동 |
-| **개인화** | 연령·체중·성별·목표·경험 수준을 반영한 보수적 시작안과 목표별 4주 루틴 |
-| **세션 설계** | 시간·환경(집/헬스장)·목표를 고르면 그날 할 세션을 구성 |
-| **일일 체크인** | 컨디션(에너지·수면·스트레스·통증)을 기록하면 그날 강도 제안에 반영 |
-| **주간 계획** | 목표별 세션 체크, 계획 카드에서 바로 기록 시작, 기록 저장 시 자동 완료 처리 |
-| **기록·분석** | 세트·횟수·중량·시간·강도 입력, 날짜별 캘린더, 볼륨·빈도 추이, 개인 최고 기록(PR) |
-| **회복·웰니스** | 통증 부위별 스트레칭·폼롤러·마사지건 프로토콜, 식단·수면·사우나 활용 가이드 |
+| 운동 카탈로그 | **1,008개** 실제 독립 운동: 공개 원천 검증 534개 + 수작업 큐레이션 474개 |
+| 탐색 범위 | 러닝, 유산소, 헬스기구, 프리웨이트, 맨몸운동, 모빌리티, 균형·협응, 요가·필라테스, 파워·민첩성의 9개 카테고리 |
+| 상세 지식 | 시작 자세, 수행 경로, 대표 오류, 쉬운 변형, 진행 변형, 종료 기준, 주의 사항, 근거 적용 범위 |
+| 데이터 저장 | `localStorage` 기반의 기록·프로필·체크인·주간 계획·즐겨찾기·최근 본 운동, 백업 버전 4 |
+| 품질 기준 | Vitest **141개 테스트**, TypeScript 검사, GitHub Pages용 정적 빌드 통과 |
+| 배포 | `main` 푸시 시 GitHub Actions가 검사·테스트·빌드 후 GitHub Pages에 배포 |
 
-카테고리 구성: 헬스기구 22 · 프리웨이트 15 · 맨몸운동 14 · 모빌리티 11 · 유산소 10 · 균형·협응 7 · 파워·민첩성 6 · 러닝 6 · 요가·필라테스 5
+## 주요 기능
 
-## 데이터와 프라이버시
-
-운동 기록·프로필·컨디션 체크인·주간 계획은 **브라우저의 `localStorage`에만** 저장됩니다. 서버로 전송되는 데이터가 없고, 계정도 데이터베이스도 필요하지 않습니다.
-
-기기를 옮길 때는 상단 **백업** 버튼으로 JSON 파일을 내려받아 다른 브라우저에서 복원하면 됩니다. 백업 포맷은 v3까지 하위 호환됩니다.
-
-> **의학적 고지** — 이 앱은 일반적인 운동·웰니스 정보를 제공할 뿐, 의료 진단이나 치료를 대체하지 않습니다. 통증·질환·임신 등 개별 상황에서는 전문가와 상담하세요. 콘텐츠의 근거 기준은 [`docs/research_sources.md`](./docs/research_sources.md)에 정리했습니다.
-
-## 기술 구성
-
-정적 HTML·CSS·JavaScript만 배포하며 API 서버, 데이터베이스, 인증 런타임을 포함하지 않습니다. 런타임 의존성은 5개뿐입니다.
-
-| 의존성 | 사용처 |
+| 영역 | 제공 내용 |
 |---|---|
-| `react`, `react-dom` | 단일 페이지 렌더링과 로컬 상태 |
-| `lucide-react` | 탐색·운동·안전 아이콘 |
-| `sonner` | 저장·백업 복원 결과 알림 |
-| `tw-animate-css` | 빌드 시 스타일 처리 (`tailwindcss`는 devDependency) |
+| **운동 탐색** | 키워드, 카테고리, 신체 부위, 목적, 난이도, 장비, 정렬 기준을 조합해 1,008개 운동을 탐색합니다. 100개 단위의 지연 로딩으로 초기 다운로드를 줄입니다. |
+| **상세 운동 카드** | 타깃 부위, 기대 효과, 장비, 시간·반복 정보, 자세 단서, 대표 오류, 후퇴·진행 변형, 안전 경계와 원문 링크를 확인합니다. 대표 운동에는 3단계 CSS 시각 가이드가 표시됩니다. |
+| **근거 범위 안내** | 종목 원천, 일반 활동·안전 지침의 적용 범위, 개인 질환·통증·부상 상태에 대한 한계를 분리해 제공합니다. |
+| **바디 맵·회복** | 7개 신체 부위를 선택해 관련 운동과 일반 회복 관점을 살펴봅니다. 스트레칭·폼롤러·마사지건·부하 조절·위험 신호와 조건별 대체 운동을 연결합니다. |
+| **개인화** | 연령, 체중, 성별, 목표, 경험 수준, 선택적 안전 맥락을 바탕으로 보수적인 시작 원칙을 제안합니다. 선호 운동 종류·장비·주 활동 환경을 저장해 탐색과 세션 설계에 적용할 수 있습니다. |
+| **세션·주간 계획** | 목표, 환경(집·매트/헬스장/야외), 시간(15/30/45분), 일일 컨디션을 조합해 가벼운 시작 세션을 설계하고 주간 계획에 추가합니다. |
+| **기록·분석** | 날짜, 종목, 세트, 횟수, 중량, 시간, 거리, RPE를 기록합니다. 캘린더, 누적 볼륨, 4주 시간·거리·부하, 개인 최고 기록, 연속성·부위 균형 인사이트를 로컬에서 계산합니다. |
+| **일일 체크인** | 에너지, 수면, 스트레스, 통증·불편감을 기록해 당일 RPE·세션 강도 안내를 보수적으로 조절합니다. |
+| **회복·웰니스** | 오래 앉은 뒤 5분/10분 전환 루틴, 영양·수분·수면·사우나·열 노출 안내, 저강도 유산소 인터벌, 저소음 홈 서킷을 제공합니다. |
+| **빠른 재탐색** | 최근 본 운동과 즐겨찾기를 저장하고, 필요한 카탈로그 페이지만 늦게 불러와 다시 엽니다. |
 
-풀스택 스캐폴드에서 **tRPC, React Query, Express, MySQL, Drizzle, AWS SDK, OAuth, Recharts, Framer Motion, Radix UI, class-variance-authority, clsx, tailwind-merge**를 제거했습니다. 정적 배포와 로컬 저장 방식에 필요하지 않습니다.
+## 카탈로그 원칙과 안전 범위
 
-### 번들 크기
+카탈로그에는 코칭 템포, 반복 수, 세트 수만 다른 조합이 아닌 **실제로 구별되는 독립 운동 종목**을 수록합니다. 공개 운동 데이터 원천 534개는 운동 양식·장비·주동근·자세 변형에 맞춘 개별 상세 프로필을 갖고, 나머지 항목도 메타데이터와 안전 상세를 함께 검증합니다.
 
-`pnpm build` 실측값입니다. 벤더 코드를 React 런타임·아이콘 청크로 분리해 재방문 시 캐시가 유지되도록 했습니다.
+라켓·격투 영역은 혼자 수행하는 **비접촉·저충격 입문 드릴**로 제한합니다. 대련, 스파링, 타격 대상 접촉, 강한 점프·피벗은 포함하지 않습니다. 자세한 경계는 [`docs/racket_combat_intro_scope.md`](./docs/racket_combat_intro_scope.md)를 참고하세요.
 
-| 청크 | 크기 | gzip |
-|---|---:|---:|
-| React 런타임 | 227.65 kB | 69.93 kB |
-| 앱 코드 | 165.50 kB | 45.71 kB |
-| CSS | 41.25 kB | 10.09 kB |
-| 아이콘 | 8.50 kB | 2.20 kB |
-| **합계** | **약 443 kB** | **약 128 kB** |
+> **의학적 고지**: Fit Atlas는 일반 운동·웰니스 교육 자료입니다. 의료 진단, 치료, 재활 처방을 대체하지 않습니다. 새롭거나 심한 통증, 저림, 근력 저하, 호흡 곤란, 어지러움, 외상 후 변화가 있으면 활동을 멈추고 적절한 평가를 우선하세요.
 
-## 로컬 실행
+공개 출처와 콘텐츠 적용 범위는 [연구·가이드라인 목록](./docs/research_sources.md), [대표 시각·근거 범위](./docs/representative_visual_evidence_scope.md), [앉은 자세 회복 범위](./docs/seated_recovery_scope.md)에서 확인할 수 있습니다.
+
+## 데이터·프라이버시·백업
+
+운동 기록, 프로필, 선호 설정, 일일 체크인, 주간 계획, 최근 본 운동, 즐겨찾기는 모두 브라우저의 `localStorage`에 저장됩니다. 앱은 이 데이터를 운영 서버로 전송하지 않습니다.
+
+상단 **백업** 버튼은 현재 데이터를 JSON으로 내보내며, **가져오기**로 다른 브라우저에 복원할 수 있습니다. 현재 백업 포맷은 버전 4이며, 버전 1–4의 기존 백업을 안전한 기본값과 함께 읽습니다. 브라우저 저장소를 삭제하거나 다른 기기로 옮길 경우에는 먼저 백업 파일을 보관하세요.
+
+## 로컬 개발
+
+### 필요 환경
+
+Node.js 22와 `pnpm`이 필요합니다.
 
 ```bash
+git clone https://github.com/MoriochoRadio/fit-atlas.git
+cd fit-atlas
 pnpm install
 pnpm dev
 ```
 
-검증 명령:
+### 품질 검사
 
 ```bash
-pnpm check   # 타입 검사
-pnpm test    # Vitest 33개
-pnpm build   # 프로덕션 정적 번들
+pnpm check
+pnpm test -- --pool=forks --poolOptions.forks.maxForks=1 --poolOptions.forks.minForks=1
+pnpm build
 ```
 
-## 배포
+`pnpm build`는 GitHub Pages 경로를 고려한 정적 `dist/` 번들을 생성합니다. 현재 초기 화면은 첫 100개 운동만 포함하고, 나머지 카탈로그는 정적 지연 청크로 불러옵니다. 최근 빌드에서 가장 큰 앱·런타임 청크도 각각 500kB 미만입니다.
 
-`main`에 푸시하면 [`.github/workflows/deploy-pages.yml`](./.github/workflows/deploy-pages.yml)이 타입 검사 → 테스트 → 빌드를 거쳐 GitHub Pages로 배포합니다. 운영비는 들지 않습니다.
+## GitHub Pages 배포
 
-Pages 경로(`/fit-atlas/`)는 `vite.config.ts`의 `GITHUB_PAGES_BASE`가 결정합니다. 저장소 이름을 바꾸면 이 값도 함께 갱신하세요.
+`main` 브랜치에 푸시하면 [배포 워크플로](./.github/workflows/deploy-pages.yml)가 다음 순서로 실행됩니다.
 
-## 문서
+1. 의존성을 lockfile 기준으로 설치합니다.
+2. `pnpm check`로 TypeScript를 검사합니다.
+3. `pnpm test`로 전체 회귀 테스트를 실행합니다.
+4. `pnpm build` 결과인 `dist/`를 GitHub Pages에 배포합니다.
+
+Pages 기본 경로는 `/fit-atlas/`이며 [`vite.config.ts`](./vite.config.ts)의 `GITHUB_PAGES_BASE`로 조절합니다. 저장소 이름이나 Pages 경로를 바꾸면 이 값도 함께 갱신해야 합니다.
+
+## 프로젝트 구조
+
+```text
+client/src/
+  pages/Home.tsx                 # 단일 화면 앱과 로컬 상태 연결
+  components/                    # 바디 맵·가이드·시각화 UI
+  lib/catalogPage01..11.ts       # 100개 단위 지연 로딩 카탈로그
+  lib/catalogLoader.ts            # 페이지 단위 로더·캐시·통계
+  lib/profilePreferences.ts       # 프로필·선호 설정의 기본값·호환 복원
+  lib/localStore.ts               # localStorage·백업·가져오기
+  lib/sessionBuilder.ts           # 목표·환경·시간·체크인 기반 세션 설계
+  lib/recovery*.ts                # 회복 선택 경로·프로토콜·앉은 자세 루틴
+docs/
+  qa_requirements.md              # 최초 요구사항 대비 현재 충족 상태
+  qa_report.md                    # QA 검증 결과
+  todo.md                         # 작업 이력·향후 보강 항목
+.github/workflows/deploy-pages.yml # 정적 배포 자동화
+```
+
+## 문서 안내
 
 | 문서 | 내용 |
 |---|---|
-| [`docs/research_sources.md`](./docs/research_sources.md) | 콘텐츠 근거 및 안전 원칙 (WHO·CDC 권고 기준) |
-| [`docs/content_expansion_sources.md`](./docs/content_expansion_sources.md) | 콘텐츠 확장에 참조한 출처 목록 |
-| [`docs/content_model.md`](./docs/content_model.md) | 운동·회복 항목의 데이터 표준 |
-| [`docs/qa_requirements.md`](./docs/qa_requirements.md) | 최초 요구사항 대비 충족 기준 |
-| [`docs/qa_report.md`](./docs/qa_report.md) | QA 검증 결과 |
-| [`docs/todo.md`](./docs/todo.md) | 작업 이력과 남은 과제 |
+| [요구사항 QA](./docs/qa_requirements.md) | 초기 요구사항과 현재 구현의 대조·제약 사항 |
+| [QA 결과](./docs/qa_report.md) | 기능·저장·빌드 검증 결과 |
+| [작업 목록](./docs/todo.md) | 완료 이력과 남은 개선 항목 |
+| [연구·출처](./docs/research_sources.md) | WHO·CDC 등 공공 보건·운동 지침의 활용 범위 |
+| [콘텐츠 모델](./docs/content_model.md) | 운동·회복 항목 데이터 표준 |
+| [카탈로그 범위](./docs/catalog_coverage_report.md) | 운동 분류·포괄성 점검 |
+| [라켓·격투 입문 범위](./docs/racket_combat_intro_scope.md) | 비접촉 입문 드릴의 공간·안전 경계 |
+| [대표 시각·근거 범위](./docs/representative_visual_evidence_scope.md) | 대표 운동 시각 가이드·직접 자료 연결 원칙 |
+| [앉은 자세 회복 범위](./docs/seated_recovery_scope.md) | 5분·10분 회복 루틴의 일반 교육 범위 |
 
 ## 라이선스
 
-[MIT](./LICENSE)
+[MIT License](./LICENSE)
