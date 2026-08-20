@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { asciiMovementDiagrams, getAsciiMovementDiagram } from "./asciiMovementDiagrams";
+import { asciiMovementDiagrams, getAsciiDiagramPresentation, getAsciiMovementDiagram } from "./asciiMovementDiagrams";
 import { loadFullCatalog } from "./catalogLoader";
 import { getExerciseTextGuide } from "./exerciseTextGuide";
 
@@ -22,10 +22,16 @@ describe("ASCII movement diagrams", () => {
     expect(entries).toHaveLength(1008);
 
     entries.forEach(({ exercise, detail }) => {
-      const diagram = getAsciiMovementDiagram(exercise.id, getExerciseTextGuide(exercise, detail));
+      const guide = getExerciseTextGuide(exercise, detail);
+      const diagram = getAsciiMovementDiagram(exercise.id, guide);
+      const presentation = getAsciiDiagramPresentation(guide);
       expect(diagram).toBeDefined();
       expect(diagram?.stages).toHaveLength(3);
       expect(diagram?.stages.every((stage) => stage.art.includes("\n") && stage.cue.length > 4)).toBe(true);
+      expect(presentation.stageArrows).toHaveLength(3);
+      expect(presentation.stageArrows.every((arrow) => /[↘↗↕↙↔→←↑]/.test(arrow))).toBe(true);
+      expect(presentation.categoryLabel.length).toBeGreaterThan(2);
+      expect(presentation.regionLabel.length).toBeGreaterThan(0);
     });
   });
 });

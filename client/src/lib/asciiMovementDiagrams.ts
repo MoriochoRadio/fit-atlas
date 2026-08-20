@@ -8,6 +8,15 @@ export type AsciiMovementDiagram = {
   stages: [AsciiStage, AsciiStage, AsciiStage];
 };
 
+export type AsciiDiagramPresentation = {
+  categoryTheme: "cardio" | "strength" | "mobility" | "coordination";
+  regionTheme: "chest" | "back" | "shoulder" | "arms" | "core" | "glutes" | "lower";
+  categoryLabel: string;
+  regionLabel: string;
+  stageArrows: [string, string, string];
+  motionLabel: string;
+};
+
 const pose = (...lines: string[]) => lines.join("\n");
 
 const stand = pose("  O", " /|\\", " / \\", "─────");
@@ -81,6 +90,16 @@ function createFallbackDiagram(guide: ExerciseTextGuide): AsciiMovementDiagram {
     description: `${guide.name}의 ${guide.category} 동작을 시작·핵심 움직임·마무리 확인 순서로 읽는 공통 도식입니다.`,
     stages: reference.stages.map((stage, index) => ({ label: ["시작", "핵심", "마무리"][index], art: stage.art, cue: guide.sequence[index] })) as AsciiMovementDiagram["stages"],
   };
+}
+
+export function getAsciiDiagramPresentation(guide: ExerciseTextGuide): AsciiDiagramPresentation {
+  const pattern = selectFallbackDiagramId(guide);
+  const categoryTheme = guide.category === "러닝" || guide.category === "유산소" ? "cardio" : guide.category === "모빌리티" || guide.category === "요가·필라테스" ? "mobility" : guide.category === "균형·협응" || guide.category === "파워·민첩성" ? "coordination" : "strength";
+  const categoryLabel = { cardio: "심폐·리듬", strength: "근력·제어", mobility: "가동성·회복", coordination: "균형·협응" }[categoryTheme];
+  const regionTheme = ({ 가슴: "chest", 등: "back", 어깨: "shoulder", 팔: "arms", 코어: "core", 둔근: "glutes", 하체: "lower" } as const)[guide.regions[0]];
+  const regionLabel = ({ chest: "가슴", back: "등", shoulder: "어깨", arms: "팔", core: "코어", glutes: "둔근", lower: "하체" } as const)[regionTheme];
+  const movement = pattern === "rdl" || pattern === "barbell-hip-thrust" ? { stageArrows: ["↘", "↗", "↕"] as [string, string, string], motionLabel: "고관절 접기 ↘ · 펴기 ↗" } : pattern === "dumbbell-bench" || pattern === "latpulldown" ? { stageArrows: ["↙", "↗", "↕"] as [string, string, string], motionLabel: "팔·어깨 경로 ↙ · 밀기/당기기 ↗" } : pattern === "row-erg-easy" || pattern === "bike" ? { stageArrows: ["↔", "→", "↔"] as [string, string, string], motionLabel: "반복 리듬 ↔ · 추진 방향 →" } : pattern === "step-up" ? { stageArrows: ["↗", "↑", "↘"] as [string, string, string], motionLabel: "발 지지 ↗ · 위로 밀기 ↑ · 천천히 내려오기 ↘" } : pattern === "front-plank" || pattern === "bird-dog" ? { stageArrows: ["→", "↔", "←"] as [string, string, string], motionLabel: "몸통 길게 → · 균형 유지 ↔ · 제어 복귀 ←" } : { stageArrows: ["↘", "↑", "↕"] as [string, string, string], motionLabel: "관절 굽힘 ↘ · 지면 밀기 ↑ · 제어 복귀 ↕" };
+  return { categoryTheme, regionTheme, categoryLabel, regionLabel, ...movement };
 }
 
 export function getAsciiMovementDiagram(exerciseId: string, guide?: ExerciseTextGuide) {
