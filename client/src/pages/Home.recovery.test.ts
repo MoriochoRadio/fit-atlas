@@ -150,6 +150,23 @@ describe("Home recovery alternative flow", () => {
     expect(screen.getAllByText(/심한 두통·실신감·혼란/).length).toBeGreaterThan(0);
   });
 
+  it("saves local category, equipment, and environment preferences then applies them to explore and session design", () => {
+    render(createElement(Home));
+    fireEvent.click(screen.getByRole("button", { name: "내 프로필" }));
+    fireEvent.change(screen.getByLabelText("선호 운동 종류"), { target: { value: "맨몸운동" } });
+    fireEvent.change(screen.getByLabelText("선호 장비"), { target: { value: "bodyweight" } });
+    fireEvent.change(screen.getByLabelText("주 활동 환경"), { target: { value: "outdoor" } });
+    fireEvent.click(screen.getByRole("button", { name: "설정 저장" }));
+
+    expect(JSON.parse(window.localStorage.getItem("fit-atlas-profile") ?? "{}")).toMatchObject({ preferredCategory: "맨몸운동", preferredEquipment: "bodyweight", preferredEnvironment: "outdoor" });
+    expect(screen.getByRole("heading", { name: "30분 전신 균형 세션 · 야외·걷기" })).toBeTruthy();
+
+    const typeFilter = screen.getByRole("group", { name: "운동 종류 빠른 필터" });
+    fireEvent.click(within(typeFilter).getByRole("button", { name: "선호 조건 적용" }));
+    expect(within(typeFilter).getByRole("button", { name: "맨몸운동" }).getAttribute("aria-pressed")).toBe("true");
+    expect((screen.getByLabelText("장비 필터") as HTMLSelectElement).value).toBe("장비 없음");
+  });
+
   it("provides an accessible quick exercise-type filter that combines with existing filters and can reset", () => {
     render(createElement(Home));
     const typeFilter = screen.getByRole("group", { name: "운동 종류 빠른 필터" });
