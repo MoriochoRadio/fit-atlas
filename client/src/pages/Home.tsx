@@ -76,6 +76,8 @@ export default function Home() {
   const [romFilter, setRomFilter] = useState<RomFilter>("전체");
   const [filtersOpen, setFiltersOpen] = useState(false);
   const [atlasTheme, setAtlasTheme] = useState<AtlasTheme>(() => typeof window === "undefined" ? defaultAtlasTheme : readAtlasTheme());
+  const [atlasTransition, setAtlasTransition] = useState<"theme" | "route" | null>(null);
+  const [atlasFeedback, setAtlasFeedback] = useState("");
   const [axisVisible, setAxisVisible] = useState(() => typeof window === "undefined" ? true : readAxisVisibility());
   const [romRecommendationTarget, setRomRecommendationTarget] = useState<RomRecommendationTarget | null>(null);
   const [pendingExerciseName, setPendingExerciseName] = useState<string | null>(null);
@@ -115,6 +117,8 @@ export default function Home() {
   const romDashboardRef = useRef<HTMLElement | null>(null);
   const completionEffectInitialized = useRef(false);
   const previouslyComplete = useRef(false);
+  const atlasTransitionTimer = useRef<number | null>(null);
+  const atlasRouteInitialized = useRef(false);
 
   useEffect(() => {
     if (!saveTrainingLogs(logs)) setStorageUnavailable(true);
@@ -166,6 +170,30 @@ export default function Home() {
   useEffect(() => {
     if (!saveAtlasTheme(atlasTheme)) setStorageUnavailable(true);
   }, [atlasTheme]);
+
+  const playAtlasTransition = (kind: "theme" | "route", feedback: string) => {
+    if (atlasTransitionTimer.current) window.clearTimeout(atlasTransitionTimer.current);
+    setAtlasTransition(null);
+    window.setTimeout(() => setAtlasTransition(kind), 0);
+    setAtlasFeedback(feedback);
+    atlasTransitionTimer.current = window.setTimeout(() => {
+      setAtlasTransition(null);
+      setAtlasFeedback("");
+    }, 820);
+  };
+
+  useEffect(() => () => {
+    if (atlasTransitionTimer.current) window.clearTimeout(atlasTransitionTimer.current);
+  }, []);
+
+  useEffect(() => {
+    if (!atlasRouteInitialized.current) {
+      atlasRouteInitialized.current = true;
+      return;
+    }
+    const label = sessionGoal === "strength" ? "파워" : sessionGoal === "endurance" ? "플로우" : "밸런스";
+    playAtlasTransition("route", `${label} 경로를 다시 그렸습니다.`);
+  }, [sessionEnvironment, sessionGoal]);
 
   useEffect(() => {
     if (!logOpen) setLinkedPlanSessionId(null);
@@ -469,7 +497,7 @@ export default function Home() {
 
 
   return (
-    <AsciiInteractionContext.Provider value={{ showAxis: axisVisible, pendingExerciseName, clearPendingExercise: () => setPendingExerciseName(null), onOpenRom: (exerciseName, presentation) => setRomRecommendationTarget({ exerciseName, presentation }), onExploreAlternative: (exerciseName) => { setRomRecommendationTarget(null); setKeyword(exerciseName); setCategory("전체"); setFocus("전체"); setRegionFilter("전체"); setDifficulty("전체"); setEquipment("전체"); setRomFilter("전체"); setPendingExerciseName(exerciseName); setActiveScene("explore"); window.setTimeout(() => document.getElementById("explore")?.scrollIntoView({ behavior: "smooth" }), 0); }, onAddToTodayRoutine: (exerciseName) => { setWeeklyPlan((current) => addRomAlternativeToWeeklyPlan(current, exerciseName)); toast.success(`${exerciseName}을 오늘의 운동 루틴에 추가했습니다.`); } }}><div className={`site-shell scene-${activeScene} atlas-theme-${atlasTheme} atlas-motion-${sessionGoal} atlas-environment-${sessionEnvironment}`}>
+    <AsciiInteractionContext.Provider value={{ showAxis: axisVisible, pendingExerciseName, clearPendingExercise: () => setPendingExerciseName(null), onOpenRom: (exerciseName, presentation) => setRomRecommendationTarget({ exerciseName, presentation }), onExploreAlternative: (exerciseName) => { setRomRecommendationTarget(null); setKeyword(exerciseName); setCategory("전체"); setFocus("전체"); setRegionFilter("전체"); setDifficulty("전체"); setEquipment("전체"); setRomFilter("전체"); setPendingExerciseName(exerciseName); setActiveScene("explore"); window.setTimeout(() => document.getElementById("explore")?.scrollIntoView({ behavior: "smooth" }), 0); }, onAddToTodayRoutine: (exerciseName) => { setWeeklyPlan((current) => addRomAlternativeToWeeklyPlan(current, exerciseName)); toast.success(`${exerciseName}을 오늘의 운동 루틴에 추가했습니다.`); } }}><div className={`site-shell scene-${activeScene} atlas-theme-${atlasTheme} atlas-motion-${sessionGoal} atlas-environment-${sessionEnvironment}${atlasTransition ? ` atlas-transition-${atlasTransition}` : ""}`}>
       <div className="cinematic-backdrop" aria-hidden="true"><span className="cinematic-orb orb-one" /><span className="cinematic-orb orb-two" /><span className="cinematic-gridlines" /><span className="cinematic-hud">SCENE / {activeScene.toUpperCase()}</span></div>
       {celebrationOpen && <div className="completion-celebration" role="status" aria-live="polite"><div className="celebration-confetti" aria-hidden="true">✦ ✦ ✦ ✦ ✦ ✦ ✦</div><div><p className="eyebrow">ROUTINE COMPLETE</p><h2>오늘의 루틴을 모두 마쳤습니다.</h2><p>완료율 100%입니다. 다음 세션은 반응을 확인하며 한 가지 변수만 천천히 조절하세요.</p></div><button onClick={() => setCelebrationOpen(false)} aria-label="축하 메시지 닫기">확인</button></div>}
       <header className="topbar">
@@ -494,10 +522,10 @@ export default function Home() {
           </div>
           <div className="hero-atlas" aria-label={`오늘의 ${sessionDuration}분 ${sessionGoal === "strength" ? "기초 근력" : sessionGoal === "endurance" ? "심폐 리듬" : "전신 균형"} 세션 요약`}>
             <div className="atlas-visual-head"><span>ATLAS / TODAY</span><span className="atlas-ready"><i /> READY</span></div>
-            <div className="motion-map" aria-hidden="true"><span className="motion-scan" /><span className="route-node node-a">01</span><span className="route-node node-b">02</span><span className="route-node node-c">03</span></div>
+            <div className="motion-map" aria-hidden="true"><span className="motion-scan" /><span className="motion-ripple ripple-a" /><span className="motion-ripple ripple-b" /><span className="route-node node-a">01</span><span className="route-node node-b">02</span><span className="route-node node-c">03</span></div>
             <article className="hero-session-card"><p>{atlasRoute.label}</p><b>{sessionDuration}<small> MIN</small></b><span>{sessionGoal === "strength" ? "기초 근력" : sessionGoal === "endurance" ? "심폐 리듬" : "전신 균형"} · {{ home: "집·매트", gym: "헬스장", outdoor: "야외·걷기" }[sessionEnvironment]}</span><small className="session-route-description">{atlasRoute.description}</small></article>
             <div className="atlas-stat stat-one"><span>ATLAS</span><b>{catalogStats.exerciseCount}</b><small>큐레이션 운동</small></div><div className="atlas-stat stat-two"><span>PATHS</span><b>{catalogStats.categoryCount}</b><small>운동 카테고리</small></div><div className="atlas-caption">PLAN / MOVE<br />/ ADJUST</div>
-            <div className="atlas-theme-control" role="group" aria-label="아틀라스 색상 테마 선택"><div><p>ATLAS THEME</p><span>{atlasThemeCopy[atlasTheme].description}</span></div><div className="atlas-theme-options">{atlasThemes.map((theme) => <button key={theme} className={atlasTheme === theme ? "is-selected" : ""} onClick={() => setAtlasTheme(theme)} aria-pressed={atlasTheme === theme} aria-label={`${atlasThemeCopy[theme].label} 테마 선택`}><i /><span>{atlasThemeCopy[theme].label}</span></button>)}</div></div>
+            <div className="atlas-theme-control" role="group" aria-label="아틀라스 색상 테마 선택"><div><p>ATLAS THEME</p><span>{atlasThemeCopy[atlasTheme].description}</span></div><div className="atlas-theme-options">{atlasThemes.map((theme) => <button key={theme} className={atlasTheme === theme ? "is-selected" : ""} onClick={() => { if (theme === atlasTheme) return; setAtlasTheme(theme); playAtlasTransition("theme", `${atlasThemeCopy[theme].label} 테마를 적용했습니다.`); }} aria-pressed={atlasTheme === theme} aria-label={`${atlasThemeCopy[theme].label} 테마 선택`}><i /><span>{atlasThemeCopy[theme].label}</span></button>)}</div><span className="atlas-feedback" role="status" aria-live="polite">{atlasFeedback}</span></div>
           </div>
           <div className="hero-footer"><span><ShieldCheck size={15} /> 연구 근거를 명시한 콘텐츠</span><span><HeartPulse size={15} /> 의료 진단을 대체하지 않는 안전 설계</span></div>
         </section>

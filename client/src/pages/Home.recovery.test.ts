@@ -83,6 +83,7 @@ describe("Home recovery alternative flow", () => {
     const oceanTheme = screen.getByRole("button", { name: "오션 테마 선택" });
     fireEvent.click(oceanTheme);
     expect(oceanTheme.getAttribute("aria-pressed")).toBe("true");
+    expect(screen.getByText("오션 테마를 적용했습니다.")).toBeTruthy();
     expect(document.querySelector(".site-shell")?.className).toContain("atlas-theme-ocean");
     cleanup();
     render(createElement(Home));
