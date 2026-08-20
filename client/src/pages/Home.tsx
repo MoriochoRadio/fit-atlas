@@ -325,6 +325,18 @@ export default function Home() {
   const activeAtlasBlock = activeAtlasNode === null ? null : atlasBlocks[activeAtlasNode] ?? null;
   const atlasRoute = { all_round: { label: "BALANCE ROUTE", description: "전신 연결과 리듬" }, strength: { label: "POWER ROUTE", description: "점진적 힘과 안정" }, endurance: { label: "FLOW ROUTE", description: "호흡과 지속 리듬" } }[sessionGoal];
 
+  const startEquipmentSession = () => {
+    const setup: Record<HeroEquipment, { goal: SessionGoal; label: string; goalLabel: string }> = {
+      cable: { goal: "strength", label: "케이블 머신", goalLabel: "기초 근력" },
+      dumbbell: { goal: "all_round", label: "덤벨", goalLabel: "전신 균형" },
+      treadmill: { goal: "endurance", label: "트레드밀", goalLabel: "심폐 리듬" },
+    };
+    const selected = setup[atlasInteraction.heroEquipment];
+    setSessionGoal(selected.goal);
+    document.getElementById("session")?.scrollIntoView({ behavior: "smooth" });
+    toast.success(`${selected.label} 기준 ${selected.goalLabel} ${sessionDuration}분 세션으로 연결했습니다.`);
+  };
+
   const openAtlasNode = (index: number) => {
     const block = atlasBlocks[index];
     if (!block) return;
@@ -657,7 +669,7 @@ export default function Home() {
               <HeroGymMachine3D goal={sessionGoal} environment={sessionEnvironment} completion={weeklyCompletionPercent} equipment={atlasInteraction.heroEquipment} resistance={atlasInteraction.resistance} nodes={atlasBlocks.slice(0, 3).map((block) => block.label)} onEquipment={(heroEquipment) => { if (heroEquipment === atlasInteraction.heroEquipment) return; setAtlasInteraction((current) => ({ ...current, heroEquipment })); playAtlasTransition("route", `${{ cable: "케이블 머신", dumbbell: "덤벨", treadmill: "트레드밀" }[heroEquipment]} 장비를 선택했습니다.`); }} onResistance={(resistance) => setAtlasInteraction((current) => ({ ...current, resistance }))} onOpenNode={openAtlasNode} />
             </div>
             <div className="hero-workspace-bottom">
-              <article className="hero-session-card"><p>{atlasRoute.label}</p><b>{sessionDuration}<small> MIN</small></b><span>{sessionGoal === "strength" ? "기초 근력" : sessionGoal === "endurance" ? "심폐 리듬" : "전신 균형"} · {{ home: "집·매트", gym: "헬스장", outdoor: "야외·걷기" }[sessionEnvironment]}</span><small className="session-route-description">{atlasRoute.description} · {machineSessionIntensity.target} {atlasInteraction.resistance}% · {machineSessionIntensity.label} RPE {machineSessionIntensity.rpe}</small></article>
+              <article className="hero-session-card"><p>{atlasRoute.label}</p><b>{sessionDuration}<small> MIN</small></b><span>{sessionGoal === "strength" ? "기초 근력" : sessionGoal === "endurance" ? "심폐 리듬" : "전신 균형"} · {{ home: "집·매트", gym: "헬스장", outdoor: "야외·걷기" }[sessionEnvironment]}</span><small className="session-route-description">{atlasRoute.description} · {machineSessionIntensity.target} {atlasInteraction.resistance}% · {machineSessionIntensity.label} RPE {machineSessionIntensity.rpe}</small><button className="hero-session-start" onClick={startEquipmentSession}>이 장비로 세션 설계 <ArrowRight size={14} /></button></article>
               <div className="atlas-theme-control" role="group" aria-label="아틀라스 제어"><div><p>ATLAS THEME</p><span>{atlasThemeCopy[atlasTheme].label} · {atlasThemeCopy[atlasTheme].description}</span></div><div className="atlas-theme-options" aria-label="아틀라스 색상 테마 선택">{atlasThemes.map((theme) => <button key={theme} className={atlasTheme === theme ? "is-selected" : ""} onClick={() => { if (theme === atlasTheme) return; setAtlasTheme(theme); playAtlasTransition("theme", `${atlasThemeCopy[theme].label} 테마를 적용했습니다.`); }} aria-pressed={atlasTheme === theme} aria-label={`${atlasThemeCopy[theme].label} 테마 선택`}><i /><span>{atlasThemeCopy[theme].label}</span></button>)}</div><div className="atlas-speed-control" role="group" aria-label="아틀라스 궤적 재생 속도">{atlasMotionSpeeds.map((speed) => <button key={speed} className={atlasInteraction.motionSpeed === speed ? "is-selected" : ""} onClick={() => { if (speed === atlasInteraction.motionSpeed) return; setAtlasInteraction((current) => ({ ...current, motionSpeed: speed })); playAtlasTransition("route", `${atlasMotionSpeedCopy[speed].label} 속도로 경로를 재생합니다.`); }} aria-pressed={atlasInteraction.motionSpeed === speed}><span>{atlasMotionSpeedCopy[speed].label}</span><b>{atlasMotionSpeedCopy[speed].rate}</b></button>)}</div><span className="atlas-performance-status">이번 주 {weeklyPlanInsight.completed}/{weeklyPlanInsight.total || 0} · {atlasPerformance === "surge" ? "신호 밀도 높음" : atlasPerformance === "active" ? "신호 흐름 활성" : "신호 준비 중"}</span><span className="atlas-feedback" role="status" aria-live="polite">{atlasFeedback}</span></div>
             </div>
           </div>

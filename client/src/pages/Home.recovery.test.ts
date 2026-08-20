@@ -144,6 +144,18 @@ describe("Home recovery alternative flow", () => {
     expect(document.querySelector(".hero-atlas .atlas-theme-control")).toBeNull();
   });
 
+  it("starts a matching session goal from the selected hero equipment", async () => {
+    render(createElement(Home));
+    const cableMachine = await waitFor(() => screen.getByLabelText("직접 조작 가능한 3D 케이블 운동 장비"));
+    fireEvent.click(within(cableMachine).getByRole("button", { name: "트레드밀" }));
+    const treadmillMachine = await waitFor(() => screen.getByLabelText("직접 조작 가능한 3D 트레드밀 운동 장비"));
+
+    fireEvent.click(within(treadmillMachine.closest(".hero-workspace") as HTMLElement).getByRole("button", { name: "이 장비로 세션 설계" }));
+
+    expect(scrollIntoView).toHaveBeenCalledWith({ behavior: "smooth" });
+    expect(screen.getByRole("heading", { name: "30분 심폐 리듬 세션 · 집·매트" })).toBeTruthy();
+  });
+
   it("shows weekly completion flow, lets the user change the weekly goal, and gives the next direction", () => {
     render(createElement(Home));
     const report = screen.getByLabelText("주간 아틀라스 상세 리포트");
