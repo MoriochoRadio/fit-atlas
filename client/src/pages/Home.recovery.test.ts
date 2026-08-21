@@ -751,4 +751,14 @@ describe("Home recovery alternative flow", () => {
     fireEvent.click(firstRecord);
     expect(screen.getByRole("dialog", { name: "운동 기록 추가" })).toBeTruthy();
   });
+
+  it("keeps the wellness route and short recovery start available in the reading flow", () => {
+    render(createElement(Home));
+    const route = document.querySelector(".wellness-toc");
+    expect(route?.querySelectorAll("button").length).toBeGreaterThan(0);
+    const startRecovery = screen.getByRole("button", { name: "5분 가볍게 시작" });
+    fireEvent.click(startRecovery);
+    const durationSelector = screen.getByRole("group", { name: "앉은 자세 회복 루틴 시간 선택" });
+    expect(within(durationSelector).getByRole("button", { name: "5분" }).getAttribute("aria-pressed")).toBe("true");
+  });
 });
