@@ -4,9 +4,10 @@ const WELLNESS_PREFERENCES_KEY = "fit-atlas-wellness-preferences";
 const recoveryDurations: SeatedRecoveryDuration[] = [5, 10];
 const recoveryReflections = ["lighter", "same", "pause"] as const;
 const recoveryHistoryLimit = 6;
+export const recoveryNoteMaxLength = 160;
 
 export type RecoveryReflection = (typeof recoveryReflections)[number];
-export type RecoveryRoutineRecord = { duration: SeatedRecoveryDuration; completedOn: string; completedAt: string | null; reflection: RecoveryReflection | null };
+export type RecoveryRoutineRecord = { duration: SeatedRecoveryDuration; completedOn: string; completedAt: string | null; reflection: RecoveryReflection | null; note: string };
 export type WellnessPreferences = { savedRecoveryDuration: SeatedRecoveryDuration | null; lastRecoveryRecord: RecoveryRoutineRecord | null; recoveryHistory: RecoveryRoutineRecord[] };
 
 export const defaultWellnessPreferences: WellnessPreferences = { savedRecoveryDuration: null, lastRecoveryRecord: null, recoveryHistory: [] };
@@ -17,7 +18,7 @@ function readRecoveryRecord(value: unknown): RecoveryRoutineRecord | null {
   if (!recoveryDurations.includes(record.duration as SeatedRecoveryDuration) || typeof record.completedOn !== "string" || record.completedOn.length === 0) return null;
   if (record.completedAt !== undefined && record.completedAt !== null && typeof record.completedAt !== "string") return null;
   if (record.reflection !== null && !recoveryReflections.includes(record.reflection as RecoveryReflection)) return null;
-  return { duration: record.duration as SeatedRecoveryDuration, completedOn: record.completedOn, completedAt: record.completedAt ?? null, reflection: record.reflection as RecoveryReflection | null };
+  return { duration: record.duration as SeatedRecoveryDuration, completedOn: record.completedOn, completedAt: record.completedAt ?? null, reflection: record.reflection as RecoveryReflection | null, note: typeof record.note === "string" ? record.note.slice(0, recoveryNoteMaxLength) : "" };
 }
 
 function recoveryRecordTimestamp(record: RecoveryRoutineRecord) {
