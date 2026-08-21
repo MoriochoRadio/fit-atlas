@@ -549,6 +549,7 @@ describe("Home recovery alternative flow", () => {
     expect(within(recoveryPanel).getByRole("heading", { name: "최근 회복 기록" })).toBeTruthy();
     const recoverySummary = within(recoveryPanel).getByLabelText("최근 회복 기록 요약");
     expect(within(recoveryPanel).getByLabelText("최근 회복 변화 비교")).toBeTruthy();
+    expect(within(recoveryPanel).getByLabelText("최근 4회 체감 흐름").textContent).toContain("가벼워짐");
     expect(within(recoverySummary).getByText("2회")).toBeTruthy();
     expect(within(recoverySummary).getByText("가벼워짐")).toBeTruthy();
     expect(within(recoverySummary).getByText("5분 · 1회")).toBeTruthy();
