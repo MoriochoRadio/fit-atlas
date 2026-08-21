@@ -548,6 +548,7 @@ describe("Home recovery alternative flow", () => {
     fireEvent.click(within(recoveryPanel).getByRole("button", { name: "이번 5분 루틴 완료 기록" }));
     expect(within(recoveryPanel).getByRole("heading", { name: "최근 회복 기록" })).toBeTruthy();
     const recoverySummary = within(recoveryPanel).getByLabelText("최근 회복 기록 요약");
+    expect(within(recoveryPanel).getByLabelText("최근 회복 변화 비교")).toBeTruthy();
     expect(within(recoverySummary).getByText("2회")).toBeTruthy();
     expect(within(recoverySummary).getByText("가벼워짐")).toBeTruthy();
     expect(within(recoverySummary).getByText("5분 · 1회")).toBeTruthy();
@@ -833,7 +834,17 @@ describe("Home recovery alternative flow", () => {
     expect(within(recoveryStages).getByText(/03 \/ 부하 재개/)).toBeTruthy();
     const nextSessionRoute = screen.getByLabelText("주간 리포트 다음 세션 경로");
     expect(within(nextSessionRoute).getByText("01 주간 신호 확인")).toBeTruthy();
-    expect(within(nextSessionRoute).getByText("02 다음 세션 조절")).toBeTruthy();
+    expect(within(nextSessionRoute).getByText(/02 .*세션 조절/)).toBeTruthy();
+  });
+
+  it("feeds a changed weekly goal into the next session design", async () => {
+    render(createElement(Home));
+    const weeklyGoal = screen.getByRole("group", { name: "이번 주 운동 목표" });
+    fireEvent.click(within(weeklyGoal).getByRole("button", { name: "근력" }));
+    expect(screen.getByLabelText("주간 리포트 다음 세션 경로").textContent).toContain("02 근력 세션 조절");
+    fireEvent.click(screen.getByRole("button", { name: "다음 세션 설계" }));
+    await waitFor(() => expect(document.querySelector(".site-shell")?.classList.contains("scene-session")).toBe(true));
+    expect(document.querySelector(".session-current-state")?.textContent).toContain("기초 근력");
   });
 
   it("moves keyboard context to the active scene after mobile quick navigation", async () => {
