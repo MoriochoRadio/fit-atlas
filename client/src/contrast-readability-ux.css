@@ -1,8 +1,8 @@
 :root {
   --readable-copy: #334a65;
   --readable-muted: #4d627d;
-  --readable-label: #536802;
-  --readable-link: #526c08;
+  --readable-label: #40566f;
+  --readable-link: #36516b;
   --readable-danger: #713f38;
 }
 
@@ -72,6 +72,49 @@
 .related-list button,
 .log-form label,
 .dashboard-export-note label { color: var(--readable-copy); }
+
+/* Never use lime as a letter colour on a light surface. */
+.hero h1 em,
+.start-dock-intro h2 em,
+.eyebrow.light,
+.text-button,
+.profile-link,
+.card-expand,
+.explore-primary-controls > p b,
+.explore-result-summary b small,
+.explore-filter-chips span,
+.advanced-filter-control .small-label,
+.rom-readiness-inline b,
+.weekly-log-button,
+.exercise-card .exercise-meta svg,
+.exercise-card .exercise-meta b,
+.exercise-card .exercise-meta em,
+.explore-selection-state p strong,
+.session-current-state p strong,
+.session-current-state > b,
+.explore-selection-state > b,
+.session-block > span,
+.text-guide-head > span,
+.text-guide-sequence li > span,
+.explore-paths + .explore-selection-state strong,
+.saved-exercise-index,
+.saved-exercise-list button svg,
+.saved-exercise-count,
+.hero-atlas .atlas-ready,
+.hero-atlas .atlas-caption,
+.hero-atlas .hero-session-card p,
+.hero-atlas .hero-session-card b small,
+.hero-atlas .session-route-description,
+.hero-atlas .atlas-theme-control p { color: #36516b; }
+
+.hero-atlas .machine-hud b,
+.hero-atlas .machine-hud span,
+.hero-atlas .machine-hud small { color: #36516b; }
+
+.tag-row span,
+.benefit-row span,
+.balance-tags span,
+.tag-row .focus-tag { color: #29445e; }
 
 .session-current-state,
 .explore-selection-state,
