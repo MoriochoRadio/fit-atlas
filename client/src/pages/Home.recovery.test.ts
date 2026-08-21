@@ -712,4 +712,17 @@ describe("Home recovery alternative flow", () => {
     fireEvent.click(smallRom);
     expect(smallRom.getAttribute("aria-pressed")).toBe("true");
   });
+
+  it("keeps exercise cards scannable before opening the detailed movement and evidence guidance", () => {
+    render(createElement(Home));
+    const detailTrigger = screen.getAllByRole("button", { name: "자세·근거 보기" })[0];
+    const card = detailTrigger.closest("article");
+    expect(card).toBeTruthy();
+    expect(card?.querySelectorAll(".exercise-meta span").length).toBe(2);
+    expect(card?.querySelector(".exercise-detail")).toBeNull();
+
+    fireEvent.click(detailTrigger);
+    expect(card?.querySelector(".exercise-detail")).toBeTruthy();
+    expect(within(card!).getByRole("button", { name: "간단히 보기" })).toBeTruthy();
+  });
 });
