@@ -698,6 +698,11 @@ describe("Home recovery alternative flow", () => {
     expect(within(quickNav).getByRole("link", { name: "오늘 세션" })).toBeTruthy();
     expect(within(quickNav).getByRole("link", { name: "탐색" })).toBeTruthy();
     expect(screen.getByRole("button", { name: /15분 집에서/ })).toBeTruthy();
+    expect(screen.getByText(/준비 · 약/)).toBeTruthy();
+    expect(screen.getByText(/주요 움직임 · 약/)).toBeTruthy();
+    expect(screen.getByText(/마무리 · 약/)).toBeTruthy();
+    expect(screen.getByRole("button", { name: "이번 주 계획에 추가" })).toBeTruthy();
+    expect(screen.getByRole("button", { name: "운동 기록 열기" })).toBeTruthy();
 
     fireEvent.click(within(quickNav).getByRole("link", { name: "오늘 세션" }));
     await waitFor(() => expect(document.querySelector(".site-shell")?.classList.contains("scene-session")).toBe(true));
