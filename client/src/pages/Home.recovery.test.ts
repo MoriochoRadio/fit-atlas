@@ -406,6 +406,10 @@ describe("Home recovery alternative flow", () => {
     expect(screen.getByRole("link", { name: /NSCA 바벨 스쿼트 기술 안내/ })).toBeTruthy();
     expect(screen.getByRole("heading", { name: "최근 본 운동" })).toBeTruthy();
     expect(screen.getByRole("heading", { name: "즐겨찾기" })).toBeTruthy();
+    const recentPanel = screen.getByLabelText("최근 본 운동 빠른 재진입");
+    fireEvent.click(within(recentPanel).getByRole("button", { name: "바벨 백 스쿼트 자세·안전 안내 다시 열기" }));
+    await waitFor(() => expect((screen.getByLabelText("운동 검색") as HTMLInputElement).value).toBe("바벨 백 스쿼트"));
+    await waitFor(() => expect(screen.getByLabelText("바벨 백 스쿼트 근거 적용 범위")).toBeTruthy());
   });
 
   it("renders the expanded visual guide from a representative bodyweight exercise detail card", async () => {

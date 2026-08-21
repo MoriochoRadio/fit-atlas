@@ -8,5 +8,6 @@ import "./exercise-detail-ux.css";
 import "./explore-filter-ux.css";
 import "./exercise-card-readability-ux.css";
 import "./contrast-readability-ux.css";
+import "./repeat-explore-ux.css";
 
 createRoot(document.getElementById("root")!).render(<App />);
