@@ -420,6 +420,7 @@ describe("Home recovery alternative flow", () => {
     expect(within(card!).getByText("맨몸 스쿼트 흐름")).toBeTruthy();
     expect(within(card!).getAllByText(/발 전체를 바닥에|엉덩이·무릎을 함께|통증 없는 범위로/).length).toBeGreaterThanOrEqual(3);
     expect(within(card!).getByLabelText("맨몸 스쿼트 사진 없는 자세 안내")).toBeTruthy();
+    expect(within(card!).getByText("TRAINING BENEFITS")).toBeTruthy();
     expect(within(card!).getByText("읽으며 따라 하는 자세 지도")).toBeTruthy();
     expect(within(card!).getByText("◎ 주로 쓰는 근육")).toBeTruthy();
     expect(within(card!).getByText("↔ 호흡")).toBeTruthy();
@@ -429,6 +430,11 @@ describe("Home recovery alternative flow", () => {
     expect(within(card!).getByText("ASCII MOTION SKETCH")).toBeTruthy();
     expect(within(card!).getByText("중심축")).toBeTruthy();
     expect(within(card!).getByText("ROM · 큼")).toBeTruthy();
+    expect(within(card!).getByText("SETUP")).toBeTruthy();
+    expect(within(card!).getByText("FORM CUES")).toBeTruthy();
+    expect(within(card!).getByText("COMMON ERRORS")).toBeTruthy();
+    expect(within(card!).getByLabelText("맨몸 스쿼트 근거 적용 범위")).toBeTruthy();
+    expect(within(card!).getByRole("button", { name: "간단히 보기" })).toBeTruthy();
     fireEvent.click(within(card!).getByRole("button", { name: "ROM · 큼" }));
     expect(screen.getAllByText(/맨몸 스쿼트 · 큰 ROM/).length).toBeGreaterThan(0);
     expect(screen.getAllByText("대체 운동 방식").length).toBeGreaterThan(0);

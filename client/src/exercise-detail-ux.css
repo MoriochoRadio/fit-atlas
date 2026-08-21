@@ -1,0 +1,101 @@
+.exercise-detail {
+  display: grid;
+  gap: 14px;
+  margin-top: 16px;
+  padding-top: 17px;
+  border-top: 1px solid #e1e7dc;
+}
+
+.exercise-detail > .small-label {
+  display: flex;
+  align-items: center;
+  min-height: 24px;
+  margin: 4px 0 -6px;
+  padding-left: 9px;
+  color: #60740d;
+  border-left: 3px solid var(--atlas-lime);
+}
+
+.exercise-detail > .small-label:not(:first-child) {
+  margin-top: 8px;
+  padding-top: 12px;
+  border-top: 1px solid #e6ebe2;
+}
+
+.exercise-detail .benefit-row {
+  margin-top: -4px;
+}
+
+.text-exercise-guide {
+  padding: 16px;
+  border: 1px solid #dce6ca;
+  border-radius: 14px;
+  background: linear-gradient(145deg, #fbfdf5, #f2f6e9);
+}
+
+.text-guide-head {
+  align-items: start;
+}
+
+.text-guide-head > span {
+  color: #64780f;
+  border-color: #cfdeaa;
+  background: #f9fce8;
+  font-weight: 800;
+}
+
+.text-guide-sequence {
+  gap: 10px;
+}
+
+.text-guide-sequence li {
+  min-height: 58px;
+  padding: 11px 12px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, .76);
+}
+
+.exercise-detail .detail-grid > div,
+.exercise-detail .evidence-scope {
+  border-color: #dbe4d5;
+  background: #fafcf7;
+}
+
+.exercise-detail .exercise-warning {
+  margin: 2px 0;
+  padding: 12px 13px;
+  color: #6a463c;
+  border-left: 3px solid #dd7c63;
+  border-radius: 0 10px 10px 0;
+  background: #fff6f1;
+  line-height: 1.65;
+}
+
+.exercise-card .card-expand {
+  min-height: 46px;
+  margin-top: 17px;
+  padding: 10px 12px;
+  border-radius: 10px;
+}
+
+@media (max-width: 700px) {
+  .exercise-detail {
+    gap: 13px;
+    margin-top: 14px;
+    padding-top: 15px;
+  }
+
+  .text-exercise-guide {
+    padding: 14px;
+    border-radius: 12px;
+  }
+
+  .text-guide-sequence li {
+    min-height: 54px;
+    padding: 10px;
+  }
+
+  .exercise-card .card-expand {
+    min-height: 50px;
+  }
+}
