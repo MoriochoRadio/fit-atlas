@@ -563,7 +563,7 @@ describe("Home recovery alternative flow", () => {
     expect(within(recoveryPanel).getByText("선택한 조건과 메모에 맞는 회복 기록이 없습니다.")).toBeTruthy();
     fireEvent.click(within(recoveryPanel).getByRole("button", { name: "전체 기록 보기" }));
     expect(within(recoveryPanel).getByText("표시 2/2회")).toBeTruthy();
-    fireEvent.click(within(recoveryPanel).getAllByRole("button", { name: "다시 열기" })[1]!);
+    fireEvent.click(within(recoveryPanel).getAllByRole("button", { name: /회복 기록 다시 열기/ })[1]!);
     expect(within(recoveryPanel).getByText("10분 자리 회복·재시작")).toBeTruthy();
     expect(within(recoveryPanel).getByText(/체감: 가벼워짐/)).toBeTruthy();
     expect((within(recoveryPanel).getByLabelText("이번 회복 메모") as HTMLTextAreaElement).value).toBe("책상 높이를 조정하니 목이 편해짐");
