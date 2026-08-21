@@ -691,4 +691,20 @@ describe("Home recovery alternative flow", () => {
     expect(advanced.getAttribute("aria-expanded")).toBe("true");
     expect(screen.getByLabelText("부위 필터")).toBeTruthy();
   });
+
+  it("keeps mobile quick navigation and direct session and ROM starts available", async () => {
+    render(createElement(Home));
+    const quickNav = screen.getByLabelText("모바일 빠른 이동");
+    expect(within(quickNav).getByRole("link", { name: "오늘 세션" })).toBeTruthy();
+    expect(within(quickNav).getByRole("link", { name: "탐색" })).toBeTruthy();
+    expect(screen.getByRole("button", { name: /15분 집에서/ })).toBeTruthy();
+
+    fireEvent.click(within(quickNav).getByRole("link", { name: "오늘 세션" }));
+    await waitFor(() => expect(document.querySelector(".site-shell")?.classList.contains("scene-session")).toBe(true));
+    fireEvent.click(within(quickNav).getByRole("link", { name: "탐색" }));
+    await waitFor(() => expect(document.querySelector(".site-shell")?.classList.contains("scene-explore")).toBe(true));
+    const smallRom = screen.getByRole("button", { name: "ROM · 작음" });
+    fireEvent.click(smallRom);
+    expect(smallRom.getAttribute("aria-pressed")).toBe("true");
+  });
 });
