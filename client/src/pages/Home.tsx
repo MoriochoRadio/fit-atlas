@@ -793,7 +793,7 @@ export default function Home() {
           <div className="hero-copy">
             <p className="eyebrow light">TODAY</p>
             <h1>오늘은<br /><em>무엇을 움직일까요?</em></h1>
-            <div className="hero-actions"><button className="light-button" onClick={() => navigateToScene("session")}>오늘 세션 <ArrowRight size={16} /></button><a href="#explore" className="text-button" onClick={(event) => { event.preventDefault(); navigateToScene("explore"); }}>운동 탐색 <ChevronRight size={17} /></a></div>
+            <div className="hero-actions"><button className="light-button" onClick={() => atlasInteraction.recentEquipmentSession ? resumeRecentEquipmentSession() : navigateToScene("session")}>{atlasInteraction.recentEquipmentSession ? "최근 세션 이어하기" : "오늘 세션"} <ArrowRight size={16} /></button><a href="#explore" className="text-button" onClick={(event) => { event.preventDefault(); navigateToScene("explore"); }}>운동 탐색 <ChevronRight size={17} /></a></div>
             <div className="hero-context" aria-label="오늘 운동 상태 요약"><article><span>오늘의 강도</span><b>{machineSessionIntensity.label} · RPE {machineSessionIntensity.rpe}</b><small>{machineSessionIntensity.target} {atlasInteraction.resistance}%</small></article><article><span>이번 주 흐름</span><b>{weeklyCompletionPercent}% 완료</b><small>{weeklyPlanInsight.completed}/{weeklyPlanInsight.total || 0} 세션</small></article>{atlasInteraction.recentEquipmentSession && <HeroRecentEquipmentResume label={equipmentSessionSetup[atlasInteraction.recentEquipmentSession.equipment].label} resistance={atlasInteraction.recentEquipmentSession.resistance} onResume={resumeRecentEquipmentSession} />}</div>
           </div>
           <div className="hero-workspace">

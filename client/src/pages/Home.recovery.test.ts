@@ -267,7 +267,8 @@ describe("Home recovery alternative flow", () => {
 
     cleanup();
     render(createElement(Home));
-    fireEvent.click(screen.getByRole("button", { name: "최근 덤벨 54% 설정으로 세션 다시 시작" }));
+    expect(screen.getByRole("button", { name: "최근 세션 이어하기" })).toBeTruthy();
+    fireEvent.click(screen.getByRole("button", { name: "최근 세션 이어하기" }));
 
     expect(screen.getByRole("heading", { name: "30분 전신 균형 세션 · 집·매트" })).toBeTruthy();
   });
