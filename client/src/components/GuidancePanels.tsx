@@ -8,6 +8,7 @@ import { getSeatedRecoveryAdjustment, seatedRecoveryRoutines, seatedRecoveryStop
 import type { CheckinRecommendation } from "@/lib/dailyCheckin";
 import type { WellnessDetail } from "@/lib/wellnessDetails";
 import { readLocalWellnessPreferences, recoveryNoteMaxLength, saveLocalWellnessPreferences, type RecoveryReflection, type RecoveryRoutineRecord } from "@/lib/wellnessPreferences";
+import { summarizeRecoveryHistory } from "@/lib/recoveryHistorySummary";
 
 export function MovementVisualGuide({ title, frames }: MovementVisual) {
   return <div className="movement-visual"><p className="small-label">{title.toUpperCase()}</p><div className="movement-frames">{frames.map((frame, index) => <div className="movement-frame" key={frame.label}><div className={`pose-silhouette pose-${frame.pose}`} aria-hidden="true"><i className="pose-head" /><i className="pose-body" /><i className="pose-arm arm-one" /><i className="pose-arm arm-two" /><i className="pose-leg leg-one" /><i className="pose-leg leg-two" /></div><b>{index + 1}. {frame.label}</b><span>{frame.cue}</span></div>)}</div></div>;
@@ -29,13 +30,19 @@ export function RecoveryPathwayPanel({ pathways, pathway, alternatives, onChoose
 const reflectionLabels: Record<RecoveryReflection, string> = { lighter: "가벼워짐", same: "비슷함", pause: "쉬어가기" };
 
 function RecoveryHistoryTimeline({ history, onResume, onDelete, onClear }: { history: RecoveryRoutineRecord[]; onResume: (duration: SeatedRecoveryDuration) => void; onDelete: (record: RecoveryRoutineRecord) => void; onClear: () => void }) {
-  if (history.length === 0) return null;
+  const summary = summarizeRecoveryHistory(history);
   const [isClearReady, setIsClearReady] = useState(false);
+  if (history.length === 0) return null;
   const confirmClear = () => {
     onClear();
     setIsClearReady(false);
   };
-  return <section className="recovery-history" aria-label="최근 회복 수행 기록"><div className="recovery-history-heading"><div><p className="small-label">RECENT RECOVERY · LOCAL ONLY</p><h4>최근 회복 기록</h4><p>이 브라우저에 저장된 최근 {history.length}회입니다.</p></div><div className="recovery-history-actions">{isClearReady ? <><button type="button" onClick={() => setIsClearReady(false)}>취소</button><button type="button" className="is-danger" onClick={confirmClear}>전체 기록 삭제</button></> : <button type="button" onClick={() => setIsClearReady(true)}><Trash2 size={13} /> 전체 초기화</button>}<RotateCcw size={18} aria-hidden="true" /></div></div>{isClearReady && <p className="recovery-history-confirm" aria-live="polite">이 브라우저에 저장된 회복 기록만 지웁니다. 저장한 루틴은 유지됩니다.</p>}<ol>{history.map((record, index) => <li key={`${record.completedAt ?? record.completedOn}-${record.duration}-${index}`}><div><b>{record.duration}분 자리 회복</b><span>{record.completedOn} · {record.reflection ? reflectionLabels[record.reflection] : "체감 미입력"}</span>{record.note && <p className="recovery-history-note">{record.note}</p>}</div><div className="recovery-history-item-actions"><button type="button" onClick={() => onResume(record.duration)}>다시 열기 <ArrowRight size={14} /></button><button type="button" className="recovery-history-delete" aria-label={`${record.duration}분 자리 회복 기록 삭제`} onClick={() => onDelete(record)}><Trash2 size={14} /></button></div></li>)}</ol></section>;
+  return <section className="recovery-history" aria-label="최근 회복 수행 기록">
+    <div className="recovery-history-heading"><div><p className="small-label">RECENT RECOVERY · LOCAL ONLY</p><h4>최근 회복 기록</h4><p>이 브라우저에 저장된 최근 {history.length}회입니다.</p></div><div className="recovery-history-actions">{isClearReady ? <><button type="button" onClick={() => setIsClearReady(false)}>취소</button><button type="button" className="is-danger" onClick={confirmClear}>전체 기록 삭제</button></> : <button type="button" onClick={() => setIsClearReady(true)}><Trash2 size={13} /> 전체 초기화</button>}<RotateCcw size={18} aria-hidden="true" /></div></div>
+    <div className="recovery-history-summary" aria-label="최근 회복 기록 요약"><div><span>최근 기록</span><b>{summary.total}회</b></div><div><span>가벼워짐</span><b>{summary.reflections.lighter}회</b></div><div><span>자주 한 루틴</span><b>{summary.mostUsedDuration}분 · {summary.durations[summary.mostUsedDuration!]}회</b></div></div>
+    {isClearReady && <p className="recovery-history-confirm" aria-live="polite">이 브라우저에 저장된 회복 기록만 지웁니다. 저장한 루틴은 유지됩니다.</p>}
+    <ol>{history.map((record, index) => <li key={`${record.completedAt ?? record.completedOn}-${record.duration}-${index}`}><div><b>{record.duration}분 자리 회복</b><span>{record.completedOn} · {record.reflection ? reflectionLabels[record.reflection] : "체감 미입력"}</span>{record.note && <p className="recovery-history-note">{record.note}</p>}</div><div className="recovery-history-item-actions"><button type="button" onClick={() => onResume(record.duration)}>다시 열기 <ArrowRight size={14} /></button><button type="button" className="recovery-history-delete" aria-label={`${record.duration}분 자리 회복 기록 삭제`} onClick={() => onDelete(record)}><Trash2 size={14} /></button></div></li>)}</ol>
+  </section>;
 }
 
 export function SeatedRecoveryPanel({ duration, onDuration, recommendation, recoveryContext, onExplore, onBuildSession }: { duration: SeatedRecoveryDuration; onDuration: (duration: SeatedRecoveryDuration) => void; recommendation: CheckinRecommendation; recoveryContext: RecoveryContext; onExplore: (exerciseId: string) => void; onBuildSession: () => void }) {
