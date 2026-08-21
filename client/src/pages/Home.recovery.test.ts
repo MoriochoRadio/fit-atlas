@@ -518,6 +518,11 @@ describe("Home recovery alternative flow", () => {
 
     fireEvent.click(within(recoveryPanel).getByRole("button", { name: "10분" }));
     expect(within(recoveryPanel).getByText("10분 자리 회복·재시작")).toBeTruthy();
+    fireEvent.click(within(recoveryPanel).getByRole("button", { name: "현재 10분 루틴 저장" }));
+    expect(within(recoveryPanel).getByText("이 10분 루틴을 저장했습니다.")).toBeTruthy();
+    fireEvent.click(within(recoveryPanel).getByRole("button", { name: "5분" }));
+    fireEvent.click(within(recoveryPanel).getByRole("button", { name: "저장한 10분 루틴 불러오기" }));
+    expect(within(recoveryPanel).getByText("10분 자리 회복·재시작")).toBeTruthy();
     fireEvent.click(within(recoveryPanel).getByRole("button", { name: /15분 가벼운 세션 설계/ }));
 
     await waitFor(() => expect(document.querySelector(".site-shell")?.classList.contains("scene-session")).toBe(true));
