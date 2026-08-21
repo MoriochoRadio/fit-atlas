@@ -72,7 +72,7 @@ export function SeatedRecoveryPanel({ duration, onDuration, recommendation, reco
   const [noteDraft, setNoteDraft] = useState("");
   useEffect(() => setNoteDraft(completedRecord?.note ?? ""), [completedRecord?.completedAt, completedRecord?.duration]);
   const persistPreferences = (nextPreferences: typeof preferences) => {
-    if (saveLocalWellnessPreferences(nextPreferences)) setPreferences(nextPreferences);
+    if (saveLocalWellnessPreferences(nextPreferences)) { setPreferences(nextPreferences); window.dispatchEvent(new Event("fit-atlas-recovery")); }
   };
   const saveCurrentRoutine = () => persistPreferences({ ...preferences, savedRecoveryDuration: duration });
   const completeRoutine = () => {
