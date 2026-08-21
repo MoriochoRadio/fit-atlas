@@ -110,3 +110,7 @@ body { color: var(--ink); }
 .recovery-history-sequence { display: inline-block; margin-right: 7px; color: #2f7bc4; font: 700 8px/1 "IBM Plex Mono", monospace; letter-spacing: .09em; vertical-align: 1px; }
 .session-current-state::after { display: block; margin-top: 7px; color: #e1eef8; content: "현재 조합은 아래 세션 단계와 기록 기준에 즉시 반영됩니다."; font-size: 11px; line-height: 1.45; }
 @media (max-width: 700px) { .exercise-detail::before { position: sticky; top: 62px; z-index: 8; box-shadow: 0 7px 12px rgba(20,33,61,.11); }.recovery-history-sequence { margin-right: 5px; font-size: 7px; }.session-current-state::after { font-size: 10px; } }
+
+/* Time, safety, and filtered-record context stay visible as concise decision markers. */
+.session-blocks::before { display: block; margin: 0 0 10px; padding: 7px 10px; color: #47617b; border-left: 3px solid #2f7bc4; background: #f1f7fc; content: "TIME MAP · 시간 변경 시 준비 → 주요 움직임 → 마무리 순서가 다시 조정됩니다."; font: 700 9px/1.45 "IBM Plex Mono", monospace; letter-spacing: .02em; }.exercise-warning::before { display: block; margin-bottom: 5px; color: #b54135; content: "SAFETY SIGNAL · STOP / ADJUST"; font: 800 9px "IBM Plex Mono", monospace; letter-spacing: .08em; }.recovery-history-filter-context { margin: -2px 0 10px; color: #52708d; font: 700 10px/1.45 "IBM Plex Mono", monospace; letter-spacing: .015em; }
+@media (max-width: 700px) { .session-blocks::before { padding: 7px 9px; font-size: 8px; }.exercise-warning::before { font-size: 8px; }.recovery-history-filter-context { margin-bottom: 8px; font-size: 9px; } }
