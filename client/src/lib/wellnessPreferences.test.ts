@@ -3,12 +3,17 @@ import { defaultWellnessPreferences, readWellnessPreferences } from "./wellnessP
 
 describe("wellness preferences", () => {
   it("restores only supported saved recovery durations", () => {
-    expect(readWellnessPreferences('{"savedRecoveryDuration":10}')).toEqual({ savedRecoveryDuration: 10, lastRecoveryRecord: null });
-    expect(readWellnessPreferences('{"savedRecoveryDuration":5}')).toEqual({ savedRecoveryDuration: 5, lastRecoveryRecord: null });
+    expect(readWellnessPreferences('{"savedRecoveryDuration":10}')).toEqual({ savedRecoveryDuration: 10, lastRecoveryRecord: null, recoveryHistory: [] });
+    expect(readWellnessPreferences('{"savedRecoveryDuration":5}')).toEqual({ savedRecoveryDuration: 5, lastRecoveryRecord: null, recoveryHistory: [] });
   });
 
-  it("restores one supported recovery completion and reflection", () => {
-    expect(readWellnessPreferences('{"savedRecoveryDuration":10,"lastRecoveryRecord":{"duration":10,"completedOn":"2026-08-21","reflection":"lighter"}}')).toEqual({ savedRecoveryDuration: 10, lastRecoveryRecord: { duration: 10, completedOn: "2026-08-21", reflection: "lighter" } });
+  it("restores a legacy completion and uses it as the first history item", () => {
+    expect(readWellnessPreferences('{"savedRecoveryDuration":10,"lastRecoveryRecord":{"duration":10,"completedOn":"2026-08-21","reflection":"lighter"}}')).toEqual({ savedRecoveryDuration: 10, lastRecoveryRecord: { duration: 10, completedOn: "2026-08-21", completedAt: null, reflection: "lighter" }, recoveryHistory: [{ duration: 10, completedOn: "2026-08-21", completedAt: null, reflection: "lighter" }] });
+  });
+
+  it("restores recent valid history in reverse chronological order", () => {
+    const preferences = readWellnessPreferences('{"recoveryHistory":[{"duration":5,"completedOn":"2026-08-20","completedAt":"2026-08-20T09:00:00.000Z","reflection":"same"},{"duration":10,"completedOn":"2026-08-21","completedAt":"2026-08-21T09:00:00.000Z","reflection":"lighter"},{"duration":20,"completedOn":"2026-08-21","completedAt":"2026-08-21T10:00:00.000Z","reflection":"pause"}]}');
+    expect(preferences.recoveryHistory).toEqual([{ duration: 10, completedOn: "2026-08-21", completedAt: "2026-08-21T09:00:00.000Z", reflection: "lighter" }, { duration: 5, completedOn: "2026-08-20", completedAt: "2026-08-20T09:00:00.000Z", reflection: "same" }]);
   });
 
   it("safely falls back for malformed or unsupported local data", () => {
