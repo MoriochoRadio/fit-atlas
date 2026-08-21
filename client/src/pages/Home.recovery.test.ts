@@ -771,4 +771,13 @@ describe("Home recovery alternative flow", () => {
       expect(document.activeElement).toBe(sessionScene);
     });
   });
+
+  it("keeps the session plan separated into scannable coaching stages before save or log actions", () => {
+    render(createElement(Home));
+    const stages = document.querySelectorAll(".session-block");
+    expect(stages.length).toBe(3);
+    expect(Array.from(stages).map((stage) => stage.querySelector(".small-label")?.textContent)).toEqual(expect.arrayContaining([expect.stringContaining("준비"), expect.stringContaining("주요 움직임"), expect.stringContaining("마무리")]));
+    expect(screen.getByRole("button", { name: "이번 주 계획에 추가" })).toBeTruthy();
+    expect(screen.getByRole("button", { name: "운동 기록 열기" })).toBeTruthy();
+  });
 });
