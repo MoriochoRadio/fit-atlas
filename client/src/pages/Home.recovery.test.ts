@@ -766,6 +766,21 @@ describe("Home recovery alternative flow", () => {
     expect(card?.querySelector(".exercise-meta b")?.textContent).toBe("시간");
   });
 
+  it("adds atlas coordinates to exercise cards and exposes wellness details as an expandable reading region", () => {
+    render(createElement(Home));
+    const firstExerciseCard = screen.getAllByRole("button", { name: "자세·근거 보기" })[0]?.closest("article");
+    expect(firstExerciseCard?.getAttribute("data-atlas-index")).toBe("001");
+
+    const wellnessCard = screen.getByRole("heading", { name: "운동 전후 식사" }).closest("article");
+    expect(wellnessCard).toBeTruthy();
+    const detailToggle = within(wellnessCard!).getByRole("button", { name: "상세 가이드" });
+    expect(detailToggle.getAttribute("aria-expanded")).toBe("false");
+    fireEvent.click(detailToggle);
+    const detailId = detailToggle.getAttribute("aria-controls");
+    expect(detailToggle.getAttribute("aria-expanded")).toBe("true");
+    expect(detailId ? document.getElementById(detailId) : null).toBeTruthy();
+  });
+
   it("keeps the selected body region explicit before moving from a related exercise to its detail", async () => {
     render(createElement(Home));
     const selector = screen.getByRole("group", { name: "근육 부위 다중 선택" });

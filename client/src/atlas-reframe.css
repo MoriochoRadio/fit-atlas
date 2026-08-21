@@ -48,3 +48,42 @@ body { color: var(--ink); }
 @media (max-width: 700px) {
   .topbar { height: 68px; background: rgba(12,26,45,.98); }.brand::after { display: none; }.nav { top: 68px; background: #12243b; }.nav a, .ghost-button { color: #eaf1f8; }.section-pad { padding: 64px 20px; }.section-heading { margin-bottom: 27px; padding-bottom: 16px; }.hero { min-height: 0; padding: 54px 22px 42px; }.hero h1 { font-size: clamp(36px,10.5vw,49px); }.hero-atlas { height: 335px; margin-top: 24px; }.hero-atlas .atlas-theme-control { display: none; }.program-grid, .anatomy-grid, .session-builder, .routine-card, .checkin-card, .session-launcher, .recovery-start, .recovery-toolkit, .four-week-card { border-radius: 10px; }.exercise-card, .metric-card, .chart-card, .calendar-card, .insight-row article, .aerobic-trend-row article, .interval-card, .wellness-card { border-radius: 9px; }.start-dock, .today-command { border-radius: 10px; }.start-dock { margin: -12px 14px 0; }.today-command { margin: 24px 20px 0; }.exercise-grid { gap: 9px; }.site-footer { padding-bottom: 78px; }
 }
+
+/* Density pass: assistive copy remains calm but never fades into the dark panels. */
+.program-card > div > p:last-child,
+.routine-intro > p,
+.recovery-card > div > p:last-child,
+.pr-empty,
+.evidence-section > div:last-child p,
+.weekly-summary > p,
+.hero-session-card > span { color: #d3dfeb !important; }
+.program-exercise-list > div,
+.recovery-card li,
+.pr-list div,
+.weekly-summary small { color: #e8f0f8; }
+.program-card .outline-button,
+.routine-safety,
+.evidence-section a { border-color: rgba(189,215,239,.62); }
+
+/* The library receives a light map coordinate, giving repeated cards a route-like order. */
+.exercise-card { position: relative; overflow: hidden; padding-top: 27px; }
+.exercise-card::after { content: attr(data-atlas-index); position: absolute; top: 9px; right: 11px; color: #7f94aa; font: 700 8px/1 "IBM Plex Mono", monospace; letter-spacing: .13em; }
+.exercise-card .exercise-category-label { display: inline-flex; align-items: center; gap: 6px; color: #245c91; font-weight: 700; }
+.exercise-card .exercise-category-label::before { content: ""; width: 6px; height: 6px; border: 1px solid #2f7bc4; border-radius: 50%; background: #dcebf9; box-shadow: 0 0 0 3px rgba(47,123,196,.1); }
+.exercise-card .exercise-meta { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 6px; }
+.exercise-card .exercise-meta span { min-height: 36px; padding: 7px 8px; }
+.exercise-card.is-expanded { border-color: #80add7; background: #f6faff; }
+
+/* Wellness remains readable before expansion, then becomes a full-width guided protocol. */
+.wellness-card { transition: border-color .18s var(--ease-out), transform .18s var(--ease-out), box-shadow .18s var(--ease-out); }
+.wellness-card .wellness-expand { min-height: 38px; margin-top: 8px; border-bottom: 0; }
+.wellness-card.is-expanded { grid-column: span 2; min-height: 0; border-color: #9cbad5; box-shadow: 0 12px 0 rgba(47,123,196,.08); }
+.wellness-detail-region { margin-top: 4px; }
+.wellness-detail-region .wellness-detail { display: grid; grid-template-columns: minmax(0,1fr) minmax(180px,.7fr); gap: 12px; padding: 16px; border: 1px solid rgba(31,69,105,.16); background: rgba(255,255,255,.9); }
+.wellness-detail-region .wellness-detail ul { margin: 0; }
+.wellness-detail-region .wellness-caution { grid-column: 1 / -1; margin-top: 0; }
+@media (max-width: 700px) {
+  .exercise-card { padding-top: 25px; }
+  .wellness-card.is-expanded { grid-column: auto; }
+  .wellness-detail-region .wellness-detail { grid-template-columns: 1fr; padding: 13px; }
+}
