@@ -741,4 +741,14 @@ describe("Home recovery alternative flow", () => {
     await waitFor(() => expect(document.querySelector(".site-shell")?.classList.contains("scene-explore")).toBe(true));
     expect((screen.getByLabelText("운동 검색") as HTMLInputElement).value).toBe(name);
   });
+
+  it("keeps an empty progress dashboard focused on the weekly signal and first record action", () => {
+    render(createElement(Home));
+    expect(screen.getByText("이번 주 피로·통증·ROM 흐름")).toBeTruthy();
+    const volumeChart = screen.getByRole("heading", { name: "최근 7일 볼륨" }).closest("div");
+    expect(volumeChart).toBeTruthy();
+    const firstRecord = screen.getByRole("button", { name: "첫 기록 남기기" });
+    fireEvent.click(firstRecord);
+    expect(screen.getByRole("dialog", { name: "운동 기록 추가" })).toBeTruthy();
+  });
 });
