@@ -16,7 +16,7 @@ export function MovementVisualGuide({ title, frames }: MovementVisual) {
 
 export function RecoveryStageGrid({ stages }: { stages: RecoveryStageGuide }) {
   const stageGroups = [["운동 전 준비", stages.beforeSession], ["운동 후 회복", stages.afterSession], ["부하 재개", stages.returnToLoad]] as const;
-  return <div className="recovery-stage-grid">{stageGroups.map(([label, steps]) => <article key={label}><p className="small-label">{label}</p><ul>{steps.map((step) => <li key={step}>{step}</li>)}</ul></article>)}</div>;
+  return <div className="recovery-stage-grid" aria-label="회복 프로토콜 단계">{stageGroups.map(([label, steps], index) => <article key={label} data-recovery-stage={String(index + 1).padStart(2, "0")}><p className="small-label">{String(index + 1).padStart(2, "0")} / {label}</p><ul>{steps.map((step) => <li key={step}>{step}</li>)}</ul></article>)}</div>;
 }
 
 export function WellnessDetailPanel({ detail }: { detail: WellnessDetail }) {

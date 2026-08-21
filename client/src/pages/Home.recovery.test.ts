@@ -826,6 +826,16 @@ describe("Home recovery alternative flow", () => {
     expect(within(durationSelector).getByRole("button", { name: "5분" }).getAttribute("aria-pressed")).toBe("true");
   });
 
+  it("keeps recovery stages and the weekly report-to-session route explicit", () => {
+    render(createElement(Home));
+    const recoveryStages = screen.getByLabelText("회복 프로토콜 단계");
+    expect(within(recoveryStages).getByText(/01 \/ 운동 전 준비/)).toBeTruthy();
+    expect(within(recoveryStages).getByText(/03 \/ 부하 재개/)).toBeTruthy();
+    const nextSessionRoute = screen.getByLabelText("주간 리포트 다음 세션 경로");
+    expect(within(nextSessionRoute).getByText("01 주간 신호 확인")).toBeTruthy();
+    expect(within(nextSessionRoute).getByText("02 다음 세션 조절")).toBeTruthy();
+  });
+
   it("moves keyboard context to the active scene after mobile quick navigation", async () => {
     render(createElement(Home));
     fireEvent.click(screen.getByRole("link", { name: "오늘 세션" }));
