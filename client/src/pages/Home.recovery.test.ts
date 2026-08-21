@@ -761,4 +761,14 @@ describe("Home recovery alternative flow", () => {
     const durationSelector = screen.getByRole("group", { name: "앉은 자세 회복 루틴 시간 선택" });
     expect(within(durationSelector).getByRole("button", { name: "5분" }).getAttribute("aria-pressed")).toBe("true");
   });
+
+  it("moves keyboard context to the active scene after mobile quick navigation", async () => {
+    render(createElement(Home));
+    fireEvent.click(screen.getByRole("link", { name: "오늘 세션" }));
+    const sessionScene = document.getElementById("scene-session");
+    await waitFor(() => {
+      expect(document.querySelector(".site-shell")?.classList.contains("scene-session")).toBe(true);
+      expect(document.activeElement).toBe(sessionScene);
+    });
+  });
 });
