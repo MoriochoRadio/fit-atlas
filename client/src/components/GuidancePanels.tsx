@@ -33,8 +33,14 @@ function RecoveryHistoryTimeline({ history, onResume, onDelete, onClear }: { his
   const summary = summarizeRecoveryHistory(history);
   const [isClearReady, setIsClearReady] = useState(false);
   const [filter, setFilter] = useState<"all" | "lighter" | "same" | "pause" | "5" | "10">("all");
+  const [query, setQuery] = useState("");
   if (history.length === 0) return null;
-  const filteredHistory = history.filter((record) => filter === "all" || filter === String(record.duration) || record.reflection === filter);
+  const normalizedQuery = query.trim().toLocaleLowerCase();
+  const filteredHistory = history.filter((record) => (filter === "all" || filter === String(record.duration) || record.reflection === filter) && (normalizedQuery.length === 0 || record.note.toLocaleLowerCase().includes(normalizedQuery)));
+  const resetFilters = () => {
+    setFilter("all");
+    setQuery("");
+  };
   const confirmClear = () => {
     onClear();
     setIsClearReady(false);
@@ -43,9 +49,10 @@ function RecoveryHistoryTimeline({ history, onResume, onDelete, onClear }: { his
     <div className="recovery-history-heading"><div><p className="small-label">RECENT RECOVERY · LOCAL ONLY</p><h4>최근 회복 기록</h4><p>이 브라우저에 저장된 최근 {history.length}회입니다.</p></div><div className="recovery-history-actions">{isClearReady ? <><button type="button" onClick={() => setIsClearReady(false)}>취소</button><button type="button" className="is-danger" onClick={confirmClear}>전체 기록 삭제</button></> : <button type="button" onClick={() => setIsClearReady(true)}><Trash2 size={13} /> 전체 초기화</button>}<RotateCcw size={18} aria-hidden="true" /></div></div>
     <div className="recovery-history-summary" aria-label="최근 회복 기록 요약"><div><span>최근 기록</span><b>{summary.total}회</b></div><div><span>가벼워짐</span><b>{summary.reflections.lighter}회</b></div><div><span>자주 한 루틴</span><b>{summary.mostUsedDuration}분 · {summary.durations[summary.mostUsedDuration!]}회</b></div></div>
     <div className="recovery-history-filters" role="group" aria-label="회복 기록 필터"><button type="button" className={filter === "all" ? "is-selected" : ""} aria-pressed={filter === "all"} aria-label="전체 기록 필터" onClick={() => setFilter("all")}>전체 {history.length}</button><button type="button" className={filter === "lighter" ? "is-selected" : ""} aria-pressed={filter === "lighter"} aria-label="가벼워짐 기록 필터" onClick={() => setFilter("lighter")}>가벼워짐 {summary.reflections.lighter}</button><button type="button" className={filter === "same" ? "is-selected" : ""} aria-pressed={filter === "same"} aria-label="비슷함 기록 필터" onClick={() => setFilter("same")}>비슷함 {summary.reflections.same}</button><button type="button" className={filter === "pause" ? "is-selected" : ""} aria-pressed={filter === "pause"} aria-label="쉬어가기 기록 필터" onClick={() => setFilter("pause")}>쉬어가기 {summary.reflections.pause}</button><button type="button" className={filter === "5" ? "is-selected" : ""} aria-pressed={filter === "5"} aria-label="5분 루틴 필터" onClick={() => setFilter("5")}>5분 {summary.durations[5]}</button><button type="button" className={filter === "10" ? "is-selected" : ""} aria-pressed={filter === "10"} aria-label="10분 루틴 필터" onClick={() => setFilter("10")}>10분 {summary.durations[10]}</button></div>
+    <div className="recovery-history-search"><label htmlFor="recovery-history-search">회복 메모 검색</label><div><input id="recovery-history-search" value={query} onChange={(event) => setQuery(event.target.value)} placeholder="메모의 단어를 입력하세요" />{query && <button type="button" aria-label="메모 검색어 지우기" onClick={() => setQuery("")}>지우기</button>}</div></div>
     {isClearReady && <p className="recovery-history-confirm" aria-live="polite">이 브라우저에 저장된 회복 기록만 지웁니다. 저장한 루틴은 유지됩니다.</p>}
     <p className="recovery-history-filter-count" aria-live="polite">표시 {filteredHistory.length}/{history.length}회</p>
-    {filteredHistory.length > 0 ? <ol>{filteredHistory.map((record, index) => <li key={`${record.completedAt ?? record.completedOn}-${record.duration}-${index}`}><div><b>{record.duration}분 자리 회복</b><span>{record.completedOn} · {record.reflection ? reflectionLabels[record.reflection] : "체감 미입력"}</span>{record.note && <p className="recovery-history-note">{record.note}</p>}</div><div className="recovery-history-item-actions"><button type="button" onClick={() => onResume(record.duration)}>다시 열기 <ArrowRight size={14} /></button><button type="button" className="recovery-history-delete" aria-label={`${record.duration}분 자리 회복 기록 삭제`} onClick={() => onDelete(record)}><Trash2 size={14} /></button></div></li>)}</ol> : <div className="recovery-history-empty"><p>선택한 조건의 회복 기록이 없습니다.</p><button type="button" onClick={() => setFilter("all")}>전체 기록 보기</button></div>}
+    {filteredHistory.length > 0 ? <ol>{filteredHistory.map((record, index) => <li key={`${record.completedAt ?? record.completedOn}-${record.duration}-${index}`}><div><b>{record.duration}분 자리 회복</b><span>{record.completedOn} · {record.reflection ? reflectionLabels[record.reflection] : "체감 미입력"}</span>{record.note && <p className="recovery-history-note">{record.note}</p>}</div><div className="recovery-history-item-actions"><button type="button" onClick={() => onResume(record.duration)}>다시 열기 <ArrowRight size={14} /></button><button type="button" className="recovery-history-delete" aria-label={`${record.duration}분 자리 회복 기록 삭제`} onClick={() => onDelete(record)}><Trash2 size={14} /></button></div></li>)}</ol> : <div className="recovery-history-empty"><p>선택한 조건과 메모에 맞는 회복 기록이 없습니다.</p><button type="button" onClick={resetFilters}>전체 기록 보기</button></div>}
   </section>;
 }
 

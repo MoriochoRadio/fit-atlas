@@ -534,11 +534,14 @@ describe("Home recovery alternative flow", () => {
     expect(within(recoverySummary).getByText("가벼워짐")).toBeTruthy();
     expect(within(recoverySummary).getByText("5분 · 1회")).toBeTruthy();
     expect(within(recoveryPanel).getAllByText("자리 회복", { exact: false }).length).toBeGreaterThan(1);
+    const memoSearch = within(recoveryPanel).getByLabelText("회복 메모 검색");
+    fireEvent.change(memoSearch, { target: { value: "목이" } });
+    expect(within(recoveryPanel).getByText("표시 1/2회")).toBeTruthy();
     fireEvent.click(within(recoveryPanel).getByRole("button", { name: "가벼워짐 기록 필터" }));
     expect(within(recoveryPanel).getByText("표시 1/2회")).toBeTruthy();
     expect(within(recoveryPanel).getByText("책상 높이를 조정하니 목이 편해짐")).toBeTruthy();
-    fireEvent.click(within(recoveryPanel).getByRole("button", { name: "쉬어가기 기록 필터" }));
-    expect(within(recoveryPanel).getByText("선택한 조건의 회복 기록이 없습니다.")).toBeTruthy();
+    fireEvent.change(memoSearch, { target: { value: "손목" } });
+    expect(within(recoveryPanel).getByText("선택한 조건과 메모에 맞는 회복 기록이 없습니다.")).toBeTruthy();
     fireEvent.click(within(recoveryPanel).getByRole("button", { name: "전체 기록 보기" }));
     expect(within(recoveryPanel).getByText("표시 2/2회")).toBeTruthy();
     fireEvent.click(within(recoveryPanel).getAllByRole("button", { name: "다시 열기" })[1]!);
