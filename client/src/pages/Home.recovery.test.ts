@@ -531,6 +531,14 @@ describe("Home recovery alternative flow", () => {
     fireEvent.click(within(recoveryPanel).getAllByRole("button", { name: "다시 열기" })[1]!);
     expect(within(recoveryPanel).getByText("10분 자리 회복·재시작")).toBeTruthy();
     expect(within(recoveryPanel).getByText(/체감: 가벼워짐/)).toBeTruthy();
+    fireEvent.click(within(recoveryPanel).getByRole("button", { name: "10분 자리 회복 기록 삭제" }));
+    expect(within(recoveryPanel).getByRole("button", { name: "이번 10분 루틴 완료 기록" })).toBeTruthy();
+    expect(within(recoveryPanel).getByText("이 브라우저에 저장된 최근 1회입니다.")).toBeTruthy();
+    fireEvent.click(within(recoveryPanel).getByRole("button", { name: "전체 초기화" }));
+    expect(within(recoveryPanel).getByText("이 브라우저에 저장된 회복 기록만 지웁니다. 저장한 루틴은 유지됩니다.")).toBeTruthy();
+    fireEvent.click(within(recoveryPanel).getByRole("button", { name: "전체 기록 삭제" }));
+    expect(within(recoveryPanel).queryByRole("heading", { name: "최근 회복 기록" })).toBeNull();
+    expect(within(recoveryPanel).getByText("이 10분 루틴을 저장했습니다.")).toBeTruthy();
     fireEvent.click(within(recoveryPanel).getByRole("button", { name: /15분 가벼운 세션 설계/ }));
 
     await waitFor(() => expect(document.querySelector(".site-shell")?.classList.contains("scene-session")).toBe(true));
