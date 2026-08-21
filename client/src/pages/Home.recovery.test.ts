@@ -550,6 +550,7 @@ describe("Home recovery alternative flow", () => {
     const recoverySummary = within(recoveryPanel).getByLabelText("최근 회복 기록 요약");
     expect(within(recoveryPanel).getByLabelText("최근 회복 변화 비교")).toBeTruthy();
     expect(within(recoveryPanel).getByLabelText("최근 4회 체감 흐름").textContent).toContain("가벼워짐");
+    expect(within(recoveryPanel).getByLabelText("최근 체감 기반 다음 회복 선택").textContent).toContain("같은 시간대");
     expect(within(recoverySummary).getByText("2회")).toBeTruthy();
     expect(within(recoverySummary).getByText("가벼워짐")).toBeTruthy();
     expect(within(recoverySummary).getByText("5분 · 1회")).toBeTruthy();
@@ -741,6 +742,7 @@ describe("Home recovery alternative flow", () => {
     expect(screen.getByText(/준비 · 약/)).toBeTruthy();
     expect(screen.getByText(/주요 움직임 · 약/)).toBeTruthy();
     expect(screen.getByText(/마무리 · 약/)).toBeTruthy();
+    expect(screen.getByLabelText("세션 구성 비중").textContent).toMatch(/분 · \d+%/);
     expect(screen.getByRole("button", { name: "이번 주 계획에 추가" })).toBeTruthy();
     expect(screen.getByRole("button", { name: "운동 기록 열기" })).toBeTruthy();
 
@@ -767,6 +769,10 @@ describe("Home recovery alternative flow", () => {
     expect(within(card!).getByRole("button", { name: "간단히 보기" })).toBeTruthy();
     expect(detailTrigger.getAttribute("aria-expanded")).toBe("true");
     expect(card?.querySelector(".exercise-meta b")?.textContent).toBe("시간");
+    fireEvent.click(within(card!).getByRole("button", { name: "변형 비교" }));
+    const typeFilter = screen.getByRole("group", { name: "운동 종류 빠른 필터" });
+    const selectedType = within(typeFilter).getAllByRole("button").find((button) => button.getAttribute("aria-pressed") === "true");
+    expect(selectedType?.textContent).not.toBe("전체 보기");
   });
 
   it("adds atlas coordinates to exercise cards and exposes wellness details as an expandable reading region", () => {
