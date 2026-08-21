@@ -543,6 +543,7 @@ describe("Home recovery alternative flow", () => {
     fireEvent.click(within(recoveryPanel).getByRole("button", { name: "가벼워짐" }));
     expect(within(recoveryPanel).getByText(/체감: 가벼워짐/)).toBeTruthy();
     await waitFor(() => expect(screen.getByLabelText("주간 회복 추세 신호").textContent).toContain("가벼워짐"));
+    await waitFor(() => expect(screen.getByLabelText("주간 회복 날짜별 추세").textContent).toContain("↑"));
     fireEvent.change(within(recoveryPanel).getByLabelText("이번 회복 메모"), { target: { value: "책상 높이를 조정하니 목이 편해짐" } });
     fireEvent.click(within(recoveryPanel).getByRole("button", { name: "메모 저장" }));
     fireEvent.click(within(recoveryPanel).getByRole("button", { name: "5분" }));
@@ -748,6 +749,7 @@ describe("Home recovery alternative flow", () => {
     expect(sessionSection).toBeTruthy();
     fireEvent.click(within(sessionSection!).getByRole("button", { name: "기초 근력" }));
     await waitFor(() => expect(screen.getByLabelText("이전 세션 비중 비교")).toBeTruthy());
+    expect(screen.getByLabelText("세션 비중 변화량").textContent).toContain("%p");
     expect(screen.getByRole("button", { name: "이번 주 계획에 추가" })).toBeTruthy();
     expect(screen.getByRole("button", { name: "운동 기록 열기" })).toBeTruthy();
 
