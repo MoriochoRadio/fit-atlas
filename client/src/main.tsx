@@ -5,5 +5,6 @@ import "./design-reset.css";
 import "./session-route-ux.css";
 import "./home-summary-ux.css";
 import "./exercise-detail-ux.css";
+import "./explore-filter-ux.css";
 
 createRoot(document.getElementById("root")!).render(<App />);

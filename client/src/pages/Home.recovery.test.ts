@@ -706,6 +706,25 @@ describe("Home recovery alternative flow", () => {
     expect(screen.getByLabelText("부위 필터")).toBeTruthy();
   });
 
+  it("keeps sorting visible and explains active conditions with a direct empty-result reset", () => {
+    render(createElement(Home));
+    const sort = screen.getByLabelText("정렬 기준") as HTMLSelectElement;
+
+    expect(sort.value).toBe("recommended");
+    expect(screen.getByText("현재 정렬")).toBeTruthy();
+    fireEvent.change(sort, { target: { value: "duration" } });
+    expect(screen.getByText("소요 시간순")).toBeTruthy();
+
+    fireEvent.change(screen.getByLabelText("운동 검색"), { target: { value: "존재하지않는운동조건" } });
+    expect(screen.getByRole("heading", { name: "일치하는 운동이 없습니다." })).toBeTruthy();
+    expect(screen.getByLabelText("적용된 탐색 조건").textContent).toContain("검색 · 존재하지않는운동조건");
+
+    fireEvent.click(screen.getByRole("button", { name: "모든 조건 초기화" }));
+    expect((screen.getByLabelText("운동 검색") as HTMLInputElement).value).toBe("");
+    expect((screen.getByLabelText("정렬 기준") as HTMLSelectElement).value).toBe("recommended");
+    expect(screen.queryByRole("heading", { name: "일치하는 운동이 없습니다." })).toBeNull();
+  });
+
   it("keeps mobile quick navigation and direct session and ROM starts available", async () => {
     render(createElement(Home));
     const quickNav = screen.getByLabelText("모바일 빠른 이동");
