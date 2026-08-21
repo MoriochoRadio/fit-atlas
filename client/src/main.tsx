@@ -9,5 +9,6 @@ import "./explore-filter-ux.css";
 import "./exercise-card-readability-ux.css";
 import "./contrast-readability-ux.css";
 import "./repeat-explore-ux.css";
+import "./atlas-reframe.css";
 
 createRoot(document.getElementById("root")!).render(<App />);
