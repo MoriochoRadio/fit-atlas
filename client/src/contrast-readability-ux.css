@@ -1,0 +1,115 @@
+:root {
+  --readable-copy: #334a65;
+  --readable-muted: #4d627d;
+  --readable-label: #536802;
+  --readable-link: #526c08;
+  --readable-danger: #713f38;
+}
+
+/* Lime remains a state signal; readable ink carries explanatory copy. */
+.nav a,
+.ghost-button,
+.hero-description,
+.section-description,
+.today-command-copy > p,
+.checkin-head > div > p:last-child,
+.session-launcher-head > p,
+.recovery-start p,
+.program-note,
+.session-local-note,
+.saved-exercise-panel > p,
+.quick-category-head span,
+.library-count,
+.exercise-detail ul,
+.exercise-detail ol,
+.exercise-finish,
+.wellness-detail,
+.metric-card p,
+.metric-card small,
+.calendar-empty,
+.chart-empty,
+.insight-row article > p:last-of-type,
+.aerobic-trend-row p:last-child,
+.interval-card dd,
+.interval-card > p,
+.recovery-toolkit p,
+.wellness-card > p:not(.eyebrow) { color: var(--readable-copy); }
+
+.small-label,
+.eyebrow,
+.exercise-top,
+.english-name,
+.exercise-meta,
+.metric-card span,
+.metric-card small,
+.calendar-card small,
+.library-count,
+.quick-category-head span,
+.saved-exercise-panel > p,
+.explore-primary-controls > p span,
+.explore-result-summary > div:first-child > p,
+.explore-filter-hint,
+.advanced-filter-control > div > span { color: var(--readable-muted); }
+
+.eyebrow.light,
+.text-button,
+.card-expand,
+.exercise-card .exercise-meta svg,
+.exercise-card .exercise-meta b,
+.exercise-card .exercise-meta em,
+.explore-primary-controls > p b,
+.explore-result-summary b small,
+.explore-filter-chips span,
+.advanced-filter-control .small-label,
+.rom-readiness-inline b,
+.weekly-log-button,
+.profile-link { color: var(--readable-link); }
+
+.exercise-card .exercise-description,
+.scene-view-explore .exercise-card .exercise-description,
+.scene-view-explore .exercise-card .english-name,
+.scene-view-explore .exercise-card .exercise-meta,
+.related-list button,
+.log-form label,
+.dashboard-export-note label { color: var(--readable-copy); }
+
+.session-current-state,
+.explore-selection-state,
+.explore-result-summary,
+.advanced-filter-control,
+.empty-library,
+.chart-empty,
+.calendar-empty { color: var(--readable-copy); }
+
+.session-current-state span,
+.explore-selection-state span,
+.session-current-state small,
+.explore-selection-state small,
+.session-current-state p,
+.explore-selection-state p,
+.empty-library p,
+.chart-empty p,
+.calendar-empty p { color: var(--readable-muted); }
+
+.exercise-warning,
+.toolkit-red-flags,
+.toolkit-red-flags li,
+.safety-callout,
+.recovery-caution,
+.form-safety { color: var(--readable-danger); }
+
+:where(button, a, input, select, textarea):focus-visible {
+  outline: 3px solid #6f850e;
+  outline-offset: 3px;
+  box-shadow: 0 0 0 5px rgba(216, 255, 79, .5);
+}
+
+@media (max-width: 700px) {
+  .section-description,
+  .hero-description,
+  .quick-category-head span,
+  .saved-exercise-panel > p,
+  .explore-result-summary > div:first-child > p,
+  .explore-filter-hint,
+  .exercise-card .exercise-description { line-height: 1.75; }
+}

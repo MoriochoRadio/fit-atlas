@@ -7,5 +7,6 @@ import "./home-summary-ux.css";
 import "./exercise-detail-ux.css";
 import "./explore-filter-ux.css";
 import "./exercise-card-readability-ux.css";
+import "./contrast-readability-ux.css";
 
 createRoot(document.getElementById("root")!).render(<App />);
