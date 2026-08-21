@@ -746,17 +746,20 @@ describe("Home recovery alternative flow", () => {
     expect(smallRom.getAttribute("aria-pressed")).toBe("true");
   });
 
-  it("keeps exercise cards scannable before opening the detailed movement and evidence guidance", () => {
+  it("keeps exercise cards scannable before opening the detailed movement and evidence guidance", async () => {
     render(createElement(Home));
     const detailTrigger = screen.getAllByRole("button", { name: "자세·근거 보기" })[0];
     const card = detailTrigger.closest("article");
     expect(card).toBeTruthy();
-    expect(card?.querySelectorAll(".exercise-meta span").length).toBe(2);
+    await waitFor(() => expect(card?.querySelectorAll(".exercise-meta span").length).toBe(2));
     expect(card?.querySelector(".exercise-detail")).toBeNull();
+    expect(detailTrigger.getAttribute("aria-expanded")).toBe("false");
 
     fireEvent.click(detailTrigger);
     expect(card?.querySelector(".exercise-detail")).toBeTruthy();
     expect(within(card!).getByRole("button", { name: "간단히 보기" })).toBeTruthy();
+    expect(detailTrigger.getAttribute("aria-expanded")).toBe("true");
+    expect(card?.querySelector(".exercise-meta b")?.textContent).toBe("시간");
   });
 
   it("keeps the selected body region explicit before moving from a related exercise to its detail", async () => {
