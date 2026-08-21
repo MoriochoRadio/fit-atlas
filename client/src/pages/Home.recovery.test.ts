@@ -725,4 +725,20 @@ describe("Home recovery alternative flow", () => {
     expect(card?.querySelector(".exercise-detail")).toBeTruthy();
     expect(within(card!).getByRole("button", { name: "간단히 보기" })).toBeTruthy();
   });
+
+  it("keeps the selected body region explicit before moving from a related exercise to its detail", async () => {
+    render(createElement(Home));
+    const selector = screen.getByRole("group", { name: "근육 부위 다중 선택" });
+    const back = within(selector).getByRole("button", { name: "등" });
+    expect(back.getAttribute("aria-pressed")).toBe("true");
+    const relatedList = document.querySelector(".anatomy-exercise-list");
+    expect(relatedList?.querySelectorAll("button").length).toBeGreaterThan(0);
+
+    const exercise = relatedList?.querySelector("button") as HTMLButtonElement;
+    const name = exercise.querySelector("b")?.textContent;
+    expect(name).toBeTruthy();
+    fireEvent.click(exercise);
+    await waitFor(() => expect(document.querySelector(".site-shell")?.classList.contains("scene-explore")).toBe(true));
+    expect((screen.getByLabelText("운동 검색") as HTMLInputElement).value).toBe(name);
+  });
 });
