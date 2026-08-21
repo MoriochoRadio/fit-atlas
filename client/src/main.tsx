@@ -3,5 +3,6 @@ import App from "./App";
 import "./index.css";
 import "./design-reset.css";
 import "./session-route-ux.css";
+import "./home-summary-ux.css";
 
 createRoot(document.getElementById("root")!).render(<App />);

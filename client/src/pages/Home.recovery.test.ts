@@ -285,6 +285,13 @@ describe("Home recovery alternative flow", () => {
     expect(within(report).getByText("이번 주 계획을 마쳤습니다. 다음 세션에서는 시간·반복·저항 중 하나만 작게 조절하세요.")).toBeTruthy();
   });
 
+  it("opens session design directly from the weekly summary next action", () => {
+    render(createElement(Home));
+    const report = screen.getByLabelText("주간 아틀라스 상세 리포트");
+    fireEvent.click(within(report).getByRole("button", { name: "다음 세션 설계" }));
+    expect(screen.getByRole("heading", { name: "오늘의 조건으로, 한 세션을 설계하세요." })).toBeTruthy();
+  });
+
   it("applies a quick exercise start path and makes the chosen condition visible", () => {
     render(createElement(Home));
     const launcher = screen.getByLabelText("빠른 운동 시작");
