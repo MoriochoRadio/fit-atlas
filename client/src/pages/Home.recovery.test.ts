@@ -797,6 +797,15 @@ describe("Home recovery alternative flow", () => {
     expect((screen.getByLabelText("운동 검색") as HTMLInputElement).value).toBe(name);
   });
 
+  it("keeps the mobile result location, selected-region comparison, and first-record outcome explicit", () => {
+    render(createElement(Home));
+    expect(screen.getByLabelText("모바일 탐색 결과 위치").textContent).toContain("RESULT ROUTE");
+    expect(screen.getByLabelText("선택 부위 운동 비교 요약").textContent).toContain("공통 자극");
+    const firstRecordRoute = screen.getByLabelText("첫 기록 다음 흐름");
+    expect(within(firstRecordRoute).getByText(/운동·시간·RPE 입력/)).toBeTruthy();
+    expect(within(firstRecordRoute).getByText(/주간 흐름에 첫 신호 표시/)).toBeTruthy();
+  });
+
   it("keeps an empty progress dashboard focused on the weekly signal and first record action", () => {
     render(createElement(Home));
     expect(screen.getByText("이번 주 피로·통증·ROM 흐름")).toBeTruthy();
