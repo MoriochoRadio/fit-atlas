@@ -2,5409 +2,5503 @@ import type { CatalogEntry } from "./catalogTypes";
 
 export const catalogPage09: CatalogEntry[] = [
   {
-    "exercise": {
-      "id": "verified-cable-reverse-crunch",
-      "name": "케이블 리버스 크런치",
-      "englishName": "Cable Reverse Crunch",
-      "category": "헬스기구",
-      "regions": [
-        "코어"
-      ],
-      "focus": "근력",
-      "difficulty": "입문",
-      "equipment": "케이블 머신·핀",
-      "minutes": "6–12회 · 2세트",
-      "description": "케이블 리버스 크런치은 복부 주변을 통증 없는 범위에서 천천히 움직여 가동 범위와 자세 감각을 확인하는 모빌리티 종목입니다. 반대 방향으로 움직일 때도 어깨·손목 정렬을 먼저 확인합니다",
-      "cues": [
+    exercise: {
+      id: "verified-cable-reverse-crunch",
+      name: "케이블 리버스 크런치",
+      englishName: "Cable Reverse Crunch",
+      category: "헬스기구",
+      regions: ["코어"],
+      focus: "근력",
+      difficulty: "입문",
+      equipment: "케이블 머신·핀",
+      minutes: "6–12회 · 2세트",
+      description:
+        "케이블 리버스 크런치은 복부 주변을 통증 없는 범위에서 천천히 움직여 가동 범위와 자세 감각을 확인하는 모빌리티 종목입니다. 반대 방향으로 움직일 때도 어깨·손목 정렬을 먼저 확인합니다",
+      cues: [
         "케이블 리버스 크런치에서 작은 범위에서 호흡을 멈추지 않기",
         "복부을 느끼며 끝 범위를 밀지 말고 부드럽게 왕복",
-        "반대 방향으로 움직일 때도 어깨·손목 정렬을 먼저 확인합니다"
+        "반대 방향으로 움직일 때도 어깨·손목 정렬을 먼저 확인합니다",
       ],
-      "benefits": [
+      benefits: [
         "케이블 리버스 크런치으로 관절 위치와 범위 인식",
         "복부을 활용한 편안한 움직임 준비",
-        "복부의 움직임 경로 인식"
+        "복부의 움직임 경로 인식",
       ],
-      "warning": "케이블 리버스 크런치 중 날카로운 통증, 저림, 방사통, 붓기·열감이 있으면 자가 진행을 멈추고 평가를 우선하세요.",
-      "reference": {
-        "label": "ACSM — Exercise Safety",
-        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
-      }
+      warning:
+        "케이블 리버스 크런치 중 날카로운 통증, 저림, 방사통, 붓기·열감이 있으면 자가 진행을 멈추고 평가를 우선하세요.",
+      reference: {
+        label: "ACSM — Exercise Safety",
+        url: "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/",
+      },
     },
-    "detail": {
-      "setup": [
+    detail: {
+      setup: [
         "케이블 높이·핀·손잡이 잠금과 당김 방향을 가벼운 저항으로 시험합니다",
         "발 또는 지지면을 단단히 고정하고 몸통을 길게 세웁니다",
-        "케이블 리버스 크런치에 맞춰 편안한 바닥·매트 또는 지지대를 준비합니다"
+        "케이블 리버스 크런치에 맞춰 편안한 바닥·매트 또는 지지대를 준비합니다",
       ],
-      "finish": "케이블 리버스 크런치을 마친 뒤 중립 자세로 천천히 돌아와 불편감이 남지 않는지 확인합니다.",
-      "commonMistakes": [
+      finish:
+        "케이블 리버스 크런치을 마친 뒤 중립 자세로 천천히 돌아와 불편감이 남지 않는지 확인합니다.",
+      commonMistakes: [
         "케이블 리버스 크런치에서 끝 범위를 억지로 밀어 통증을 만드는 경우",
         "케이블 리버스 크런치에서 호흡을 참거나 반동을 쓰는 경우",
-        "케이블 리버스 크런치에서 저림·방사통을 무시하고 지속하는 경우"
+        "케이블 리버스 크런치에서 저림·방사통을 무시하고 지속하는 경우",
       ],
-      "regressions": [
+      regressions: [
         "케이블 리버스 크런치은 범위와 유지 시간을 줄입니다",
         "케이블 리버스 크런치은 벽·의자·블록 같은 지지대를 사용합니다",
-        "케이블 리버스 크런치은 누운 또는 앉은 안정된 자세로 바꿉니다"
+        "케이블 리버스 크런치은 누운 또는 앉은 안정된 자세로 바꿉니다",
       ],
-      "progressions": [
+      progressions: [
         "케이블 리버스 크런치은 다음 날 편안하면 범위만 조금 늘립니다",
         "케이블 리버스 크런치은 호흡 주기를 한 번 추가합니다",
-        "케이블 리버스 크런치은 지지대는 안정적으로 줄여 갑니다"
-      ]
-    }
+        "케이블 리버스 크런치은 지지대는 안정적으로 줄여 갑니다",
+      ],
+    },
   },
   {
-    "exercise": {
-      "id": "verified-cable-rope-overhead-triceps-extension",
-      "name": "케이블 로프 오버헤드 삼두",
-      "englishName": "Cable Rope Overhead Triceps Extension",
-      "category": "헬스기구",
-      "regions": [
-        "팔"
-      ],
-      "focus": "근력",
-      "difficulty": "입문",
-      "equipment": "케이블 머신·핀",
-      "minutes": "6–12회 · 2세트",
-      "description": "케이블 로프 오버헤드 삼두은 삼두근을 사용해 팔꿈치 또는 목표 관절을 펴는 경로를 통제하는 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
-      "cues": [
+    exercise: {
+      id: "verified-cable-rope-overhead-triceps-extension",
+      name: "케이블 로프 오버헤드 삼두",
+      englishName: "Cable Rope Overhead Triceps Extension",
+      category: "헬스기구",
+      regions: ["팔"],
+      focus: "근력",
+      difficulty: "입문",
+      equipment: "케이블 머신·핀",
+      minutes: "6–12회 · 2세트",
+      description:
+        "케이블 로프 오버헤드 삼두은 삼두근을 사용해 팔꿈치 또는 목표 관절을 펴는 경로를 통제하는 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
+      cues: [
         "케이블 로프 오버헤드 삼두에서 관절 축을 고정하고 목표 관절만 부드럽게 펴기",
         "삼두근을 느끼며 어깨와 몸통이 흔들리지 않게 지지 유지",
-        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다"
+        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
       ],
-      "benefits": [
+      benefits: [
         "케이블 로프 오버헤드 삼두으로 관절 폄 경로 제어",
         "삼두근을 활용한 팔 뒤쪽·주변 안정 근육 사용",
-        "삼두근의 움직임 경로 인식"
+        "삼두근의 움직임 경로 인식",
       ],
-      "warning": "케이블 로프 오버헤드 삼두 중 관절 끝의 날카로운 통증, 저림 또는 손잡이 흔들림이 있으면 즉시 중단하세요.",
-      "reference": {
-        "label": "ACSM — Exercise Safety",
-        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
-      }
+      warning:
+        "케이블 로프 오버헤드 삼두 중 관절 끝의 날카로운 통증, 저림 또는 손잡이 흔들림이 있으면 즉시 중단하세요.",
+      reference: {
+        label: "ACSM — Exercise Safety",
+        url: "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/",
+      },
     },
-    "detail": {
-      "setup": [
+    detail: {
+      setup: [
         "케이블 높이·핀·손잡이 잠금과 당김 방향을 가벼운 저항으로 시험합니다",
         "발 또는 지지면을 단단히 고정하고 몸통을 길게 세웁니다",
-        "케이블 로프 오버헤드 삼두에 맞춰 도구·손잡이를 안정적으로 고정하고 관절 축을 맞춥니다"
+        "케이블 로프 오버헤드 삼두에 맞춰 도구·손잡이를 안정적으로 고정하고 관절 축을 맞춥니다",
       ],
-      "finish": "케이블 로프 오버헤드 삼두을 마친 뒤 저항을 천천히 되돌려 관절이 편안한 시작 범위에서 멈춥니다.",
-      "commonMistakes": [
+      finish:
+        "케이블 로프 오버헤드 삼두을 마친 뒤 저항을 천천히 되돌려 관절이 편안한 시작 범위에서 멈춥니다.",
+      commonMistakes: [
         "케이블 로프 오버헤드 삼두에서 어깨와 허리를 함께 흔들어 저항을 넘기는 경우",
         "케이블 로프 오버헤드 삼두에서 관절을 반동으로 끝까지 잠그는 경우",
-        "케이블 로프 오버헤드 삼두에서 손목을 꺾어 힘을 전달하는 경우"
+        "케이블 로프 오버헤드 삼두에서 손목을 꺾어 힘을 전달하는 경우",
       ],
-      "regressions": [
+      regressions: [
         "케이블 로프 오버헤드 삼두은 저항과 범위를 모두 낮춥니다",
         "케이블 로프 오버헤드 삼두은 양손 또는 지지된 자세를 사용합니다",
-        "케이블 로프 오버헤드 삼두은 통증 없는 중간 범위만 수행합니다"
+        "케이블 로프 오버헤드 삼두은 통증 없는 중간 범위만 수행합니다",
       ],
-      "progressions": [
+      progressions: [
         "케이블 로프 오버헤드 삼두은 정렬을 지킨 채 반복을 소폭 늘립니다",
         "케이블 로프 오버헤드 삼두은 저항은 한 단계만 올립니다",
-        "케이블 로프 오버헤드 삼두은 편측·긴 지렛대는 관절이 편안할 때만 시도합니다"
-      ]
-    }
+        "케이블 로프 오버헤드 삼두은 편측·긴 지렛대는 관절이 편안할 때만 시도합니다",
+      ],
+    },
   },
   {
-    "exercise": {
-      "id": "verified-cable-rope-rear-delt-rows",
-      "name": "케이블 로프 리어 델트 로우",
-      "englishName": "Cable Rope Rear-Delt Rows",
-      "category": "헬스기구",
-      "regions": [
-        "어깨"
-      ],
-      "focus": "근력",
-      "difficulty": "입문",
-      "equipment": "케이블 머신·핀",
-      "minutes": "6–12회 · 2세트",
-      "description": "케이블 로프 리어 델트 로우은 어깨을 쓰며 손잡이 또는 도구를 몸 쪽으로 당기고 어깨뼈의 위치를 제어하는 당기기 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
-      "cues": [
+    exercise: {
+      id: "verified-cable-rope-rear-delt-rows",
+      name: "케이블 로프 리어 델트 로우",
+      englishName: "Cable Rope Rear-Delt Rows",
+      category: "헬스기구",
+      regions: ["어깨"],
+      focus: "근력",
+      difficulty: "입문",
+      equipment: "케이블 머신·핀",
+      minutes: "6–12회 · 2세트",
+      description:
+        "케이블 로프 리어 델트 로우은 어깨을 쓰며 손잡이 또는 도구를 몸 쪽으로 당기고 어깨뼈의 위치를 제어하는 당기기 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
+      cues: [
         "케이블 로프 리어 델트 로우에서 먼저 어깨를 귀에서 멀리 두고 가슴을 편안히 유지",
         "어깨을 느끼며 팔꿈치를 목적 방향으로 끌되 몸통 반동 줄이기",
-        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다"
+        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
       ],
-      "benefits": [
+      benefits: [
         "케이블 로프 리어 델트 로우으로 등·팔의 당기기 협응",
         "어깨을 활용한 견갑 위치 인식",
-        "어깨의 움직임 경로 인식"
+        "어깨의 움직임 경로 인식",
       ],
-      "warning": "케이블 로프 리어 델트 로우 중 어깨 앞쪽의 날카로운 통증, 손 저림, 고정점 흔들림 또는 그립 이탈이 있으면 즉시 중단하세요.",
-      "reference": {
-        "label": "ACSM — Exercise Safety",
-        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
-      }
+      warning:
+        "케이블 로프 리어 델트 로우 중 어깨 앞쪽의 날카로운 통증, 손 저림, 고정점 흔들림 또는 그립 이탈이 있으면 즉시 중단하세요.",
+      reference: {
+        label: "ACSM — Exercise Safety",
+        url: "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/",
+      },
     },
-    "detail": {
-      "setup": [
+    detail: {
+      setup: [
         "케이블 높이·핀·손잡이 잠금과 당김 방향을 가벼운 저항으로 시험합니다",
         "발 또는 지지면을 단단히 고정하고 몸통을 길게 세웁니다",
-        "케이블 로프 리어 델트 로우에 맞춰 그립·바·손잡이 높이와 고정 상태를 확인합니다"
+        "케이블 로프 리어 델트 로우에 맞춰 그립·바·손잡이 높이와 고정 상태를 확인합니다",
       ],
-      "finish": "케이블 로프 리어 델트 로우을 마친 뒤 팔을 급하게 펴지 말고 어깨가 앞으로 쏠리지 않는 범위에서 시작 위치로 돌아갑니다.",
-      "commonMistakes": [
+      finish:
+        "케이블 로프 리어 델트 로우을 마친 뒤 팔을 급하게 펴지 말고 어깨가 앞으로 쏠리지 않는 범위에서 시작 위치로 돌아갑니다.",
+      commonMistakes: [
         "케이블 로프 리어 델트 로우에서 어깨를 으쓱한 채 팔만 사용하는 경우",
         "케이블 로프 리어 델트 로우에서 몸통을 크게 흔들어 반동을 만드는 경우",
-        "케이블 로프 리어 델트 로우에서 팔꿈치를 끝까지 밀어 관절을 잠그는 경우"
+        "케이블 로프 리어 델트 로우에서 팔꿈치를 끝까지 밀어 관절을 잠그는 경우",
       ],
-      "regressions": [
+      regressions: [
         "케이블 로프 리어 델트 로우은 밴드·보조 장치 또는 더 가벼운 저항을 사용합니다",
         "케이블 로프 리어 델트 로우은 지지된 시티드 자세로 몸통 부담을 줄입니다",
-        "케이블 로프 리어 델트 로우은 당기는 범위를 짧게 정하고 멈춥니다"
+        "케이블 로프 리어 델트 로우은 당기는 범위를 짧게 정하고 멈춥니다",
       ],
-      "progressions": [
+      progressions: [
         "케이블 로프 리어 델트 로우은 같은 경로에서 저항을 한 단계만 올립니다",
         "케이블 로프 리어 델트 로우은 완전한 어깨 제어가 되면 범위를 조금 늘립니다",
-        "케이블 로프 리어 델트 로우은 편측 당김은 몸통 회전을 통제할 수 있을 때 시도합니다"
-      ]
-    }
+        "케이블 로프 리어 델트 로우은 편측 당김은 몸통 회전을 통제할 수 있을 때 시도합니다",
+      ],
+    },
   },
   {
-    "exercise": {
-      "id": "verified-cable-russian-twists",
-      "name": "케이블 러시안 트위스트",
-      "englishName": "Cable Russian Twists",
-      "category": "헬스기구",
-      "regions": [
-        "코어"
-      ],
-      "focus": "근력",
-      "difficulty": "입문",
-      "equipment": "케이블 머신·핀",
-      "minutes": "6–12회 · 2세트",
-      "description": "케이블 러시안 트위스트은 복부 주변을 통증 없는 범위에서 천천히 움직여 가동 범위와 자세 감각을 확인하는 모빌리티 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
-      "cues": [
+    exercise: {
+      id: "verified-cable-russian-twists",
+      name: "케이블 러시안 트위스트",
+      englishName: "Cable Russian Twists",
+      category: "헬스기구",
+      regions: ["코어"],
+      focus: "근력",
+      difficulty: "입문",
+      equipment: "케이블 머신·핀",
+      minutes: "6–12회 · 2세트",
+      description:
+        "케이블 러시안 트위스트은 복부 주변을 통증 없는 범위에서 천천히 움직여 가동 범위와 자세 감각을 확인하는 모빌리티 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
+      cues: [
         "케이블 러시안 트위스트에서 작은 범위에서 호흡을 멈추지 않기",
         "복부을 느끼며 끝 범위를 밀지 말고 부드럽게 왕복",
-        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다"
+        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
       ],
-      "benefits": [
+      benefits: [
         "케이블 러시안 트위스트으로 관절 위치와 범위 인식",
         "복부을 활용한 편안한 움직임 준비",
-        "복부의 움직임 경로 인식"
+        "복부의 움직임 경로 인식",
       ],
-      "warning": "케이블 러시안 트위스트 중 날카로운 통증, 저림, 방사통, 붓기·열감이 있으면 자가 진행을 멈추고 평가를 우선하세요.",
-      "reference": {
-        "label": "ACSM — Exercise Safety",
-        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
-      }
+      warning:
+        "케이블 러시안 트위스트 중 날카로운 통증, 저림, 방사통, 붓기·열감이 있으면 자가 진행을 멈추고 평가를 우선하세요.",
+      reference: {
+        label: "ACSM — Exercise Safety",
+        url: "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/",
+      },
     },
-    "detail": {
-      "setup": [
+    detail: {
+      setup: [
         "케이블 높이·핀·손잡이 잠금과 당김 방향을 가벼운 저항으로 시험합니다",
         "발 또는 지지면을 단단히 고정하고 몸통을 길게 세웁니다",
-        "케이블 러시안 트위스트에 맞춰 편안한 바닥·매트 또는 지지대를 준비합니다"
+        "케이블 러시안 트위스트에 맞춰 편안한 바닥·매트 또는 지지대를 준비합니다",
       ],
-      "finish": "케이블 러시안 트위스트을 마친 뒤 중립 자세로 천천히 돌아와 불편감이 남지 않는지 확인합니다.",
-      "commonMistakes": [
+      finish:
+        "케이블 러시안 트위스트을 마친 뒤 중립 자세로 천천히 돌아와 불편감이 남지 않는지 확인합니다.",
+      commonMistakes: [
         "케이블 러시안 트위스트에서 끝 범위를 억지로 밀어 통증을 만드는 경우",
         "케이블 러시안 트위스트에서 호흡을 참거나 반동을 쓰는 경우",
-        "케이블 러시안 트위스트에서 저림·방사통을 무시하고 지속하는 경우"
+        "케이블 러시안 트위스트에서 저림·방사통을 무시하고 지속하는 경우",
       ],
-      "regressions": [
+      regressions: [
         "케이블 러시안 트위스트은 범위와 유지 시간을 줄입니다",
         "케이블 러시안 트위스트은 벽·의자·블록 같은 지지대를 사용합니다",
-        "케이블 러시안 트위스트은 누운 또는 앉은 안정된 자세로 바꿉니다"
+        "케이블 러시안 트위스트은 누운 또는 앉은 안정된 자세로 바꿉니다",
       ],
-      "progressions": [
+      progressions: [
         "케이블 러시안 트위스트은 다음 날 편안하면 범위만 조금 늘립니다",
         "케이블 러시안 트위스트은 호흡 주기를 한 번 추가합니다",
-        "케이블 러시안 트위스트은 지지대는 안정적으로 줄여 갑니다"
-      ]
-    }
+        "케이블 러시안 트위스트은 지지대는 안정적으로 줄여 갑니다",
+      ],
+    },
   },
   {
-    "exercise": {
-      "id": "verified-cable-seated-crunch",
-      "name": "케이블 시티드 크런치",
-      "englishName": "Cable Seated Crunch",
-      "category": "헬스기구",
-      "regions": [
-        "코어"
-      ],
-      "focus": "근력",
-      "difficulty": "입문",
-      "equipment": "케이블 머신·핀",
-      "minutes": "6–12회 · 2세트",
-      "description": "케이블 시티드 크런치은 복부 주변을 통증 없는 범위에서 천천히 움직여 가동 범위와 자세 감각을 확인하는 모빌리티 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
-      "cues": [
+    exercise: {
+      id: "verified-cable-seated-crunch",
+      name: "케이블 시티드 크런치",
+      englishName: "Cable Seated Crunch",
+      category: "헬스기구",
+      regions: ["코어"],
+      focus: "근력",
+      difficulty: "입문",
+      equipment: "케이블 머신·핀",
+      minutes: "6–12회 · 2세트",
+      description:
+        "케이블 시티드 크런치은 복부 주변을 통증 없는 범위에서 천천히 움직여 가동 범위와 자세 감각을 확인하는 모빌리티 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
+      cues: [
         "케이블 시티드 크런치에서 작은 범위에서 호흡을 멈추지 않기",
         "복부을 느끼며 끝 범위를 밀지 말고 부드럽게 왕복",
-        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다"
+        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
       ],
-      "benefits": [
+      benefits: [
         "케이블 시티드 크런치으로 관절 위치와 범위 인식",
         "복부을 활용한 편안한 움직임 준비",
-        "복부의 움직임 경로 인식"
+        "복부의 움직임 경로 인식",
       ],
-      "warning": "케이블 시티드 크런치 중 날카로운 통증, 저림, 방사통, 붓기·열감이 있으면 자가 진행을 멈추고 평가를 우선하세요.",
-      "reference": {
-        "label": "ACSM — Exercise Safety",
-        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
-      }
+      warning:
+        "케이블 시티드 크런치 중 날카로운 통증, 저림, 방사통, 붓기·열감이 있으면 자가 진행을 멈추고 평가를 우선하세요.",
+      reference: {
+        label: "ACSM — Exercise Safety",
+        url: "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/",
+      },
     },
-    "detail": {
-      "setup": [
+    detail: {
+      setup: [
         "케이블 높이·핀·손잡이 잠금과 당김 방향을 가벼운 저항으로 시험합니다",
         "시티드 자세에서 골반을 등받이 또는 벤치에 안정시킵니다",
-        "케이블 시티드 크런치에 맞춰 편안한 바닥·매트 또는 지지대를 준비합니다"
+        "케이블 시티드 크런치에 맞춰 편안한 바닥·매트 또는 지지대를 준비합니다",
       ],
-      "finish": "케이블 시티드 크런치을 마친 뒤 중립 자세로 천천히 돌아와 불편감이 남지 않는지 확인합니다.",
-      "commonMistakes": [
+      finish:
+        "케이블 시티드 크런치을 마친 뒤 중립 자세로 천천히 돌아와 불편감이 남지 않는지 확인합니다.",
+      commonMistakes: [
         "케이블 시티드 크런치에서 끝 범위를 억지로 밀어 통증을 만드는 경우",
         "케이블 시티드 크런치에서 호흡을 참거나 반동을 쓰는 경우",
-        "케이블 시티드 크런치에서 저림·방사통을 무시하고 지속하는 경우"
+        "케이블 시티드 크런치에서 저림·방사통을 무시하고 지속하는 경우",
       ],
-      "regressions": [
+      regressions: [
         "케이블 시티드 크런치은 범위와 유지 시간을 줄입니다",
         "케이블 시티드 크런치은 벽·의자·블록 같은 지지대를 사용합니다",
-        "케이블 시티드 크런치은 누운 또는 앉은 안정된 자세로 바꿉니다"
+        "케이블 시티드 크런치은 누운 또는 앉은 안정된 자세로 바꿉니다",
       ],
-      "progressions": [
+      progressions: [
         "케이블 시티드 크런치은 다음 날 편안하면 범위만 조금 늘립니다",
         "케이블 시티드 크런치은 호흡 주기를 한 번 추가합니다",
-        "케이블 시티드 크런치은 지지대는 안정적으로 줄여 갑니다"
-      ]
-    }
+        "케이블 시티드 크런치은 지지대는 안정적으로 줄여 갑니다",
+      ],
+    },
   },
   {
-    "exercise": {
-      "id": "verified-cable-seated-lateral-raise",
-      "name": "케이블 시티드 레터럴 레이즈",
-      "englishName": "Cable Seated Lateral Raise",
-      "category": "헬스기구",
-      "regions": [
-        "어깨"
-      ],
-      "focus": "근력",
-      "difficulty": "입문",
-      "equipment": "케이블 머신·핀",
-      "minutes": "6–12회 · 2세트",
-      "description": "케이블 시티드 레터럴 레이즈은 어깨을 사용해 팔 또는 도구를 정해진 평면으로 들어 올리며 어깨 위치를 제어하는 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
-      "cues": [
+    exercise: {
+      id: "verified-cable-seated-lateral-raise",
+      name: "케이블 시티드 레터럴 레이즈",
+      englishName: "Cable Seated Lateral Raise",
+      category: "헬스기구",
+      regions: ["어깨"],
+      focus: "근력",
+      difficulty: "입문",
+      equipment: "케이블 머신·핀",
+      minutes: "6–12회 · 2세트",
+      description:
+        "케이블 시티드 레터럴 레이즈은 어깨을 사용해 팔 또는 도구를 정해진 평면으로 들어 올리며 어깨 위치를 제어하는 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
+      cues: [
         "케이블 시티드 레터럴 레이즈에서 어깨를 귀에서 멀리 두고 목을 길게 유지",
         "어깨을 느끼며 도구를 몸에서 너무 멀리 보내지 않기",
-        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다"
+        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
       ],
-      "benefits": [
+      benefits: [
         "케이블 시티드 레터럴 레이즈으로 어깨 주변의 제어",
         "어깨을 활용한 팔과 견갑의 협응",
-        "어깨의 움직임 경로 인식"
+        "어깨의 움직임 경로 인식",
       ],
-      "warning": "케이블 시티드 레터럴 레이즈 중 어깨 위쪽 통증, 목 긴장, 저림 또는 반동이 생기면 즉시 범위·저항을 낮추거나 중단하세요.",
-      "reference": {
-        "label": "ACSM — Exercise Safety",
-        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
-      }
+      warning:
+        "케이블 시티드 레터럴 레이즈 중 어깨 위쪽 통증, 목 긴장, 저림 또는 반동이 생기면 즉시 범위·저항을 낮추거나 중단하세요.",
+      reference: {
+        label: "ACSM — Exercise Safety",
+        url: "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/",
+      },
     },
-    "detail": {
-      "setup": [
+    detail: {
+      setup: [
         "케이블 높이·핀·손잡이 잠금과 당김 방향을 가벼운 저항으로 시험합니다",
         "시티드 자세에서 골반을 등받이 또는 벤치에 안정시킵니다",
-        "케이블 시티드 레터럴 레이즈에 맞춰 낮은 중량으로 시작하고 양발 또는 벤치 지지로 균형을 만듭니다"
+        "케이블 시티드 레터럴 레이즈에 맞춰 낮은 중량으로 시작하고 양발 또는 벤치 지지로 균형을 만듭니다",
       ],
-      "finish": "케이블 시티드 레터럴 레이즈을 마친 뒤 어깨가 앞으로 밀리지 않게 도구를 몸 옆으로 통제해 되돌립니다.",
-      "commonMistakes": [
+      finish:
+        "케이블 시티드 레터럴 레이즈을 마친 뒤 어깨가 앞으로 밀리지 않게 도구를 몸 옆으로 통제해 되돌립니다.",
+      commonMistakes: [
         "케이블 시티드 레터럴 레이즈에서 어깨를 으쓱하며 목에 힘을 주는 경우",
         "케이블 시티드 레터럴 레이즈에서 반동으로 도구를 목표 높이보다 높게 던지는 경우",
-        "케이블 시티드 레터럴 레이즈에서 손목을 꺾어 도구를 지지하는 경우"
+        "케이블 시티드 레터럴 레이즈에서 손목을 꺾어 도구를 지지하는 경우",
       ],
-      "regressions": [
+      regressions: [
         "케이블 시티드 레터럴 레이즈은 중량을 낮추거나 한 팔씩 지지된 자세로 수행합니다",
         "케이블 시티드 레터럴 레이즈은 들기 높이를 어깨 아래로 줄입니다",
-        "케이블 시티드 레터럴 레이즈은 밴드 또는 더 짧은 지렛대를 사용합니다"
+        "케이블 시티드 레터럴 레이즈은 밴드 또는 더 짧은 지렛대를 사용합니다",
       ],
-      "progressions": [
+      progressions: [
         "케이블 시티드 레터럴 레이즈은 동일한 높이와 정렬에서 반복을 늘립니다",
         "케이블 시티드 레터럴 레이즈은 작은 중량 증가를 한 번만 적용합니다",
-        "케이블 시티드 레터럴 레이즈은 편측·인클라인 변형은 어깨가 편안할 때 시도합니다"
-      ]
-    }
+        "케이블 시티드 레터럴 레이즈은 편측·인클라인 변형은 어깨가 편안할 때 시도합니다",
+      ],
+    },
   },
   {
-    "exercise": {
-      "id": "verified-cable-shoulder-press",
-      "name": "케이블 숄더 프레스",
-      "englishName": "Cable Shoulder Press",
-      "category": "헬스기구",
-      "regions": [
-        "어깨"
-      ],
-      "focus": "근력",
-      "difficulty": "입문",
-      "equipment": "케이블 머신·핀",
-      "minutes": "6–12회 · 2세트",
-      "description": "케이블 숄더 프레스은 어깨을 사용해 손잡이·도구 또는 바닥을 몸에서 멀어지게 미는 상체 밀기 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
-      "cues": [
+    exercise: {
+      id: "verified-cable-shoulder-press",
+      name: "케이블 숄더 프레스",
+      englishName: "Cable Shoulder Press",
+      category: "헬스기구",
+      regions: ["어깨"],
+      focus: "근력",
+      difficulty: "입문",
+      equipment: "케이블 머신·핀",
+      minutes: "6–12회 · 2세트",
+      description:
+        "케이블 숄더 프레스은 어깨을 사용해 손잡이·도구 또는 바닥을 몸에서 멀어지게 미는 상체 밀기 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
+      cues: [
         "케이블 숄더 프레스에서 손목을 중립에 가깝게 두고 손잡이를 안정적으로 잡기",
         "어깨을 느끼며 갈비뼈를 과하게 들지 않고 몸통 길이 유지",
-        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다"
+        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
       ],
-      "benefits": [
+      benefits: [
         "케이블 숄더 프레스으로 가슴·어깨·팔의 밀기 협응",
         "어깨을 활용한 손목과 견갑 안정 제어",
-        "어깨의 움직임 경로 인식"
+        "어깨의 움직임 경로 인식",
       ],
-      "warning": "케이블 숄더 프레스 중 어깨·팔꿈치·손목 통증, 저림 또는 도구 흔들림이 있으면 즉시 멈추고 설정을 다시 확인하세요.",
-      "reference": {
-        "label": "ACSM — Exercise Safety",
-        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
-      }
+      warning:
+        "케이블 숄더 프레스 중 어깨·팔꿈치·손목 통증, 저림 또는 도구 흔들림이 있으면 즉시 멈추고 설정을 다시 확인하세요.",
+      reference: {
+        label: "ACSM — Exercise Safety",
+        url: "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/",
+      },
     },
-    "detail": {
-      "setup": [
+    detail: {
+      setup: [
         "케이블 높이·핀·손잡이 잠금과 당김 방향을 가벼운 저항으로 시험합니다",
         "발 또는 지지면을 단단히 고정하고 몸통을 길게 세웁니다",
-        "케이블 숄더 프레스에 맞춰 손잡이·바·지지면의 높이와 좌우 설정을 확인합니다"
+        "케이블 숄더 프레스에 맞춰 손잡이·바·지지면의 높이와 좌우 설정을 확인합니다",
       ],
-      "finish": "케이블 숄더 프레스을 마친 뒤 팔꿈치를 잠그지 않은 편안한 끝 범위에서 잠시 멈춘 뒤 같은 경로로 돌아옵니다.",
-      "commonMistakes": [
+      finish:
+        "케이블 숄더 프레스을 마친 뒤 팔꿈치를 잠그지 않은 편안한 끝 범위에서 잠시 멈춘 뒤 같은 경로로 돌아옵니다.",
+      commonMistakes: [
         "케이블 숄더 프레스에서 어깨가 앞으로 말린 채 밀어 올리는 경우",
         "케이블 숄더 프레스에서 허리를 과하게 젖혀 무게를 넘기는 경우",
-        "케이블 숄더 프레스에서 손목을 꺾고 그립을 느슨하게 유지하는 경우"
+        "케이블 숄더 프레스에서 손목을 꺾고 그립을 느슨하게 유지하는 경우",
       ],
-      "regressions": [
+      regressions: [
         "케이블 숄더 프레스은 벽·높은 벤치 또는 가벼운 저항으로 바꿉니다",
         "케이블 숄더 프레스은 가동 범위를 줄이고 어깨 편안함을 확인합니다",
-        "케이블 숄더 프레스은 양손 지지로 안정성을 먼저 확보합니다"
+        "케이블 숄더 프레스은 양손 지지로 안정성을 먼저 확보합니다",
       ],
-      "progressions": [
+      progressions: [
         "케이블 숄더 프레스은 정렬이 유지될 때 반복을 소폭 늘립니다",
         "케이블 숄더 프레스은 안정된 지지면에서 저항을 한 단계만 올립니다",
-        "케이블 숄더 프레스은 낮은 지지 또는 편측 변형은 통제 후 시도합니다"
-      ]
-    }
+        "케이블 숄더 프레스은 낮은 지지 또는 편측 변형은 통제 후 시도합니다",
+      ],
+    },
   },
   {
-    "exercise": {
-      "id": "verified-cable-shrugs",
-      "name": "케이블 슈러그",
-      "englishName": "Cable Shrugs",
-      "category": "헬스기구",
-      "regions": [
-        "등",
-        "어깨"
-      ],
-      "focus": "근력",
-      "difficulty": "입문",
-      "equipment": "케이블 머신·핀",
-      "minutes": "6–12회 · 2세트",
-      "description": "케이블 슈러그은 승모근을 사용해 팔 또는 도구를 정해진 평면으로 들어 올리며 어깨 위치를 제어하는 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
-      "cues": [
+    exercise: {
+      id: "verified-cable-shrugs",
+      name: "케이블 슈러그",
+      englishName: "Cable Shrugs",
+      category: "헬스기구",
+      regions: ["등", "어깨"],
+      focus: "근력",
+      difficulty: "입문",
+      equipment: "케이블 머신·핀",
+      minutes: "6–12회 · 2세트",
+      description:
+        "케이블 슈러그은 승모근을 사용해 팔 또는 도구를 정해진 평면으로 들어 올리며 어깨 위치를 제어하는 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
+      cues: [
         "케이블 슈러그에서 어깨를 귀에서 멀리 두고 목을 길게 유지",
         "승모근을 느끼며 도구를 몸에서 너무 멀리 보내지 않기",
-        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다"
+        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
       ],
-      "benefits": [
+      benefits: [
         "케이블 슈러그으로 어깨 주변의 제어",
         "승모근을 활용한 팔과 견갑의 협응",
-        "승모근의 움직임 경로 인식"
+        "승모근의 움직임 경로 인식",
       ],
-      "warning": "케이블 슈러그 중 어깨 위쪽 통증, 목 긴장, 저림 또는 반동이 생기면 즉시 범위·저항을 낮추거나 중단하세요.",
-      "reference": {
-        "label": "ACSM — Exercise Safety",
-        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
-      }
+      warning:
+        "케이블 슈러그 중 어깨 위쪽 통증, 목 긴장, 저림 또는 반동이 생기면 즉시 범위·저항을 낮추거나 중단하세요.",
+      reference: {
+        label: "ACSM — Exercise Safety",
+        url: "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/",
+      },
     },
-    "detail": {
-      "setup": [
+    detail: {
+      setup: [
         "케이블 높이·핀·손잡이 잠금과 당김 방향을 가벼운 저항으로 시험합니다",
         "발 또는 지지면을 단단히 고정하고 몸통을 길게 세웁니다",
-        "케이블 슈러그에 맞춰 낮은 중량으로 시작하고 양발 또는 벤치 지지로 균형을 만듭니다"
+        "케이블 슈러그에 맞춰 낮은 중량으로 시작하고 양발 또는 벤치 지지로 균형을 만듭니다",
       ],
-      "finish": "케이블 슈러그을 마친 뒤 어깨가 앞으로 밀리지 않게 도구를 몸 옆으로 통제해 되돌립니다.",
-      "commonMistakes": [
+      finish:
+        "케이블 슈러그을 마친 뒤 어깨가 앞으로 밀리지 않게 도구를 몸 옆으로 통제해 되돌립니다.",
+      commonMistakes: [
         "케이블 슈러그에서 어깨를 으쓱하며 목에 힘을 주는 경우",
         "케이블 슈러그에서 반동으로 도구를 목표 높이보다 높게 던지는 경우",
-        "케이블 슈러그에서 손목을 꺾어 도구를 지지하는 경우"
+        "케이블 슈러그에서 손목을 꺾어 도구를 지지하는 경우",
       ],
-      "regressions": [
+      regressions: [
         "케이블 슈러그은 중량을 낮추거나 한 팔씩 지지된 자세로 수행합니다",
         "케이블 슈러그은 들기 높이를 어깨 아래로 줄입니다",
-        "케이블 슈러그은 밴드 또는 더 짧은 지렛대를 사용합니다"
+        "케이블 슈러그은 밴드 또는 더 짧은 지렛대를 사용합니다",
       ],
-      "progressions": [
+      progressions: [
         "케이블 슈러그은 동일한 높이와 정렬에서 반복을 늘립니다",
         "케이블 슈러그은 작은 중량 증가를 한 번만 적용합니다",
-        "케이블 슈러그은 편측·인클라인 변형은 어깨가 편안할 때 시도합니다"
-      ]
-    }
+        "케이블 슈러그은 편측·인클라인 변형은 어깨가 편안할 때 시도합니다",
+      ],
+    },
   },
   {
-    "exercise": {
-      "id": "verified-cable-wrist-curl",
-      "name": "케이블 손목 컬",
-      "englishName": "Cable Wrist Curl",
-      "category": "헬스기구",
-      "regions": [
-        "팔"
-      ],
-      "focus": "근력",
-      "difficulty": "입문",
-      "equipment": "케이블 머신·핀",
-      "minutes": "6–12회 · 2세트",
-      "description": "케이블 손목 컬은 전완을 중심으로 팔꿈치를 굽히며 도구를 통제하는 팔 굽힘 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
-      "cues": [
+    exercise: {
+      id: "verified-cable-wrist-curl",
+      name: "케이블 손목 컬",
+      englishName: "Cable Wrist Curl",
+      category: "헬스기구",
+      regions: ["팔"],
+      focus: "근력",
+      difficulty: "입문",
+      equipment: "케이블 머신·핀",
+      minutes: "6–12회 · 2세트",
+      description:
+        "케이블 손목 컬은 전완을 중심으로 팔꿈치를 굽히며 도구를 통제하는 팔 굽힘 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
+      cues: [
         "케이블 손목 컬에서 상완을 몸통 가까이에 두고 팔꿈치 위치를 고정",
         "전완을 느끼며 손목을 꺾지 말고 도구를 부드럽게 들어 올리기",
-        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다"
+        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
       ],
-      "benefits": [
+      benefits: [
         "케이블 손목 컬으로 팔 굽힘 근육의 제어",
         "전완을 활용한 전완·그립 안정 인식",
-        "전완의 움직임 경로 인식"
+        "전완의 움직임 경로 인식",
       ],
-      "warning": "케이블 손목 컬 중 팔꿈치·손목의 날카로운 통증, 저림 또는 그립 미끄러짐이 있으면 즉시 중단하세요.",
-      "reference": {
-        "label": "ACSM — Exercise Safety",
-        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
-      }
+      warning:
+        "케이블 손목 컬 중 팔꿈치·손목의 날카로운 통증, 저림 또는 그립 미끄러짐이 있으면 즉시 중단하세요.",
+      reference: {
+        label: "ACSM — Exercise Safety",
+        url: "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/",
+      },
     },
-    "detail": {
-      "setup": [
+    detail: {
+      setup: [
         "케이블 높이·핀·손잡이 잠금과 당김 방향을 가벼운 저항으로 시험합니다",
         "발 또는 지지면을 단단히 고정하고 몸통을 길게 세웁니다",
-        "케이블 손목 컬에 맞춰 가벼운 중량을 들고 팔꿈치를 몸통 옆에 둡니다"
+        "케이블 손목 컬에 맞춰 가벼운 중량을 들고 팔꿈치를 몸통 옆에 둡니다",
       ],
-      "finish": "케이블 손목 컬을 마친 뒤 팔꿈치를 완전히 잠그지 않는 편안한 아래 범위에서 다음 반복을 준비합니다.",
-      "commonMistakes": [
+      finish:
+        "케이블 손목 컬을 마친 뒤 팔꿈치를 완전히 잠그지 않는 편안한 아래 범위에서 다음 반복을 준비합니다.",
+      commonMistakes: [
         "케이블 손목 컬에서 몸통을 뒤로 젖혀 반동을 쓰는 경우",
         "케이블 손목 컬에서 팔꿈치가 앞으로 크게 이동하는 경우",
-        "케이블 손목 컬에서 손목을 꺾어 중량을 드는 경우"
+        "케이블 손목 컬에서 손목을 꺾어 중량을 드는 경우",
       ],
-      "regressions": [
+      regressions: [
         "케이블 손목 컬은 더 가벼운 도구나 밴드를 사용합니다",
         "케이블 손목 컬은 시티드 또는 벤치 지지로 몸통 반동을 줄입니다",
-        "케이블 손목 컬은 아래와 위 범위를 조금 줄입니다"
+        "케이블 손목 컬은 아래와 위 범위를 조금 줄입니다",
       ],
-      "progressions": [
+      progressions: [
         "케이블 손목 컬은 반동 없이 반복을 한두 회 늘립니다",
         "케이블 손목 컬은 그립이 안정되면 중량을 소폭 올립니다",
-        "케이블 손목 컬은 편측 수행은 몸통이 흔들리지 않을 때 시작합니다"
-      ]
-    }
+        "케이블 손목 컬은 편측 수행은 몸통이 흔들리지 않을 때 시작합니다",
+      ],
+    },
   },
   {
-    "exercise": {
-      "id": "verified-close-grip-front-lat-pulldown",
-      "name": "프론트 랫 풀다운(좁은 그립)",
-      "englishName": "Close-Grip Front Lat Pulldown",
-      "category": "헬스기구",
-      "regions": [
-        "등"
-      ],
-      "focus": "근력",
-      "difficulty": "입문",
-      "equipment": "케이블 머신·핀",
-      "minutes": "6–12회 · 2세트",
-      "description": "프론트 랫 풀다운(좁은 그립)은 광배근을 쓰며 손잡이 또는 도구를 몸 쪽으로 당기고 어깨뼈의 위치를 제어하는 당기기 종목입니다. 좁은 그립에서는 손목을 꺾지 않고 팔꿈치 경로를 통제합니다",
-      "cues": [
+    exercise: {
+      id: "verified-close-grip-front-lat-pulldown",
+      name: "프론트 랫 풀다운(좁은 그립)",
+      englishName: "Close-Grip Front Lat Pulldown",
+      category: "헬스기구",
+      regions: ["등"],
+      focus: "근력",
+      difficulty: "입문",
+      equipment: "케이블 머신·핀",
+      minutes: "6–12회 · 2세트",
+      description:
+        "프론트 랫 풀다운(좁은 그립)은 광배근을 쓰며 손잡이 또는 도구를 몸 쪽으로 당기고 어깨뼈의 위치를 제어하는 당기기 종목입니다. 좁은 그립에서는 손목을 꺾지 않고 팔꿈치 경로를 통제합니다",
+      cues: [
         "프론트 랫 풀다운(좁은 그립)에서 먼저 어깨를 귀에서 멀리 두고 가슴을 편안히 유지",
         "광배근을 느끼며 팔꿈치를 목적 방향으로 끌되 몸통 반동 줄이기",
-        "좁은 그립에서는 손목을 꺾지 않고 팔꿈치 경로를 통제합니다"
+        "좁은 그립에서는 손목을 꺾지 않고 팔꿈치 경로를 통제합니다",
       ],
-      "benefits": [
+      benefits: [
         "프론트 랫 풀다운(좁은 그립)으로 등·팔의 당기기 협응",
         "광배근을 활용한 견갑 위치 인식",
-        "광배근의 움직임 경로 인식"
+        "광배근의 움직임 경로 인식",
       ],
-      "warning": "프론트 랫 풀다운(좁은 그립) 중 어깨 앞쪽의 날카로운 통증, 손 저림, 고정점 흔들림 또는 그립 이탈이 있으면 즉시 중단하세요.",
-      "reference": {
-        "label": "ACSM — Exercise Safety",
-        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
-      }
+      warning:
+        "프론트 랫 풀다운(좁은 그립) 중 어깨 앞쪽의 날카로운 통증, 손 저림, 고정점 흔들림 또는 그립 이탈이 있으면 즉시 중단하세요.",
+      reference: {
+        label: "ACSM — Exercise Safety",
+        url: "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/",
+      },
     },
-    "detail": {
-      "setup": [
+    detail: {
+      setup: [
         "케이블 높이·핀·손잡이 잠금과 당김 방향을 가벼운 저항으로 시험합니다",
         "발 또는 지지면을 단단히 고정하고 몸통을 길게 세웁니다",
-        "프론트 랫 풀다운(좁은 그립)에 맞춰 그립·바·손잡이 높이와 고정 상태를 확인합니다"
+        "프론트 랫 풀다운(좁은 그립)에 맞춰 그립·바·손잡이 높이와 고정 상태를 확인합니다",
       ],
-      "finish": "프론트 랫 풀다운(좁은 그립)을 마친 뒤 팔을 급하게 펴지 말고 어깨가 앞으로 쏠리지 않는 범위에서 시작 위치로 돌아갑니다.",
-      "commonMistakes": [
+      finish:
+        "프론트 랫 풀다운(좁은 그립)을 마친 뒤 팔을 급하게 펴지 말고 어깨가 앞으로 쏠리지 않는 범위에서 시작 위치로 돌아갑니다.",
+      commonMistakes: [
         "프론트 랫 풀다운(좁은 그립)에서 어깨를 으쓱한 채 팔만 사용하는 경우",
         "프론트 랫 풀다운(좁은 그립)에서 몸통을 크게 흔들어 반동을 만드는 경우",
-        "프론트 랫 풀다운(좁은 그립)에서 팔꿈치를 끝까지 밀어 관절을 잠그는 경우"
+        "프론트 랫 풀다운(좁은 그립)에서 팔꿈치를 끝까지 밀어 관절을 잠그는 경우",
       ],
-      "regressions": [
+      regressions: [
         "프론트 랫 풀다운(좁은 그립)은 밴드·보조 장치 또는 더 가벼운 저항을 사용합니다",
         "프론트 랫 풀다운(좁은 그립)은 지지된 시티드 자세로 몸통 부담을 줄입니다",
-        "프론트 랫 풀다운(좁은 그립)은 당기는 범위를 짧게 정하고 멈춥니다"
+        "프론트 랫 풀다운(좁은 그립)은 당기는 범위를 짧게 정하고 멈춥니다",
       ],
-      "progressions": [
+      progressions: [
         "프론트 랫 풀다운(좁은 그립)은 같은 경로에서 저항을 한 단계만 올립니다",
         "프론트 랫 풀다운(좁은 그립)은 완전한 어깨 제어가 되면 범위를 조금 늘립니다",
-        "프론트 랫 풀다운(좁은 그립)은 편측 당김은 몸통 회전을 통제할 수 있을 때 시도합니다"
-      ]
-    }
+        "프론트 랫 풀다운(좁은 그립)은 편측 당김은 몸통 회전을 통제할 수 있을 때 시도합니다",
+      ],
+    },
   },
   {
-    "exercise": {
-      "id": "verified-elevated-cable-rows",
-      "name": "엘리베이티드 케이블 로우",
-      "englishName": "Elevated Cable Rows",
-      "category": "헬스기구",
-      "regions": [
-        "등"
-      ],
-      "focus": "근력",
-      "difficulty": "중급",
-      "equipment": "케이블 머신·핀",
-      "minutes": "6–12회 · 2세트",
-      "description": "엘리베이티드 케이블 로우은 광배근을 쓰며 손잡이 또는 도구를 몸 쪽으로 당기고 어깨뼈의 위치를 제어하는 당기기 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
-      "cues": [
+    exercise: {
+      id: "verified-elevated-cable-rows",
+      name: "엘리베이티드 케이블 로우",
+      englishName: "Elevated Cable Rows",
+      category: "헬스기구",
+      regions: ["등"],
+      focus: "근력",
+      difficulty: "중급",
+      equipment: "케이블 머신·핀",
+      minutes: "6–12회 · 2세트",
+      description:
+        "엘리베이티드 케이블 로우은 광배근을 쓰며 손잡이 또는 도구를 몸 쪽으로 당기고 어깨뼈의 위치를 제어하는 당기기 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
+      cues: [
         "엘리베이티드 케이블 로우에서 먼저 어깨를 귀에서 멀리 두고 가슴을 편안히 유지",
         "광배근을 느끼며 팔꿈치를 목적 방향으로 끌되 몸통 반동 줄이기",
-        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다"
+        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
       ],
-      "benefits": [
+      benefits: [
         "엘리베이티드 케이블 로우으로 등·팔의 당기기 협응",
         "광배근을 활용한 견갑 위치 인식",
-        "광배근의 움직임 경로 인식"
+        "광배근의 움직임 경로 인식",
       ],
-      "warning": "엘리베이티드 케이블 로우 중 어깨 앞쪽의 날카로운 통증, 손 저림, 고정점 흔들림 또는 그립 이탈이 있으면 즉시 중단하세요.",
-      "reference": {
-        "label": "ACSM — Exercise Safety",
-        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
-      }
+      warning:
+        "엘리베이티드 케이블 로우 중 어깨 앞쪽의 날카로운 통증, 손 저림, 고정점 흔들림 또는 그립 이탈이 있으면 즉시 중단하세요.",
+      reference: {
+        label: "ACSM — Exercise Safety",
+        url: "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/",
+      },
     },
-    "detail": {
-      "setup": [
+    detail: {
+      setup: [
         "케이블 높이·핀·손잡이 잠금과 당김 방향을 가벼운 저항으로 시험합니다",
         "발 또는 지지면을 단단히 고정하고 몸통을 길게 세웁니다",
-        "엘리베이티드 케이블 로우에 맞춰 그립·바·손잡이 높이와 고정 상태를 확인합니다"
+        "엘리베이티드 케이블 로우에 맞춰 그립·바·손잡이 높이와 고정 상태를 확인합니다",
       ],
-      "finish": "엘리베이티드 케이블 로우을 마친 뒤 팔을 급하게 펴지 말고 어깨가 앞으로 쏠리지 않는 범위에서 시작 위치로 돌아갑니다.",
-      "commonMistakes": [
+      finish:
+        "엘리베이티드 케이블 로우을 마친 뒤 팔을 급하게 펴지 말고 어깨가 앞으로 쏠리지 않는 범위에서 시작 위치로 돌아갑니다.",
+      commonMistakes: [
         "엘리베이티드 케이블 로우에서 어깨를 으쓱한 채 팔만 사용하는 경우",
         "엘리베이티드 케이블 로우에서 몸통을 크게 흔들어 반동을 만드는 경우",
-        "엘리베이티드 케이블 로우에서 팔꿈치를 끝까지 밀어 관절을 잠그는 경우"
+        "엘리베이티드 케이블 로우에서 팔꿈치를 끝까지 밀어 관절을 잠그는 경우",
       ],
-      "regressions": [
+      regressions: [
         "엘리베이티드 케이블 로우은 밴드·보조 장치 또는 더 가벼운 저항을 사용합니다",
         "엘리베이티드 케이블 로우은 지지된 시티드 자세로 몸통 부담을 줄입니다",
-        "엘리베이티드 케이블 로우은 당기는 범위를 짧게 정하고 멈춥니다"
+        "엘리베이티드 케이블 로우은 당기는 범위를 짧게 정하고 멈춥니다",
       ],
-      "progressions": [
+      progressions: [
         "엘리베이티드 케이블 로우은 같은 경로에서 저항을 한 단계만 올립니다",
         "엘리베이티드 케이블 로우은 완전한 어깨 제어가 되면 범위를 조금 늘립니다",
-        "엘리베이티드 케이블 로우은 편측 당김은 몸통 회전을 통제할 수 있을 때 시도합니다"
-      ]
-    }
+        "엘리베이티드 케이블 로우은 편측 당김은 몸통 회전을 통제할 수 있을 때 시도합니다",
+      ],
+    },
   },
   {
-    "exercise": {
-      "id": "verified-external-rotation-with-cable",
-      "name": "케이블 외회전",
-      "englishName": "External Rotation with Cable",
-      "category": "헬스기구",
-      "regions": [
-        "어깨"
-      ],
-      "focus": "근력",
-      "difficulty": "입문",
-      "equipment": "케이블 머신·핀",
-      "minutes": "6–12회 · 2세트",
-      "description": "케이블 외회전은 어깨 주변을 통증 없는 범위에서 천천히 움직여 가동 범위와 자세 감각을 확인하는 모빌리티 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
-      "cues": [
+    exercise: {
+      id: "verified-external-rotation-with-cable",
+      name: "케이블 외회전",
+      englishName: "External Rotation with Cable",
+      category: "헬스기구",
+      regions: ["어깨"],
+      focus: "근력",
+      difficulty: "입문",
+      equipment: "케이블 머신·핀",
+      minutes: "6–12회 · 2세트",
+      description:
+        "케이블 외회전은 어깨 주변을 통증 없는 범위에서 천천히 움직여 가동 범위와 자세 감각을 확인하는 모빌리티 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
+      cues: [
         "케이블 외회전에서 작은 범위에서 호흡을 멈추지 않기",
         "어깨을 느끼며 끝 범위를 밀지 말고 부드럽게 왕복",
-        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다"
+        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
       ],
-      "benefits": [
+      benefits: [
         "케이블 외회전으로 관절 위치와 범위 인식",
         "어깨을 활용한 편안한 움직임 준비",
-        "어깨의 움직임 경로 인식"
+        "어깨의 움직임 경로 인식",
       ],
-      "warning": "케이블 외회전 중 날카로운 통증, 저림, 방사통, 붓기·열감이 있으면 자가 진행을 멈추고 평가를 우선하세요.",
-      "reference": {
-        "label": "ACSM — Exercise Safety",
-        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
-      }
+      warning:
+        "케이블 외회전 중 날카로운 통증, 저림, 방사통, 붓기·열감이 있으면 자가 진행을 멈추고 평가를 우선하세요.",
+      reference: {
+        label: "ACSM — Exercise Safety",
+        url: "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/",
+      },
     },
-    "detail": {
-      "setup": [
+    detail: {
+      setup: [
         "케이블 높이·핀·손잡이 잠금과 당김 방향을 가벼운 저항으로 시험합니다",
         "발 또는 지지면을 단단히 고정하고 몸통을 길게 세웁니다",
-        "케이블 외회전에 맞춰 편안한 바닥·매트 또는 지지대를 준비합니다"
+        "케이블 외회전에 맞춰 편안한 바닥·매트 또는 지지대를 준비합니다",
       ],
-      "finish": "케이블 외회전을 마친 뒤 중립 자세로 천천히 돌아와 불편감이 남지 않는지 확인합니다.",
-      "commonMistakes": [
+      finish:
+        "케이블 외회전을 마친 뒤 중립 자세로 천천히 돌아와 불편감이 남지 않는지 확인합니다.",
+      commonMistakes: [
         "케이블 외회전에서 끝 범위를 억지로 밀어 통증을 만드는 경우",
         "케이블 외회전에서 호흡을 참거나 반동을 쓰는 경우",
-        "케이블 외회전에서 저림·방사통을 무시하고 지속하는 경우"
+        "케이블 외회전에서 저림·방사통을 무시하고 지속하는 경우",
       ],
-      "regressions": [
+      regressions: [
         "케이블 외회전은 범위와 유지 시간을 줄입니다",
         "케이블 외회전은 벽·의자·블록 같은 지지대를 사용합니다",
-        "케이블 외회전은 누운 또는 앉은 안정된 자세로 바꿉니다"
+        "케이블 외회전은 누운 또는 앉은 안정된 자세로 바꿉니다",
       ],
-      "progressions": [
+      progressions: [
         "케이블 외회전은 다음 날 편안하면 범위만 조금 늘립니다",
         "케이블 외회전은 호흡 주기를 한 번 추가합니다",
-        "케이블 외회전은 지지대는 안정적으로 줄여 갑니다"
-      ]
-    }
+        "케이블 외회전은 지지대는 안정적으로 줄여 갑니다",
+      ],
+    },
   },
   {
-    "exercise": {
-      "id": "verified-face-pull",
-      "name": "페이스 풀",
-      "englishName": "Face Pull",
-      "category": "헬스기구",
-      "regions": [
-        "어깨"
-      ],
-      "focus": "근력",
-      "difficulty": "중급",
-      "equipment": "케이블 머신·핀",
-      "minutes": "6–12회 · 2세트",
-      "description": "페이스 풀은 어깨 주변을 통증 없는 범위에서 천천히 움직여 가동 범위와 자세 감각을 확인하는 모빌리티 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
-      "cues": [
+    exercise: {
+      id: "verified-face-pull",
+      name: "페이스 풀",
+      englishName: "Face Pull",
+      category: "헬스기구",
+      regions: ["어깨"],
+      focus: "근력",
+      difficulty: "중급",
+      equipment: "케이블 머신·핀",
+      minutes: "6–12회 · 2세트",
+      description:
+        "페이스 풀은 어깨 주변을 통증 없는 범위에서 천천히 움직여 가동 범위와 자세 감각을 확인하는 모빌리티 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
+      cues: [
         "페이스 풀에서 작은 범위에서 호흡을 멈추지 않기",
         "어깨을 느끼며 끝 범위를 밀지 말고 부드럽게 왕복",
-        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다"
+        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
       ],
-      "benefits": [
+      benefits: [
         "페이스 풀으로 관절 위치와 범위 인식",
         "어깨을 활용한 편안한 움직임 준비",
-        "어깨의 움직임 경로 인식"
+        "어깨의 움직임 경로 인식",
       ],
-      "warning": "페이스 풀 중 날카로운 통증, 저림, 방사통, 붓기·열감이 있으면 자가 진행을 멈추고 평가를 우선하세요.",
-      "reference": {
-        "label": "ACSM — Exercise Safety",
-        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
-      }
+      warning:
+        "페이스 풀 중 날카로운 통증, 저림, 방사통, 붓기·열감이 있으면 자가 진행을 멈추고 평가를 우선하세요.",
+      reference: {
+        label: "ACSM — Exercise Safety",
+        url: "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/",
+      },
     },
-    "detail": {
-      "setup": [
+    detail: {
+      setup: [
         "케이블 높이·핀·손잡이 잠금과 당김 방향을 가벼운 저항으로 시험합니다",
         "발 또는 지지면을 단단히 고정하고 몸통을 길게 세웁니다",
-        "페이스 풀에 맞춰 편안한 바닥·매트 또는 지지대를 준비합니다"
+        "페이스 풀에 맞춰 편안한 바닥·매트 또는 지지대를 준비합니다",
       ],
-      "finish": "페이스 풀을 마친 뒤 중립 자세로 천천히 돌아와 불편감이 남지 않는지 확인합니다.",
-      "commonMistakes": [
+      finish:
+        "페이스 풀을 마친 뒤 중립 자세로 천천히 돌아와 불편감이 남지 않는지 확인합니다.",
+      commonMistakes: [
         "페이스 풀에서 끝 범위를 억지로 밀어 통증을 만드는 경우",
         "페이스 풀에서 호흡을 참거나 반동을 쓰는 경우",
-        "페이스 풀에서 저림·방사통을 무시하고 지속하는 경우"
+        "페이스 풀에서 저림·방사통을 무시하고 지속하는 경우",
       ],
-      "regressions": [
+      regressions: [
         "페이스 풀은 범위와 유지 시간을 줄입니다",
         "페이스 풀은 벽·의자·블록 같은 지지대를 사용합니다",
-        "페이스 풀은 누운 또는 앉은 안정된 자세로 바꿉니다"
+        "페이스 풀은 누운 또는 앉은 안정된 자세로 바꿉니다",
       ],
-      "progressions": [
+      progressions: [
         "페이스 풀은 다음 날 편안하면 범위만 조금 늘립니다",
         "페이스 풀은 호흡 주기를 한 번 추가합니다",
-        "페이스 풀은 지지대는 안정적으로 줄여 갑니다"
-      ]
-    }
+        "페이스 풀은 지지대는 안정적으로 줄여 갑니다",
+      ],
+    },
   },
   {
-    "exercise": {
-      "id": "verified-flat-bench-cable-flyes",
-      "name": "플랫 케이블 플라이",
-      "englishName": "Flat Bench Cable Flyes",
-      "category": "헬스기구",
-      "regions": [
-        "가슴"
-      ],
-      "focus": "근력",
-      "difficulty": "중급",
-      "equipment": "케이블 머신·핀",
-      "minutes": "6–12회 · 2세트",
-      "description": "플랫 케이블 플라이은 가슴을 사용해 팔 또는 도구를 정해진 평면으로 들어 올리며 어깨 위치를 제어하는 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
-      "cues": [
+    exercise: {
+      id: "verified-flat-bench-cable-flyes",
+      name: "플랫 케이블 플라이",
+      englishName: "Flat Bench Cable Flyes",
+      category: "헬스기구",
+      regions: ["가슴"],
+      focus: "근력",
+      difficulty: "중급",
+      equipment: "케이블 머신·핀",
+      minutes: "6–12회 · 2세트",
+      description:
+        "플랫 케이블 플라이은 가슴을 사용해 팔 또는 도구를 정해진 평면으로 들어 올리며 어깨 위치를 제어하는 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
+      cues: [
         "플랫 케이블 플라이에서 어깨를 귀에서 멀리 두고 목을 길게 유지",
         "가슴을 느끼며 도구를 몸에서 너무 멀리 보내지 않기",
-        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다"
+        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
       ],
-      "benefits": [
+      benefits: [
         "플랫 케이블 플라이으로 어깨 주변의 제어",
         "가슴을 활용한 팔과 견갑의 협응",
-        "가슴의 움직임 경로 인식"
+        "가슴의 움직임 경로 인식",
       ],
-      "warning": "플랫 케이블 플라이 중 어깨 위쪽 통증, 목 긴장, 저림 또는 반동이 생기면 즉시 범위·저항을 낮추거나 중단하세요.",
-      "reference": {
-        "label": "ACSM — Exercise Safety",
-        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
-      }
+      warning:
+        "플랫 케이블 플라이 중 어깨 위쪽 통증, 목 긴장, 저림 또는 반동이 생기면 즉시 범위·저항을 낮추거나 중단하세요.",
+      reference: {
+        label: "ACSM — Exercise Safety",
+        url: "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/",
+      },
     },
-    "detail": {
-      "setup": [
+    detail: {
+      setup: [
         "케이블 높이·핀·손잡이 잠금과 당김 방향을 가벼운 저항으로 시험합니다",
         "바닥 또는 벤치에 등을 안정적으로 댄 뒤 갈비뼈를 과하게 들지 않습니다",
-        "플랫 케이블 플라이에 맞춰 낮은 중량으로 시작하고 양발 또는 벤치 지지로 균형을 만듭니다"
+        "플랫 케이블 플라이에 맞춰 낮은 중량으로 시작하고 양발 또는 벤치 지지로 균형을 만듭니다",
       ],
-      "finish": "플랫 케이블 플라이을 마친 뒤 어깨가 앞으로 밀리지 않게 도구를 몸 옆으로 통제해 되돌립니다.",
-      "commonMistakes": [
+      finish:
+        "플랫 케이블 플라이을 마친 뒤 어깨가 앞으로 밀리지 않게 도구를 몸 옆으로 통제해 되돌립니다.",
+      commonMistakes: [
         "플랫 케이블 플라이에서 어깨를 으쓱하며 목에 힘을 주는 경우",
         "플랫 케이블 플라이에서 반동으로 도구를 목표 높이보다 높게 던지는 경우",
-        "플랫 케이블 플라이에서 손목을 꺾어 도구를 지지하는 경우"
+        "플랫 케이블 플라이에서 손목을 꺾어 도구를 지지하는 경우",
       ],
-      "regressions": [
+      regressions: [
         "플랫 케이블 플라이은 중량을 낮추거나 한 팔씩 지지된 자세로 수행합니다",
         "플랫 케이블 플라이은 들기 높이를 어깨 아래로 줄입니다",
-        "플랫 케이블 플라이은 밴드 또는 더 짧은 지렛대를 사용합니다"
+        "플랫 케이블 플라이은 밴드 또는 더 짧은 지렛대를 사용합니다",
       ],
-      "progressions": [
+      progressions: [
         "플랫 케이블 플라이은 동일한 높이와 정렬에서 반복을 늘립니다",
         "플랫 케이블 플라이은 작은 중량 증가를 한 번만 적용합니다",
-        "플랫 케이블 플라이은 편측·인클라인 변형은 어깨가 편안할 때 시도합니다"
-      ]
-    }
+        "플랫 케이블 플라이은 편측·인클라인 변형은 어깨가 편안할 때 시도합니다",
+      ],
+    },
   },
   {
-    "exercise": {
-      "id": "verified-front-cable-raise",
-      "name": "케이블 프론트 레이즈",
-      "englishName": "Front Cable Raise",
-      "category": "헬스기구",
-      "regions": [
-        "어깨"
-      ],
-      "focus": "근력",
-      "difficulty": "입문",
-      "equipment": "케이블 머신·핀",
-      "minutes": "6–12회 · 2세트",
-      "description": "케이블 프론트 레이즈은 어깨을 사용해 팔 또는 도구를 정해진 평면으로 들어 올리며 어깨 위치를 제어하는 종목입니다. 앞쪽으로 도구가 이동할 때 갈비뼈를 과하게 들지 않습니다",
-      "cues": [
+    exercise: {
+      id: "verified-front-cable-raise",
+      name: "케이블 프론트 레이즈",
+      englishName: "Front Cable Raise",
+      category: "헬스기구",
+      regions: ["어깨"],
+      focus: "근력",
+      difficulty: "입문",
+      equipment: "케이블 머신·핀",
+      minutes: "6–12회 · 2세트",
+      description:
+        "케이블 프론트 레이즈은 어깨을 사용해 팔 또는 도구를 정해진 평면으로 들어 올리며 어깨 위치를 제어하는 종목입니다. 앞쪽으로 도구가 이동할 때 갈비뼈를 과하게 들지 않습니다",
+      cues: [
         "케이블 프론트 레이즈에서 어깨를 귀에서 멀리 두고 목을 길게 유지",
         "어깨을 느끼며 도구를 몸에서 너무 멀리 보내지 않기",
-        "앞쪽으로 도구가 이동할 때 갈비뼈를 과하게 들지 않습니다"
+        "앞쪽으로 도구가 이동할 때 갈비뼈를 과하게 들지 않습니다",
       ],
-      "benefits": [
+      benefits: [
         "케이블 프론트 레이즈으로 어깨 주변의 제어",
         "어깨을 활용한 팔과 견갑의 협응",
-        "어깨의 움직임 경로 인식"
+        "어깨의 움직임 경로 인식",
       ],
-      "warning": "케이블 프론트 레이즈 중 어깨 위쪽 통증, 목 긴장, 저림 또는 반동이 생기면 즉시 범위·저항을 낮추거나 중단하세요.",
-      "reference": {
-        "label": "ACSM — Exercise Safety",
-        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
-      }
+      warning:
+        "케이블 프론트 레이즈 중 어깨 위쪽 통증, 목 긴장, 저림 또는 반동이 생기면 즉시 범위·저항을 낮추거나 중단하세요.",
+      reference: {
+        label: "ACSM — Exercise Safety",
+        url: "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/",
+      },
     },
-    "detail": {
-      "setup": [
+    detail: {
+      setup: [
         "케이블 높이·핀·손잡이 잠금과 당김 방향을 가벼운 저항으로 시험합니다",
         "발 또는 지지면을 단단히 고정하고 몸통을 길게 세웁니다",
-        "케이블 프론트 레이즈에 맞춰 낮은 중량으로 시작하고 양발 또는 벤치 지지로 균형을 만듭니다"
+        "케이블 프론트 레이즈에 맞춰 낮은 중량으로 시작하고 양발 또는 벤치 지지로 균형을 만듭니다",
       ],
-      "finish": "케이블 프론트 레이즈을 마친 뒤 어깨가 앞으로 밀리지 않게 도구를 몸 옆으로 통제해 되돌립니다.",
-      "commonMistakes": [
+      finish:
+        "케이블 프론트 레이즈을 마친 뒤 어깨가 앞으로 밀리지 않게 도구를 몸 옆으로 통제해 되돌립니다.",
+      commonMistakes: [
         "케이블 프론트 레이즈에서 어깨를 으쓱하며 목에 힘을 주는 경우",
         "케이블 프론트 레이즈에서 반동으로 도구를 목표 높이보다 높게 던지는 경우",
-        "케이블 프론트 레이즈에서 손목을 꺾어 도구를 지지하는 경우"
+        "케이블 프론트 레이즈에서 손목을 꺾어 도구를 지지하는 경우",
       ],
-      "regressions": [
+      regressions: [
         "케이블 프론트 레이즈은 중량을 낮추거나 한 팔씩 지지된 자세로 수행합니다",
         "케이블 프론트 레이즈은 들기 높이를 어깨 아래로 줄입니다",
-        "케이블 프론트 레이즈은 밴드 또는 더 짧은 지렛대를 사용합니다"
+        "케이블 프론트 레이즈은 밴드 또는 더 짧은 지렛대를 사용합니다",
       ],
-      "progressions": [
+      progressions: [
         "케이블 프론트 레이즈은 동일한 높이와 정렬에서 반복을 늘립니다",
         "케이블 프론트 레이즈은 작은 중량 증가를 한 번만 적용합니다",
-        "케이블 프론트 레이즈은 편측·인클라인 변형은 어깨가 편안할 때 시도합니다"
-      ]
-    }
+        "케이블 프론트 레이즈은 편측·인클라인 변형은 어깨가 편안할 때 시도합니다",
+      ],
+    },
   },
   {
-    "exercise": {
-      "id": "verified-full-range-of-motion-lat-pulldown",
-      "name": "풀레인지 랫 풀다운",
-      "englishName": "Full Range-Of-Motion Lat Pulldown",
-      "category": "헬스기구",
-      "regions": [
-        "등"
-      ],
-      "focus": "근력",
-      "difficulty": "중급",
-      "equipment": "케이블 머신·핀",
-      "minutes": "6–12회 · 2세트",
-      "description": "풀레인지 랫 풀다운은 광배근을 쓰며 손잡이 또는 도구를 몸 쪽으로 당기고 어깨뼈의 위치를 제어하는 당기기 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
-      "cues": [
+    exercise: {
+      id: "verified-full-range-of-motion-lat-pulldown",
+      name: "풀레인지 랫 풀다운",
+      englishName: "Full Range-Of-Motion Lat Pulldown",
+      category: "헬스기구",
+      regions: ["등"],
+      focus: "근력",
+      difficulty: "중급",
+      equipment: "케이블 머신·핀",
+      minutes: "6–12회 · 2세트",
+      description:
+        "풀레인지 랫 풀다운은 광배근을 쓰며 손잡이 또는 도구를 몸 쪽으로 당기고 어깨뼈의 위치를 제어하는 당기기 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
+      cues: [
         "풀레인지 랫 풀다운에서 먼저 어깨를 귀에서 멀리 두고 가슴을 편안히 유지",
         "광배근을 느끼며 팔꿈치를 목적 방향으로 끌되 몸통 반동 줄이기",
-        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다"
+        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
       ],
-      "benefits": [
+      benefits: [
         "풀레인지 랫 풀다운으로 등·팔의 당기기 협응",
         "광배근을 활용한 견갑 위치 인식",
-        "광배근의 움직임 경로 인식"
+        "광배근의 움직임 경로 인식",
       ],
-      "warning": "풀레인지 랫 풀다운 중 어깨 앞쪽의 날카로운 통증, 손 저림, 고정점 흔들림 또는 그립 이탈이 있으면 즉시 중단하세요.",
-      "reference": {
-        "label": "ACSM — Exercise Safety",
-        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
-      }
+      warning:
+        "풀레인지 랫 풀다운 중 어깨 앞쪽의 날카로운 통증, 손 저림, 고정점 흔들림 또는 그립 이탈이 있으면 즉시 중단하세요.",
+      reference: {
+        label: "ACSM — Exercise Safety",
+        url: "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/",
+      },
     },
-    "detail": {
-      "setup": [
+    detail: {
+      setup: [
         "케이블 높이·핀·손잡이 잠금과 당김 방향을 가벼운 저항으로 시험합니다",
         "발 또는 지지면을 단단히 고정하고 몸통을 길게 세웁니다",
-        "풀레인지 랫 풀다운에 맞춰 그립·바·손잡이 높이와 고정 상태를 확인합니다"
+        "풀레인지 랫 풀다운에 맞춰 그립·바·손잡이 높이와 고정 상태를 확인합니다",
       ],
-      "finish": "풀레인지 랫 풀다운을 마친 뒤 팔을 급하게 펴지 말고 어깨가 앞으로 쏠리지 않는 범위에서 시작 위치로 돌아갑니다.",
-      "commonMistakes": [
+      finish:
+        "풀레인지 랫 풀다운을 마친 뒤 팔을 급하게 펴지 말고 어깨가 앞으로 쏠리지 않는 범위에서 시작 위치로 돌아갑니다.",
+      commonMistakes: [
         "풀레인지 랫 풀다운에서 어깨를 으쓱한 채 팔만 사용하는 경우",
         "풀레인지 랫 풀다운에서 몸통을 크게 흔들어 반동을 만드는 경우",
-        "풀레인지 랫 풀다운에서 팔꿈치를 끝까지 밀어 관절을 잠그는 경우"
+        "풀레인지 랫 풀다운에서 팔꿈치를 끝까지 밀어 관절을 잠그는 경우",
       ],
-      "regressions": [
+      regressions: [
         "풀레인지 랫 풀다운은 밴드·보조 장치 또는 더 가벼운 저항을 사용합니다",
         "풀레인지 랫 풀다운은 지지된 시티드 자세로 몸통 부담을 줄입니다",
-        "풀레인지 랫 풀다운은 당기는 범위를 짧게 정하고 멈춥니다"
+        "풀레인지 랫 풀다운은 당기는 범위를 짧게 정하고 멈춥니다",
       ],
-      "progressions": [
+      progressions: [
         "풀레인지 랫 풀다운은 같은 경로에서 저항을 한 단계만 올립니다",
         "풀레인지 랫 풀다운은 완전한 어깨 제어가 되면 범위를 조금 늘립니다",
-        "풀레인지 랫 풀다운은 편측 당김은 몸통 회전을 통제할 수 있을 때 시도합니다"
-      ]
-    }
+        "풀레인지 랫 풀다운은 편측 당김은 몸통 회전을 통제할 수 있을 때 시도합니다",
+      ],
+    },
   },
   {
-    "exercise": {
-      "id": "verified-high-cable-curls",
-      "name": "하이 케이블 컬",
-      "englishName": "High Cable Curls",
-      "category": "헬스기구",
-      "regions": [
-        "팔"
-      ],
-      "focus": "근력",
-      "difficulty": "중급",
-      "equipment": "케이블 머신·핀",
-      "minutes": "6–12회 · 2세트",
-      "description": "하이 케이블 컬은 이두근을 중심으로 팔꿈치를 굽히며 도구를 통제하는 팔 굽힘 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
-      "cues": [
+    exercise: {
+      id: "verified-high-cable-curls",
+      name: "하이 케이블 컬",
+      englishName: "High Cable Curls",
+      category: "헬스기구",
+      regions: ["팔"],
+      focus: "근력",
+      difficulty: "중급",
+      equipment: "케이블 머신·핀",
+      minutes: "6–12회 · 2세트",
+      description:
+        "하이 케이블 컬은 이두근을 중심으로 팔꿈치를 굽히며 도구를 통제하는 팔 굽힘 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
+      cues: [
         "하이 케이블 컬에서 상완을 몸통 가까이에 두고 팔꿈치 위치를 고정",
         "이두근을 느끼며 손목을 꺾지 말고 도구를 부드럽게 들어 올리기",
-        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다"
+        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
       ],
-      "benefits": [
+      benefits: [
         "하이 케이블 컬으로 팔 굽힘 근육의 제어",
         "이두근을 활용한 전완·그립 안정 인식",
-        "이두근의 움직임 경로 인식"
+        "이두근의 움직임 경로 인식",
       ],
-      "warning": "하이 케이블 컬 중 팔꿈치·손목의 날카로운 통증, 저림 또는 그립 미끄러짐이 있으면 즉시 중단하세요.",
-      "reference": {
-        "label": "ACSM — Exercise Safety",
-        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
-      }
+      warning:
+        "하이 케이블 컬 중 팔꿈치·손목의 날카로운 통증, 저림 또는 그립 미끄러짐이 있으면 즉시 중단하세요.",
+      reference: {
+        label: "ACSM — Exercise Safety",
+        url: "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/",
+      },
     },
-    "detail": {
-      "setup": [
+    detail: {
+      setup: [
         "케이블 높이·핀·손잡이 잠금과 당김 방향을 가벼운 저항으로 시험합니다",
         "발 또는 지지면을 단단히 고정하고 몸통을 길게 세웁니다",
-        "하이 케이블 컬에 맞춰 가벼운 중량을 들고 팔꿈치를 몸통 옆에 둡니다"
+        "하이 케이블 컬에 맞춰 가벼운 중량을 들고 팔꿈치를 몸통 옆에 둡니다",
       ],
-      "finish": "하이 케이블 컬을 마친 뒤 팔꿈치를 완전히 잠그지 않는 편안한 아래 범위에서 다음 반복을 준비합니다.",
-      "commonMistakes": [
+      finish:
+        "하이 케이블 컬을 마친 뒤 팔꿈치를 완전히 잠그지 않는 편안한 아래 범위에서 다음 반복을 준비합니다.",
+      commonMistakes: [
         "하이 케이블 컬에서 몸통을 뒤로 젖혀 반동을 쓰는 경우",
         "하이 케이블 컬에서 팔꿈치가 앞으로 크게 이동하는 경우",
-        "하이 케이블 컬에서 손목을 꺾어 중량을 드는 경우"
+        "하이 케이블 컬에서 손목을 꺾어 중량을 드는 경우",
       ],
-      "regressions": [
+      regressions: [
         "하이 케이블 컬은 더 가벼운 도구나 밴드를 사용합니다",
         "하이 케이블 컬은 시티드 또는 벤치 지지로 몸통 반동을 줄입니다",
-        "하이 케이블 컬은 아래와 위 범위를 조금 줄입니다"
+        "하이 케이블 컬은 아래와 위 범위를 조금 줄입니다",
       ],
-      "progressions": [
+      progressions: [
         "하이 케이블 컬은 반동 없이 반복을 한두 회 늘립니다",
         "하이 케이블 컬은 그립이 안정되면 중량을 소폭 올립니다",
-        "하이 케이블 컬은 편측 수행은 몸통이 흔들리지 않을 때 시작합니다"
-      ]
-    }
+        "하이 케이블 컬은 편측 수행은 몸통이 흔들리지 않을 때 시작합니다",
+      ],
+    },
   },
   {
-    "exercise": {
-      "id": "verified-incline-cable-chest-press",
-      "name": "인클라인 케이블 체스트 프레스",
-      "englishName": "Incline Cable Chest Press",
-      "category": "헬스기구",
-      "regions": [
-        "가슴"
-      ],
-      "focus": "근력",
-      "difficulty": "입문",
-      "equipment": "케이블 머신·핀",
-      "minutes": "6–12회 · 2세트",
-      "description": "인클라인 케이블 체스트 프레스은 가슴을 사용해 손잡이·도구 또는 바닥을 몸에서 멀어지게 미는 상체 밀기 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
-      "cues": [
+    exercise: {
+      id: "verified-incline-cable-chest-press",
+      name: "인클라인 케이블 체스트 프레스",
+      englishName: "Incline Cable Chest Press",
+      category: "헬스기구",
+      regions: ["가슴"],
+      focus: "근력",
+      difficulty: "입문",
+      equipment: "케이블 머신·핀",
+      minutes: "6–12회 · 2세트",
+      description:
+        "인클라인 케이블 체스트 프레스은 가슴을 사용해 손잡이·도구 또는 바닥을 몸에서 멀어지게 미는 상체 밀기 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
+      cues: [
         "인클라인 케이블 체스트 프레스에서 손목을 중립에 가깝게 두고 손잡이를 안정적으로 잡기",
         "가슴을 느끼며 갈비뼈를 과하게 들지 않고 몸통 길이 유지",
-        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다"
+        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
       ],
-      "benefits": [
+      benefits: [
         "인클라인 케이블 체스트 프레스으로 가슴·어깨·팔의 밀기 협응",
         "가슴을 활용한 손목과 견갑 안정 제어",
-        "가슴의 움직임 경로 인식"
+        "가슴의 움직임 경로 인식",
       ],
-      "warning": "인클라인 케이블 체스트 프레스 중 어깨·팔꿈치·손목 통증, 저림 또는 도구 흔들림이 있으면 즉시 멈추고 설정을 다시 확인하세요.",
-      "reference": {
-        "label": "ACSM — Exercise Safety",
-        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
-      }
+      warning:
+        "인클라인 케이블 체스트 프레스 중 어깨·팔꿈치·손목 통증, 저림 또는 도구 흔들림이 있으면 즉시 멈추고 설정을 다시 확인하세요.",
+      reference: {
+        label: "ACSM — Exercise Safety",
+        url: "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/",
+      },
     },
-    "detail": {
-      "setup": [
+    detail: {
+      setup: [
         "케이블 높이·핀·손잡이 잠금과 당김 방향을 가벼운 저항으로 시험합니다",
         "인클라인 지지면을 고정하고 머리·등·골반이 흔들리지 않게 둡니다",
-        "인클라인 케이블 체스트 프레스에 맞춰 손잡이·바·지지면의 높이와 좌우 설정을 확인합니다"
+        "인클라인 케이블 체스트 프레스에 맞춰 손잡이·바·지지면의 높이와 좌우 설정을 확인합니다",
       ],
-      "finish": "인클라인 케이블 체스트 프레스을 마친 뒤 팔꿈치를 잠그지 않은 편안한 끝 범위에서 잠시 멈춘 뒤 같은 경로로 돌아옵니다.",
-      "commonMistakes": [
+      finish:
+        "인클라인 케이블 체스트 프레스을 마친 뒤 팔꿈치를 잠그지 않은 편안한 끝 범위에서 잠시 멈춘 뒤 같은 경로로 돌아옵니다.",
+      commonMistakes: [
         "인클라인 케이블 체스트 프레스에서 어깨가 앞으로 말린 채 밀어 올리는 경우",
         "인클라인 케이블 체스트 프레스에서 허리를 과하게 젖혀 무게를 넘기는 경우",
-        "인클라인 케이블 체스트 프레스에서 손목을 꺾고 그립을 느슨하게 유지하는 경우"
+        "인클라인 케이블 체스트 프레스에서 손목을 꺾고 그립을 느슨하게 유지하는 경우",
       ],
-      "regressions": [
+      regressions: [
         "인클라인 케이블 체스트 프레스은 벽·높은 벤치 또는 가벼운 저항으로 바꿉니다",
         "인클라인 케이블 체스트 프레스은 가동 범위를 줄이고 어깨 편안함을 확인합니다",
-        "인클라인 케이블 체스트 프레스은 양손 지지로 안정성을 먼저 확보합니다"
+        "인클라인 케이블 체스트 프레스은 양손 지지로 안정성을 먼저 확보합니다",
       ],
-      "progressions": [
+      progressions: [
         "인클라인 케이블 체스트 프레스은 정렬이 유지될 때 반복을 소폭 늘립니다",
         "인클라인 케이블 체스트 프레스은 안정된 지지면에서 저항을 한 단계만 올립니다",
-        "인클라인 케이블 체스트 프레스은 낮은 지지 또는 편측 변형은 통제 후 시도합니다"
-      ]
-    }
+        "인클라인 케이블 체스트 프레스은 낮은 지지 또는 편측 변형은 통제 후 시도합니다",
+      ],
+    },
   },
   {
-    "exercise": {
-      "id": "verified-incline-cable-flye",
-      "name": "인클라인 케이블 플라이",
-      "englishName": "Incline Cable Flye",
-      "category": "헬스기구",
-      "regions": [
-        "가슴"
-      ],
-      "focus": "근력",
-      "difficulty": "중급",
-      "equipment": "케이블 머신·핀",
-      "minutes": "6–12회 · 2세트",
-      "description": "인클라인 케이블 플라이은 가슴을 사용해 팔 또는 도구를 정해진 평면으로 들어 올리며 어깨 위치를 제어하는 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
-      "cues": [
+    exercise: {
+      id: "verified-incline-cable-flye",
+      name: "인클라인 케이블 플라이",
+      englishName: "Incline Cable Flye",
+      category: "헬스기구",
+      regions: ["가슴"],
+      focus: "근력",
+      difficulty: "중급",
+      equipment: "케이블 머신·핀",
+      minutes: "6–12회 · 2세트",
+      description:
+        "인클라인 케이블 플라이은 가슴을 사용해 팔 또는 도구를 정해진 평면으로 들어 올리며 어깨 위치를 제어하는 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
+      cues: [
         "인클라인 케이블 플라이에서 어깨를 귀에서 멀리 두고 목을 길게 유지",
         "가슴을 느끼며 도구를 몸에서 너무 멀리 보내지 않기",
-        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다"
+        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
       ],
-      "benefits": [
+      benefits: [
         "인클라인 케이블 플라이으로 어깨 주변의 제어",
         "가슴을 활용한 팔과 견갑의 협응",
-        "가슴의 움직임 경로 인식"
+        "가슴의 움직임 경로 인식",
       ],
-      "warning": "인클라인 케이블 플라이 중 어깨 위쪽 통증, 목 긴장, 저림 또는 반동이 생기면 즉시 범위·저항을 낮추거나 중단하세요.",
-      "reference": {
-        "label": "ACSM — Exercise Safety",
-        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
-      }
+      warning:
+        "인클라인 케이블 플라이 중 어깨 위쪽 통증, 목 긴장, 저림 또는 반동이 생기면 즉시 범위·저항을 낮추거나 중단하세요.",
+      reference: {
+        label: "ACSM — Exercise Safety",
+        url: "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/",
+      },
     },
-    "detail": {
-      "setup": [
+    detail: {
+      setup: [
         "케이블 높이·핀·손잡이 잠금과 당김 방향을 가벼운 저항으로 시험합니다",
         "인클라인 지지면을 고정하고 머리·등·골반이 흔들리지 않게 둡니다",
-        "인클라인 케이블 플라이에 맞춰 낮은 중량으로 시작하고 양발 또는 벤치 지지로 균형을 만듭니다"
+        "인클라인 케이블 플라이에 맞춰 낮은 중량으로 시작하고 양발 또는 벤치 지지로 균형을 만듭니다",
       ],
-      "finish": "인클라인 케이블 플라이을 마친 뒤 어깨가 앞으로 밀리지 않게 도구를 몸 옆으로 통제해 되돌립니다.",
-      "commonMistakes": [
+      finish:
+        "인클라인 케이블 플라이을 마친 뒤 어깨가 앞으로 밀리지 않게 도구를 몸 옆으로 통제해 되돌립니다.",
+      commonMistakes: [
         "인클라인 케이블 플라이에서 어깨를 으쓱하며 목에 힘을 주는 경우",
         "인클라인 케이블 플라이에서 반동으로 도구를 목표 높이보다 높게 던지는 경우",
-        "인클라인 케이블 플라이에서 손목을 꺾어 도구를 지지하는 경우"
+        "인클라인 케이블 플라이에서 손목을 꺾어 도구를 지지하는 경우",
       ],
-      "regressions": [
+      regressions: [
         "인클라인 케이블 플라이은 중량을 낮추거나 한 팔씩 지지된 자세로 수행합니다",
         "인클라인 케이블 플라이은 들기 높이를 어깨 아래로 줄입니다",
-        "인클라인 케이블 플라이은 밴드 또는 더 짧은 지렛대를 사용합니다"
+        "인클라인 케이블 플라이은 밴드 또는 더 짧은 지렛대를 사용합니다",
       ],
-      "progressions": [
+      progressions: [
         "인클라인 케이블 플라이은 동일한 높이와 정렬에서 반복을 늘립니다",
         "인클라인 케이블 플라이은 작은 중량 증가를 한 번만 적용합니다",
-        "인클라인 케이블 플라이은 편측·인클라인 변형은 어깨가 편안할 때 시도합니다"
-      ]
-    }
+        "인클라인 케이블 플라이은 편측·인클라인 변형은 어깨가 편안할 때 시도합니다",
+      ],
+    },
   },
   {
-    "exercise": {
-      "id": "verified-kneeling-cable-crunch-with-alternating-oblique-twists",
-      "name": "무릎 케이블 크런치(교대 오블리크)",
-      "englishName": "Kneeling Cable Crunch With Alternating Oblique Twists",
-      "category": "헬스기구",
-      "regions": [
-        "코어"
-      ],
-      "focus": "근력",
-      "difficulty": "입문",
-      "equipment": "케이블 머신·핀",
-      "minutes": "6–12회 · 2세트",
-      "description": "무릎 케이블 크런치(교대 오블리크)은 복부 주변을 통증 없는 범위에서 천천히 움직여 가동 범위와 자세 감각을 확인하는 모빌리티 종목입니다. 좌우를 바꿀 때 몸통이 급하게 회전하지 않게 잠시 정지합니다",
-      "cues": [
+    exercise: {
+      id: "verified-kneeling-cable-crunch-with-alternating-oblique-twists",
+      name: "무릎 케이블 크런치(교대 오블리크)",
+      englishName: "Kneeling Cable Crunch With Alternating Oblique Twists",
+      category: "헬스기구",
+      regions: ["코어"],
+      focus: "근력",
+      difficulty: "입문",
+      equipment: "케이블 머신·핀",
+      minutes: "6–12회 · 2세트",
+      description:
+        "무릎 케이블 크런치(교대 오블리크)은 복부 주변을 통증 없는 범위에서 천천히 움직여 가동 범위와 자세 감각을 확인하는 모빌리티 종목입니다. 좌우를 바꿀 때 몸통이 급하게 회전하지 않게 잠시 정지합니다",
+      cues: [
         "무릎 케이블 크런치(교대 오블리크)에서 작은 범위에서 호흡을 멈추지 않기",
         "복부을 느끼며 끝 범위를 밀지 말고 부드럽게 왕복",
-        "좌우를 바꿀 때 몸통이 급하게 회전하지 않게 잠시 정지합니다"
+        "좌우를 바꿀 때 몸통이 급하게 회전하지 않게 잠시 정지합니다",
       ],
-      "benefits": [
+      benefits: [
         "무릎 케이블 크런치(교대 오블리크)으로 관절 위치와 범위 인식",
         "복부을 활용한 편안한 움직임 준비",
-        "복부의 움직임 경로 인식"
+        "복부의 움직임 경로 인식",
       ],
-      "warning": "무릎 케이블 크런치(교대 오블리크) 중 날카로운 통증, 저림, 방사통, 붓기·열감이 있으면 자가 진행을 멈추고 평가를 우선하세요.",
-      "reference": {
-        "label": "ACSM — Exercise Safety",
-        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
-      }
+      warning:
+        "무릎 케이블 크런치(교대 오블리크) 중 날카로운 통증, 저림, 방사통, 붓기·열감이 있으면 자가 진행을 멈추고 평가를 우선하세요.",
+      reference: {
+        label: "ACSM — Exercise Safety",
+        url: "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/",
+      },
     },
-    "detail": {
-      "setup": [
+    detail: {
+      setup: [
         "케이블 높이·핀·손잡이 잠금과 당김 방향을 가벼운 저항으로 시험합니다",
         "무릎 아래에 매트를 두고 골반을 중립 가까이 맞춥니다",
-        "무릎 케이블 크런치(교대 오블리크)에 맞춰 편안한 바닥·매트 또는 지지대를 준비합니다"
+        "무릎 케이블 크런치(교대 오블리크)에 맞춰 편안한 바닥·매트 또는 지지대를 준비합니다",
       ],
-      "finish": "무릎 케이블 크런치(교대 오블리크)을 마친 뒤 중립 자세로 천천히 돌아와 불편감이 남지 않는지 확인합니다.",
-      "commonMistakes": [
+      finish:
+        "무릎 케이블 크런치(교대 오블리크)을 마친 뒤 중립 자세로 천천히 돌아와 불편감이 남지 않는지 확인합니다.",
+      commonMistakes: [
         "무릎 케이블 크런치(교대 오블리크)에서 끝 범위를 억지로 밀어 통증을 만드는 경우",
         "무릎 케이블 크런치(교대 오블리크)에서 호흡을 참거나 반동을 쓰는 경우",
-        "무릎 케이블 크런치(교대 오블리크)에서 저림·방사통을 무시하고 지속하는 경우"
+        "무릎 케이블 크런치(교대 오블리크)에서 저림·방사통을 무시하고 지속하는 경우",
       ],
-      "regressions": [
+      regressions: [
         "무릎 케이블 크런치(교대 오블리크)은 범위와 유지 시간을 줄입니다",
         "무릎 케이블 크런치(교대 오블리크)은 벽·의자·블록 같은 지지대를 사용합니다",
-        "무릎 케이블 크런치(교대 오블리크)은 누운 또는 앉은 안정된 자세로 바꿉니다"
+        "무릎 케이블 크런치(교대 오블리크)은 누운 또는 앉은 안정된 자세로 바꿉니다",
       ],
-      "progressions": [
+      progressions: [
         "무릎 케이블 크런치(교대 오블리크)은 다음 날 편안하면 범위만 조금 늘립니다",
         "무릎 케이블 크런치(교대 오블리크)은 호흡 주기를 한 번 추가합니다",
-        "무릎 케이블 크런치(교대 오블리크)은 지지대는 안정적으로 줄여 갑니다"
-      ]
-    }
+        "무릎 케이블 크런치(교대 오블리크)은 지지대는 안정적으로 줄여 갑니다",
+      ],
+    },
   },
   {
-    "exercise": {
-      "id": "verified-kneeling-cable-triceps-extension",
-      "name": "무릎 케이블 삼두 익스텐션",
-      "englishName": "Kneeling Cable Triceps Extension",
-      "category": "헬스기구",
-      "regions": [
-        "팔"
-      ],
-      "focus": "근력",
-      "difficulty": "중급",
-      "equipment": "케이블 머신·핀",
-      "minutes": "6–12회 · 2세트",
-      "description": "무릎 케이블 삼두 익스텐션은 삼두근을 사용해 팔꿈치 또는 목표 관절을 펴는 경로를 통제하는 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
-      "cues": [
+    exercise: {
+      id: "verified-kneeling-cable-triceps-extension",
+      name: "무릎 케이블 삼두 익스텐션",
+      englishName: "Kneeling Cable Triceps Extension",
+      category: "헬스기구",
+      regions: ["팔"],
+      focus: "근력",
+      difficulty: "중급",
+      equipment: "케이블 머신·핀",
+      minutes: "6–12회 · 2세트",
+      description:
+        "무릎 케이블 삼두 익스텐션은 삼두근을 사용해 팔꿈치 또는 목표 관절을 펴는 경로를 통제하는 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
+      cues: [
         "무릎 케이블 삼두 익스텐션에서 관절 축을 고정하고 목표 관절만 부드럽게 펴기",
         "삼두근을 느끼며 어깨와 몸통이 흔들리지 않게 지지 유지",
-        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다"
+        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
       ],
-      "benefits": [
+      benefits: [
         "무릎 케이블 삼두 익스텐션으로 관절 폄 경로 제어",
         "삼두근을 활용한 팔 뒤쪽·주변 안정 근육 사용",
-        "삼두근의 움직임 경로 인식"
+        "삼두근의 움직임 경로 인식",
       ],
-      "warning": "무릎 케이블 삼두 익스텐션 중 관절 끝의 날카로운 통증, 저림 또는 손잡이 흔들림이 있으면 즉시 중단하세요.",
-      "reference": {
-        "label": "ACSM — Exercise Safety",
-        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
-      }
+      warning:
+        "무릎 케이블 삼두 익스텐션 중 관절 끝의 날카로운 통증, 저림 또는 손잡이 흔들림이 있으면 즉시 중단하세요.",
+      reference: {
+        label: "ACSM — Exercise Safety",
+        url: "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/",
+      },
     },
-    "detail": {
-      "setup": [
+    detail: {
+      setup: [
         "케이블 높이·핀·손잡이 잠금과 당김 방향을 가벼운 저항으로 시험합니다",
         "무릎 아래에 매트를 두고 골반을 중립 가까이 맞춥니다",
-        "무릎 케이블 삼두 익스텐션에 맞춰 도구·손잡이를 안정적으로 고정하고 관절 축을 맞춥니다"
+        "무릎 케이블 삼두 익스텐션에 맞춰 도구·손잡이를 안정적으로 고정하고 관절 축을 맞춥니다",
       ],
-      "finish": "무릎 케이블 삼두 익스텐션을 마친 뒤 저항을 천천히 되돌려 관절이 편안한 시작 범위에서 멈춥니다.",
-      "commonMistakes": [
+      finish:
+        "무릎 케이블 삼두 익스텐션을 마친 뒤 저항을 천천히 되돌려 관절이 편안한 시작 범위에서 멈춥니다.",
+      commonMistakes: [
         "무릎 케이블 삼두 익스텐션에서 어깨와 허리를 함께 흔들어 저항을 넘기는 경우",
         "무릎 케이블 삼두 익스텐션에서 관절을 반동으로 끝까지 잠그는 경우",
-        "무릎 케이블 삼두 익스텐션에서 손목을 꺾어 힘을 전달하는 경우"
+        "무릎 케이블 삼두 익스텐션에서 손목을 꺾어 힘을 전달하는 경우",
       ],
-      "regressions": [
+      regressions: [
         "무릎 케이블 삼두 익스텐션은 저항과 범위를 모두 낮춥니다",
         "무릎 케이블 삼두 익스텐션은 양손 또는 지지된 자세를 사용합니다",
-        "무릎 케이블 삼두 익스텐션은 통증 없는 중간 범위만 수행합니다"
+        "무릎 케이블 삼두 익스텐션은 통증 없는 중간 범위만 수행합니다",
       ],
-      "progressions": [
+      progressions: [
         "무릎 케이블 삼두 익스텐션은 정렬을 지킨 채 반복을 소폭 늘립니다",
         "무릎 케이블 삼두 익스텐션은 저항은 한 단계만 올립니다",
-        "무릎 케이블 삼두 익스텐션은 편측·긴 지렛대는 관절이 편안할 때만 시도합니다"
-      ]
-    }
+        "무릎 케이블 삼두 익스텐션은 편측·긴 지렛대는 관절이 편안할 때만 시도합니다",
+      ],
+    },
   },
   {
-    "exercise": {
-      "id": "verified-kneeling-high-pulley-row",
-      "name": "무릎 하이 풀리 로우",
-      "englishName": "Kneeling High Pulley Row",
-      "category": "헬스기구",
-      "regions": [
-        "등"
-      ],
-      "focus": "근력",
-      "difficulty": "입문",
-      "equipment": "케이블 머신·핀",
-      "minutes": "6–12회 · 2세트",
-      "description": "무릎 하이 풀리 로우은 광배근을 쓰며 손잡이 또는 도구를 몸 쪽으로 당기고 어깨뼈의 위치를 제어하는 당기기 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
-      "cues": [
+    exercise: {
+      id: "verified-kneeling-high-pulley-row",
+      name: "무릎 하이 풀리 로우",
+      englishName: "Kneeling High Pulley Row",
+      category: "헬스기구",
+      regions: ["등"],
+      focus: "근력",
+      difficulty: "입문",
+      equipment: "케이블 머신·핀",
+      minutes: "6–12회 · 2세트",
+      description:
+        "무릎 하이 풀리 로우은 광배근을 쓰며 손잡이 또는 도구를 몸 쪽으로 당기고 어깨뼈의 위치를 제어하는 당기기 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
+      cues: [
         "무릎 하이 풀리 로우에서 먼저 어깨를 귀에서 멀리 두고 가슴을 편안히 유지",
         "광배근을 느끼며 팔꿈치를 목적 방향으로 끌되 몸통 반동 줄이기",
-        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다"
+        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
       ],
-      "benefits": [
+      benefits: [
         "무릎 하이 풀리 로우으로 등·팔의 당기기 협응",
         "광배근을 활용한 견갑 위치 인식",
-        "광배근의 움직임 경로 인식"
+        "광배근의 움직임 경로 인식",
       ],
-      "warning": "무릎 하이 풀리 로우 중 어깨 앞쪽의 날카로운 통증, 손 저림, 고정점 흔들림 또는 그립 이탈이 있으면 즉시 중단하세요.",
-      "reference": {
-        "label": "ACSM — Exercise Safety",
-        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
-      }
+      warning:
+        "무릎 하이 풀리 로우 중 어깨 앞쪽의 날카로운 통증, 손 저림, 고정점 흔들림 또는 그립 이탈이 있으면 즉시 중단하세요.",
+      reference: {
+        label: "ACSM — Exercise Safety",
+        url: "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/",
+      },
     },
-    "detail": {
-      "setup": [
+    detail: {
+      setup: [
         "케이블 높이·핀·손잡이 잠금과 당김 방향을 가벼운 저항으로 시험합니다",
         "무릎 아래에 매트를 두고 골반을 중립 가까이 맞춥니다",
-        "무릎 하이 풀리 로우에 맞춰 그립·바·손잡이 높이와 고정 상태를 확인합니다"
+        "무릎 하이 풀리 로우에 맞춰 그립·바·손잡이 높이와 고정 상태를 확인합니다",
       ],
-      "finish": "무릎 하이 풀리 로우을 마친 뒤 팔을 급하게 펴지 말고 어깨가 앞으로 쏠리지 않는 범위에서 시작 위치로 돌아갑니다.",
-      "commonMistakes": [
+      finish:
+        "무릎 하이 풀리 로우을 마친 뒤 팔을 급하게 펴지 말고 어깨가 앞으로 쏠리지 않는 범위에서 시작 위치로 돌아갑니다.",
+      commonMistakes: [
         "무릎 하이 풀리 로우에서 어깨를 으쓱한 채 팔만 사용하는 경우",
         "무릎 하이 풀리 로우에서 몸통을 크게 흔들어 반동을 만드는 경우",
-        "무릎 하이 풀리 로우에서 팔꿈치를 끝까지 밀어 관절을 잠그는 경우"
+        "무릎 하이 풀리 로우에서 팔꿈치를 끝까지 밀어 관절을 잠그는 경우",
       ],
-      "regressions": [
+      regressions: [
         "무릎 하이 풀리 로우은 밴드·보조 장치 또는 더 가벼운 저항을 사용합니다",
         "무릎 하이 풀리 로우은 지지된 시티드 자세로 몸통 부담을 줄입니다",
-        "무릎 하이 풀리 로우은 당기는 범위를 짧게 정하고 멈춥니다"
+        "무릎 하이 풀리 로우은 당기는 범위를 짧게 정하고 멈춥니다",
       ],
-      "progressions": [
+      progressions: [
         "무릎 하이 풀리 로우은 같은 경로에서 저항을 한 단계만 올립니다",
         "무릎 하이 풀리 로우은 완전한 어깨 제어가 되면 범위를 조금 늘립니다",
-        "무릎 하이 풀리 로우은 편측 당김은 몸통 회전을 통제할 수 있을 때 시도합니다"
-      ]
-    }
+        "무릎 하이 풀리 로우은 편측 당김은 몸통 회전을 통제할 수 있을 때 시도합니다",
+      ],
+    },
   },
   {
-    "exercise": {
-      "id": "verified-kneeling-single-arm-high-pulley-row",
-      "name": "무릎 싱글암 하이풀리 로우",
-      "englishName": "Kneeling Single-Arm High Pulley Row",
-      "category": "헬스기구",
-      "regions": [
-        "등"
-      ],
-      "focus": "근력",
-      "difficulty": "입문",
-      "equipment": "케이블 머신·핀",
-      "minutes": "6–12회 · 2세트",
-      "description": "무릎 싱글암 하이풀리 로우은 광배근을 쓰며 손잡이 또는 도구를 몸 쪽으로 당기고 어깨뼈의 위치를 제어하는 당기기 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
-      "cues": [
+    exercise: {
+      id: "verified-kneeling-single-arm-high-pulley-row",
+      name: "무릎 싱글암 하이풀리 로우",
+      englishName: "Kneeling Single-Arm High Pulley Row",
+      category: "헬스기구",
+      regions: ["등"],
+      focus: "근력",
+      difficulty: "입문",
+      equipment: "케이블 머신·핀",
+      minutes: "6–12회 · 2세트",
+      description:
+        "무릎 싱글암 하이풀리 로우은 광배근을 쓰며 손잡이 또는 도구를 몸 쪽으로 당기고 어깨뼈의 위치를 제어하는 당기기 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
+      cues: [
         "무릎 싱글암 하이풀리 로우에서 먼저 어깨를 귀에서 멀리 두고 가슴을 편안히 유지",
         "광배근을 느끼며 팔꿈치를 목적 방향으로 끌되 몸통 반동 줄이기",
-        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다"
+        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
       ],
-      "benefits": [
+      benefits: [
         "무릎 싱글암 하이풀리 로우으로 등·팔의 당기기 협응",
         "광배근을 활용한 견갑 위치 인식",
-        "광배근의 움직임 경로 인식"
+        "광배근의 움직임 경로 인식",
       ],
-      "warning": "무릎 싱글암 하이풀리 로우 중 어깨 앞쪽의 날카로운 통증, 손 저림, 고정점 흔들림 또는 그립 이탈이 있으면 즉시 중단하세요.",
-      "reference": {
-        "label": "ACSM — Exercise Safety",
-        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
-      }
+      warning:
+        "무릎 싱글암 하이풀리 로우 중 어깨 앞쪽의 날카로운 통증, 손 저림, 고정점 흔들림 또는 그립 이탈이 있으면 즉시 중단하세요.",
+      reference: {
+        label: "ACSM — Exercise Safety",
+        url: "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/",
+      },
     },
-    "detail": {
-      "setup": [
+    detail: {
+      setup: [
         "케이블 높이·핀·손잡이 잠금과 당김 방향을 가벼운 저항으로 시험합니다",
         "무릎 아래에 매트를 두고 골반을 중립 가까이 맞춥니다",
-        "무릎 싱글암 하이풀리 로우에 맞춰 그립·바·손잡이 높이와 고정 상태를 확인합니다"
+        "무릎 싱글암 하이풀리 로우에 맞춰 그립·바·손잡이 높이와 고정 상태를 확인합니다",
       ],
-      "finish": "무릎 싱글암 하이풀리 로우을 마친 뒤 팔을 급하게 펴지 말고 어깨가 앞으로 쏠리지 않는 범위에서 시작 위치로 돌아갑니다.",
-      "commonMistakes": [
+      finish:
+        "무릎 싱글암 하이풀리 로우을 마친 뒤 팔을 급하게 펴지 말고 어깨가 앞으로 쏠리지 않는 범위에서 시작 위치로 돌아갑니다.",
+      commonMistakes: [
         "무릎 싱글암 하이풀리 로우에서 어깨를 으쓱한 채 팔만 사용하는 경우",
         "무릎 싱글암 하이풀리 로우에서 몸통을 크게 흔들어 반동을 만드는 경우",
-        "무릎 싱글암 하이풀리 로우에서 팔꿈치를 끝까지 밀어 관절을 잠그는 경우"
+        "무릎 싱글암 하이풀리 로우에서 팔꿈치를 끝까지 밀어 관절을 잠그는 경우",
       ],
-      "regressions": [
+      regressions: [
         "무릎 싱글암 하이풀리 로우은 밴드·보조 장치 또는 더 가벼운 저항을 사용합니다",
         "무릎 싱글암 하이풀리 로우은 지지된 시티드 자세로 몸통 부담을 줄입니다",
-        "무릎 싱글암 하이풀리 로우은 당기는 범위를 짧게 정하고 멈춥니다"
+        "무릎 싱글암 하이풀리 로우은 당기는 범위를 짧게 정하고 멈춥니다",
       ],
-      "progressions": [
+      progressions: [
         "무릎 싱글암 하이풀리 로우은 같은 경로에서 저항을 한 단계만 올립니다",
         "무릎 싱글암 하이풀리 로우은 완전한 어깨 제어가 되면 범위를 조금 늘립니다",
-        "무릎 싱글암 하이풀리 로우은 편측 당김은 몸통 회전을 통제할 수 있을 때 시도합니다"
-      ]
-    }
+        "무릎 싱글암 하이풀리 로우은 편측 당김은 몸통 회전을 통제할 수 있을 때 시도합니다",
+      ],
+    },
   },
   {
-    "exercise": {
-      "id": "verified-low-cable-crossover",
-      "name": "로우 케이블 크로스오버",
-      "englishName": "Low Cable Crossover",
-      "category": "헬스기구",
-      "regions": [
-        "가슴"
-      ],
-      "focus": "근력",
-      "difficulty": "입문",
-      "equipment": "케이블 머신·핀",
-      "minutes": "6–12회 · 2세트",
-      "description": "로우 케이블 크로스오버은 가슴 주변을 통증 없는 범위에서 천천히 움직여 가동 범위와 자세 감각을 확인하는 모빌리티 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
-      "cues": [
+    exercise: {
+      id: "verified-low-cable-crossover",
+      name: "로우 케이블 크로스오버",
+      englishName: "Low Cable Crossover",
+      category: "헬스기구",
+      regions: ["가슴"],
+      focus: "근력",
+      difficulty: "입문",
+      equipment: "케이블 머신·핀",
+      minutes: "6–12회 · 2세트",
+      description:
+        "로우 케이블 크로스오버은 가슴 주변을 통증 없는 범위에서 천천히 움직여 가동 범위와 자세 감각을 확인하는 모빌리티 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
+      cues: [
         "로우 케이블 크로스오버에서 작은 범위에서 호흡을 멈추지 않기",
         "가슴을 느끼며 끝 범위를 밀지 말고 부드럽게 왕복",
-        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다"
+        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
       ],
-      "benefits": [
+      benefits: [
         "로우 케이블 크로스오버으로 관절 위치와 범위 인식",
         "가슴을 활용한 편안한 움직임 준비",
-        "가슴의 움직임 경로 인식"
+        "가슴의 움직임 경로 인식",
       ],
-      "warning": "로우 케이블 크로스오버 중 날카로운 통증, 저림, 방사통, 붓기·열감이 있으면 자가 진행을 멈추고 평가를 우선하세요.",
-      "reference": {
-        "label": "ACSM — Exercise Safety",
-        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
-      }
+      warning:
+        "로우 케이블 크로스오버 중 날카로운 통증, 저림, 방사통, 붓기·열감이 있으면 자가 진행을 멈추고 평가를 우선하세요.",
+      reference: {
+        label: "ACSM — Exercise Safety",
+        url: "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/",
+      },
     },
-    "detail": {
-      "setup": [
+    detail: {
+      setup: [
         "케이블 높이·핀·손잡이 잠금과 당김 방향을 가벼운 저항으로 시험합니다",
         "발 또는 지지면을 단단히 고정하고 몸통을 길게 세웁니다",
-        "로우 케이블 크로스오버에 맞춰 편안한 바닥·매트 또는 지지대를 준비합니다"
+        "로우 케이블 크로스오버에 맞춰 편안한 바닥·매트 또는 지지대를 준비합니다",
       ],
-      "finish": "로우 케이블 크로스오버을 마친 뒤 중립 자세로 천천히 돌아와 불편감이 남지 않는지 확인합니다.",
-      "commonMistakes": [
+      finish:
+        "로우 케이블 크로스오버을 마친 뒤 중립 자세로 천천히 돌아와 불편감이 남지 않는지 확인합니다.",
+      commonMistakes: [
         "로우 케이블 크로스오버에서 끝 범위를 억지로 밀어 통증을 만드는 경우",
         "로우 케이블 크로스오버에서 호흡을 참거나 반동을 쓰는 경우",
-        "로우 케이블 크로스오버에서 저림·방사통을 무시하고 지속하는 경우"
+        "로우 케이블 크로스오버에서 저림·방사통을 무시하고 지속하는 경우",
       ],
-      "regressions": [
+      regressions: [
         "로우 케이블 크로스오버은 범위와 유지 시간을 줄입니다",
         "로우 케이블 크로스오버은 벽·의자·블록 같은 지지대를 사용합니다",
-        "로우 케이블 크로스오버은 누운 또는 앉은 안정된 자세로 바꿉니다"
+        "로우 케이블 크로스오버은 누운 또는 앉은 안정된 자세로 바꿉니다",
       ],
-      "progressions": [
+      progressions: [
         "로우 케이블 크로스오버은 다음 날 편안하면 범위만 조금 늘립니다",
         "로우 케이블 크로스오버은 호흡 주기를 한 번 추가합니다",
-        "로우 케이블 크로스오버은 지지대는 안정적으로 줄여 갑니다"
-      ]
-    }
+        "로우 케이블 크로스오버은 지지대는 안정적으로 줄여 갑니다",
+      ],
+    },
   },
   {
-    "exercise": {
-      "id": "verified-low-cable-triceps-extension",
-      "name": "로우 케이블 삼두 익스텐션",
-      "englishName": "Low Cable Triceps Extension",
-      "category": "헬스기구",
-      "regions": [
-        "팔"
-      ],
-      "focus": "근력",
-      "difficulty": "입문",
-      "equipment": "케이블 머신·핀",
-      "minutes": "6–12회 · 2세트",
-      "description": "로우 케이블 삼두 익스텐션은 삼두근을 사용해 팔꿈치 또는 목표 관절을 펴는 경로를 통제하는 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
-      "cues": [
+    exercise: {
+      id: "verified-low-cable-triceps-extension",
+      name: "로우 케이블 삼두 익스텐션",
+      englishName: "Low Cable Triceps Extension",
+      category: "헬스기구",
+      regions: ["팔"],
+      focus: "근력",
+      difficulty: "입문",
+      equipment: "케이블 머신·핀",
+      minutes: "6–12회 · 2세트",
+      description:
+        "로우 케이블 삼두 익스텐션은 삼두근을 사용해 팔꿈치 또는 목표 관절을 펴는 경로를 통제하는 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
+      cues: [
         "로우 케이블 삼두 익스텐션에서 관절 축을 고정하고 목표 관절만 부드럽게 펴기",
         "삼두근을 느끼며 어깨와 몸통이 흔들리지 않게 지지 유지",
-        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다"
+        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
       ],
-      "benefits": [
+      benefits: [
         "로우 케이블 삼두 익스텐션으로 관절 폄 경로 제어",
         "삼두근을 활용한 팔 뒤쪽·주변 안정 근육 사용",
-        "삼두근의 움직임 경로 인식"
+        "삼두근의 움직임 경로 인식",
       ],
-      "warning": "로우 케이블 삼두 익스텐션 중 관절 끝의 날카로운 통증, 저림 또는 손잡이 흔들림이 있으면 즉시 중단하세요.",
-      "reference": {
-        "label": "ACSM — Exercise Safety",
-        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
-      }
+      warning:
+        "로우 케이블 삼두 익스텐션 중 관절 끝의 날카로운 통증, 저림 또는 손잡이 흔들림이 있으면 즉시 중단하세요.",
+      reference: {
+        label: "ACSM — Exercise Safety",
+        url: "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/",
+      },
     },
-    "detail": {
-      "setup": [
+    detail: {
+      setup: [
         "케이블 높이·핀·손잡이 잠금과 당김 방향을 가벼운 저항으로 시험합니다",
         "발 또는 지지면을 단단히 고정하고 몸통을 길게 세웁니다",
-        "로우 케이블 삼두 익스텐션에 맞춰 도구·손잡이를 안정적으로 고정하고 관절 축을 맞춥니다"
+        "로우 케이블 삼두 익스텐션에 맞춰 도구·손잡이를 안정적으로 고정하고 관절 축을 맞춥니다",
       ],
-      "finish": "로우 케이블 삼두 익스텐션을 마친 뒤 저항을 천천히 되돌려 관절이 편안한 시작 범위에서 멈춥니다.",
-      "commonMistakes": [
+      finish:
+        "로우 케이블 삼두 익스텐션을 마친 뒤 저항을 천천히 되돌려 관절이 편안한 시작 범위에서 멈춥니다.",
+      commonMistakes: [
         "로우 케이블 삼두 익스텐션에서 어깨와 허리를 함께 흔들어 저항을 넘기는 경우",
         "로우 케이블 삼두 익스텐션에서 관절을 반동으로 끝까지 잠그는 경우",
-        "로우 케이블 삼두 익스텐션에서 손목을 꺾어 힘을 전달하는 경우"
+        "로우 케이블 삼두 익스텐션에서 손목을 꺾어 힘을 전달하는 경우",
       ],
-      "regressions": [
+      regressions: [
         "로우 케이블 삼두 익스텐션은 저항과 범위를 모두 낮춥니다",
         "로우 케이블 삼두 익스텐션은 양손 또는 지지된 자세를 사용합니다",
-        "로우 케이블 삼두 익스텐션은 통증 없는 중간 범위만 수행합니다"
+        "로우 케이블 삼두 익스텐션은 통증 없는 중간 범위만 수행합니다",
       ],
-      "progressions": [
+      progressions: [
         "로우 케이블 삼두 익스텐션은 정렬을 지킨 채 반복을 소폭 늘립니다",
         "로우 케이블 삼두 익스텐션은 저항은 한 단계만 올립니다",
-        "로우 케이블 삼두 익스텐션은 편측·긴 지렛대는 관절이 편안할 때만 시도합니다"
-      ]
-    }
+        "로우 케이블 삼두 익스텐션은 편측·긴 지렛대는 관절이 편안할 때만 시도합니다",
+      ],
+    },
   },
   {
-    "exercise": {
-      "id": "verified-lying-cable-curl",
-      "name": "누운 케이블 컬",
-      "englishName": "Lying Cable Curl",
-      "category": "헬스기구",
-      "regions": [
-        "팔"
-      ],
-      "focus": "근력",
-      "difficulty": "중급",
-      "equipment": "케이블 머신·핀",
-      "minutes": "6–12회 · 2세트",
-      "description": "누운 케이블 컬은 이두근을 중심으로 팔꿈치를 굽히며 도구를 통제하는 팔 굽힘 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
-      "cues": [
+    exercise: {
+      id: "verified-lying-cable-curl",
+      name: "누운 케이블 컬",
+      englishName: "Lying Cable Curl",
+      category: "헬스기구",
+      regions: ["팔"],
+      focus: "근력",
+      difficulty: "중급",
+      equipment: "케이블 머신·핀",
+      minutes: "6–12회 · 2세트",
+      description:
+        "누운 케이블 컬은 이두근을 중심으로 팔꿈치를 굽히며 도구를 통제하는 팔 굽힘 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
+      cues: [
         "누운 케이블 컬에서 상완을 몸통 가까이에 두고 팔꿈치 위치를 고정",
         "이두근을 느끼며 손목을 꺾지 말고 도구를 부드럽게 들어 올리기",
-        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다"
+        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
       ],
-      "benefits": [
+      benefits: [
         "누운 케이블 컬으로 팔 굽힘 근육의 제어",
         "이두근을 활용한 전완·그립 안정 인식",
-        "이두근의 움직임 경로 인식"
+        "이두근의 움직임 경로 인식",
       ],
-      "warning": "누운 케이블 컬 중 팔꿈치·손목의 날카로운 통증, 저림 또는 그립 미끄러짐이 있으면 즉시 중단하세요.",
-      "reference": {
-        "label": "ACSM — Exercise Safety",
-        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
-      }
+      warning:
+        "누운 케이블 컬 중 팔꿈치·손목의 날카로운 통증, 저림 또는 그립 미끄러짐이 있으면 즉시 중단하세요.",
+      reference: {
+        label: "ACSM — Exercise Safety",
+        url: "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/",
+      },
     },
-    "detail": {
-      "setup": [
+    detail: {
+      setup: [
         "케이블 높이·핀·손잡이 잠금과 당김 방향을 가벼운 저항으로 시험합니다",
         "바닥 또는 벤치에 등을 안정적으로 댄 뒤 갈비뼈를 과하게 들지 않습니다",
-        "누운 케이블 컬에 맞춰 가벼운 중량을 들고 팔꿈치를 몸통 옆에 둡니다"
+        "누운 케이블 컬에 맞춰 가벼운 중량을 들고 팔꿈치를 몸통 옆에 둡니다",
       ],
-      "finish": "누운 케이블 컬을 마친 뒤 팔꿈치를 완전히 잠그지 않는 편안한 아래 범위에서 다음 반복을 준비합니다.",
-      "commonMistakes": [
+      finish:
+        "누운 케이블 컬을 마친 뒤 팔꿈치를 완전히 잠그지 않는 편안한 아래 범위에서 다음 반복을 준비합니다.",
+      commonMistakes: [
         "누운 케이블 컬에서 몸통을 뒤로 젖혀 반동을 쓰는 경우",
         "누운 케이블 컬에서 팔꿈치가 앞으로 크게 이동하는 경우",
-        "누운 케이블 컬에서 손목을 꺾어 중량을 드는 경우"
+        "누운 케이블 컬에서 손목을 꺾어 중량을 드는 경우",
       ],
-      "regressions": [
+      regressions: [
         "누운 케이블 컬은 더 가벼운 도구나 밴드를 사용합니다",
         "누운 케이블 컬은 시티드 또는 벤치 지지로 몸통 반동을 줄입니다",
-        "누운 케이블 컬은 아래와 위 범위를 조금 줄입니다"
+        "누운 케이블 컬은 아래와 위 범위를 조금 줄입니다",
       ],
-      "progressions": [
+      progressions: [
         "누운 케이블 컬은 반동 없이 반복을 한두 회 늘립니다",
         "누운 케이블 컬은 그립이 안정되면 중량을 소폭 올립니다",
-        "누운 케이블 컬은 편측 수행은 몸통이 흔들리지 않을 때 시작합니다"
-      ]
-    }
+        "누운 케이블 컬은 편측 수행은 몸통이 흔들리지 않을 때 시작합니다",
+      ],
+    },
   },
   {
-    "exercise": {
-      "id": "verified-lying-close-grip-bar-curl-on-high-pulley",
-      "name": "하이 풀리 누운 바 컬(좁은그립)",
-      "englishName": "Lying Close-Grip Bar Curl On High Pulley",
-      "category": "헬스기구",
-      "regions": [
-        "팔"
-      ],
-      "focus": "근력",
-      "difficulty": "입문",
-      "equipment": "케이블 머신·핀",
-      "minutes": "6–12회 · 2세트",
-      "description": "하이 풀리 누운 바 컬(좁은그립)은 이두근을 중심으로 팔꿈치를 굽히며 도구를 통제하는 팔 굽힘 종목입니다. 좁은 그립에서는 손목을 꺾지 않고 팔꿈치 경로를 통제합니다",
-      "cues": [
+    exercise: {
+      id: "verified-lying-close-grip-bar-curl-on-high-pulley",
+      name: "하이 풀리 누운 바 컬(좁은그립)",
+      englishName: "Lying Close-Grip Bar Curl On High Pulley",
+      category: "헬스기구",
+      regions: ["팔"],
+      focus: "근력",
+      difficulty: "입문",
+      equipment: "케이블 머신·핀",
+      minutes: "6–12회 · 2세트",
+      description:
+        "하이 풀리 누운 바 컬(좁은그립)은 이두근을 중심으로 팔꿈치를 굽히며 도구를 통제하는 팔 굽힘 종목입니다. 좁은 그립에서는 손목을 꺾지 않고 팔꿈치 경로를 통제합니다",
+      cues: [
         "하이 풀리 누운 바 컬(좁은그립)에서 상완을 몸통 가까이에 두고 팔꿈치 위치를 고정",
         "이두근을 느끼며 손목을 꺾지 말고 도구를 부드럽게 들어 올리기",
-        "좁은 그립에서는 손목을 꺾지 않고 팔꿈치 경로를 통제합니다"
+        "좁은 그립에서는 손목을 꺾지 않고 팔꿈치 경로를 통제합니다",
       ],
-      "benefits": [
+      benefits: [
         "하이 풀리 누운 바 컬(좁은그립)으로 팔 굽힘 근육의 제어",
         "이두근을 활용한 전완·그립 안정 인식",
-        "이두근의 움직임 경로 인식"
+        "이두근의 움직임 경로 인식",
       ],
-      "warning": "하이 풀리 누운 바 컬(좁은그립) 중 팔꿈치·손목의 날카로운 통증, 저림 또는 그립 미끄러짐이 있으면 즉시 중단하세요.",
-      "reference": {
-        "label": "ACSM — Exercise Safety",
-        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
-      }
+      warning:
+        "하이 풀리 누운 바 컬(좁은그립) 중 팔꿈치·손목의 날카로운 통증, 저림 또는 그립 미끄러짐이 있으면 즉시 중단하세요.",
+      reference: {
+        label: "ACSM — Exercise Safety",
+        url: "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/",
+      },
     },
-    "detail": {
-      "setup": [
+    detail: {
+      setup: [
         "케이블 높이·핀·손잡이 잠금과 당김 방향을 가벼운 저항으로 시험합니다",
         "바닥 또는 벤치에 등을 안정적으로 댄 뒤 갈비뼈를 과하게 들지 않습니다",
-        "하이 풀리 누운 바 컬(좁은그립)에 맞춰 가벼운 중량을 들고 팔꿈치를 몸통 옆에 둡니다"
+        "하이 풀리 누운 바 컬(좁은그립)에 맞춰 가벼운 중량을 들고 팔꿈치를 몸통 옆에 둡니다",
       ],
-      "finish": "하이 풀리 누운 바 컬(좁은그립)을 마친 뒤 팔꿈치를 완전히 잠그지 않는 편안한 아래 범위에서 다음 반복을 준비합니다.",
-      "commonMistakes": [
+      finish:
+        "하이 풀리 누운 바 컬(좁은그립)을 마친 뒤 팔꿈치를 완전히 잠그지 않는 편안한 아래 범위에서 다음 반복을 준비합니다.",
+      commonMistakes: [
         "하이 풀리 누운 바 컬(좁은그립)에서 몸통을 뒤로 젖혀 반동을 쓰는 경우",
         "하이 풀리 누운 바 컬(좁은그립)에서 팔꿈치가 앞으로 크게 이동하는 경우",
-        "하이 풀리 누운 바 컬(좁은그립)에서 손목을 꺾어 중량을 드는 경우"
+        "하이 풀리 누운 바 컬(좁은그립)에서 손목을 꺾어 중량을 드는 경우",
       ],
-      "regressions": [
+      regressions: [
         "하이 풀리 누운 바 컬(좁은그립)은 더 가벼운 도구나 밴드를 사용합니다",
         "하이 풀리 누운 바 컬(좁은그립)은 시티드 또는 벤치 지지로 몸통 반동을 줄입니다",
-        "하이 풀리 누운 바 컬(좁은그립)은 아래와 위 범위를 조금 줄입니다"
+        "하이 풀리 누운 바 컬(좁은그립)은 아래와 위 범위를 조금 줄입니다",
       ],
-      "progressions": [
+      progressions: [
         "하이 풀리 누운 바 컬(좁은그립)은 반동 없이 반복을 한두 회 늘립니다",
         "하이 풀리 누운 바 컬(좁은그립)은 그립이 안정되면 중량을 소폭 올립니다",
-        "하이 풀리 누운 바 컬(좁은그립)은 편측 수행은 몸통이 흔들리지 않을 때 시작합니다"
-      ]
-    }
+        "하이 풀리 누운 바 컬(좁은그립)은 편측 수행은 몸통이 흔들리지 않을 때 시작합니다",
+      ],
+    },
   },
   {
-    "exercise": {
-      "id": "verified-one-arm-lat-pulldown",
-      "name": "원암 랫 풀다운",
-      "englishName": "One Arm Lat Pulldown",
-      "category": "헬스기구",
-      "regions": [
-        "등"
-      ],
-      "focus": "근력",
-      "difficulty": "입문",
-      "equipment": "케이블 머신·핀",
-      "minutes": "6–12회 · 2세트",
-      "description": "원암 랫 풀다운은 광배근을 쓰며 손잡이 또는 도구를 몸 쪽으로 당기고 어깨뼈의 위치를 제어하는 당기기 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
-      "cues": [
+    exercise: {
+      id: "verified-one-arm-lat-pulldown",
+      name: "원암 랫 풀다운",
+      englishName: "One Arm Lat Pulldown",
+      category: "헬스기구",
+      regions: ["등"],
+      focus: "근력",
+      difficulty: "입문",
+      equipment: "케이블 머신·핀",
+      minutes: "6–12회 · 2세트",
+      description:
+        "원암 랫 풀다운은 광배근을 쓰며 손잡이 또는 도구를 몸 쪽으로 당기고 어깨뼈의 위치를 제어하는 당기기 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
+      cues: [
         "원암 랫 풀다운에서 먼저 어깨를 귀에서 멀리 두고 가슴을 편안히 유지",
         "광배근을 느끼며 팔꿈치를 목적 방향으로 끌되 몸통 반동 줄이기",
-        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다"
+        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
       ],
-      "benefits": [
+      benefits: [
         "원암 랫 풀다운으로 등·팔의 당기기 협응",
         "광배근을 활용한 견갑 위치 인식",
-        "광배근의 움직임 경로 인식"
+        "광배근의 움직임 경로 인식",
       ],
-      "warning": "원암 랫 풀다운 중 어깨 앞쪽의 날카로운 통증, 손 저림, 고정점 흔들림 또는 그립 이탈이 있으면 즉시 중단하세요.",
-      "reference": {
-        "label": "ACSM — Exercise Safety",
-        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
-      }
+      warning:
+        "원암 랫 풀다운 중 어깨 앞쪽의 날카로운 통증, 손 저림, 고정점 흔들림 또는 그립 이탈이 있으면 즉시 중단하세요.",
+      reference: {
+        label: "ACSM — Exercise Safety",
+        url: "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/",
+      },
     },
-    "detail": {
-      "setup": [
+    detail: {
+      setup: [
         "케이블 높이·핀·손잡이 잠금과 당김 방향을 가벼운 저항으로 시험합니다",
         "작동하지 않는 쪽의 손·발 또는 벤치 지지로 몸통 회전을 줄입니다",
-        "원암 랫 풀다운에 맞춰 그립·바·손잡이 높이와 고정 상태를 확인합니다"
+        "원암 랫 풀다운에 맞춰 그립·바·손잡이 높이와 고정 상태를 확인합니다",
       ],
-      "finish": "원암 랫 풀다운을 마친 뒤 팔을 급하게 펴지 말고 어깨가 앞으로 쏠리지 않는 범위에서 시작 위치로 돌아갑니다.",
-      "commonMistakes": [
+      finish:
+        "원암 랫 풀다운을 마친 뒤 팔을 급하게 펴지 말고 어깨가 앞으로 쏠리지 않는 범위에서 시작 위치로 돌아갑니다.",
+      commonMistakes: [
         "원암 랫 풀다운에서 어깨를 으쓱한 채 팔만 사용하는 경우",
         "원암 랫 풀다운에서 몸통을 크게 흔들어 반동을 만드는 경우",
-        "원암 랫 풀다운에서 팔꿈치를 끝까지 밀어 관절을 잠그는 경우"
+        "원암 랫 풀다운에서 팔꿈치를 끝까지 밀어 관절을 잠그는 경우",
       ],
-      "regressions": [
+      regressions: [
         "원암 랫 풀다운은 밴드·보조 장치 또는 더 가벼운 저항을 사용합니다",
         "원암 랫 풀다운은 지지된 시티드 자세로 몸통 부담을 줄입니다",
-        "원암 랫 풀다운은 당기는 범위를 짧게 정하고 멈춥니다"
+        "원암 랫 풀다운은 당기는 범위를 짧게 정하고 멈춥니다",
       ],
-      "progressions": [
+      progressions: [
         "원암 랫 풀다운은 같은 경로에서 저항을 한 단계만 올립니다",
         "원암 랫 풀다운은 완전한 어깨 제어가 되면 범위를 조금 늘립니다",
-        "원암 랫 풀다운은 편측 당김은 몸통 회전을 통제할 수 있을 때 시도합니다"
-      ]
-    }
+        "원암 랫 풀다운은 편측 당김은 몸통 회전을 통제할 수 있을 때 시도합니다",
+      ],
+    },
   },
   {
-    "exercise": {
-      "id": "verified-one-arm-high-pulley-cable-side-bends",
-      "name": "원암 하이풀리 사이드밴드",
-      "englishName": "One-Arm High-Pulley Cable Side Bends",
-      "category": "헬스기구",
-      "regions": [
-        "코어"
-      ],
-      "focus": "근력",
-      "difficulty": "입문",
-      "equipment": "케이블 머신·핀",
-      "minutes": "6–12회 · 2세트",
-      "description": "원암 하이풀리 사이드밴드은 복부 주변을 통증 없는 범위에서 천천히 움직여 가동 범위와 자세 감각을 확인하는 모빌리티 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
-      "cues": [
+    exercise: {
+      id: "verified-one-arm-high-pulley-cable-side-bends",
+      name: "원암 하이풀리 사이드밴드",
+      englishName: "One-Arm High-Pulley Cable Side Bends",
+      category: "헬스기구",
+      regions: ["코어"],
+      focus: "근력",
+      difficulty: "입문",
+      equipment: "케이블 머신·핀",
+      minutes: "6–12회 · 2세트",
+      description:
+        "원암 하이풀리 사이드밴드은 복부 주변을 통증 없는 범위에서 천천히 움직여 가동 범위와 자세 감각을 확인하는 모빌리티 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
+      cues: [
         "원암 하이풀리 사이드밴드에서 작은 범위에서 호흡을 멈추지 않기",
         "복부을 느끼며 끝 범위를 밀지 말고 부드럽게 왕복",
-        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다"
+        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
       ],
-      "benefits": [
+      benefits: [
         "원암 하이풀리 사이드밴드으로 관절 위치와 범위 인식",
         "복부을 활용한 편안한 움직임 준비",
-        "복부의 움직임 경로 인식"
+        "복부의 움직임 경로 인식",
       ],
-      "warning": "원암 하이풀리 사이드밴드 중 날카로운 통증, 저림, 방사통, 붓기·열감이 있으면 자가 진행을 멈추고 평가를 우선하세요.",
-      "reference": {
-        "label": "ACSM — Exercise Safety",
-        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
-      }
+      warning:
+        "원암 하이풀리 사이드밴드 중 날카로운 통증, 저림, 방사통, 붓기·열감이 있으면 자가 진행을 멈추고 평가를 우선하세요.",
+      reference: {
+        label: "ACSM — Exercise Safety",
+        url: "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/",
+      },
     },
-    "detail": {
-      "setup": [
+    detail: {
+      setup: [
         "케이블 높이·핀·손잡이 잠금과 당김 방향을 가벼운 저항으로 시험합니다",
         "작동하지 않는 쪽의 손·발 또는 벤치 지지로 몸통 회전을 줄입니다",
-        "원암 하이풀리 사이드밴드에 맞춰 편안한 바닥·매트 또는 지지대를 준비합니다"
+        "원암 하이풀리 사이드밴드에 맞춰 편안한 바닥·매트 또는 지지대를 준비합니다",
       ],
-      "finish": "원암 하이풀리 사이드밴드을 마친 뒤 중립 자세로 천천히 돌아와 불편감이 남지 않는지 확인합니다.",
-      "commonMistakes": [
+      finish:
+        "원암 하이풀리 사이드밴드을 마친 뒤 중립 자세로 천천히 돌아와 불편감이 남지 않는지 확인합니다.",
+      commonMistakes: [
         "원암 하이풀리 사이드밴드에서 끝 범위를 억지로 밀어 통증을 만드는 경우",
         "원암 하이풀리 사이드밴드에서 호흡을 참거나 반동을 쓰는 경우",
-        "원암 하이풀리 사이드밴드에서 저림·방사통을 무시하고 지속하는 경우"
+        "원암 하이풀리 사이드밴드에서 저림·방사통을 무시하고 지속하는 경우",
       ],
-      "regressions": [
+      regressions: [
         "원암 하이풀리 사이드밴드은 범위와 유지 시간을 줄입니다",
         "원암 하이풀리 사이드밴드은 벽·의자·블록 같은 지지대를 사용합니다",
-        "원암 하이풀리 사이드밴드은 누운 또는 앉은 안정된 자세로 바꿉니다"
+        "원암 하이풀리 사이드밴드은 누운 또는 앉은 안정된 자세로 바꿉니다",
       ],
-      "progressions": [
+      progressions: [
         "원암 하이풀리 사이드밴드은 다음 날 편안하면 범위만 조금 늘립니다",
         "원암 하이풀리 사이드밴드은 호흡 주기를 한 번 추가합니다",
-        "원암 하이풀리 사이드밴드은 지지대는 안정적으로 줄여 갑니다"
-      ]
-    }
+        "원암 하이풀리 사이드밴드은 지지대는 안정적으로 줄여 갑니다",
+      ],
+    },
   },
   {
-    "exercise": {
-      "id": "verified-one-legged-cable-kickback",
-      "name": "원다리 케이블 킥백",
-      "englishName": "One-Legged Cable Kickback",
-      "category": "헬스기구",
-      "regions": [
-        "둔근",
-        "하체"
-      ],
-      "focus": "근력",
-      "difficulty": "중급",
-      "equipment": "케이블 머신·핀",
-      "minutes": "6–12회 · 2세트",
-      "description": "원다리 케이블 킥백은 둔근 주변을 통증 없는 범위에서 천천히 움직여 가동 범위와 자세 감각을 확인하는 모빌리티 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
-      "cues": [
+    exercise: {
+      id: "verified-one-legged-cable-kickback",
+      name: "원다리 케이블 킥백",
+      englishName: "One-Legged Cable Kickback",
+      category: "헬스기구",
+      regions: ["둔근", "하체"],
+      focus: "근력",
+      difficulty: "중급",
+      equipment: "케이블 머신·핀",
+      minutes: "6–12회 · 2세트",
+      description:
+        "원다리 케이블 킥백은 둔근 주변을 통증 없는 범위에서 천천히 움직여 가동 범위와 자세 감각을 확인하는 모빌리티 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
+      cues: [
         "원다리 케이블 킥백에서 작은 범위에서 호흡을 멈추지 않기",
         "둔근을 느끼며 끝 범위를 밀지 말고 부드럽게 왕복",
-        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다"
+        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
       ],
-      "benefits": [
+      benefits: [
         "원다리 케이블 킥백으로 관절 위치와 범위 인식",
         "둔근을 활용한 편안한 움직임 준비",
-        "둔근의 움직임 경로 인식"
+        "둔근의 움직임 경로 인식",
       ],
-      "warning": "원다리 케이블 킥백 중 날카로운 통증, 저림, 방사통, 붓기·열감이 있으면 자가 진행을 멈추고 평가를 우선하세요.",
-      "reference": {
-        "label": "ACSM — Exercise Safety",
-        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
-      }
+      warning:
+        "원다리 케이블 킥백 중 날카로운 통증, 저림, 방사통, 붓기·열감이 있으면 자가 진행을 멈추고 평가를 우선하세요.",
+      reference: {
+        label: "ACSM — Exercise Safety",
+        url: "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/",
+      },
     },
-    "detail": {
-      "setup": [
+    detail: {
+      setup: [
         "케이블 높이·핀·손잡이 잠금과 당김 방향을 가벼운 저항으로 시험합니다",
         "지지 발 전체를 바닥에 두고 벽이나 벤치 가까이에서 균형을 준비합니다",
-        "원다리 케이블 킥백에 맞춰 편안한 바닥·매트 또는 지지대를 준비합니다"
+        "원다리 케이블 킥백에 맞춰 편안한 바닥·매트 또는 지지대를 준비합니다",
       ],
-      "finish": "원다리 케이블 킥백을 마친 뒤 중립 자세로 천천히 돌아와 불편감이 남지 않는지 확인합니다.",
-      "commonMistakes": [
+      finish:
+        "원다리 케이블 킥백을 마친 뒤 중립 자세로 천천히 돌아와 불편감이 남지 않는지 확인합니다.",
+      commonMistakes: [
         "원다리 케이블 킥백에서 끝 범위를 억지로 밀어 통증을 만드는 경우",
         "원다리 케이블 킥백에서 호흡을 참거나 반동을 쓰는 경우",
-        "원다리 케이블 킥백에서 저림·방사통을 무시하고 지속하는 경우"
+        "원다리 케이블 킥백에서 저림·방사통을 무시하고 지속하는 경우",
       ],
-      "regressions": [
+      regressions: [
         "원다리 케이블 킥백은 범위와 유지 시간을 줄입니다",
         "원다리 케이블 킥백은 벽·의자·블록 같은 지지대를 사용합니다",
-        "원다리 케이블 킥백은 누운 또는 앉은 안정된 자세로 바꿉니다"
+        "원다리 케이블 킥백은 누운 또는 앉은 안정된 자세로 바꿉니다",
       ],
-      "progressions": [
+      progressions: [
         "원다리 케이블 킥백은 다음 날 편안하면 범위만 조금 늘립니다",
         "원다리 케이블 킥백은 호흡 주기를 한 번 추가합니다",
-        "원다리 케이블 킥백은 지지대는 안정적으로 줄여 갑니다"
-      ]
-    }
+        "원다리 케이블 킥백은 지지대는 안정적으로 줄여 갑니다",
+      ],
+    },
   },
   {
-    "exercise": {
-      "id": "verified-overhead-cable-curl",
-      "name": "오버헤드 케이블 컬",
-      "englishName": "Overhead Cable Curl",
-      "category": "헬스기구",
-      "regions": [
-        "팔"
-      ],
-      "focus": "근력",
-      "difficulty": "중급",
-      "equipment": "케이블 머신·핀",
-      "minutes": "6–12회 · 2세트",
-      "description": "오버헤드 케이블 컬은 이두근을 중심으로 팔꿈치를 굽히며 도구를 통제하는 팔 굽힘 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
-      "cues": [
+    exercise: {
+      id: "verified-overhead-cable-curl",
+      name: "오버헤드 케이블 컬",
+      englishName: "Overhead Cable Curl",
+      category: "헬스기구",
+      regions: ["팔"],
+      focus: "근력",
+      difficulty: "중급",
+      equipment: "케이블 머신·핀",
+      minutes: "6–12회 · 2세트",
+      description:
+        "오버헤드 케이블 컬은 이두근을 중심으로 팔꿈치를 굽히며 도구를 통제하는 팔 굽힘 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
+      cues: [
         "오버헤드 케이블 컬에서 상완을 몸통 가까이에 두고 팔꿈치 위치를 고정",
         "이두근을 느끼며 손목을 꺾지 말고 도구를 부드럽게 들어 올리기",
-        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다"
+        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
       ],
-      "benefits": [
+      benefits: [
         "오버헤드 케이블 컬으로 팔 굽힘 근육의 제어",
         "이두근을 활용한 전완·그립 안정 인식",
-        "이두근의 움직임 경로 인식"
+        "이두근의 움직임 경로 인식",
       ],
-      "warning": "오버헤드 케이블 컬 중 팔꿈치·손목의 날카로운 통증, 저림 또는 그립 미끄러짐이 있으면 즉시 중단하세요.",
-      "reference": {
-        "label": "ACSM — Exercise Safety",
-        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
-      }
+      warning:
+        "오버헤드 케이블 컬 중 팔꿈치·손목의 날카로운 통증, 저림 또는 그립 미끄러짐이 있으면 즉시 중단하세요.",
+      reference: {
+        label: "ACSM — Exercise Safety",
+        url: "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/",
+      },
     },
-    "detail": {
-      "setup": [
+    detail: {
+      setup: [
         "케이블 높이·핀·손잡이 잠금과 당김 방향을 가벼운 저항으로 시험합니다",
         "발 또는 지지면을 단단히 고정하고 몸통을 길게 세웁니다",
-        "오버헤드 케이블 컬에 맞춰 가벼운 중량을 들고 팔꿈치를 몸통 옆에 둡니다"
+        "오버헤드 케이블 컬에 맞춰 가벼운 중량을 들고 팔꿈치를 몸통 옆에 둡니다",
       ],
-      "finish": "오버헤드 케이블 컬을 마친 뒤 팔꿈치를 완전히 잠그지 않는 편안한 아래 범위에서 다음 반복을 준비합니다.",
-      "commonMistakes": [
+      finish:
+        "오버헤드 케이블 컬을 마친 뒤 팔꿈치를 완전히 잠그지 않는 편안한 아래 범위에서 다음 반복을 준비합니다.",
+      commonMistakes: [
         "오버헤드 케이블 컬에서 몸통을 뒤로 젖혀 반동을 쓰는 경우",
         "오버헤드 케이블 컬에서 팔꿈치가 앞으로 크게 이동하는 경우",
-        "오버헤드 케이블 컬에서 손목을 꺾어 중량을 드는 경우"
+        "오버헤드 케이블 컬에서 손목을 꺾어 중량을 드는 경우",
       ],
-      "regressions": [
+      regressions: [
         "오버헤드 케이블 컬은 더 가벼운 도구나 밴드를 사용합니다",
         "오버헤드 케이블 컬은 시티드 또는 벤치 지지로 몸통 반동을 줄입니다",
-        "오버헤드 케이블 컬은 아래와 위 범위를 조금 줄입니다"
+        "오버헤드 케이블 컬은 아래와 위 범위를 조금 줄입니다",
       ],
-      "progressions": [
+      progressions: [
         "오버헤드 케이블 컬은 반동 없이 반복을 한두 회 늘립니다",
         "오버헤드 케이블 컬은 그립이 안정되면 중량을 소폭 올립니다",
-        "오버헤드 케이블 컬은 편측 수행은 몸통이 흔들리지 않을 때 시작합니다"
-      ]
-    }
+        "오버헤드 케이블 컬은 편측 수행은 몸통이 흔들리지 않을 때 시작합니다",
+      ],
+    },
   },
   {
-    "exercise": {
-      "id": "verified-pallof-press-with-rotation",
-      "name": "팔로프 프레스(회전)",
-      "englishName": "Pallof Press With Rotation",
-      "category": "헬스기구",
-      "regions": [
-        "코어"
-      ],
-      "focus": "근력",
-      "difficulty": "입문",
-      "equipment": "케이블 머신·핀",
-      "minutes": "6–12회 · 2세트",
-      "description": "팔로프 프레스(회전)은 복부을 사용해 손잡이·도구 또는 바닥을 몸에서 멀어지게 미는 상체 밀기 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
-      "cues": [
+    exercise: {
+      id: "verified-pallof-press-with-rotation",
+      name: "팔로프 프레스(회전)",
+      englishName: "Pallof Press With Rotation",
+      category: "헬스기구",
+      regions: ["코어"],
+      focus: "근력",
+      difficulty: "입문",
+      equipment: "케이블 머신·핀",
+      minutes: "6–12회 · 2세트",
+      description:
+        "팔로프 프레스(회전)은 복부을 사용해 손잡이·도구 또는 바닥을 몸에서 멀어지게 미는 상체 밀기 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
+      cues: [
         "팔로프 프레스(회전)에서 손목을 중립에 가깝게 두고 손잡이를 안정적으로 잡기",
         "복부을 느끼며 갈비뼈를 과하게 들지 않고 몸통 길이 유지",
-        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다"
+        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
       ],
-      "benefits": [
+      benefits: [
         "팔로프 프레스(회전)으로 가슴·어깨·팔의 밀기 협응",
         "복부을 활용한 손목과 견갑 안정 제어",
-        "복부의 움직임 경로 인식"
+        "복부의 움직임 경로 인식",
       ],
-      "warning": "팔로프 프레스(회전) 중 어깨·팔꿈치·손목 통증, 저림 또는 도구 흔들림이 있으면 즉시 멈추고 설정을 다시 확인하세요.",
-      "reference": {
-        "label": "ACSM — Exercise Safety",
-        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
-      }
+      warning:
+        "팔로프 프레스(회전) 중 어깨·팔꿈치·손목 통증, 저림 또는 도구 흔들림이 있으면 즉시 멈추고 설정을 다시 확인하세요.",
+      reference: {
+        label: "ACSM — Exercise Safety",
+        url: "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/",
+      },
     },
-    "detail": {
-      "setup": [
+    detail: {
+      setup: [
         "케이블 높이·핀·손잡이 잠금과 당김 방향을 가벼운 저항으로 시험합니다",
         "발 또는 지지면을 단단히 고정하고 몸통을 길게 세웁니다",
-        "팔로프 프레스(회전)에 맞춰 손잡이·바·지지면의 높이와 좌우 설정을 확인합니다"
+        "팔로프 프레스(회전)에 맞춰 손잡이·바·지지면의 높이와 좌우 설정을 확인합니다",
       ],
-      "finish": "팔로프 프레스(회전)을 마친 뒤 팔꿈치를 잠그지 않은 편안한 끝 범위에서 잠시 멈춘 뒤 같은 경로로 돌아옵니다.",
-      "commonMistakes": [
+      finish:
+        "팔로프 프레스(회전)을 마친 뒤 팔꿈치를 잠그지 않은 편안한 끝 범위에서 잠시 멈춘 뒤 같은 경로로 돌아옵니다.",
+      commonMistakes: [
         "팔로프 프레스(회전)에서 어깨가 앞으로 말린 채 밀어 올리는 경우",
         "팔로프 프레스(회전)에서 허리를 과하게 젖혀 무게를 넘기는 경우",
-        "팔로프 프레스(회전)에서 손목을 꺾고 그립을 느슨하게 유지하는 경우"
+        "팔로프 프레스(회전)에서 손목을 꺾고 그립을 느슨하게 유지하는 경우",
       ],
-      "regressions": [
+      regressions: [
         "팔로프 프레스(회전)은 벽·높은 벤치 또는 가벼운 저항으로 바꿉니다",
         "팔로프 프레스(회전)은 가동 범위를 줄이고 어깨 편안함을 확인합니다",
-        "팔로프 프레스(회전)은 양손 지지로 안정성을 먼저 확보합니다"
+        "팔로프 프레스(회전)은 양손 지지로 안정성을 먼저 확보합니다",
       ],
-      "progressions": [
+      progressions: [
         "팔로프 프레스(회전)은 정렬이 유지될 때 반복을 소폭 늘립니다",
         "팔로프 프레스(회전)은 안정된 지지면에서 저항을 한 단계만 올립니다",
-        "팔로프 프레스(회전)은 낮은 지지 또는 편측 변형은 통제 후 시도합니다"
-      ]
-    }
+        "팔로프 프레스(회전)은 낮은 지지 또는 편측 변형은 통제 후 시도합니다",
+      ],
+    },
   },
   {
-    "exercise": {
-      "id": "verified-pull-through",
-      "name": "풀스루",
-      "englishName": "Pull Through",
-      "category": "헬스기구",
-      "regions": [
-        "둔근",
-        "하체"
-      ],
-      "focus": "근력",
-      "difficulty": "입문",
-      "equipment": "케이블 머신·핀",
-      "minutes": "6–12회 · 2세트",
-      "description": "풀스루은 둔근 주변을 통증 없는 범위에서 천천히 움직여 가동 범위와 자세 감각을 확인하는 모빌리티 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
-      "cues": [
+    exercise: {
+      id: "verified-pull-through",
+      name: "풀스루",
+      englishName: "Pull Through",
+      category: "헬스기구",
+      regions: ["둔근", "하체"],
+      focus: "근력",
+      difficulty: "입문",
+      equipment: "케이블 머신·핀",
+      minutes: "6–12회 · 2세트",
+      description:
+        "풀스루은 둔근 주변을 통증 없는 범위에서 천천히 움직여 가동 범위와 자세 감각을 확인하는 모빌리티 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
+      cues: [
         "풀스루에서 작은 범위에서 호흡을 멈추지 않기",
         "둔근을 느끼며 끝 범위를 밀지 말고 부드럽게 왕복",
-        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다"
+        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
       ],
-      "benefits": [
+      benefits: [
         "풀스루으로 관절 위치와 범위 인식",
         "둔근을 활용한 편안한 움직임 준비",
-        "둔근의 움직임 경로 인식"
+        "둔근의 움직임 경로 인식",
       ],
-      "warning": "풀스루 중 날카로운 통증, 저림, 방사통, 붓기·열감이 있으면 자가 진행을 멈추고 평가를 우선하세요.",
-      "reference": {
-        "label": "ACSM — Exercise Safety",
-        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
-      }
+      warning:
+        "풀스루 중 날카로운 통증, 저림, 방사통, 붓기·열감이 있으면 자가 진행을 멈추고 평가를 우선하세요.",
+      reference: {
+        label: "ACSM — Exercise Safety",
+        url: "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/",
+      },
     },
-    "detail": {
-      "setup": [
+    detail: {
+      setup: [
         "케이블 높이·핀·손잡이 잠금과 당김 방향을 가벼운 저항으로 시험합니다",
         "발 또는 지지면을 단단히 고정하고 몸통을 길게 세웁니다",
-        "풀스루에 맞춰 편안한 바닥·매트 또는 지지대를 준비합니다"
+        "풀스루에 맞춰 편안한 바닥·매트 또는 지지대를 준비합니다",
       ],
-      "finish": "풀스루을 마친 뒤 중립 자세로 천천히 돌아와 불편감이 남지 않는지 확인합니다.",
-      "commonMistakes": [
+      finish:
+        "풀스루을 마친 뒤 중립 자세로 천천히 돌아와 불편감이 남지 않는지 확인합니다.",
+      commonMistakes: [
         "풀스루에서 끝 범위를 억지로 밀어 통증을 만드는 경우",
         "풀스루에서 호흡을 참거나 반동을 쓰는 경우",
-        "풀스루에서 저림·방사통을 무시하고 지속하는 경우"
+        "풀스루에서 저림·방사통을 무시하고 지속하는 경우",
       ],
-      "regressions": [
+      regressions: [
         "풀스루은 범위와 유지 시간을 줄입니다",
         "풀스루은 벽·의자·블록 같은 지지대를 사용합니다",
-        "풀스루은 누운 또는 앉은 안정된 자세로 바꿉니다"
+        "풀스루은 누운 또는 앉은 안정된 자세로 바꿉니다",
       ],
-      "progressions": [
+      progressions: [
         "풀스루은 다음 날 편안하면 범위만 조금 늘립니다",
         "풀스루은 호흡 주기를 한 번 추가합니다",
-        "풀스루은 지지대는 안정적으로 줄여 갑니다"
-      ]
-    }
+        "풀스루은 지지대는 안정적으로 줄여 갑니다",
+      ],
+    },
   },
   {
-    "exercise": {
-      "id": "verified-reverse-cable-curl",
-      "name": "리버스 케이블 컬",
-      "englishName": "Reverse Cable Curl",
-      "category": "헬스기구",
-      "regions": [
-        "팔"
-      ],
-      "focus": "근력",
-      "difficulty": "입문",
-      "equipment": "케이블 머신·핀",
-      "minutes": "6–12회 · 2세트",
-      "description": "리버스 케이블 컬은 이두근을 중심으로 팔꿈치를 굽히며 도구를 통제하는 팔 굽힘 종목입니다. 반대 방향으로 움직일 때도 어깨·손목 정렬을 먼저 확인합니다",
-      "cues": [
+    exercise: {
+      id: "verified-reverse-cable-curl",
+      name: "리버스 케이블 컬",
+      englishName: "Reverse Cable Curl",
+      category: "헬스기구",
+      regions: ["팔"],
+      focus: "근력",
+      difficulty: "입문",
+      equipment: "케이블 머신·핀",
+      minutes: "6–12회 · 2세트",
+      description:
+        "리버스 케이블 컬은 이두근을 중심으로 팔꿈치를 굽히며 도구를 통제하는 팔 굽힘 종목입니다. 반대 방향으로 움직일 때도 어깨·손목 정렬을 먼저 확인합니다",
+      cues: [
         "리버스 케이블 컬에서 상완을 몸통 가까이에 두고 팔꿈치 위치를 고정",
         "이두근을 느끼며 손목을 꺾지 말고 도구를 부드럽게 들어 올리기",
-        "반대 방향으로 움직일 때도 어깨·손목 정렬을 먼저 확인합니다"
+        "반대 방향으로 움직일 때도 어깨·손목 정렬을 먼저 확인합니다",
       ],
-      "benefits": [
+      benefits: [
         "리버스 케이블 컬으로 팔 굽힘 근육의 제어",
         "이두근을 활용한 전완·그립 안정 인식",
-        "이두근의 움직임 경로 인식"
+        "이두근의 움직임 경로 인식",
       ],
-      "warning": "리버스 케이블 컬 중 팔꿈치·손목의 날카로운 통증, 저림 또는 그립 미끄러짐이 있으면 즉시 중단하세요.",
-      "reference": {
-        "label": "ACSM — Exercise Safety",
-        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
-      }
+      warning:
+        "리버스 케이블 컬 중 팔꿈치·손목의 날카로운 통증, 저림 또는 그립 미끄러짐이 있으면 즉시 중단하세요.",
+      reference: {
+        label: "ACSM — Exercise Safety",
+        url: "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/",
+      },
     },
-    "detail": {
-      "setup": [
+    detail: {
+      setup: [
         "케이블 높이·핀·손잡이 잠금과 당김 방향을 가벼운 저항으로 시험합니다",
         "발 또는 지지면을 단단히 고정하고 몸통을 길게 세웁니다",
-        "리버스 케이블 컬에 맞춰 가벼운 중량을 들고 팔꿈치를 몸통 옆에 둡니다"
+        "리버스 케이블 컬에 맞춰 가벼운 중량을 들고 팔꿈치를 몸통 옆에 둡니다",
       ],
-      "finish": "리버스 케이블 컬을 마친 뒤 팔꿈치를 완전히 잠그지 않는 편안한 아래 범위에서 다음 반복을 준비합니다.",
-      "commonMistakes": [
+      finish:
+        "리버스 케이블 컬을 마친 뒤 팔꿈치를 완전히 잠그지 않는 편안한 아래 범위에서 다음 반복을 준비합니다.",
+      commonMistakes: [
         "리버스 케이블 컬에서 몸통을 뒤로 젖혀 반동을 쓰는 경우",
         "리버스 케이블 컬에서 팔꿈치가 앞으로 크게 이동하는 경우",
-        "리버스 케이블 컬에서 손목을 꺾어 중량을 드는 경우"
+        "리버스 케이블 컬에서 손목을 꺾어 중량을 드는 경우",
       ],
-      "regressions": [
+      regressions: [
         "리버스 케이블 컬은 더 가벼운 도구나 밴드를 사용합니다",
         "리버스 케이블 컬은 시티드 또는 벤치 지지로 몸통 반동을 줄입니다",
-        "리버스 케이블 컬은 아래와 위 범위를 조금 줄입니다"
+        "리버스 케이블 컬은 아래와 위 범위를 조금 줄입니다",
       ],
-      "progressions": [
+      progressions: [
         "리버스 케이블 컬은 반동 없이 반복을 한두 회 늘립니다",
         "리버스 케이블 컬은 그립이 안정되면 중량을 소폭 올립니다",
-        "리버스 케이블 컬은 편측 수행은 몸통이 흔들리지 않을 때 시작합니다"
-      ]
-    }
+        "리버스 케이블 컬은 편측 수행은 몸통이 흔들리지 않을 때 시작합니다",
+      ],
+    },
   },
   {
-    "exercise": {
-      "id": "verified-reverse-grip-triceps-pushdown",
-      "name": "역그립 트라이셉스 푸시다운",
-      "englishName": "Reverse Grip Triceps Pushdown",
-      "category": "헬스기구",
-      "regions": [
-        "팔"
-      ],
-      "focus": "근력",
-      "difficulty": "입문",
-      "equipment": "케이블 머신·핀",
-      "minutes": "6–12회 · 2세트",
-      "description": "역그립 트라이셉스 푸시다운은 삼두근을 사용해 팔꿈치 또는 목표 관절을 펴는 경로를 통제하는 종목입니다. 반대 방향으로 움직일 때도 어깨·손목 정렬을 먼저 확인합니다",
-      "cues": [
+    exercise: {
+      id: "verified-reverse-grip-triceps-pushdown",
+      name: "역그립 트라이셉스 푸시다운",
+      englishName: "Reverse Grip Triceps Pushdown",
+      category: "헬스기구",
+      regions: ["팔"],
+      focus: "근력",
+      difficulty: "입문",
+      equipment: "케이블 머신·핀",
+      minutes: "6–12회 · 2세트",
+      description:
+        "역그립 트라이셉스 푸시다운은 삼두근을 사용해 팔꿈치 또는 목표 관절을 펴는 경로를 통제하는 종목입니다. 반대 방향으로 움직일 때도 어깨·손목 정렬을 먼저 확인합니다",
+      cues: [
         "역그립 트라이셉스 푸시다운에서 관절 축을 고정하고 목표 관절만 부드럽게 펴기",
         "삼두근을 느끼며 어깨와 몸통이 흔들리지 않게 지지 유지",
-        "반대 방향으로 움직일 때도 어깨·손목 정렬을 먼저 확인합니다"
+        "반대 방향으로 움직일 때도 어깨·손목 정렬을 먼저 확인합니다",
       ],
-      "benefits": [
+      benefits: [
         "역그립 트라이셉스 푸시다운으로 관절 폄 경로 제어",
         "삼두근을 활용한 팔 뒤쪽·주변 안정 근육 사용",
-        "삼두근의 움직임 경로 인식"
+        "삼두근의 움직임 경로 인식",
       ],
-      "warning": "역그립 트라이셉스 푸시다운 중 관절 끝의 날카로운 통증, 저림 또는 손잡이 흔들림이 있으면 즉시 중단하세요.",
-      "reference": {
-        "label": "ACSM — Exercise Safety",
-        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
-      }
+      warning:
+        "역그립 트라이셉스 푸시다운 중 관절 끝의 날카로운 통증, 저림 또는 손잡이 흔들림이 있으면 즉시 중단하세요.",
+      reference: {
+        label: "ACSM — Exercise Safety",
+        url: "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/",
+      },
     },
-    "detail": {
-      "setup": [
+    detail: {
+      setup: [
         "케이블 높이·핀·손잡이 잠금과 당김 방향을 가벼운 저항으로 시험합니다",
         "발 또는 지지면을 단단히 고정하고 몸통을 길게 세웁니다",
-        "역그립 트라이셉스 푸시다운에 맞춰 도구·손잡이를 안정적으로 고정하고 관절 축을 맞춥니다"
+        "역그립 트라이셉스 푸시다운에 맞춰 도구·손잡이를 안정적으로 고정하고 관절 축을 맞춥니다",
       ],
-      "finish": "역그립 트라이셉스 푸시다운을 마친 뒤 저항을 천천히 되돌려 관절이 편안한 시작 범위에서 멈춥니다.",
-      "commonMistakes": [
+      finish:
+        "역그립 트라이셉스 푸시다운을 마친 뒤 저항을 천천히 되돌려 관절이 편안한 시작 범위에서 멈춥니다.",
+      commonMistakes: [
         "역그립 트라이셉스 푸시다운에서 어깨와 허리를 함께 흔들어 저항을 넘기는 경우",
         "역그립 트라이셉스 푸시다운에서 관절을 반동으로 끝까지 잠그는 경우",
-        "역그립 트라이셉스 푸시다운에서 손목을 꺾어 힘을 전달하는 경우"
+        "역그립 트라이셉스 푸시다운에서 손목을 꺾어 힘을 전달하는 경우",
       ],
-      "regressions": [
+      regressions: [
         "역그립 트라이셉스 푸시다운은 저항과 범위를 모두 낮춥니다",
         "역그립 트라이셉스 푸시다운은 양손 또는 지지된 자세를 사용합니다",
-        "역그립 트라이셉스 푸시다운은 통증 없는 중간 범위만 수행합니다"
+        "역그립 트라이셉스 푸시다운은 통증 없는 중간 범위만 수행합니다",
       ],
-      "progressions": [
+      progressions: [
         "역그립 트라이셉스 푸시다운은 정렬을 지킨 채 반복을 소폭 늘립니다",
         "역그립 트라이셉스 푸시다운은 저항은 한 단계만 올립니다",
-        "역그립 트라이셉스 푸시다운은 편측·긴 지렛대는 관절이 편안할 때만 시도합니다"
-      ]
-    }
+        "역그립 트라이셉스 푸시다운은 편측·긴 지렛대는 관절이 편안할 때만 시도합니다",
+      ],
+    },
   },
   {
-    "exercise": {
-      "id": "verified-rope-crunch",
-      "name": "로프 크런치",
-      "englishName": "Rope Crunch",
-      "category": "헬스기구",
-      "regions": [
-        "코어"
-      ],
-      "focus": "근력",
-      "difficulty": "입문",
-      "equipment": "케이블 머신·핀",
-      "minutes": "6–12회 · 2세트",
-      "description": "로프 크런치은 복부 주변을 통증 없는 범위에서 천천히 움직여 가동 범위와 자세 감각을 확인하는 모빌리티 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
-      "cues": [
+    exercise: {
+      id: "verified-rope-crunch",
+      name: "로프 크런치",
+      englishName: "Rope Crunch",
+      category: "헬스기구",
+      regions: ["코어"],
+      focus: "근력",
+      difficulty: "입문",
+      equipment: "케이블 머신·핀",
+      minutes: "6–12회 · 2세트",
+      description:
+        "로프 크런치은 복부 주변을 통증 없는 범위에서 천천히 움직여 가동 범위와 자세 감각을 확인하는 모빌리티 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
+      cues: [
         "로프 크런치에서 작은 범위에서 호흡을 멈추지 않기",
         "복부을 느끼며 끝 범위를 밀지 말고 부드럽게 왕복",
-        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다"
+        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
       ],
-      "benefits": [
+      benefits: [
         "로프 크런치으로 관절 위치와 범위 인식",
         "복부을 활용한 편안한 움직임 준비",
-        "복부의 움직임 경로 인식"
+        "복부의 움직임 경로 인식",
       ],
-      "warning": "로프 크런치 중 날카로운 통증, 저림, 방사통, 붓기·열감이 있으면 자가 진행을 멈추고 평가를 우선하세요.",
-      "reference": {
-        "label": "ACSM — Exercise Safety",
-        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
-      }
+      warning:
+        "로프 크런치 중 날카로운 통증, 저림, 방사통, 붓기·열감이 있으면 자가 진행을 멈추고 평가를 우선하세요.",
+      reference: {
+        label: "ACSM — Exercise Safety",
+        url: "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/",
+      },
     },
-    "detail": {
-      "setup": [
+    detail: {
+      setup: [
         "케이블 높이·핀·손잡이 잠금과 당김 방향을 가벼운 저항으로 시험합니다",
         "발 또는 지지면을 단단히 고정하고 몸통을 길게 세웁니다",
-        "로프 크런치에 맞춰 편안한 바닥·매트 또는 지지대를 준비합니다"
+        "로프 크런치에 맞춰 편안한 바닥·매트 또는 지지대를 준비합니다",
       ],
-      "finish": "로프 크런치을 마친 뒤 중립 자세로 천천히 돌아와 불편감이 남지 않는지 확인합니다.",
-      "commonMistakes": [
+      finish:
+        "로프 크런치을 마친 뒤 중립 자세로 천천히 돌아와 불편감이 남지 않는지 확인합니다.",
+      commonMistakes: [
         "로프 크런치에서 끝 범위를 억지로 밀어 통증을 만드는 경우",
         "로프 크런치에서 호흡을 참거나 반동을 쓰는 경우",
-        "로프 크런치에서 저림·방사통을 무시하고 지속하는 경우"
+        "로프 크런치에서 저림·방사통을 무시하고 지속하는 경우",
       ],
-      "regressions": [
+      regressions: [
         "로프 크런치은 범위와 유지 시간을 줄입니다",
         "로프 크런치은 벽·의자·블록 같은 지지대를 사용합니다",
-        "로프 크런치은 누운 또는 앉은 안정된 자세로 바꿉니다"
+        "로프 크런치은 누운 또는 앉은 안정된 자세로 바꿉니다",
       ],
-      "progressions": [
+      progressions: [
         "로프 크런치은 다음 날 편안하면 범위만 조금 늘립니다",
         "로프 크런치은 호흡 주기를 한 번 추가합니다",
-        "로프 크런치은 지지대는 안정적으로 줄여 갑니다"
-      ]
-    }
+        "로프 크런치은 지지대는 안정적으로 줄여 갑니다",
+      ],
+    },
   },
   {
-    "exercise": {
-      "id": "verified-rope-straight-arm-pulldown",
-      "name": "로프 스트레이트암 풀다운",
-      "englishName": "Rope Straight-Arm Pulldown",
-      "category": "헬스기구",
-      "regions": [
-        "등"
-      ],
-      "focus": "근력",
-      "difficulty": "입문",
-      "equipment": "케이블 머신·핀",
-      "minutes": "6–12회 · 2세트",
-      "description": "로프 스트레이트암 풀다운은 광배근을 쓰며 손잡이 또는 도구를 몸 쪽으로 당기고 어깨뼈의 위치를 제어하는 당기기 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
-      "cues": [
+    exercise: {
+      id: "verified-rope-straight-arm-pulldown",
+      name: "로프 스트레이트암 풀다운",
+      englishName: "Rope Straight-Arm Pulldown",
+      category: "헬스기구",
+      regions: ["등"],
+      focus: "근력",
+      difficulty: "입문",
+      equipment: "케이블 머신·핀",
+      minutes: "6–12회 · 2세트",
+      description:
+        "로프 스트레이트암 풀다운은 광배근을 쓰며 손잡이 또는 도구를 몸 쪽으로 당기고 어깨뼈의 위치를 제어하는 당기기 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
+      cues: [
         "로프 스트레이트암 풀다운에서 먼저 어깨를 귀에서 멀리 두고 가슴을 편안히 유지",
         "광배근을 느끼며 팔꿈치를 목적 방향으로 끌되 몸통 반동 줄이기",
-        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다"
+        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
       ],
-      "benefits": [
+      benefits: [
         "로프 스트레이트암 풀다운으로 등·팔의 당기기 협응",
         "광배근을 활용한 견갑 위치 인식",
-        "광배근의 움직임 경로 인식"
+        "광배근의 움직임 경로 인식",
       ],
-      "warning": "로프 스트레이트암 풀다운 중 어깨 앞쪽의 날카로운 통증, 손 저림, 고정점 흔들림 또는 그립 이탈이 있으면 즉시 중단하세요.",
-      "reference": {
-        "label": "ACSM — Exercise Safety",
-        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
-      }
+      warning:
+        "로프 스트레이트암 풀다운 중 어깨 앞쪽의 날카로운 통증, 손 저림, 고정점 흔들림 또는 그립 이탈이 있으면 즉시 중단하세요.",
+      reference: {
+        label: "ACSM — Exercise Safety",
+        url: "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/",
+      },
     },
-    "detail": {
-      "setup": [
+    detail: {
+      setup: [
         "케이블 높이·핀·손잡이 잠금과 당김 방향을 가벼운 저항으로 시험합니다",
         "발 또는 지지면을 단단히 고정하고 몸통을 길게 세웁니다",
-        "로프 스트레이트암 풀다운에 맞춰 그립·바·손잡이 높이와 고정 상태를 확인합니다"
+        "로프 스트레이트암 풀다운에 맞춰 그립·바·손잡이 높이와 고정 상태를 확인합니다",
       ],
-      "finish": "로프 스트레이트암 풀다운을 마친 뒤 팔을 급하게 펴지 말고 어깨가 앞으로 쏠리지 않는 범위에서 시작 위치로 돌아갑니다.",
-      "commonMistakes": [
+      finish:
+        "로프 스트레이트암 풀다운을 마친 뒤 팔을 급하게 펴지 말고 어깨가 앞으로 쏠리지 않는 범위에서 시작 위치로 돌아갑니다.",
+      commonMistakes: [
         "로프 스트레이트암 풀다운에서 어깨를 으쓱한 채 팔만 사용하는 경우",
         "로프 스트레이트암 풀다운에서 몸통을 크게 흔들어 반동을 만드는 경우",
-        "로프 스트레이트암 풀다운에서 팔꿈치를 끝까지 밀어 관절을 잠그는 경우"
+        "로프 스트레이트암 풀다운에서 팔꿈치를 끝까지 밀어 관절을 잠그는 경우",
       ],
-      "regressions": [
+      regressions: [
         "로프 스트레이트암 풀다운은 밴드·보조 장치 또는 더 가벼운 저항을 사용합니다",
         "로프 스트레이트암 풀다운은 지지된 시티드 자세로 몸통 부담을 줄입니다",
-        "로프 스트레이트암 풀다운은 당기는 범위를 짧게 정하고 멈춥니다"
+        "로프 스트레이트암 풀다운은 당기는 범위를 짧게 정하고 멈춥니다",
       ],
-      "progressions": [
+      progressions: [
         "로프 스트레이트암 풀다운은 같은 경로에서 저항을 한 단계만 올립니다",
         "로프 스트레이트암 풀다운은 완전한 어깨 제어가 되면 범위를 조금 늘립니다",
-        "로프 스트레이트암 풀다운은 편측 당김은 몸통 회전을 통제할 수 있을 때 시도합니다"
-      ]
-    }
+        "로프 스트레이트암 풀다운은 편측 당김은 몸통 회전을 통제할 수 있을 때 시도합니다",
+      ],
+    },
   },
   {
-    "exercise": {
-      "id": "verified-seated-cable-shoulder-press",
-      "name": "시티드 케이블 숄더 프레스",
-      "englishName": "Seated Cable Shoulder Press",
-      "category": "헬스기구",
-      "regions": [
-        "어깨"
-      ],
-      "focus": "근력",
-      "difficulty": "입문",
-      "equipment": "케이블 머신·핀",
-      "minutes": "6–12회 · 2세트",
-      "description": "시티드 케이블 숄더 프레스은 어깨을 사용해 손잡이·도구 또는 바닥을 몸에서 멀어지게 미는 상체 밀기 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
-      "cues": [
+    exercise: {
+      id: "verified-seated-cable-shoulder-press",
+      name: "시티드 케이블 숄더 프레스",
+      englishName: "Seated Cable Shoulder Press",
+      category: "헬스기구",
+      regions: ["어깨"],
+      focus: "근력",
+      difficulty: "입문",
+      equipment: "케이블 머신·핀",
+      minutes: "6–12회 · 2세트",
+      description:
+        "시티드 케이블 숄더 프레스은 어깨을 사용해 손잡이·도구 또는 바닥을 몸에서 멀어지게 미는 상체 밀기 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
+      cues: [
         "시티드 케이블 숄더 프레스에서 손목을 중립에 가깝게 두고 손잡이를 안정적으로 잡기",
         "어깨을 느끼며 갈비뼈를 과하게 들지 않고 몸통 길이 유지",
-        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다"
+        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
       ],
-      "benefits": [
+      benefits: [
         "시티드 케이블 숄더 프레스으로 가슴·어깨·팔의 밀기 협응",
         "어깨을 활용한 손목과 견갑 안정 제어",
-        "어깨의 움직임 경로 인식"
+        "어깨의 움직임 경로 인식",
       ],
-      "warning": "시티드 케이블 숄더 프레스 중 어깨·팔꿈치·손목 통증, 저림 또는 도구 흔들림이 있으면 즉시 멈추고 설정을 다시 확인하세요.",
-      "reference": {
-        "label": "ACSM — Exercise Safety",
-        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
-      }
+      warning:
+        "시티드 케이블 숄더 프레스 중 어깨·팔꿈치·손목 통증, 저림 또는 도구 흔들림이 있으면 즉시 멈추고 설정을 다시 확인하세요.",
+      reference: {
+        label: "ACSM — Exercise Safety",
+        url: "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/",
+      },
     },
-    "detail": {
-      "setup": [
+    detail: {
+      setup: [
         "케이블 높이·핀·손잡이 잠금과 당김 방향을 가벼운 저항으로 시험합니다",
         "시티드 자세에서 골반을 등받이 또는 벤치에 안정시킵니다",
-        "시티드 케이블 숄더 프레스에 맞춰 손잡이·바·지지면의 높이와 좌우 설정을 확인합니다"
+        "시티드 케이블 숄더 프레스에 맞춰 손잡이·바·지지면의 높이와 좌우 설정을 확인합니다",
       ],
-      "finish": "시티드 케이블 숄더 프레스을 마친 뒤 팔꿈치를 잠그지 않은 편안한 끝 범위에서 잠시 멈춘 뒤 같은 경로로 돌아옵니다.",
-      "commonMistakes": [
+      finish:
+        "시티드 케이블 숄더 프레스을 마친 뒤 팔꿈치를 잠그지 않은 편안한 끝 범위에서 잠시 멈춘 뒤 같은 경로로 돌아옵니다.",
+      commonMistakes: [
         "시티드 케이블 숄더 프레스에서 어깨가 앞으로 말린 채 밀어 올리는 경우",
         "시티드 케이블 숄더 프레스에서 허리를 과하게 젖혀 무게를 넘기는 경우",
-        "시티드 케이블 숄더 프레스에서 손목을 꺾고 그립을 느슨하게 유지하는 경우"
+        "시티드 케이블 숄더 프레스에서 손목을 꺾고 그립을 느슨하게 유지하는 경우",
       ],
-      "regressions": [
+      regressions: [
         "시티드 케이블 숄더 프레스은 벽·높은 벤치 또는 가벼운 저항으로 바꿉니다",
         "시티드 케이블 숄더 프레스은 가동 범위를 줄이고 어깨 편안함을 확인합니다",
-        "시티드 케이블 숄더 프레스은 양손 지지로 안정성을 먼저 확보합니다"
+        "시티드 케이블 숄더 프레스은 양손 지지로 안정성을 먼저 확보합니다",
       ],
-      "progressions": [
+      progressions: [
         "시티드 케이블 숄더 프레스은 정렬이 유지될 때 반복을 소폭 늘립니다",
         "시티드 케이블 숄더 프레스은 안정된 지지면에서 저항을 한 단계만 올립니다",
-        "시티드 케이블 숄더 프레스은 낮은 지지 또는 편측 변형은 통제 후 시도합니다"
-      ]
-    }
+        "시티드 케이블 숄더 프레스은 낮은 지지 또는 편측 변형은 통제 후 시도합니다",
+      ],
+    },
   },
   {
-    "exercise": {
-      "id": "verified-seated-one-arm-cable-pulley-rows",
-      "name": "시티드 원암 케이블 로우",
-      "englishName": "Seated One-arm Cable Pulley Rows",
-      "category": "헬스기구",
-      "regions": [
-        "등"
-      ],
-      "focus": "근력",
-      "difficulty": "중급",
-      "equipment": "케이블 머신·핀",
-      "minutes": "6–12회 · 2세트",
-      "description": "시티드 원암 케이블 로우은 등 중앙을 쓰며 손잡이 또는 도구를 몸 쪽으로 당기고 어깨뼈의 위치를 제어하는 당기기 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
-      "cues": [
+    exercise: {
+      id: "verified-seated-one-arm-cable-pulley-rows",
+      name: "시티드 원암 케이블 로우",
+      englishName: "Seated One-arm Cable Pulley Rows",
+      category: "헬스기구",
+      regions: ["등"],
+      focus: "근력",
+      difficulty: "중급",
+      equipment: "케이블 머신·핀",
+      minutes: "6–12회 · 2세트",
+      description:
+        "시티드 원암 케이블 로우은 등 중앙을 쓰며 손잡이 또는 도구를 몸 쪽으로 당기고 어깨뼈의 위치를 제어하는 당기기 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
+      cues: [
         "시티드 원암 케이블 로우에서 먼저 어깨를 귀에서 멀리 두고 가슴을 편안히 유지",
         "등 중앙을 느끼며 팔꿈치를 목적 방향으로 끌되 몸통 반동 줄이기",
-        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다"
+        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
       ],
-      "benefits": [
+      benefits: [
         "시티드 원암 케이블 로우으로 등·팔의 당기기 협응",
         "등 중앙을 활용한 견갑 위치 인식",
-        "등 중앙의 움직임 경로 인식"
+        "등 중앙의 움직임 경로 인식",
       ],
-      "warning": "시티드 원암 케이블 로우 중 어깨 앞쪽의 날카로운 통증, 손 저림, 고정점 흔들림 또는 그립 이탈이 있으면 즉시 중단하세요.",
-      "reference": {
-        "label": "ACSM — Exercise Safety",
-        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
-      }
+      warning:
+        "시티드 원암 케이블 로우 중 어깨 앞쪽의 날카로운 통증, 손 저림, 고정점 흔들림 또는 그립 이탈이 있으면 즉시 중단하세요.",
+      reference: {
+        label: "ACSM — Exercise Safety",
+        url: "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/",
+      },
     },
-    "detail": {
-      "setup": [
+    detail: {
+      setup: [
         "케이블 높이·핀·손잡이 잠금과 당김 방향을 가벼운 저항으로 시험합니다",
         "시티드 자세에서 골반을 등받이 또는 벤치에 안정시킵니다",
-        "시티드 원암 케이블 로우에 맞춰 그립·바·손잡이 높이와 고정 상태를 확인합니다"
+        "시티드 원암 케이블 로우에 맞춰 그립·바·손잡이 높이와 고정 상태를 확인합니다",
       ],
-      "finish": "시티드 원암 케이블 로우을 마친 뒤 팔을 급하게 펴지 말고 어깨가 앞으로 쏠리지 않는 범위에서 시작 위치로 돌아갑니다.",
-      "commonMistakes": [
+      finish:
+        "시티드 원암 케이블 로우을 마친 뒤 팔을 급하게 펴지 말고 어깨가 앞으로 쏠리지 않는 범위에서 시작 위치로 돌아갑니다.",
+      commonMistakes: [
         "시티드 원암 케이블 로우에서 어깨를 으쓱한 채 팔만 사용하는 경우",
         "시티드 원암 케이블 로우에서 몸통을 크게 흔들어 반동을 만드는 경우",
-        "시티드 원암 케이블 로우에서 팔꿈치를 끝까지 밀어 관절을 잠그는 경우"
+        "시티드 원암 케이블 로우에서 팔꿈치를 끝까지 밀어 관절을 잠그는 경우",
       ],
-      "regressions": [
+      regressions: [
         "시티드 원암 케이블 로우은 밴드·보조 장치 또는 더 가벼운 저항을 사용합니다",
         "시티드 원암 케이블 로우은 지지된 시티드 자세로 몸통 부담을 줄입니다",
-        "시티드 원암 케이블 로우은 당기는 범위를 짧게 정하고 멈춥니다"
+        "시티드 원암 케이블 로우은 당기는 범위를 짧게 정하고 멈춥니다",
       ],
-      "progressions": [
+      progressions: [
         "시티드 원암 케이블 로우은 같은 경로에서 저항을 한 단계만 올립니다",
         "시티드 원암 케이블 로우은 완전한 어깨 제어가 되면 범위를 조금 늘립니다",
-        "시티드 원암 케이블 로우은 편측 당김은 몸통 회전을 통제할 수 있을 때 시도합니다"
-      ]
-    }
+        "시티드 원암 케이블 로우은 편측 당김은 몸통 회전을 통제할 수 있을 때 시도합니다",
+      ],
+    },
   },
   {
-    "exercise": {
-      "id": "verified-seated-two-arm-palms-up-low-pulley-wrist-curl",
-      "name": "시티드 저풀리 팜업 손목 컬",
-      "englishName": "Seated Two-Arm Palms-Up Low-Pulley Wrist Curl",
-      "category": "헬스기구",
-      "regions": [
-        "팔"
-      ],
-      "focus": "근력",
-      "difficulty": "입문",
-      "equipment": "케이블 머신·핀",
-      "minutes": "6–12회 · 2세트",
-      "description": "시티드 저풀리 팜업 손목 컬은 전완을 중심으로 팔꿈치를 굽히며 도구를 통제하는 팔 굽힘 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
-      "cues": [
+    exercise: {
+      id: "verified-seated-two-arm-palms-up-low-pulley-wrist-curl",
+      name: "시티드 저풀리 팜업 손목 컬",
+      englishName: "Seated Two-Arm Palms-Up Low-Pulley Wrist Curl",
+      category: "헬스기구",
+      regions: ["팔"],
+      focus: "근력",
+      difficulty: "입문",
+      equipment: "케이블 머신·핀",
+      minutes: "6–12회 · 2세트",
+      description:
+        "시티드 저풀리 팜업 손목 컬은 전완을 중심으로 팔꿈치를 굽히며 도구를 통제하는 팔 굽힘 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
+      cues: [
         "시티드 저풀리 팜업 손목 컬에서 상완을 몸통 가까이에 두고 팔꿈치 위치를 고정",
         "전완을 느끼며 손목을 꺾지 말고 도구를 부드럽게 들어 올리기",
-        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다"
+        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
       ],
-      "benefits": [
+      benefits: [
         "시티드 저풀리 팜업 손목 컬으로 팔 굽힘 근육의 제어",
         "전완을 활용한 전완·그립 안정 인식",
-        "전완의 움직임 경로 인식"
+        "전완의 움직임 경로 인식",
       ],
-      "warning": "시티드 저풀리 팜업 손목 컬 중 팔꿈치·손목의 날카로운 통증, 저림 또는 그립 미끄러짐이 있으면 즉시 중단하세요.",
-      "reference": {
-        "label": "ACSM — Exercise Safety",
-        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
-      }
+      warning:
+        "시티드 저풀리 팜업 손목 컬 중 팔꿈치·손목의 날카로운 통증, 저림 또는 그립 미끄러짐이 있으면 즉시 중단하세요.",
+      reference: {
+        label: "ACSM — Exercise Safety",
+        url: "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/",
+      },
     },
-    "detail": {
-      "setup": [
+    detail: {
+      setup: [
         "케이블 높이·핀·손잡이 잠금과 당김 방향을 가벼운 저항으로 시험합니다",
         "시티드 자세에서 골반을 등받이 또는 벤치에 안정시킵니다",
-        "시티드 저풀리 팜업 손목 컬에 맞춰 가벼운 중량을 들고 팔꿈치를 몸통 옆에 둡니다"
+        "시티드 저풀리 팜업 손목 컬에 맞춰 가벼운 중량을 들고 팔꿈치를 몸통 옆에 둡니다",
       ],
-      "finish": "시티드 저풀리 팜업 손목 컬을 마친 뒤 팔꿈치를 완전히 잠그지 않는 편안한 아래 범위에서 다음 반복을 준비합니다.",
-      "commonMistakes": [
+      finish:
+        "시티드 저풀리 팜업 손목 컬을 마친 뒤 팔꿈치를 완전히 잠그지 않는 편안한 아래 범위에서 다음 반복을 준비합니다.",
+      commonMistakes: [
         "시티드 저풀리 팜업 손목 컬에서 몸통을 뒤로 젖혀 반동을 쓰는 경우",
         "시티드 저풀리 팜업 손목 컬에서 팔꿈치가 앞으로 크게 이동하는 경우",
-        "시티드 저풀리 팜업 손목 컬에서 손목을 꺾어 중량을 드는 경우"
+        "시티드 저풀리 팜업 손목 컬에서 손목을 꺾어 중량을 드는 경우",
       ],
-      "regressions": [
+      regressions: [
         "시티드 저풀리 팜업 손목 컬은 더 가벼운 도구나 밴드를 사용합니다",
         "시티드 저풀리 팜업 손목 컬은 시티드 또는 벤치 지지로 몸통 반동을 줄입니다",
-        "시티드 저풀리 팜업 손목 컬은 아래와 위 범위를 조금 줄입니다"
+        "시티드 저풀리 팜업 손목 컬은 아래와 위 범위를 조금 줄입니다",
       ],
-      "progressions": [
+      progressions: [
         "시티드 저풀리 팜업 손목 컬은 반동 없이 반복을 한두 회 늘립니다",
         "시티드 저풀리 팜업 손목 컬은 그립이 안정되면 중량을 소폭 올립니다",
-        "시티드 저풀리 팜업 손목 컬은 편측 수행은 몸통이 흔들리지 않을 때 시작합니다"
-      ]
-    }
+        "시티드 저풀리 팜업 손목 컬은 편측 수행은 몸통이 흔들리지 않을 때 시작합니다",
+      ],
+    },
   },
   {
-    "exercise": {
-      "id": "verified-shotgun-row",
-      "name": "샷건 로우",
-      "englishName": "Shotgun Row",
-      "category": "헬스기구",
-      "regions": [
-        "등"
-      ],
-      "focus": "근력",
-      "difficulty": "입문",
-      "equipment": "케이블 머신·핀",
-      "minutes": "6–12회 · 2세트",
-      "description": "샷건 로우은 광배근을 쓰며 손잡이 또는 도구를 몸 쪽으로 당기고 어깨뼈의 위치를 제어하는 당기기 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
-      "cues": [
+    exercise: {
+      id: "verified-shotgun-row",
+      name: "샷건 로우",
+      englishName: "Shotgun Row",
+      category: "헬스기구",
+      regions: ["등"],
+      focus: "근력",
+      difficulty: "입문",
+      equipment: "케이블 머신·핀",
+      minutes: "6–12회 · 2세트",
+      description:
+        "샷건 로우은 광배근을 쓰며 손잡이 또는 도구를 몸 쪽으로 당기고 어깨뼈의 위치를 제어하는 당기기 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
+      cues: [
         "샷건 로우에서 먼저 어깨를 귀에서 멀리 두고 가슴을 편안히 유지",
         "광배근을 느끼며 팔꿈치를 목적 방향으로 끌되 몸통 반동 줄이기",
-        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다"
+        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
       ],
-      "benefits": [
+      benefits: [
         "샷건 로우으로 등·팔의 당기기 협응",
         "광배근을 활용한 견갑 위치 인식",
-        "광배근의 움직임 경로 인식"
+        "광배근의 움직임 경로 인식",
       ],
-      "warning": "샷건 로우 중 어깨 앞쪽의 날카로운 통증, 손 저림, 고정점 흔들림 또는 그립 이탈이 있으면 즉시 중단하세요.",
-      "reference": {
-        "label": "ACSM — Exercise Safety",
-        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
-      }
+      warning:
+        "샷건 로우 중 어깨 앞쪽의 날카로운 통증, 손 저림, 고정점 흔들림 또는 그립 이탈이 있으면 즉시 중단하세요.",
+      reference: {
+        label: "ACSM — Exercise Safety",
+        url: "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/",
+      },
     },
-    "detail": {
-      "setup": [
+    detail: {
+      setup: [
         "케이블 높이·핀·손잡이 잠금과 당김 방향을 가벼운 저항으로 시험합니다",
         "발 또는 지지면을 단단히 고정하고 몸통을 길게 세웁니다",
-        "샷건 로우에 맞춰 그립·바·손잡이 높이와 고정 상태를 확인합니다"
+        "샷건 로우에 맞춰 그립·바·손잡이 높이와 고정 상태를 확인합니다",
       ],
-      "finish": "샷건 로우을 마친 뒤 팔을 급하게 펴지 말고 어깨가 앞으로 쏠리지 않는 범위에서 시작 위치로 돌아갑니다.",
-      "commonMistakes": [
+      finish:
+        "샷건 로우을 마친 뒤 팔을 급하게 펴지 말고 어깨가 앞으로 쏠리지 않는 범위에서 시작 위치로 돌아갑니다.",
+      commonMistakes: [
         "샷건 로우에서 어깨를 으쓱한 채 팔만 사용하는 경우",
         "샷건 로우에서 몸통을 크게 흔들어 반동을 만드는 경우",
-        "샷건 로우에서 팔꿈치를 끝까지 밀어 관절을 잠그는 경우"
+        "샷건 로우에서 팔꿈치를 끝까지 밀어 관절을 잠그는 경우",
       ],
-      "regressions": [
+      regressions: [
         "샷건 로우은 밴드·보조 장치 또는 더 가벼운 저항을 사용합니다",
         "샷건 로우은 지지된 시티드 자세로 몸통 부담을 줄입니다",
-        "샷건 로우은 당기는 범위를 짧게 정하고 멈춥니다"
+        "샷건 로우은 당기는 범위를 짧게 정하고 멈춥니다",
       ],
-      "progressions": [
+      progressions: [
         "샷건 로우은 같은 경로에서 저항을 한 단계만 올립니다",
         "샷건 로우은 완전한 어깨 제어가 되면 범위를 조금 늘립니다",
-        "샷건 로우은 편측 당김은 몸통 회전을 통제할 수 있을 때 시도합니다"
-      ]
-    }
+        "샷건 로우은 편측 당김은 몸통 회전을 통제할 수 있을 때 시도합니다",
+      ],
+    },
   },
   {
-    "exercise": {
-      "id": "verified-single-arm-cable-crossover",
-      "name": "싱글암 케이블 크로스오버",
-      "englishName": "Single-Arm Cable Crossover",
-      "category": "헬스기구",
-      "regions": [
-        "가슴"
-      ],
-      "focus": "근력",
-      "difficulty": "입문",
-      "equipment": "케이블 머신·핀",
-      "minutes": "6–12회 · 2세트",
-      "description": "싱글암 케이블 크로스오버은 가슴 주변을 통증 없는 범위에서 천천히 움직여 가동 범위와 자세 감각을 확인하는 모빌리티 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
-      "cues": [
+    exercise: {
+      id: "verified-single-arm-cable-crossover",
+      name: "싱글암 케이블 크로스오버",
+      englishName: "Single-Arm Cable Crossover",
+      category: "헬스기구",
+      regions: ["가슴"],
+      focus: "근력",
+      difficulty: "입문",
+      equipment: "케이블 머신·핀",
+      minutes: "6–12회 · 2세트",
+      description:
+        "싱글암 케이블 크로스오버은 가슴 주변을 통증 없는 범위에서 천천히 움직여 가동 범위와 자세 감각을 확인하는 모빌리티 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
+      cues: [
         "싱글암 케이블 크로스오버에서 작은 범위에서 호흡을 멈추지 않기",
         "가슴을 느끼며 끝 범위를 밀지 말고 부드럽게 왕복",
-        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다"
+        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
       ],
-      "benefits": [
+      benefits: [
         "싱글암 케이블 크로스오버으로 관절 위치와 범위 인식",
         "가슴을 활용한 편안한 움직임 준비",
-        "가슴의 움직임 경로 인식"
+        "가슴의 움직임 경로 인식",
       ],
-      "warning": "싱글암 케이블 크로스오버 중 날카로운 통증, 저림, 방사통, 붓기·열감이 있으면 자가 진행을 멈추고 평가를 우선하세요.",
-      "reference": {
-        "label": "ACSM — Exercise Safety",
-        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
-      }
+      warning:
+        "싱글암 케이블 크로스오버 중 날카로운 통증, 저림, 방사통, 붓기·열감이 있으면 자가 진행을 멈추고 평가를 우선하세요.",
+      reference: {
+        label: "ACSM — Exercise Safety",
+        url: "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/",
+      },
     },
-    "detail": {
-      "setup": [
+    detail: {
+      setup: [
         "케이블 높이·핀·손잡이 잠금과 당김 방향을 가벼운 저항으로 시험합니다",
         "발 또는 지지면을 단단히 고정하고 몸통을 길게 세웁니다",
-        "싱글암 케이블 크로스오버에 맞춰 편안한 바닥·매트 또는 지지대를 준비합니다"
+        "싱글암 케이블 크로스오버에 맞춰 편안한 바닥·매트 또는 지지대를 준비합니다",
       ],
-      "finish": "싱글암 케이블 크로스오버을 마친 뒤 중립 자세로 천천히 돌아와 불편감이 남지 않는지 확인합니다.",
-      "commonMistakes": [
+      finish:
+        "싱글암 케이블 크로스오버을 마친 뒤 중립 자세로 천천히 돌아와 불편감이 남지 않는지 확인합니다.",
+      commonMistakes: [
         "싱글암 케이블 크로스오버에서 끝 범위를 억지로 밀어 통증을 만드는 경우",
         "싱글암 케이블 크로스오버에서 호흡을 참거나 반동을 쓰는 경우",
-        "싱글암 케이블 크로스오버에서 저림·방사통을 무시하고 지속하는 경우"
+        "싱글암 케이블 크로스오버에서 저림·방사통을 무시하고 지속하는 경우",
       ],
-      "regressions": [
+      regressions: [
         "싱글암 케이블 크로스오버은 범위와 유지 시간을 줄입니다",
         "싱글암 케이블 크로스오버은 벽·의자·블록 같은 지지대를 사용합니다",
-        "싱글암 케이블 크로스오버은 누운 또는 앉은 안정된 자세로 바꿉니다"
+        "싱글암 케이블 크로스오버은 누운 또는 앉은 안정된 자세로 바꿉니다",
       ],
-      "progressions": [
+      progressions: [
         "싱글암 케이블 크로스오버은 다음 날 편안하면 범위만 조금 늘립니다",
         "싱글암 케이블 크로스오버은 호흡 주기를 한 번 추가합니다",
-        "싱글암 케이블 크로스오버은 지지대는 안정적으로 줄여 갑니다"
-      ]
-    }
+        "싱글암 케이블 크로스오버은 지지대는 안정적으로 줄여 갑니다",
+      ],
+    },
   },
   {
-    "exercise": {
-      "id": "verified-standing-biceps-cable-curl",
-      "name": "스탠딩 케이블 이두 컬",
-      "englishName": "Standing Biceps Cable Curl",
-      "category": "헬스기구",
-      "regions": [
-        "팔"
-      ],
-      "focus": "근력",
-      "difficulty": "입문",
-      "equipment": "케이블 머신·핀",
-      "minutes": "6–12회 · 2세트",
-      "description": "스탠딩 케이블 이두 컬은 이두근을 중심으로 팔꿈치를 굽히며 도구를 통제하는 팔 굽힘 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
-      "cues": [
+    exercise: {
+      id: "verified-standing-biceps-cable-curl",
+      name: "스탠딩 케이블 이두 컬",
+      englishName: "Standing Biceps Cable Curl",
+      category: "헬스기구",
+      regions: ["팔"],
+      focus: "근력",
+      difficulty: "입문",
+      equipment: "케이블 머신·핀",
+      minutes: "6–12회 · 2세트",
+      description:
+        "스탠딩 케이블 이두 컬은 이두근을 중심으로 팔꿈치를 굽히며 도구를 통제하는 팔 굽힘 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
+      cues: [
         "스탠딩 케이블 이두 컬에서 상완을 몸통 가까이에 두고 팔꿈치 위치를 고정",
         "이두근을 느끼며 손목을 꺾지 말고 도구를 부드럽게 들어 올리기",
-        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다"
+        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
       ],
-      "benefits": [
+      benefits: [
         "스탠딩 케이블 이두 컬으로 팔 굽힘 근육의 제어",
         "이두근을 활용한 전완·그립 안정 인식",
-        "이두근의 움직임 경로 인식"
+        "이두근의 움직임 경로 인식",
       ],
-      "warning": "스탠딩 케이블 이두 컬 중 팔꿈치·손목의 날카로운 통증, 저림 또는 그립 미끄러짐이 있으면 즉시 중단하세요.",
-      "reference": {
-        "label": "ACSM — Exercise Safety",
-        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
-      }
+      warning:
+        "스탠딩 케이블 이두 컬 중 팔꿈치·손목의 날카로운 통증, 저림 또는 그립 미끄러짐이 있으면 즉시 중단하세요.",
+      reference: {
+        label: "ACSM — Exercise Safety",
+        url: "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/",
+      },
     },
-    "detail": {
-      "setup": [
+    detail: {
+      setup: [
         "케이블 높이·핀·손잡이 잠금과 당김 방향을 가벼운 저항으로 시험합니다",
         "발 또는 지지면을 단단히 고정하고 몸통을 길게 세웁니다",
-        "스탠딩 케이블 이두 컬에 맞춰 가벼운 중량을 들고 팔꿈치를 몸통 옆에 둡니다"
+        "스탠딩 케이블 이두 컬에 맞춰 가벼운 중량을 들고 팔꿈치를 몸통 옆에 둡니다",
       ],
-      "finish": "스탠딩 케이블 이두 컬을 마친 뒤 팔꿈치를 완전히 잠그지 않는 편안한 아래 범위에서 다음 반복을 준비합니다.",
-      "commonMistakes": [
+      finish:
+        "스탠딩 케이블 이두 컬을 마친 뒤 팔꿈치를 완전히 잠그지 않는 편안한 아래 범위에서 다음 반복을 준비합니다.",
+      commonMistakes: [
         "스탠딩 케이블 이두 컬에서 몸통을 뒤로 젖혀 반동을 쓰는 경우",
         "스탠딩 케이블 이두 컬에서 팔꿈치가 앞으로 크게 이동하는 경우",
-        "스탠딩 케이블 이두 컬에서 손목을 꺾어 중량을 드는 경우"
+        "스탠딩 케이블 이두 컬에서 손목을 꺾어 중량을 드는 경우",
       ],
-      "regressions": [
+      regressions: [
         "스탠딩 케이블 이두 컬은 더 가벼운 도구나 밴드를 사용합니다",
         "스탠딩 케이블 이두 컬은 시티드 또는 벤치 지지로 몸통 반동을 줄입니다",
-        "스탠딩 케이블 이두 컬은 아래와 위 범위를 조금 줄입니다"
+        "스탠딩 케이블 이두 컬은 아래와 위 범위를 조금 줄입니다",
       ],
-      "progressions": [
+      progressions: [
         "스탠딩 케이블 이두 컬은 반동 없이 반복을 한두 회 늘립니다",
         "스탠딩 케이블 이두 컬은 그립이 안정되면 중량을 소폭 올립니다",
-        "스탠딩 케이블 이두 컬은 편측 수행은 몸통이 흔들리지 않을 때 시작합니다"
-      ]
-    }
+        "스탠딩 케이블 이두 컬은 편측 수행은 몸통이 흔들리지 않을 때 시작합니다",
+      ],
+    },
   },
   {
-    "exercise": {
-      "id": "verified-standing-cable-chest-press",
-      "name": "스탠딩 케이블 체스트 프레스",
-      "englishName": "Standing Cable Chest Press",
-      "category": "헬스기구",
-      "regions": [
-        "가슴"
-      ],
-      "focus": "근력",
-      "difficulty": "입문",
-      "equipment": "케이블 머신·핀",
-      "minutes": "6–12회 · 2세트",
-      "description": "스탠딩 케이블 체스트 프레스은 가슴을 사용해 손잡이·도구 또는 바닥을 몸에서 멀어지게 미는 상체 밀기 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
-      "cues": [
+    exercise: {
+      id: "verified-standing-cable-chest-press",
+      name: "스탠딩 케이블 체스트 프레스",
+      englishName: "Standing Cable Chest Press",
+      category: "헬스기구",
+      regions: ["가슴"],
+      focus: "근력",
+      difficulty: "입문",
+      equipment: "케이블 머신·핀",
+      minutes: "6–12회 · 2세트",
+      description:
+        "스탠딩 케이블 체스트 프레스은 가슴을 사용해 손잡이·도구 또는 바닥을 몸에서 멀어지게 미는 상체 밀기 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
+      cues: [
         "스탠딩 케이블 체스트 프레스에서 손목을 중립에 가깝게 두고 손잡이를 안정적으로 잡기",
         "가슴을 느끼며 갈비뼈를 과하게 들지 않고 몸통 길이 유지",
-        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다"
+        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
       ],
-      "benefits": [
+      benefits: [
         "스탠딩 케이블 체스트 프레스으로 가슴·어깨·팔의 밀기 협응",
         "가슴을 활용한 손목과 견갑 안정 제어",
-        "가슴의 움직임 경로 인식"
+        "가슴의 움직임 경로 인식",
       ],
-      "warning": "스탠딩 케이블 체스트 프레스 중 어깨·팔꿈치·손목 통증, 저림 또는 도구 흔들림이 있으면 즉시 멈추고 설정을 다시 확인하세요.",
-      "reference": {
-        "label": "ACSM — Exercise Safety",
-        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
-      }
+      warning:
+        "스탠딩 케이블 체스트 프레스 중 어깨·팔꿈치·손목 통증, 저림 또는 도구 흔들림이 있으면 즉시 멈추고 설정을 다시 확인하세요.",
+      reference: {
+        label: "ACSM — Exercise Safety",
+        url: "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/",
+      },
     },
-    "detail": {
-      "setup": [
+    detail: {
+      setup: [
         "케이블 높이·핀·손잡이 잠금과 당김 방향을 가벼운 저항으로 시험합니다",
         "발 또는 지지면을 단단히 고정하고 몸통을 길게 세웁니다",
-        "스탠딩 케이블 체스트 프레스에 맞춰 손잡이·바·지지면의 높이와 좌우 설정을 확인합니다"
+        "스탠딩 케이블 체스트 프레스에 맞춰 손잡이·바·지지면의 높이와 좌우 설정을 확인합니다",
       ],
-      "finish": "스탠딩 케이블 체스트 프레스을 마친 뒤 팔꿈치를 잠그지 않은 편안한 끝 범위에서 잠시 멈춘 뒤 같은 경로로 돌아옵니다.",
-      "commonMistakes": [
+      finish:
+        "스탠딩 케이블 체스트 프레스을 마친 뒤 팔꿈치를 잠그지 않은 편안한 끝 범위에서 잠시 멈춘 뒤 같은 경로로 돌아옵니다.",
+      commonMistakes: [
         "스탠딩 케이블 체스트 프레스에서 어깨가 앞으로 말린 채 밀어 올리는 경우",
         "스탠딩 케이블 체스트 프레스에서 허리를 과하게 젖혀 무게를 넘기는 경우",
-        "스탠딩 케이블 체스트 프레스에서 손목을 꺾고 그립을 느슨하게 유지하는 경우"
+        "스탠딩 케이블 체스트 프레스에서 손목을 꺾고 그립을 느슨하게 유지하는 경우",
       ],
-      "regressions": [
+      regressions: [
         "스탠딩 케이블 체스트 프레스은 벽·높은 벤치 또는 가벼운 저항으로 바꿉니다",
         "스탠딩 케이블 체스트 프레스은 가동 범위를 줄이고 어깨 편안함을 확인합니다",
-        "스탠딩 케이블 체스트 프레스은 양손 지지로 안정성을 먼저 확보합니다"
+        "스탠딩 케이블 체스트 프레스은 양손 지지로 안정성을 먼저 확보합니다",
       ],
-      "progressions": [
+      progressions: [
         "스탠딩 케이블 체스트 프레스은 정렬이 유지될 때 반복을 소폭 늘립니다",
         "스탠딩 케이블 체스트 프레스은 안정된 지지면에서 저항을 한 단계만 올립니다",
-        "스탠딩 케이블 체스트 프레스은 낮은 지지 또는 편측 변형은 통제 후 시도합니다"
-      ]
-    }
+        "스탠딩 케이블 체스트 프레스은 낮은 지지 또는 편측 변형은 통제 후 시도합니다",
+      ],
+    },
   },
   {
-    "exercise": {
-      "id": "verified-standing-cable-lift",
-      "name": "스탠딩 케이블 리프트",
-      "englishName": "Standing Cable Lift",
-      "category": "헬스기구",
-      "regions": [
-        "코어"
-      ],
-      "focus": "근력",
-      "difficulty": "입문",
-      "equipment": "케이블 머신·핀",
-      "minutes": "6–12회 · 2세트",
-      "description": "스탠딩 케이블 리프트은 복부 주변을 통증 없는 범위에서 천천히 움직여 가동 범위와 자세 감각을 확인하는 모빌리티 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
-      "cues": [
+    exercise: {
+      id: "verified-standing-cable-lift",
+      name: "스탠딩 케이블 리프트",
+      englishName: "Standing Cable Lift",
+      category: "헬스기구",
+      regions: ["코어"],
+      focus: "근력",
+      difficulty: "입문",
+      equipment: "케이블 머신·핀",
+      minutes: "6–12회 · 2세트",
+      description:
+        "스탠딩 케이블 리프트은 복부 주변을 통증 없는 범위에서 천천히 움직여 가동 범위와 자세 감각을 확인하는 모빌리티 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
+      cues: [
         "스탠딩 케이블 리프트에서 작은 범위에서 호흡을 멈추지 않기",
         "복부을 느끼며 끝 범위를 밀지 말고 부드럽게 왕복",
-        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다"
+        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
       ],
-      "benefits": [
+      benefits: [
         "스탠딩 케이블 리프트으로 관절 위치와 범위 인식",
         "복부을 활용한 편안한 움직임 준비",
-        "복부의 움직임 경로 인식"
+        "복부의 움직임 경로 인식",
       ],
-      "warning": "스탠딩 케이블 리프트 중 날카로운 통증, 저림, 방사통, 붓기·열감이 있으면 자가 진행을 멈추고 평가를 우선하세요.",
-      "reference": {
-        "label": "ACSM — Exercise Safety",
-        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
-      }
+      warning:
+        "스탠딩 케이블 리프트 중 날카로운 통증, 저림, 방사통, 붓기·열감이 있으면 자가 진행을 멈추고 평가를 우선하세요.",
+      reference: {
+        label: "ACSM — Exercise Safety",
+        url: "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/",
+      },
     },
-    "detail": {
-      "setup": [
+    detail: {
+      setup: [
         "케이블 높이·핀·손잡이 잠금과 당김 방향을 가벼운 저항으로 시험합니다",
         "발 또는 지지면을 단단히 고정하고 몸통을 길게 세웁니다",
-        "스탠딩 케이블 리프트에 맞춰 편안한 바닥·매트 또는 지지대를 준비합니다"
+        "스탠딩 케이블 리프트에 맞춰 편안한 바닥·매트 또는 지지대를 준비합니다",
       ],
-      "finish": "스탠딩 케이블 리프트을 마친 뒤 중립 자세로 천천히 돌아와 불편감이 남지 않는지 확인합니다.",
-      "commonMistakes": [
+      finish:
+        "스탠딩 케이블 리프트을 마친 뒤 중립 자세로 천천히 돌아와 불편감이 남지 않는지 확인합니다.",
+      commonMistakes: [
         "스탠딩 케이블 리프트에서 끝 범위를 억지로 밀어 통증을 만드는 경우",
         "스탠딩 케이블 리프트에서 호흡을 참거나 반동을 쓰는 경우",
-        "스탠딩 케이블 리프트에서 저림·방사통을 무시하고 지속하는 경우"
+        "스탠딩 케이블 리프트에서 저림·방사통을 무시하고 지속하는 경우",
       ],
-      "regressions": [
+      regressions: [
         "스탠딩 케이블 리프트은 범위와 유지 시간을 줄입니다",
         "스탠딩 케이블 리프트은 벽·의자·블록 같은 지지대를 사용합니다",
-        "스탠딩 케이블 리프트은 누운 또는 앉은 안정된 자세로 바꿉니다"
+        "스탠딩 케이블 리프트은 누운 또는 앉은 안정된 자세로 바꿉니다",
       ],
-      "progressions": [
+      progressions: [
         "스탠딩 케이블 리프트은 다음 날 편안하면 범위만 조금 늘립니다",
         "스탠딩 케이블 리프트은 호흡 주기를 한 번 추가합니다",
-        "스탠딩 케이블 리프트은 지지대는 안정적으로 줄여 갑니다"
-      ]
-    }
+        "스탠딩 케이블 리프트은 지지대는 안정적으로 줄여 갑니다",
+      ],
+    },
   },
   {
-    "exercise": {
-      "id": "verified-standing-cable-wood-chop",
-      "name": "스탠딩 케이블 우드초프",
-      "englishName": "Standing Cable Wood Chop",
-      "category": "헬스기구",
-      "regions": [
-        "코어"
-      ],
-      "focus": "근력",
-      "difficulty": "입문",
-      "equipment": "케이블 머신·핀",
-      "minutes": "6–12회 · 2세트",
-      "description": "스탠딩 케이블 우드초프은 복부 주변을 통증 없는 범위에서 천천히 움직여 가동 범위와 자세 감각을 확인하는 모빌리티 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
-      "cues": [
+    exercise: {
+      id: "verified-standing-cable-wood-chop",
+      name: "스탠딩 케이블 우드초프",
+      englishName: "Standing Cable Wood Chop",
+      category: "헬스기구",
+      regions: ["코어"],
+      focus: "근력",
+      difficulty: "입문",
+      equipment: "케이블 머신·핀",
+      minutes: "6–12회 · 2세트",
+      description:
+        "스탠딩 케이블 우드초프은 복부 주변을 통증 없는 범위에서 천천히 움직여 가동 범위와 자세 감각을 확인하는 모빌리티 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
+      cues: [
         "스탠딩 케이블 우드초프에서 작은 범위에서 호흡을 멈추지 않기",
         "복부을 느끼며 끝 범위를 밀지 말고 부드럽게 왕복",
-        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다"
+        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
       ],
-      "benefits": [
+      benefits: [
         "스탠딩 케이블 우드초프으로 관절 위치와 범위 인식",
         "복부을 활용한 편안한 움직임 준비",
-        "복부의 움직임 경로 인식"
+        "복부의 움직임 경로 인식",
       ],
-      "warning": "스탠딩 케이블 우드초프 중 날카로운 통증, 저림, 방사통, 붓기·열감이 있으면 자가 진행을 멈추고 평가를 우선하세요.",
-      "reference": {
-        "label": "ACSM — Exercise Safety",
-        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
-      }
+      warning:
+        "스탠딩 케이블 우드초프 중 날카로운 통증, 저림, 방사통, 붓기·열감이 있으면 자가 진행을 멈추고 평가를 우선하세요.",
+      reference: {
+        label: "ACSM — Exercise Safety",
+        url: "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/",
+      },
     },
-    "detail": {
-      "setup": [
+    detail: {
+      setup: [
         "케이블 높이·핀·손잡이 잠금과 당김 방향을 가벼운 저항으로 시험합니다",
         "발 또는 지지면을 단단히 고정하고 몸통을 길게 세웁니다",
-        "스탠딩 케이블 우드초프에 맞춰 편안한 바닥·매트 또는 지지대를 준비합니다"
+        "스탠딩 케이블 우드초프에 맞춰 편안한 바닥·매트 또는 지지대를 준비합니다",
       ],
-      "finish": "스탠딩 케이블 우드초프을 마친 뒤 중립 자세로 천천히 돌아와 불편감이 남지 않는지 확인합니다.",
-      "commonMistakes": [
+      finish:
+        "스탠딩 케이블 우드초프을 마친 뒤 중립 자세로 천천히 돌아와 불편감이 남지 않는지 확인합니다.",
+      commonMistakes: [
         "스탠딩 케이블 우드초프에서 끝 범위를 억지로 밀어 통증을 만드는 경우",
         "스탠딩 케이블 우드초프에서 호흡을 참거나 반동을 쓰는 경우",
-        "스탠딩 케이블 우드초프에서 저림·방사통을 무시하고 지속하는 경우"
+        "스탠딩 케이블 우드초프에서 저림·방사통을 무시하고 지속하는 경우",
       ],
-      "regressions": [
+      regressions: [
         "스탠딩 케이블 우드초프은 범위와 유지 시간을 줄입니다",
         "스탠딩 케이블 우드초프은 벽·의자·블록 같은 지지대를 사용합니다",
-        "스탠딩 케이블 우드초프은 누운 또는 앉은 안정된 자세로 바꿉니다"
+        "스탠딩 케이블 우드초프은 누운 또는 앉은 안정된 자세로 바꿉니다",
       ],
-      "progressions": [
+      progressions: [
         "스탠딩 케이블 우드초프은 다음 날 편안하면 범위만 조금 늘립니다",
         "스탠딩 케이블 우드초프은 호흡 주기를 한 번 추가합니다",
-        "스탠딩 케이블 우드초프은 지지대는 안정적으로 줄여 갑니다"
-      ]
-    }
+        "스탠딩 케이블 우드초프은 지지대는 안정적으로 줄여 갑니다",
+      ],
+    },
   },
   {
-    "exercise": {
-      "id": "verified-standing-low-pulley-deltoid-raise",
-      "name": "스탠딩 저풀리 델토이드 레이즈",
-      "englishName": "Standing Low-Pulley Deltoid Raise",
-      "category": "헬스기구",
-      "regions": [
-        "어깨"
-      ],
-      "focus": "근력",
-      "difficulty": "입문",
-      "equipment": "케이블 머신·핀",
-      "minutes": "6–12회 · 2세트",
-      "description": "스탠딩 저풀리 델토이드 레이즈은 어깨을 사용해 팔 또는 도구를 정해진 평면으로 들어 올리며 어깨 위치를 제어하는 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
-      "cues": [
+    exercise: {
+      id: "verified-standing-low-pulley-deltoid-raise",
+      name: "스탠딩 저풀리 델토이드 레이즈",
+      englishName: "Standing Low-Pulley Deltoid Raise",
+      category: "헬스기구",
+      regions: ["어깨"],
+      focus: "근력",
+      difficulty: "입문",
+      equipment: "케이블 머신·핀",
+      minutes: "6–12회 · 2세트",
+      description:
+        "스탠딩 저풀리 델토이드 레이즈은 어깨을 사용해 팔 또는 도구를 정해진 평면으로 들어 올리며 어깨 위치를 제어하는 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
+      cues: [
         "스탠딩 저풀리 델토이드 레이즈에서 어깨를 귀에서 멀리 두고 목을 길게 유지",
         "어깨을 느끼며 도구를 몸에서 너무 멀리 보내지 않기",
-        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다"
+        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
       ],
-      "benefits": [
+      benefits: [
         "스탠딩 저풀리 델토이드 레이즈으로 어깨 주변의 제어",
         "어깨을 활용한 팔과 견갑의 협응",
-        "어깨의 움직임 경로 인식"
+        "어깨의 움직임 경로 인식",
       ],
-      "warning": "스탠딩 저풀리 델토이드 레이즈 중 어깨 위쪽 통증, 목 긴장, 저림 또는 반동이 생기면 즉시 범위·저항을 낮추거나 중단하세요.",
-      "reference": {
-        "label": "ACSM — Exercise Safety",
-        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
-      }
+      warning:
+        "스탠딩 저풀리 델토이드 레이즈 중 어깨 위쪽 통증, 목 긴장, 저림 또는 반동이 생기면 즉시 범위·저항을 낮추거나 중단하세요.",
+      reference: {
+        label: "ACSM — Exercise Safety",
+        url: "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/",
+      },
     },
-    "detail": {
-      "setup": [
+    detail: {
+      setup: [
         "케이블 높이·핀·손잡이 잠금과 당김 방향을 가벼운 저항으로 시험합니다",
         "발 또는 지지면을 단단히 고정하고 몸통을 길게 세웁니다",
-        "스탠딩 저풀리 델토이드 레이즈에 맞춰 낮은 중량으로 시작하고 양발 또는 벤치 지지로 균형을 만듭니다"
+        "스탠딩 저풀리 델토이드 레이즈에 맞춰 낮은 중량으로 시작하고 양발 또는 벤치 지지로 균형을 만듭니다",
       ],
-      "finish": "스탠딩 저풀리 델토이드 레이즈을 마친 뒤 어깨가 앞으로 밀리지 않게 도구를 몸 옆으로 통제해 되돌립니다.",
-      "commonMistakes": [
+      finish:
+        "스탠딩 저풀리 델토이드 레이즈을 마친 뒤 어깨가 앞으로 밀리지 않게 도구를 몸 옆으로 통제해 되돌립니다.",
+      commonMistakes: [
         "스탠딩 저풀리 델토이드 레이즈에서 어깨를 으쓱하며 목에 힘을 주는 경우",
         "스탠딩 저풀리 델토이드 레이즈에서 반동으로 도구를 목표 높이보다 높게 던지는 경우",
-        "스탠딩 저풀리 델토이드 레이즈에서 손목을 꺾어 도구를 지지하는 경우"
+        "스탠딩 저풀리 델토이드 레이즈에서 손목을 꺾어 도구를 지지하는 경우",
       ],
-      "regressions": [
+      regressions: [
         "스탠딩 저풀리 델토이드 레이즈은 중량을 낮추거나 한 팔씩 지지된 자세로 수행합니다",
         "스탠딩 저풀리 델토이드 레이즈은 들기 높이를 어깨 아래로 줄입니다",
-        "스탠딩 저풀리 델토이드 레이즈은 밴드 또는 더 짧은 지렛대를 사용합니다"
+        "스탠딩 저풀리 델토이드 레이즈은 밴드 또는 더 짧은 지렛대를 사용합니다",
       ],
-      "progressions": [
+      progressions: [
         "스탠딩 저풀리 델토이드 레이즈은 동일한 높이와 정렬에서 반복을 늘립니다",
         "스탠딩 저풀리 델토이드 레이즈은 작은 중량 증가를 한 번만 적용합니다",
-        "스탠딩 저풀리 델토이드 레이즈은 편측·인클라인 변형은 어깨가 편안할 때 시도합니다"
-      ]
-    }
+        "스탠딩 저풀리 델토이드 레이즈은 편측·인클라인 변형은 어깨가 편안할 때 시도합니다",
+      ],
+    },
   },
   {
-    "exercise": {
-      "id": "verified-standing-low-pulley-one-arm-triceps-extension",
-      "name": "스탠딩 저풀리 원암 삼두 익스텐션",
-      "englishName": "Standing Low-Pulley One-Arm Triceps Extension",
-      "category": "헬스기구",
-      "regions": [
-        "팔"
-      ],
-      "focus": "근력",
-      "difficulty": "중급",
-      "equipment": "케이블 머신·핀",
-      "minutes": "6–12회 · 2세트",
-      "description": "스탠딩 저풀리 원암 삼두 익스텐션은 삼두근을 사용해 팔꿈치 또는 목표 관절을 펴는 경로를 통제하는 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
-      "cues": [
+    exercise: {
+      id: "verified-standing-low-pulley-one-arm-triceps-extension",
+      name: "스탠딩 저풀리 원암 삼두 익스텐션",
+      englishName: "Standing Low-Pulley One-Arm Triceps Extension",
+      category: "헬스기구",
+      regions: ["팔"],
+      focus: "근력",
+      difficulty: "중급",
+      equipment: "케이블 머신·핀",
+      minutes: "6–12회 · 2세트",
+      description:
+        "스탠딩 저풀리 원암 삼두 익스텐션은 삼두근을 사용해 팔꿈치 또는 목표 관절을 펴는 경로를 통제하는 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
+      cues: [
         "스탠딩 저풀리 원암 삼두 익스텐션에서 관절 축을 고정하고 목표 관절만 부드럽게 펴기",
         "삼두근을 느끼며 어깨와 몸통이 흔들리지 않게 지지 유지",
-        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다"
+        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
       ],
-      "benefits": [
+      benefits: [
         "스탠딩 저풀리 원암 삼두 익스텐션으로 관절 폄 경로 제어",
         "삼두근을 활용한 팔 뒤쪽·주변 안정 근육 사용",
-        "삼두근의 움직임 경로 인식"
+        "삼두근의 움직임 경로 인식",
       ],
-      "warning": "스탠딩 저풀리 원암 삼두 익스텐션 중 관절 끝의 날카로운 통증, 저림 또는 손잡이 흔들림이 있으면 즉시 중단하세요.",
-      "reference": {
-        "label": "ACSM — Exercise Safety",
-        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
-      }
+      warning:
+        "스탠딩 저풀리 원암 삼두 익스텐션 중 관절 끝의 날카로운 통증, 저림 또는 손잡이 흔들림이 있으면 즉시 중단하세요.",
+      reference: {
+        label: "ACSM — Exercise Safety",
+        url: "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/",
+      },
     },
-    "detail": {
-      "setup": [
+    detail: {
+      setup: [
         "케이블 높이·핀·손잡이 잠금과 당김 방향을 가벼운 저항으로 시험합니다",
         "작동하지 않는 쪽의 손·발 또는 벤치 지지로 몸통 회전을 줄입니다",
-        "스탠딩 저풀리 원암 삼두 익스텐션에 맞춰 도구·손잡이를 안정적으로 고정하고 관절 축을 맞춥니다"
+        "스탠딩 저풀리 원암 삼두 익스텐션에 맞춰 도구·손잡이를 안정적으로 고정하고 관절 축을 맞춥니다",
       ],
-      "finish": "스탠딩 저풀리 원암 삼두 익스텐션을 마친 뒤 저항을 천천히 되돌려 관절이 편안한 시작 범위에서 멈춥니다.",
-      "commonMistakes": [
+      finish:
+        "스탠딩 저풀리 원암 삼두 익스텐션을 마친 뒤 저항을 천천히 되돌려 관절이 편안한 시작 범위에서 멈춥니다.",
+      commonMistakes: [
         "스탠딩 저풀리 원암 삼두 익스텐션에서 어깨와 허리를 함께 흔들어 저항을 넘기는 경우",
         "스탠딩 저풀리 원암 삼두 익스텐션에서 관절을 반동으로 끝까지 잠그는 경우",
-        "스탠딩 저풀리 원암 삼두 익스텐션에서 손목을 꺾어 힘을 전달하는 경우"
+        "스탠딩 저풀리 원암 삼두 익스텐션에서 손목을 꺾어 힘을 전달하는 경우",
       ],
-      "regressions": [
+      regressions: [
         "스탠딩 저풀리 원암 삼두 익스텐션은 저항과 범위를 모두 낮춥니다",
         "스탠딩 저풀리 원암 삼두 익스텐션은 양손 또는 지지된 자세를 사용합니다",
-        "스탠딩 저풀리 원암 삼두 익스텐션은 통증 없는 중간 범위만 수행합니다"
+        "스탠딩 저풀리 원암 삼두 익스텐션은 통증 없는 중간 범위만 수행합니다",
       ],
-      "progressions": [
+      progressions: [
         "스탠딩 저풀리 원암 삼두 익스텐션은 정렬을 지킨 채 반복을 소폭 늘립니다",
         "스탠딩 저풀리 원암 삼두 익스텐션은 저항은 한 단계만 올립니다",
-        "스탠딩 저풀리 원암 삼두 익스텐션은 편측·긴 지렛대는 관절이 편안할 때만 시도합니다"
-      ]
-    }
+        "스탠딩 저풀리 원암 삼두 익스텐션은 편측·긴 지렛대는 관절이 편안할 때만 시도합니다",
+      ],
+    },
   },
   {
-    "exercise": {
-      "id": "verified-standing-one-arm-cable-curl",
-      "name": "스탠딩 원암 케이블 컬",
-      "englishName": "Standing One-Arm Cable Curl",
-      "category": "헬스기구",
-      "regions": [
-        "팔"
-      ],
-      "focus": "근력",
-      "difficulty": "중급",
-      "equipment": "케이블 머신·핀",
-      "minutes": "6–12회 · 2세트",
-      "description": "스탠딩 원암 케이블 컬은 이두근을 중심으로 팔꿈치를 굽히며 도구를 통제하는 팔 굽힘 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
-      "cues": [
+    exercise: {
+      id: "verified-standing-one-arm-cable-curl",
+      name: "스탠딩 원암 케이블 컬",
+      englishName: "Standing One-Arm Cable Curl",
+      category: "헬스기구",
+      regions: ["팔"],
+      focus: "근력",
+      difficulty: "중급",
+      equipment: "케이블 머신·핀",
+      minutes: "6–12회 · 2세트",
+      description:
+        "스탠딩 원암 케이블 컬은 이두근을 중심으로 팔꿈치를 굽히며 도구를 통제하는 팔 굽힘 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
+      cues: [
         "스탠딩 원암 케이블 컬에서 상완을 몸통 가까이에 두고 팔꿈치 위치를 고정",
         "이두근을 느끼며 손목을 꺾지 말고 도구를 부드럽게 들어 올리기",
-        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다"
+        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
       ],
-      "benefits": [
+      benefits: [
         "스탠딩 원암 케이블 컬으로 팔 굽힘 근육의 제어",
         "이두근을 활용한 전완·그립 안정 인식",
-        "이두근의 움직임 경로 인식"
+        "이두근의 움직임 경로 인식",
       ],
-      "warning": "스탠딩 원암 케이블 컬 중 팔꿈치·손목의 날카로운 통증, 저림 또는 그립 미끄러짐이 있으면 즉시 중단하세요.",
-      "reference": {
-        "label": "ACSM — Exercise Safety",
-        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
-      }
+      warning:
+        "스탠딩 원암 케이블 컬 중 팔꿈치·손목의 날카로운 통증, 저림 또는 그립 미끄러짐이 있으면 즉시 중단하세요.",
+      reference: {
+        label: "ACSM — Exercise Safety",
+        url: "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/",
+      },
     },
-    "detail": {
-      "setup": [
+    detail: {
+      setup: [
         "케이블 높이·핀·손잡이 잠금과 당김 방향을 가벼운 저항으로 시험합니다",
         "작동하지 않는 쪽의 손·발 또는 벤치 지지로 몸통 회전을 줄입니다",
-        "스탠딩 원암 케이블 컬에 맞춰 가벼운 중량을 들고 팔꿈치를 몸통 옆에 둡니다"
+        "스탠딩 원암 케이블 컬에 맞춰 가벼운 중량을 들고 팔꿈치를 몸통 옆에 둡니다",
       ],
-      "finish": "스탠딩 원암 케이블 컬을 마친 뒤 팔꿈치를 완전히 잠그지 않는 편안한 아래 범위에서 다음 반복을 준비합니다.",
-      "commonMistakes": [
+      finish:
+        "스탠딩 원암 케이블 컬을 마친 뒤 팔꿈치를 완전히 잠그지 않는 편안한 아래 범위에서 다음 반복을 준비합니다.",
+      commonMistakes: [
         "스탠딩 원암 케이블 컬에서 몸통을 뒤로 젖혀 반동을 쓰는 경우",
         "스탠딩 원암 케이블 컬에서 팔꿈치가 앞으로 크게 이동하는 경우",
-        "스탠딩 원암 케이블 컬에서 손목을 꺾어 중량을 드는 경우"
+        "스탠딩 원암 케이블 컬에서 손목을 꺾어 중량을 드는 경우",
       ],
-      "regressions": [
+      regressions: [
         "스탠딩 원암 케이블 컬은 더 가벼운 도구나 밴드를 사용합니다",
         "스탠딩 원암 케이블 컬은 시티드 또는 벤치 지지로 몸통 반동을 줄입니다",
-        "스탠딩 원암 케이블 컬은 아래와 위 범위를 조금 줄입니다"
+        "스탠딩 원암 케이블 컬은 아래와 위 범위를 조금 줄입니다",
       ],
-      "progressions": [
+      progressions: [
         "스탠딩 원암 케이블 컬은 반동 없이 반복을 한두 회 늘립니다",
         "스탠딩 원암 케이블 컬은 그립이 안정되면 중량을 소폭 올립니다",
-        "스탠딩 원암 케이블 컬은 편측 수행은 몸통이 흔들리지 않을 때 시작합니다"
-      ]
-    }
+        "스탠딩 원암 케이블 컬은 편측 수행은 몸통이 흔들리지 않을 때 시작합니다",
+      ],
+    },
   },
   {
-    "exercise": {
-      "id": "verified-standing-rope-crunch",
-      "name": "스탠딩 로프 크런치",
-      "englishName": "Standing Rope Crunch",
-      "category": "헬스기구",
-      "regions": [
-        "코어"
-      ],
-      "focus": "근력",
-      "difficulty": "입문",
-      "equipment": "케이블 머신·핀",
-      "minutes": "6–12회 · 2세트",
-      "description": "스탠딩 로프 크런치은 복부 주변을 통증 없는 범위에서 천천히 움직여 가동 범위와 자세 감각을 확인하는 모빌리티 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
-      "cues": [
+    exercise: {
+      id: "verified-standing-rope-crunch",
+      name: "스탠딩 로프 크런치",
+      englishName: "Standing Rope Crunch",
+      category: "헬스기구",
+      regions: ["코어"],
+      focus: "근력",
+      difficulty: "입문",
+      equipment: "케이블 머신·핀",
+      minutes: "6–12회 · 2세트",
+      description:
+        "스탠딩 로프 크런치은 복부 주변을 통증 없는 범위에서 천천히 움직여 가동 범위와 자세 감각을 확인하는 모빌리티 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
+      cues: [
         "스탠딩 로프 크런치에서 작은 범위에서 호흡을 멈추지 않기",
         "복부을 느끼며 끝 범위를 밀지 말고 부드럽게 왕복",
-        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다"
+        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
       ],
-      "benefits": [
+      benefits: [
         "스탠딩 로프 크런치으로 관절 위치와 범위 인식",
         "복부을 활용한 편안한 움직임 준비",
-        "복부의 움직임 경로 인식"
+        "복부의 움직임 경로 인식",
       ],
-      "warning": "스탠딩 로프 크런치 중 날카로운 통증, 저림, 방사통, 붓기·열감이 있으면 자가 진행을 멈추고 평가를 우선하세요.",
-      "reference": {
-        "label": "ACSM — Exercise Safety",
-        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
-      }
+      warning:
+        "스탠딩 로프 크런치 중 날카로운 통증, 저림, 방사통, 붓기·열감이 있으면 자가 진행을 멈추고 평가를 우선하세요.",
+      reference: {
+        label: "ACSM — Exercise Safety",
+        url: "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/",
+      },
     },
-    "detail": {
-      "setup": [
+    detail: {
+      setup: [
         "케이블 높이·핀·손잡이 잠금과 당김 방향을 가벼운 저항으로 시험합니다",
         "발 또는 지지면을 단단히 고정하고 몸통을 길게 세웁니다",
-        "스탠딩 로프 크런치에 맞춰 편안한 바닥·매트 또는 지지대를 준비합니다"
+        "스탠딩 로프 크런치에 맞춰 편안한 바닥·매트 또는 지지대를 준비합니다",
       ],
-      "finish": "스탠딩 로프 크런치을 마친 뒤 중립 자세로 천천히 돌아와 불편감이 남지 않는지 확인합니다.",
-      "commonMistakes": [
+      finish:
+        "스탠딩 로프 크런치을 마친 뒤 중립 자세로 천천히 돌아와 불편감이 남지 않는지 확인합니다.",
+      commonMistakes: [
         "스탠딩 로프 크런치에서 끝 범위를 억지로 밀어 통증을 만드는 경우",
         "스탠딩 로프 크런치에서 호흡을 참거나 반동을 쓰는 경우",
-        "스탠딩 로프 크런치에서 저림·방사통을 무시하고 지속하는 경우"
+        "스탠딩 로프 크런치에서 저림·방사통을 무시하고 지속하는 경우",
       ],
-      "regressions": [
+      regressions: [
         "스탠딩 로프 크런치은 범위와 유지 시간을 줄입니다",
         "스탠딩 로프 크런치은 벽·의자·블록 같은 지지대를 사용합니다",
-        "스탠딩 로프 크런치은 누운 또는 앉은 안정된 자세로 바꿉니다"
+        "스탠딩 로프 크런치은 누운 또는 앉은 안정된 자세로 바꿉니다",
       ],
-      "progressions": [
+      progressions: [
         "스탠딩 로프 크런치은 다음 날 편안하면 범위만 조금 늘립니다",
         "스탠딩 로프 크런치은 호흡 주기를 한 번 추가합니다",
-        "스탠딩 로프 크런치은 지지대는 안정적으로 줄여 갑니다"
-      ]
-    }
+        "스탠딩 로프 크런치은 지지대는 안정적으로 줄여 갑니다",
+      ],
+    },
   },
   {
-    "exercise": {
-      "id": "verified-straight-arm-pulldown",
-      "name": "스트레이트암 풀다운",
-      "englishName": "Straight-Arm Pulldown",
-      "category": "헬스기구",
-      "regions": [
-        "등"
-      ],
-      "focus": "근력",
-      "difficulty": "입문",
-      "equipment": "케이블 머신·핀",
-      "minutes": "6–12회 · 2세트",
-      "description": "스트레이트암 풀다운은 광배근을 쓰며 손잡이 또는 도구를 몸 쪽으로 당기고 어깨뼈의 위치를 제어하는 당기기 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
-      "cues": [
+    exercise: {
+      id: "verified-straight-arm-pulldown",
+      name: "스트레이트암 풀다운",
+      englishName: "Straight-Arm Pulldown",
+      category: "헬스기구",
+      regions: ["등"],
+      focus: "근력",
+      difficulty: "입문",
+      equipment: "케이블 머신·핀",
+      minutes: "6–12회 · 2세트",
+      description:
+        "스트레이트암 풀다운은 광배근을 쓰며 손잡이 또는 도구를 몸 쪽으로 당기고 어깨뼈의 위치를 제어하는 당기기 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
+      cues: [
         "스트레이트암 풀다운에서 먼저 어깨를 귀에서 멀리 두고 가슴을 편안히 유지",
         "광배근을 느끼며 팔꿈치를 목적 방향으로 끌되 몸통 반동 줄이기",
-        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다"
+        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
       ],
-      "benefits": [
+      benefits: [
         "스트레이트암 풀다운으로 등·팔의 당기기 협응",
         "광배근을 활용한 견갑 위치 인식",
-        "광배근의 움직임 경로 인식"
+        "광배근의 움직임 경로 인식",
       ],
-      "warning": "스트레이트암 풀다운 중 어깨 앞쪽의 날카로운 통증, 손 저림, 고정점 흔들림 또는 그립 이탈이 있으면 즉시 중단하세요.",
-      "reference": {
-        "label": "ACSM — Exercise Safety",
-        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
-      }
+      warning:
+        "스트레이트암 풀다운 중 어깨 앞쪽의 날카로운 통증, 손 저림, 고정점 흔들림 또는 그립 이탈이 있으면 즉시 중단하세요.",
+      reference: {
+        label: "ACSM — Exercise Safety",
+        url: "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/",
+      },
     },
-    "detail": {
-      "setup": [
+    detail: {
+      setup: [
         "케이블 높이·핀·손잡이 잠금과 당김 방향을 가벼운 저항으로 시험합니다",
         "발 또는 지지면을 단단히 고정하고 몸통을 길게 세웁니다",
-        "스트레이트암 풀다운에 맞춰 그립·바·손잡이 높이와 고정 상태를 확인합니다"
+        "스트레이트암 풀다운에 맞춰 그립·바·손잡이 높이와 고정 상태를 확인합니다",
       ],
-      "finish": "스트레이트암 풀다운을 마친 뒤 팔을 급하게 펴지 말고 어깨가 앞으로 쏠리지 않는 범위에서 시작 위치로 돌아갑니다.",
-      "commonMistakes": [
+      finish:
+        "스트레이트암 풀다운을 마친 뒤 팔을 급하게 펴지 말고 어깨가 앞으로 쏠리지 않는 범위에서 시작 위치로 돌아갑니다.",
+      commonMistakes: [
         "스트레이트암 풀다운에서 어깨를 으쓱한 채 팔만 사용하는 경우",
         "스트레이트암 풀다운에서 몸통을 크게 흔들어 반동을 만드는 경우",
-        "스트레이트암 풀다운에서 팔꿈치를 끝까지 밀어 관절을 잠그는 경우"
+        "스트레이트암 풀다운에서 팔꿈치를 끝까지 밀어 관절을 잠그는 경우",
       ],
-      "regressions": [
+      regressions: [
         "스트레이트암 풀다운은 밴드·보조 장치 또는 더 가벼운 저항을 사용합니다",
         "스트레이트암 풀다운은 지지된 시티드 자세로 몸통 부담을 줄입니다",
-        "스트레이트암 풀다운은 당기는 범위를 짧게 정하고 멈춥니다"
+        "스트레이트암 풀다운은 당기는 범위를 짧게 정하고 멈춥니다",
       ],
-      "progressions": [
+      progressions: [
         "스트레이트암 풀다운은 같은 경로에서 저항을 한 단계만 올립니다",
         "스트레이트암 풀다운은 완전한 어깨 제어가 되면 범위를 조금 늘립니다",
-        "스트레이트암 풀다운은 편측 당김은 몸통 회전을 통제할 수 있을 때 시도합니다"
-      ]
-    }
+        "스트레이트암 풀다운은 편측 당김은 몸통 회전을 통제할 수 있을 때 시도합니다",
+      ],
+    },
   },
   {
-    "exercise": {
-      "id": "verified-triceps-overhead-extension-with-rope",
-      "name": "로프 오버헤드 삼두 익스텐션",
-      "englishName": "Triceps Overhead Extension with Rope",
-      "category": "헬스기구",
-      "regions": [
-        "팔"
-      ],
-      "focus": "근력",
-      "difficulty": "입문",
-      "equipment": "케이블 머신·핀",
-      "minutes": "6–12회 · 2세트",
-      "description": "로프 오버헤드 삼두 익스텐션은 삼두근을 사용해 팔꿈치 또는 목표 관절을 펴는 경로를 통제하는 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
-      "cues": [
+    exercise: {
+      id: "verified-triceps-overhead-extension-with-rope",
+      name: "로프 오버헤드 삼두 익스텐션",
+      englishName: "Triceps Overhead Extension with Rope",
+      category: "헬스기구",
+      regions: ["팔"],
+      focus: "근력",
+      difficulty: "입문",
+      equipment: "케이블 머신·핀",
+      minutes: "6–12회 · 2세트",
+      description:
+        "로프 오버헤드 삼두 익스텐션은 삼두근을 사용해 팔꿈치 또는 목표 관절을 펴는 경로를 통제하는 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
+      cues: [
         "로프 오버헤드 삼두 익스텐션에서 관절 축을 고정하고 목표 관절만 부드럽게 펴기",
         "삼두근을 느끼며 어깨와 몸통이 흔들리지 않게 지지 유지",
-        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다"
+        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
       ],
-      "benefits": [
+      benefits: [
         "로프 오버헤드 삼두 익스텐션으로 관절 폄 경로 제어",
         "삼두근을 활용한 팔 뒤쪽·주변 안정 근육 사용",
-        "삼두근의 움직임 경로 인식"
+        "삼두근의 움직임 경로 인식",
       ],
-      "warning": "로프 오버헤드 삼두 익스텐션 중 관절 끝의 날카로운 통증, 저림 또는 손잡이 흔들림이 있으면 즉시 중단하세요.",
-      "reference": {
-        "label": "ACSM — Exercise Safety",
-        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
-      }
+      warning:
+        "로프 오버헤드 삼두 익스텐션 중 관절 끝의 날카로운 통증, 저림 또는 손잡이 흔들림이 있으면 즉시 중단하세요.",
+      reference: {
+        label: "ACSM — Exercise Safety",
+        url: "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/",
+      },
     },
-    "detail": {
-      "setup": [
+    detail: {
+      setup: [
         "케이블 높이·핀·손잡이 잠금과 당김 방향을 가벼운 저항으로 시험합니다",
         "발 또는 지지면을 단단히 고정하고 몸통을 길게 세웁니다",
-        "로프 오버헤드 삼두 익스텐션에 맞춰 도구·손잡이를 안정적으로 고정하고 관절 축을 맞춥니다"
+        "로프 오버헤드 삼두 익스텐션에 맞춰 도구·손잡이를 안정적으로 고정하고 관절 축을 맞춥니다",
       ],
-      "finish": "로프 오버헤드 삼두 익스텐션을 마친 뒤 저항을 천천히 되돌려 관절이 편안한 시작 범위에서 멈춥니다.",
-      "commonMistakes": [
+      finish:
+        "로프 오버헤드 삼두 익스텐션을 마친 뒤 저항을 천천히 되돌려 관절이 편안한 시작 범위에서 멈춥니다.",
+      commonMistakes: [
         "로프 오버헤드 삼두 익스텐션에서 어깨와 허리를 함께 흔들어 저항을 넘기는 경우",
         "로프 오버헤드 삼두 익스텐션에서 관절을 반동으로 끝까지 잠그는 경우",
-        "로프 오버헤드 삼두 익스텐션에서 손목을 꺾어 힘을 전달하는 경우"
+        "로프 오버헤드 삼두 익스텐션에서 손목을 꺾어 힘을 전달하는 경우",
       ],
-      "regressions": [
+      regressions: [
         "로프 오버헤드 삼두 익스텐션은 저항과 범위를 모두 낮춥니다",
         "로프 오버헤드 삼두 익스텐션은 양손 또는 지지된 자세를 사용합니다",
-        "로프 오버헤드 삼두 익스텐션은 통증 없는 중간 범위만 수행합니다"
+        "로프 오버헤드 삼두 익스텐션은 통증 없는 중간 범위만 수행합니다",
       ],
-      "progressions": [
+      progressions: [
         "로프 오버헤드 삼두 익스텐션은 정렬을 지킨 채 반복을 소폭 늘립니다",
         "로프 오버헤드 삼두 익스텐션은 저항은 한 단계만 올립니다",
-        "로프 오버헤드 삼두 익스텐션은 편측·긴 지렛대는 관절이 편안할 때만 시도합니다"
-      ]
-    }
+        "로프 오버헤드 삼두 익스텐션은 편측·긴 지렛대는 관절이 편안할 때만 시도합니다",
+      ],
+    },
   },
   {
-    "exercise": {
-      "id": "verified-triceps-pushdown",
-      "name": "삼두 푸시다운",
-      "englishName": "Triceps Pushdown",
-      "category": "헬스기구",
-      "regions": [
-        "팔"
-      ],
-      "focus": "근력",
-      "difficulty": "입문",
-      "equipment": "케이블 머신·핀",
-      "minutes": "6–12회 · 2세트",
-      "description": "삼두 푸시다운은 삼두근을 사용해 팔꿈치 또는 목표 관절을 펴는 경로를 통제하는 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
-      "cues": [
+    exercise: {
+      id: "verified-triceps-pushdown",
+      name: "삼두 푸시다운",
+      englishName: "Triceps Pushdown",
+      category: "헬스기구",
+      regions: ["팔"],
+      focus: "근력",
+      difficulty: "입문",
+      equipment: "케이블 머신·핀",
+      minutes: "6–12회 · 2세트",
+      description:
+        "삼두 푸시다운은 삼두근을 사용해 팔꿈치 또는 목표 관절을 펴는 경로를 통제하는 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
+      cues: [
         "삼두 푸시다운에서 관절 축을 고정하고 목표 관절만 부드럽게 펴기",
         "삼두근을 느끼며 어깨와 몸통이 흔들리지 않게 지지 유지",
-        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다"
+        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
       ],
-      "benefits": [
+      benefits: [
         "삼두 푸시다운으로 관절 폄 경로 제어",
         "삼두근을 활용한 팔 뒤쪽·주변 안정 근육 사용",
-        "삼두근의 움직임 경로 인식"
+        "삼두근의 움직임 경로 인식",
       ],
-      "warning": "삼두 푸시다운 중 관절 끝의 날카로운 통증, 저림 또는 손잡이 흔들림이 있으면 즉시 중단하세요.",
-      "reference": {
-        "label": "ACSM — Exercise Safety",
-        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
-      }
+      warning:
+        "삼두 푸시다운 중 관절 끝의 날카로운 통증, 저림 또는 손잡이 흔들림이 있으면 즉시 중단하세요.",
+      reference: {
+        label: "ACSM — Exercise Safety",
+        url: "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/",
+      },
     },
-    "detail": {
-      "setup": [
+    detail: {
+      setup: [
         "케이블 높이·핀·손잡이 잠금과 당김 방향을 가벼운 저항으로 시험합니다",
         "발 또는 지지면을 단단히 고정하고 몸통을 길게 세웁니다",
-        "삼두 푸시다운에 맞춰 도구·손잡이를 안정적으로 고정하고 관절 축을 맞춥니다"
+        "삼두 푸시다운에 맞춰 도구·손잡이를 안정적으로 고정하고 관절 축을 맞춥니다",
       ],
-      "finish": "삼두 푸시다운을 마친 뒤 저항을 천천히 되돌려 관절이 편안한 시작 범위에서 멈춥니다.",
-      "commonMistakes": [
+      finish:
+        "삼두 푸시다운을 마친 뒤 저항을 천천히 되돌려 관절이 편안한 시작 범위에서 멈춥니다.",
+      commonMistakes: [
         "삼두 푸시다운에서 어깨와 허리를 함께 흔들어 저항을 넘기는 경우",
         "삼두 푸시다운에서 관절을 반동으로 끝까지 잠그는 경우",
-        "삼두 푸시다운에서 손목을 꺾어 힘을 전달하는 경우"
+        "삼두 푸시다운에서 손목을 꺾어 힘을 전달하는 경우",
       ],
-      "regressions": [
+      regressions: [
         "삼두 푸시다운은 저항과 범위를 모두 낮춥니다",
         "삼두 푸시다운은 양손 또는 지지된 자세를 사용합니다",
-        "삼두 푸시다운은 통증 없는 중간 범위만 수행합니다"
+        "삼두 푸시다운은 통증 없는 중간 범위만 수행합니다",
       ],
-      "progressions": [
+      progressions: [
         "삼두 푸시다운은 정렬을 지킨 채 반복을 소폭 늘립니다",
         "삼두 푸시다운은 저항은 한 단계만 올립니다",
-        "삼두 푸시다운은 편측·긴 지렛대는 관절이 편안할 때만 시도합니다"
-      ]
-    }
+        "삼두 푸시다운은 편측·긴 지렛대는 관절이 편안할 때만 시도합니다",
+      ],
+    },
   },
   {
-    "exercise": {
-      "id": "verified-triceps-pushdown-rope-attachment",
-      "name": "로프 트라이셉스 푸시다운",
-      "englishName": "Triceps Pushdown - Rope Attachment",
-      "category": "헬스기구",
-      "regions": [
-        "팔"
-      ],
-      "focus": "근력",
-      "difficulty": "입문",
-      "equipment": "케이블 머신·핀",
-      "minutes": "6–12회 · 2세트",
-      "description": "로프 트라이셉스 푸시다운은 삼두근을 사용해 팔꿈치 또는 목표 관절을 펴는 경로를 통제하는 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
-      "cues": [
+    exercise: {
+      id: "verified-triceps-pushdown-rope-attachment",
+      name: "로프 트라이셉스 푸시다운",
+      englishName: "Triceps Pushdown - Rope Attachment",
+      category: "헬스기구",
+      regions: ["팔"],
+      focus: "근력",
+      difficulty: "입문",
+      equipment: "케이블 머신·핀",
+      minutes: "6–12회 · 2세트",
+      description:
+        "로프 트라이셉스 푸시다운은 삼두근을 사용해 팔꿈치 또는 목표 관절을 펴는 경로를 통제하는 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
+      cues: [
         "로프 트라이셉스 푸시다운에서 관절 축을 고정하고 목표 관절만 부드럽게 펴기",
         "삼두근을 느끼며 어깨와 몸통이 흔들리지 않게 지지 유지",
-        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다"
+        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
       ],
-      "benefits": [
+      benefits: [
         "로프 트라이셉스 푸시다운으로 관절 폄 경로 제어",
         "삼두근을 활용한 팔 뒤쪽·주변 안정 근육 사용",
-        "삼두근의 움직임 경로 인식"
+        "삼두근의 움직임 경로 인식",
       ],
-      "warning": "로프 트라이셉스 푸시다운 중 관절 끝의 날카로운 통증, 저림 또는 손잡이 흔들림이 있으면 즉시 중단하세요.",
-      "reference": {
-        "label": "ACSM — Exercise Safety",
-        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
-      }
+      warning:
+        "로프 트라이셉스 푸시다운 중 관절 끝의 날카로운 통증, 저림 또는 손잡이 흔들림이 있으면 즉시 중단하세요.",
+      reference: {
+        label: "ACSM — Exercise Safety",
+        url: "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/",
+      },
     },
-    "detail": {
-      "setup": [
+    detail: {
+      setup: [
         "케이블 높이·핀·손잡이 잠금과 당김 방향을 가벼운 저항으로 시험합니다",
         "발 또는 지지면을 단단히 고정하고 몸통을 길게 세웁니다",
-        "로프 트라이셉스 푸시다운에 맞춰 도구·손잡이를 안정적으로 고정하고 관절 축을 맞춥니다"
+        "로프 트라이셉스 푸시다운에 맞춰 도구·손잡이를 안정적으로 고정하고 관절 축을 맞춥니다",
       ],
-      "finish": "로프 트라이셉스 푸시다운을 마친 뒤 저항을 천천히 되돌려 관절이 편안한 시작 범위에서 멈춥니다.",
-      "commonMistakes": [
+      finish:
+        "로프 트라이셉스 푸시다운을 마친 뒤 저항을 천천히 되돌려 관절이 편안한 시작 범위에서 멈춥니다.",
+      commonMistakes: [
         "로프 트라이셉스 푸시다운에서 어깨와 허리를 함께 흔들어 저항을 넘기는 경우",
         "로프 트라이셉스 푸시다운에서 관절을 반동으로 끝까지 잠그는 경우",
-        "로프 트라이셉스 푸시다운에서 손목을 꺾어 힘을 전달하는 경우"
+        "로프 트라이셉스 푸시다운에서 손목을 꺾어 힘을 전달하는 경우",
       ],
-      "regressions": [
+      regressions: [
         "로프 트라이셉스 푸시다운은 저항과 범위를 모두 낮춥니다",
         "로프 트라이셉스 푸시다운은 양손 또는 지지된 자세를 사용합니다",
-        "로프 트라이셉스 푸시다운은 통증 없는 중간 범위만 수행합니다"
+        "로프 트라이셉스 푸시다운은 통증 없는 중간 범위만 수행합니다",
       ],
-      "progressions": [
+      progressions: [
         "로프 트라이셉스 푸시다운은 정렬을 지킨 채 반복을 소폭 늘립니다",
         "로프 트라이셉스 푸시다운은 저항은 한 단계만 올립니다",
-        "로프 트라이셉스 푸시다운은 편측·긴 지렛대는 관절이 편안할 때만 시도합니다"
-      ]
-    }
+        "로프 트라이셉스 푸시다운은 편측·긴 지렛대는 관절이 편안할 때만 시도합니다",
+      ],
+    },
   },
   {
-    "exercise": {
-      "id": "verified-triceps-pushdown-v-bar-attachment",
-      "name": "V바 트라이셉스 푸시다운",
-      "englishName": "Triceps Pushdown - V-Bar Attachment",
-      "category": "헬스기구",
-      "regions": [
-        "팔"
-      ],
-      "focus": "근력",
-      "difficulty": "입문",
-      "equipment": "케이블 머신·핀",
-      "minutes": "6–12회 · 2세트",
-      "description": "V바 트라이셉스 푸시다운은 삼두근을 사용해 팔꿈치 또는 목표 관절을 펴는 경로를 통제하는 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
-      "cues": [
+    exercise: {
+      id: "verified-triceps-pushdown-v-bar-attachment",
+      name: "V바 트라이셉스 푸시다운",
+      englishName: "Triceps Pushdown - V-Bar Attachment",
+      category: "헬스기구",
+      regions: ["팔"],
+      focus: "근력",
+      difficulty: "입문",
+      equipment: "케이블 머신·핀",
+      minutes: "6–12회 · 2세트",
+      description:
+        "V바 트라이셉스 푸시다운은 삼두근을 사용해 팔꿈치 또는 목표 관절을 펴는 경로를 통제하는 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
+      cues: [
         "V바 트라이셉스 푸시다운에서 관절 축을 고정하고 목표 관절만 부드럽게 펴기",
         "삼두근을 느끼며 어깨와 몸통이 흔들리지 않게 지지 유지",
-        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다"
+        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
       ],
-      "benefits": [
+      benefits: [
         "V바 트라이셉스 푸시다운으로 관절 폄 경로 제어",
         "삼두근을 활용한 팔 뒤쪽·주변 안정 근육 사용",
-        "삼두근의 움직임 경로 인식"
+        "삼두근의 움직임 경로 인식",
       ],
-      "warning": "V바 트라이셉스 푸시다운 중 관절 끝의 날카로운 통증, 저림 또는 손잡이 흔들림이 있으면 즉시 중단하세요.",
-      "reference": {
-        "label": "ACSM — Exercise Safety",
-        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
-      }
+      warning:
+        "V바 트라이셉스 푸시다운 중 관절 끝의 날카로운 통증, 저림 또는 손잡이 흔들림이 있으면 즉시 중단하세요.",
+      reference: {
+        label: "ACSM — Exercise Safety",
+        url: "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/",
+      },
     },
-    "detail": {
-      "setup": [
+    detail: {
+      setup: [
         "케이블 높이·핀·손잡이 잠금과 당김 방향을 가벼운 저항으로 시험합니다",
         "발 또는 지지면을 단단히 고정하고 몸통을 길게 세웁니다",
-        "V바 트라이셉스 푸시다운에 맞춰 도구·손잡이를 안정적으로 고정하고 관절 축을 맞춥니다"
+        "V바 트라이셉스 푸시다운에 맞춰 도구·손잡이를 안정적으로 고정하고 관절 축을 맞춥니다",
       ],
-      "finish": "V바 트라이셉스 푸시다운을 마친 뒤 저항을 천천히 되돌려 관절이 편안한 시작 범위에서 멈춥니다.",
-      "commonMistakes": [
+      finish:
+        "V바 트라이셉스 푸시다운을 마친 뒤 저항을 천천히 되돌려 관절이 편안한 시작 범위에서 멈춥니다.",
+      commonMistakes: [
         "V바 트라이셉스 푸시다운에서 어깨와 허리를 함께 흔들어 저항을 넘기는 경우",
         "V바 트라이셉스 푸시다운에서 관절을 반동으로 끝까지 잠그는 경우",
-        "V바 트라이셉스 푸시다운에서 손목을 꺾어 힘을 전달하는 경우"
+        "V바 트라이셉스 푸시다운에서 손목을 꺾어 힘을 전달하는 경우",
       ],
-      "regressions": [
+      regressions: [
         "V바 트라이셉스 푸시다운은 저항과 범위를 모두 낮춥니다",
         "V바 트라이셉스 푸시다운은 양손 또는 지지된 자세를 사용합니다",
-        "V바 트라이셉스 푸시다운은 통증 없는 중간 범위만 수행합니다"
+        "V바 트라이셉스 푸시다운은 통증 없는 중간 범위만 수행합니다",
       ],
-      "progressions": [
+      progressions: [
         "V바 트라이셉스 푸시다운은 정렬을 지킨 채 반복을 소폭 늘립니다",
         "V바 트라이셉스 푸시다운은 저항은 한 단계만 올립니다",
-        "V바 트라이셉스 푸시다운은 편측·긴 지렛대는 관절이 편안할 때만 시도합니다"
-      ]
-    }
+        "V바 트라이셉스 푸시다운은 편측·긴 지렛대는 관절이 편안할 때만 시도합니다",
+      ],
+    },
   },
   {
-    "exercise": {
-      "id": "verified-underhand-cable-pulldowns",
-      "name": "언더핸드 케이블 풀다운",
-      "englishName": "Underhand Cable Pulldowns",
-      "category": "헬스기구",
-      "regions": [
-        "등"
-      ],
-      "focus": "근력",
-      "difficulty": "입문",
-      "equipment": "케이블 머신·핀",
-      "minutes": "6–12회 · 2세트",
-      "description": "언더핸드 케이블 풀다운은 광배근을 쓰며 손잡이 또는 도구를 몸 쪽으로 당기고 어깨뼈의 위치를 제어하는 당기기 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
-      "cues": [
+    exercise: {
+      id: "verified-underhand-cable-pulldowns",
+      name: "언더핸드 케이블 풀다운",
+      englishName: "Underhand Cable Pulldowns",
+      category: "헬스기구",
+      regions: ["등"],
+      focus: "근력",
+      difficulty: "입문",
+      equipment: "케이블 머신·핀",
+      minutes: "6–12회 · 2세트",
+      description:
+        "언더핸드 케이블 풀다운은 광배근을 쓰며 손잡이 또는 도구를 몸 쪽으로 당기고 어깨뼈의 위치를 제어하는 당기기 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
+      cues: [
         "언더핸드 케이블 풀다운에서 먼저 어깨를 귀에서 멀리 두고 가슴을 편안히 유지",
         "광배근을 느끼며 팔꿈치를 목적 방향으로 끌되 몸통 반동 줄이기",
-        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다"
+        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
       ],
-      "benefits": [
+      benefits: [
         "언더핸드 케이블 풀다운으로 등·팔의 당기기 협응",
         "광배근을 활용한 견갑 위치 인식",
-        "광배근의 움직임 경로 인식"
+        "광배근의 움직임 경로 인식",
       ],
-      "warning": "언더핸드 케이블 풀다운 중 어깨 앞쪽의 날카로운 통증, 손 저림, 고정점 흔들림 또는 그립 이탈이 있으면 즉시 중단하세요.",
-      "reference": {
-        "label": "ACSM — Exercise Safety",
-        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
-      }
+      warning:
+        "언더핸드 케이블 풀다운 중 어깨 앞쪽의 날카로운 통증, 손 저림, 고정점 흔들림 또는 그립 이탈이 있으면 즉시 중단하세요.",
+      reference: {
+        label: "ACSM — Exercise Safety",
+        url: "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/",
+      },
     },
-    "detail": {
-      "setup": [
+    detail: {
+      setup: [
         "케이블 높이·핀·손잡이 잠금과 당김 방향을 가벼운 저항으로 시험합니다",
         "발 또는 지지면을 단단히 고정하고 몸통을 길게 세웁니다",
-        "언더핸드 케이블 풀다운에 맞춰 그립·바·손잡이 높이와 고정 상태를 확인합니다"
+        "언더핸드 케이블 풀다운에 맞춰 그립·바·손잡이 높이와 고정 상태를 확인합니다",
       ],
-      "finish": "언더핸드 케이블 풀다운을 마친 뒤 팔을 급하게 펴지 말고 어깨가 앞으로 쏠리지 않는 범위에서 시작 위치로 돌아갑니다.",
-      "commonMistakes": [
+      finish:
+        "언더핸드 케이블 풀다운을 마친 뒤 팔을 급하게 펴지 말고 어깨가 앞으로 쏠리지 않는 범위에서 시작 위치로 돌아갑니다.",
+      commonMistakes: [
         "언더핸드 케이블 풀다운에서 어깨를 으쓱한 채 팔만 사용하는 경우",
         "언더핸드 케이블 풀다운에서 몸통을 크게 흔들어 반동을 만드는 경우",
-        "언더핸드 케이블 풀다운에서 팔꿈치를 끝까지 밀어 관절을 잠그는 경우"
+        "언더핸드 케이블 풀다운에서 팔꿈치를 끝까지 밀어 관절을 잠그는 경우",
       ],
-      "regressions": [
+      regressions: [
         "언더핸드 케이블 풀다운은 밴드·보조 장치 또는 더 가벼운 저항을 사용합니다",
         "언더핸드 케이블 풀다운은 지지된 시티드 자세로 몸통 부담을 줄입니다",
-        "언더핸드 케이블 풀다운은 당기는 범위를 짧게 정하고 멈춥니다"
+        "언더핸드 케이블 풀다운은 당기는 범위를 짧게 정하고 멈춥니다",
       ],
-      "progressions": [
+      progressions: [
         "언더핸드 케이블 풀다운은 같은 경로에서 저항을 한 단계만 올립니다",
         "언더핸드 케이블 풀다운은 완전한 어깨 제어가 되면 범위를 조금 늘립니다",
-        "언더핸드 케이블 풀다운은 편측 당김은 몸통 회전을 통제할 수 있을 때 시도합니다"
-      ]
-    }
+        "언더핸드 케이블 풀다운은 편측 당김은 몸통 회전을 통제할 수 있을 때 시도합니다",
+      ],
+    },
   },
   {
-    "exercise": {
-      "id": "verified-upright-cable-row",
-      "name": "업라이트 케이블 로우",
-      "englishName": "Upright Cable Row",
-      "category": "헬스기구",
-      "regions": [
-        "등",
-        "어깨"
-      ],
-      "focus": "근력",
-      "difficulty": "중급",
-      "equipment": "케이블 머신·핀",
-      "minutes": "6–12회 · 2세트",
-      "description": "업라이트 케이블 로우은 승모근을 쓰며 손잡이 또는 도구를 몸 쪽으로 당기고 어깨뼈의 위치를 제어하는 당기기 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
-      "cues": [
+    exercise: {
+      id: "verified-upright-cable-row",
+      name: "업라이트 케이블 로우",
+      englishName: "Upright Cable Row",
+      category: "헬스기구",
+      regions: ["등", "어깨"],
+      focus: "근력",
+      difficulty: "중급",
+      equipment: "케이블 머신·핀",
+      minutes: "6–12회 · 2세트",
+      description:
+        "업라이트 케이블 로우은 승모근을 쓰며 손잡이 또는 도구를 몸 쪽으로 당기고 어깨뼈의 위치를 제어하는 당기기 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
+      cues: [
         "업라이트 케이블 로우에서 먼저 어깨를 귀에서 멀리 두고 가슴을 편안히 유지",
         "승모근을 느끼며 팔꿈치를 목적 방향으로 끌되 몸통 반동 줄이기",
-        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다"
+        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
       ],
-      "benefits": [
+      benefits: [
         "업라이트 케이블 로우으로 등·팔의 당기기 협응",
         "승모근을 활용한 견갑 위치 인식",
-        "승모근의 움직임 경로 인식"
+        "승모근의 움직임 경로 인식",
       ],
-      "warning": "업라이트 케이블 로우 중 어깨 앞쪽의 날카로운 통증, 손 저림, 고정점 흔들림 또는 그립 이탈이 있으면 즉시 중단하세요.",
-      "reference": {
-        "label": "ACSM — Exercise Safety",
-        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
-      }
+      warning:
+        "업라이트 케이블 로우 중 어깨 앞쪽의 날카로운 통증, 손 저림, 고정점 흔들림 또는 그립 이탈이 있으면 즉시 중단하세요.",
+      reference: {
+        label: "ACSM — Exercise Safety",
+        url: "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/",
+      },
     },
-    "detail": {
-      "setup": [
+    detail: {
+      setup: [
         "케이블 높이·핀·손잡이 잠금과 당김 방향을 가벼운 저항으로 시험합니다",
         "발 또는 지지면을 단단히 고정하고 몸통을 길게 세웁니다",
-        "업라이트 케이블 로우에 맞춰 그립·바·손잡이 높이와 고정 상태를 확인합니다"
+        "업라이트 케이블 로우에 맞춰 그립·바·손잡이 높이와 고정 상태를 확인합니다",
       ],
-      "finish": "업라이트 케이블 로우을 마친 뒤 팔을 급하게 펴지 말고 어깨가 앞으로 쏠리지 않는 범위에서 시작 위치로 돌아갑니다.",
-      "commonMistakes": [
+      finish:
+        "업라이트 케이블 로우을 마친 뒤 팔을 급하게 펴지 말고 어깨가 앞으로 쏠리지 않는 범위에서 시작 위치로 돌아갑니다.",
+      commonMistakes: [
         "업라이트 케이블 로우에서 어깨를 으쓱한 채 팔만 사용하는 경우",
         "업라이트 케이블 로우에서 몸통을 크게 흔들어 반동을 만드는 경우",
-        "업라이트 케이블 로우에서 팔꿈치를 끝까지 밀어 관절을 잠그는 경우"
+        "업라이트 케이블 로우에서 팔꿈치를 끝까지 밀어 관절을 잠그는 경우",
       ],
-      "regressions": [
+      regressions: [
         "업라이트 케이블 로우은 밴드·보조 장치 또는 더 가벼운 저항을 사용합니다",
         "업라이트 케이블 로우은 지지된 시티드 자세로 몸통 부담을 줄입니다",
-        "업라이트 케이블 로우은 당기는 범위를 짧게 정하고 멈춥니다"
+        "업라이트 케이블 로우은 당기는 범위를 짧게 정하고 멈춥니다",
       ],
-      "progressions": [
+      progressions: [
         "업라이트 케이블 로우은 같은 경로에서 저항을 한 단계만 올립니다",
         "업라이트 케이블 로우은 완전한 어깨 제어가 되면 범위를 조금 늘립니다",
-        "업라이트 케이블 로우은 편측 당김은 몸통 회전을 통제할 수 있을 때 시도합니다"
-      ]
-    }
+        "업라이트 케이블 로우은 편측 당김은 몸통 회전을 통제할 수 있을 때 시도합니다",
+      ],
+    },
   },
   {
-    "exercise": {
-      "id": "verified-v-bar-pulldown",
-      "name": "V바 풀다운",
-      "englishName": "V-Bar Pulldown",
-      "category": "헬스기구",
-      "regions": [
-        "등"
-      ],
-      "focus": "근력",
-      "difficulty": "중급",
-      "equipment": "케이블 머신·핀",
-      "minutes": "6–12회 · 2세트",
-      "description": "V바 풀다운은 광배근을 쓰며 손잡이 또는 도구를 몸 쪽으로 당기고 어깨뼈의 위치를 제어하는 당기기 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
-      "cues": [
+    exercise: {
+      id: "verified-v-bar-pulldown",
+      name: "V바 풀다운",
+      englishName: "V-Bar Pulldown",
+      category: "헬스기구",
+      regions: ["등"],
+      focus: "근력",
+      difficulty: "중급",
+      equipment: "케이블 머신·핀",
+      minutes: "6–12회 · 2세트",
+      description:
+        "V바 풀다운은 광배근을 쓰며 손잡이 또는 도구를 몸 쪽으로 당기고 어깨뼈의 위치를 제어하는 당기기 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
+      cues: [
         "V바 풀다운에서 먼저 어깨를 귀에서 멀리 두고 가슴을 편안히 유지",
         "광배근을 느끼며 팔꿈치를 목적 방향으로 끌되 몸통 반동 줄이기",
-        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다"
+        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
       ],
-      "benefits": [
+      benefits: [
         "V바 풀다운으로 등·팔의 당기기 협응",
         "광배근을 활용한 견갑 위치 인식",
-        "광배근의 움직임 경로 인식"
+        "광배근의 움직임 경로 인식",
       ],
-      "warning": "V바 풀다운 중 어깨 앞쪽의 날카로운 통증, 손 저림, 고정점 흔들림 또는 그립 이탈이 있으면 즉시 중단하세요.",
-      "reference": {
-        "label": "ACSM — Exercise Safety",
-        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
-      }
+      warning:
+        "V바 풀다운 중 어깨 앞쪽의 날카로운 통증, 손 저림, 고정점 흔들림 또는 그립 이탈이 있으면 즉시 중단하세요.",
+      reference: {
+        label: "ACSM — Exercise Safety",
+        url: "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/",
+      },
     },
-    "detail": {
-      "setup": [
+    detail: {
+      setup: [
         "케이블 높이·핀·손잡이 잠금과 당김 방향을 가벼운 저항으로 시험합니다",
         "발 또는 지지면을 단단히 고정하고 몸통을 길게 세웁니다",
-        "V바 풀다운에 맞춰 그립·바·손잡이 높이와 고정 상태를 확인합니다"
+        "V바 풀다운에 맞춰 그립·바·손잡이 높이와 고정 상태를 확인합니다",
       ],
-      "finish": "V바 풀다운을 마친 뒤 팔을 급하게 펴지 말고 어깨가 앞으로 쏠리지 않는 범위에서 시작 위치로 돌아갑니다.",
-      "commonMistakes": [
+      finish:
+        "V바 풀다운을 마친 뒤 팔을 급하게 펴지 말고 어깨가 앞으로 쏠리지 않는 범위에서 시작 위치로 돌아갑니다.",
+      commonMistakes: [
         "V바 풀다운에서 어깨를 으쓱한 채 팔만 사용하는 경우",
         "V바 풀다운에서 몸통을 크게 흔들어 반동을 만드는 경우",
-        "V바 풀다운에서 팔꿈치를 끝까지 밀어 관절을 잠그는 경우"
+        "V바 풀다운에서 팔꿈치를 끝까지 밀어 관절을 잠그는 경우",
       ],
-      "regressions": [
+      regressions: [
         "V바 풀다운은 밴드·보조 장치 또는 더 가벼운 저항을 사용합니다",
         "V바 풀다운은 지지된 시티드 자세로 몸통 부담을 줄입니다",
-        "V바 풀다운은 당기는 범위를 짧게 정하고 멈춥니다"
+        "V바 풀다운은 당기는 범위를 짧게 정하고 멈춥니다",
       ],
-      "progressions": [
+      progressions: [
         "V바 풀다운은 같은 경로에서 저항을 한 단계만 올립니다",
         "V바 풀다운은 완전한 어깨 제어가 되면 범위를 조금 늘립니다",
-        "V바 풀다운은 편측 당김은 몸통 회전을 통제할 수 있을 때 시도합니다"
-      ]
-    }
+        "V바 풀다운은 편측 당김은 몸통 회전을 통제할 수 있을 때 시도합니다",
+      ],
+    },
   },
   {
-    "exercise": {
-      "id": "verified-wide-grip-lat-pulldown",
-      "name": "와이드 그립 랫 풀다운",
-      "englishName": "Wide-Grip Lat Pulldown",
-      "category": "헬스기구",
-      "regions": [
-        "등"
-      ],
-      "focus": "근력",
-      "difficulty": "입문",
-      "equipment": "케이블 머신·핀",
-      "minutes": "6–12회 · 2세트",
-      "description": "와이드 그립 랫 풀다운은 광배근을 쓰며 손잡이 또는 도구를 몸 쪽으로 당기고 어깨뼈의 위치를 제어하는 당기기 종목입니다. 넓은 그립에서는 팔꿈치와 어깨가 불편하지 않은 범위만 사용합니다",
-      "cues": [
+    exercise: {
+      id: "verified-wide-grip-lat-pulldown",
+      name: "와이드 그립 랫 풀다운",
+      englishName: "Wide-Grip Lat Pulldown",
+      category: "헬스기구",
+      regions: ["등"],
+      focus: "근력",
+      difficulty: "입문",
+      equipment: "케이블 머신·핀",
+      minutes: "6–12회 · 2세트",
+      description:
+        "와이드 그립 랫 풀다운은 광배근을 쓰며 손잡이 또는 도구를 몸 쪽으로 당기고 어깨뼈의 위치를 제어하는 당기기 종목입니다. 넓은 그립에서는 팔꿈치와 어깨가 불편하지 않은 범위만 사용합니다",
+      cues: [
         "와이드 그립 랫 풀다운에서 먼저 어깨를 귀에서 멀리 두고 가슴을 편안히 유지",
         "광배근을 느끼며 팔꿈치를 목적 방향으로 끌되 몸통 반동 줄이기",
-        "넓은 그립에서는 팔꿈치와 어깨가 불편하지 않은 범위만 사용합니다"
+        "넓은 그립에서는 팔꿈치와 어깨가 불편하지 않은 범위만 사용합니다",
       ],
-      "benefits": [
+      benefits: [
         "와이드 그립 랫 풀다운으로 등·팔의 당기기 협응",
         "광배근을 활용한 견갑 위치 인식",
-        "광배근의 움직임 경로 인식"
+        "광배근의 움직임 경로 인식",
       ],
-      "warning": "와이드 그립 랫 풀다운 중 어깨 앞쪽의 날카로운 통증, 손 저림, 고정점 흔들림 또는 그립 이탈이 있으면 즉시 중단하세요.",
-      "reference": {
-        "label": "ACSM — Exercise Safety",
-        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
-      }
+      warning:
+        "와이드 그립 랫 풀다운 중 어깨 앞쪽의 날카로운 통증, 손 저림, 고정점 흔들림 또는 그립 이탈이 있으면 즉시 중단하세요.",
+      reference: {
+        label: "ACSM — Exercise Safety",
+        url: "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/",
+      },
     },
-    "detail": {
-      "setup": [
+    detail: {
+      setup: [
         "케이블 높이·핀·손잡이 잠금과 당김 방향을 가벼운 저항으로 시험합니다",
         "발 또는 지지면을 단단히 고정하고 몸통을 길게 세웁니다",
-        "와이드 그립 랫 풀다운에 맞춰 그립·바·손잡이 높이와 고정 상태를 확인합니다"
+        "와이드 그립 랫 풀다운에 맞춰 그립·바·손잡이 높이와 고정 상태를 확인합니다",
       ],
-      "finish": "와이드 그립 랫 풀다운을 마친 뒤 팔을 급하게 펴지 말고 어깨가 앞으로 쏠리지 않는 범위에서 시작 위치로 돌아갑니다.",
-      "commonMistakes": [
+      finish:
+        "와이드 그립 랫 풀다운을 마친 뒤 팔을 급하게 펴지 말고 어깨가 앞으로 쏠리지 않는 범위에서 시작 위치로 돌아갑니다.",
+      commonMistakes: [
         "와이드 그립 랫 풀다운에서 어깨를 으쓱한 채 팔만 사용하는 경우",
         "와이드 그립 랫 풀다운에서 몸통을 크게 흔들어 반동을 만드는 경우",
-        "와이드 그립 랫 풀다운에서 팔꿈치를 끝까지 밀어 관절을 잠그는 경우"
+        "와이드 그립 랫 풀다운에서 팔꿈치를 끝까지 밀어 관절을 잠그는 경우",
       ],
-      "regressions": [
+      regressions: [
         "와이드 그립 랫 풀다운은 밴드·보조 장치 또는 더 가벼운 저항을 사용합니다",
         "와이드 그립 랫 풀다운은 지지된 시티드 자세로 몸통 부담을 줄입니다",
-        "와이드 그립 랫 풀다운은 당기는 범위를 짧게 정하고 멈춥니다"
+        "와이드 그립 랫 풀다운은 당기는 범위를 짧게 정하고 멈춥니다",
       ],
-      "progressions": [
+      progressions: [
         "와이드 그립 랫 풀다운은 같은 경로에서 저항을 한 단계만 올립니다",
         "와이드 그립 랫 풀다운은 완전한 어깨 제어가 되면 범위를 조금 늘립니다",
-        "와이드 그립 랫 풀다운은 편측 당김은 몸통 회전을 통제할 수 있을 때 시도합니다"
-      ]
-    }
+        "와이드 그립 랫 풀다운은 편측 당김은 몸통 회전을 통제할 수 있을 때 시도합니다",
+      ],
+    },
   },
   {
-    "exercise": {
-      "id": "verified-alternate-hammer-curl",
-      "name": "교대 해머 컬",
-      "englishName": "Alternate Hammer Curl",
-      "category": "프리웨이트",
-      "regions": [
-        "팔"
-      ],
-      "focus": "근력",
-      "difficulty": "입문",
-      "equipment": "덤벨·안정된 지지면 선택",
-      "minutes": "6–12회 · 2세트",
-      "description": "교대 해머 컬은 이두근을 중심으로 팔꿈치를 굽히며 도구를 통제하는 팔 굽힘 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
-      "cues": [
+    exercise: {
+      id: "verified-alternate-hammer-curl",
+      name: "교대 해머 컬",
+      englishName: "Alternate Hammer Curl",
+      category: "프리웨이트",
+      regions: ["팔"],
+      focus: "근력",
+      difficulty: "입문",
+      equipment: "덤벨·안정된 지지면 선택",
+      minutes: "6–12회 · 2세트",
+      description:
+        "교대 해머 컬은 이두근을 중심으로 팔꿈치를 굽히며 도구를 통제하는 팔 굽힘 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
+      cues: [
         "교대 해머 컬에서 상완을 몸통 가까이에 두고 팔꿈치 위치를 고정",
         "이두근을 느끼며 손목을 꺾지 말고 도구를 부드럽게 들어 올리기",
-        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다"
+        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
       ],
-      "benefits": [
+      benefits: [
         "교대 해머 컬으로 팔 굽힘 근육의 제어",
         "이두근을 활용한 전완·그립 안정 인식",
-        "이두근의 움직임 경로 인식"
+        "이두근의 움직임 경로 인식",
       ],
-      "warning": "교대 해머 컬 중 팔꿈치·손목의 날카로운 통증, 저림 또는 그립 미끄러짐이 있으면 즉시 중단하세요.",
-      "reference": {
-        "label": "ACSM — Exercise Safety",
-        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
-      }
+      warning:
+        "교대 해머 컬 중 팔꿈치·손목의 날카로운 통증, 저림 또는 그립 미끄러짐이 있으면 즉시 중단하세요.",
+      reference: {
+        label: "ACSM — Exercise Safety",
+        url: "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/",
+      },
     },
-    "detail": {
-      "setup": [
+    detail: {
+      setup: [
         "도구를 몸 가까이에서 안정적으로 잡고 양쪽 중량이 같은지 확인합니다",
         "발 또는 지지면을 단단히 고정하고 몸통을 길게 세웁니다",
-        "교대 해머 컬에 맞춰 가벼운 중량을 들고 팔꿈치를 몸통 옆에 둡니다"
+        "교대 해머 컬에 맞춰 가벼운 중량을 들고 팔꿈치를 몸통 옆에 둡니다",
       ],
-      "finish": "교대 해머 컬을 마친 뒤 팔꿈치를 완전히 잠그지 않는 편안한 아래 범위에서 다음 반복을 준비합니다.",
-      "commonMistakes": [
+      finish:
+        "교대 해머 컬을 마친 뒤 팔꿈치를 완전히 잠그지 않는 편안한 아래 범위에서 다음 반복을 준비합니다.",
+      commonMistakes: [
         "교대 해머 컬에서 몸통을 뒤로 젖혀 반동을 쓰는 경우",
         "교대 해머 컬에서 팔꿈치가 앞으로 크게 이동하는 경우",
-        "교대 해머 컬에서 손목을 꺾어 중량을 드는 경우"
+        "교대 해머 컬에서 손목을 꺾어 중량을 드는 경우",
       ],
-      "regressions": [
+      regressions: [
         "교대 해머 컬은 더 가벼운 도구나 밴드를 사용합니다",
         "교대 해머 컬은 시티드 또는 벤치 지지로 몸통 반동을 줄입니다",
-        "교대 해머 컬은 아래와 위 범위를 조금 줄입니다"
+        "교대 해머 컬은 아래와 위 범위를 조금 줄입니다",
       ],
-      "progressions": [
+      progressions: [
         "교대 해머 컬은 반동 없이 반복을 한두 회 늘립니다",
         "교대 해머 컬은 그립이 안정되면 중량을 소폭 올립니다",
-        "교대 해머 컬은 편측 수행은 몸통이 흔들리지 않을 때 시작합니다"
-      ]
-    }
+        "교대 해머 컬은 편측 수행은 몸통이 흔들리지 않을 때 시작합니다",
+      ],
+    },
   },
   {
-    "exercise": {
-      "id": "verified-alternate-incline-dumbbell-curl",
-      "name": "교대 인클라인 덤벨 컬",
-      "englishName": "Alternate Incline Dumbbell Curl",
-      "category": "프리웨이트",
-      "regions": [
-        "팔"
-      ],
-      "focus": "근력",
-      "difficulty": "입문",
-      "equipment": "덤벨·안정된 지지면 선택",
-      "minutes": "6–12회 · 2세트",
-      "description": "교대 인클라인 덤벨 컬은 이두근을 중심으로 팔꿈치를 굽히며 도구를 통제하는 팔 굽힘 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
-      "cues": [
+    exercise: {
+      id: "verified-alternate-incline-dumbbell-curl",
+      name: "교대 인클라인 덤벨 컬",
+      englishName: "Alternate Incline Dumbbell Curl",
+      category: "프리웨이트",
+      regions: ["팔"],
+      focus: "근력",
+      difficulty: "입문",
+      equipment: "덤벨·안정된 지지면 선택",
+      minutes: "6–12회 · 2세트",
+      description:
+        "교대 인클라인 덤벨 컬은 이두근을 중심으로 팔꿈치를 굽히며 도구를 통제하는 팔 굽힘 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
+      cues: [
         "교대 인클라인 덤벨 컬에서 상완을 몸통 가까이에 두고 팔꿈치 위치를 고정",
         "이두근을 느끼며 손목을 꺾지 말고 도구를 부드럽게 들어 올리기",
-        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다"
+        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
       ],
-      "benefits": [
+      benefits: [
         "교대 인클라인 덤벨 컬으로 팔 굽힘 근육의 제어",
         "이두근을 활용한 전완·그립 안정 인식",
-        "이두근의 움직임 경로 인식"
+        "이두근의 움직임 경로 인식",
       ],
-      "warning": "교대 인클라인 덤벨 컬 중 팔꿈치·손목의 날카로운 통증, 저림 또는 그립 미끄러짐이 있으면 즉시 중단하세요.",
-      "reference": {
-        "label": "ACSM — Exercise Safety",
-        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
-      }
+      warning:
+        "교대 인클라인 덤벨 컬 중 팔꿈치·손목의 날카로운 통증, 저림 또는 그립 미끄러짐이 있으면 즉시 중단하세요.",
+      reference: {
+        label: "ACSM — Exercise Safety",
+        url: "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/",
+      },
     },
-    "detail": {
-      "setup": [
+    detail: {
+      setup: [
         "도구를 몸 가까이에서 안정적으로 잡고 양쪽 중량이 같은지 확인합니다",
         "인클라인 지지면을 고정하고 머리·등·골반이 흔들리지 않게 둡니다",
-        "교대 인클라인 덤벨 컬에 맞춰 가벼운 중량을 들고 팔꿈치를 몸통 옆에 둡니다"
+        "교대 인클라인 덤벨 컬에 맞춰 가벼운 중량을 들고 팔꿈치를 몸통 옆에 둡니다",
       ],
-      "finish": "교대 인클라인 덤벨 컬을 마친 뒤 팔꿈치를 완전히 잠그지 않는 편안한 아래 범위에서 다음 반복을 준비합니다.",
-      "commonMistakes": [
+      finish:
+        "교대 인클라인 덤벨 컬을 마친 뒤 팔꿈치를 완전히 잠그지 않는 편안한 아래 범위에서 다음 반복을 준비합니다.",
+      commonMistakes: [
         "교대 인클라인 덤벨 컬에서 몸통을 뒤로 젖혀 반동을 쓰는 경우",
         "교대 인클라인 덤벨 컬에서 팔꿈치가 앞으로 크게 이동하는 경우",
-        "교대 인클라인 덤벨 컬에서 손목을 꺾어 중량을 드는 경우"
+        "교대 인클라인 덤벨 컬에서 손목을 꺾어 중량을 드는 경우",
       ],
-      "regressions": [
+      regressions: [
         "교대 인클라인 덤벨 컬은 더 가벼운 도구나 밴드를 사용합니다",
         "교대 인클라인 덤벨 컬은 시티드 또는 벤치 지지로 몸통 반동을 줄입니다",
-        "교대 인클라인 덤벨 컬은 아래와 위 범위를 조금 줄입니다"
+        "교대 인클라인 덤벨 컬은 아래와 위 범위를 조금 줄입니다",
       ],
-      "progressions": [
+      progressions: [
         "교대 인클라인 덤벨 컬은 반동 없이 반복을 한두 회 늘립니다",
         "교대 인클라인 덤벨 컬은 그립이 안정되면 중량을 소폭 올립니다",
-        "교대 인클라인 덤벨 컬은 편측 수행은 몸통이 흔들리지 않을 때 시작합니다"
-      ]
-    }
+        "교대 인클라인 덤벨 컬은 편측 수행은 몸통이 흔들리지 않을 때 시작합니다",
+      ],
+    },
   },
   {
-    "exercise": {
-      "id": "verified-alternating-deltoid-raise",
-      "name": "교대 델토이드 레이즈",
-      "englishName": "Alternating Deltoid Raise",
-      "category": "프리웨이트",
-      "regions": [
-        "어깨"
-      ],
-      "focus": "근력",
-      "difficulty": "입문",
-      "equipment": "덤벨·안정된 지지면 선택",
-      "minutes": "6–12회 · 2세트",
-      "description": "교대 델토이드 레이즈은 어깨을 사용해 팔 또는 도구를 정해진 평면으로 들어 올리며 어깨 위치를 제어하는 종목입니다. 좌우를 바꿀 때 몸통이 급하게 회전하지 않게 잠시 정지합니다",
-      "cues": [
+    exercise: {
+      id: "verified-alternating-deltoid-raise",
+      name: "교대 델토이드 레이즈",
+      englishName: "Alternating Deltoid Raise",
+      category: "프리웨이트",
+      regions: ["어깨"],
+      focus: "근력",
+      difficulty: "입문",
+      equipment: "덤벨·안정된 지지면 선택",
+      minutes: "6–12회 · 2세트",
+      description:
+        "교대 델토이드 레이즈은 어깨을 사용해 팔 또는 도구를 정해진 평면으로 들어 올리며 어깨 위치를 제어하는 종목입니다. 좌우를 바꿀 때 몸통이 급하게 회전하지 않게 잠시 정지합니다",
+      cues: [
         "교대 델토이드 레이즈에서 어깨를 귀에서 멀리 두고 목을 길게 유지",
         "어깨을 느끼며 도구를 몸에서 너무 멀리 보내지 않기",
-        "좌우를 바꿀 때 몸통이 급하게 회전하지 않게 잠시 정지합니다"
+        "좌우를 바꿀 때 몸통이 급하게 회전하지 않게 잠시 정지합니다",
       ],
-      "benefits": [
+      benefits: [
         "교대 델토이드 레이즈으로 어깨 주변의 제어",
         "어깨을 활용한 팔과 견갑의 협응",
-        "어깨의 움직임 경로 인식"
+        "어깨의 움직임 경로 인식",
       ],
-      "warning": "교대 델토이드 레이즈 중 어깨 위쪽 통증, 목 긴장, 저림 또는 반동이 생기면 즉시 범위·저항을 낮추거나 중단하세요.",
-      "reference": {
-        "label": "ACSM — Exercise Safety",
-        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
-      }
+      warning:
+        "교대 델토이드 레이즈 중 어깨 위쪽 통증, 목 긴장, 저림 또는 반동이 생기면 즉시 범위·저항을 낮추거나 중단하세요.",
+      reference: {
+        label: "ACSM — Exercise Safety",
+        url: "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/",
+      },
     },
-    "detail": {
-      "setup": [
+    detail: {
+      setup: [
         "도구를 몸 가까이에서 안정적으로 잡고 양쪽 중량이 같은지 확인합니다",
         "발 또는 지지면을 단단히 고정하고 몸통을 길게 세웁니다",
-        "교대 델토이드 레이즈에 맞춰 낮은 중량으로 시작하고 양발 또는 벤치 지지로 균형을 만듭니다"
+        "교대 델토이드 레이즈에 맞춰 낮은 중량으로 시작하고 양발 또는 벤치 지지로 균형을 만듭니다",
       ],
-      "finish": "교대 델토이드 레이즈을 마친 뒤 어깨가 앞으로 밀리지 않게 도구를 몸 옆으로 통제해 되돌립니다.",
-      "commonMistakes": [
+      finish:
+        "교대 델토이드 레이즈을 마친 뒤 어깨가 앞으로 밀리지 않게 도구를 몸 옆으로 통제해 되돌립니다.",
+      commonMistakes: [
         "교대 델토이드 레이즈에서 어깨를 으쓱하며 목에 힘을 주는 경우",
         "교대 델토이드 레이즈에서 반동으로 도구를 목표 높이보다 높게 던지는 경우",
-        "교대 델토이드 레이즈에서 손목을 꺾어 도구를 지지하는 경우"
+        "교대 델토이드 레이즈에서 손목을 꺾어 도구를 지지하는 경우",
       ],
-      "regressions": [
+      regressions: [
         "교대 델토이드 레이즈은 중량을 낮추거나 한 팔씩 지지된 자세로 수행합니다",
         "교대 델토이드 레이즈은 들기 높이를 어깨 아래로 줄입니다",
-        "교대 델토이드 레이즈은 밴드 또는 더 짧은 지렛대를 사용합니다"
+        "교대 델토이드 레이즈은 밴드 또는 더 짧은 지렛대를 사용합니다",
       ],
-      "progressions": [
+      progressions: [
         "교대 델토이드 레이즈은 동일한 높이와 정렬에서 반복을 늘립니다",
         "교대 델토이드 레이즈은 작은 중량 증가를 한 번만 적용합니다",
-        "교대 델토이드 레이즈은 편측·인클라인 변형은 어깨가 편안할 때 시도합니다"
-      ]
-    }
+        "교대 델토이드 레이즈은 편측·인클라인 변형은 어깨가 편안할 때 시도합니다",
+      ],
+    },
   },
   {
-    "exercise": {
-      "id": "verified-arnold-dumbbell-press",
-      "name": "아놀드 프레스",
-      "englishName": "Arnold Dumbbell Press",
-      "category": "프리웨이트",
-      "regions": [
-        "어깨"
-      ],
-      "focus": "근력",
-      "difficulty": "중급",
-      "equipment": "덤벨·안정된 지지면 선택",
-      "minutes": "6–12회 · 2세트",
-      "description": "아놀드 프레스은 어깨을 사용해 손잡이·도구 또는 바닥을 몸에서 멀어지게 미는 상체 밀기 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
-      "cues": [
+    exercise: {
+      id: "verified-arnold-dumbbell-press",
+      name: "아놀드 프레스",
+      englishName: "Arnold Dumbbell Press",
+      category: "프리웨이트",
+      regions: ["어깨"],
+      focus: "근력",
+      difficulty: "중급",
+      equipment: "덤벨·안정된 지지면 선택",
+      minutes: "6–12회 · 2세트",
+      description:
+        "아놀드 프레스은 어깨을 사용해 손잡이·도구 또는 바닥을 몸에서 멀어지게 미는 상체 밀기 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
+      cues: [
         "아놀드 프레스에서 손목을 중립에 가깝게 두고 손잡이를 안정적으로 잡기",
         "어깨을 느끼며 갈비뼈를 과하게 들지 않고 몸통 길이 유지",
-        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다"
+        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
       ],
-      "benefits": [
+      benefits: [
         "아놀드 프레스으로 가슴·어깨·팔의 밀기 협응",
         "어깨을 활용한 손목과 견갑 안정 제어",
-        "어깨의 움직임 경로 인식"
+        "어깨의 움직임 경로 인식",
       ],
-      "warning": "아놀드 프레스 중 어깨·팔꿈치·손목 통증, 저림 또는 도구 흔들림이 있으면 즉시 멈추고 설정을 다시 확인하세요.",
-      "reference": {
-        "label": "ACSM — Exercise Safety",
-        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
-      }
+      warning:
+        "아놀드 프레스 중 어깨·팔꿈치·손목 통증, 저림 또는 도구 흔들림이 있으면 즉시 멈추고 설정을 다시 확인하세요.",
+      reference: {
+        label: "ACSM — Exercise Safety",
+        url: "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/",
+      },
     },
-    "detail": {
-      "setup": [
+    detail: {
+      setup: [
         "도구를 몸 가까이에서 안정적으로 잡고 양쪽 중량이 같은지 확인합니다",
         "발 또는 지지면을 단단히 고정하고 몸통을 길게 세웁니다",
-        "아놀드 프레스에 맞춰 손잡이·바·지지면의 높이와 좌우 설정을 확인합니다"
+        "아놀드 프레스에 맞춰 손잡이·바·지지면의 높이와 좌우 설정을 확인합니다",
       ],
-      "finish": "아놀드 프레스을 마친 뒤 팔꿈치를 잠그지 않은 편안한 끝 범위에서 잠시 멈춘 뒤 같은 경로로 돌아옵니다.",
-      "commonMistakes": [
+      finish:
+        "아놀드 프레스을 마친 뒤 팔꿈치를 잠그지 않은 편안한 끝 범위에서 잠시 멈춘 뒤 같은 경로로 돌아옵니다.",
+      commonMistakes: [
         "아놀드 프레스에서 어깨가 앞으로 말린 채 밀어 올리는 경우",
         "아놀드 프레스에서 허리를 과하게 젖혀 무게를 넘기는 경우",
-        "아놀드 프레스에서 손목을 꺾고 그립을 느슨하게 유지하는 경우"
+        "아놀드 프레스에서 손목을 꺾고 그립을 느슨하게 유지하는 경우",
       ],
-      "regressions": [
+      regressions: [
         "아놀드 프레스은 벽·높은 벤치 또는 가벼운 저항으로 바꿉니다",
         "아놀드 프레스은 가동 범위를 줄이고 어깨 편안함을 확인합니다",
-        "아놀드 프레스은 양손 지지로 안정성을 먼저 확보합니다"
+        "아놀드 프레스은 양손 지지로 안정성을 먼저 확보합니다",
       ],
-      "progressions": [
+      progressions: [
         "아놀드 프레스은 정렬이 유지될 때 반복을 소폭 늘립니다",
         "아놀드 프레스은 안정된 지지면에서 저항을 한 단계만 올립니다",
-        "아놀드 프레스은 낮은 지지 또는 편측 변형은 통제 후 시도합니다"
-      ]
-    }
+        "아놀드 프레스은 낮은 지지 또는 편측 변형은 통제 후 시도합니다",
+      ],
+    },
   },
   {
-    "exercise": {
-      "id": "verified-around-the-worlds",
-      "name": "어라운드 더 월드",
-      "englishName": "Around The Worlds",
-      "category": "프리웨이트",
-      "regions": [
-        "가슴"
-      ],
-      "focus": "근력",
-      "difficulty": "중급",
-      "equipment": "덤벨·안정된 지지면 선택",
-      "minutes": "6–12회 · 2세트",
-      "description": "어라운드 더 월드은 가슴 주변을 통증 없는 범위에서 천천히 움직여 가동 범위와 자세 감각을 확인하는 모빌리티 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
-      "cues": [
+    exercise: {
+      id: "verified-around-the-worlds",
+      name: "어라운드 더 월드",
+      englishName: "Around The Worlds",
+      category: "프리웨이트",
+      regions: ["가슴"],
+      focus: "근력",
+      difficulty: "중급",
+      equipment: "덤벨·안정된 지지면 선택",
+      minutes: "6–12회 · 2세트",
+      description:
+        "어라운드 더 월드은 가슴 주변을 통증 없는 범위에서 천천히 움직여 가동 범위와 자세 감각을 확인하는 모빌리티 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
+      cues: [
         "어라운드 더 월드에서 작은 범위에서 호흡을 멈추지 않기",
         "가슴을 느끼며 끝 범위를 밀지 말고 부드럽게 왕복",
-        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다"
+        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
       ],
-      "benefits": [
+      benefits: [
         "어라운드 더 월드으로 관절 위치와 범위 인식",
         "가슴을 활용한 편안한 움직임 준비",
-        "가슴의 움직임 경로 인식"
+        "가슴의 움직임 경로 인식",
       ],
-      "warning": "어라운드 더 월드 중 날카로운 통증, 저림, 방사통, 붓기·열감이 있으면 자가 진행을 멈추고 평가를 우선하세요.",
-      "reference": {
-        "label": "ACSM — Exercise Safety",
-        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
-      }
+      warning:
+        "어라운드 더 월드 중 날카로운 통증, 저림, 방사통, 붓기·열감이 있으면 자가 진행을 멈추고 평가를 우선하세요.",
+      reference: {
+        label: "ACSM — Exercise Safety",
+        url: "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/",
+      },
     },
-    "detail": {
-      "setup": [
+    detail: {
+      setup: [
         "도구를 몸 가까이에서 안정적으로 잡고 양쪽 중량이 같은지 확인합니다",
         "발 또는 지지면을 단단히 고정하고 몸통을 길게 세웁니다",
-        "어라운드 더 월드에 맞춰 편안한 바닥·매트 또는 지지대를 준비합니다"
+        "어라운드 더 월드에 맞춰 편안한 바닥·매트 또는 지지대를 준비합니다",
       ],
-      "finish": "어라운드 더 월드을 마친 뒤 중립 자세로 천천히 돌아와 불편감이 남지 않는지 확인합니다.",
-      "commonMistakes": [
+      finish:
+        "어라운드 더 월드을 마친 뒤 중립 자세로 천천히 돌아와 불편감이 남지 않는지 확인합니다.",
+      commonMistakes: [
         "어라운드 더 월드에서 끝 범위를 억지로 밀어 통증을 만드는 경우",
         "어라운드 더 월드에서 호흡을 참거나 반동을 쓰는 경우",
-        "어라운드 더 월드에서 저림·방사통을 무시하고 지속하는 경우"
+        "어라운드 더 월드에서 저림·방사통을 무시하고 지속하는 경우",
       ],
-      "regressions": [
+      regressions: [
         "어라운드 더 월드은 범위와 유지 시간을 줄입니다",
         "어라운드 더 월드은 벽·의자·블록 같은 지지대를 사용합니다",
-        "어라운드 더 월드은 누운 또는 앉은 안정된 자세로 바꿉니다"
+        "어라운드 더 월드은 누운 또는 앉은 안정된 자세로 바꿉니다",
       ],
-      "progressions": [
+      progressions: [
         "어라운드 더 월드은 다음 날 편안하면 범위만 조금 늘립니다",
         "어라운드 더 월드은 호흡 주기를 한 번 추가합니다",
-        "어라운드 더 월드은 지지대는 안정적으로 줄여 갑니다"
-      ]
-    }
+        "어라운드 더 월드은 지지대는 안정적으로 줄여 갑니다",
+      ],
+    },
   },
   {
-    "exercise": {
-      "id": "verified-bent-over-dumbbell-rear-delt-raise-with-head-on-bench",
-      "name": "벤치 엎드려 리어 델트 레이즈",
-      "englishName": "Bent Over Dumbbell Rear Delt Raise With Head On Bench",
-      "category": "프리웨이트",
-      "regions": [
-        "어깨"
-      ],
-      "focus": "근력",
-      "difficulty": "입문",
-      "equipment": "덤벨·안정된 지지면 선택",
-      "minutes": "6–12회 · 2세트",
-      "description": "벤치 엎드려 리어 델트 레이즈은 어깨을 사용해 팔 또는 도구를 정해진 평면으로 들어 올리며 어깨 위치를 제어하는 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
-      "cues": [
+    exercise: {
+      id: "verified-bent-over-dumbbell-rear-delt-raise-with-head-on-bench",
+      name: "벤치 엎드려 리어 델트 레이즈",
+      englishName: "Bent Over Dumbbell Rear Delt Raise With Head On Bench",
+      category: "프리웨이트",
+      regions: ["어깨"],
+      focus: "근력",
+      difficulty: "입문",
+      equipment: "덤벨·안정된 지지면 선택",
+      minutes: "6–12회 · 2세트",
+      description:
+        "벤치 엎드려 리어 델트 레이즈은 어깨을 사용해 팔 또는 도구를 정해진 평면으로 들어 올리며 어깨 위치를 제어하는 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
+      cues: [
         "벤치 엎드려 리어 델트 레이즈에서 어깨를 귀에서 멀리 두고 목을 길게 유지",
         "어깨을 느끼며 도구를 몸에서 너무 멀리 보내지 않기",
-        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다"
+        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
       ],
-      "benefits": [
+      benefits: [
         "벤치 엎드려 리어 델트 레이즈으로 어깨 주변의 제어",
         "어깨을 활용한 팔과 견갑의 협응",
-        "어깨의 움직임 경로 인식"
+        "어깨의 움직임 경로 인식",
       ],
-      "warning": "벤치 엎드려 리어 델트 레이즈 중 어깨 위쪽 통증, 목 긴장, 저림 또는 반동이 생기면 즉시 범위·저항을 낮추거나 중단하세요.",
-      "reference": {
-        "label": "ACSM — Exercise Safety",
-        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
-      }
+      warning:
+        "벤치 엎드려 리어 델트 레이즈 중 어깨 위쪽 통증, 목 긴장, 저림 또는 반동이 생기면 즉시 범위·저항을 낮추거나 중단하세요.",
+      reference: {
+        label: "ACSM — Exercise Safety",
+        url: "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/",
+      },
     },
-    "detail": {
-      "setup": [
+    detail: {
+      setup: [
         "도구를 몸 가까이에서 안정적으로 잡고 양쪽 중량이 같은지 확인합니다",
         "발 또는 지지면을 단단히 고정하고 몸통을 길게 세웁니다",
-        "벤치 엎드려 리어 델트 레이즈에 맞춰 낮은 중량으로 시작하고 양발 또는 벤치 지지로 균형을 만듭니다"
+        "벤치 엎드려 리어 델트 레이즈에 맞춰 낮은 중량으로 시작하고 양발 또는 벤치 지지로 균형을 만듭니다",
       ],
-      "finish": "벤치 엎드려 리어 델트 레이즈을 마친 뒤 어깨가 앞으로 밀리지 않게 도구를 몸 옆으로 통제해 되돌립니다.",
-      "commonMistakes": [
+      finish:
+        "벤치 엎드려 리어 델트 레이즈을 마친 뒤 어깨가 앞으로 밀리지 않게 도구를 몸 옆으로 통제해 되돌립니다.",
+      commonMistakes: [
         "벤치 엎드려 리어 델트 레이즈에서 어깨를 으쓱하며 목에 힘을 주는 경우",
         "벤치 엎드려 리어 델트 레이즈에서 반동으로 도구를 목표 높이보다 높게 던지는 경우",
-        "벤치 엎드려 리어 델트 레이즈에서 손목을 꺾어 도구를 지지하는 경우"
+        "벤치 엎드려 리어 델트 레이즈에서 손목을 꺾어 도구를 지지하는 경우",
       ],
-      "regressions": [
+      regressions: [
         "벤치 엎드려 리어 델트 레이즈은 중량을 낮추거나 한 팔씩 지지된 자세로 수행합니다",
         "벤치 엎드려 리어 델트 레이즈은 들기 높이를 어깨 아래로 줄입니다",
-        "벤치 엎드려 리어 델트 레이즈은 밴드 또는 더 짧은 지렛대를 사용합니다"
+        "벤치 엎드려 리어 델트 레이즈은 밴드 또는 더 짧은 지렛대를 사용합니다",
       ],
-      "progressions": [
+      progressions: [
         "벤치 엎드려 리어 델트 레이즈은 동일한 높이와 정렬에서 반복을 늘립니다",
         "벤치 엎드려 리어 델트 레이즈은 작은 중량 증가를 한 번만 적용합니다",
-        "벤치 엎드려 리어 델트 레이즈은 편측·인클라인 변형은 어깨가 편안할 때 시도합니다"
-      ]
-    }
+        "벤치 엎드려 리어 델트 레이즈은 편측·인클라인 변형은 어깨가 편안할 때 시도합니다",
+      ],
+    },
   },
   {
-    "exercise": {
-      "id": "verified-bent-over-two-dumbbell-row",
-      "name": "덤벨 벤트오버 로우",
-      "englishName": "Bent Over Two-Dumbbell Row",
-      "category": "프리웨이트",
-      "regions": [
-        "등"
-      ],
-      "focus": "근력",
-      "difficulty": "입문",
-      "equipment": "덤벨·안정된 지지면 선택",
-      "minutes": "6–12회 · 2세트",
-      "description": "덤벨 벤트오버 로우은 등 중앙을 쓰며 손잡이 또는 도구를 몸 쪽으로 당기고 어깨뼈의 위치를 제어하는 당기기 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
-      "cues": [
+    exercise: {
+      id: "verified-bent-over-two-dumbbell-row",
+      name: "덤벨 벤트오버 로우",
+      englishName: "Bent Over Two-Dumbbell Row",
+      category: "프리웨이트",
+      regions: ["등"],
+      focus: "근력",
+      difficulty: "입문",
+      equipment: "덤벨·안정된 지지면 선택",
+      minutes: "6–12회 · 2세트",
+      description:
+        "덤벨 벤트오버 로우은 등 중앙을 쓰며 손잡이 또는 도구를 몸 쪽으로 당기고 어깨뼈의 위치를 제어하는 당기기 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
+      cues: [
         "덤벨 벤트오버 로우에서 먼저 어깨를 귀에서 멀리 두고 가슴을 편안히 유지",
         "등 중앙을 느끼며 팔꿈치를 목적 방향으로 끌되 몸통 반동 줄이기",
-        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다"
+        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
       ],
-      "benefits": [
+      benefits: [
         "덤벨 벤트오버 로우으로 등·팔의 당기기 협응",
         "등 중앙을 활용한 견갑 위치 인식",
-        "등 중앙의 움직임 경로 인식"
+        "등 중앙의 움직임 경로 인식",
       ],
-      "warning": "덤벨 벤트오버 로우 중 어깨 앞쪽의 날카로운 통증, 손 저림, 고정점 흔들림 또는 그립 이탈이 있으면 즉시 중단하세요.",
-      "reference": {
-        "label": "ACSM — Exercise Safety",
-        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
-      }
+      warning:
+        "덤벨 벤트오버 로우 중 어깨 앞쪽의 날카로운 통증, 손 저림, 고정점 흔들림 또는 그립 이탈이 있으면 즉시 중단하세요.",
+      reference: {
+        label: "ACSM — Exercise Safety",
+        url: "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/",
+      },
     },
-    "detail": {
-      "setup": [
+    detail: {
+      setup: [
         "도구를 몸 가까이에서 안정적으로 잡고 양쪽 중량이 같은지 확인합니다",
         "발 또는 지지면을 단단히 고정하고 몸통을 길게 세웁니다",
-        "덤벨 벤트오버 로우에 맞춰 그립·바·손잡이 높이와 고정 상태를 확인합니다"
+        "덤벨 벤트오버 로우에 맞춰 그립·바·손잡이 높이와 고정 상태를 확인합니다",
       ],
-      "finish": "덤벨 벤트오버 로우을 마친 뒤 팔을 급하게 펴지 말고 어깨가 앞으로 쏠리지 않는 범위에서 시작 위치로 돌아갑니다.",
-      "commonMistakes": [
+      finish:
+        "덤벨 벤트오버 로우을 마친 뒤 팔을 급하게 펴지 말고 어깨가 앞으로 쏠리지 않는 범위에서 시작 위치로 돌아갑니다.",
+      commonMistakes: [
         "덤벨 벤트오버 로우에서 어깨를 으쓱한 채 팔만 사용하는 경우",
         "덤벨 벤트오버 로우에서 몸통을 크게 흔들어 반동을 만드는 경우",
-        "덤벨 벤트오버 로우에서 팔꿈치를 끝까지 밀어 관절을 잠그는 경우"
+        "덤벨 벤트오버 로우에서 팔꿈치를 끝까지 밀어 관절을 잠그는 경우",
       ],
-      "regressions": [
+      regressions: [
         "덤벨 벤트오버 로우은 밴드·보조 장치 또는 더 가벼운 저항을 사용합니다",
         "덤벨 벤트오버 로우은 지지된 시티드 자세로 몸통 부담을 줄입니다",
-        "덤벨 벤트오버 로우은 당기는 범위를 짧게 정하고 멈춥니다"
+        "덤벨 벤트오버 로우은 당기는 범위를 짧게 정하고 멈춥니다",
       ],
-      "progressions": [
+      progressions: [
         "덤벨 벤트오버 로우은 같은 경로에서 저항을 한 단계만 올립니다",
         "덤벨 벤트오버 로우은 완전한 어깨 제어가 되면 범위를 조금 늘립니다",
-        "덤벨 벤트오버 로우은 편측 당김은 몸통 회전을 통제할 수 있을 때 시도합니다"
-      ]
-    }
+        "덤벨 벤트오버 로우은 편측 당김은 몸통 회전을 통제할 수 있을 때 시도합니다",
+      ],
+    },
   },
   {
-    "exercise": {
-      "id": "verified-bent-over-two-dumbbell-row-with-palms-in",
-      "name": "덤벨 벤트오버 로우(팜인)",
-      "englishName": "Bent Over Two-Dumbbell Row With Palms In",
-      "category": "프리웨이트",
-      "regions": [
-        "등"
-      ],
-      "focus": "근력",
-      "difficulty": "입문",
-      "equipment": "덤벨·안정된 지지면 선택",
-      "minutes": "6–12회 · 2세트",
-      "description": "덤벨 벤트오버 로우(팜인)은 등 중앙을 쓰며 손잡이 또는 도구를 몸 쪽으로 당기고 어깨뼈의 위치를 제어하는 당기기 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
-      "cues": [
+    exercise: {
+      id: "verified-bent-over-two-dumbbell-row-with-palms-in",
+      name: "덤벨 벤트오버 로우(팜인)",
+      englishName: "Bent Over Two-Dumbbell Row With Palms In",
+      category: "프리웨이트",
+      regions: ["등"],
+      focus: "근력",
+      difficulty: "입문",
+      equipment: "덤벨·안정된 지지면 선택",
+      minutes: "6–12회 · 2세트",
+      description:
+        "덤벨 벤트오버 로우(팜인)은 등 중앙을 쓰며 손잡이 또는 도구를 몸 쪽으로 당기고 어깨뼈의 위치를 제어하는 당기기 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
+      cues: [
         "덤벨 벤트오버 로우(팜인)에서 먼저 어깨를 귀에서 멀리 두고 가슴을 편안히 유지",
         "등 중앙을 느끼며 팔꿈치를 목적 방향으로 끌되 몸통 반동 줄이기",
-        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다"
+        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
       ],
-      "benefits": [
+      benefits: [
         "덤벨 벤트오버 로우(팜인)으로 등·팔의 당기기 협응",
         "등 중앙을 활용한 견갑 위치 인식",
-        "등 중앙의 움직임 경로 인식"
+        "등 중앙의 움직임 경로 인식",
       ],
-      "warning": "덤벨 벤트오버 로우(팜인) 중 어깨 앞쪽의 날카로운 통증, 손 저림, 고정점 흔들림 또는 그립 이탈이 있으면 즉시 중단하세요.",
-      "reference": {
-        "label": "ACSM — Exercise Safety",
-        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
-      }
+      warning:
+        "덤벨 벤트오버 로우(팜인) 중 어깨 앞쪽의 날카로운 통증, 손 저림, 고정점 흔들림 또는 그립 이탈이 있으면 즉시 중단하세요.",
+      reference: {
+        label: "ACSM — Exercise Safety",
+        url: "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/",
+      },
     },
-    "detail": {
-      "setup": [
+    detail: {
+      setup: [
         "도구를 몸 가까이에서 안정적으로 잡고 양쪽 중량이 같은지 확인합니다",
         "발 또는 지지면을 단단히 고정하고 몸통을 길게 세웁니다",
-        "덤벨 벤트오버 로우(팜인)에 맞춰 그립·바·손잡이 높이와 고정 상태를 확인합니다"
+        "덤벨 벤트오버 로우(팜인)에 맞춰 그립·바·손잡이 높이와 고정 상태를 확인합니다",
       ],
-      "finish": "덤벨 벤트오버 로우(팜인)을 마친 뒤 팔을 급하게 펴지 말고 어깨가 앞으로 쏠리지 않는 범위에서 시작 위치로 돌아갑니다.",
-      "commonMistakes": [
+      finish:
+        "덤벨 벤트오버 로우(팜인)을 마친 뒤 팔을 급하게 펴지 말고 어깨가 앞으로 쏠리지 않는 범위에서 시작 위치로 돌아갑니다.",
+      commonMistakes: [
         "덤벨 벤트오버 로우(팜인)에서 어깨를 으쓱한 채 팔만 사용하는 경우",
         "덤벨 벤트오버 로우(팜인)에서 몸통을 크게 흔들어 반동을 만드는 경우",
-        "덤벨 벤트오버 로우(팜인)에서 팔꿈치를 끝까지 밀어 관절을 잠그는 경우"
+        "덤벨 벤트오버 로우(팜인)에서 팔꿈치를 끝까지 밀어 관절을 잠그는 경우",
       ],
-      "regressions": [
+      regressions: [
         "덤벨 벤트오버 로우(팜인)은 밴드·보조 장치 또는 더 가벼운 저항을 사용합니다",
         "덤벨 벤트오버 로우(팜인)은 지지된 시티드 자세로 몸통 부담을 줄입니다",
-        "덤벨 벤트오버 로우(팜인)은 당기는 범위를 짧게 정하고 멈춥니다"
+        "덤벨 벤트오버 로우(팜인)은 당기는 범위를 짧게 정하고 멈춥니다",
       ],
-      "progressions": [
+      progressions: [
         "덤벨 벤트오버 로우(팜인)은 같은 경로에서 저항을 한 단계만 올립니다",
         "덤벨 벤트오버 로우(팜인)은 완전한 어깨 제어가 되면 범위를 조금 늘립니다",
-        "덤벨 벤트오버 로우(팜인)은 편측 당김은 몸통 회전을 통제할 수 있을 때 시도합니다"
-      ]
-    }
+        "덤벨 벤트오버 로우(팜인)은 편측 당김은 몸통 회전을 통제할 수 있을 때 시도합니다",
+      ],
+    },
   },
   {
-    "exercise": {
-      "id": "verified-bent-arm-dumbbell-pullover",
-      "name": "벤트암 덤벨 풀오버",
-      "englishName": "Bent-Arm Dumbbell Pullover",
-      "category": "프리웨이트",
-      "regions": [
-        "가슴"
-      ],
-      "focus": "근력",
-      "difficulty": "중급",
-      "equipment": "덤벨·안정된 지지면 선택",
-      "minutes": "6–12회 · 2세트",
-      "description": "벤트암 덤벨 풀오버은 가슴 주변을 통증 없는 범위에서 천천히 움직여 가동 범위와 자세 감각을 확인하는 모빌리티 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
-      "cues": [
+    exercise: {
+      id: "verified-bent-arm-dumbbell-pullover",
+      name: "벤트암 덤벨 풀오버",
+      englishName: "Bent-Arm Dumbbell Pullover",
+      category: "프리웨이트",
+      regions: ["가슴"],
+      focus: "근력",
+      difficulty: "중급",
+      equipment: "덤벨·안정된 지지면 선택",
+      minutes: "6–12회 · 2세트",
+      description:
+        "벤트암 덤벨 풀오버은 가슴 주변을 통증 없는 범위에서 천천히 움직여 가동 범위와 자세 감각을 확인하는 모빌리티 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
+      cues: [
         "벤트암 덤벨 풀오버에서 작은 범위에서 호흡을 멈추지 않기",
         "가슴을 느끼며 끝 범위를 밀지 말고 부드럽게 왕복",
-        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다"
+        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
       ],
-      "benefits": [
+      benefits: [
         "벤트암 덤벨 풀오버으로 관절 위치와 범위 인식",
         "가슴을 활용한 편안한 움직임 준비",
-        "가슴의 움직임 경로 인식"
+        "가슴의 움직임 경로 인식",
       ],
-      "warning": "벤트암 덤벨 풀오버 중 날카로운 통증, 저림, 방사통, 붓기·열감이 있으면 자가 진행을 멈추고 평가를 우선하세요.",
-      "reference": {
-        "label": "ACSM — Exercise Safety",
-        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
-      }
+      warning:
+        "벤트암 덤벨 풀오버 중 날카로운 통증, 저림, 방사통, 붓기·열감이 있으면 자가 진행을 멈추고 평가를 우선하세요.",
+      reference: {
+        label: "ACSM — Exercise Safety",
+        url: "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/",
+      },
     },
-    "detail": {
-      "setup": [
+    detail: {
+      setup: [
         "도구를 몸 가까이에서 안정적으로 잡고 양쪽 중량이 같은지 확인합니다",
         "발 또는 지지면을 단단히 고정하고 몸통을 길게 세웁니다",
-        "벤트암 덤벨 풀오버에 맞춰 편안한 바닥·매트 또는 지지대를 준비합니다"
+        "벤트암 덤벨 풀오버에 맞춰 편안한 바닥·매트 또는 지지대를 준비합니다",
       ],
-      "finish": "벤트암 덤벨 풀오버을 마친 뒤 중립 자세로 천천히 돌아와 불편감이 남지 않는지 확인합니다.",
-      "commonMistakes": [
+      finish:
+        "벤트암 덤벨 풀오버을 마친 뒤 중립 자세로 천천히 돌아와 불편감이 남지 않는지 확인합니다.",
+      commonMistakes: [
         "벤트암 덤벨 풀오버에서 끝 범위를 억지로 밀어 통증을 만드는 경우",
         "벤트암 덤벨 풀오버에서 호흡을 참거나 반동을 쓰는 경우",
-        "벤트암 덤벨 풀오버에서 저림·방사통을 무시하고 지속하는 경우"
+        "벤트암 덤벨 풀오버에서 저림·방사통을 무시하고 지속하는 경우",
       ],
-      "regressions": [
+      regressions: [
         "벤트암 덤벨 풀오버은 범위와 유지 시간을 줄입니다",
         "벤트암 덤벨 풀오버은 벽·의자·블록 같은 지지대를 사용합니다",
-        "벤트암 덤벨 풀오버은 누운 또는 앉은 안정된 자세로 바꿉니다"
+        "벤트암 덤벨 풀오버은 누운 또는 앉은 안정된 자세로 바꿉니다",
       ],
-      "progressions": [
+      progressions: [
         "벤트암 덤벨 풀오버은 다음 날 편안하면 범위만 조금 늘립니다",
         "벤트암 덤벨 풀오버은 호흡 주기를 한 번 추가합니다",
-        "벤트암 덤벨 풀오버은 지지대는 안정적으로 줄여 갑니다"
-      ]
-    }
+        "벤트암 덤벨 풀오버은 지지대는 안정적으로 줄여 갑니다",
+      ],
+    },
   },
   {
-    "exercise": {
-      "id": "verified-calf-raise-on-a-dumbbell",
-      "name": "덤벨 카프 레이즈",
-      "englishName": "Calf Raise On A Dumbbell",
-      "category": "프리웨이트",
-      "regions": [
-        "하체"
-      ],
-      "focus": "근력",
-      "difficulty": "중급",
-      "equipment": "덤벨·안정된 지지면 선택",
-      "minutes": "6–12회 · 2세트",
-      "description": "덤벨 카프 레이즈은 종아리을 사용해 팔 또는 도구를 정해진 평면으로 들어 올리며 어깨 위치를 제어하는 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
-      "cues": [
+    exercise: {
+      id: "verified-calf-raise-on-a-dumbbell",
+      name: "덤벨 카프 레이즈",
+      englishName: "Calf Raise On A Dumbbell",
+      category: "프리웨이트",
+      regions: ["하체"],
+      focus: "근력",
+      difficulty: "중급",
+      equipment: "덤벨·안정된 지지면 선택",
+      minutes: "6–12회 · 2세트",
+      description:
+        "덤벨 카프 레이즈은 종아리을 사용해 팔 또는 도구를 정해진 평면으로 들어 올리며 어깨 위치를 제어하는 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
+      cues: [
         "덤벨 카프 레이즈에서 어깨를 귀에서 멀리 두고 목을 길게 유지",
         "종아리을 느끼며 도구를 몸에서 너무 멀리 보내지 않기",
-        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다"
+        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
       ],
-      "benefits": [
+      benefits: [
         "덤벨 카프 레이즈으로 어깨 주변의 제어",
         "종아리을 활용한 팔과 견갑의 협응",
-        "종아리의 움직임 경로 인식"
+        "종아리의 움직임 경로 인식",
       ],
-      "warning": "덤벨 카프 레이즈 중 어깨 위쪽 통증, 목 긴장, 저림 또는 반동이 생기면 즉시 범위·저항을 낮추거나 중단하세요.",
-      "reference": {
-        "label": "ACSM — Exercise Safety",
-        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
-      }
+      warning:
+        "덤벨 카프 레이즈 중 어깨 위쪽 통증, 목 긴장, 저림 또는 반동이 생기면 즉시 범위·저항을 낮추거나 중단하세요.",
+      reference: {
+        label: "ACSM — Exercise Safety",
+        url: "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/",
+      },
     },
-    "detail": {
-      "setup": [
+    detail: {
+      setup: [
         "도구를 몸 가까이에서 안정적으로 잡고 양쪽 중량이 같은지 확인합니다",
         "발 또는 지지면을 단단히 고정하고 몸통을 길게 세웁니다",
-        "덤벨 카프 레이즈에 맞춰 낮은 중량으로 시작하고 양발 또는 벤치 지지로 균형을 만듭니다"
+        "덤벨 카프 레이즈에 맞춰 낮은 중량으로 시작하고 양발 또는 벤치 지지로 균형을 만듭니다",
       ],
-      "finish": "덤벨 카프 레이즈을 마친 뒤 어깨가 앞으로 밀리지 않게 도구를 몸 옆으로 통제해 되돌립니다.",
-      "commonMistakes": [
+      finish:
+        "덤벨 카프 레이즈을 마친 뒤 어깨가 앞으로 밀리지 않게 도구를 몸 옆으로 통제해 되돌립니다.",
+      commonMistakes: [
         "덤벨 카프 레이즈에서 어깨를 으쓱하며 목에 힘을 주는 경우",
         "덤벨 카프 레이즈에서 반동으로 도구를 목표 높이보다 높게 던지는 경우",
-        "덤벨 카프 레이즈에서 손목을 꺾어 도구를 지지하는 경우"
+        "덤벨 카프 레이즈에서 손목을 꺾어 도구를 지지하는 경우",
       ],
-      "regressions": [
+      regressions: [
         "덤벨 카프 레이즈은 중량을 낮추거나 한 팔씩 지지된 자세로 수행합니다",
         "덤벨 카프 레이즈은 들기 높이를 어깨 아래로 줄입니다",
-        "덤벨 카프 레이즈은 밴드 또는 더 짧은 지렛대를 사용합니다"
+        "덤벨 카프 레이즈은 밴드 또는 더 짧은 지렛대를 사용합니다",
       ],
-      "progressions": [
+      progressions: [
         "덤벨 카프 레이즈은 동일한 높이와 정렬에서 반복을 늘립니다",
         "덤벨 카프 레이즈은 작은 중량 증가를 한 번만 적용합니다",
-        "덤벨 카프 레이즈은 편측·인클라인 변형은 어깨가 편안할 때 시도합니다"
-      ]
-    }
+        "덤벨 카프 레이즈은 편측·인클라인 변형은 어깨가 편안할 때 시도합니다",
+      ],
+    },
   },
   {
-    "exercise": {
-      "id": "verified-close-grip-dumbbell-press",
-      "name": "클로즈그립 덤벨 프레스",
-      "englishName": "Close-Grip Dumbbell Press",
-      "category": "프리웨이트",
-      "regions": [
-        "팔"
-      ],
-      "focus": "근력",
-      "difficulty": "입문",
-      "equipment": "덤벨·안정된 지지면 선택",
-      "minutes": "6–12회 · 2세트",
-      "description": "클로즈그립 덤벨 프레스은 삼두근을 사용해 손잡이·도구 또는 바닥을 몸에서 멀어지게 미는 상체 밀기 종목입니다. 좁은 그립에서는 손목을 꺾지 않고 팔꿈치 경로를 통제합니다",
-      "cues": [
+    exercise: {
+      id: "verified-close-grip-dumbbell-press",
+      name: "클로즈그립 덤벨 프레스",
+      englishName: "Close-Grip Dumbbell Press",
+      category: "프리웨이트",
+      regions: ["팔"],
+      focus: "근력",
+      difficulty: "입문",
+      equipment: "덤벨·안정된 지지면 선택",
+      minutes: "6–12회 · 2세트",
+      description:
+        "클로즈그립 덤벨 프레스은 삼두근을 사용해 손잡이·도구 또는 바닥을 몸에서 멀어지게 미는 상체 밀기 종목입니다. 좁은 그립에서는 손목을 꺾지 않고 팔꿈치 경로를 통제합니다",
+      cues: [
         "클로즈그립 덤벨 프레스에서 손목을 중립에 가깝게 두고 손잡이를 안정적으로 잡기",
         "삼두근을 느끼며 갈비뼈를 과하게 들지 않고 몸통 길이 유지",
-        "좁은 그립에서는 손목을 꺾지 않고 팔꿈치 경로를 통제합니다"
+        "좁은 그립에서는 손목을 꺾지 않고 팔꿈치 경로를 통제합니다",
       ],
-      "benefits": [
+      benefits: [
         "클로즈그립 덤벨 프레스으로 가슴·어깨·팔의 밀기 협응",
         "삼두근을 활용한 손목과 견갑 안정 제어",
-        "삼두근의 움직임 경로 인식"
+        "삼두근의 움직임 경로 인식",
       ],
-      "warning": "클로즈그립 덤벨 프레스 중 어깨·팔꿈치·손목 통증, 저림 또는 도구 흔들림이 있으면 즉시 멈추고 설정을 다시 확인하세요.",
-      "reference": {
-        "label": "ACSM — Exercise Safety",
-        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
-      }
+      warning:
+        "클로즈그립 덤벨 프레스 중 어깨·팔꿈치·손목 통증, 저림 또는 도구 흔들림이 있으면 즉시 멈추고 설정을 다시 확인하세요.",
+      reference: {
+        label: "ACSM — Exercise Safety",
+        url: "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/",
+      },
     },
-    "detail": {
-      "setup": [
+    detail: {
+      setup: [
         "도구를 몸 가까이에서 안정적으로 잡고 양쪽 중량이 같은지 확인합니다",
         "발 또는 지지면을 단단히 고정하고 몸통을 길게 세웁니다",
-        "클로즈그립 덤벨 프레스에 맞춰 손잡이·바·지지면의 높이와 좌우 설정을 확인합니다"
+        "클로즈그립 덤벨 프레스에 맞춰 손잡이·바·지지면의 높이와 좌우 설정을 확인합니다",
       ],
-      "finish": "클로즈그립 덤벨 프레스을 마친 뒤 팔꿈치를 잠그지 않은 편안한 끝 범위에서 잠시 멈춘 뒤 같은 경로로 돌아옵니다.",
-      "commonMistakes": [
+      finish:
+        "클로즈그립 덤벨 프레스을 마친 뒤 팔꿈치를 잠그지 않은 편안한 끝 범위에서 잠시 멈춘 뒤 같은 경로로 돌아옵니다.",
+      commonMistakes: [
         "클로즈그립 덤벨 프레스에서 어깨가 앞으로 말린 채 밀어 올리는 경우",
         "클로즈그립 덤벨 프레스에서 허리를 과하게 젖혀 무게를 넘기는 경우",
-        "클로즈그립 덤벨 프레스에서 손목을 꺾고 그립을 느슨하게 유지하는 경우"
+        "클로즈그립 덤벨 프레스에서 손목을 꺾고 그립을 느슨하게 유지하는 경우",
       ],
-      "regressions": [
+      regressions: [
         "클로즈그립 덤벨 프레스은 벽·높은 벤치 또는 가벼운 저항으로 바꿉니다",
         "클로즈그립 덤벨 프레스은 가동 범위를 줄이고 어깨 편안함을 확인합니다",
-        "클로즈그립 덤벨 프레스은 양손 지지로 안정성을 먼저 확보합니다"
+        "클로즈그립 덤벨 프레스은 양손 지지로 안정성을 먼저 확보합니다",
       ],
-      "progressions": [
+      progressions: [
         "클로즈그립 덤벨 프레스은 정렬이 유지될 때 반복을 소폭 늘립니다",
         "클로즈그립 덤벨 프레스은 안정된 지지면에서 저항을 한 단계만 올립니다",
-        "클로즈그립 덤벨 프레스은 낮은 지지 또는 편측 변형은 통제 후 시도합니다"
-      ]
-    }
+        "클로즈그립 덤벨 프레스은 낮은 지지 또는 편측 변형은 통제 후 시도합니다",
+      ],
+    },
   },
   {
-    "exercise": {
-      "id": "verified-concentration-curls",
-      "name": "컨센트레이션 컬",
-      "englishName": "Concentration Curls",
-      "category": "프리웨이트",
-      "regions": [
-        "팔"
-      ],
-      "focus": "근력",
-      "difficulty": "입문",
-      "equipment": "덤벨·안정된 지지면 선택",
-      "minutes": "6–12회 · 2세트",
-      "description": "컨센트레이션 컬은 이두근을 중심으로 팔꿈치를 굽히며 도구를 통제하는 팔 굽힘 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
-      "cues": [
+    exercise: {
+      id: "verified-concentration-curls",
+      name: "컨센트레이션 컬",
+      englishName: "Concentration Curls",
+      category: "프리웨이트",
+      regions: ["팔"],
+      focus: "근력",
+      difficulty: "입문",
+      equipment: "덤벨·안정된 지지면 선택",
+      minutes: "6–12회 · 2세트",
+      description:
+        "컨센트레이션 컬은 이두근을 중심으로 팔꿈치를 굽히며 도구를 통제하는 팔 굽힘 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
+      cues: [
         "컨센트레이션 컬에서 상완을 몸통 가까이에 두고 팔꿈치 위치를 고정",
         "이두근을 느끼며 손목을 꺾지 말고 도구를 부드럽게 들어 올리기",
-        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다"
+        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
       ],
-      "benefits": [
+      benefits: [
         "컨센트레이션 컬으로 팔 굽힘 근육의 제어",
         "이두근을 활용한 전완·그립 안정 인식",
-        "이두근의 움직임 경로 인식"
+        "이두근의 움직임 경로 인식",
       ],
-      "warning": "컨센트레이션 컬 중 팔꿈치·손목의 날카로운 통증, 저림 또는 그립 미끄러짐이 있으면 즉시 중단하세요.",
-      "reference": {
-        "label": "ACSM — Exercise Safety",
-        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
-      }
+      warning:
+        "컨센트레이션 컬 중 팔꿈치·손목의 날카로운 통증, 저림 또는 그립 미끄러짐이 있으면 즉시 중단하세요.",
+      reference: {
+        label: "ACSM — Exercise Safety",
+        url: "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/",
+      },
     },
-    "detail": {
-      "setup": [
+    detail: {
+      setup: [
         "도구를 몸 가까이에서 안정적으로 잡고 양쪽 중량이 같은지 확인합니다",
         "발 또는 지지면을 단단히 고정하고 몸통을 길게 세웁니다",
-        "컨센트레이션 컬에 맞춰 가벼운 중량을 들고 팔꿈치를 몸통 옆에 둡니다"
+        "컨센트레이션 컬에 맞춰 가벼운 중량을 들고 팔꿈치를 몸통 옆에 둡니다",
       ],
-      "finish": "컨센트레이션 컬을 마친 뒤 팔꿈치를 완전히 잠그지 않는 편안한 아래 범위에서 다음 반복을 준비합니다.",
-      "commonMistakes": [
+      finish:
+        "컨센트레이션 컬을 마친 뒤 팔꿈치를 완전히 잠그지 않는 편안한 아래 범위에서 다음 반복을 준비합니다.",
+      commonMistakes: [
         "컨센트레이션 컬에서 몸통을 뒤로 젖혀 반동을 쓰는 경우",
         "컨센트레이션 컬에서 팔꿈치가 앞으로 크게 이동하는 경우",
-        "컨센트레이션 컬에서 손목을 꺾어 중량을 드는 경우"
+        "컨센트레이션 컬에서 손목을 꺾어 중량을 드는 경우",
       ],
-      "regressions": [
+      regressions: [
         "컨센트레이션 컬은 더 가벼운 도구나 밴드를 사용합니다",
         "컨센트레이션 컬은 시티드 또는 벤치 지지로 몸통 반동을 줄입니다",
-        "컨센트레이션 컬은 아래와 위 범위를 조금 줄입니다"
+        "컨센트레이션 컬은 아래와 위 범위를 조금 줄입니다",
       ],
-      "progressions": [
+      progressions: [
         "컨센트레이션 컬은 반동 없이 반복을 한두 회 늘립니다",
         "컨센트레이션 컬은 그립이 안정되면 중량을 소폭 올립니다",
-        "컨센트레이션 컬은 편측 수행은 몸통이 흔들리지 않을 때 시작합니다"
-      ]
-    }
+        "컨센트레이션 컬은 편측 수행은 몸통이 흔들리지 않을 때 시작합니다",
+      ],
+    },
   },
   {
-    "exercise": {
-      "id": "verified-cross-body-hammer-curl",
-      "name": "크로스바디 해머 컬",
-      "englishName": "Cross Body Hammer Curl",
-      "category": "프리웨이트",
-      "regions": [
-        "팔"
-      ],
-      "focus": "근력",
-      "difficulty": "입문",
-      "equipment": "덤벨·안정된 지지면 선택",
-      "minutes": "6–12회 · 2세트",
-      "description": "크로스바디 해머 컬은 이두근을 중심으로 팔꿈치를 굽히며 도구를 통제하는 팔 굽힘 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
-      "cues": [
+    exercise: {
+      id: "verified-cross-body-hammer-curl",
+      name: "크로스바디 해머 컬",
+      englishName: "Cross Body Hammer Curl",
+      category: "프리웨이트",
+      regions: ["팔"],
+      focus: "근력",
+      difficulty: "입문",
+      equipment: "덤벨·안정된 지지면 선택",
+      minutes: "6–12회 · 2세트",
+      description:
+        "크로스바디 해머 컬은 이두근을 중심으로 팔꿈치를 굽히며 도구를 통제하는 팔 굽힘 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
+      cues: [
         "크로스바디 해머 컬에서 상완을 몸통 가까이에 두고 팔꿈치 위치를 고정",
         "이두근을 느끼며 손목을 꺾지 말고 도구를 부드럽게 들어 올리기",
-        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다"
+        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
       ],
-      "benefits": [
+      benefits: [
         "크로스바디 해머 컬으로 팔 굽힘 근육의 제어",
         "이두근을 활용한 전완·그립 안정 인식",
-        "이두근의 움직임 경로 인식"
+        "이두근의 움직임 경로 인식",
       ],
-      "warning": "크로스바디 해머 컬 중 팔꿈치·손목의 날카로운 통증, 저림 또는 그립 미끄러짐이 있으면 즉시 중단하세요.",
-      "reference": {
-        "label": "ACSM — Exercise Safety",
-        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
-      }
+      warning:
+        "크로스바디 해머 컬 중 팔꿈치·손목의 날카로운 통증, 저림 또는 그립 미끄러짐이 있으면 즉시 중단하세요.",
+      reference: {
+        label: "ACSM — Exercise Safety",
+        url: "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/",
+      },
     },
-    "detail": {
-      "setup": [
+    detail: {
+      setup: [
         "도구를 몸 가까이에서 안정적으로 잡고 양쪽 중량이 같은지 확인합니다",
         "발 또는 지지면을 단단히 고정하고 몸통을 길게 세웁니다",
-        "크로스바디 해머 컬에 맞춰 가벼운 중량을 들고 팔꿈치를 몸통 옆에 둡니다"
+        "크로스바디 해머 컬에 맞춰 가벼운 중량을 들고 팔꿈치를 몸통 옆에 둡니다",
       ],
-      "finish": "크로스바디 해머 컬을 마친 뒤 팔꿈치를 완전히 잠그지 않는 편안한 아래 범위에서 다음 반복을 준비합니다.",
-      "commonMistakes": [
+      finish:
+        "크로스바디 해머 컬을 마친 뒤 팔꿈치를 완전히 잠그지 않는 편안한 아래 범위에서 다음 반복을 준비합니다.",
+      commonMistakes: [
         "크로스바디 해머 컬에서 몸통을 뒤로 젖혀 반동을 쓰는 경우",
         "크로스바디 해머 컬에서 팔꿈치가 앞으로 크게 이동하는 경우",
-        "크로스바디 해머 컬에서 손목을 꺾어 중량을 드는 경우"
+        "크로스바디 해머 컬에서 손목을 꺾어 중량을 드는 경우",
       ],
-      "regressions": [
+      regressions: [
         "크로스바디 해머 컬은 더 가벼운 도구나 밴드를 사용합니다",
         "크로스바디 해머 컬은 시티드 또는 벤치 지지로 몸통 반동을 줄입니다",
-        "크로스바디 해머 컬은 아래와 위 범위를 조금 줄입니다"
+        "크로스바디 해머 컬은 아래와 위 범위를 조금 줄입니다",
       ],
-      "progressions": [
+      progressions: [
         "크로스바디 해머 컬은 반동 없이 반복을 한두 회 늘립니다",
         "크로스바디 해머 컬은 그립이 안정되면 중량을 소폭 올립니다",
-        "크로스바디 해머 컬은 편측 수행은 몸통이 흔들리지 않을 때 시작합니다"
-      ]
-    }
+        "크로스바디 해머 컬은 편측 수행은 몸통이 흔들리지 않을 때 시작합니다",
+      ],
+    },
   },
   {
-    "exercise": {
-      "id": "verified-cuban-press",
-      "name": "큐반 프레스",
-      "englishName": "Cuban Press",
-      "category": "프리웨이트",
-      "regions": [
-        "어깨"
-      ],
-      "focus": "근력",
-      "difficulty": "중급",
-      "equipment": "덤벨·안정된 지지면 선택",
-      "minutes": "6–12회 · 2세트",
-      "description": "큐반 프레스은 어깨을 사용해 손잡이·도구 또는 바닥을 몸에서 멀어지게 미는 상체 밀기 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
-      "cues": [
+    exercise: {
+      id: "verified-cuban-press",
+      name: "큐반 프레스",
+      englishName: "Cuban Press",
+      category: "프리웨이트",
+      regions: ["어깨"],
+      focus: "근력",
+      difficulty: "중급",
+      equipment: "덤벨·안정된 지지면 선택",
+      minutes: "6–12회 · 2세트",
+      description:
+        "큐반 프레스은 어깨을 사용해 손잡이·도구 또는 바닥을 몸에서 멀어지게 미는 상체 밀기 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
+      cues: [
         "큐반 프레스에서 손목을 중립에 가깝게 두고 손잡이를 안정적으로 잡기",
         "어깨을 느끼며 갈비뼈를 과하게 들지 않고 몸통 길이 유지",
-        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다"
+        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
       ],
-      "benefits": [
+      benefits: [
         "큐반 프레스으로 가슴·어깨·팔의 밀기 협응",
         "어깨을 활용한 손목과 견갑 안정 제어",
-        "어깨의 움직임 경로 인식"
+        "어깨의 움직임 경로 인식",
       ],
-      "warning": "큐반 프레스 중 어깨·팔꿈치·손목 통증, 저림 또는 도구 흔들림이 있으면 즉시 멈추고 설정을 다시 확인하세요.",
-      "reference": {
-        "label": "ACSM — Exercise Safety",
-        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
-      }
+      warning:
+        "큐반 프레스 중 어깨·팔꿈치·손목 통증, 저림 또는 도구 흔들림이 있으면 즉시 멈추고 설정을 다시 확인하세요.",
+      reference: {
+        label: "ACSM — Exercise Safety",
+        url: "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/",
+      },
     },
-    "detail": {
-      "setup": [
+    detail: {
+      setup: [
         "도구를 몸 가까이에서 안정적으로 잡고 양쪽 중량이 같은지 확인합니다",
         "발 또는 지지면을 단단히 고정하고 몸통을 길게 세웁니다",
-        "큐반 프레스에 맞춰 손잡이·바·지지면의 높이와 좌우 설정을 확인합니다"
+        "큐반 프레스에 맞춰 손잡이·바·지지면의 높이와 좌우 설정을 확인합니다",
       ],
-      "finish": "큐반 프레스을 마친 뒤 팔꿈치를 잠그지 않은 편안한 끝 범위에서 잠시 멈춘 뒤 같은 경로로 돌아옵니다.",
-      "commonMistakes": [
+      finish:
+        "큐반 프레스을 마친 뒤 팔꿈치를 잠그지 않은 편안한 끝 범위에서 잠시 멈춘 뒤 같은 경로로 돌아옵니다.",
+      commonMistakes: [
         "큐반 프레스에서 어깨가 앞으로 말린 채 밀어 올리는 경우",
         "큐반 프레스에서 허리를 과하게 젖혀 무게를 넘기는 경우",
-        "큐반 프레스에서 손목을 꺾고 그립을 느슨하게 유지하는 경우"
+        "큐반 프레스에서 손목을 꺾고 그립을 느슨하게 유지하는 경우",
       ],
-      "regressions": [
+      regressions: [
         "큐반 프레스은 벽·높은 벤치 또는 가벼운 저항으로 바꿉니다",
         "큐반 프레스은 가동 범위를 줄이고 어깨 편안함을 확인합니다",
-        "큐반 프레스은 양손 지지로 안정성을 먼저 확보합니다"
+        "큐반 프레스은 양손 지지로 안정성을 먼저 확보합니다",
       ],
-      "progressions": [
+      progressions: [
         "큐반 프레스은 정렬이 유지될 때 반복을 소폭 늘립니다",
         "큐반 프레스은 안정된 지지면에서 저항을 한 단계만 올립니다",
-        "큐반 프레스은 낮은 지지 또는 편측 변형은 통제 후 시도합니다"
-      ]
-    }
+        "큐반 프레스은 낮은 지지 또는 편측 변형은 통제 후 시도합니다",
+      ],
+    },
   },
   {
-    "exercise": {
-      "id": "verified-decline-dumbbell-bench-press",
-      "name": "디클라인 덤벨 벤치 프레스",
-      "englishName": "Decline Dumbbell Bench Press",
-      "category": "프리웨이트",
-      "regions": [
-        "가슴"
-      ],
-      "focus": "근력",
-      "difficulty": "입문",
-      "equipment": "덤벨·안정된 지지면 선택",
-      "minutes": "6–12회 · 2세트",
-      "description": "디클라인 덤벨 벤치 프레스은 가슴을 사용해 손잡이·도구 또는 바닥을 몸에서 멀어지게 미는 상체 밀기 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
-      "cues": [
+    exercise: {
+      id: "verified-decline-dumbbell-bench-press",
+      name: "디클라인 덤벨 벤치 프레스",
+      englishName: "Decline Dumbbell Bench Press",
+      category: "프리웨이트",
+      regions: ["가슴"],
+      focus: "근력",
+      difficulty: "입문",
+      equipment: "덤벨·안정된 지지면 선택",
+      minutes: "6–12회 · 2세트",
+      description:
+        "디클라인 덤벨 벤치 프레스은 가슴을 사용해 손잡이·도구 또는 바닥을 몸에서 멀어지게 미는 상체 밀기 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
+      cues: [
         "디클라인 덤벨 벤치 프레스에서 손목을 중립에 가깝게 두고 손잡이를 안정적으로 잡기",
         "가슴을 느끼며 갈비뼈를 과하게 들지 않고 몸통 길이 유지",
-        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다"
+        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
       ],
-      "benefits": [
+      benefits: [
         "디클라인 덤벨 벤치 프레스으로 가슴·어깨·팔의 밀기 협응",
         "가슴을 활용한 손목과 견갑 안정 제어",
-        "가슴의 움직임 경로 인식"
+        "가슴의 움직임 경로 인식",
       ],
-      "warning": "디클라인 덤벨 벤치 프레스 중 어깨·팔꿈치·손목 통증, 저림 또는 도구 흔들림이 있으면 즉시 멈추고 설정을 다시 확인하세요.",
-      "reference": {
-        "label": "ACSM — Exercise Safety",
-        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
-      }
+      warning:
+        "디클라인 덤벨 벤치 프레스 중 어깨·팔꿈치·손목 통증, 저림 또는 도구 흔들림이 있으면 즉시 멈추고 설정을 다시 확인하세요.",
+      reference: {
+        label: "ACSM — Exercise Safety",
+        url: "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/",
+      },
     },
-    "detail": {
-      "setup": [
+    detail: {
+      setup: [
         "도구를 몸 가까이에서 안정적으로 잡고 양쪽 중량이 같은지 확인합니다",
         "디클라인 지지대와 발 고정을 먼저 확인하고 천천히 자세를 잡습니다",
-        "디클라인 덤벨 벤치 프레스에 맞춰 손잡이·바·지지면의 높이와 좌우 설정을 확인합니다"
+        "디클라인 덤벨 벤치 프레스에 맞춰 손잡이·바·지지면의 높이와 좌우 설정을 확인합니다",
       ],
-      "finish": "디클라인 덤벨 벤치 프레스을 마친 뒤 팔꿈치를 잠그지 않은 편안한 끝 범위에서 잠시 멈춘 뒤 같은 경로로 돌아옵니다.",
-      "commonMistakes": [
+      finish:
+        "디클라인 덤벨 벤치 프레스을 마친 뒤 팔꿈치를 잠그지 않은 편안한 끝 범위에서 잠시 멈춘 뒤 같은 경로로 돌아옵니다.",
+      commonMistakes: [
         "디클라인 덤벨 벤치 프레스에서 어깨가 앞으로 말린 채 밀어 올리는 경우",
         "디클라인 덤벨 벤치 프레스에서 허리를 과하게 젖혀 무게를 넘기는 경우",
-        "디클라인 덤벨 벤치 프레스에서 손목을 꺾고 그립을 느슨하게 유지하는 경우"
+        "디클라인 덤벨 벤치 프레스에서 손목을 꺾고 그립을 느슨하게 유지하는 경우",
       ],
-      "regressions": [
+      regressions: [
         "디클라인 덤벨 벤치 프레스은 벽·높은 벤치 또는 가벼운 저항으로 바꿉니다",
         "디클라인 덤벨 벤치 프레스은 가동 범위를 줄이고 어깨 편안함을 확인합니다",
-        "디클라인 덤벨 벤치 프레스은 양손 지지로 안정성을 먼저 확보합니다"
+        "디클라인 덤벨 벤치 프레스은 양손 지지로 안정성을 먼저 확보합니다",
       ],
-      "progressions": [
+      progressions: [
         "디클라인 덤벨 벤치 프레스은 정렬이 유지될 때 반복을 소폭 늘립니다",
         "디클라인 덤벨 벤치 프레스은 안정된 지지면에서 저항을 한 단계만 올립니다",
-        "디클라인 덤벨 벤치 프레스은 낮은 지지 또는 편측 변형은 통제 후 시도합니다"
-      ]
-    }
+        "디클라인 덤벨 벤치 프레스은 낮은 지지 또는 편측 변형은 통제 후 시도합니다",
+      ],
+    },
   },
   {
-    "exercise": {
-      "id": "verified-decline-dumbbell-flyes",
-      "name": "디클라인 덤벨 플라이",
-      "englishName": "Decline Dumbbell Flyes",
-      "category": "프리웨이트",
-      "regions": [
-        "가슴"
-      ],
-      "focus": "근력",
-      "difficulty": "입문",
-      "equipment": "덤벨·안정된 지지면 선택",
-      "minutes": "6–12회 · 2세트",
-      "description": "디클라인 덤벨 플라이은 가슴을 사용해 팔 또는 도구를 정해진 평면으로 들어 올리며 어깨 위치를 제어하는 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
-      "cues": [
+    exercise: {
+      id: "verified-decline-dumbbell-flyes",
+      name: "디클라인 덤벨 플라이",
+      englishName: "Decline Dumbbell Flyes",
+      category: "프리웨이트",
+      regions: ["가슴"],
+      focus: "근력",
+      difficulty: "입문",
+      equipment: "덤벨·안정된 지지면 선택",
+      minutes: "6–12회 · 2세트",
+      description:
+        "디클라인 덤벨 플라이은 가슴을 사용해 팔 또는 도구를 정해진 평면으로 들어 올리며 어깨 위치를 제어하는 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
+      cues: [
         "디클라인 덤벨 플라이에서 어깨를 귀에서 멀리 두고 목을 길게 유지",
         "가슴을 느끼며 도구를 몸에서 너무 멀리 보내지 않기",
-        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다"
+        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
       ],
-      "benefits": [
+      benefits: [
         "디클라인 덤벨 플라이으로 어깨 주변의 제어",
         "가슴을 활용한 팔과 견갑의 협응",
-        "가슴의 움직임 경로 인식"
+        "가슴의 움직임 경로 인식",
       ],
-      "warning": "디클라인 덤벨 플라이 중 어깨 위쪽 통증, 목 긴장, 저림 또는 반동이 생기면 즉시 범위·저항을 낮추거나 중단하세요.",
-      "reference": {
-        "label": "ACSM — Exercise Safety",
-        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
-      }
+      warning:
+        "디클라인 덤벨 플라이 중 어깨 위쪽 통증, 목 긴장, 저림 또는 반동이 생기면 즉시 범위·저항을 낮추거나 중단하세요.",
+      reference: {
+        label: "ACSM — Exercise Safety",
+        url: "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/",
+      },
     },
-    "detail": {
-      "setup": [
+    detail: {
+      setup: [
         "도구를 몸 가까이에서 안정적으로 잡고 양쪽 중량이 같은지 확인합니다",
         "디클라인 지지대와 발 고정을 먼저 확인하고 천천히 자세를 잡습니다",
-        "디클라인 덤벨 플라이에 맞춰 낮은 중량으로 시작하고 양발 또는 벤치 지지로 균형을 만듭니다"
+        "디클라인 덤벨 플라이에 맞춰 낮은 중량으로 시작하고 양발 또는 벤치 지지로 균형을 만듭니다",
       ],
-      "finish": "디클라인 덤벨 플라이을 마친 뒤 어깨가 앞으로 밀리지 않게 도구를 몸 옆으로 통제해 되돌립니다.",
-      "commonMistakes": [
+      finish:
+        "디클라인 덤벨 플라이을 마친 뒤 어깨가 앞으로 밀리지 않게 도구를 몸 옆으로 통제해 되돌립니다.",
+      commonMistakes: [
         "디클라인 덤벨 플라이에서 어깨를 으쓱하며 목에 힘을 주는 경우",
         "디클라인 덤벨 플라이에서 반동으로 도구를 목표 높이보다 높게 던지는 경우",
-        "디클라인 덤벨 플라이에서 손목을 꺾어 도구를 지지하는 경우"
+        "디클라인 덤벨 플라이에서 손목을 꺾어 도구를 지지하는 경우",
       ],
-      "regressions": [
+      regressions: [
         "디클라인 덤벨 플라이은 중량을 낮추거나 한 팔씩 지지된 자세로 수행합니다",
         "디클라인 덤벨 플라이은 들기 높이를 어깨 아래로 줄입니다",
-        "디클라인 덤벨 플라이은 밴드 또는 더 짧은 지렛대를 사용합니다"
+        "디클라인 덤벨 플라이은 밴드 또는 더 짧은 지렛대를 사용합니다",
       ],
-      "progressions": [
+      progressions: [
         "디클라인 덤벨 플라이은 동일한 높이와 정렬에서 반복을 늘립니다",
         "디클라인 덤벨 플라이은 작은 중량 증가를 한 번만 적용합니다",
-        "디클라인 덤벨 플라이은 편측·인클라인 변형은 어깨가 편안할 때 시도합니다"
-      ]
-    }
+        "디클라인 덤벨 플라이은 편측·인클라인 변형은 어깨가 편안할 때 시도합니다",
+      ],
+    },
   },
   {
-    "exercise": {
-      "id": "verified-decline-dumbbell-triceps-extension",
-      "name": "디클라인 덤벨 삼두 익스텐션",
-      "englishName": "Decline Dumbbell Triceps Extension",
-      "category": "프리웨이트",
-      "regions": [
-        "팔"
-      ],
-      "focus": "근력",
-      "difficulty": "입문",
-      "equipment": "덤벨·안정된 지지면 선택",
-      "minutes": "6–12회 · 2세트",
-      "description": "디클라인 덤벨 삼두 익스텐션은 삼두근을 사용해 팔꿈치 또는 목표 관절을 펴는 경로를 통제하는 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
-      "cues": [
+    exercise: {
+      id: "verified-decline-dumbbell-triceps-extension",
+      name: "디클라인 덤벨 삼두 익스텐션",
+      englishName: "Decline Dumbbell Triceps Extension",
+      category: "프리웨이트",
+      regions: ["팔"],
+      focus: "근력",
+      difficulty: "입문",
+      equipment: "덤벨·안정된 지지면 선택",
+      minutes: "6–12회 · 2세트",
+      description:
+        "디클라인 덤벨 삼두 익스텐션은 삼두근을 사용해 팔꿈치 또는 목표 관절을 펴는 경로를 통제하는 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
+      cues: [
         "디클라인 덤벨 삼두 익스텐션에서 관절 축을 고정하고 목표 관절만 부드럽게 펴기",
         "삼두근을 느끼며 어깨와 몸통이 흔들리지 않게 지지 유지",
-        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다"
+        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
       ],
-      "benefits": [
+      benefits: [
         "디클라인 덤벨 삼두 익스텐션으로 관절 폄 경로 제어",
         "삼두근을 활용한 팔 뒤쪽·주변 안정 근육 사용",
-        "삼두근의 움직임 경로 인식"
+        "삼두근의 움직임 경로 인식",
       ],
-      "warning": "디클라인 덤벨 삼두 익스텐션 중 관절 끝의 날카로운 통증, 저림 또는 손잡이 흔들림이 있으면 즉시 중단하세요.",
-      "reference": {
-        "label": "ACSM — Exercise Safety",
-        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
-      }
+      warning:
+        "디클라인 덤벨 삼두 익스텐션 중 관절 끝의 날카로운 통증, 저림 또는 손잡이 흔들림이 있으면 즉시 중단하세요.",
+      reference: {
+        label: "ACSM — Exercise Safety",
+        url: "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/",
+      },
     },
-    "detail": {
-      "setup": [
+    detail: {
+      setup: [
         "도구를 몸 가까이에서 안정적으로 잡고 양쪽 중량이 같은지 확인합니다",
         "디클라인 지지대와 발 고정을 먼저 확인하고 천천히 자세를 잡습니다",
-        "디클라인 덤벨 삼두 익스텐션에 맞춰 도구·손잡이를 안정적으로 고정하고 관절 축을 맞춥니다"
+        "디클라인 덤벨 삼두 익스텐션에 맞춰 도구·손잡이를 안정적으로 고정하고 관절 축을 맞춥니다",
       ],
-      "finish": "디클라인 덤벨 삼두 익스텐션을 마친 뒤 저항을 천천히 되돌려 관절이 편안한 시작 범위에서 멈춥니다.",
-      "commonMistakes": [
+      finish:
+        "디클라인 덤벨 삼두 익스텐션을 마친 뒤 저항을 천천히 되돌려 관절이 편안한 시작 범위에서 멈춥니다.",
+      commonMistakes: [
         "디클라인 덤벨 삼두 익스텐션에서 어깨와 허리를 함께 흔들어 저항을 넘기는 경우",
         "디클라인 덤벨 삼두 익스텐션에서 관절을 반동으로 끝까지 잠그는 경우",
-        "디클라인 덤벨 삼두 익스텐션에서 손목을 꺾어 힘을 전달하는 경우"
+        "디클라인 덤벨 삼두 익스텐션에서 손목을 꺾어 힘을 전달하는 경우",
       ],
-      "regressions": [
+      regressions: [
         "디클라인 덤벨 삼두 익스텐션은 저항과 범위를 모두 낮춥니다",
         "디클라인 덤벨 삼두 익스텐션은 양손 또는 지지된 자세를 사용합니다",
-        "디클라인 덤벨 삼두 익스텐션은 통증 없는 중간 범위만 수행합니다"
+        "디클라인 덤벨 삼두 익스텐션은 통증 없는 중간 범위만 수행합니다",
       ],
-      "progressions": [
+      progressions: [
         "디클라인 덤벨 삼두 익스텐션은 정렬을 지킨 채 반복을 소폭 늘립니다",
         "디클라인 덤벨 삼두 익스텐션은 저항은 한 단계만 올립니다",
-        "디클라인 덤벨 삼두 익스텐션은 편측·긴 지렛대는 관절이 편안할 때만 시도합니다"
-      ]
-    }
+        "디클라인 덤벨 삼두 익스텐션은 편측·긴 지렛대는 관절이 편안할 때만 시도합니다",
+      ],
+    },
   },
   {
-    "exercise": {
-      "id": "verified-dumbbell-alternate-bicep-curl",
-      "name": "덤벨 교대 이두 컬",
-      "englishName": "Dumbbell Alternate Bicep Curl",
-      "category": "프리웨이트",
-      "regions": [
-        "팔"
-      ],
-      "focus": "근력",
-      "difficulty": "입문",
-      "equipment": "덤벨·안정된 지지면 선택",
-      "minutes": "6–12회 · 2세트",
-      "description": "덤벨 교대 이두 컬은 이두근을 중심으로 팔꿈치를 굽히며 도구를 통제하는 팔 굽힘 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
-      "cues": [
+    exercise: {
+      id: "verified-dumbbell-alternate-bicep-curl",
+      name: "덤벨 교대 이두 컬",
+      englishName: "Dumbbell Alternate Bicep Curl",
+      category: "프리웨이트",
+      regions: ["팔"],
+      focus: "근력",
+      difficulty: "입문",
+      equipment: "덤벨·안정된 지지면 선택",
+      minutes: "6–12회 · 2세트",
+      description:
+        "덤벨 교대 이두 컬은 이두근을 중심으로 팔꿈치를 굽히며 도구를 통제하는 팔 굽힘 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
+      cues: [
         "덤벨 교대 이두 컬에서 상완을 몸통 가까이에 두고 팔꿈치 위치를 고정",
         "이두근을 느끼며 손목을 꺾지 말고 도구를 부드럽게 들어 올리기",
-        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다"
+        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
       ],
-      "benefits": [
+      benefits: [
         "덤벨 교대 이두 컬으로 팔 굽힘 근육의 제어",
         "이두근을 활용한 전완·그립 안정 인식",
-        "이두근의 움직임 경로 인식"
+        "이두근의 움직임 경로 인식",
       ],
-      "warning": "덤벨 교대 이두 컬 중 팔꿈치·손목의 날카로운 통증, 저림 또는 그립 미끄러짐이 있으면 즉시 중단하세요.",
-      "reference": {
-        "label": "ACSM — Exercise Safety",
-        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
-      }
+      warning:
+        "덤벨 교대 이두 컬 중 팔꿈치·손목의 날카로운 통증, 저림 또는 그립 미끄러짐이 있으면 즉시 중단하세요.",
+      reference: {
+        label: "ACSM — Exercise Safety",
+        url: "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/",
+      },
     },
-    "detail": {
-      "setup": [
+    detail: {
+      setup: [
         "도구를 몸 가까이에서 안정적으로 잡고 양쪽 중량이 같은지 확인합니다",
         "발 또는 지지면을 단단히 고정하고 몸통을 길게 세웁니다",
-        "덤벨 교대 이두 컬에 맞춰 가벼운 중량을 들고 팔꿈치를 몸통 옆에 둡니다"
+        "덤벨 교대 이두 컬에 맞춰 가벼운 중량을 들고 팔꿈치를 몸통 옆에 둡니다",
       ],
-      "finish": "덤벨 교대 이두 컬을 마친 뒤 팔꿈치를 완전히 잠그지 않는 편안한 아래 범위에서 다음 반복을 준비합니다.",
-      "commonMistakes": [
+      finish:
+        "덤벨 교대 이두 컬을 마친 뒤 팔꿈치를 완전히 잠그지 않는 편안한 아래 범위에서 다음 반복을 준비합니다.",
+      commonMistakes: [
         "덤벨 교대 이두 컬에서 몸통을 뒤로 젖혀 반동을 쓰는 경우",
         "덤벨 교대 이두 컬에서 팔꿈치가 앞으로 크게 이동하는 경우",
-        "덤벨 교대 이두 컬에서 손목을 꺾어 중량을 드는 경우"
+        "덤벨 교대 이두 컬에서 손목을 꺾어 중량을 드는 경우",
       ],
-      "regressions": [
+      regressions: [
         "덤벨 교대 이두 컬은 더 가벼운 도구나 밴드를 사용합니다",
         "덤벨 교대 이두 컬은 시티드 또는 벤치 지지로 몸통 반동을 줄입니다",
-        "덤벨 교대 이두 컬은 아래와 위 범위를 조금 줄입니다"
+        "덤벨 교대 이두 컬은 아래와 위 범위를 조금 줄입니다",
       ],
-      "progressions": [
+      progressions: [
         "덤벨 교대 이두 컬은 반동 없이 반복을 한두 회 늘립니다",
         "덤벨 교대 이두 컬은 그립이 안정되면 중량을 소폭 올립니다",
-        "덤벨 교대 이두 컬은 편측 수행은 몸통이 흔들리지 않을 때 시작합니다"
-      ]
-    }
+        "덤벨 교대 이두 컬은 편측 수행은 몸통이 흔들리지 않을 때 시작합니다",
+      ],
+    },
   },
   {
-    "exercise": {
-      "id": "verified-dumbbell-bench-press-with-neutral-grip",
-      "name": "덤벨 벤치 프레스(중립)",
-      "englishName": "Dumbbell Bench Press with Neutral Grip",
-      "category": "프리웨이트",
-      "regions": [
-        "가슴"
-      ],
-      "focus": "근력",
-      "difficulty": "입문",
-      "equipment": "덤벨·안정된 지지면 선택",
-      "minutes": "6–12회 · 2세트",
-      "description": "덤벨 벤치 프레스(중립)은 가슴을 사용해 손잡이·도구 또는 바닥을 몸에서 멀어지게 미는 상체 밀기 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
-      "cues": [
+    exercise: {
+      id: "verified-dumbbell-bench-press-with-neutral-grip",
+      name: "덤벨 벤치 프레스(중립)",
+      englishName: "Dumbbell Bench Press with Neutral Grip",
+      category: "프리웨이트",
+      regions: ["가슴"],
+      focus: "근력",
+      difficulty: "입문",
+      equipment: "덤벨·안정된 지지면 선택",
+      minutes: "6–12회 · 2세트",
+      description:
+        "덤벨 벤치 프레스(중립)은 가슴을 사용해 손잡이·도구 또는 바닥을 몸에서 멀어지게 미는 상체 밀기 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
+      cues: [
         "덤벨 벤치 프레스(중립)에서 손목을 중립에 가깝게 두고 손잡이를 안정적으로 잡기",
         "가슴을 느끼며 갈비뼈를 과하게 들지 않고 몸통 길이 유지",
-        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다"
+        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
       ],
-      "benefits": [
+      benefits: [
         "덤벨 벤치 프레스(중립)으로 가슴·어깨·팔의 밀기 협응",
         "가슴을 활용한 손목과 견갑 안정 제어",
-        "가슴의 움직임 경로 인식"
+        "가슴의 움직임 경로 인식",
       ],
-      "warning": "덤벨 벤치 프레스(중립) 중 어깨·팔꿈치·손목 통증, 저림 또는 도구 흔들림이 있으면 즉시 멈추고 설정을 다시 확인하세요.",
-      "reference": {
-        "label": "ACSM — Exercise Safety",
-        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
-      }
+      warning:
+        "덤벨 벤치 프레스(중립) 중 어깨·팔꿈치·손목 통증, 저림 또는 도구 흔들림이 있으면 즉시 멈추고 설정을 다시 확인하세요.",
+      reference: {
+        label: "ACSM — Exercise Safety",
+        url: "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/",
+      },
     },
-    "detail": {
-      "setup": [
+    detail: {
+      setup: [
         "도구를 몸 가까이에서 안정적으로 잡고 양쪽 중량이 같은지 확인합니다",
         "발 또는 지지면을 단단히 고정하고 몸통을 길게 세웁니다",
-        "덤벨 벤치 프레스(중립)에 맞춰 손잡이·바·지지면의 높이와 좌우 설정을 확인합니다"
+        "덤벨 벤치 프레스(중립)에 맞춰 손잡이·바·지지면의 높이와 좌우 설정을 확인합니다",
       ],
-      "finish": "덤벨 벤치 프레스(중립)을 마친 뒤 팔꿈치를 잠그지 않은 편안한 끝 범위에서 잠시 멈춘 뒤 같은 경로로 돌아옵니다.",
-      "commonMistakes": [
+      finish:
+        "덤벨 벤치 프레스(중립)을 마친 뒤 팔꿈치를 잠그지 않은 편안한 끝 범위에서 잠시 멈춘 뒤 같은 경로로 돌아옵니다.",
+      commonMistakes: [
         "덤벨 벤치 프레스(중립)에서 어깨가 앞으로 말린 채 밀어 올리는 경우",
         "덤벨 벤치 프레스(중립)에서 허리를 과하게 젖혀 무게를 넘기는 경우",
-        "덤벨 벤치 프레스(중립)에서 손목을 꺾고 그립을 느슨하게 유지하는 경우"
+        "덤벨 벤치 프레스(중립)에서 손목을 꺾고 그립을 느슨하게 유지하는 경우",
       ],
-      "regressions": [
+      regressions: [
         "덤벨 벤치 프레스(중립)은 벽·높은 벤치 또는 가벼운 저항으로 바꿉니다",
         "덤벨 벤치 프레스(중립)은 가동 범위를 줄이고 어깨 편안함을 확인합니다",
-        "덤벨 벤치 프레스(중립)은 양손 지지로 안정성을 먼저 확보합니다"
+        "덤벨 벤치 프레스(중립)은 양손 지지로 안정성을 먼저 확보합니다",
       ],
-      "progressions": [
+      progressions: [
         "덤벨 벤치 프레스(중립)은 정렬이 유지될 때 반복을 소폭 늘립니다",
         "덤벨 벤치 프레스(중립)은 안정된 지지면에서 저항을 한 단계만 올립니다",
-        "덤벨 벤치 프레스(중립)은 낮은 지지 또는 편측 변형은 통제 후 시도합니다"
-      ]
-    }
+        "덤벨 벤치 프레스(중립)은 낮은 지지 또는 편측 변형은 통제 후 시도합니다",
+      ],
+    },
   },
   {
-    "exercise": {
-      "id": "verified-dumbbell-bicep-curl",
-      "name": "덤벨 이두 컬",
-      "englishName": "Dumbbell Bicep Curl",
-      "category": "프리웨이트",
-      "regions": [
-        "팔"
-      ],
-      "focus": "근력",
-      "difficulty": "입문",
-      "equipment": "덤벨·안정된 지지면 선택",
-      "minutes": "6–12회 · 2세트",
-      "description": "덤벨 이두 컬은 이두근을 중심으로 팔꿈치를 굽히며 도구를 통제하는 팔 굽힘 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
-      "cues": [
+    exercise: {
+      id: "verified-dumbbell-bicep-curl",
+      name: "덤벨 이두 컬",
+      englishName: "Dumbbell Bicep Curl",
+      category: "프리웨이트",
+      regions: ["팔"],
+      focus: "근력",
+      difficulty: "입문",
+      equipment: "덤벨·안정된 지지면 선택",
+      minutes: "6–12회 · 2세트",
+      description:
+        "덤벨 이두 컬은 이두근을 중심으로 팔꿈치를 굽히며 도구를 통제하는 팔 굽힘 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
+      cues: [
         "덤벨 이두 컬에서 상완을 몸통 가까이에 두고 팔꿈치 위치를 고정",
         "이두근을 느끼며 손목을 꺾지 말고 도구를 부드럽게 들어 올리기",
-        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다"
+        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
       ],
-      "benefits": [
+      benefits: [
         "덤벨 이두 컬으로 팔 굽힘 근육의 제어",
         "이두근을 활용한 전완·그립 안정 인식",
-        "이두근의 움직임 경로 인식"
+        "이두근의 움직임 경로 인식",
       ],
-      "warning": "덤벨 이두 컬 중 팔꿈치·손목의 날카로운 통증, 저림 또는 그립 미끄러짐이 있으면 즉시 중단하세요.",
-      "reference": {
-        "label": "ACSM — Exercise Safety",
-        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
-      }
+      warning:
+        "덤벨 이두 컬 중 팔꿈치·손목의 날카로운 통증, 저림 또는 그립 미끄러짐이 있으면 즉시 중단하세요.",
+      reference: {
+        label: "ACSM — Exercise Safety",
+        url: "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/",
+      },
     },
-    "detail": {
-      "setup": [
+    detail: {
+      setup: [
         "도구를 몸 가까이에서 안정적으로 잡고 양쪽 중량이 같은지 확인합니다",
         "발 또는 지지면을 단단히 고정하고 몸통을 길게 세웁니다",
-        "덤벨 이두 컬에 맞춰 가벼운 중량을 들고 팔꿈치를 몸통 옆에 둡니다"
+        "덤벨 이두 컬에 맞춰 가벼운 중량을 들고 팔꿈치를 몸통 옆에 둡니다",
       ],
-      "finish": "덤벨 이두 컬을 마친 뒤 팔꿈치를 완전히 잠그지 않는 편안한 아래 범위에서 다음 반복을 준비합니다.",
-      "commonMistakes": [
+      finish:
+        "덤벨 이두 컬을 마친 뒤 팔꿈치를 완전히 잠그지 않는 편안한 아래 범위에서 다음 반복을 준비합니다.",
+      commonMistakes: [
         "덤벨 이두 컬에서 몸통을 뒤로 젖혀 반동을 쓰는 경우",
         "덤벨 이두 컬에서 팔꿈치가 앞으로 크게 이동하는 경우",
-        "덤벨 이두 컬에서 손목을 꺾어 중량을 드는 경우"
+        "덤벨 이두 컬에서 손목을 꺾어 중량을 드는 경우",
       ],
-      "regressions": [
+      regressions: [
         "덤벨 이두 컬은 더 가벼운 도구나 밴드를 사용합니다",
         "덤벨 이두 컬은 시티드 또는 벤치 지지로 몸통 반동을 줄입니다",
-        "덤벨 이두 컬은 아래와 위 범위를 조금 줄입니다"
+        "덤벨 이두 컬은 아래와 위 범위를 조금 줄입니다",
       ],
-      "progressions": [
+      progressions: [
         "덤벨 이두 컬은 반동 없이 반복을 한두 회 늘립니다",
         "덤벨 이두 컬은 그립이 안정되면 중량을 소폭 올립니다",
-        "덤벨 이두 컬은 편측 수행은 몸통이 흔들리지 않을 때 시작합니다"
-      ]
-    }
+        "덤벨 이두 컬은 편측 수행은 몸통이 흔들리지 않을 때 시작합니다",
+      ],
+    },
   },
   {
-    "exercise": {
-      "id": "verified-dumbbell-clean",
-      "name": "덤벨 클린",
-      "englishName": "Dumbbell Clean",
-      "category": "프리웨이트",
-      "regions": [
-        "하체",
-        "둔근"
-      ],
-      "focus": "근력",
-      "difficulty": "중급",
-      "equipment": "덤벨·안정된 지지면 선택",
-      "minutes": "6–12회 · 2세트",
-      "description": "덤벨 클린은 햄스트링을 빠르게 쓰되 착지·받기·도구 경로를 먼저 통제해야 하는 파워 또는 기술 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
-      "cues": [
+    exercise: {
+      id: "verified-dumbbell-clean",
+      name: "덤벨 클린",
+      englishName: "Dumbbell Clean",
+      category: "프리웨이트",
+      regions: ["하체", "둔근"],
+      focus: "근력",
+      difficulty: "중급",
+      equipment: "덤벨·안정된 지지면 선택",
+      minutes: "6–12회 · 2세트",
+      description:
+        "덤벨 클린은 햄스트링을 빠르게 쓰되 착지·받기·도구 경로를 먼저 통제해야 하는 파워 또는 기술 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
+      cues: [
         "덤벨 클린에서 낮은 속도 리허설 뒤에만 힘을 빠르게 쓰기",
         "햄스트링을 느끼며 발·무릎·골반이 같은 방향으로 받기",
-        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다"
+        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
       ],
-      "benefits": [
+      benefits: [
         "덤벨 클린으로 힘 발휘와 제어의 연결",
         "햄스트링을 활용한 착지·받기 협응",
-        "햄스트링의 움직임 경로 인식"
+        "햄스트링의 움직임 경로 인식",
       ],
-      "warning": "덤벨 클린 중 착지 불안, 무릎·발목·허리 통증, 어지러움 또는 공간 부족이 있으면 즉시 중단하세요.",
-      "reference": {
-        "label": "ACSM — Exercise Safety",
-        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
-      }
+      warning:
+        "덤벨 클린 중 착지 불안, 무릎·발목·허리 통증, 어지러움 또는 공간 부족이 있으면 즉시 중단하세요.",
+      reference: {
+        label: "ACSM — Exercise Safety",
+        url: "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/",
+      },
     },
-    "detail": {
-      "setup": [
+    detail: {
+      setup: [
         "도구를 몸 가까이에서 안정적으로 잡고 양쪽 중량이 같은지 확인합니다",
         "발 또는 지지면을 단단히 고정하고 몸통을 길게 세웁니다",
-        "덤벨 클린에 맞춰 미끄럽지 않은 바닥과 충분한 빈 공간을 확보합니다"
+        "덤벨 클린에 맞춰 미끄럽지 않은 바닥과 충분한 빈 공간을 확보합니다",
       ],
-      "finish": "덤벨 클린을 마친 뒤 착지 또는 받기 뒤 잠시 균형을 확인하고 호흡이 안정된 후 다음 반복을 시작합니다.",
-      "commonMistakes": [
+      finish:
+        "덤벨 클린을 마친 뒤 착지 또는 받기 뒤 잠시 균형을 확인하고 호흡이 안정된 후 다음 반복을 시작합니다.",
+      commonMistakes: [
         "덤벨 클린에서 피로한 상태에서 높이·속도·부하를 함께 올리는 경우",
         "덤벨 클린에서 착지 소리와 무릎 흔들림을 무시하는 경우",
-        "덤벨 클린에서 도구 경로가 불안정한데 반복을 이어 가는 경우"
+        "덤벨 클린에서 도구 경로가 불안정한데 반복을 이어 가는 경우",
       ],
-      "regressions": [
+      regressions: [
         "덤벨 클린은 점프·속도를 빼고 체중 이동으로 바꿉니다",
         "덤벨 클린은 낮은 높이·짧은 거리·가벼운 도구를 사용합니다",
-        "덤벨 클린은 지지대 가까이에서 받기 자세만 연습합니다"
+        "덤벨 클린은 지지대 가까이에서 받기 자세만 연습합니다",
       ],
-      "progressions": [
+      progressions: [
         "덤벨 클린은 안정된 착지 뒤 반복을 한두 회 늘립니다",
         "덤벨 클린은 한 번에 거리·높이·부하 중 하나만 조절합니다",
-        "덤벨 클린은 복잡한 연속 동작은 기본 패턴이 안정된 뒤 시도합니다"
-      ]
-    }
+        "덤벨 클린은 복잡한 연속 동작은 기본 패턴이 안정된 뒤 시도합니다",
+      ],
+    },
   },
   {
-    "exercise": {
-      "id": "verified-dumbbell-flyes",
-      "name": "덤벨 플라이",
-      "englishName": "Dumbbell Flyes",
-      "category": "프리웨이트",
-      "regions": [
-        "가슴"
-      ],
-      "focus": "근력",
-      "difficulty": "입문",
-      "equipment": "덤벨·안정된 지지면 선택",
-      "minutes": "6–12회 · 2세트",
-      "description": "덤벨 플라이은 가슴을 사용해 팔 또는 도구를 정해진 평면으로 들어 올리며 어깨 위치를 제어하는 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
-      "cues": [
+    exercise: {
+      id: "verified-dumbbell-flyes",
+      name: "덤벨 플라이",
+      englishName: "Dumbbell Flyes",
+      category: "프리웨이트",
+      regions: ["가슴"],
+      focus: "근력",
+      difficulty: "입문",
+      equipment: "덤벨·안정된 지지면 선택",
+      minutes: "6–12회 · 2세트",
+      description:
+        "덤벨 플라이은 가슴을 사용해 팔 또는 도구를 정해진 평면으로 들어 올리며 어깨 위치를 제어하는 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
+      cues: [
         "덤벨 플라이에서 어깨를 귀에서 멀리 두고 목을 길게 유지",
         "가슴을 느끼며 도구를 몸에서 너무 멀리 보내지 않기",
-        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다"
+        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
       ],
-      "benefits": [
+      benefits: [
         "덤벨 플라이으로 어깨 주변의 제어",
         "가슴을 활용한 팔과 견갑의 협응",
-        "가슴의 움직임 경로 인식"
+        "가슴의 움직임 경로 인식",
       ],
-      "warning": "덤벨 플라이 중 어깨 위쪽 통증, 목 긴장, 저림 또는 반동이 생기면 즉시 범위·저항을 낮추거나 중단하세요.",
-      "reference": {
-        "label": "ACSM — Exercise Safety",
-        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
-      }
+      warning:
+        "덤벨 플라이 중 어깨 위쪽 통증, 목 긴장, 저림 또는 반동이 생기면 즉시 범위·저항을 낮추거나 중단하세요.",
+      reference: {
+        label: "ACSM — Exercise Safety",
+        url: "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/",
+      },
     },
-    "detail": {
-      "setup": [
+    detail: {
+      setup: [
         "도구를 몸 가까이에서 안정적으로 잡고 양쪽 중량이 같은지 확인합니다",
         "발 또는 지지면을 단단히 고정하고 몸통을 길게 세웁니다",
-        "덤벨 플라이에 맞춰 낮은 중량으로 시작하고 양발 또는 벤치 지지로 균형을 만듭니다"
+        "덤벨 플라이에 맞춰 낮은 중량으로 시작하고 양발 또는 벤치 지지로 균형을 만듭니다",
       ],
-      "finish": "덤벨 플라이을 마친 뒤 어깨가 앞으로 밀리지 않게 도구를 몸 옆으로 통제해 되돌립니다.",
-      "commonMistakes": [
+      finish:
+        "덤벨 플라이을 마친 뒤 어깨가 앞으로 밀리지 않게 도구를 몸 옆으로 통제해 되돌립니다.",
+      commonMistakes: [
         "덤벨 플라이에서 어깨를 으쓱하며 목에 힘을 주는 경우",
         "덤벨 플라이에서 반동으로 도구를 목표 높이보다 높게 던지는 경우",
-        "덤벨 플라이에서 손목을 꺾어 도구를 지지하는 경우"
+        "덤벨 플라이에서 손목을 꺾어 도구를 지지하는 경우",
       ],
-      "regressions": [
+      regressions: [
         "덤벨 플라이은 중량을 낮추거나 한 팔씩 지지된 자세로 수행합니다",
         "덤벨 플라이은 들기 높이를 어깨 아래로 줄입니다",
-        "덤벨 플라이은 밴드 또는 더 짧은 지렛대를 사용합니다"
+        "덤벨 플라이은 밴드 또는 더 짧은 지렛대를 사용합니다",
       ],
-      "progressions": [
+      progressions: [
         "덤벨 플라이은 동일한 높이와 정렬에서 반복을 늘립니다",
         "덤벨 플라이은 작은 중량 증가를 한 번만 적용합니다",
-        "덤벨 플라이은 편측·인클라인 변형은 어깨가 편안할 때 시도합니다"
-      ]
-    }
+        "덤벨 플라이은 편측·인클라인 변형은 어깨가 편안할 때 시도합니다",
+      ],
+    },
   },
   {
-    "exercise": {
-      "id": "verified-dumbbell-incline-row",
-      "name": "덤벨 인클라인 로우",
-      "englishName": "Dumbbell Incline Row",
-      "category": "프리웨이트",
-      "regions": [
-        "등"
-      ],
-      "focus": "근력",
-      "difficulty": "입문",
-      "equipment": "덤벨·안정된 지지면 선택",
-      "minutes": "6–12회 · 2세트",
-      "description": "덤벨 인클라인 로우은 등 중앙을 쓰며 손잡이 또는 도구를 몸 쪽으로 당기고 어깨뼈의 위치를 제어하는 당기기 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
-      "cues": [
+    exercise: {
+      id: "verified-dumbbell-incline-row",
+      name: "덤벨 인클라인 로우",
+      englishName: "Dumbbell Incline Row",
+      category: "프리웨이트",
+      regions: ["등"],
+      focus: "근력",
+      difficulty: "입문",
+      equipment: "덤벨·안정된 지지면 선택",
+      minutes: "6–12회 · 2세트",
+      description:
+        "덤벨 인클라인 로우은 등 중앙을 쓰며 손잡이 또는 도구를 몸 쪽으로 당기고 어깨뼈의 위치를 제어하는 당기기 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
+      cues: [
         "덤벨 인클라인 로우에서 먼저 어깨를 귀에서 멀리 두고 가슴을 편안히 유지",
         "등 중앙을 느끼며 팔꿈치를 목적 방향으로 끌되 몸통 반동 줄이기",
-        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다"
+        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
       ],
-      "benefits": [
+      benefits: [
         "덤벨 인클라인 로우으로 등·팔의 당기기 협응",
         "등 중앙을 활용한 견갑 위치 인식",
-        "등 중앙의 움직임 경로 인식"
+        "등 중앙의 움직임 경로 인식",
       ],
-      "warning": "덤벨 인클라인 로우 중 어깨 앞쪽의 날카로운 통증, 손 저림, 고정점 흔들림 또는 그립 이탈이 있으면 즉시 중단하세요.",
-      "reference": {
-        "label": "ACSM — Exercise Safety",
-        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
-      }
+      warning:
+        "덤벨 인클라인 로우 중 어깨 앞쪽의 날카로운 통증, 손 저림, 고정점 흔들림 또는 그립 이탈이 있으면 즉시 중단하세요.",
+      reference: {
+        label: "ACSM — Exercise Safety",
+        url: "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/",
+      },
     },
-    "detail": {
-      "setup": [
+    detail: {
+      setup: [
         "도구를 몸 가까이에서 안정적으로 잡고 양쪽 중량이 같은지 확인합니다",
         "인클라인 지지면을 고정하고 머리·등·골반이 흔들리지 않게 둡니다",
-        "덤벨 인클라인 로우에 맞춰 그립·바·손잡이 높이와 고정 상태를 확인합니다"
+        "덤벨 인클라인 로우에 맞춰 그립·바·손잡이 높이와 고정 상태를 확인합니다",
       ],
-      "finish": "덤벨 인클라인 로우을 마친 뒤 팔을 급하게 펴지 말고 어깨가 앞으로 쏠리지 않는 범위에서 시작 위치로 돌아갑니다.",
-      "commonMistakes": [
+      finish:
+        "덤벨 인클라인 로우을 마친 뒤 팔을 급하게 펴지 말고 어깨가 앞으로 쏠리지 않는 범위에서 시작 위치로 돌아갑니다.",
+      commonMistakes: [
         "덤벨 인클라인 로우에서 어깨를 으쓱한 채 팔만 사용하는 경우",
         "덤벨 인클라인 로우에서 몸통을 크게 흔들어 반동을 만드는 경우",
-        "덤벨 인클라인 로우에서 팔꿈치를 끝까지 밀어 관절을 잠그는 경우"
+        "덤벨 인클라인 로우에서 팔꿈치를 끝까지 밀어 관절을 잠그는 경우",
       ],
-      "regressions": [
+      regressions: [
         "덤벨 인클라인 로우은 밴드·보조 장치 또는 더 가벼운 저항을 사용합니다",
         "덤벨 인클라인 로우은 지지된 시티드 자세로 몸통 부담을 줄입니다",
-        "덤벨 인클라인 로우은 당기는 범위를 짧게 정하고 멈춥니다"
+        "덤벨 인클라인 로우은 당기는 범위를 짧게 정하고 멈춥니다",
       ],
-      "progressions": [
+      progressions: [
         "덤벨 인클라인 로우은 같은 경로에서 저항을 한 단계만 올립니다",
         "덤벨 인클라인 로우은 완전한 어깨 제어가 되면 범위를 조금 늘립니다",
-        "덤벨 인클라인 로우은 편측 당김은 몸통 회전을 통제할 수 있을 때 시도합니다"
-      ]
-    }
+        "덤벨 인클라인 로우은 편측 당김은 몸통 회전을 통제할 수 있을 때 시도합니다",
+      ],
+    },
   },
   {
-    "exercise": {
-      "id": "verified-dumbbell-incline-shoulder-raise",
-      "name": "덤벨 인클라인 숄더 레이즈",
-      "englishName": "Dumbbell Incline Shoulder Raise",
-      "category": "프리웨이트",
-      "regions": [
-        "어깨"
-      ],
-      "focus": "근력",
-      "difficulty": "입문",
-      "equipment": "덤벨·안정된 지지면 선택",
-      "minutes": "6–12회 · 2세트",
-      "description": "덤벨 인클라인 숄더 레이즈은 어깨을 사용해 팔 또는 도구를 정해진 평면으로 들어 올리며 어깨 위치를 제어하는 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
-      "cues": [
+    exercise: {
+      id: "verified-dumbbell-incline-shoulder-raise",
+      name: "덤벨 인클라인 숄더 레이즈",
+      englishName: "Dumbbell Incline Shoulder Raise",
+      category: "프리웨이트",
+      regions: ["어깨"],
+      focus: "근력",
+      difficulty: "입문",
+      equipment: "덤벨·안정된 지지면 선택",
+      minutes: "6–12회 · 2세트",
+      description:
+        "덤벨 인클라인 숄더 레이즈은 어깨을 사용해 팔 또는 도구를 정해진 평면으로 들어 올리며 어깨 위치를 제어하는 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
+      cues: [
         "덤벨 인클라인 숄더 레이즈에서 어깨를 귀에서 멀리 두고 목을 길게 유지",
         "어깨을 느끼며 도구를 몸에서 너무 멀리 보내지 않기",
-        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다"
+        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
       ],
-      "benefits": [
+      benefits: [
         "덤벨 인클라인 숄더 레이즈으로 어깨 주변의 제어",
         "어깨을 활용한 팔과 견갑의 협응",
-        "어깨의 움직임 경로 인식"
+        "어깨의 움직임 경로 인식",
       ],
-      "warning": "덤벨 인클라인 숄더 레이즈 중 어깨 위쪽 통증, 목 긴장, 저림 또는 반동이 생기면 즉시 범위·저항을 낮추거나 중단하세요.",
-      "reference": {
-        "label": "ACSM — Exercise Safety",
-        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
-      }
+      warning:
+        "덤벨 인클라인 숄더 레이즈 중 어깨 위쪽 통증, 목 긴장, 저림 또는 반동이 생기면 즉시 범위·저항을 낮추거나 중단하세요.",
+      reference: {
+        label: "ACSM — Exercise Safety",
+        url: "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/",
+      },
     },
-    "detail": {
-      "setup": [
+    detail: {
+      setup: [
         "도구를 몸 가까이에서 안정적으로 잡고 양쪽 중량이 같은지 확인합니다",
         "인클라인 지지면을 고정하고 머리·등·골반이 흔들리지 않게 둡니다",
-        "덤벨 인클라인 숄더 레이즈에 맞춰 낮은 중량으로 시작하고 양발 또는 벤치 지지로 균형을 만듭니다"
+        "덤벨 인클라인 숄더 레이즈에 맞춰 낮은 중량으로 시작하고 양발 또는 벤치 지지로 균형을 만듭니다",
       ],
-      "finish": "덤벨 인클라인 숄더 레이즈을 마친 뒤 어깨가 앞으로 밀리지 않게 도구를 몸 옆으로 통제해 되돌립니다.",
-      "commonMistakes": [
+      finish:
+        "덤벨 인클라인 숄더 레이즈을 마친 뒤 어깨가 앞으로 밀리지 않게 도구를 몸 옆으로 통제해 되돌립니다.",
+      commonMistakes: [
         "덤벨 인클라인 숄더 레이즈에서 어깨를 으쓱하며 목에 힘을 주는 경우",
         "덤벨 인클라인 숄더 레이즈에서 반동으로 도구를 목표 높이보다 높게 던지는 경우",
-        "덤벨 인클라인 숄더 레이즈에서 손목을 꺾어 도구를 지지하는 경우"
+        "덤벨 인클라인 숄더 레이즈에서 손목을 꺾어 도구를 지지하는 경우",
       ],
-      "regressions": [
+      regressions: [
         "덤벨 인클라인 숄더 레이즈은 중량을 낮추거나 한 팔씩 지지된 자세로 수행합니다",
         "덤벨 인클라인 숄더 레이즈은 들기 높이를 어깨 아래로 줄입니다",
-        "덤벨 인클라인 숄더 레이즈은 밴드 또는 더 짧은 지렛대를 사용합니다"
+        "덤벨 인클라인 숄더 레이즈은 밴드 또는 더 짧은 지렛대를 사용합니다",
       ],
-      "progressions": [
+      progressions: [
         "덤벨 인클라인 숄더 레이즈은 동일한 높이와 정렬에서 반복을 늘립니다",
         "덤벨 인클라인 숄더 레이즈은 작은 중량 증가를 한 번만 적용합니다",
-        "덤벨 인클라인 숄더 레이즈은 편측·인클라인 변형은 어깨가 편안할 때 시도합니다"
-      ]
-    }
+        "덤벨 인클라인 숄더 레이즈은 편측·인클라인 변형은 어깨가 편안할 때 시도합니다",
+      ],
+    },
   },
   {
-    "exercise": {
-      "id": "verified-dumbbell-lunges",
-      "name": "덤벨 런지",
-      "englishName": "Dumbbell Lunges",
-      "category": "프리웨이트",
-      "regions": [
-        "하체"
-      ],
-      "focus": "근력",
-      "difficulty": "입문",
-      "equipment": "덤벨·안정된 지지면 선택",
-      "minutes": "6–12회 · 2세트",
-      "description": "덤벨 런지은 대퇴사두근을 사용해 무릎과 엉덩이를 함께 굽혔다 펴는 하체 지지·밀기 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
-      "cues": [
+    exercise: {
+      id: "verified-dumbbell-lunges",
+      name: "덤벨 런지",
+      englishName: "Dumbbell Lunges",
+      category: "프리웨이트",
+      regions: ["하체"],
+      focus: "근력",
+      difficulty: "입문",
+      equipment: "덤벨·안정된 지지면 선택",
+      minutes: "6–12회 · 2세트",
+      description:
+        "덤벨 런지은 대퇴사두근을 사용해 무릎과 엉덩이를 함께 굽혔다 펴는 하체 지지·밀기 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
+      cues: [
         "덤벨 런지에서 발 전체를 바닥에 붙이고 무릎을 발 방향으로 이동",
         "대퇴사두근을 느끼며 골반과 흉곽이 함께 내려가도록 몸통을 길게 유지",
-        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다"
+        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
       ],
-      "benefits": [
+      benefits: [
         "덤벨 런지으로 하체 지지력과 제어",
         "대퇴사두근을 활용한 엉덩이·무릎 협응",
-        "대퇴사두근의 움직임 경로 인식"
+        "대퇴사두근의 움직임 경로 인식",
       ],
-      "warning": "덤벨 런지 중 무릎·고관절의 날카로운 통증, 발바닥 들림 또는 균형 상실이 있으면 깊이·부하를 낮추거나 중단하세요.",
-      "reference": {
-        "label": "ACSM — Exercise Safety",
-        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
-      }
+      warning:
+        "덤벨 런지 중 무릎·고관절의 날카로운 통증, 발바닥 들림 또는 균형 상실이 있으면 깊이·부하를 낮추거나 중단하세요.",
+      reference: {
+        label: "ACSM — Exercise Safety",
+        url: "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/",
+      },
     },
-    "detail": {
-      "setup": [
+    detail: {
+      setup: [
         "도구를 몸 가까이에서 안정적으로 잡고 양쪽 중량이 같은지 확인합니다",
         "발 또는 지지면을 단단히 고정하고 몸통을 길게 세웁니다",
-        "덤벨 런지에 맞춰 발 간격과 발끝 방향을 편안한 범위에서 정합니다"
+        "덤벨 런지에 맞춰 발 간격과 발끝 방향을 편안한 범위에서 정합니다",
       ],
-      "finish": "덤벨 런지을 마친 뒤 무릎과 엉덩이를 함께 펴고 발 전체로 균형을 회복한 뒤 다음 반복을 준비합니다.",
-      "commonMistakes": [
+      finish:
+        "덤벨 런지을 마친 뒤 무릎과 엉덩이를 함께 펴고 발 전체로 균형을 회복한 뒤 다음 반복을 준비합니다.",
+      commonMistakes: [
         "덤벨 런지에서 무릎이 발 안쪽으로 무너지는 경우",
         "덤벨 런지에서 발뒤꿈치가 들린 채 깊이를 억지로 늘리는 경우",
-        "덤벨 런지에서 내려가며 허리가 과하게 말리거나 젖혀지는 경우"
+        "덤벨 런지에서 내려가며 허리가 과하게 말리거나 젖혀지는 경우",
       ],
-      "regressions": [
+      regressions: [
         "덤벨 런지은 의자·박스를 목표 높이로 사용합니다",
         "덤벨 런지은 지지대를 잡고 얕은 범위로 수행합니다",
-        "덤벨 런지은 부하를 빼고 체중 이동부터 연습합니다"
+        "덤벨 런지은 부하를 빼고 체중 이동부터 연습합니다",
       ],
-      "progressions": [
+      progressions: [
         "덤벨 런지은 안정된 범위에서 반복만 소폭 늘립니다",
         "덤벨 런지은 편안한 깊이가 확보된 뒤 부하를 추가합니다",
-        "덤벨 런지은 편측 변형은 지지대 가까이에서 시작합니다"
-      ]
-    }
+        "덤벨 런지은 편측 변형은 지지대 가까이에서 시작합니다",
+      ],
+    },
   },
   {
-    "exercise": {
-      "id": "verified-dumbbell-lying-one-arm-rear-lateral-raise",
-      "name": "덤벨 누운 원암 리어 레이즈",
-      "englishName": "Dumbbell Lying One-Arm Rear Lateral Raise",
-      "category": "프리웨이트",
-      "regions": [
-        "어깨"
-      ],
-      "focus": "근력",
-      "difficulty": "중급",
-      "equipment": "덤벨·안정된 지지면 선택",
-      "minutes": "6–12회 · 2세트",
-      "description": "덤벨 누운 원암 리어 레이즈은 어깨을 사용해 팔 또는 도구를 정해진 평면으로 들어 올리며 어깨 위치를 제어하는 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
-      "cues": [
+    exercise: {
+      id: "verified-dumbbell-lying-one-arm-rear-lateral-raise",
+      name: "덤벨 누운 원암 리어 레이즈",
+      englishName: "Dumbbell Lying One-Arm Rear Lateral Raise",
+      category: "프리웨이트",
+      regions: ["어깨"],
+      focus: "근력",
+      difficulty: "중급",
+      equipment: "덤벨·안정된 지지면 선택",
+      minutes: "6–12회 · 2세트",
+      description:
+        "덤벨 누운 원암 리어 레이즈은 어깨을 사용해 팔 또는 도구를 정해진 평면으로 들어 올리며 어깨 위치를 제어하는 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
+      cues: [
         "덤벨 누운 원암 리어 레이즈에서 어깨를 귀에서 멀리 두고 목을 길게 유지",
         "어깨을 느끼며 도구를 몸에서 너무 멀리 보내지 않기",
-        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다"
+        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
       ],
-      "benefits": [
+      benefits: [
         "덤벨 누운 원암 리어 레이즈으로 어깨 주변의 제어",
         "어깨을 활용한 팔과 견갑의 협응",
-        "어깨의 움직임 경로 인식"
+        "어깨의 움직임 경로 인식",
       ],
-      "warning": "덤벨 누운 원암 리어 레이즈 중 어깨 위쪽 통증, 목 긴장, 저림 또는 반동이 생기면 즉시 범위·저항을 낮추거나 중단하세요.",
-      "reference": {
-        "label": "ACSM — Exercise Safety",
-        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
-      }
+      warning:
+        "덤벨 누운 원암 리어 레이즈 중 어깨 위쪽 통증, 목 긴장, 저림 또는 반동이 생기면 즉시 범위·저항을 낮추거나 중단하세요.",
+      reference: {
+        label: "ACSM — Exercise Safety",
+        url: "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/",
+      },
     },
-    "detail": {
-      "setup": [
+    detail: {
+      setup: [
         "도구를 몸 가까이에서 안정적으로 잡고 양쪽 중량이 같은지 확인합니다",
         "바닥 또는 벤치에 등을 안정적으로 댄 뒤 갈비뼈를 과하게 들지 않습니다",
-        "덤벨 누운 원암 리어 레이즈에 맞춰 낮은 중량으로 시작하고 양발 또는 벤치 지지로 균형을 만듭니다"
+        "덤벨 누운 원암 리어 레이즈에 맞춰 낮은 중량으로 시작하고 양발 또는 벤치 지지로 균형을 만듭니다",
       ],
-      "finish": "덤벨 누운 원암 리어 레이즈을 마친 뒤 어깨가 앞으로 밀리지 않게 도구를 몸 옆으로 통제해 되돌립니다.",
-      "commonMistakes": [
+      finish:
+        "덤벨 누운 원암 리어 레이즈을 마친 뒤 어깨가 앞으로 밀리지 않게 도구를 몸 옆으로 통제해 되돌립니다.",
+      commonMistakes: [
         "덤벨 누운 원암 리어 레이즈에서 어깨를 으쓱하며 목에 힘을 주는 경우",
         "덤벨 누운 원암 리어 레이즈에서 반동으로 도구를 목표 높이보다 높게 던지는 경우",
-        "덤벨 누운 원암 리어 레이즈에서 손목을 꺾어 도구를 지지하는 경우"
+        "덤벨 누운 원암 리어 레이즈에서 손목을 꺾어 도구를 지지하는 경우",
       ],
-      "regressions": [
+      regressions: [
         "덤벨 누운 원암 리어 레이즈은 중량을 낮추거나 한 팔씩 지지된 자세로 수행합니다",
         "덤벨 누운 원암 리어 레이즈은 들기 높이를 어깨 아래로 줄입니다",
-        "덤벨 누운 원암 리어 레이즈은 밴드 또는 더 짧은 지렛대를 사용합니다"
+        "덤벨 누운 원암 리어 레이즈은 밴드 또는 더 짧은 지렛대를 사용합니다",
       ],
-      "progressions": [
+      progressions: [
         "덤벨 누운 원암 리어 레이즈은 동일한 높이와 정렬에서 반복을 늘립니다",
         "덤벨 누운 원암 리어 레이즈은 작은 중량 증가를 한 번만 적용합니다",
-        "덤벨 누운 원암 리어 레이즈은 편측·인클라인 변형은 어깨가 편안할 때 시도합니다"
-      ]
-    }
+        "덤벨 누운 원암 리어 레이즈은 편측·인클라인 변형은 어깨가 편안할 때 시도합니다",
+      ],
+    },
   },
   {
-    "exercise": {
-      "id": "verified-dumbbell-lying-pronation",
-      "name": "덤벨 누운 회내",
-      "englishName": "Dumbbell Lying Pronation",
-      "category": "프리웨이트",
-      "regions": [
-        "팔"
-      ],
-      "focus": "근력",
-      "difficulty": "중급",
-      "equipment": "덤벨·안정된 지지면 선택",
-      "minutes": "6–12회 · 2세트",
-      "description": "덤벨 누운 회내은 전완 주변을 통증 없는 범위에서 천천히 움직여 가동 범위와 자세 감각을 확인하는 모빌리티 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
-      "cues": [
+    exercise: {
+      id: "verified-dumbbell-lying-pronation",
+      name: "덤벨 누운 회내",
+      englishName: "Dumbbell Lying Pronation",
+      category: "프리웨이트",
+      regions: ["팔"],
+      focus: "근력",
+      difficulty: "중급",
+      equipment: "덤벨·안정된 지지면 선택",
+      minutes: "6–12회 · 2세트",
+      description:
+        "덤벨 누운 회내은 전완 주변을 통증 없는 범위에서 천천히 움직여 가동 범위와 자세 감각을 확인하는 모빌리티 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
+      cues: [
         "덤벨 누운 회내에서 작은 범위에서 호흡을 멈추지 않기",
         "전완을 느끼며 끝 범위를 밀지 말고 부드럽게 왕복",
-        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다"
+        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
       ],
-      "benefits": [
+      benefits: [
         "덤벨 누운 회내으로 관절 위치와 범위 인식",
         "전완을 활용한 편안한 움직임 준비",
-        "전완의 움직임 경로 인식"
+        "전완의 움직임 경로 인식",
       ],
-      "warning": "덤벨 누운 회내 중 날카로운 통증, 저림, 방사통, 붓기·열감이 있으면 자가 진행을 멈추고 평가를 우선하세요.",
-      "reference": {
-        "label": "ACSM — Exercise Safety",
-        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
-      }
+      warning:
+        "덤벨 누운 회내 중 날카로운 통증, 저림, 방사통, 붓기·열감이 있으면 자가 진행을 멈추고 평가를 우선하세요.",
+      reference: {
+        label: "ACSM — Exercise Safety",
+        url: "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/",
+      },
     },
-    "detail": {
-      "setup": [
+    detail: {
+      setup: [
         "도구를 몸 가까이에서 안정적으로 잡고 양쪽 중량이 같은지 확인합니다",
         "바닥 또는 벤치에 등을 안정적으로 댄 뒤 갈비뼈를 과하게 들지 않습니다",
-        "덤벨 누운 회내에 맞춰 편안한 바닥·매트 또는 지지대를 준비합니다"
+        "덤벨 누운 회내에 맞춰 편안한 바닥·매트 또는 지지대를 준비합니다",
       ],
-      "finish": "덤벨 누운 회내을 마친 뒤 중립 자세로 천천히 돌아와 불편감이 남지 않는지 확인합니다.",
-      "commonMistakes": [
+      finish:
+        "덤벨 누운 회내을 마친 뒤 중립 자세로 천천히 돌아와 불편감이 남지 않는지 확인합니다.",
+      commonMistakes: [
         "덤벨 누운 회내에서 끝 범위를 억지로 밀어 통증을 만드는 경우",
         "덤벨 누운 회내에서 호흡을 참거나 반동을 쓰는 경우",
-        "덤벨 누운 회내에서 저림·방사통을 무시하고 지속하는 경우"
+        "덤벨 누운 회내에서 저림·방사통을 무시하고 지속하는 경우",
       ],
-      "regressions": [
+      regressions: [
         "덤벨 누운 회내은 범위와 유지 시간을 줄입니다",
         "덤벨 누운 회내은 벽·의자·블록 같은 지지대를 사용합니다",
-        "덤벨 누운 회내은 누운 또는 앉은 안정된 자세로 바꿉니다"
+        "덤벨 누운 회내은 누운 또는 앉은 안정된 자세로 바꿉니다",
       ],
-      "progressions": [
+      progressions: [
         "덤벨 누운 회내은 다음 날 편안하면 범위만 조금 늘립니다",
         "덤벨 누운 회내은 호흡 주기를 한 번 추가합니다",
-        "덤벨 누운 회내은 지지대는 안정적으로 줄여 갑니다"
-      ]
-    }
+        "덤벨 누운 회내은 지지대는 안정적으로 줄여 갑니다",
+      ],
+    },
   },
   {
-    "exercise": {
-      "id": "verified-dumbbell-lying-rear-lateral-raise",
-      "name": "덤벨 누운 리어 레이즈",
-      "englishName": "Dumbbell Lying Rear Lateral Raise",
-      "category": "프리웨이트",
-      "regions": [
-        "어깨"
-      ],
-      "focus": "근력",
-      "difficulty": "중급",
-      "equipment": "덤벨·안정된 지지면 선택",
-      "minutes": "6–12회 · 2세트",
-      "description": "덤벨 누운 리어 레이즈은 어깨을 사용해 팔 또는 도구를 정해진 평면으로 들어 올리며 어깨 위치를 제어하는 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
-      "cues": [
+    exercise: {
+      id: "verified-dumbbell-lying-rear-lateral-raise",
+      name: "덤벨 누운 리어 레이즈",
+      englishName: "Dumbbell Lying Rear Lateral Raise",
+      category: "프리웨이트",
+      regions: ["어깨"],
+      focus: "근력",
+      difficulty: "중급",
+      equipment: "덤벨·안정된 지지면 선택",
+      minutes: "6–12회 · 2세트",
+      description:
+        "덤벨 누운 리어 레이즈은 어깨을 사용해 팔 또는 도구를 정해진 평면으로 들어 올리며 어깨 위치를 제어하는 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
+      cues: [
         "덤벨 누운 리어 레이즈에서 어깨를 귀에서 멀리 두고 목을 길게 유지",
         "어깨을 느끼며 도구를 몸에서 너무 멀리 보내지 않기",
-        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다"
+        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
       ],
-      "benefits": [
+      benefits: [
         "덤벨 누운 리어 레이즈으로 어깨 주변의 제어",
         "어깨을 활용한 팔과 견갑의 협응",
-        "어깨의 움직임 경로 인식"
+        "어깨의 움직임 경로 인식",
       ],
-      "warning": "덤벨 누운 리어 레이즈 중 어깨 위쪽 통증, 목 긴장, 저림 또는 반동이 생기면 즉시 범위·저항을 낮추거나 중단하세요.",
-      "reference": {
-        "label": "ACSM — Exercise Safety",
-        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
-      }
+      warning:
+        "덤벨 누운 리어 레이즈 중 어깨 위쪽 통증, 목 긴장, 저림 또는 반동이 생기면 즉시 범위·저항을 낮추거나 중단하세요.",
+      reference: {
+        label: "ACSM — Exercise Safety",
+        url: "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/",
+      },
     },
-    "detail": {
-      "setup": [
+    detail: {
+      setup: [
         "도구를 몸 가까이에서 안정적으로 잡고 양쪽 중량이 같은지 확인합니다",
         "바닥 또는 벤치에 등을 안정적으로 댄 뒤 갈비뼈를 과하게 들지 않습니다",
-        "덤벨 누운 리어 레이즈에 맞춰 낮은 중량으로 시작하고 양발 또는 벤치 지지로 균형을 만듭니다"
+        "덤벨 누운 리어 레이즈에 맞춰 낮은 중량으로 시작하고 양발 또는 벤치 지지로 균형을 만듭니다",
       ],
-      "finish": "덤벨 누운 리어 레이즈을 마친 뒤 어깨가 앞으로 밀리지 않게 도구를 몸 옆으로 통제해 되돌립니다.",
-      "commonMistakes": [
+      finish:
+        "덤벨 누운 리어 레이즈을 마친 뒤 어깨가 앞으로 밀리지 않게 도구를 몸 옆으로 통제해 되돌립니다.",
+      commonMistakes: [
         "덤벨 누운 리어 레이즈에서 어깨를 으쓱하며 목에 힘을 주는 경우",
         "덤벨 누운 리어 레이즈에서 반동으로 도구를 목표 높이보다 높게 던지는 경우",
-        "덤벨 누운 리어 레이즈에서 손목을 꺾어 도구를 지지하는 경우"
+        "덤벨 누운 리어 레이즈에서 손목을 꺾어 도구를 지지하는 경우",
       ],
-      "regressions": [
+      regressions: [
         "덤벨 누운 리어 레이즈은 중량을 낮추거나 한 팔씩 지지된 자세로 수행합니다",
         "덤벨 누운 리어 레이즈은 들기 높이를 어깨 아래로 줄입니다",
-        "덤벨 누운 리어 레이즈은 밴드 또는 더 짧은 지렛대를 사용합니다"
+        "덤벨 누운 리어 레이즈은 밴드 또는 더 짧은 지렛대를 사용합니다",
       ],
-      "progressions": [
+      progressions: [
         "덤벨 누운 리어 레이즈은 동일한 높이와 정렬에서 반복을 늘립니다",
         "덤벨 누운 리어 레이즈은 작은 중량 증가를 한 번만 적용합니다",
-        "덤벨 누운 리어 레이즈은 편측·인클라인 변형은 어깨가 편안할 때 시도합니다"
-      ]
-    }
+        "덤벨 누운 리어 레이즈은 편측·인클라인 변형은 어깨가 편안할 때 시도합니다",
+      ],
+    },
   },
   {
-    "exercise": {
-      "id": "verified-dumbbell-lying-supination",
-      "name": "덤벨 누운 회외",
-      "englishName": "Dumbbell Lying Supination",
-      "category": "프리웨이트",
-      "regions": [
-        "팔"
-      ],
-      "focus": "근력",
-      "difficulty": "중급",
-      "equipment": "덤벨·안정된 지지면 선택",
-      "minutes": "6–12회 · 2세트",
-      "description": "덤벨 누운 회외은 전완 주변을 통증 없는 범위에서 천천히 움직여 가동 범위와 자세 감각을 확인하는 모빌리티 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
-      "cues": [
+    exercise: {
+      id: "verified-dumbbell-lying-supination",
+      name: "덤벨 누운 회외",
+      englishName: "Dumbbell Lying Supination",
+      category: "프리웨이트",
+      regions: ["팔"],
+      focus: "근력",
+      difficulty: "중급",
+      equipment: "덤벨·안정된 지지면 선택",
+      minutes: "6–12회 · 2세트",
+      description:
+        "덤벨 누운 회외은 전완 주변을 통증 없는 범위에서 천천히 움직여 가동 범위와 자세 감각을 확인하는 모빌리티 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
+      cues: [
         "덤벨 누운 회외에서 작은 범위에서 호흡을 멈추지 않기",
         "전완을 느끼며 끝 범위를 밀지 말고 부드럽게 왕복",
-        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다"
+        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
       ],
-      "benefits": [
+      benefits: [
         "덤벨 누운 회외으로 관절 위치와 범위 인식",
         "전완을 활용한 편안한 움직임 준비",
-        "전완의 움직임 경로 인식"
+        "전완의 움직임 경로 인식",
       ],
-      "warning": "덤벨 누운 회외 중 날카로운 통증, 저림, 방사통, 붓기·열감이 있으면 자가 진행을 멈추고 평가를 우선하세요.",
-      "reference": {
-        "label": "ACSM — Exercise Safety",
-        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
-      }
+      warning:
+        "덤벨 누운 회외 중 날카로운 통증, 저림, 방사통, 붓기·열감이 있으면 자가 진행을 멈추고 평가를 우선하세요.",
+      reference: {
+        label: "ACSM — Exercise Safety",
+        url: "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/",
+      },
     },
-    "detail": {
-      "setup": [
+    detail: {
+      setup: [
         "도구를 몸 가까이에서 안정적으로 잡고 양쪽 중량이 같은지 확인합니다",
         "바닥 또는 벤치에 등을 안정적으로 댄 뒤 갈비뼈를 과하게 들지 않습니다",
-        "덤벨 누운 회외에 맞춰 편안한 바닥·매트 또는 지지대를 준비합니다"
+        "덤벨 누운 회외에 맞춰 편안한 바닥·매트 또는 지지대를 준비합니다",
       ],
-      "finish": "덤벨 누운 회외을 마친 뒤 중립 자세로 천천히 돌아와 불편감이 남지 않는지 확인합니다.",
-      "commonMistakes": [
+      finish:
+        "덤벨 누운 회외을 마친 뒤 중립 자세로 천천히 돌아와 불편감이 남지 않는지 확인합니다.",
+      commonMistakes: [
         "덤벨 누운 회외에서 끝 범위를 억지로 밀어 통증을 만드는 경우",
         "덤벨 누운 회외에서 호흡을 참거나 반동을 쓰는 경우",
-        "덤벨 누운 회외에서 저림·방사통을 무시하고 지속하는 경우"
+        "덤벨 누운 회외에서 저림·방사통을 무시하고 지속하는 경우",
       ],
-      "regressions": [
+      regressions: [
         "덤벨 누운 회외은 범위와 유지 시간을 줄입니다",
         "덤벨 누운 회외은 벽·의자·블록 같은 지지대를 사용합니다",
-        "덤벨 누운 회외은 누운 또는 앉은 안정된 자세로 바꿉니다"
+        "덤벨 누운 회외은 누운 또는 앉은 안정된 자세로 바꿉니다",
       ],
-      "progressions": [
+      progressions: [
         "덤벨 누운 회외은 다음 날 편안하면 범위만 조금 늘립니다",
         "덤벨 누운 회외은 호흡 주기를 한 번 추가합니다",
-        "덤벨 누운 회외은 지지대는 안정적으로 줄여 갑니다"
-      ]
-    }
+        "덤벨 누운 회외은 지지대는 안정적으로 줄여 갑니다",
+      ],
+    },
   },
   {
-    "exercise": {
-      "id": "verified-dumbbell-one-arm-shoulder-press",
-      "name": "원암 덤벨 숄더 프레스",
-      "englishName": "Dumbbell One-Arm Shoulder Press",
-      "category": "프리웨이트",
-      "regions": [
-        "어깨"
-      ],
-      "focus": "근력",
-      "difficulty": "중급",
-      "equipment": "덤벨·안정된 지지면 선택",
-      "minutes": "6–12회 · 2세트",
-      "description": "원암 덤벨 숄더 프레스은 어깨을 사용해 손잡이·도구 또는 바닥을 몸에서 멀어지게 미는 상체 밀기 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
-      "cues": [
+    exercise: {
+      id: "verified-dumbbell-one-arm-shoulder-press",
+      name: "원암 덤벨 숄더 프레스",
+      englishName: "Dumbbell One-Arm Shoulder Press",
+      category: "프리웨이트",
+      regions: ["어깨"],
+      focus: "근력",
+      difficulty: "중급",
+      equipment: "덤벨·안정된 지지면 선택",
+      minutes: "6–12회 · 2세트",
+      description:
+        "원암 덤벨 숄더 프레스은 어깨을 사용해 손잡이·도구 또는 바닥을 몸에서 멀어지게 미는 상체 밀기 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
+      cues: [
         "원암 덤벨 숄더 프레스에서 손목을 중립에 가깝게 두고 손잡이를 안정적으로 잡기",
         "어깨을 느끼며 갈비뼈를 과하게 들지 않고 몸통 길이 유지",
-        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다"
+        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
       ],
-      "benefits": [
+      benefits: [
         "원암 덤벨 숄더 프레스으로 가슴·어깨·팔의 밀기 협응",
         "어깨을 활용한 손목과 견갑 안정 제어",
-        "어깨의 움직임 경로 인식"
+        "어깨의 움직임 경로 인식",
       ],
-      "warning": "원암 덤벨 숄더 프레스 중 어깨·팔꿈치·손목 통증, 저림 또는 도구 흔들림이 있으면 즉시 멈추고 설정을 다시 확인하세요.",
-      "reference": {
-        "label": "ACSM — Exercise Safety",
-        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
-      }
+      warning:
+        "원암 덤벨 숄더 프레스 중 어깨·팔꿈치·손목 통증, 저림 또는 도구 흔들림이 있으면 즉시 멈추고 설정을 다시 확인하세요.",
+      reference: {
+        label: "ACSM — Exercise Safety",
+        url: "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/",
+      },
     },
-    "detail": {
-      "setup": [
+    detail: {
+      setup: [
         "도구를 몸 가까이에서 안정적으로 잡고 양쪽 중량이 같은지 확인합니다",
         "작동하지 않는 쪽의 손·발 또는 벤치 지지로 몸통 회전을 줄입니다",
-        "원암 덤벨 숄더 프레스에 맞춰 손잡이·바·지지면의 높이와 좌우 설정을 확인합니다"
+        "원암 덤벨 숄더 프레스에 맞춰 손잡이·바·지지면의 높이와 좌우 설정을 확인합니다",
       ],
-      "finish": "원암 덤벨 숄더 프레스을 마친 뒤 팔꿈치를 잠그지 않은 편안한 끝 범위에서 잠시 멈춘 뒤 같은 경로로 돌아옵니다.",
-      "commonMistakes": [
+      finish:
+        "원암 덤벨 숄더 프레스을 마친 뒤 팔꿈치를 잠그지 않은 편안한 끝 범위에서 잠시 멈춘 뒤 같은 경로로 돌아옵니다.",
+      commonMistakes: [
         "원암 덤벨 숄더 프레스에서 어깨가 앞으로 말린 채 밀어 올리는 경우",
         "원암 덤벨 숄더 프레스에서 허리를 과하게 젖혀 무게를 넘기는 경우",
-        "원암 덤벨 숄더 프레스에서 손목을 꺾고 그립을 느슨하게 유지하는 경우"
+        "원암 덤벨 숄더 프레스에서 손목을 꺾고 그립을 느슨하게 유지하는 경우",
       ],
-      "regressions": [
+      regressions: [
         "원암 덤벨 숄더 프레스은 벽·높은 벤치 또는 가벼운 저항으로 바꿉니다",
         "원암 덤벨 숄더 프레스은 가동 범위를 줄이고 어깨 편안함을 확인합니다",
-        "원암 덤벨 숄더 프레스은 양손 지지로 안정성을 먼저 확보합니다"
+        "원암 덤벨 숄더 프레스은 양손 지지로 안정성을 먼저 확보합니다",
       ],
-      "progressions": [
+      progressions: [
         "원암 덤벨 숄더 프레스은 정렬이 유지될 때 반복을 소폭 늘립니다",
         "원암 덤벨 숄더 프레스은 안정된 지지면에서 저항을 한 단계만 올립니다",
-        "원암 덤벨 숄더 프레스은 낮은 지지 또는 편측 변형은 통제 후 시도합니다"
-      ]
-    }
+        "원암 덤벨 숄더 프레스은 낮은 지지 또는 편측 변형은 통제 후 시도합니다",
+      ],
+    },
   },
   {
-    "exercise": {
-      "id": "verified-dumbbell-one-arm-triceps-extension",
-      "name": "원암 덤벨 삼두 익스텐션",
-      "englishName": "Dumbbell One-Arm Triceps Extension",
-      "category": "프리웨이트",
-      "regions": [
-        "팔"
-      ],
-      "focus": "근력",
-      "difficulty": "중급",
-      "equipment": "덤벨·안정된 지지면 선택",
-      "minutes": "6–12회 · 2세트",
-      "description": "원암 덤벨 삼두 익스텐션은 삼두근을 사용해 팔꿈치 또는 목표 관절을 펴는 경로를 통제하는 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
-      "cues": [
+    exercise: {
+      id: "verified-dumbbell-one-arm-triceps-extension",
+      name: "원암 덤벨 삼두 익스텐션",
+      englishName: "Dumbbell One-Arm Triceps Extension",
+      category: "프리웨이트",
+      regions: ["팔"],
+      focus: "근력",
+      difficulty: "중급",
+      equipment: "덤벨·안정된 지지면 선택",
+      minutes: "6–12회 · 2세트",
+      description:
+        "원암 덤벨 삼두 익스텐션은 삼두근을 사용해 팔꿈치 또는 목표 관절을 펴는 경로를 통제하는 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
+      cues: [
         "원암 덤벨 삼두 익스텐션에서 관절 축을 고정하고 목표 관절만 부드럽게 펴기",
         "삼두근을 느끼며 어깨와 몸통이 흔들리지 않게 지지 유지",
-        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다"
+        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
       ],
-      "benefits": [
+      benefits: [
         "원암 덤벨 삼두 익스텐션으로 관절 폄 경로 제어",
         "삼두근을 활용한 팔 뒤쪽·주변 안정 근육 사용",
-        "삼두근의 움직임 경로 인식"
+        "삼두근의 움직임 경로 인식",
       ],
-      "warning": "원암 덤벨 삼두 익스텐션 중 관절 끝의 날카로운 통증, 저림 또는 손잡이 흔들림이 있으면 즉시 중단하세요.",
-      "reference": {
-        "label": "ACSM — Exercise Safety",
-        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
-      }
+      warning:
+        "원암 덤벨 삼두 익스텐션 중 관절 끝의 날카로운 통증, 저림 또는 손잡이 흔들림이 있으면 즉시 중단하세요.",
+      reference: {
+        label: "ACSM — Exercise Safety",
+        url: "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/",
+      },
     },
-    "detail": {
-      "setup": [
+    detail: {
+      setup: [
         "도구를 몸 가까이에서 안정적으로 잡고 양쪽 중량이 같은지 확인합니다",
         "작동하지 않는 쪽의 손·발 또는 벤치 지지로 몸통 회전을 줄입니다",
-        "원암 덤벨 삼두 익스텐션에 맞춰 도구·손잡이를 안정적으로 고정하고 관절 축을 맞춥니다"
+        "원암 덤벨 삼두 익스텐션에 맞춰 도구·손잡이를 안정적으로 고정하고 관절 축을 맞춥니다",
       ],
-      "finish": "원암 덤벨 삼두 익스텐션을 마친 뒤 저항을 천천히 되돌려 관절이 편안한 시작 범위에서 멈춥니다.",
-      "commonMistakes": [
+      finish:
+        "원암 덤벨 삼두 익스텐션을 마친 뒤 저항을 천천히 되돌려 관절이 편안한 시작 범위에서 멈춥니다.",
+      commonMistakes: [
         "원암 덤벨 삼두 익스텐션에서 어깨와 허리를 함께 흔들어 저항을 넘기는 경우",
         "원암 덤벨 삼두 익스텐션에서 관절을 반동으로 끝까지 잠그는 경우",
-        "원암 덤벨 삼두 익스텐션에서 손목을 꺾어 힘을 전달하는 경우"
+        "원암 덤벨 삼두 익스텐션에서 손목을 꺾어 힘을 전달하는 경우",
       ],
-      "regressions": [
+      regressions: [
         "원암 덤벨 삼두 익스텐션은 저항과 범위를 모두 낮춥니다",
         "원암 덤벨 삼두 익스텐션은 양손 또는 지지된 자세를 사용합니다",
-        "원암 덤벨 삼두 익스텐션은 통증 없는 중간 범위만 수행합니다"
+        "원암 덤벨 삼두 익스텐션은 통증 없는 중간 범위만 수행합니다",
       ],
-      "progressions": [
+      progressions: [
         "원암 덤벨 삼두 익스텐션은 정렬을 지킨 채 반복을 소폭 늘립니다",
         "원암 덤벨 삼두 익스텐션은 저항은 한 단계만 올립니다",
-        "원암 덤벨 삼두 익스텐션은 편측·긴 지렛대는 관절이 편안할 때만 시도합니다"
-      ]
-    }
+        "원암 덤벨 삼두 익스텐션은 편측·긴 지렛대는 관절이 편안할 때만 시도합니다",
+      ],
+    },
   },
   {
-    "exercise": {
-      "id": "verified-dumbbell-one-arm-upright-row",
-      "name": "원암 덤벨 업라이트 로우",
-      "englishName": "Dumbbell One-Arm Upright Row",
-      "category": "프리웨이트",
-      "regions": [
-        "어깨"
-      ],
-      "focus": "근력",
-      "difficulty": "중급",
-      "equipment": "덤벨·안정된 지지면 선택",
-      "minutes": "6–12회 · 2세트",
-      "description": "원암 덤벨 업라이트 로우은 어깨을 쓰며 손잡이 또는 도구를 몸 쪽으로 당기고 어깨뼈의 위치를 제어하는 당기기 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
-      "cues": [
+    exercise: {
+      id: "verified-dumbbell-one-arm-upright-row",
+      name: "원암 덤벨 업라이트 로우",
+      englishName: "Dumbbell One-Arm Upright Row",
+      category: "프리웨이트",
+      regions: ["어깨"],
+      focus: "근력",
+      difficulty: "중급",
+      equipment: "덤벨·안정된 지지면 선택",
+      minutes: "6–12회 · 2세트",
+      description:
+        "원암 덤벨 업라이트 로우은 어깨을 쓰며 손잡이 또는 도구를 몸 쪽으로 당기고 어깨뼈의 위치를 제어하는 당기기 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
+      cues: [
         "원암 덤벨 업라이트 로우에서 먼저 어깨를 귀에서 멀리 두고 가슴을 편안히 유지",
         "어깨을 느끼며 팔꿈치를 목적 방향으로 끌되 몸통 반동 줄이기",
-        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다"
+        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
       ],
-      "benefits": [
+      benefits: [
         "원암 덤벨 업라이트 로우으로 등·팔의 당기기 협응",
         "어깨을 활용한 견갑 위치 인식",
-        "어깨의 움직임 경로 인식"
+        "어깨의 움직임 경로 인식",
       ],
-      "warning": "원암 덤벨 업라이트 로우 중 어깨 앞쪽의 날카로운 통증, 손 저림, 고정점 흔들림 또는 그립 이탈이 있으면 즉시 중단하세요.",
-      "reference": {
-        "label": "ACSM — Exercise Safety",
-        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
-      }
+      warning:
+        "원암 덤벨 업라이트 로우 중 어깨 앞쪽의 날카로운 통증, 손 저림, 고정점 흔들림 또는 그립 이탈이 있으면 즉시 중단하세요.",
+      reference: {
+        label: "ACSM — Exercise Safety",
+        url: "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/",
+      },
     },
-    "detail": {
-      "setup": [
+    detail: {
+      setup: [
         "도구를 몸 가까이에서 안정적으로 잡고 양쪽 중량이 같은지 확인합니다",
         "작동하지 않는 쪽의 손·발 또는 벤치 지지로 몸통 회전을 줄입니다",
-        "원암 덤벨 업라이트 로우에 맞춰 그립·바·손잡이 높이와 고정 상태를 확인합니다"
+        "원암 덤벨 업라이트 로우에 맞춰 그립·바·손잡이 높이와 고정 상태를 확인합니다",
       ],
-      "finish": "원암 덤벨 업라이트 로우을 마친 뒤 팔을 급하게 펴지 말고 어깨가 앞으로 쏠리지 않는 범위에서 시작 위치로 돌아갑니다.",
-      "commonMistakes": [
+      finish:
+        "원암 덤벨 업라이트 로우을 마친 뒤 팔을 급하게 펴지 말고 어깨가 앞으로 쏠리지 않는 범위에서 시작 위치로 돌아갑니다.",
+      commonMistakes: [
         "원암 덤벨 업라이트 로우에서 어깨를 으쓱한 채 팔만 사용하는 경우",
         "원암 덤벨 업라이트 로우에서 몸통을 크게 흔들어 반동을 만드는 경우",
-        "원암 덤벨 업라이트 로우에서 팔꿈치를 끝까지 밀어 관절을 잠그는 경우"
+        "원암 덤벨 업라이트 로우에서 팔꿈치를 끝까지 밀어 관절을 잠그는 경우",
       ],
-      "regressions": [
+      regressions: [
         "원암 덤벨 업라이트 로우은 밴드·보조 장치 또는 더 가벼운 저항을 사용합니다",
         "원암 덤벨 업라이트 로우은 지지된 시티드 자세로 몸통 부담을 줄입니다",
-        "원암 덤벨 업라이트 로우은 당기는 범위를 짧게 정하고 멈춥니다"
+        "원암 덤벨 업라이트 로우은 당기는 범위를 짧게 정하고 멈춥니다",
       ],
-      "progressions": [
+      progressions: [
         "원암 덤벨 업라이트 로우은 같은 경로에서 저항을 한 단계만 올립니다",
         "원암 덤벨 업라이트 로우은 완전한 어깨 제어가 되면 범위를 조금 늘립니다",
-        "원암 덤벨 업라이트 로우은 편측 당김은 몸통 회전을 통제할 수 있을 때 시도합니다"
-      ]
-    }
+        "원암 덤벨 업라이트 로우은 편측 당김은 몸통 회전을 통제할 수 있을 때 시도합니다",
+      ],
+    },
   },
   {
-    "exercise": {
-      "id": "verified-dumbbell-prone-incline-curl",
-      "name": "덤벨 엎드려 인클라인 컬",
-      "englishName": "Dumbbell Prone Incline Curl",
-      "category": "프리웨이트",
-      "regions": [
-        "팔"
-      ],
-      "focus": "근력",
-      "difficulty": "중급",
-      "equipment": "덤벨·안정된 지지면 선택",
-      "minutes": "6–12회 · 2세트",
-      "description": "덤벨 엎드려 인클라인 컬은 이두근을 중심으로 팔꿈치를 굽히며 도구를 통제하는 팔 굽힘 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
-      "cues": [
+    exercise: {
+      id: "verified-dumbbell-prone-incline-curl",
+      name: "덤벨 엎드려 인클라인 컬",
+      englishName: "Dumbbell Prone Incline Curl",
+      category: "프리웨이트",
+      regions: ["팔"],
+      focus: "근력",
+      difficulty: "중급",
+      equipment: "덤벨·안정된 지지면 선택",
+      minutes: "6–12회 · 2세트",
+      description:
+        "덤벨 엎드려 인클라인 컬은 이두근을 중심으로 팔꿈치를 굽히며 도구를 통제하는 팔 굽힘 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
+      cues: [
         "덤벨 엎드려 인클라인 컬에서 상완을 몸통 가까이에 두고 팔꿈치 위치를 고정",
         "이두근을 느끼며 손목을 꺾지 말고 도구를 부드럽게 들어 올리기",
-        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다"
+        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
       ],
-      "benefits": [
+      benefits: [
         "덤벨 엎드려 인클라인 컬으로 팔 굽힘 근육의 제어",
         "이두근을 활용한 전완·그립 안정 인식",
-        "이두근의 움직임 경로 인식"
+        "이두근의 움직임 경로 인식",
       ],
-      "warning": "덤벨 엎드려 인클라인 컬 중 팔꿈치·손목의 날카로운 통증, 저림 또는 그립 미끄러짐이 있으면 즉시 중단하세요.",
-      "reference": {
-        "label": "ACSM — Exercise Safety",
-        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
-      }
+      warning:
+        "덤벨 엎드려 인클라인 컬 중 팔꿈치·손목의 날카로운 통증, 저림 또는 그립 미끄러짐이 있으면 즉시 중단하세요.",
+      reference: {
+        label: "ACSM — Exercise Safety",
+        url: "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/",
+      },
     },
-    "detail": {
-      "setup": [
+    detail: {
+      setup: [
         "도구를 몸 가까이에서 안정적으로 잡고 양쪽 중량이 같은지 확인합니다",
         "인클라인 지지면을 고정하고 머리·등·골반이 흔들리지 않게 둡니다",
-        "덤벨 엎드려 인클라인 컬에 맞춰 가벼운 중량을 들고 팔꿈치를 몸통 옆에 둡니다"
+        "덤벨 엎드려 인클라인 컬에 맞춰 가벼운 중량을 들고 팔꿈치를 몸통 옆에 둡니다",
       ],
-      "finish": "덤벨 엎드려 인클라인 컬을 마친 뒤 팔꿈치를 완전히 잠그지 않는 편안한 아래 범위에서 다음 반복을 준비합니다.",
-      "commonMistakes": [
+      finish:
+        "덤벨 엎드려 인클라인 컬을 마친 뒤 팔꿈치를 완전히 잠그지 않는 편안한 아래 범위에서 다음 반복을 준비합니다.",
+      commonMistakes: [
         "덤벨 엎드려 인클라인 컬에서 몸통을 뒤로 젖혀 반동을 쓰는 경우",
         "덤벨 엎드려 인클라인 컬에서 팔꿈치가 앞으로 크게 이동하는 경우",
-        "덤벨 엎드려 인클라인 컬에서 손목을 꺾어 중량을 드는 경우"
+        "덤벨 엎드려 인클라인 컬에서 손목을 꺾어 중량을 드는 경우",
       ],
-      "regressions": [
+      regressions: [
         "덤벨 엎드려 인클라인 컬은 더 가벼운 도구나 밴드를 사용합니다",
         "덤벨 엎드려 인클라인 컬은 시티드 또는 벤치 지지로 몸통 반동을 줄입니다",
-        "덤벨 엎드려 인클라인 컬은 아래와 위 범위를 조금 줄입니다"
+        "덤벨 엎드려 인클라인 컬은 아래와 위 범위를 조금 줄입니다",
       ],
-      "progressions": [
+      progressions: [
         "덤벨 엎드려 인클라인 컬은 반동 없이 반복을 한두 회 늘립니다",
         "덤벨 엎드려 인클라인 컬은 그립이 안정되면 중량을 소폭 올립니다",
-        "덤벨 엎드려 인클라인 컬은 편측 수행은 몸통이 흔들리지 않을 때 시작합니다"
-      ]
-    }
+        "덤벨 엎드려 인클라인 컬은 편측 수행은 몸통이 흔들리지 않을 때 시작합니다",
+      ],
+    },
   },
   {
-    "exercise": {
-      "id": "verified-dumbbell-raise",
-      "name": "덤벨 레이즈",
-      "englishName": "Dumbbell Raise",
-      "category": "프리웨이트",
-      "regions": [
-        "어깨"
-      ],
-      "focus": "근력",
-      "difficulty": "입문",
-      "equipment": "덤벨·안정된 지지면 선택",
-      "minutes": "6–12회 · 2세트",
-      "description": "덤벨 레이즈은 어깨을 사용해 팔 또는 도구를 정해진 평면으로 들어 올리며 어깨 위치를 제어하는 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
-      "cues": [
+    exercise: {
+      id: "verified-dumbbell-raise",
+      name: "덤벨 레이즈",
+      englishName: "Dumbbell Raise",
+      category: "프리웨이트",
+      regions: ["어깨"],
+      focus: "근력",
+      difficulty: "입문",
+      equipment: "덤벨·안정된 지지면 선택",
+      minutes: "6–12회 · 2세트",
+      description:
+        "덤벨 레이즈은 어깨을 사용해 팔 또는 도구를 정해진 평면으로 들어 올리며 어깨 위치를 제어하는 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
+      cues: [
         "덤벨 레이즈에서 어깨를 귀에서 멀리 두고 목을 길게 유지",
         "어깨을 느끼며 도구를 몸에서 너무 멀리 보내지 않기",
-        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다"
+        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
       ],
-      "benefits": [
+      benefits: [
         "덤벨 레이즈으로 어깨 주변의 제어",
         "어깨을 활용한 팔과 견갑의 협응",
-        "어깨의 움직임 경로 인식"
+        "어깨의 움직임 경로 인식",
       ],
-      "warning": "덤벨 레이즈 중 어깨 위쪽 통증, 목 긴장, 저림 또는 반동이 생기면 즉시 범위·저항을 낮추거나 중단하세요.",
-      "reference": {
-        "label": "ACSM — Exercise Safety",
-        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
-      }
+      warning:
+        "덤벨 레이즈 중 어깨 위쪽 통증, 목 긴장, 저림 또는 반동이 생기면 즉시 범위·저항을 낮추거나 중단하세요.",
+      reference: {
+        label: "ACSM — Exercise Safety",
+        url: "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/",
+      },
     },
-    "detail": {
-      "setup": [
+    detail: {
+      setup: [
         "도구를 몸 가까이에서 안정적으로 잡고 양쪽 중량이 같은지 확인합니다",
         "발 또는 지지면을 단단히 고정하고 몸통을 길게 세웁니다",
-        "덤벨 레이즈에 맞춰 낮은 중량으로 시작하고 양발 또는 벤치 지지로 균형을 만듭니다"
+        "덤벨 레이즈에 맞춰 낮은 중량으로 시작하고 양발 또는 벤치 지지로 균형을 만듭니다",
       ],
-      "finish": "덤벨 레이즈을 마친 뒤 어깨가 앞으로 밀리지 않게 도구를 몸 옆으로 통제해 되돌립니다.",
-      "commonMistakes": [
+      finish:
+        "덤벨 레이즈을 마친 뒤 어깨가 앞으로 밀리지 않게 도구를 몸 옆으로 통제해 되돌립니다.",
+      commonMistakes: [
         "덤벨 레이즈에서 어깨를 으쓱하며 목에 힘을 주는 경우",
         "덤벨 레이즈에서 반동으로 도구를 목표 높이보다 높게 던지는 경우",
-        "덤벨 레이즈에서 손목을 꺾어 도구를 지지하는 경우"
+        "덤벨 레이즈에서 손목을 꺾어 도구를 지지하는 경우",
       ],
-      "regressions": [
+      regressions: [
         "덤벨 레이즈은 중량을 낮추거나 한 팔씩 지지된 자세로 수행합니다",
         "덤벨 레이즈은 들기 높이를 어깨 아래로 줄입니다",
-        "덤벨 레이즈은 밴드 또는 더 짧은 지렛대를 사용합니다"
+        "덤벨 레이즈은 밴드 또는 더 짧은 지렛대를 사용합니다",
       ],
-      "progressions": [
+      progressions: [
         "덤벨 레이즈은 동일한 높이와 정렬에서 반복을 늘립니다",
         "덤벨 레이즈은 작은 중량 증가를 한 번만 적용합니다",
-        "덤벨 레이즈은 편측·인클라인 변형은 어깨가 편안할 때 시도합니다"
-      ]
-    }
+        "덤벨 레이즈은 편측·인클라인 변형은 어깨가 편안할 때 시도합니다",
+      ],
+    },
   },
   {
-    "exercise": {
-      "id": "verified-dumbbell-rear-lunge",
-      "name": "덤벨 리어 런지",
-      "englishName": "Dumbbell Rear Lunge",
-      "category": "프리웨이트",
-      "regions": [
-        "하체"
-      ],
-      "focus": "근력",
-      "difficulty": "중급",
-      "equipment": "덤벨·안정된 지지면 선택",
-      "minutes": "6–12회 · 2세트",
-      "description": "덤벨 리어 런지은 대퇴사두근을 사용해 무릎과 엉덩이를 함께 굽혔다 펴는 하체 지지·밀기 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
-      "cues": [
+    exercise: {
+      id: "verified-dumbbell-rear-lunge",
+      name: "덤벨 리어 런지",
+      englishName: "Dumbbell Rear Lunge",
+      category: "프리웨이트",
+      regions: ["하체"],
+      focus: "근력",
+      difficulty: "중급",
+      equipment: "덤벨·안정된 지지면 선택",
+      minutes: "6–12회 · 2세트",
+      description:
+        "덤벨 리어 런지은 대퇴사두근을 사용해 무릎과 엉덩이를 함께 굽혔다 펴는 하체 지지·밀기 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
+      cues: [
         "덤벨 리어 런지에서 발 전체를 바닥에 붙이고 무릎을 발 방향으로 이동",
         "대퇴사두근을 느끼며 골반과 흉곽이 함께 내려가도록 몸통을 길게 유지",
-        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다"
+        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
       ],
-      "benefits": [
+      benefits: [
         "덤벨 리어 런지으로 하체 지지력과 제어",
         "대퇴사두근을 활용한 엉덩이·무릎 협응",
-        "대퇴사두근의 움직임 경로 인식"
+        "대퇴사두근의 움직임 경로 인식",
       ],
-      "warning": "덤벨 리어 런지 중 무릎·고관절의 날카로운 통증, 발바닥 들림 또는 균형 상실이 있으면 깊이·부하를 낮추거나 중단하세요.",
-      "reference": {
-        "label": "ACSM — Exercise Safety",
-        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
-      }
+      warning:
+        "덤벨 리어 런지 중 무릎·고관절의 날카로운 통증, 발바닥 들림 또는 균형 상실이 있으면 깊이·부하를 낮추거나 중단하세요.",
+      reference: {
+        label: "ACSM — Exercise Safety",
+        url: "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/",
+      },
     },
-    "detail": {
-      "setup": [
+    detail: {
+      setup: [
         "도구를 몸 가까이에서 안정적으로 잡고 양쪽 중량이 같은지 확인합니다",
         "발 또는 지지면을 단단히 고정하고 몸통을 길게 세웁니다",
-        "덤벨 리어 런지에 맞춰 발 간격과 발끝 방향을 편안한 범위에서 정합니다"
+        "덤벨 리어 런지에 맞춰 발 간격과 발끝 방향을 편안한 범위에서 정합니다",
       ],
-      "finish": "덤벨 리어 런지을 마친 뒤 무릎과 엉덩이를 함께 펴고 발 전체로 균형을 회복한 뒤 다음 반복을 준비합니다.",
-      "commonMistakes": [
+      finish:
+        "덤벨 리어 런지을 마친 뒤 무릎과 엉덩이를 함께 펴고 발 전체로 균형을 회복한 뒤 다음 반복을 준비합니다.",
+      commonMistakes: [
         "덤벨 리어 런지에서 무릎이 발 안쪽으로 무너지는 경우",
         "덤벨 리어 런지에서 발뒤꿈치가 들린 채 깊이를 억지로 늘리는 경우",
-        "덤벨 리어 런지에서 내려가며 허리가 과하게 말리거나 젖혀지는 경우"
+        "덤벨 리어 런지에서 내려가며 허리가 과하게 말리거나 젖혀지는 경우",
       ],
-      "regressions": [
+      regressions: [
         "덤벨 리어 런지은 의자·박스를 목표 높이로 사용합니다",
         "덤벨 리어 런지은 지지대를 잡고 얕은 범위로 수행합니다",
-        "덤벨 리어 런지은 부하를 빼고 체중 이동부터 연습합니다"
+        "덤벨 리어 런지은 부하를 빼고 체중 이동부터 연습합니다",
       ],
-      "progressions": [
+      progressions: [
         "덤벨 리어 런지은 안정된 범위에서 반복만 소폭 늘립니다",
         "덤벨 리어 런지은 편안한 깊이가 확보된 뒤 부하를 추가합니다",
-        "덤벨 리어 런지은 편측 변형은 지지대 가까이에서 시작합니다"
-      ]
-    }
+        "덤벨 리어 런지은 편측 변형은 지지대 가까이에서 시작합니다",
+      ],
+    },
   },
   {
-    "exercise": {
-      "id": "verified-dumbbell-scaption",
-      "name": "덤벨 스캡션",
-      "englishName": "Dumbbell Scaption",
-      "category": "프리웨이트",
-      "regions": [
-        "어깨"
-      ],
-      "focus": "근력",
-      "difficulty": "입문",
-      "equipment": "덤벨·안정된 지지면 선택",
-      "minutes": "6–12회 · 2세트",
-      "description": "덤벨 스캡션은 어깨 주변을 통증 없는 범위에서 천천히 움직여 가동 범위와 자세 감각을 확인하는 모빌리티 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
-      "cues": [
+    exercise: {
+      id: "verified-dumbbell-scaption",
+      name: "덤벨 스캡션",
+      englishName: "Dumbbell Scaption",
+      category: "프리웨이트",
+      regions: ["어깨"],
+      focus: "근력",
+      difficulty: "입문",
+      equipment: "덤벨·안정된 지지면 선택",
+      minutes: "6–12회 · 2세트",
+      description:
+        "덤벨 스캡션은 어깨 주변을 통증 없는 범위에서 천천히 움직여 가동 범위와 자세 감각을 확인하는 모빌리티 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
+      cues: [
         "덤벨 스캡션에서 작은 범위에서 호흡을 멈추지 않기",
         "어깨을 느끼며 끝 범위를 밀지 말고 부드럽게 왕복",
-        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다"
+        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
       ],
-      "benefits": [
+      benefits: [
         "덤벨 스캡션으로 관절 위치와 범위 인식",
         "어깨을 활용한 편안한 움직임 준비",
-        "어깨의 움직임 경로 인식"
+        "어깨의 움직임 경로 인식",
       ],
-      "warning": "덤벨 스캡션 중 날카로운 통증, 저림, 방사통, 붓기·열감이 있으면 자가 진행을 멈추고 평가를 우선하세요.",
-      "reference": {
-        "label": "ACSM — Exercise Safety",
-        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
-      }
+      warning:
+        "덤벨 스캡션 중 날카로운 통증, 저림, 방사통, 붓기·열감이 있으면 자가 진행을 멈추고 평가를 우선하세요.",
+      reference: {
+        label: "ACSM — Exercise Safety",
+        url: "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/",
+      },
     },
-    "detail": {
-      "setup": [
+    detail: {
+      setup: [
         "도구를 몸 가까이에서 안정적으로 잡고 양쪽 중량이 같은지 확인합니다",
         "발 또는 지지면을 단단히 고정하고 몸통을 길게 세웁니다",
-        "덤벨 스캡션에 맞춰 편안한 바닥·매트 또는 지지대를 준비합니다"
+        "덤벨 스캡션에 맞춰 편안한 바닥·매트 또는 지지대를 준비합니다",
       ],
-      "finish": "덤벨 스캡션을 마친 뒤 중립 자세로 천천히 돌아와 불편감이 남지 않는지 확인합니다.",
-      "commonMistakes": [
+      finish:
+        "덤벨 스캡션을 마친 뒤 중립 자세로 천천히 돌아와 불편감이 남지 않는지 확인합니다.",
+      commonMistakes: [
         "덤벨 스캡션에서 끝 범위를 억지로 밀어 통증을 만드는 경우",
         "덤벨 스캡션에서 호흡을 참거나 반동을 쓰는 경우",
-        "덤벨 스캡션에서 저림·방사통을 무시하고 지속하는 경우"
+        "덤벨 스캡션에서 저림·방사통을 무시하고 지속하는 경우",
       ],
-      "regressions": [
+      regressions: [
         "덤벨 스캡션은 범위와 유지 시간을 줄입니다",
         "덤벨 스캡션은 벽·의자·블록 같은 지지대를 사용합니다",
-        "덤벨 스캡션은 누운 또는 앉은 안정된 자세로 바꿉니다"
+        "덤벨 스캡션은 누운 또는 앉은 안정된 자세로 바꿉니다",
       ],
-      "progressions": [
+      progressions: [
         "덤벨 스캡션은 다음 날 편안하면 범위만 조금 늘립니다",
         "덤벨 스캡션은 호흡 주기를 한 번 추가합니다",
-        "덤벨 스캡션은 지지대는 안정적으로 줄여 갑니다"
-      ]
-    }
+        "덤벨 스캡션은 지지대는 안정적으로 줄여 갑니다",
+      ],
+    },
   },
   {
-    "exercise": {
-      "id": "verified-dumbbell-seated-one-leg-calf-raise",
-      "name": "덤벨 시티드 원레그 카프 레이즈",
-      "englishName": "Dumbbell Seated One-Leg Calf Raise",
-      "category": "프리웨이트",
-      "regions": [
-        "하체"
-      ],
-      "focus": "근력",
-      "difficulty": "입문",
-      "equipment": "덤벨·안정된 지지면 선택",
-      "minutes": "6–12회 · 2세트",
-      "description": "덤벨 시티드 원레그 카프 레이즈은 종아리을 사용해 팔 또는 도구를 정해진 평면으로 들어 올리며 어깨 위치를 제어하는 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
-      "cues": [
+    exercise: {
+      id: "verified-dumbbell-seated-one-leg-calf-raise",
+      name: "덤벨 시티드 원레그 카프 레이즈",
+      englishName: "Dumbbell Seated One-Leg Calf Raise",
+      category: "프리웨이트",
+      regions: ["하체"],
+      focus: "근력",
+      difficulty: "입문",
+      equipment: "덤벨·안정된 지지면 선택",
+      minutes: "6–12회 · 2세트",
+      description:
+        "덤벨 시티드 원레그 카프 레이즈은 종아리을 사용해 팔 또는 도구를 정해진 평면으로 들어 올리며 어깨 위치를 제어하는 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
+      cues: [
         "덤벨 시티드 원레그 카프 레이즈에서 어깨를 귀에서 멀리 두고 목을 길게 유지",
         "종아리을 느끼며 도구를 몸에서 너무 멀리 보내지 않기",
-        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다"
+        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
       ],
-      "benefits": [
+      benefits: [
         "덤벨 시티드 원레그 카프 레이즈으로 어깨 주변의 제어",
         "종아리을 활용한 팔과 견갑의 협응",
-        "종아리의 움직임 경로 인식"
+        "종아리의 움직임 경로 인식",
       ],
-      "warning": "덤벨 시티드 원레그 카프 레이즈 중 어깨 위쪽 통증, 목 긴장, 저림 또는 반동이 생기면 즉시 범위·저항을 낮추거나 중단하세요.",
-      "reference": {
-        "label": "ACSM — Exercise Safety",
-        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
-      }
+      warning:
+        "덤벨 시티드 원레그 카프 레이즈 중 어깨 위쪽 통증, 목 긴장, 저림 또는 반동이 생기면 즉시 범위·저항을 낮추거나 중단하세요.",
+      reference: {
+        label: "ACSM — Exercise Safety",
+        url: "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/",
+      },
     },
-    "detail": {
-      "setup": [
+    detail: {
+      setup: [
         "도구를 몸 가까이에서 안정적으로 잡고 양쪽 중량이 같은지 확인합니다",
         "시티드 자세에서 골반을 등받이 또는 벤치에 안정시킵니다",
-        "덤벨 시티드 원레그 카프 레이즈에 맞춰 낮은 중량으로 시작하고 양발 또는 벤치 지지로 균형을 만듭니다"
+        "덤벨 시티드 원레그 카프 레이즈에 맞춰 낮은 중량으로 시작하고 양발 또는 벤치 지지로 균형을 만듭니다",
       ],
-      "finish": "덤벨 시티드 원레그 카프 레이즈을 마친 뒤 어깨가 앞으로 밀리지 않게 도구를 몸 옆으로 통제해 되돌립니다.",
-      "commonMistakes": [
+      finish:
+        "덤벨 시티드 원레그 카프 레이즈을 마친 뒤 어깨가 앞으로 밀리지 않게 도구를 몸 옆으로 통제해 되돌립니다.",
+      commonMistakes: [
         "덤벨 시티드 원레그 카프 레이즈에서 어깨를 으쓱하며 목에 힘을 주는 경우",
         "덤벨 시티드 원레그 카프 레이즈에서 반동으로 도구를 목표 높이보다 높게 던지는 경우",
-        "덤벨 시티드 원레그 카프 레이즈에서 손목을 꺾어 도구를 지지하는 경우"
+        "덤벨 시티드 원레그 카프 레이즈에서 손목을 꺾어 도구를 지지하는 경우",
       ],
-      "regressions": [
+      regressions: [
         "덤벨 시티드 원레그 카프 레이즈은 중량을 낮추거나 한 팔씩 지지된 자세로 수행합니다",
         "덤벨 시티드 원레그 카프 레이즈은 들기 높이를 어깨 아래로 줄입니다",
-        "덤벨 시티드 원레그 카프 레이즈은 밴드 또는 더 짧은 지렛대를 사용합니다"
+        "덤벨 시티드 원레그 카프 레이즈은 밴드 또는 더 짧은 지렛대를 사용합니다",
       ],
-      "progressions": [
+      progressions: [
         "덤벨 시티드 원레그 카프 레이즈은 동일한 높이와 정렬에서 반복을 늘립니다",
         "덤벨 시티드 원레그 카프 레이즈은 작은 중량 증가를 한 번만 적용합니다",
-        "덤벨 시티드 원레그 카프 레이즈은 편측·인클라인 변형은 어깨가 편안할 때 시도합니다"
-      ]
-    }
+        "덤벨 시티드 원레그 카프 레이즈은 편측·인클라인 변형은 어깨가 편안할 때 시도합니다",
+      ],
+    },
   },
   {
-    "exercise": {
-      "id": "verified-dumbbell-shoulder-press",
-      "name": "덤벨 숄더프레스",
-      "englishName": "Dumbbell Shoulder Press",
-      "category": "프리웨이트",
-      "regions": [
-        "어깨"
-      ],
-      "focus": "근력",
-      "difficulty": "중급",
-      "equipment": "덤벨·안정된 지지면 선택",
-      "minutes": "6–12회 · 2세트",
-      "description": "덤벨 숄더프레스은 어깨을 사용해 손잡이·도구 또는 바닥을 몸에서 멀어지게 미는 상체 밀기 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
-      "cues": [
+    exercise: {
+      id: "verified-dumbbell-shoulder-press",
+      name: "덤벨 숄더프레스",
+      englishName: "Dumbbell Shoulder Press",
+      category: "프리웨이트",
+      regions: ["어깨"],
+      focus: "근력",
+      difficulty: "중급",
+      equipment: "덤벨·안정된 지지면 선택",
+      minutes: "6–12회 · 2세트",
+      description:
+        "덤벨 숄더프레스은 어깨을 사용해 손잡이·도구 또는 바닥을 몸에서 멀어지게 미는 상체 밀기 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
+      cues: [
         "덤벨 숄더프레스에서 손목을 중립에 가깝게 두고 손잡이를 안정적으로 잡기",
         "어깨을 느끼며 갈비뼈를 과하게 들지 않고 몸통 길이 유지",
-        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다"
+        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
       ],
-      "benefits": [
+      benefits: [
         "덤벨 숄더프레스으로 가슴·어깨·팔의 밀기 협응",
         "어깨을 활용한 손목과 견갑 안정 제어",
-        "어깨의 움직임 경로 인식"
+        "어깨의 움직임 경로 인식",
       ],
-      "warning": "덤벨 숄더프레스 중 어깨·팔꿈치·손목 통증, 저림 또는 도구 흔들림이 있으면 즉시 멈추고 설정을 다시 확인하세요.",
-      "reference": {
-        "label": "ACSM — Exercise Safety",
-        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
-      }
+      warning:
+        "덤벨 숄더프레스 중 어깨·팔꿈치·손목 통증, 저림 또는 도구 흔들림이 있으면 즉시 멈추고 설정을 다시 확인하세요.",
+      reference: {
+        label: "ACSM — Exercise Safety",
+        url: "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/",
+      },
     },
-    "detail": {
-      "setup": [
+    detail: {
+      setup: [
         "도구를 몸 가까이에서 안정적으로 잡고 양쪽 중량이 같은지 확인합니다",
         "발 또는 지지면을 단단히 고정하고 몸통을 길게 세웁니다",
-        "덤벨 숄더프레스에 맞춰 손잡이·바·지지면의 높이와 좌우 설정을 확인합니다"
+        "덤벨 숄더프레스에 맞춰 손잡이·바·지지면의 높이와 좌우 설정을 확인합니다",
       ],
-      "finish": "덤벨 숄더프레스을 마친 뒤 팔꿈치를 잠그지 않은 편안한 끝 범위에서 잠시 멈춘 뒤 같은 경로로 돌아옵니다.",
-      "commonMistakes": [
+      finish:
+        "덤벨 숄더프레스을 마친 뒤 팔꿈치를 잠그지 않은 편안한 끝 범위에서 잠시 멈춘 뒤 같은 경로로 돌아옵니다.",
+      commonMistakes: [
         "덤벨 숄더프레스에서 어깨가 앞으로 말린 채 밀어 올리는 경우",
         "덤벨 숄더프레스에서 허리를 과하게 젖혀 무게를 넘기는 경우",
-        "덤벨 숄더프레스에서 손목을 꺾고 그립을 느슨하게 유지하는 경우"
+        "덤벨 숄더프레스에서 손목을 꺾고 그립을 느슨하게 유지하는 경우",
       ],
-      "regressions": [
+      regressions: [
         "덤벨 숄더프레스은 벽·높은 벤치 또는 가벼운 저항으로 바꿉니다",
         "덤벨 숄더프레스은 가동 범위를 줄이고 어깨 편안함을 확인합니다",
-        "덤벨 숄더프레스은 양손 지지로 안정성을 먼저 확보합니다"
+        "덤벨 숄더프레스은 양손 지지로 안정성을 먼저 확보합니다",
       ],
-      "progressions": [
+      progressions: [
         "덤벨 숄더프레스은 정렬이 유지될 때 반복을 소폭 늘립니다",
         "덤벨 숄더프레스은 안정된 지지면에서 저항을 한 단계만 올립니다",
-        "덤벨 숄더프레스은 낮은 지지 또는 편측 변형은 통제 후 시도합니다"
-      ]
-    }
+        "덤벨 숄더프레스은 낮은 지지 또는 편측 변형은 통제 후 시도합니다",
+      ],
+    },
   },
   {
-    "exercise": {
-      "id": "verified-dumbbell-shrug",
-      "name": "덤벨 슈러그",
-      "englishName": "Dumbbell Shrug",
-      "category": "프리웨이트",
-      "regions": [
-        "등",
-        "어깨"
-      ],
-      "focus": "근력",
-      "difficulty": "입문",
-      "equipment": "덤벨·안정된 지지면 선택",
-      "minutes": "6–12회 · 2세트",
-      "description": "덤벨 슈러그은 승모근을 사용해 팔 또는 도구를 정해진 평면으로 들어 올리며 어깨 위치를 제어하는 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
-      "cues": [
+    exercise: {
+      id: "verified-dumbbell-shrug",
+      name: "덤벨 슈러그",
+      englishName: "Dumbbell Shrug",
+      category: "프리웨이트",
+      regions: ["등", "어깨"],
+      focus: "근력",
+      difficulty: "입문",
+      equipment: "덤벨·안정된 지지면 선택",
+      minutes: "6–12회 · 2세트",
+      description:
+        "덤벨 슈러그은 승모근을 사용해 팔 또는 도구를 정해진 평면으로 들어 올리며 어깨 위치를 제어하는 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
+      cues: [
         "덤벨 슈러그에서 어깨를 귀에서 멀리 두고 목을 길게 유지",
         "승모근을 느끼며 도구를 몸에서 너무 멀리 보내지 않기",
-        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다"
+        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
       ],
-      "benefits": [
+      benefits: [
         "덤벨 슈러그으로 어깨 주변의 제어",
         "승모근을 활용한 팔과 견갑의 협응",
-        "승모근의 움직임 경로 인식"
+        "승모근의 움직임 경로 인식",
       ],
-      "warning": "덤벨 슈러그 중 어깨 위쪽 통증, 목 긴장, 저림 또는 반동이 생기면 즉시 범위·저항을 낮추거나 중단하세요.",
-      "reference": {
-        "label": "ACSM — Exercise Safety",
-        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
-      }
+      warning:
+        "덤벨 슈러그 중 어깨 위쪽 통증, 목 긴장, 저림 또는 반동이 생기면 즉시 범위·저항을 낮추거나 중단하세요.",
+      reference: {
+        label: "ACSM — Exercise Safety",
+        url: "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/",
+      },
     },
-    "detail": {
-      "setup": [
+    detail: {
+      setup: [
         "도구를 몸 가까이에서 안정적으로 잡고 양쪽 중량이 같은지 확인합니다",
         "발 또는 지지면을 단단히 고정하고 몸통을 길게 세웁니다",
-        "덤벨 슈러그에 맞춰 낮은 중량으로 시작하고 양발 또는 벤치 지지로 균형을 만듭니다"
+        "덤벨 슈러그에 맞춰 낮은 중량으로 시작하고 양발 또는 벤치 지지로 균형을 만듭니다",
       ],
-      "finish": "덤벨 슈러그을 마친 뒤 어깨가 앞으로 밀리지 않게 도구를 몸 옆으로 통제해 되돌립니다.",
-      "commonMistakes": [
+      finish:
+        "덤벨 슈러그을 마친 뒤 어깨가 앞으로 밀리지 않게 도구를 몸 옆으로 통제해 되돌립니다.",
+      commonMistakes: [
         "덤벨 슈러그에서 어깨를 으쓱하며 목에 힘을 주는 경우",
         "덤벨 슈러그에서 반동으로 도구를 목표 높이보다 높게 던지는 경우",
-        "덤벨 슈러그에서 손목을 꺾어 도구를 지지하는 경우"
+        "덤벨 슈러그에서 손목을 꺾어 도구를 지지하는 경우",
       ],
-      "regressions": [
+      regressions: [
         "덤벨 슈러그은 중량을 낮추거나 한 팔씩 지지된 자세로 수행합니다",
         "덤벨 슈러그은 들기 높이를 어깨 아래로 줄입니다",
-        "덤벨 슈러그은 밴드 또는 더 짧은 지렛대를 사용합니다"
+        "덤벨 슈러그은 밴드 또는 더 짧은 지렛대를 사용합니다",
       ],
-      "progressions": [
+      progressions: [
         "덤벨 슈러그은 동일한 높이와 정렬에서 반복을 늘립니다",
         "덤벨 슈러그은 작은 중량 증가를 한 번만 적용합니다",
-        "덤벨 슈러그은 편측·인클라인 변형은 어깨가 편안할 때 시도합니다"
-      ]
-    }
+        "덤벨 슈러그은 편측·인클라인 변형은 어깨가 편안할 때 시도합니다",
+      ],
+    },
   },
   {
-    "exercise": {
-      "id": "verified-dumbbell-side-bend",
-      "name": "덤벨 사이드벤드",
-      "englishName": "Dumbbell Side Bend",
-      "category": "프리웨이트",
-      "regions": [
-        "코어"
-      ],
-      "focus": "근력",
-      "difficulty": "입문",
-      "equipment": "덤벨·안정된 지지면 선택",
-      "minutes": "6–12회 · 2세트",
-      "description": "덤벨 사이드벤드은 복부 주변을 통증 없는 범위에서 천천히 움직여 가동 범위와 자세 감각을 확인하는 모빌리티 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
-      "cues": [
+    exercise: {
+      id: "verified-dumbbell-side-bend",
+      name: "덤벨 사이드벤드",
+      englishName: "Dumbbell Side Bend",
+      category: "프리웨이트",
+      regions: ["코어"],
+      focus: "근력",
+      difficulty: "입문",
+      equipment: "덤벨·안정된 지지면 선택",
+      minutes: "6–12회 · 2세트",
+      description:
+        "덤벨 사이드벤드은 복부 주변을 통증 없는 범위에서 천천히 움직여 가동 범위와 자세 감각을 확인하는 모빌리티 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
+      cues: [
         "덤벨 사이드벤드에서 작은 범위에서 호흡을 멈추지 않기",
         "복부을 느끼며 끝 범위를 밀지 말고 부드럽게 왕복",
-        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다"
+        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
       ],
-      "benefits": [
+      benefits: [
         "덤벨 사이드벤드으로 관절 위치와 범위 인식",
         "복부을 활용한 편안한 움직임 준비",
-        "복부의 움직임 경로 인식"
+        "복부의 움직임 경로 인식",
       ],
-      "warning": "덤벨 사이드벤드 중 날카로운 통증, 저림, 방사통, 붓기·열감이 있으면 자가 진행을 멈추고 평가를 우선하세요.",
-      "reference": {
-        "label": "ACSM — Exercise Safety",
-        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
-      }
+      warning:
+        "덤벨 사이드벤드 중 날카로운 통증, 저림, 방사통, 붓기·열감이 있으면 자가 진행을 멈추고 평가를 우선하세요.",
+      reference: {
+        label: "ACSM — Exercise Safety",
+        url: "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/",
+      },
     },
-    "detail": {
-      "setup": [
+    detail: {
+      setup: [
         "도구를 몸 가까이에서 안정적으로 잡고 양쪽 중량이 같은지 확인합니다",
         "발 또는 지지면을 단단히 고정하고 몸통을 길게 세웁니다",
-        "덤벨 사이드벤드에 맞춰 편안한 바닥·매트 또는 지지대를 준비합니다"
+        "덤벨 사이드벤드에 맞춰 편안한 바닥·매트 또는 지지대를 준비합니다",
       ],
-      "finish": "덤벨 사이드벤드을 마친 뒤 중립 자세로 천천히 돌아와 불편감이 남지 않는지 확인합니다.",
-      "commonMistakes": [
+      finish:
+        "덤벨 사이드벤드을 마친 뒤 중립 자세로 천천히 돌아와 불편감이 남지 않는지 확인합니다.",
+      commonMistakes: [
         "덤벨 사이드벤드에서 끝 범위를 억지로 밀어 통증을 만드는 경우",
         "덤벨 사이드벤드에서 호흡을 참거나 반동을 쓰는 경우",
-        "덤벨 사이드벤드에서 저림·방사통을 무시하고 지속하는 경우"
+        "덤벨 사이드벤드에서 저림·방사통을 무시하고 지속하는 경우",
       ],
-      "regressions": [
+      regressions: [
         "덤벨 사이드벤드은 범위와 유지 시간을 줄입니다",
         "덤벨 사이드벤드은 벽·의자·블록 같은 지지대를 사용합니다",
-        "덤벨 사이드벤드은 누운 또는 앉은 안정된 자세로 바꿉니다"
+        "덤벨 사이드벤드은 누운 또는 앉은 안정된 자세로 바꿉니다",
       ],
-      "progressions": [
+      progressions: [
         "덤벨 사이드벤드은 다음 날 편안하면 범위만 조금 늘립니다",
         "덤벨 사이드벤드은 호흡 주기를 한 번 추가합니다",
-        "덤벨 사이드벤드은 지지대는 안정적으로 줄여 갑니다"
-      ]
-    }
+        "덤벨 사이드벤드은 지지대는 안정적으로 줄여 갑니다",
+      ],
+    },
   },
   {
-    "exercise": {
-      "id": "verified-dumbbell-squat",
-      "name": "덤벨 스쿼트",
-      "englishName": "Dumbbell Squat",
-      "category": "프리웨이트",
-      "regions": [
-        "하체"
-      ],
-      "focus": "근력",
-      "difficulty": "입문",
-      "equipment": "덤벨·안정된 지지면 선택",
-      "minutes": "6–12회 · 2세트",
-      "description": "덤벨 스쿼트은 대퇴사두근을 사용해 무릎과 엉덩이를 함께 굽혔다 펴는 하체 지지·밀기 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
-      "cues": [
+    exercise: {
+      id: "verified-dumbbell-squat",
+      name: "덤벨 스쿼트",
+      englishName: "Dumbbell Squat",
+      category: "프리웨이트",
+      regions: ["하체"],
+      focus: "근력",
+      difficulty: "입문",
+      equipment: "덤벨·안정된 지지면 선택",
+      minutes: "6–12회 · 2세트",
+      description:
+        "덤벨 스쿼트은 대퇴사두근을 사용해 무릎과 엉덩이를 함께 굽혔다 펴는 하체 지지·밀기 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
+      cues: [
         "덤벨 스쿼트에서 발 전체를 바닥에 붙이고 무릎을 발 방향으로 이동",
         "대퇴사두근을 느끼며 골반과 흉곽이 함께 내려가도록 몸통을 길게 유지",
-        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다"
+        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
       ],
-      "benefits": [
+      benefits: [
         "덤벨 스쿼트으로 하체 지지력과 제어",
         "대퇴사두근을 활용한 엉덩이·무릎 협응",
-        "대퇴사두근의 움직임 경로 인식"
+        "대퇴사두근의 움직임 경로 인식",
       ],
-      "warning": "덤벨 스쿼트 중 무릎·고관절의 날카로운 통증, 발바닥 들림 또는 균형 상실이 있으면 깊이·부하를 낮추거나 중단하세요.",
-      "reference": {
-        "label": "ACSM — Exercise Safety",
-        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
-      }
+      warning:
+        "덤벨 스쿼트 중 무릎·고관절의 날카로운 통증, 발바닥 들림 또는 균형 상실이 있으면 깊이·부하를 낮추거나 중단하세요.",
+      reference: {
+        label: "ACSM — Exercise Safety",
+        url: "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/",
+      },
     },
-    "detail": {
-      "setup": [
+    detail: {
+      setup: [
         "도구를 몸 가까이에서 안정적으로 잡고 양쪽 중량이 같은지 확인합니다",
         "발 또는 지지면을 단단히 고정하고 몸통을 길게 세웁니다",
-        "덤벨 스쿼트에 맞춰 발 간격과 발끝 방향을 편안한 범위에서 정합니다"
+        "덤벨 스쿼트에 맞춰 발 간격과 발끝 방향을 편안한 범위에서 정합니다",
       ],
-      "finish": "덤벨 스쿼트을 마친 뒤 무릎과 엉덩이를 함께 펴고 발 전체로 균형을 회복한 뒤 다음 반복을 준비합니다.",
-      "commonMistakes": [
+      finish:
+        "덤벨 스쿼트을 마친 뒤 무릎과 엉덩이를 함께 펴고 발 전체로 균형을 회복한 뒤 다음 반복을 준비합니다.",
+      commonMistakes: [
         "덤벨 스쿼트에서 무릎이 발 안쪽으로 무너지는 경우",
         "덤벨 스쿼트에서 발뒤꿈치가 들린 채 깊이를 억지로 늘리는 경우",
-        "덤벨 스쿼트에서 내려가며 허리가 과하게 말리거나 젖혀지는 경우"
+        "덤벨 스쿼트에서 내려가며 허리가 과하게 말리거나 젖혀지는 경우",
       ],
-      "regressions": [
+      regressions: [
         "덤벨 스쿼트은 의자·박스를 목표 높이로 사용합니다",
         "덤벨 스쿼트은 지지대를 잡고 얕은 범위로 수행합니다",
-        "덤벨 스쿼트은 부하를 빼고 체중 이동부터 연습합니다"
+        "덤벨 스쿼트은 부하를 빼고 체중 이동부터 연습합니다",
       ],
-      "progressions": [
+      progressions: [
         "덤벨 스쿼트은 안정된 범위에서 반복만 소폭 늘립니다",
         "덤벨 스쿼트은 편안한 깊이가 확보된 뒤 부하를 추가합니다",
-        "덤벨 스쿼트은 편측 변형은 지지대 가까이에서 시작합니다"
-      ]
-    }
-  }
+        "덤벨 스쿼트은 편측 변형은 지지대 가까이에서 시작합니다",
+      ],
+    },
+  },
 ];

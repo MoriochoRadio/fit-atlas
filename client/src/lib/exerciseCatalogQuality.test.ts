@@ -15,7 +15,7 @@ const normalize = (value: string) => value
 
 describe("exercise catalog quality gate", () => {
   it("keeps a catalog of individually named exercises instead of generated coaching combinations", () => {
-    expect(exercises).toHaveLength(1008);
+    expect(exercises).toHaveLength(990);
     expect(exercises.some((exercise) => exercise.id.startsWith("atlas13-"))).toBe(false);
     expect(exercises.filter((exercise) => exercise.id.startsWith("verified-")).length).toBe(534);
   });
@@ -43,6 +43,10 @@ describe("exercise catalog quality gate", () => {
       expect(exercise.reference.url).toMatch(/acsm\.org|github\.com\/yuhonas\/free-exercise-db/);
       expect(exercise.name).not.toMatch(/템포|폼 리셋|파셜 레인지|1\.5레프|포즈/);
       expect(exercise.englishName).not.toMatch(/tempo|form reset|partial range|one half rep|pause rep/i);
+      // 강도는 종목이 아니다. "스테어 클라이머 이지"처럼 난이도를 이름 끝에 붙이면
+      // 같은 기구가 두 항목이 되어 카탈로그 수만 부풀려진다.
+      expect(exercise.name).not.toMatch(/\s(이지|미디엄|하드|라이트|헤비)$/);
+      expect(exercise.englishName).not.toMatch(/\s(easy|medium|hard|light|heavy)$/i);
     });
   });
 

@@ -9,7 +9,7 @@ describe("exercise library QA", () => {
     const categories = new Set(exercises.map((exercise) => exercise.category));
     const stats = getCatalogStats(exercises);
     expect(categories).toEqual(new Set(["러닝", "유산소", "헬스기구", "프리웨이트", "맨몸운동", "모빌리티", "균형·협응", "요가·필라테스", "파워·민첩성"]));
-    expect(exercises.length).toBeGreaterThanOrEqual(1000);
+    expect(exercises.length).toBeGreaterThanOrEqual(990);
     expect(stats).toEqual({ exerciseCount: exercises.length, categoryCount: categories.size });
     expect(new Set(exercises.map((exercise) => exercise.id)).size).toBe(exercises.length);
     exercises.forEach((exercise) => {
@@ -18,7 +18,7 @@ describe("exercise library QA", () => {
       expect(exercise.warning.length).toBeGreaterThan(20);
       expect(exercise.reference.url).toMatch(/^https:\/\//);
     });
-    expect(exercises.map((exercise) => exercise.id)).toEqual(expect.arrayContaining(["kettlebell-sumo-deadlift", "resistance-band-row", "battle-rope-alternating-wave", "low-step-march", "medicine-ball-scoop-toss", "aqua-walk", "elliptical-easy", "recumbent-bike-easy", "row-erg-easy", "sandbag-bear-hug-carry", "trx-row", "landmine-press", "landmine-rotation-prep", "seated-wrist-mobility", "pool-easy-swim", "rail-supported-step-up", "counter-incline-pushup", "supported-floor-transfer", "grocery-bag-lift-to-counter", "easy-incline-walk", "trekking-pole-walk-prep", "light-daypack-walk", "cable-biceps-curl-easy", "machine-incline-chest-press-easy", "a-skip-walk-drill", "pike-pushup-prep", "copenhagen-plank-knee-easy", "assisted-pistol-squat-to-box", "decline-pushup-prep", "machine-ab-crunch-easy", "cable-reverse-fly-easy", "hollow-tuck-hold", "cable-single-arm-chest-press-easy", "unilateral-leg-press-easy", "active-hang-foot-assist", "band-assisted-chin-up-easy", "y-balance-reach-support", "single-leg-head-turn-support", "foot-assisted-pronated-pullup", "mixed-grip-pullup-foot-assist", "assisted-neutral-grip-pullup-machine", "frog-pump-easy", "hamstring-walkout-easy", "supported-lateral-lunge", "bear-crawl-forward-easy", "dead-bug-contralateral-reach", "standing-cross-crawl-march", "offset-wall-pushup", "counter-bodyweight-triceps-extension", "wall-sit-calf-raise-easy", "knee-plank-up-down", "high-plank-knee-to-elbow-easy"]));
+    expect(exercises.map((exercise) => exercise.id)).toEqual(expect.arrayContaining(["kettlebell-sumo-deadlift", "resistance-band-row", "battle-rope-alternating-wave", "low-step-march", "medicine-ball-scoop-toss", "aqua-walk", "elliptical-easy", "verified-recumbent-bike", "rowing-ergometer", "sandbag-bear-hug-carry", "trx-row", "landmine-press", "landmine-rotation-prep", "seated-wrist-mobility", "pool-easy-swim", "rail-supported-step-up", "counter-incline-pushup", "supported-floor-transfer", "grocery-bag-lift-to-counter", "easy-incline-walk", "trekking-pole-walk-prep", "light-daypack-walk", "cable-biceps", "machine-incline-chest-press-easy", "a-skip-walk-drill", "pike-pushup-prep", "copenhagen-plank-knee-easy", "assisted-pistol-squat-to-box", "decline-pushup-prep", "machine-ab-crunch-easy", "cable-reverse-fly-easy", "hollow-tuck-hold", "cable-single-arm-chest-press-easy", "unilateral-leg-press-easy", "active-hang-foot-assist", "band-assisted-chin-up-easy", "y-balance-reach-support", "single-leg-head-turn-support", "foot-assisted-pronated-pullup", "mixed-grip-pullup-foot-assist", "assisted-neutral-grip-pullup-machine", "frog-pump-easy", "hamstring-walkout-easy", "supported-lateral-lunge", "bear-crawl-forward-easy", "dead-bug-contralateral-reach", "standing-cross-crawl-march", "offset-wall-pushup", "counter-bodyweight-triceps-extension", "wall-sit-calf-raise-easy", "knee-plank-up-down", "high-plank-knee-to-elbow-easy"]));
     expect(exercises.some((exercise) => exercise.id.startsWith("atlas13-"))).toBe(false);
   });
 
@@ -92,7 +92,7 @@ describe("exercise library QA", () => {
     expect(filterExercises(exercises, { ...allFilters, category: "맨몸운동", keyword: "스캐풀라 풀업" }).map((exercise) => exercise.id)).toEqual(["scapular-pullup-foot-assist"]);
   });
   it("includes solo free-weight hinge, carry, row, press, unilateral lower-body, and calf variants", () => {
-    expect(exercises.map((exercise) => exercise.id)).toEqual(expect.arrayContaining(["dumbbell-suitcase-deadlift-easy", "dumbbell-front-rack-carry-easy", "chest-supported-dumbbell-row-easy", "dumbbell-pullover-easy", "dumbbell-z-press-easy", "dumbbell-lateral-lunge-easy", "dumbbell-bulgarian-split-squat-easy", "dumbbell-calf-raise-easy"]));
+    expect(exercises.map((exercise) => exercise.id)).toEqual(expect.arrayContaining(["dumbbell-suitcase-deadlift-easy", "dumbbell-front-rack-carry-easy", "chest-supported-dumbbell-row-easy", "dumbbell-pullover-easy", "dumbbell-z-press-easy", "dumbbell-lateral-lunge-easy", "dumbbell-bulgarian-split-squat-easy", "verified-calf-raise-on-a-dumbbell"]));
     expect(filterExercises(exercises, { ...allFilters, category: "프리웨이트", keyword: "프런트 랙 캐리" }).map((exercise) => exercise.id)).toEqual(["dumbbell-front-rack-carry-easy"]);
   });
   it("includes solo resistance-band upper-body, lower-body, and core coordination variants", () => {

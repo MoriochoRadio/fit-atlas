@@ -5,7 +5,7 @@ import { getExerciseTextGuide } from "./exerciseTextGuide";
 
 describe("ASCII movement diagrams", () => {
   it("provides three readable sketches for representative complex movement patterns", () => {
-    expect(Object.keys(asciiMovementDiagrams)).toEqual(expect.arrayContaining(["squat", "pushup", "rdl", "dumbbell-bench", "latpulldown", "leg-press", "row-erg-easy", "bike", "front-plank", "barbell-hip-thrust", "bird-dog", "assisted-pullup", "step-up"]));
+    expect(Object.keys(asciiMovementDiagrams)).toEqual(expect.arrayContaining(["squat", "pushup", "rdl", "dumbbell-bench", "latpulldown", "leg-press", "rowing-ergometer", "bike", "front-plank", "barbell-hip-thrust", "bird-dog", "assisted-pullup", "step-up"]));
     Object.values(asciiMovementDiagrams).forEach((diagram) => {
       expect(diagram.stages).toHaveLength(3);
       diagram.stages.forEach((stage) => {
@@ -19,7 +19,7 @@ describe("ASCII movement diagrams", () => {
 
   it("creates a three-stage accessible fallback diagram for every catalog exercise", async () => {
     const entries = await loadFullCatalog();
-    expect(entries).toHaveLength(1008);
+    expect(entries).toHaveLength(990);
 
     entries.forEach(({ exercise, detail }) => {
       const guide = getExerciseTextGuide(exercise, detail);

@@ -382,10 +382,10 @@ describe("Home recovery alternative flow", () => {
 
   it("renders the first catalog page first, then appends the next page on demand", async () => {
     render(createElement(Home));
-    expect(screen.getByText("18개 표시 · 100/1008개 카탈로그를 불러왔습니다.")).toBeTruthy();
+    expect(screen.getByText(/18개 표시 · \d+\/990개 카탈로그를 불러왔습니다\./)).toBeTruthy();
 
     fireEvent.click(screen.getByRole("button", { name: /운동 100개 더 보기/ }));
-    await waitFor(() => expect(screen.getByText("36개 표시 · 100/1008개 카탈로그를 불러왔습니다.")).toBeTruthy());
+    await waitFor(() => expect(screen.getByText(/36개 표시 · \d+\/990개 카탈로그를 불러왔습니다\./)).toBeTruthy());
   });
 
   it("saves a favorite and a recently viewed exercise from its card", async () => {
@@ -520,8 +520,8 @@ describe("Home recovery alternative flow", () => {
     render(createElement(Home));
     fireEvent.change(screen.getByLabelText("운동 검색"), { target: { value: "복싱 가드 스텝" } });
 
-    await waitFor(() => expect(screen.getByRole("heading", { name: "복싱 가드 스텝 리셋 이지" })).toBeTruthy());
-    const card = screen.getByRole("heading", { name: "복싱 가드 스텝 리셋 이지" }).closest("article");
+    await waitFor(() => expect(screen.getByRole("heading", { name: "복싱 가드 스텝 리셋" })).toBeTruthy());
+    const card = screen.getByRole("heading", { name: "복싱 가드 스텝 리셋" }).closest("article");
     expect(card).toBeTruthy();
     fireEvent.click(within(card!).getByRole("button", { name: "자세·근거 보기" }));
 

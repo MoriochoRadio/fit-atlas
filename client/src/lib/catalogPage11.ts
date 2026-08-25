@@ -2,436 +2,443 @@ import type { CatalogEntry } from "./catalogTypes";
 
 export const catalogPage11: CatalogEntry[] = [
   {
-    "exercise": {
-      "id": "verified-double-kettlebell-alternating-hang-clean",
-      "name": "더블 케틀벨 교대 행 클린",
-      "englishName": "Double Kettlebell Alternating Hang Clean",
-      "category": "프리웨이트",
-      "regions": [
-        "하체",
-        "둔근"
-      ],
-      "focus": "근력",
-      "difficulty": "중급",
-      "equipment": "케틀벨",
-      "minutes": "6–12회 · 2세트",
-      "description": "더블 케틀벨 교대 행 클린은 햄스트링을 빠르게 쓰되 착지·받기·도구 경로를 먼저 통제해야 하는 파워 또는 기술 종목입니다. 좌우를 바꿀 때 몸통이 급하게 회전하지 않게 잠시 정지합니다",
-      "cues": [
+    exercise: {
+      id: "verified-double-kettlebell-alternating-hang-clean",
+      name: "더블 케틀벨 교대 행 클린",
+      englishName: "Double Kettlebell Alternating Hang Clean",
+      category: "프리웨이트",
+      regions: ["하체", "둔근"],
+      focus: "근력",
+      difficulty: "중급",
+      equipment: "케틀벨",
+      minutes: "6–12회 · 2세트",
+      description:
+        "더블 케틀벨 교대 행 클린은 햄스트링을 빠르게 쓰되 착지·받기·도구 경로를 먼저 통제해야 하는 파워 또는 기술 종목입니다. 좌우를 바꿀 때 몸통이 급하게 회전하지 않게 잠시 정지합니다",
+      cues: [
         "더블 케틀벨 교대 행 클린에서 낮은 속도 리허설 뒤에만 힘을 빠르게 쓰기",
         "햄스트링을 느끼며 발·무릎·골반이 같은 방향으로 받기",
-        "좌우를 바꿀 때 몸통이 급하게 회전하지 않게 잠시 정지합니다"
+        "좌우를 바꿀 때 몸통이 급하게 회전하지 않게 잠시 정지합니다",
       ],
-      "benefits": [
+      benefits: [
         "더블 케틀벨 교대 행 클린으로 힘 발휘와 제어의 연결",
         "햄스트링을 활용한 착지·받기 협응",
-        "햄스트링의 움직임 경로 인식"
+        "햄스트링의 움직임 경로 인식",
       ],
-      "warning": "더블 케틀벨 교대 행 클린 중 착지 불안, 무릎·발목·허리 통증, 어지러움 또는 공간 부족이 있으면 즉시 중단하세요.",
-      "reference": {
-        "label": "ACSM — Exercise Safety",
-        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
-      }
+      warning:
+        "더블 케틀벨 교대 행 클린 중 착지 불안, 무릎·발목·허리 통증, 어지러움 또는 공간 부족이 있으면 즉시 중단하세요.",
+      reference: {
+        label: "ACSM — Exercise Safety",
+        url: "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/",
+      },
     },
-    "detail": {
-      "setup": [
+    detail: {
+      setup: [
         "도구를 몸 가까이에서 안정적으로 잡고 양쪽 중량이 같은지 확인합니다",
         "발 또는 지지면을 단단히 고정하고 몸통을 길게 세웁니다",
-        "더블 케틀벨 교대 행 클린에 맞춰 미끄럽지 않은 바닥과 충분한 빈 공간을 확보합니다"
+        "더블 케틀벨 교대 행 클린에 맞춰 미끄럽지 않은 바닥과 충분한 빈 공간을 확보합니다",
       ],
-      "finish": "더블 케틀벨 교대 행 클린을 마친 뒤 착지 또는 받기 뒤 잠시 균형을 확인하고 호흡이 안정된 후 다음 반복을 시작합니다.",
-      "commonMistakes": [
+      finish:
+        "더블 케틀벨 교대 행 클린을 마친 뒤 착지 또는 받기 뒤 잠시 균형을 확인하고 호흡이 안정된 후 다음 반복을 시작합니다.",
+      commonMistakes: [
         "더블 케틀벨 교대 행 클린에서 피로한 상태에서 높이·속도·부하를 함께 올리는 경우",
         "더블 케틀벨 교대 행 클린에서 착지 소리와 무릎 흔들림을 무시하는 경우",
-        "더블 케틀벨 교대 행 클린에서 도구 경로가 불안정한데 반복을 이어 가는 경우"
+        "더블 케틀벨 교대 행 클린에서 도구 경로가 불안정한데 반복을 이어 가는 경우",
       ],
-      "regressions": [
+      regressions: [
         "더블 케틀벨 교대 행 클린은 점프·속도를 빼고 체중 이동으로 바꿉니다",
         "더블 케틀벨 교대 행 클린은 낮은 높이·짧은 거리·가벼운 도구를 사용합니다",
-        "더블 케틀벨 교대 행 클린은 지지대 가까이에서 받기 자세만 연습합니다"
+        "더블 케틀벨 교대 행 클린은 지지대 가까이에서 받기 자세만 연습합니다",
       ],
-      "progressions": [
+      progressions: [
         "더블 케틀벨 교대 행 클린은 안정된 착지 뒤 반복을 한두 회 늘립니다",
         "더블 케틀벨 교대 행 클린은 한 번에 거리·높이·부하 중 하나만 조절합니다",
-        "더블 케틀벨 교대 행 클린은 복잡한 연속 동작은 기본 패턴이 안정된 뒤 시도합니다"
-      ]
-    }
+        "더블 케틀벨 교대 행 클린은 복잡한 연속 동작은 기본 패턴이 안정된 뒤 시도합니다",
+      ],
+    },
   },
   {
-    "exercise": {
-      "id": "verified-double-kettlebell-jerk",
-      "name": "더블 케틀벨 저크",
-      "englishName": "Double Kettlebell Jerk",
-      "category": "프리웨이트",
-      "regions": [
-        "어깨"
-      ],
-      "focus": "근력",
-      "difficulty": "중급",
-      "equipment": "케틀벨",
-      "minutes": "6–12회 · 2세트",
-      "description": "더블 케틀벨 저크은 어깨을 빠르게 쓰되 착지·받기·도구 경로를 먼저 통제해야 하는 파워 또는 기술 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
-      "cues": [
+    exercise: {
+      id: "verified-double-kettlebell-jerk",
+      name: "더블 케틀벨 저크",
+      englishName: "Double Kettlebell Jerk",
+      category: "프리웨이트",
+      regions: ["어깨"],
+      focus: "근력",
+      difficulty: "중급",
+      equipment: "케틀벨",
+      minutes: "6–12회 · 2세트",
+      description:
+        "더블 케틀벨 저크은 어깨을 빠르게 쓰되 착지·받기·도구 경로를 먼저 통제해야 하는 파워 또는 기술 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
+      cues: [
         "더블 케틀벨 저크에서 낮은 속도 리허설 뒤에만 힘을 빠르게 쓰기",
         "어깨을 느끼며 발·무릎·골반이 같은 방향으로 받기",
-        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다"
+        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
       ],
-      "benefits": [
+      benefits: [
         "더블 케틀벨 저크으로 힘 발휘와 제어의 연결",
         "어깨을 활용한 착지·받기 협응",
-        "어깨의 움직임 경로 인식"
+        "어깨의 움직임 경로 인식",
       ],
-      "warning": "더블 케틀벨 저크 중 착지 불안, 무릎·발목·허리 통증, 어지러움 또는 공간 부족이 있으면 즉시 중단하세요.",
-      "reference": {
-        "label": "ACSM — Exercise Safety",
-        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
-      }
+      warning:
+        "더블 케틀벨 저크 중 착지 불안, 무릎·발목·허리 통증, 어지러움 또는 공간 부족이 있으면 즉시 중단하세요.",
+      reference: {
+        label: "ACSM — Exercise Safety",
+        url: "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/",
+      },
     },
-    "detail": {
-      "setup": [
+    detail: {
+      setup: [
         "도구를 몸 가까이에서 안정적으로 잡고 양쪽 중량이 같은지 확인합니다",
         "발 또는 지지면을 단단히 고정하고 몸통을 길게 세웁니다",
-        "더블 케틀벨 저크에 맞춰 미끄럽지 않은 바닥과 충분한 빈 공간을 확보합니다"
+        "더블 케틀벨 저크에 맞춰 미끄럽지 않은 바닥과 충분한 빈 공간을 확보합니다",
       ],
-      "finish": "더블 케틀벨 저크을 마친 뒤 착지 또는 받기 뒤 잠시 균형을 확인하고 호흡이 안정된 후 다음 반복을 시작합니다.",
-      "commonMistakes": [
+      finish:
+        "더블 케틀벨 저크을 마친 뒤 착지 또는 받기 뒤 잠시 균형을 확인하고 호흡이 안정된 후 다음 반복을 시작합니다.",
+      commonMistakes: [
         "더블 케틀벨 저크에서 피로한 상태에서 높이·속도·부하를 함께 올리는 경우",
         "더블 케틀벨 저크에서 착지 소리와 무릎 흔들림을 무시하는 경우",
-        "더블 케틀벨 저크에서 도구 경로가 불안정한데 반복을 이어 가는 경우"
+        "더블 케틀벨 저크에서 도구 경로가 불안정한데 반복을 이어 가는 경우",
       ],
-      "regressions": [
+      regressions: [
         "더블 케틀벨 저크은 점프·속도를 빼고 체중 이동으로 바꿉니다",
         "더블 케틀벨 저크은 낮은 높이·짧은 거리·가벼운 도구를 사용합니다",
-        "더블 케틀벨 저크은 지지대 가까이에서 받기 자세만 연습합니다"
+        "더블 케틀벨 저크은 지지대 가까이에서 받기 자세만 연습합니다",
       ],
-      "progressions": [
+      progressions: [
         "더블 케틀벨 저크은 안정된 착지 뒤 반복을 한두 회 늘립니다",
         "더블 케틀벨 저크은 한 번에 거리·높이·부하 중 하나만 조절합니다",
-        "더블 케틀벨 저크은 복잡한 연속 동작은 기본 패턴이 안정된 뒤 시도합니다"
-      ]
-    }
+        "더블 케틀벨 저크은 복잡한 연속 동작은 기본 패턴이 안정된 뒤 시도합니다",
+      ],
+    },
   },
   {
-    "exercise": {
-      "id": "verified-double-kettlebell-push-press",
-      "name": "더블 케틀벨 푸시프레스",
-      "englishName": "Double Kettlebell Push Press",
-      "category": "프리웨이트",
-      "regions": [
-        "어깨"
-      ],
-      "focus": "근력",
-      "difficulty": "중급",
-      "equipment": "케틀벨",
-      "minutes": "6–12회 · 2세트",
-      "description": "더블 케틀벨 푸시프레스은 어깨을 사용해 손잡이·도구 또는 바닥을 몸에서 멀어지게 미는 상체 밀기 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
-      "cues": [
+    exercise: {
+      id: "verified-double-kettlebell-push-press",
+      name: "더블 케틀벨 푸시프레스",
+      englishName: "Double Kettlebell Push Press",
+      category: "프리웨이트",
+      regions: ["어깨"],
+      focus: "근력",
+      difficulty: "중급",
+      equipment: "케틀벨",
+      minutes: "6–12회 · 2세트",
+      description:
+        "더블 케틀벨 푸시프레스은 어깨을 사용해 손잡이·도구 또는 바닥을 몸에서 멀어지게 미는 상체 밀기 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
+      cues: [
         "더블 케틀벨 푸시프레스에서 손목을 중립에 가깝게 두고 손잡이를 안정적으로 잡기",
         "어깨을 느끼며 갈비뼈를 과하게 들지 않고 몸통 길이 유지",
-        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다"
+        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
       ],
-      "benefits": [
+      benefits: [
         "더블 케틀벨 푸시프레스으로 가슴·어깨·팔의 밀기 협응",
         "어깨을 활용한 손목과 견갑 안정 제어",
-        "어깨의 움직임 경로 인식"
+        "어깨의 움직임 경로 인식",
       ],
-      "warning": "더블 케틀벨 푸시프레스 중 어깨·팔꿈치·손목 통증, 저림 또는 도구 흔들림이 있으면 즉시 멈추고 설정을 다시 확인하세요.",
-      "reference": {
-        "label": "ACSM — Exercise Safety",
-        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
-      }
+      warning:
+        "더블 케틀벨 푸시프레스 중 어깨·팔꿈치·손목 통증, 저림 또는 도구 흔들림이 있으면 즉시 멈추고 설정을 다시 확인하세요.",
+      reference: {
+        label: "ACSM — Exercise Safety",
+        url: "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/",
+      },
     },
-    "detail": {
-      "setup": [
+    detail: {
+      setup: [
         "도구를 몸 가까이에서 안정적으로 잡고 양쪽 중량이 같은지 확인합니다",
         "발 또는 지지면을 단단히 고정하고 몸통을 길게 세웁니다",
-        "더블 케틀벨 푸시프레스에 맞춰 손잡이·바·지지면의 높이와 좌우 설정을 확인합니다"
+        "더블 케틀벨 푸시프레스에 맞춰 손잡이·바·지지면의 높이와 좌우 설정을 확인합니다",
       ],
-      "finish": "더블 케틀벨 푸시프레스을 마친 뒤 팔꿈치를 잠그지 않은 편안한 끝 범위에서 잠시 멈춘 뒤 같은 경로로 돌아옵니다.",
-      "commonMistakes": [
+      finish:
+        "더블 케틀벨 푸시프레스을 마친 뒤 팔꿈치를 잠그지 않은 편안한 끝 범위에서 잠시 멈춘 뒤 같은 경로로 돌아옵니다.",
+      commonMistakes: [
         "더블 케틀벨 푸시프레스에서 어깨가 앞으로 말린 채 밀어 올리는 경우",
         "더블 케틀벨 푸시프레스에서 허리를 과하게 젖혀 무게를 넘기는 경우",
-        "더블 케틀벨 푸시프레스에서 손목을 꺾고 그립을 느슨하게 유지하는 경우"
+        "더블 케틀벨 푸시프레스에서 손목을 꺾고 그립을 느슨하게 유지하는 경우",
       ],
-      "regressions": [
+      regressions: [
         "더블 케틀벨 푸시프레스은 벽·높은 벤치 또는 가벼운 저항으로 바꿉니다",
         "더블 케틀벨 푸시프레스은 가동 범위를 줄이고 어깨 편안함을 확인합니다",
-        "더블 케틀벨 푸시프레스은 양손 지지로 안정성을 먼저 확보합니다"
+        "더블 케틀벨 푸시프레스은 양손 지지로 안정성을 먼저 확보합니다",
       ],
-      "progressions": [
+      progressions: [
         "더블 케틀벨 푸시프레스은 정렬이 유지될 때 반복을 소폭 늘립니다",
         "더블 케틀벨 푸시프레스은 안정된 지지면에서 저항을 한 단계만 올립니다",
-        "더블 케틀벨 푸시프레스은 낮은 지지 또는 편측 변형은 통제 후 시도합니다"
-      ]
-    }
+        "더블 케틀벨 푸시프레스은 낮은 지지 또는 편측 변형은 통제 후 시도합니다",
+      ],
+    },
   },
   {
-    "exercise": {
-      "id": "verified-double-kettlebell-snatch",
-      "name": "더블 케틀벨 스내치",
-      "englishName": "Double Kettlebell Snatch",
-      "category": "프리웨이트",
-      "regions": [
-        "어깨"
-      ],
-      "focus": "근력",
-      "difficulty": "상급",
-      "equipment": "케틀벨",
-      "minutes": "6–12회 · 2세트",
-      "description": "더블 케틀벨 스내치은 어깨을 빠르게 쓰되 착지·받기·도구 경로를 먼저 통제해야 하는 파워 또는 기술 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
-      "cues": [
+    exercise: {
+      id: "verified-double-kettlebell-snatch",
+      name: "더블 케틀벨 스내치",
+      englishName: "Double Kettlebell Snatch",
+      category: "프리웨이트",
+      regions: ["어깨"],
+      focus: "근력",
+      difficulty: "상급",
+      equipment: "케틀벨",
+      minutes: "6–12회 · 2세트",
+      description:
+        "더블 케틀벨 스내치은 어깨을 빠르게 쓰되 착지·받기·도구 경로를 먼저 통제해야 하는 파워 또는 기술 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
+      cues: [
         "더블 케틀벨 스내치에서 낮은 속도 리허설 뒤에만 힘을 빠르게 쓰기",
         "어깨을 느끼며 발·무릎·골반이 같은 방향으로 받기",
-        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다"
+        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
       ],
-      "benefits": [
+      benefits: [
         "더블 케틀벨 스내치으로 힘 발휘와 제어의 연결",
         "어깨을 활용한 착지·받기 협응",
-        "어깨의 움직임 경로 인식"
+        "어깨의 움직임 경로 인식",
       ],
-      "warning": "더블 케틀벨 스내치 중 착지 불안, 무릎·발목·허리 통증, 어지러움 또는 공간 부족이 있으면 즉시 중단하세요.",
-      "reference": {
-        "label": "ACSM — Exercise Safety",
-        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
-      }
+      warning:
+        "더블 케틀벨 스내치 중 착지 불안, 무릎·발목·허리 통증, 어지러움 또는 공간 부족이 있으면 즉시 중단하세요.",
+      reference: {
+        label: "ACSM — Exercise Safety",
+        url: "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/",
+      },
     },
-    "detail": {
-      "setup": [
+    detail: {
+      setup: [
         "도구를 몸 가까이에서 안정적으로 잡고 양쪽 중량이 같은지 확인합니다",
         "발 또는 지지면을 단단히 고정하고 몸통을 길게 세웁니다",
-        "더블 케틀벨 스내치에 맞춰 미끄럽지 않은 바닥과 충분한 빈 공간을 확보합니다"
+        "더블 케틀벨 스내치에 맞춰 미끄럽지 않은 바닥과 충분한 빈 공간을 확보합니다",
       ],
-      "finish": "더블 케틀벨 스내치을 마친 뒤 착지 또는 받기 뒤 잠시 균형을 확인하고 호흡이 안정된 후 다음 반복을 시작합니다.",
-      "commonMistakes": [
+      finish:
+        "더블 케틀벨 스내치을 마친 뒤 착지 또는 받기 뒤 잠시 균형을 확인하고 호흡이 안정된 후 다음 반복을 시작합니다.",
+      commonMistakes: [
         "더블 케틀벨 스내치에서 피로한 상태에서 높이·속도·부하를 함께 올리는 경우",
         "더블 케틀벨 스내치에서 착지 소리와 무릎 흔들림을 무시하는 경우",
-        "더블 케틀벨 스내치에서 도구 경로가 불안정한데 반복을 이어 가는 경우"
+        "더블 케틀벨 스내치에서 도구 경로가 불안정한데 반복을 이어 가는 경우",
       ],
-      "regressions": [
+      regressions: [
         "더블 케틀벨 스내치은 점프·속도를 빼고 체중 이동으로 바꿉니다",
         "더블 케틀벨 스내치은 낮은 높이·짧은 거리·가벼운 도구를 사용합니다",
-        "더블 케틀벨 스내치은 지지대 가까이에서 받기 자세만 연습합니다"
+        "더블 케틀벨 스내치은 지지대 가까이에서 받기 자세만 연습합니다",
       ],
-      "progressions": [
+      progressions: [
         "더블 케틀벨 스내치은 안정된 착지 뒤 반복을 한두 회 늘립니다",
         "더블 케틀벨 스내치은 한 번에 거리·높이·부하 중 하나만 조절합니다",
-        "더블 케틀벨 스내치은 복잡한 연속 동작은 기본 패턴이 안정된 뒤 시도합니다"
-      ]
-    }
+        "더블 케틀벨 스내치은 복잡한 연속 동작은 기본 패턴이 안정된 뒤 시도합니다",
+      ],
+    },
   },
   {
-    "exercise": {
-      "id": "verified-double-kettlebell-windmill",
-      "name": "더블 케틀벨 윈드밀",
-      "englishName": "Double Kettlebell Windmill",
-      "category": "프리웨이트",
-      "regions": [
-        "코어"
-      ],
-      "focus": "근력",
-      "difficulty": "중급",
-      "equipment": "케틀벨",
-      "minutes": "6–12회 · 2세트",
-      "description": "더블 케틀벨 윈드밀은 복부 주변을 통증 없는 범위에서 천천히 움직여 가동 범위와 자세 감각을 확인하는 모빌리티 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
-      "cues": [
+    exercise: {
+      id: "verified-double-kettlebell-windmill",
+      name: "더블 케틀벨 윈드밀",
+      englishName: "Double Kettlebell Windmill",
+      category: "프리웨이트",
+      regions: ["코어"],
+      focus: "근력",
+      difficulty: "중급",
+      equipment: "케틀벨",
+      minutes: "6–12회 · 2세트",
+      description:
+        "더블 케틀벨 윈드밀은 복부 주변을 통증 없는 범위에서 천천히 움직여 가동 범위와 자세 감각을 확인하는 모빌리티 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
+      cues: [
         "더블 케틀벨 윈드밀에서 작은 범위에서 호흡을 멈추지 않기",
         "복부을 느끼며 끝 범위를 밀지 말고 부드럽게 왕복",
-        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다"
+        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
       ],
-      "benefits": [
+      benefits: [
         "더블 케틀벨 윈드밀으로 관절 위치와 범위 인식",
         "복부을 활용한 편안한 움직임 준비",
-        "복부의 움직임 경로 인식"
+        "복부의 움직임 경로 인식",
       ],
-      "warning": "더블 케틀벨 윈드밀 중 날카로운 통증, 저림, 방사통, 붓기·열감이 있으면 자가 진행을 멈추고 평가를 우선하세요.",
-      "reference": {
-        "label": "ACSM — Exercise Safety",
-        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
-      }
+      warning:
+        "더블 케틀벨 윈드밀 중 날카로운 통증, 저림, 방사통, 붓기·열감이 있으면 자가 진행을 멈추고 평가를 우선하세요.",
+      reference: {
+        label: "ACSM — Exercise Safety",
+        url: "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/",
+      },
     },
-    "detail": {
-      "setup": [
+    detail: {
+      setup: [
         "도구를 몸 가까이에서 안정적으로 잡고 양쪽 중량이 같은지 확인합니다",
         "발 또는 지지면을 단단히 고정하고 몸통을 길게 세웁니다",
-        "더블 케틀벨 윈드밀에 맞춰 편안한 바닥·매트 또는 지지대를 준비합니다"
+        "더블 케틀벨 윈드밀에 맞춰 편안한 바닥·매트 또는 지지대를 준비합니다",
       ],
-      "finish": "더블 케틀벨 윈드밀을 마친 뒤 중립 자세로 천천히 돌아와 불편감이 남지 않는지 확인합니다.",
-      "commonMistakes": [
+      finish:
+        "더블 케틀벨 윈드밀을 마친 뒤 중립 자세로 천천히 돌아와 불편감이 남지 않는지 확인합니다.",
+      commonMistakes: [
         "더블 케틀벨 윈드밀에서 끝 범위를 억지로 밀어 통증을 만드는 경우",
         "더블 케틀벨 윈드밀에서 호흡을 참거나 반동을 쓰는 경우",
-        "더블 케틀벨 윈드밀에서 저림·방사통을 무시하고 지속하는 경우"
+        "더블 케틀벨 윈드밀에서 저림·방사통을 무시하고 지속하는 경우",
       ],
-      "regressions": [
+      regressions: [
         "더블 케틀벨 윈드밀은 범위와 유지 시간을 줄입니다",
         "더블 케틀벨 윈드밀은 벽·의자·블록 같은 지지대를 사용합니다",
-        "더블 케틀벨 윈드밀은 누운 또는 앉은 안정된 자세로 바꿉니다"
+        "더블 케틀벨 윈드밀은 누운 또는 앉은 안정된 자세로 바꿉니다",
       ],
-      "progressions": [
+      progressions: [
         "더블 케틀벨 윈드밀은 다음 날 편안하면 범위만 조금 늘립니다",
         "더블 케틀벨 윈드밀은 호흡 주기를 한 번 추가합니다",
-        "더블 케틀벨 윈드밀은 지지대는 안정적으로 줄여 갑니다"
-      ]
-    }
+        "더블 케틀벨 윈드밀은 지지대는 안정적으로 줄여 갑니다",
+      ],
+    },
   },
   {
-    "exercise": {
-      "id": "verified-extended-range-one-arm-kettlebell-floor-press",
-      "name": "확장범위 원암 케틀벨 플로어 프레스",
-      "englishName": "Extended Range One-Arm Kettlebell Floor Press",
-      "category": "프리웨이트",
-      "regions": [
-        "가슴"
-      ],
-      "focus": "근력",
-      "difficulty": "입문",
-      "equipment": "케틀벨",
-      "minutes": "6–12회 · 2세트",
-      "description": "확장범위 원암 케틀벨 플로어 프레스은 가슴을 사용해 손잡이·도구 또는 바닥을 몸에서 멀어지게 미는 상체 밀기 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
-      "cues": [
+    exercise: {
+      id: "verified-extended-range-one-arm-kettlebell-floor-press",
+      name: "확장범위 원암 케틀벨 플로어 프레스",
+      englishName: "Extended Range One-Arm Kettlebell Floor Press",
+      category: "프리웨이트",
+      regions: ["가슴"],
+      focus: "근력",
+      difficulty: "입문",
+      equipment: "케틀벨",
+      minutes: "6–12회 · 2세트",
+      description:
+        "확장범위 원암 케틀벨 플로어 프레스은 가슴을 사용해 손잡이·도구 또는 바닥을 몸에서 멀어지게 미는 상체 밀기 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
+      cues: [
         "확장범위 원암 케틀벨 플로어 프레스에서 손목을 중립에 가깝게 두고 손잡이를 안정적으로 잡기",
         "가슴을 느끼며 갈비뼈를 과하게 들지 않고 몸통 길이 유지",
-        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다"
+        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
       ],
-      "benefits": [
+      benefits: [
         "확장범위 원암 케틀벨 플로어 프레스으로 가슴·어깨·팔의 밀기 협응",
         "가슴을 활용한 손목과 견갑 안정 제어",
-        "가슴의 움직임 경로 인식"
+        "가슴의 움직임 경로 인식",
       ],
-      "warning": "확장범위 원암 케틀벨 플로어 프레스 중 어깨·팔꿈치·손목 통증, 저림 또는 도구 흔들림이 있으면 즉시 멈추고 설정을 다시 확인하세요.",
-      "reference": {
-        "label": "ACSM — Exercise Safety",
-        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
-      }
+      warning:
+        "확장범위 원암 케틀벨 플로어 프레스 중 어깨·팔꿈치·손목 통증, 저림 또는 도구 흔들림이 있으면 즉시 멈추고 설정을 다시 확인하세요.",
+      reference: {
+        label: "ACSM — Exercise Safety",
+        url: "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/",
+      },
     },
-    "detail": {
-      "setup": [
+    detail: {
+      setup: [
         "도구를 몸 가까이에서 안정적으로 잡고 양쪽 중량이 같은지 확인합니다",
         "바닥 또는 벤치에 등을 안정적으로 댄 뒤 갈비뼈를 과하게 들지 않습니다",
-        "확장범위 원암 케틀벨 플로어 프레스에 맞춰 손잡이·바·지지면의 높이와 좌우 설정을 확인합니다"
+        "확장범위 원암 케틀벨 플로어 프레스에 맞춰 손잡이·바·지지면의 높이와 좌우 설정을 확인합니다",
       ],
-      "finish": "확장범위 원암 케틀벨 플로어 프레스을 마친 뒤 팔꿈치를 잠그지 않은 편안한 끝 범위에서 잠시 멈춘 뒤 같은 경로로 돌아옵니다.",
-      "commonMistakes": [
+      finish:
+        "확장범위 원암 케틀벨 플로어 프레스을 마친 뒤 팔꿈치를 잠그지 않은 편안한 끝 범위에서 잠시 멈춘 뒤 같은 경로로 돌아옵니다.",
+      commonMistakes: [
         "확장범위 원암 케틀벨 플로어 프레스에서 어깨가 앞으로 말린 채 밀어 올리는 경우",
         "확장범위 원암 케틀벨 플로어 프레스에서 허리를 과하게 젖혀 무게를 넘기는 경우",
-        "확장범위 원암 케틀벨 플로어 프레스에서 손목을 꺾고 그립을 느슨하게 유지하는 경우"
+        "확장범위 원암 케틀벨 플로어 프레스에서 손목을 꺾고 그립을 느슨하게 유지하는 경우",
       ],
-      "regressions": [
+      regressions: [
         "확장범위 원암 케틀벨 플로어 프레스은 벽·높은 벤치 또는 가벼운 저항으로 바꿉니다",
         "확장범위 원암 케틀벨 플로어 프레스은 가동 범위를 줄이고 어깨 편안함을 확인합니다",
-        "확장범위 원암 케틀벨 플로어 프레스은 양손 지지로 안정성을 먼저 확보합니다"
+        "확장범위 원암 케틀벨 플로어 프레스은 양손 지지로 안정성을 먼저 확보합니다",
       ],
-      "progressions": [
+      progressions: [
         "확장범위 원암 케틀벨 플로어 프레스은 정렬이 유지될 때 반복을 소폭 늘립니다",
         "확장범위 원암 케틀벨 플로어 프레스은 안정된 지지면에서 저항을 한 단계만 올립니다",
-        "확장범위 원암 케틀벨 플로어 프레스은 낮은 지지 또는 편측 변형은 통제 후 시도합니다"
-      ]
-    }
+        "확장범위 원암 케틀벨 플로어 프레스은 낮은 지지 또는 편측 변형은 통제 후 시도합니다",
+      ],
+    },
   },
   {
-    "exercise": {
-      "id": "verified-front-squats-with-two-kettlebells",
-      "name": "더블 케틀벨 프런트 스쿼트",
-      "englishName": "Front Squats With Two Kettlebells",
-      "category": "프리웨이트",
-      "regions": [
-        "하체"
-      ],
-      "focus": "근력",
-      "difficulty": "중급",
-      "equipment": "케틀벨",
-      "minutes": "6–12회 · 2세트",
-      "description": "더블 케틀벨 프런트 스쿼트은 대퇴사두근을 사용해 무릎과 엉덩이를 함께 굽혔다 펴는 하체 지지·밀기 종목입니다. 앞쪽으로 도구가 이동할 때 갈비뼈를 과하게 들지 않습니다",
-      "cues": [
+    exercise: {
+      id: "verified-front-squats-with-two-kettlebells",
+      name: "더블 케틀벨 프런트 스쿼트",
+      englishName: "Front Squats With Two Kettlebells",
+      category: "프리웨이트",
+      regions: ["하체"],
+      focus: "근력",
+      difficulty: "중급",
+      equipment: "케틀벨",
+      minutes: "6–12회 · 2세트",
+      description:
+        "더블 케틀벨 프런트 스쿼트은 대퇴사두근을 사용해 무릎과 엉덩이를 함께 굽혔다 펴는 하체 지지·밀기 종목입니다. 앞쪽으로 도구가 이동할 때 갈비뼈를 과하게 들지 않습니다",
+      cues: [
         "더블 케틀벨 프런트 스쿼트에서 발 전체를 바닥에 붙이고 무릎을 발 방향으로 이동",
         "대퇴사두근을 느끼며 골반과 흉곽이 함께 내려가도록 몸통을 길게 유지",
-        "앞쪽으로 도구가 이동할 때 갈비뼈를 과하게 들지 않습니다"
+        "앞쪽으로 도구가 이동할 때 갈비뼈를 과하게 들지 않습니다",
       ],
-      "benefits": [
+      benefits: [
         "더블 케틀벨 프런트 스쿼트으로 하체 지지력과 제어",
         "대퇴사두근을 활용한 엉덩이·무릎 협응",
-        "대퇴사두근의 움직임 경로 인식"
+        "대퇴사두근의 움직임 경로 인식",
       ],
-      "warning": "더블 케틀벨 프런트 스쿼트 중 무릎·고관절의 날카로운 통증, 발바닥 들림 또는 균형 상실이 있으면 깊이·부하를 낮추거나 중단하세요.",
-      "reference": {
-        "label": "ACSM — Exercise Safety",
-        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
-      }
+      warning:
+        "더블 케틀벨 프런트 스쿼트 중 무릎·고관절의 날카로운 통증, 발바닥 들림 또는 균형 상실이 있으면 깊이·부하를 낮추거나 중단하세요.",
+      reference: {
+        label: "ACSM — Exercise Safety",
+        url: "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/",
+      },
     },
-    "detail": {
-      "setup": [
+    detail: {
+      setup: [
         "도구를 몸 가까이에서 안정적으로 잡고 양쪽 중량이 같은지 확인합니다",
         "발 또는 지지면을 단단히 고정하고 몸통을 길게 세웁니다",
-        "더블 케틀벨 프런트 스쿼트에 맞춰 발 간격과 발끝 방향을 편안한 범위에서 정합니다"
+        "더블 케틀벨 프런트 스쿼트에 맞춰 발 간격과 발끝 방향을 편안한 범위에서 정합니다",
       ],
-      "finish": "더블 케틀벨 프런트 스쿼트을 마친 뒤 무릎과 엉덩이를 함께 펴고 발 전체로 균형을 회복한 뒤 다음 반복을 준비합니다.",
-      "commonMistakes": [
+      finish:
+        "더블 케틀벨 프런트 스쿼트을 마친 뒤 무릎과 엉덩이를 함께 펴고 발 전체로 균형을 회복한 뒤 다음 반복을 준비합니다.",
+      commonMistakes: [
         "더블 케틀벨 프런트 스쿼트에서 무릎이 발 안쪽으로 무너지는 경우",
         "더블 케틀벨 프런트 스쿼트에서 발뒤꿈치가 들린 채 깊이를 억지로 늘리는 경우",
-        "더블 케틀벨 프런트 스쿼트에서 내려가며 허리가 과하게 말리거나 젖혀지는 경우"
+        "더블 케틀벨 프런트 스쿼트에서 내려가며 허리가 과하게 말리거나 젖혀지는 경우",
       ],
-      "regressions": [
+      regressions: [
         "더블 케틀벨 프런트 스쿼트은 의자·박스를 목표 높이로 사용합니다",
         "더블 케틀벨 프런트 스쿼트은 지지대를 잡고 얕은 범위로 수행합니다",
-        "더블 케틀벨 프런트 스쿼트은 부하를 빼고 체중 이동부터 연습합니다"
+        "더블 케틀벨 프런트 스쿼트은 부하를 빼고 체중 이동부터 연습합니다",
       ],
-      "progressions": [
+      progressions: [
         "더블 케틀벨 프런트 스쿼트은 안정된 범위에서 반복만 소폭 늘립니다",
         "더블 케틀벨 프런트 스쿼트은 편안한 깊이가 확보된 뒤 부하를 추가합니다",
-        "더블 케틀벨 프런트 스쿼트은 편측 변형은 지지대 가까이에서 시작합니다"
-      ]
-    }
+        "더블 케틀벨 프런트 스쿼트은 편측 변형은 지지대 가까이에서 시작합니다",
+      ],
+    },
   },
   {
-    "exercise": {
-      "id": "verified-kettlebell-arnold-press",
-      "name": "케틀벨 아놀드 프레스",
-      "englishName": "Kettlebell Arnold Press",
-      "category": "프리웨이트",
-      "regions": [
-        "어깨"
-      ],
-      "focus": "근력",
-      "difficulty": "중급",
-      "equipment": "케틀벨",
-      "minutes": "6–12회 · 2세트",
-      "description": "케틀벨 아놀드 프레스은 어깨을 사용해 손잡이·도구 또는 바닥을 몸에서 멀어지게 미는 상체 밀기 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
-      "cues": [
+    exercise: {
+      id: "verified-kettlebell-arnold-press",
+      name: "케틀벨 아놀드 프레스",
+      englishName: "Kettlebell Arnold Press",
+      category: "프리웨이트",
+      regions: ["어깨"],
+      focus: "근력",
+      difficulty: "중급",
+      equipment: "케틀벨",
+      minutes: "6–12회 · 2세트",
+      description:
+        "케틀벨 아놀드 프레스은 어깨을 사용해 손잡이·도구 또는 바닥을 몸에서 멀어지게 미는 상체 밀기 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
+      cues: [
         "케틀벨 아놀드 프레스에서 손목을 중립에 가깝게 두고 손잡이를 안정적으로 잡기",
         "어깨을 느끼며 갈비뼈를 과하게 들지 않고 몸통 길이 유지",
-        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다"
+        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
       ],
-      "benefits": [
+      benefits: [
         "케틀벨 아놀드 프레스으로 가슴·어깨·팔의 밀기 협응",
         "어깨을 활용한 손목과 견갑 안정 제어",
-        "어깨의 움직임 경로 인식"
+        "어깨의 움직임 경로 인식",
       ],
-      "warning": "케틀벨 아놀드 프레스 중 어깨·팔꿈치·손목 통증, 저림 또는 도구 흔들림이 있으면 즉시 멈추고 설정을 다시 확인하세요.",
-      "reference": {
-        "label": "ACSM — Exercise Safety",
-        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
-      }
+      warning:
+        "케틀벨 아놀드 프레스 중 어깨·팔꿈치·손목 통증, 저림 또는 도구 흔들림이 있으면 즉시 멈추고 설정을 다시 확인하세요.",
+      reference: {
+        label: "ACSM — Exercise Safety",
+        url: "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/",
+      },
     },
-    "detail": {
-      "setup": [
+    detail: {
+      setup: [
         "도구를 몸 가까이에서 안정적으로 잡고 양쪽 중량이 같은지 확인합니다",
         "발 또는 지지면을 단단히 고정하고 몸통을 길게 세웁니다",
-        "케틀벨 아놀드 프레스에 맞춰 손잡이·바·지지면의 높이와 좌우 설정을 확인합니다"
+        "케틀벨 아놀드 프레스에 맞춰 손잡이·바·지지면의 높이와 좌우 설정을 확인합니다",
       ],
-      "finish": "케틀벨 아놀드 프레스을 마친 뒤 팔꿈치를 잠그지 않은 편안한 끝 범위에서 잠시 멈춘 뒤 같은 경로로 돌아옵니다.",
-      "commonMistakes": [
+      finish:
+        "케틀벨 아놀드 프레스을 마친 뒤 팔꿈치를 잠그지 않은 편안한 끝 범위에서 잠시 멈춘 뒤 같은 경로로 돌아옵니다.",
+      commonMistakes: [
         "케틀벨 아놀드 프레스에서 어깨가 앞으로 말린 채 밀어 올리는 경우",
         "케틀벨 아놀드 프레스에서 허리를 과하게 젖혀 무게를 넘기는 경우",
-        "케틀벨 아놀드 프레스에서 손목을 꺾고 그립을 느슨하게 유지하는 경우"
+        "케틀벨 아놀드 프레스에서 손목을 꺾고 그립을 느슨하게 유지하는 경우",
       ],
-      "regressions": [
+      regressions: [
         "케틀벨 아놀드 프레스은 벽·높은 벤치 또는 가벼운 저항으로 바꿉니다",
         "케틀벨 아놀드 프레스은 가동 범위를 줄이고 어깨 편안함을 확인합니다",
-        "케틀벨 아놀드 프레스은 양손 지지로 안정성을 먼저 확보합니다"
+        "케틀벨 아놀드 프레스은 양손 지지로 안정성을 먼저 확보합니다",
       ],
-      "progressions": [
+      progressions: [
         "케틀벨 아놀드 프레스은 정렬이 유지될 때 반복을 소폭 늘립니다",
         "케틀벨 아놀드 프레스은 안정된 지지면에서 저항을 한 단계만 올립니다",
-        "케틀벨 아놀드 프레스은 낮은 지지 또는 편측 변형은 통제 후 시도합니다"
-      ]
-    }
-  }
+        "케틀벨 아놀드 프레스은 낮은 지지 또는 편측 변형은 통제 후 시도합니다",
+      ],
+    },
+  },
 ];

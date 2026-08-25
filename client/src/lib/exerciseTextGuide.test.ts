@@ -5,7 +5,7 @@ import { getExerciseTextGuide } from "./exerciseTextGuide";
 describe("exercise text guide", () => {
   it("creates a readable sequence, muscle map, breathing cue, adjustment, and stop cue for every catalog entry", async () => {
     const entries = await loadFullCatalog();
-    expect(entries).toHaveLength(1008);
+    expect(entries).toHaveLength(990);
 
     entries.forEach(({ exercise, detail }) => {
       const guide = getExerciseTextGuide(exercise, detail);

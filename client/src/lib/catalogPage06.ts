@@ -2,5433 +2,5503 @@ import type { CatalogEntry } from "./catalogTypes";
 
 export const catalogPage06: CatalogEntry[] = [
   {
-    "exercise": {
-      "id": "verified-jerk-dip-squat",
-      "name": "저크 딥 스쿼트",
-      "englishName": "Jerk Dip Squat",
-      "category": "프리웨이트",
-      "regions": [
-        "하체"
-      ],
-      "focus": "근력",
-      "difficulty": "중급",
-      "equipment": "바벨·안전 랙 선택",
-      "minutes": "6–12회 · 2세트",
-      "description": "저크 딥 스쿼트은 대퇴사두근을 사용해 무릎과 엉덩이를 함께 굽혔다 펴는 하체 지지·밀기 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
-      "cues": [
+    exercise: {
+      id: "verified-jerk-dip-squat",
+      name: "저크 딥 스쿼트",
+      englishName: "Jerk Dip Squat",
+      category: "프리웨이트",
+      regions: ["하체"],
+      focus: "근력",
+      difficulty: "중급",
+      equipment: "바벨·안전 랙 선택",
+      minutes: "6–12회 · 2세트",
+      description:
+        "저크 딥 스쿼트은 대퇴사두근을 사용해 무릎과 엉덩이를 함께 굽혔다 펴는 하체 지지·밀기 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
+      cues: [
         "저크 딥 스쿼트에서 발 전체를 바닥에 붙이고 무릎을 발 방향으로 이동",
         "대퇴사두근을 느끼며 골반과 흉곽이 함께 내려가도록 몸통을 길게 유지",
-        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다"
+        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
       ],
-      "benefits": [
+      benefits: [
         "저크 딥 스쿼트으로 하체 지지력과 제어",
         "대퇴사두근을 활용한 엉덩이·무릎 협응",
-        "대퇴사두근의 움직임 경로 인식"
+        "대퇴사두근의 움직임 경로 인식",
       ],
-      "warning": "저크 딥 스쿼트 중 무릎·고관절의 날카로운 통증, 발바닥 들림 또는 균형 상실이 있으면 깊이·부하를 낮추거나 중단하세요.",
-      "reference": {
-        "label": "ACSM — Exercise Safety",
-        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
-      }
+      warning:
+        "저크 딥 스쿼트 중 무릎·고관절의 날카로운 통증, 발바닥 들림 또는 균형 상실이 있으면 깊이·부하를 낮추거나 중단하세요.",
+      reference: {
+        label: "ACSM — Exercise Safety",
+        url: "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/",
+      },
     },
-    "detail": {
-      "setup": [
+    detail: {
+      setup: [
         "바벨의 좌우 중량·안전핀·내려놓을 위치를 확인하고 손 간격을 고정합니다",
         "발 또는 지지면을 단단히 고정하고 몸통을 길게 세웁니다",
-        "저크 딥 스쿼트에 맞춰 발 간격과 발끝 방향을 편안한 범위에서 정합니다"
+        "저크 딥 스쿼트에 맞춰 발 간격과 발끝 방향을 편안한 범위에서 정합니다",
       ],
-      "finish": "저크 딥 스쿼트을 마친 뒤 무릎과 엉덩이를 함께 펴고 발 전체로 균형을 회복한 뒤 다음 반복을 준비합니다.",
-      "commonMistakes": [
+      finish:
+        "저크 딥 스쿼트을 마친 뒤 무릎과 엉덩이를 함께 펴고 발 전체로 균형을 회복한 뒤 다음 반복을 준비합니다.",
+      commonMistakes: [
         "저크 딥 스쿼트에서 무릎이 발 안쪽으로 무너지는 경우",
         "저크 딥 스쿼트에서 발뒤꿈치가 들린 채 깊이를 억지로 늘리는 경우",
-        "저크 딥 스쿼트에서 내려가며 허리가 과하게 말리거나 젖혀지는 경우"
+        "저크 딥 스쿼트에서 내려가며 허리가 과하게 말리거나 젖혀지는 경우",
       ],
-      "regressions": [
+      regressions: [
         "저크 딥 스쿼트은 의자·박스를 목표 높이로 사용합니다",
         "저크 딥 스쿼트은 지지대를 잡고 얕은 범위로 수행합니다",
-        "저크 딥 스쿼트은 부하를 빼고 체중 이동부터 연습합니다"
+        "저크 딥 스쿼트은 부하를 빼고 체중 이동부터 연습합니다",
       ],
-      "progressions": [
+      progressions: [
         "저크 딥 스쿼트은 안정된 범위에서 반복만 소폭 늘립니다",
         "저크 딥 스쿼트은 편안한 깊이가 확보된 뒤 부하를 추가합니다",
-        "저크 딥 스쿼트은 편측 변형은 지지대 가까이에서 시작합니다"
-      ]
-    }
+        "저크 딥 스쿼트은 편측 변형은 지지대 가까이에서 시작합니다",
+      ],
+    },
   },
   {
-    "exercise": {
-      "id": "verified-kneeling-jump-squat",
-      "name": "무릎 점프 스쿼트",
-      "englishName": "Kneeling Jump Squat",
-      "category": "프리웨이트",
-      "regions": [
-        "둔근",
-        "하체"
-      ],
-      "focus": "근력",
-      "difficulty": "상급",
-      "equipment": "바벨·안전 랙 선택",
-      "minutes": "6–12회 · 2세트",
-      "description": "무릎 점프 스쿼트은 둔근을 사용해 무릎과 엉덩이를 함께 굽혔다 펴는 하체 지지·밀기 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
-      "cues": [
+    exercise: {
+      id: "verified-kneeling-jump-squat",
+      name: "무릎 점프 스쿼트",
+      englishName: "Kneeling Jump Squat",
+      category: "프리웨이트",
+      regions: ["둔근", "하체"],
+      focus: "근력",
+      difficulty: "상급",
+      equipment: "바벨·안전 랙 선택",
+      minutes: "6–12회 · 2세트",
+      description:
+        "무릎 점프 스쿼트은 둔근을 사용해 무릎과 엉덩이를 함께 굽혔다 펴는 하체 지지·밀기 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
+      cues: [
         "무릎 점프 스쿼트에서 발 전체를 바닥에 붙이고 무릎을 발 방향으로 이동",
         "둔근을 느끼며 골반과 흉곽이 함께 내려가도록 몸통을 길게 유지",
-        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다"
+        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
       ],
-      "benefits": [
+      benefits: [
         "무릎 점프 스쿼트으로 하체 지지력과 제어",
         "둔근을 활용한 엉덩이·무릎 협응",
-        "둔근의 움직임 경로 인식"
+        "둔근의 움직임 경로 인식",
       ],
-      "warning": "무릎 점프 스쿼트 중 무릎·고관절의 날카로운 통증, 발바닥 들림 또는 균형 상실이 있으면 깊이·부하를 낮추거나 중단하세요.",
-      "reference": {
-        "label": "ACSM — Exercise Safety",
-        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
-      }
+      warning:
+        "무릎 점프 스쿼트 중 무릎·고관절의 날카로운 통증, 발바닥 들림 또는 균형 상실이 있으면 깊이·부하를 낮추거나 중단하세요.",
+      reference: {
+        label: "ACSM — Exercise Safety",
+        url: "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/",
+      },
     },
-    "detail": {
-      "setup": [
+    detail: {
+      setup: [
         "바벨의 좌우 중량·안전핀·내려놓을 위치를 확인하고 손 간격을 고정합니다",
         "무릎 아래에 매트를 두고 골반을 중립 가까이 맞춥니다",
-        "무릎 점프 스쿼트에 맞춰 발 간격과 발끝 방향을 편안한 범위에서 정합니다"
+        "무릎 점프 스쿼트에 맞춰 발 간격과 발끝 방향을 편안한 범위에서 정합니다",
       ],
-      "finish": "무릎 점프 스쿼트을 마친 뒤 무릎과 엉덩이를 함께 펴고 발 전체로 균형을 회복한 뒤 다음 반복을 준비합니다.",
-      "commonMistakes": [
+      finish:
+        "무릎 점프 스쿼트을 마친 뒤 무릎과 엉덩이를 함께 펴고 발 전체로 균형을 회복한 뒤 다음 반복을 준비합니다.",
+      commonMistakes: [
         "무릎 점프 스쿼트에서 무릎이 발 안쪽으로 무너지는 경우",
         "무릎 점프 스쿼트에서 발뒤꿈치가 들린 채 깊이를 억지로 늘리는 경우",
-        "무릎 점프 스쿼트에서 내려가며 허리가 과하게 말리거나 젖혀지는 경우"
+        "무릎 점프 스쿼트에서 내려가며 허리가 과하게 말리거나 젖혀지는 경우",
       ],
-      "regressions": [
+      regressions: [
         "무릎 점프 스쿼트은 의자·박스를 목표 높이로 사용합니다",
         "무릎 점프 스쿼트은 지지대를 잡고 얕은 범위로 수행합니다",
-        "무릎 점프 스쿼트은 부하를 빼고 체중 이동부터 연습합니다"
+        "무릎 점프 스쿼트은 부하를 빼고 체중 이동부터 연습합니다",
       ],
-      "progressions": [
+      progressions: [
         "무릎 점프 스쿼트은 안정된 범위에서 반복만 소폭 늘립니다",
         "무릎 점프 스쿼트은 편안한 깊이가 확보된 뒤 부하를 추가합니다",
-        "무릎 점프 스쿼트은 편측 변형은 지지대 가까이에서 시작합니다"
-      ]
-    }
+        "무릎 점프 스쿼트은 편측 변형은 지지대 가까이에서 시작합니다",
+      ],
+    },
   },
   {
-    "exercise": {
-      "id": "verified-muscle-snatch",
-      "name": "머슬 스내치",
-      "englishName": "Muscle Snatch",
-      "category": "프리웨이트",
-      "regions": [
-        "하체",
-        "둔근"
-      ],
-      "focus": "근력",
-      "difficulty": "중급",
-      "equipment": "바벨·안전 랙 선택",
-      "minutes": "6–12회 · 2세트",
-      "description": "머슬 스내치은 햄스트링을 빠르게 쓰되 착지·받기·도구 경로를 먼저 통제해야 하는 파워 또는 기술 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
-      "cues": [
+    exercise: {
+      id: "verified-muscle-snatch",
+      name: "머슬 스내치",
+      englishName: "Muscle Snatch",
+      category: "프리웨이트",
+      regions: ["하체", "둔근"],
+      focus: "근력",
+      difficulty: "중급",
+      equipment: "바벨·안전 랙 선택",
+      minutes: "6–12회 · 2세트",
+      description:
+        "머슬 스내치은 햄스트링을 빠르게 쓰되 착지·받기·도구 경로를 먼저 통제해야 하는 파워 또는 기술 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
+      cues: [
         "머슬 스내치에서 낮은 속도 리허설 뒤에만 힘을 빠르게 쓰기",
         "햄스트링을 느끼며 발·무릎·골반이 같은 방향으로 받기",
-        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다"
+        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
       ],
-      "benefits": [
+      benefits: [
         "머슬 스내치으로 힘 발휘와 제어의 연결",
         "햄스트링을 활용한 착지·받기 협응",
-        "햄스트링의 움직임 경로 인식"
+        "햄스트링의 움직임 경로 인식",
       ],
-      "warning": "머슬 스내치 중 착지 불안, 무릎·발목·허리 통증, 어지러움 또는 공간 부족이 있으면 즉시 중단하세요.",
-      "reference": {
-        "label": "ACSM — Exercise Safety",
-        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
-      }
+      warning:
+        "머슬 스내치 중 착지 불안, 무릎·발목·허리 통증, 어지러움 또는 공간 부족이 있으면 즉시 중단하세요.",
+      reference: {
+        label: "ACSM — Exercise Safety",
+        url: "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/",
+      },
     },
-    "detail": {
-      "setup": [
+    detail: {
+      setup: [
         "바벨의 좌우 중량·안전핀·내려놓을 위치를 확인하고 손 간격을 고정합니다",
         "발 또는 지지면을 단단히 고정하고 몸통을 길게 세웁니다",
-        "머슬 스내치에 맞춰 미끄럽지 않은 바닥과 충분한 빈 공간을 확보합니다"
+        "머슬 스내치에 맞춰 미끄럽지 않은 바닥과 충분한 빈 공간을 확보합니다",
       ],
-      "finish": "머슬 스내치을 마친 뒤 착지 또는 받기 뒤 잠시 균형을 확인하고 호흡이 안정된 후 다음 반복을 시작합니다.",
-      "commonMistakes": [
+      finish:
+        "머슬 스내치을 마친 뒤 착지 또는 받기 뒤 잠시 균형을 확인하고 호흡이 안정된 후 다음 반복을 시작합니다.",
+      commonMistakes: [
         "머슬 스내치에서 피로한 상태에서 높이·속도·부하를 함께 올리는 경우",
         "머슬 스내치에서 착지 소리와 무릎 흔들림을 무시하는 경우",
-        "머슬 스내치에서 도구 경로가 불안정한데 반복을 이어 가는 경우"
+        "머슬 스내치에서 도구 경로가 불안정한데 반복을 이어 가는 경우",
       ],
-      "regressions": [
+      regressions: [
         "머슬 스내치은 점프·속도를 빼고 체중 이동으로 바꿉니다",
         "머슬 스내치은 낮은 높이·짧은 거리·가벼운 도구를 사용합니다",
-        "머슬 스내치은 지지대 가까이에서 받기 자세만 연습합니다"
+        "머슬 스내치은 지지대 가까이에서 받기 자세만 연습합니다",
       ],
-      "progressions": [
+      progressions: [
         "머슬 스내치은 안정된 착지 뒤 반복을 한두 회 늘립니다",
         "머슬 스내치은 한 번에 거리·높이·부하 중 하나만 조절합니다",
-        "머슬 스내치은 복잡한 연속 동작은 기본 패턴이 안정된 뒤 시도합니다"
-      ]
-    }
+        "머슬 스내치은 복잡한 연속 동작은 기본 패턴이 안정된 뒤 시도합니다",
+      ],
+    },
   },
   {
-    "exercise": {
-      "id": "verified-olympic-squat",
-      "name": "올림픽 스쿼트",
-      "englishName": "Olympic Squat",
-      "category": "프리웨이트",
-      "regions": [
-        "하체"
-      ],
-      "focus": "근력",
-      "difficulty": "중급",
-      "equipment": "바벨·안전 랙 선택",
-      "minutes": "6–12회 · 2세트",
-      "description": "올림픽 스쿼트은 대퇴사두근을 사용해 무릎과 엉덩이를 함께 굽혔다 펴는 하체 지지·밀기 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
-      "cues": [
+    exercise: {
+      id: "verified-olympic-squat",
+      name: "올림픽 스쿼트",
+      englishName: "Olympic Squat",
+      category: "프리웨이트",
+      regions: ["하체"],
+      focus: "근력",
+      difficulty: "중급",
+      equipment: "바벨·안전 랙 선택",
+      minutes: "6–12회 · 2세트",
+      description:
+        "올림픽 스쿼트은 대퇴사두근을 사용해 무릎과 엉덩이를 함께 굽혔다 펴는 하체 지지·밀기 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
+      cues: [
         "올림픽 스쿼트에서 발 전체를 바닥에 붙이고 무릎을 발 방향으로 이동",
         "대퇴사두근을 느끼며 골반과 흉곽이 함께 내려가도록 몸통을 길게 유지",
-        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다"
+        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
       ],
-      "benefits": [
+      benefits: [
         "올림픽 스쿼트으로 하체 지지력과 제어",
         "대퇴사두근을 활용한 엉덩이·무릎 협응",
-        "대퇴사두근의 움직임 경로 인식"
+        "대퇴사두근의 움직임 경로 인식",
       ],
-      "warning": "올림픽 스쿼트 중 무릎·고관절의 날카로운 통증, 발바닥 들림 또는 균형 상실이 있으면 깊이·부하를 낮추거나 중단하세요.",
-      "reference": {
-        "label": "ACSM — Exercise Safety",
-        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
-      }
+      warning:
+        "올림픽 스쿼트 중 무릎·고관절의 날카로운 통증, 발바닥 들림 또는 균형 상실이 있으면 깊이·부하를 낮추거나 중단하세요.",
+      reference: {
+        label: "ACSM — Exercise Safety",
+        url: "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/",
+      },
     },
-    "detail": {
-      "setup": [
+    detail: {
+      setup: [
         "바벨의 좌우 중량·안전핀·내려놓을 위치를 확인하고 손 간격을 고정합니다",
         "발 또는 지지면을 단단히 고정하고 몸통을 길게 세웁니다",
-        "올림픽 스쿼트에 맞춰 발 간격과 발끝 방향을 편안한 범위에서 정합니다"
+        "올림픽 스쿼트에 맞춰 발 간격과 발끝 방향을 편안한 범위에서 정합니다",
       ],
-      "finish": "올림픽 스쿼트을 마친 뒤 무릎과 엉덩이를 함께 펴고 발 전체로 균형을 회복한 뒤 다음 반복을 준비합니다.",
-      "commonMistakes": [
+      finish:
+        "올림픽 스쿼트을 마친 뒤 무릎과 엉덩이를 함께 펴고 발 전체로 균형을 회복한 뒤 다음 반복을 준비합니다.",
+      commonMistakes: [
         "올림픽 스쿼트에서 무릎이 발 안쪽으로 무너지는 경우",
         "올림픽 스쿼트에서 발뒤꿈치가 들린 채 깊이를 억지로 늘리는 경우",
-        "올림픽 스쿼트에서 내려가며 허리가 과하게 말리거나 젖혀지는 경우"
+        "올림픽 스쿼트에서 내려가며 허리가 과하게 말리거나 젖혀지는 경우",
       ],
-      "regressions": [
+      regressions: [
         "올림픽 스쿼트은 의자·박스를 목표 높이로 사용합니다",
         "올림픽 스쿼트은 지지대를 잡고 얕은 범위로 수행합니다",
-        "올림픽 스쿼트은 부하를 빼고 체중 이동부터 연습합니다"
+        "올림픽 스쿼트은 부하를 빼고 체중 이동부터 연습합니다",
       ],
-      "progressions": [
+      progressions: [
         "올림픽 스쿼트은 안정된 범위에서 반복만 소폭 늘립니다",
         "올림픽 스쿼트은 편안한 깊이가 확보된 뒤 부하를 추가합니다",
-        "올림픽 스쿼트은 편측 변형은 지지대 가까이에서 시작합니다"
-      ]
-    }
+        "올림픽 스쿼트은 편측 변형은 지지대 가까이에서 시작합니다",
+      ],
+    },
   },
   {
-    "exercise": {
-      "id": "verified-overhead-squat",
-      "name": "오버헤드 스쿼트",
-      "englishName": "Overhead Squat",
-      "category": "프리웨이트",
-      "regions": [
-        "하체"
-      ],
-      "focus": "근력",
-      "difficulty": "상급",
-      "equipment": "바벨·안전 랙 선택",
-      "minutes": "6–12회 · 2세트",
-      "description": "오버헤드 스쿼트은 대퇴사두근을 사용해 무릎과 엉덩이를 함께 굽혔다 펴는 하체 지지·밀기 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
-      "cues": [
+    exercise: {
+      id: "verified-overhead-squat",
+      name: "오버헤드 스쿼트",
+      englishName: "Overhead Squat",
+      category: "프리웨이트",
+      regions: ["하체"],
+      focus: "근력",
+      difficulty: "상급",
+      equipment: "바벨·안전 랙 선택",
+      minutes: "6–12회 · 2세트",
+      description:
+        "오버헤드 스쿼트은 대퇴사두근을 사용해 무릎과 엉덩이를 함께 굽혔다 펴는 하체 지지·밀기 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
+      cues: [
         "오버헤드 스쿼트에서 발 전체를 바닥에 붙이고 무릎을 발 방향으로 이동",
         "대퇴사두근을 느끼며 골반과 흉곽이 함께 내려가도록 몸통을 길게 유지",
-        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다"
+        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
       ],
-      "benefits": [
+      benefits: [
         "오버헤드 스쿼트으로 하체 지지력과 제어",
         "대퇴사두근을 활용한 엉덩이·무릎 협응",
-        "대퇴사두근의 움직임 경로 인식"
+        "대퇴사두근의 움직임 경로 인식",
       ],
-      "warning": "오버헤드 스쿼트 중 무릎·고관절의 날카로운 통증, 발바닥 들림 또는 균형 상실이 있으면 깊이·부하를 낮추거나 중단하세요.",
-      "reference": {
-        "label": "ACSM — Exercise Safety",
-        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
-      }
+      warning:
+        "오버헤드 스쿼트 중 무릎·고관절의 날카로운 통증, 발바닥 들림 또는 균형 상실이 있으면 깊이·부하를 낮추거나 중단하세요.",
+      reference: {
+        label: "ACSM — Exercise Safety",
+        url: "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/",
+      },
     },
-    "detail": {
-      "setup": [
+    detail: {
+      setup: [
         "바벨의 좌우 중량·안전핀·내려놓을 위치를 확인하고 손 간격을 고정합니다",
         "발 또는 지지면을 단단히 고정하고 몸통을 길게 세웁니다",
-        "오버헤드 스쿼트에 맞춰 발 간격과 발끝 방향을 편안한 범위에서 정합니다"
+        "오버헤드 스쿼트에 맞춰 발 간격과 발끝 방향을 편안한 범위에서 정합니다",
       ],
-      "finish": "오버헤드 스쿼트을 마친 뒤 무릎과 엉덩이를 함께 펴고 발 전체로 균형을 회복한 뒤 다음 반복을 준비합니다.",
-      "commonMistakes": [
+      finish:
+        "오버헤드 스쿼트을 마친 뒤 무릎과 엉덩이를 함께 펴고 발 전체로 균형을 회복한 뒤 다음 반복을 준비합니다.",
+      commonMistakes: [
         "오버헤드 스쿼트에서 무릎이 발 안쪽으로 무너지는 경우",
         "오버헤드 스쿼트에서 발뒤꿈치가 들린 채 깊이를 억지로 늘리는 경우",
-        "오버헤드 스쿼트에서 내려가며 허리가 과하게 말리거나 젖혀지는 경우"
+        "오버헤드 스쿼트에서 내려가며 허리가 과하게 말리거나 젖혀지는 경우",
       ],
-      "regressions": [
+      regressions: [
         "오버헤드 스쿼트은 의자·박스를 목표 높이로 사용합니다",
         "오버헤드 스쿼트은 지지대를 잡고 얕은 범위로 수행합니다",
-        "오버헤드 스쿼트은 부하를 빼고 체중 이동부터 연습합니다"
+        "오버헤드 스쿼트은 부하를 빼고 체중 이동부터 연습합니다",
       ],
-      "progressions": [
+      progressions: [
         "오버헤드 스쿼트은 안정된 범위에서 반복만 소폭 늘립니다",
         "오버헤드 스쿼트은 편안한 깊이가 확보된 뒤 부하를 추가합니다",
-        "오버헤드 스쿼트은 편측 변형은 지지대 가까이에서 시작합니다"
-      ]
-    }
+        "오버헤드 스쿼트은 편측 변형은 지지대 가까이에서 시작합니다",
+      ],
+    },
   },
   {
-    "exercise": {
-      "id": "verified-power-clean-from-blocks",
-      "name": "블록 파워 클린",
-      "englishName": "Power Clean from Blocks",
-      "category": "프리웨이트",
-      "regions": [
-        "하체",
-        "둔근"
-      ],
-      "focus": "근력",
-      "difficulty": "중급",
-      "equipment": "바벨·안전 랙 선택",
-      "minutes": "6–12회 · 2세트",
-      "description": "블록 파워 클린은 햄스트링을 빠르게 쓰되 착지·받기·도구 경로를 먼저 통제해야 하는 파워 또는 기술 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
-      "cues": [
+    exercise: {
+      id: "verified-power-clean-from-blocks",
+      name: "블록 파워 클린",
+      englishName: "Power Clean from Blocks",
+      category: "프리웨이트",
+      regions: ["하체", "둔근"],
+      focus: "근력",
+      difficulty: "중급",
+      equipment: "바벨·안전 랙 선택",
+      minutes: "6–12회 · 2세트",
+      description:
+        "블록 파워 클린은 햄스트링을 빠르게 쓰되 착지·받기·도구 경로를 먼저 통제해야 하는 파워 또는 기술 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
+      cues: [
         "블록 파워 클린에서 낮은 속도 리허설 뒤에만 힘을 빠르게 쓰기",
         "햄스트링을 느끼며 발·무릎·골반이 같은 방향으로 받기",
-        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다"
+        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
       ],
-      "benefits": [
+      benefits: [
         "블록 파워 클린으로 힘 발휘와 제어의 연결",
         "햄스트링을 활용한 착지·받기 협응",
-        "햄스트링의 움직임 경로 인식"
+        "햄스트링의 움직임 경로 인식",
       ],
-      "warning": "블록 파워 클린 중 착지 불안, 무릎·발목·허리 통증, 어지러움 또는 공간 부족이 있으면 즉시 중단하세요.",
-      "reference": {
-        "label": "ACSM — Exercise Safety",
-        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
-      }
+      warning:
+        "블록 파워 클린 중 착지 불안, 무릎·발목·허리 통증, 어지러움 또는 공간 부족이 있으면 즉시 중단하세요.",
+      reference: {
+        label: "ACSM — Exercise Safety",
+        url: "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/",
+      },
     },
-    "detail": {
-      "setup": [
+    detail: {
+      setup: [
         "바벨의 좌우 중량·안전핀·내려놓을 위치를 확인하고 손 간격을 고정합니다",
         "발 또는 지지면을 단단히 고정하고 몸통을 길게 세웁니다",
-        "블록 파워 클린에 맞춰 미끄럽지 않은 바닥과 충분한 빈 공간을 확보합니다"
+        "블록 파워 클린에 맞춰 미끄럽지 않은 바닥과 충분한 빈 공간을 확보합니다",
       ],
-      "finish": "블록 파워 클린을 마친 뒤 착지 또는 받기 뒤 잠시 균형을 확인하고 호흡이 안정된 후 다음 반복을 시작합니다.",
-      "commonMistakes": [
+      finish:
+        "블록 파워 클린을 마친 뒤 착지 또는 받기 뒤 잠시 균형을 확인하고 호흡이 안정된 후 다음 반복을 시작합니다.",
+      commonMistakes: [
         "블록 파워 클린에서 피로한 상태에서 높이·속도·부하를 함께 올리는 경우",
         "블록 파워 클린에서 착지 소리와 무릎 흔들림을 무시하는 경우",
-        "블록 파워 클린에서 도구 경로가 불안정한데 반복을 이어 가는 경우"
+        "블록 파워 클린에서 도구 경로가 불안정한데 반복을 이어 가는 경우",
       ],
-      "regressions": [
+      regressions: [
         "블록 파워 클린은 점프·속도를 빼고 체중 이동으로 바꿉니다",
         "블록 파워 클린은 낮은 높이·짧은 거리·가벼운 도구를 사용합니다",
-        "블록 파워 클린은 지지대 가까이에서 받기 자세만 연습합니다"
+        "블록 파워 클린은 지지대 가까이에서 받기 자세만 연습합니다",
       ],
-      "progressions": [
+      progressions: [
         "블록 파워 클린은 안정된 착지 뒤 반복을 한두 회 늘립니다",
         "블록 파워 클린은 한 번에 거리·높이·부하 중 하나만 조절합니다",
-        "블록 파워 클린은 복잡한 연속 동작은 기본 패턴이 안정된 뒤 시도합니다"
-      ]
-    }
+        "블록 파워 클린은 복잡한 연속 동작은 기본 패턴이 안정된 뒤 시도합니다",
+      ],
+    },
   },
   {
-    "exercise": {
-      "id": "verified-power-jerk",
-      "name": "파워 저크",
-      "englishName": "Power Jerk",
-      "category": "프리웨이트",
-      "regions": [
-        "하체"
-      ],
-      "focus": "근력",
-      "difficulty": "상급",
-      "equipment": "바벨·안전 랙 선택",
-      "minutes": "6–12회 · 2세트",
-      "description": "파워 저크은 대퇴사두근을 빠르게 쓰되 착지·받기·도구 경로를 먼저 통제해야 하는 파워 또는 기술 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
-      "cues": [
+    exercise: {
+      id: "verified-power-jerk",
+      name: "파워 저크",
+      englishName: "Power Jerk",
+      category: "프리웨이트",
+      regions: ["하체"],
+      focus: "근력",
+      difficulty: "상급",
+      equipment: "바벨·안전 랙 선택",
+      minutes: "6–12회 · 2세트",
+      description:
+        "파워 저크은 대퇴사두근을 빠르게 쓰되 착지·받기·도구 경로를 먼저 통제해야 하는 파워 또는 기술 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
+      cues: [
         "파워 저크에서 낮은 속도 리허설 뒤에만 힘을 빠르게 쓰기",
         "대퇴사두근을 느끼며 발·무릎·골반이 같은 방향으로 받기",
-        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다"
+        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
       ],
-      "benefits": [
+      benefits: [
         "파워 저크으로 힘 발휘와 제어의 연결",
         "대퇴사두근을 활용한 착지·받기 협응",
-        "대퇴사두근의 움직임 경로 인식"
+        "대퇴사두근의 움직임 경로 인식",
       ],
-      "warning": "파워 저크 중 착지 불안, 무릎·발목·허리 통증, 어지러움 또는 공간 부족이 있으면 즉시 중단하세요.",
-      "reference": {
-        "label": "ACSM — Exercise Safety",
-        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
-      }
+      warning:
+        "파워 저크 중 착지 불안, 무릎·발목·허리 통증, 어지러움 또는 공간 부족이 있으면 즉시 중단하세요.",
+      reference: {
+        label: "ACSM — Exercise Safety",
+        url: "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/",
+      },
     },
-    "detail": {
-      "setup": [
+    detail: {
+      setup: [
         "바벨의 좌우 중량·안전핀·내려놓을 위치를 확인하고 손 간격을 고정합니다",
         "발 또는 지지면을 단단히 고정하고 몸통을 길게 세웁니다",
-        "파워 저크에 맞춰 미끄럽지 않은 바닥과 충분한 빈 공간을 확보합니다"
+        "파워 저크에 맞춰 미끄럽지 않은 바닥과 충분한 빈 공간을 확보합니다",
       ],
-      "finish": "파워 저크을 마친 뒤 착지 또는 받기 뒤 잠시 균형을 확인하고 호흡이 안정된 후 다음 반복을 시작합니다.",
-      "commonMistakes": [
+      finish:
+        "파워 저크을 마친 뒤 착지 또는 받기 뒤 잠시 균형을 확인하고 호흡이 안정된 후 다음 반복을 시작합니다.",
+      commonMistakes: [
         "파워 저크에서 피로한 상태에서 높이·속도·부하를 함께 올리는 경우",
         "파워 저크에서 착지 소리와 무릎 흔들림을 무시하는 경우",
-        "파워 저크에서 도구 경로가 불안정한데 반복을 이어 가는 경우"
+        "파워 저크에서 도구 경로가 불안정한데 반복을 이어 가는 경우",
       ],
-      "regressions": [
+      regressions: [
         "파워 저크은 점프·속도를 빼고 체중 이동으로 바꿉니다",
         "파워 저크은 낮은 높이·짧은 거리·가벼운 도구를 사용합니다",
-        "파워 저크은 지지대 가까이에서 받기 자세만 연습합니다"
+        "파워 저크은 지지대 가까이에서 받기 자세만 연습합니다",
       ],
-      "progressions": [
+      progressions: [
         "파워 저크은 안정된 착지 뒤 반복을 한두 회 늘립니다",
         "파워 저크은 한 번에 거리·높이·부하 중 하나만 조절합니다",
-        "파워 저크은 복잡한 연속 동작은 기본 패턴이 안정된 뒤 시도합니다"
-      ]
-    }
+        "파워 저크은 복잡한 연속 동작은 기본 패턴이 안정된 뒤 시도합니다",
+      ],
+    },
   },
   {
-    "exercise": {
-      "id": "verified-power-snatch",
-      "name": "파워 스내치",
-      "englishName": "Power Snatch",
-      "category": "프리웨이트",
-      "regions": [
-        "하체",
-        "둔근"
-      ],
-      "focus": "근력",
-      "difficulty": "상급",
-      "equipment": "바벨·안전 랙 선택",
-      "minutes": "6–12회 · 2세트",
-      "description": "파워 스내치은 햄스트링을 빠르게 쓰되 착지·받기·도구 경로를 먼저 통제해야 하는 파워 또는 기술 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
-      "cues": [
+    exercise: {
+      id: "verified-power-snatch",
+      name: "파워 스내치",
+      englishName: "Power Snatch",
+      category: "프리웨이트",
+      regions: ["하체", "둔근"],
+      focus: "근력",
+      difficulty: "상급",
+      equipment: "바벨·안전 랙 선택",
+      minutes: "6–12회 · 2세트",
+      description:
+        "파워 스내치은 햄스트링을 빠르게 쓰되 착지·받기·도구 경로를 먼저 통제해야 하는 파워 또는 기술 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
+      cues: [
         "파워 스내치에서 낮은 속도 리허설 뒤에만 힘을 빠르게 쓰기",
         "햄스트링을 느끼며 발·무릎·골반이 같은 방향으로 받기",
-        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다"
+        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
       ],
-      "benefits": [
+      benefits: [
         "파워 스내치으로 힘 발휘와 제어의 연결",
         "햄스트링을 활용한 착지·받기 협응",
-        "햄스트링의 움직임 경로 인식"
+        "햄스트링의 움직임 경로 인식",
       ],
-      "warning": "파워 스내치 중 착지 불안, 무릎·발목·허리 통증, 어지러움 또는 공간 부족이 있으면 즉시 중단하세요.",
-      "reference": {
-        "label": "ACSM — Exercise Safety",
-        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
-      }
+      warning:
+        "파워 스내치 중 착지 불안, 무릎·발목·허리 통증, 어지러움 또는 공간 부족이 있으면 즉시 중단하세요.",
+      reference: {
+        label: "ACSM — Exercise Safety",
+        url: "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/",
+      },
     },
-    "detail": {
-      "setup": [
+    detail: {
+      setup: [
         "바벨의 좌우 중량·안전핀·내려놓을 위치를 확인하고 손 간격을 고정합니다",
         "발 또는 지지면을 단단히 고정하고 몸통을 길게 세웁니다",
-        "파워 스내치에 맞춰 미끄럽지 않은 바닥과 충분한 빈 공간을 확보합니다"
+        "파워 스내치에 맞춰 미끄럽지 않은 바닥과 충분한 빈 공간을 확보합니다",
       ],
-      "finish": "파워 스내치을 마친 뒤 착지 또는 받기 뒤 잠시 균형을 확인하고 호흡이 안정된 후 다음 반복을 시작합니다.",
-      "commonMistakes": [
+      finish:
+        "파워 스내치을 마친 뒤 착지 또는 받기 뒤 잠시 균형을 확인하고 호흡이 안정된 후 다음 반복을 시작합니다.",
+      commonMistakes: [
         "파워 스내치에서 피로한 상태에서 높이·속도·부하를 함께 올리는 경우",
         "파워 스내치에서 착지 소리와 무릎 흔들림을 무시하는 경우",
-        "파워 스내치에서 도구 경로가 불안정한데 반복을 이어 가는 경우"
+        "파워 스내치에서 도구 경로가 불안정한데 반복을 이어 가는 경우",
       ],
-      "regressions": [
+      regressions: [
         "파워 스내치은 점프·속도를 빼고 체중 이동으로 바꿉니다",
         "파워 스내치은 낮은 높이·짧은 거리·가벼운 도구를 사용합니다",
-        "파워 스내치은 지지대 가까이에서 받기 자세만 연습합니다"
+        "파워 스내치은 지지대 가까이에서 받기 자세만 연습합니다",
       ],
-      "progressions": [
+      progressions: [
         "파워 스내치은 안정된 착지 뒤 반복을 한두 회 늘립니다",
         "파워 스내치은 한 번에 거리·높이·부하 중 하나만 조절합니다",
-        "파워 스내치은 복잡한 연속 동작은 기본 패턴이 안정된 뒤 시도합니다"
-      ]
-    }
+        "파워 스내치은 복잡한 연속 동작은 기본 패턴이 안정된 뒤 시도합니다",
+      ],
+    },
   },
   {
-    "exercise": {
-      "id": "verified-power-snatch-from-blocks",
-      "name": "블록 파워 스내치",
-      "englishName": "Power Snatch from Blocks",
-      "category": "프리웨이트",
-      "regions": [
-        "하체"
-      ],
-      "focus": "근력",
-      "difficulty": "중급",
-      "equipment": "바벨·안전 랙 선택",
-      "minutes": "6–12회 · 2세트",
-      "description": "블록 파워 스내치은 대퇴사두근을 빠르게 쓰되 착지·받기·도구 경로를 먼저 통제해야 하는 파워 또는 기술 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
-      "cues": [
+    exercise: {
+      id: "verified-power-snatch-from-blocks",
+      name: "블록 파워 스내치",
+      englishName: "Power Snatch from Blocks",
+      category: "프리웨이트",
+      regions: ["하체"],
+      focus: "근력",
+      difficulty: "중급",
+      equipment: "바벨·안전 랙 선택",
+      minutes: "6–12회 · 2세트",
+      description:
+        "블록 파워 스내치은 대퇴사두근을 빠르게 쓰되 착지·받기·도구 경로를 먼저 통제해야 하는 파워 또는 기술 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
+      cues: [
         "블록 파워 스내치에서 낮은 속도 리허설 뒤에만 힘을 빠르게 쓰기",
         "대퇴사두근을 느끼며 발·무릎·골반이 같은 방향으로 받기",
-        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다"
+        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
       ],
-      "benefits": [
+      benefits: [
         "블록 파워 스내치으로 힘 발휘와 제어의 연결",
         "대퇴사두근을 활용한 착지·받기 협응",
-        "대퇴사두근의 움직임 경로 인식"
+        "대퇴사두근의 움직임 경로 인식",
       ],
-      "warning": "블록 파워 스내치 중 착지 불안, 무릎·발목·허리 통증, 어지러움 또는 공간 부족이 있으면 즉시 중단하세요.",
-      "reference": {
-        "label": "ACSM — Exercise Safety",
-        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
-      }
+      warning:
+        "블록 파워 스내치 중 착지 불안, 무릎·발목·허리 통증, 어지러움 또는 공간 부족이 있으면 즉시 중단하세요.",
+      reference: {
+        label: "ACSM — Exercise Safety",
+        url: "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/",
+      },
     },
-    "detail": {
-      "setup": [
+    detail: {
+      setup: [
         "바벨의 좌우 중량·안전핀·내려놓을 위치를 확인하고 손 간격을 고정합니다",
         "발 또는 지지면을 단단히 고정하고 몸통을 길게 세웁니다",
-        "블록 파워 스내치에 맞춰 미끄럽지 않은 바닥과 충분한 빈 공간을 확보합니다"
+        "블록 파워 스내치에 맞춰 미끄럽지 않은 바닥과 충분한 빈 공간을 확보합니다",
       ],
-      "finish": "블록 파워 스내치을 마친 뒤 착지 또는 받기 뒤 잠시 균형을 확인하고 호흡이 안정된 후 다음 반복을 시작합니다.",
-      "commonMistakes": [
+      finish:
+        "블록 파워 스내치을 마친 뒤 착지 또는 받기 뒤 잠시 균형을 확인하고 호흡이 안정된 후 다음 반복을 시작합니다.",
+      commonMistakes: [
         "블록 파워 스내치에서 피로한 상태에서 높이·속도·부하를 함께 올리는 경우",
         "블록 파워 스내치에서 착지 소리와 무릎 흔들림을 무시하는 경우",
-        "블록 파워 스내치에서 도구 경로가 불안정한데 반복을 이어 가는 경우"
+        "블록 파워 스내치에서 도구 경로가 불안정한데 반복을 이어 가는 경우",
       ],
-      "regressions": [
+      regressions: [
         "블록 파워 스내치은 점프·속도를 빼고 체중 이동으로 바꿉니다",
         "블록 파워 스내치은 낮은 높이·짧은 거리·가벼운 도구를 사용합니다",
-        "블록 파워 스내치은 지지대 가까이에서 받기 자세만 연습합니다"
+        "블록 파워 스내치은 지지대 가까이에서 받기 자세만 연습합니다",
       ],
-      "progressions": [
+      progressions: [
         "블록 파워 스내치은 안정된 착지 뒤 반복을 한두 회 늘립니다",
         "블록 파워 스내치은 한 번에 거리·높이·부하 중 하나만 조절합니다",
-        "블록 파워 스내치은 복잡한 연속 동작은 기본 패턴이 안정된 뒤 시도합니다"
-      ]
-    }
+        "블록 파워 스내치은 복잡한 연속 동작은 기본 패턴이 안정된 뒤 시도합니다",
+      ],
+    },
   },
   {
-    "exercise": {
-      "id": "verified-push-press",
-      "name": "푸시 프레스",
-      "englishName": "Push Press",
-      "category": "프리웨이트",
-      "regions": [
-        "어깨"
-      ],
-      "focus": "근력",
-      "difficulty": "상급",
-      "equipment": "바벨·안전 랙 선택",
-      "minutes": "6–12회 · 2세트",
-      "description": "푸시 프레스은 어깨을 사용해 손잡이·도구 또는 바닥을 몸에서 멀어지게 미는 상체 밀기 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
-      "cues": [
+    exercise: {
+      id: "verified-push-press",
+      name: "푸시 프레스",
+      englishName: "Push Press",
+      category: "프리웨이트",
+      regions: ["어깨"],
+      focus: "근력",
+      difficulty: "상급",
+      equipment: "바벨·안전 랙 선택",
+      minutes: "6–12회 · 2세트",
+      description:
+        "푸시 프레스은 어깨을 사용해 손잡이·도구 또는 바닥을 몸에서 멀어지게 미는 상체 밀기 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
+      cues: [
         "푸시 프레스에서 손목을 중립에 가깝게 두고 손잡이를 안정적으로 잡기",
         "어깨을 느끼며 갈비뼈를 과하게 들지 않고 몸통 길이 유지",
-        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다"
+        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
       ],
-      "benefits": [
+      benefits: [
         "푸시 프레스으로 가슴·어깨·팔의 밀기 협응",
         "어깨을 활용한 손목과 견갑 안정 제어",
-        "어깨의 움직임 경로 인식"
+        "어깨의 움직임 경로 인식",
       ],
-      "warning": "푸시 프레스 중 어깨·팔꿈치·손목 통증, 저림 또는 도구 흔들림이 있으면 즉시 멈추고 설정을 다시 확인하세요.",
-      "reference": {
-        "label": "ACSM — Exercise Safety",
-        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
-      }
+      warning:
+        "푸시 프레스 중 어깨·팔꿈치·손목 통증, 저림 또는 도구 흔들림이 있으면 즉시 멈추고 설정을 다시 확인하세요.",
+      reference: {
+        label: "ACSM — Exercise Safety",
+        url: "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/",
+      },
     },
-    "detail": {
-      "setup": [
+    detail: {
+      setup: [
         "바벨의 좌우 중량·안전핀·내려놓을 위치를 확인하고 손 간격을 고정합니다",
         "발 또는 지지면을 단단히 고정하고 몸통을 길게 세웁니다",
-        "푸시 프레스에 맞춰 손잡이·바·지지면의 높이와 좌우 설정을 확인합니다"
+        "푸시 프레스에 맞춰 손잡이·바·지지면의 높이와 좌우 설정을 확인합니다",
       ],
-      "finish": "푸시 프레스을 마친 뒤 팔꿈치를 잠그지 않은 편안한 끝 범위에서 잠시 멈춘 뒤 같은 경로로 돌아옵니다.",
-      "commonMistakes": [
+      finish:
+        "푸시 프레스을 마친 뒤 팔꿈치를 잠그지 않은 편안한 끝 범위에서 잠시 멈춘 뒤 같은 경로로 돌아옵니다.",
+      commonMistakes: [
         "푸시 프레스에서 어깨가 앞으로 말린 채 밀어 올리는 경우",
         "푸시 프레스에서 허리를 과하게 젖혀 무게를 넘기는 경우",
-        "푸시 프레스에서 손목을 꺾고 그립을 느슨하게 유지하는 경우"
+        "푸시 프레스에서 손목을 꺾고 그립을 느슨하게 유지하는 경우",
       ],
-      "regressions": [
+      regressions: [
         "푸시 프레스은 벽·높은 벤치 또는 가벼운 저항으로 바꿉니다",
         "푸시 프레스은 가동 범위를 줄이고 어깨 편안함을 확인합니다",
-        "푸시 프레스은 양손 지지로 안정성을 먼저 확보합니다"
+        "푸시 프레스은 양손 지지로 안정성을 먼저 확보합니다",
       ],
-      "progressions": [
+      progressions: [
         "푸시 프레스은 정렬이 유지될 때 반복을 소폭 늘립니다",
         "푸시 프레스은 안정된 지지면에서 저항을 한 단계만 올립니다",
-        "푸시 프레스은 낮은 지지 또는 편측 변형은 통제 후 시도합니다"
-      ]
-    }
+        "푸시 프레스은 낮은 지지 또는 편측 변형은 통제 후 시도합니다",
+      ],
+    },
   },
   {
-    "exercise": {
-      "id": "verified-rack-delivery",
-      "name": "랙 딜리버리",
-      "englishName": "Rack Delivery",
-      "category": "프리웨이트",
-      "regions": [
-        "어깨"
-      ],
-      "focus": "근력",
-      "difficulty": "중급",
-      "equipment": "바벨·안전 랙 선택",
-      "minutes": "6–12회 · 2세트",
-      "description": "랙 딜리버리은 어깨 주변을 통증 없는 범위에서 천천히 움직여 가동 범위와 자세 감각을 확인하는 모빌리티 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
-      "cues": [
+    exercise: {
+      id: "verified-rack-delivery",
+      name: "랙 딜리버리",
+      englishName: "Rack Delivery",
+      category: "프리웨이트",
+      regions: ["어깨"],
+      focus: "근력",
+      difficulty: "중급",
+      equipment: "바벨·안전 랙 선택",
+      minutes: "6–12회 · 2세트",
+      description:
+        "랙 딜리버리은 어깨 주변을 통증 없는 범위에서 천천히 움직여 가동 범위와 자세 감각을 확인하는 모빌리티 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
+      cues: [
         "랙 딜리버리에서 작은 범위에서 호흡을 멈추지 않기",
         "어깨을 느끼며 끝 범위를 밀지 말고 부드럽게 왕복",
-        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다"
+        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
       ],
-      "benefits": [
+      benefits: [
         "랙 딜리버리으로 관절 위치와 범위 인식",
         "어깨을 활용한 편안한 움직임 준비",
-        "어깨의 움직임 경로 인식"
+        "어깨의 움직임 경로 인식",
       ],
-      "warning": "랙 딜리버리 중 날카로운 통증, 저림, 방사통, 붓기·열감이 있으면 자가 진행을 멈추고 평가를 우선하세요.",
-      "reference": {
-        "label": "ACSM — Exercise Safety",
-        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
-      }
+      warning:
+        "랙 딜리버리 중 날카로운 통증, 저림, 방사통, 붓기·열감이 있으면 자가 진행을 멈추고 평가를 우선하세요.",
+      reference: {
+        label: "ACSM — Exercise Safety",
+        url: "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/",
+      },
     },
-    "detail": {
-      "setup": [
+    detail: {
+      setup: [
         "바벨의 좌우 중량·안전핀·내려놓을 위치를 확인하고 손 간격을 고정합니다",
         "발 또는 지지면을 단단히 고정하고 몸통을 길게 세웁니다",
-        "랙 딜리버리에 맞춰 편안한 바닥·매트 또는 지지대를 준비합니다"
+        "랙 딜리버리에 맞춰 편안한 바닥·매트 또는 지지대를 준비합니다",
       ],
-      "finish": "랙 딜리버리을 마친 뒤 중립 자세로 천천히 돌아와 불편감이 남지 않는지 확인합니다.",
-      "commonMistakes": [
+      finish:
+        "랙 딜리버리을 마친 뒤 중립 자세로 천천히 돌아와 불편감이 남지 않는지 확인합니다.",
+      commonMistakes: [
         "랙 딜리버리에서 끝 범위를 억지로 밀어 통증을 만드는 경우",
         "랙 딜리버리에서 호흡을 참거나 반동을 쓰는 경우",
-        "랙 딜리버리에서 저림·방사통을 무시하고 지속하는 경우"
+        "랙 딜리버리에서 저림·방사통을 무시하고 지속하는 경우",
       ],
-      "regressions": [
+      regressions: [
         "랙 딜리버리은 범위와 유지 시간을 줄입니다",
         "랙 딜리버리은 벽·의자·블록 같은 지지대를 사용합니다",
-        "랙 딜리버리은 누운 또는 앉은 안정된 자세로 바꿉니다"
+        "랙 딜리버리은 누운 또는 앉은 안정된 자세로 바꿉니다",
       ],
-      "progressions": [
+      progressions: [
         "랙 딜리버리은 다음 날 편안하면 범위만 조금 늘립니다",
         "랙 딜리버리은 호흡 주기를 한 번 추가합니다",
-        "랙 딜리버리은 지지대는 안정적으로 줄여 갑니다"
-      ]
-    }
+        "랙 딜리버리은 지지대는 안정적으로 줄여 갑니다",
+      ],
+    },
   },
   {
-    "exercise": {
-      "id": "verified-romanian-deadlift-from-deficit",
-      "name": "디피시트 루마니안 데드리프트",
-      "englishName": "Romanian Deadlift from Deficit",
-      "category": "프리웨이트",
-      "regions": [
-        "하체",
-        "둔근"
-      ],
-      "focus": "근력",
-      "difficulty": "중급",
-      "equipment": "바벨·안전 랙 선택",
-      "minutes": "6–12회 · 2세트",
-      "description": "디피시트 루마니안 데드리프트은 햄스트링을 길게 사용하면서 엉덩이를 뒤로 보내고 도구를 몸 가까이 이동시키는 힙 힌지 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
-      "cues": [
+    exercise: {
+      id: "verified-romanian-deadlift-from-deficit",
+      name: "디피시트 루마니안 데드리프트",
+      englishName: "Romanian Deadlift from Deficit",
+      category: "프리웨이트",
+      regions: ["하체", "둔근"],
+      focus: "근력",
+      difficulty: "중급",
+      equipment: "바벨·안전 랙 선택",
+      minutes: "6–12회 · 2세트",
+      description:
+        "디피시트 루마니안 데드리프트은 햄스트링을 길게 사용하면서 엉덩이를 뒤로 보내고 도구를 몸 가까이 이동시키는 힙 힌지 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
+      cues: [
         "디피시트 루마니안 데드리프트에서 발 전체로 바닥을 누르고 무릎은 부드럽게 유지",
         "햄스트링을 느끼며 골반을 뒤로 보내며 척추 길이를 유지",
-        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다"
+        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
       ],
-      "benefits": [
+      benefits: [
         "디피시트 루마니안 데드리프트으로 후면 사슬의 힘 사용 인식",
         "햄스트링을 활용한 엉덩이 주도 움직임 연습",
-        "햄스트링의 움직임 경로 인식"
+        "햄스트링의 움직임 경로 인식",
       ],
-      "warning": "디피시트 루마니안 데드리프트 중 허리의 날카로운 통증·저림, 그립 미끄러짐 또는 균형 상실이 있으면 즉시 중단하고 도구를 안전하게 내려놓으세요.",
-      "reference": {
-        "label": "ACSM — Exercise Safety",
-        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
-      }
+      warning:
+        "디피시트 루마니안 데드리프트 중 허리의 날카로운 통증·저림, 그립 미끄러짐 또는 균형 상실이 있으면 즉시 중단하고 도구를 안전하게 내려놓으세요.",
+      reference: {
+        label: "ACSM — Exercise Safety",
+        url: "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/",
+      },
     },
-    "detail": {
-      "setup": [
+    detail: {
+      setup: [
         "바벨의 좌우 중량·안전핀·내려놓을 위치를 확인하고 손 간격을 고정합니다",
         "발 또는 지지면을 단단히 고정하고 몸통을 길게 세웁니다",
-        "디피시트 루마니안 데드리프트에 맞춰 발을 골반 너비 근처에 두고 도구를 발 중앙 가까이에 둡니다"
+        "디피시트 루마니안 데드리프트에 맞춰 발을 골반 너비 근처에 두고 도구를 발 중앙 가까이에 둡니다",
       ],
-      "finish": "디피시트 루마니안 데드리프트을 마친 뒤 엉덩이를 앞으로 가져와 선 뒤, 도구를 통제된 경로로 안전하게 내려놓습니다.",
-      "commonMistakes": [
+      finish:
+        "디피시트 루마니안 데드리프트을 마친 뒤 엉덩이를 앞으로 가져와 선 뒤, 도구를 통제된 경로로 안전하게 내려놓습니다.",
+      commonMistakes: [
         "디피시트 루마니안 데드리프트에서 무릎을 먼저 과하게 굽혀 힌지가 사라지는 경우",
         "디피시트 루마니안 데드리프트에서 도구가 몸에서 멀어져 허리에 부담이 커지는 경우",
-        "디피시트 루마니안 데드리프트에서 끝 범위에서 등을 둥글게 말아 당기는 경우"
+        "디피시트 루마니안 데드리프트에서 끝 범위에서 등을 둥글게 말아 당기는 경우",
       ],
-      "regressions": [
+      regressions: [
         "디피시트 루마니안 데드리프트은 가벼운 덤벨 또는 높은 시작 위치로 바꿉니다",
         "디피시트 루마니안 데드리프트은 도구 없이 벽 터치 힌지로 범위를 익힙니다",
-        "디피시트 루마니안 데드리프트은 가능한 범위까지만 내려가고 멈춥니다"
+        "디피시트 루마니안 데드리프트은 가능한 범위까지만 내려가고 멈춥니다",
       ],
-      "progressions": [
+      progressions: [
         "디피시트 루마니안 데드리프트은 동일한 정렬에서 부하만 소폭 올립니다",
         "디피시트 루마니안 데드리프트은 지지면을 안정적으로 유지한 채 범위를 조금 늘립니다",
-        "디피시트 루마니안 데드리프트은 한쪽 도구 또는 더 긴 지렛대는 숙련 뒤에만 시도합니다"
-      ]
-    }
+        "디피시트 루마니안 데드리프트은 한쪽 도구 또는 더 긴 지렛대는 숙련 뒤에만 시도합니다",
+      ],
+    },
   },
   {
-    "exercise": {
-      "id": "verified-snatch",
-      "name": "스내치",
-      "englishName": "Snatch",
-      "category": "프리웨이트",
-      "regions": [
-        "하체"
-      ],
-      "focus": "근력",
-      "difficulty": "중급",
-      "equipment": "바벨·안전 랙 선택",
-      "minutes": "6–12회 · 2세트",
-      "description": "스내치은 대퇴사두근을 빠르게 쓰되 착지·받기·도구 경로를 먼저 통제해야 하는 파워 또는 기술 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
-      "cues": [
+    exercise: {
+      id: "verified-snatch",
+      name: "스내치",
+      englishName: "Snatch",
+      category: "프리웨이트",
+      regions: ["하체"],
+      focus: "근력",
+      difficulty: "중급",
+      equipment: "바벨·안전 랙 선택",
+      minutes: "6–12회 · 2세트",
+      description:
+        "스내치은 대퇴사두근을 빠르게 쓰되 착지·받기·도구 경로를 먼저 통제해야 하는 파워 또는 기술 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
+      cues: [
         "스내치에서 낮은 속도 리허설 뒤에만 힘을 빠르게 쓰기",
         "대퇴사두근을 느끼며 발·무릎·골반이 같은 방향으로 받기",
-        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다"
+        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
       ],
-      "benefits": [
+      benefits: [
         "스내치으로 힘 발휘와 제어의 연결",
         "대퇴사두근을 활용한 착지·받기 협응",
-        "대퇴사두근의 움직임 경로 인식"
+        "대퇴사두근의 움직임 경로 인식",
       ],
-      "warning": "스내치 중 착지 불안, 무릎·발목·허리 통증, 어지러움 또는 공간 부족이 있으면 즉시 중단하세요.",
-      "reference": {
-        "label": "ACSM — Exercise Safety",
-        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
-      }
+      warning:
+        "스내치 중 착지 불안, 무릎·발목·허리 통증, 어지러움 또는 공간 부족이 있으면 즉시 중단하세요.",
+      reference: {
+        label: "ACSM — Exercise Safety",
+        url: "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/",
+      },
     },
-    "detail": {
-      "setup": [
+    detail: {
+      setup: [
         "바벨의 좌우 중량·안전핀·내려놓을 위치를 확인하고 손 간격을 고정합니다",
         "발 또는 지지면을 단단히 고정하고 몸통을 길게 세웁니다",
-        "스내치에 맞춰 미끄럽지 않은 바닥과 충분한 빈 공간을 확보합니다"
+        "스내치에 맞춰 미끄럽지 않은 바닥과 충분한 빈 공간을 확보합니다",
       ],
-      "finish": "스내치을 마친 뒤 착지 또는 받기 뒤 잠시 균형을 확인하고 호흡이 안정된 후 다음 반복을 시작합니다.",
-      "commonMistakes": [
+      finish:
+        "스내치을 마친 뒤 착지 또는 받기 뒤 잠시 균형을 확인하고 호흡이 안정된 후 다음 반복을 시작합니다.",
+      commonMistakes: [
         "스내치에서 피로한 상태에서 높이·속도·부하를 함께 올리는 경우",
         "스내치에서 착지 소리와 무릎 흔들림을 무시하는 경우",
-        "스내치에서 도구 경로가 불안정한데 반복을 이어 가는 경우"
+        "스내치에서 도구 경로가 불안정한데 반복을 이어 가는 경우",
       ],
-      "regressions": [
+      regressions: [
         "스내치은 점프·속도를 빼고 체중 이동으로 바꿉니다",
         "스내치은 낮은 높이·짧은 거리·가벼운 도구를 사용합니다",
-        "스내치은 지지대 가까이에서 받기 자세만 연습합니다"
+        "스내치은 지지대 가까이에서 받기 자세만 연습합니다",
       ],
-      "progressions": [
+      progressions: [
         "스내치은 안정된 착지 뒤 반복을 한두 회 늘립니다",
         "스내치은 한 번에 거리·높이·부하 중 하나만 조절합니다",
-        "스내치은 복잡한 연속 동작은 기본 패턴이 안정된 뒤 시도합니다"
-      ]
-    }
+        "스내치은 복잡한 연속 동작은 기본 패턴이 안정된 뒤 시도합니다",
+      ],
+    },
   },
   {
-    "exercise": {
-      "id": "verified-snatch-balance",
-      "name": "스내치 밸런스",
-      "englishName": "Snatch Balance",
-      "category": "프리웨이트",
-      "regions": [
-        "하체"
-      ],
-      "focus": "근력",
-      "difficulty": "중급",
-      "equipment": "바벨·안전 랙 선택",
-      "minutes": "6–12회 · 2세트",
-      "description": "스내치 밸런스은 대퇴사두근을 빠르게 쓰되 착지·받기·도구 경로를 먼저 통제해야 하는 파워 또는 기술 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
-      "cues": [
+    exercise: {
+      id: "verified-snatch-balance",
+      name: "스내치 밸런스",
+      englishName: "Snatch Balance",
+      category: "프리웨이트",
+      regions: ["하체"],
+      focus: "근력",
+      difficulty: "중급",
+      equipment: "바벨·안전 랙 선택",
+      minutes: "6–12회 · 2세트",
+      description:
+        "스내치 밸런스은 대퇴사두근을 빠르게 쓰되 착지·받기·도구 경로를 먼저 통제해야 하는 파워 또는 기술 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
+      cues: [
         "스내치 밸런스에서 낮은 속도 리허설 뒤에만 힘을 빠르게 쓰기",
         "대퇴사두근을 느끼며 발·무릎·골반이 같은 방향으로 받기",
-        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다"
+        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
       ],
-      "benefits": [
+      benefits: [
         "스내치 밸런스으로 힘 발휘와 제어의 연결",
         "대퇴사두근을 활용한 착지·받기 협응",
-        "대퇴사두근의 움직임 경로 인식"
+        "대퇴사두근의 움직임 경로 인식",
       ],
-      "warning": "스내치 밸런스 중 착지 불안, 무릎·발목·허리 통증, 어지러움 또는 공간 부족이 있으면 즉시 중단하세요.",
-      "reference": {
-        "label": "ACSM — Exercise Safety",
-        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
-      }
+      warning:
+        "스내치 밸런스 중 착지 불안, 무릎·발목·허리 통증, 어지러움 또는 공간 부족이 있으면 즉시 중단하세요.",
+      reference: {
+        label: "ACSM — Exercise Safety",
+        url: "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/",
+      },
     },
-    "detail": {
-      "setup": [
+    detail: {
+      setup: [
         "바벨의 좌우 중량·안전핀·내려놓을 위치를 확인하고 손 간격을 고정합니다",
         "발 또는 지지면을 단단히 고정하고 몸통을 길게 세웁니다",
-        "스내치 밸런스에 맞춰 미끄럽지 않은 바닥과 충분한 빈 공간을 확보합니다"
+        "스내치 밸런스에 맞춰 미끄럽지 않은 바닥과 충분한 빈 공간을 확보합니다",
       ],
-      "finish": "스내치 밸런스을 마친 뒤 착지 또는 받기 뒤 잠시 균형을 확인하고 호흡이 안정된 후 다음 반복을 시작합니다.",
-      "commonMistakes": [
+      finish:
+        "스내치 밸런스을 마친 뒤 착지 또는 받기 뒤 잠시 균형을 확인하고 호흡이 안정된 후 다음 반복을 시작합니다.",
+      commonMistakes: [
         "스내치 밸런스에서 피로한 상태에서 높이·속도·부하를 함께 올리는 경우",
         "스내치 밸런스에서 착지 소리와 무릎 흔들림을 무시하는 경우",
-        "스내치 밸런스에서 도구 경로가 불안정한데 반복을 이어 가는 경우"
+        "스내치 밸런스에서 도구 경로가 불안정한데 반복을 이어 가는 경우",
       ],
-      "regressions": [
+      regressions: [
         "스내치 밸런스은 점프·속도를 빼고 체중 이동으로 바꿉니다",
         "스내치 밸런스은 낮은 높이·짧은 거리·가벼운 도구를 사용합니다",
-        "스내치 밸런스은 지지대 가까이에서 받기 자세만 연습합니다"
+        "스내치 밸런스은 지지대 가까이에서 받기 자세만 연습합니다",
       ],
-      "progressions": [
+      progressions: [
         "스내치 밸런스은 안정된 착지 뒤 반복을 한두 회 늘립니다",
         "스내치 밸런스은 한 번에 거리·높이·부하 중 하나만 조절합니다",
-        "스내치 밸런스은 복잡한 연속 동작은 기본 패턴이 안정된 뒤 시도합니다"
-      ]
-    }
+        "스내치 밸런스은 복잡한 연속 동작은 기본 패턴이 안정된 뒤 시도합니다",
+      ],
+    },
   },
   {
-    "exercise": {
-      "id": "verified-snatch-deadlift",
-      "name": "스내치 데드리프트",
-      "englishName": "Snatch Deadlift",
-      "category": "프리웨이트",
-      "regions": [
-        "하체",
-        "둔근"
-      ],
-      "focus": "근력",
-      "difficulty": "중급",
-      "equipment": "바벨·안전 랙 선택",
-      "minutes": "6–12회 · 2세트",
-      "description": "스내치 데드리프트은 햄스트링을 길게 사용하면서 엉덩이를 뒤로 보내고 도구를 몸 가까이 이동시키는 힙 힌지 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
-      "cues": [
+    exercise: {
+      id: "verified-snatch-deadlift",
+      name: "스내치 데드리프트",
+      englishName: "Snatch Deadlift",
+      category: "프리웨이트",
+      regions: ["하체", "둔근"],
+      focus: "근력",
+      difficulty: "중급",
+      equipment: "바벨·안전 랙 선택",
+      minutes: "6–12회 · 2세트",
+      description:
+        "스내치 데드리프트은 햄스트링을 길게 사용하면서 엉덩이를 뒤로 보내고 도구를 몸 가까이 이동시키는 힙 힌지 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
+      cues: [
         "스내치 데드리프트에서 발 전체로 바닥을 누르고 무릎은 부드럽게 유지",
         "햄스트링을 느끼며 골반을 뒤로 보내며 척추 길이를 유지",
-        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다"
+        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
       ],
-      "benefits": [
+      benefits: [
         "스내치 데드리프트으로 후면 사슬의 힘 사용 인식",
         "햄스트링을 활용한 엉덩이 주도 움직임 연습",
-        "햄스트링의 움직임 경로 인식"
+        "햄스트링의 움직임 경로 인식",
       ],
-      "warning": "스내치 데드리프트 중 허리의 날카로운 통증·저림, 그립 미끄러짐 또는 균형 상실이 있으면 즉시 중단하고 도구를 안전하게 내려놓으세요.",
-      "reference": {
-        "label": "ACSM — Exercise Safety",
-        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
-      }
+      warning:
+        "스내치 데드리프트 중 허리의 날카로운 통증·저림, 그립 미끄러짐 또는 균형 상실이 있으면 즉시 중단하고 도구를 안전하게 내려놓으세요.",
+      reference: {
+        label: "ACSM — Exercise Safety",
+        url: "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/",
+      },
     },
-    "detail": {
-      "setup": [
+    detail: {
+      setup: [
         "바벨의 좌우 중량·안전핀·내려놓을 위치를 확인하고 손 간격을 고정합니다",
         "발 또는 지지면을 단단히 고정하고 몸통을 길게 세웁니다",
-        "스내치 데드리프트에 맞춰 발을 골반 너비 근처에 두고 도구를 발 중앙 가까이에 둡니다"
+        "스내치 데드리프트에 맞춰 발을 골반 너비 근처에 두고 도구를 발 중앙 가까이에 둡니다",
       ],
-      "finish": "스내치 데드리프트을 마친 뒤 엉덩이를 앞으로 가져와 선 뒤, 도구를 통제된 경로로 안전하게 내려놓습니다.",
-      "commonMistakes": [
+      finish:
+        "스내치 데드리프트을 마친 뒤 엉덩이를 앞으로 가져와 선 뒤, 도구를 통제된 경로로 안전하게 내려놓습니다.",
+      commonMistakes: [
         "스내치 데드리프트에서 무릎을 먼저 과하게 굽혀 힌지가 사라지는 경우",
         "스내치 데드리프트에서 도구가 몸에서 멀어져 허리에 부담이 커지는 경우",
-        "스내치 데드리프트에서 끝 범위에서 등을 둥글게 말아 당기는 경우"
+        "스내치 데드리프트에서 끝 범위에서 등을 둥글게 말아 당기는 경우",
       ],
-      "regressions": [
+      regressions: [
         "스내치 데드리프트은 가벼운 덤벨 또는 높은 시작 위치로 바꿉니다",
         "스내치 데드리프트은 도구 없이 벽 터치 힌지로 범위를 익힙니다",
-        "스내치 데드리프트은 가능한 범위까지만 내려가고 멈춥니다"
+        "스내치 데드리프트은 가능한 범위까지만 내려가고 멈춥니다",
       ],
-      "progressions": [
+      progressions: [
         "스내치 데드리프트은 동일한 정렬에서 부하만 소폭 올립니다",
         "스내치 데드리프트은 지지면을 안정적으로 유지한 채 범위를 조금 늘립니다",
-        "스내치 데드리프트은 한쪽 도구 또는 더 긴 지렛대는 숙련 뒤에만 시도합니다"
-      ]
-    }
+        "스내치 데드리프트은 한쪽 도구 또는 더 긴 지렛대는 숙련 뒤에만 시도합니다",
+      ],
+    },
   },
   {
-    "exercise": {
-      "id": "verified-snatch-from-blocks",
-      "name": "블록 스내치",
-      "englishName": "Snatch from Blocks",
-      "category": "프리웨이트",
-      "regions": [
-        "하체"
-      ],
-      "focus": "근력",
-      "difficulty": "상급",
-      "equipment": "바벨·안전 랙 선택",
-      "minutes": "6–12회 · 2세트",
-      "description": "블록 스내치은 대퇴사두근을 빠르게 쓰되 착지·받기·도구 경로를 먼저 통제해야 하는 파워 또는 기술 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
-      "cues": [
+    exercise: {
+      id: "verified-snatch-from-blocks",
+      name: "블록 스내치",
+      englishName: "Snatch from Blocks",
+      category: "프리웨이트",
+      regions: ["하체"],
+      focus: "근력",
+      difficulty: "상급",
+      equipment: "바벨·안전 랙 선택",
+      minutes: "6–12회 · 2세트",
+      description:
+        "블록 스내치은 대퇴사두근을 빠르게 쓰되 착지·받기·도구 경로를 먼저 통제해야 하는 파워 또는 기술 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
+      cues: [
         "블록 스내치에서 낮은 속도 리허설 뒤에만 힘을 빠르게 쓰기",
         "대퇴사두근을 느끼며 발·무릎·골반이 같은 방향으로 받기",
-        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다"
+        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
       ],
-      "benefits": [
+      benefits: [
         "블록 스내치으로 힘 발휘와 제어의 연결",
         "대퇴사두근을 활용한 착지·받기 협응",
-        "대퇴사두근의 움직임 경로 인식"
+        "대퇴사두근의 움직임 경로 인식",
       ],
-      "warning": "블록 스내치 중 착지 불안, 무릎·발목·허리 통증, 어지러움 또는 공간 부족이 있으면 즉시 중단하세요.",
-      "reference": {
-        "label": "ACSM — Exercise Safety",
-        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
-      }
+      warning:
+        "블록 스내치 중 착지 불안, 무릎·발목·허리 통증, 어지러움 또는 공간 부족이 있으면 즉시 중단하세요.",
+      reference: {
+        label: "ACSM — Exercise Safety",
+        url: "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/",
+      },
     },
-    "detail": {
-      "setup": [
+    detail: {
+      setup: [
         "바벨의 좌우 중량·안전핀·내려놓을 위치를 확인하고 손 간격을 고정합니다",
         "발 또는 지지면을 단단히 고정하고 몸통을 길게 세웁니다",
-        "블록 스내치에 맞춰 미끄럽지 않은 바닥과 충분한 빈 공간을 확보합니다"
+        "블록 스내치에 맞춰 미끄럽지 않은 바닥과 충분한 빈 공간을 확보합니다",
       ],
-      "finish": "블록 스내치을 마친 뒤 착지 또는 받기 뒤 잠시 균형을 확인하고 호흡이 안정된 후 다음 반복을 시작합니다.",
-      "commonMistakes": [
+      finish:
+        "블록 스내치을 마친 뒤 착지 또는 받기 뒤 잠시 균형을 확인하고 호흡이 안정된 후 다음 반복을 시작합니다.",
+      commonMistakes: [
         "블록 스내치에서 피로한 상태에서 높이·속도·부하를 함께 올리는 경우",
         "블록 스내치에서 착지 소리와 무릎 흔들림을 무시하는 경우",
-        "블록 스내치에서 도구 경로가 불안정한데 반복을 이어 가는 경우"
+        "블록 스내치에서 도구 경로가 불안정한데 반복을 이어 가는 경우",
       ],
-      "regressions": [
+      regressions: [
         "블록 스내치은 점프·속도를 빼고 체중 이동으로 바꿉니다",
         "블록 스내치은 낮은 높이·짧은 거리·가벼운 도구를 사용합니다",
-        "블록 스내치은 지지대 가까이에서 받기 자세만 연습합니다"
+        "블록 스내치은 지지대 가까이에서 받기 자세만 연습합니다",
       ],
-      "progressions": [
+      progressions: [
         "블록 스내치은 안정된 착지 뒤 반복을 한두 회 늘립니다",
         "블록 스내치은 한 번에 거리·높이·부하 중 하나만 조절합니다",
-        "블록 스내치은 복잡한 연속 동작은 기본 패턴이 안정된 뒤 시도합니다"
-      ]
-    }
+        "블록 스내치은 복잡한 연속 동작은 기본 패턴이 안정된 뒤 시도합니다",
+      ],
+    },
   },
   {
-    "exercise": {
-      "id": "verified-snatch-shrug",
-      "name": "스내치 슈러그",
-      "englishName": "Snatch Shrug",
-      "category": "프리웨이트",
-      "regions": [
-        "등",
-        "어깨"
-      ],
-      "focus": "근력",
-      "difficulty": "중급",
-      "equipment": "바벨·안전 랙 선택",
-      "minutes": "6–12회 · 2세트",
-      "description": "스내치 슈러그은 승모근을 사용해 팔 또는 도구를 정해진 평면으로 들어 올리며 어깨 위치를 제어하는 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
-      "cues": [
+    exercise: {
+      id: "verified-snatch-shrug",
+      name: "스내치 슈러그",
+      englishName: "Snatch Shrug",
+      category: "프리웨이트",
+      regions: ["등", "어깨"],
+      focus: "근력",
+      difficulty: "중급",
+      equipment: "바벨·안전 랙 선택",
+      minutes: "6–12회 · 2세트",
+      description:
+        "스내치 슈러그은 승모근을 사용해 팔 또는 도구를 정해진 평면으로 들어 올리며 어깨 위치를 제어하는 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
+      cues: [
         "스내치 슈러그에서 어깨를 귀에서 멀리 두고 목을 길게 유지",
         "승모근을 느끼며 도구를 몸에서 너무 멀리 보내지 않기",
-        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다"
+        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
       ],
-      "benefits": [
+      benefits: [
         "스내치 슈러그으로 어깨 주변의 제어",
         "승모근을 활용한 팔과 견갑의 협응",
-        "승모근의 움직임 경로 인식"
+        "승모근의 움직임 경로 인식",
       ],
-      "warning": "스내치 슈러그 중 어깨 위쪽 통증, 목 긴장, 저림 또는 반동이 생기면 즉시 범위·저항을 낮추거나 중단하세요.",
-      "reference": {
-        "label": "ACSM — Exercise Safety",
-        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
-      }
+      warning:
+        "스내치 슈러그 중 어깨 위쪽 통증, 목 긴장, 저림 또는 반동이 생기면 즉시 범위·저항을 낮추거나 중단하세요.",
+      reference: {
+        label: "ACSM — Exercise Safety",
+        url: "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/",
+      },
     },
-    "detail": {
-      "setup": [
+    detail: {
+      setup: [
         "바벨의 좌우 중량·안전핀·내려놓을 위치를 확인하고 손 간격을 고정합니다",
         "발 또는 지지면을 단단히 고정하고 몸통을 길게 세웁니다",
-        "스내치 슈러그에 맞춰 낮은 중량으로 시작하고 양발 또는 벤치 지지로 균형을 만듭니다"
+        "스내치 슈러그에 맞춰 낮은 중량으로 시작하고 양발 또는 벤치 지지로 균형을 만듭니다",
       ],
-      "finish": "스내치 슈러그을 마친 뒤 어깨가 앞으로 밀리지 않게 도구를 몸 옆으로 통제해 되돌립니다.",
-      "commonMistakes": [
+      finish:
+        "스내치 슈러그을 마친 뒤 어깨가 앞으로 밀리지 않게 도구를 몸 옆으로 통제해 되돌립니다.",
+      commonMistakes: [
         "스내치 슈러그에서 어깨를 으쓱하며 목에 힘을 주는 경우",
         "스내치 슈러그에서 반동으로 도구를 목표 높이보다 높게 던지는 경우",
-        "스내치 슈러그에서 손목을 꺾어 도구를 지지하는 경우"
+        "스내치 슈러그에서 손목을 꺾어 도구를 지지하는 경우",
       ],
-      "regressions": [
+      regressions: [
         "스내치 슈러그은 중량을 낮추거나 한 팔씩 지지된 자세로 수행합니다",
         "스내치 슈러그은 들기 높이를 어깨 아래로 줄입니다",
-        "스내치 슈러그은 밴드 또는 더 짧은 지렛대를 사용합니다"
+        "스내치 슈러그은 밴드 또는 더 짧은 지렛대를 사용합니다",
       ],
-      "progressions": [
+      progressions: [
         "스내치 슈러그은 동일한 높이와 정렬에서 반복을 늘립니다",
         "스내치 슈러그은 작은 중량 증가를 한 번만 적용합니다",
-        "스내치 슈러그은 편측·인클라인 변형은 어깨가 편안할 때 시도합니다"
-      ]
-    }
+        "스내치 슈러그은 편측·인클라인 변형은 어깨가 편안할 때 시도합니다",
+      ],
+    },
   },
   {
-    "exercise": {
-      "id": "verified-split-clean",
-      "name": "스플릿 클린",
-      "englishName": "Split Clean",
-      "category": "프리웨이트",
-      "regions": [
-        "하체"
-      ],
-      "focus": "근력",
-      "difficulty": "중급",
-      "equipment": "바벨·안전 랙 선택",
-      "minutes": "6–12회 · 2세트",
-      "description": "스플릿 클린은 대퇴사두근을 빠르게 쓰되 착지·받기·도구 경로를 먼저 통제해야 하는 파워 또는 기술 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
-      "cues": [
+    exercise: {
+      id: "verified-split-clean",
+      name: "스플릿 클린",
+      englishName: "Split Clean",
+      category: "프리웨이트",
+      regions: ["하체"],
+      focus: "근력",
+      difficulty: "중급",
+      equipment: "바벨·안전 랙 선택",
+      minutes: "6–12회 · 2세트",
+      description:
+        "스플릿 클린은 대퇴사두근을 빠르게 쓰되 착지·받기·도구 경로를 먼저 통제해야 하는 파워 또는 기술 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
+      cues: [
         "스플릿 클린에서 낮은 속도 리허설 뒤에만 힘을 빠르게 쓰기",
         "대퇴사두근을 느끼며 발·무릎·골반이 같은 방향으로 받기",
-        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다"
+        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
       ],
-      "benefits": [
+      benefits: [
         "스플릿 클린으로 힘 발휘와 제어의 연결",
         "대퇴사두근을 활용한 착지·받기 협응",
-        "대퇴사두근의 움직임 경로 인식"
+        "대퇴사두근의 움직임 경로 인식",
       ],
-      "warning": "스플릿 클린 중 착지 불안, 무릎·발목·허리 통증, 어지러움 또는 공간 부족이 있으면 즉시 중단하세요.",
-      "reference": {
-        "label": "ACSM — Exercise Safety",
-        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
-      }
+      warning:
+        "스플릿 클린 중 착지 불안, 무릎·발목·허리 통증, 어지러움 또는 공간 부족이 있으면 즉시 중단하세요.",
+      reference: {
+        label: "ACSM — Exercise Safety",
+        url: "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/",
+      },
     },
-    "detail": {
-      "setup": [
+    detail: {
+      setup: [
         "바벨의 좌우 중량·안전핀·내려놓을 위치를 확인하고 손 간격을 고정합니다",
         "발 또는 지지면을 단단히 고정하고 몸통을 길게 세웁니다",
-        "스플릿 클린에 맞춰 미끄럽지 않은 바닥과 충분한 빈 공간을 확보합니다"
+        "스플릿 클린에 맞춰 미끄럽지 않은 바닥과 충분한 빈 공간을 확보합니다",
       ],
-      "finish": "스플릿 클린을 마친 뒤 착지 또는 받기 뒤 잠시 균형을 확인하고 호흡이 안정된 후 다음 반복을 시작합니다.",
-      "commonMistakes": [
+      finish:
+        "스플릿 클린을 마친 뒤 착지 또는 받기 뒤 잠시 균형을 확인하고 호흡이 안정된 후 다음 반복을 시작합니다.",
+      commonMistakes: [
         "스플릿 클린에서 피로한 상태에서 높이·속도·부하를 함께 올리는 경우",
         "스플릿 클린에서 착지 소리와 무릎 흔들림을 무시하는 경우",
-        "스플릿 클린에서 도구 경로가 불안정한데 반복을 이어 가는 경우"
+        "스플릿 클린에서 도구 경로가 불안정한데 반복을 이어 가는 경우",
       ],
-      "regressions": [
+      regressions: [
         "스플릿 클린은 점프·속도를 빼고 체중 이동으로 바꿉니다",
         "스플릿 클린은 낮은 높이·짧은 거리·가벼운 도구를 사용합니다",
-        "스플릿 클린은 지지대 가까이에서 받기 자세만 연습합니다"
+        "스플릿 클린은 지지대 가까이에서 받기 자세만 연습합니다",
       ],
-      "progressions": [
+      progressions: [
         "스플릿 클린은 안정된 착지 뒤 반복을 한두 회 늘립니다",
         "스플릿 클린은 한 번에 거리·높이·부하 중 하나만 조절합니다",
-        "스플릿 클린은 복잡한 연속 동작은 기본 패턴이 안정된 뒤 시도합니다"
-      ]
-    }
+        "스플릿 클린은 복잡한 연속 동작은 기본 패턴이 안정된 뒤 시도합니다",
+      ],
+    },
   },
   {
-    "exercise": {
-      "id": "verified-split-jerk",
-      "name": "스플릿 저크",
-      "englishName": "Split Jerk",
-      "category": "프리웨이트",
-      "regions": [
-        "하체"
-      ],
-      "focus": "근력",
-      "difficulty": "중급",
-      "equipment": "바벨·안전 랙 선택",
-      "minutes": "6–12회 · 2세트",
-      "description": "스플릿 저크은 대퇴사두근을 빠르게 쓰되 착지·받기·도구 경로를 먼저 통제해야 하는 파워 또는 기술 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
-      "cues": [
+    exercise: {
+      id: "verified-split-jerk",
+      name: "스플릿 저크",
+      englishName: "Split Jerk",
+      category: "프리웨이트",
+      regions: ["하체"],
+      focus: "근력",
+      difficulty: "중급",
+      equipment: "바벨·안전 랙 선택",
+      minutes: "6–12회 · 2세트",
+      description:
+        "스플릿 저크은 대퇴사두근을 빠르게 쓰되 착지·받기·도구 경로를 먼저 통제해야 하는 파워 또는 기술 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
+      cues: [
         "스플릿 저크에서 낮은 속도 리허설 뒤에만 힘을 빠르게 쓰기",
         "대퇴사두근을 느끼며 발·무릎·골반이 같은 방향으로 받기",
-        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다"
+        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
       ],
-      "benefits": [
+      benefits: [
         "스플릿 저크으로 힘 발휘와 제어의 연결",
         "대퇴사두근을 활용한 착지·받기 협응",
-        "대퇴사두근의 움직임 경로 인식"
+        "대퇴사두근의 움직임 경로 인식",
       ],
-      "warning": "스플릿 저크 중 착지 불안, 무릎·발목·허리 통증, 어지러움 또는 공간 부족이 있으면 즉시 중단하세요.",
-      "reference": {
-        "label": "ACSM — Exercise Safety",
-        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
-      }
+      warning:
+        "스플릿 저크 중 착지 불안, 무릎·발목·허리 통증, 어지러움 또는 공간 부족이 있으면 즉시 중단하세요.",
+      reference: {
+        label: "ACSM — Exercise Safety",
+        url: "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/",
+      },
     },
-    "detail": {
-      "setup": [
+    detail: {
+      setup: [
         "바벨의 좌우 중량·안전핀·내려놓을 위치를 확인하고 손 간격을 고정합니다",
         "발 또는 지지면을 단단히 고정하고 몸통을 길게 세웁니다",
-        "스플릿 저크에 맞춰 미끄럽지 않은 바닥과 충분한 빈 공간을 확보합니다"
+        "스플릿 저크에 맞춰 미끄럽지 않은 바닥과 충분한 빈 공간을 확보합니다",
       ],
-      "finish": "스플릿 저크을 마친 뒤 착지 또는 받기 뒤 잠시 균형을 확인하고 호흡이 안정된 후 다음 반복을 시작합니다.",
-      "commonMistakes": [
+      finish:
+        "스플릿 저크을 마친 뒤 착지 또는 받기 뒤 잠시 균형을 확인하고 호흡이 안정된 후 다음 반복을 시작합니다.",
+      commonMistakes: [
         "스플릿 저크에서 피로한 상태에서 높이·속도·부하를 함께 올리는 경우",
         "스플릿 저크에서 착지 소리와 무릎 흔들림을 무시하는 경우",
-        "스플릿 저크에서 도구 경로가 불안정한데 반복을 이어 가는 경우"
+        "스플릿 저크에서 도구 경로가 불안정한데 반복을 이어 가는 경우",
       ],
-      "regressions": [
+      regressions: [
         "스플릿 저크은 점프·속도를 빼고 체중 이동으로 바꿉니다",
         "스플릿 저크은 낮은 높이·짧은 거리·가벼운 도구를 사용합니다",
-        "스플릿 저크은 지지대 가까이에서 받기 자세만 연습합니다"
+        "스플릿 저크은 지지대 가까이에서 받기 자세만 연습합니다",
       ],
-      "progressions": [
+      progressions: [
         "스플릿 저크은 안정된 착지 뒤 반복을 한두 회 늘립니다",
         "스플릿 저크은 한 번에 거리·높이·부하 중 하나만 조절합니다",
-        "스플릿 저크은 복잡한 연속 동작은 기본 패턴이 안정된 뒤 시도합니다"
-      ]
-    }
+        "스플릿 저크은 복잡한 연속 동작은 기본 패턴이 안정된 뒤 시도합니다",
+      ],
+    },
   },
   {
-    "exercise": {
-      "id": "verified-split-snatch",
-      "name": "스플릿 스내치",
-      "englishName": "Split Snatch",
-      "category": "프리웨이트",
-      "regions": [
-        "하체",
-        "둔근"
-      ],
-      "focus": "근력",
-      "difficulty": "상급",
-      "equipment": "바벨·안전 랙 선택",
-      "minutes": "6–12회 · 2세트",
-      "description": "스플릿 스내치은 햄스트링을 빠르게 쓰되 착지·받기·도구 경로를 먼저 통제해야 하는 파워 또는 기술 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
-      "cues": [
+    exercise: {
+      id: "verified-split-snatch",
+      name: "스플릿 스내치",
+      englishName: "Split Snatch",
+      category: "프리웨이트",
+      regions: ["하체", "둔근"],
+      focus: "근력",
+      difficulty: "상급",
+      equipment: "바벨·안전 랙 선택",
+      minutes: "6–12회 · 2세트",
+      description:
+        "스플릿 스내치은 햄스트링을 빠르게 쓰되 착지·받기·도구 경로를 먼저 통제해야 하는 파워 또는 기술 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
+      cues: [
         "스플릿 스내치에서 낮은 속도 리허설 뒤에만 힘을 빠르게 쓰기",
         "햄스트링을 느끼며 발·무릎·골반이 같은 방향으로 받기",
-        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다"
+        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
       ],
-      "benefits": [
+      benefits: [
         "스플릿 스내치으로 힘 발휘와 제어의 연결",
         "햄스트링을 활용한 착지·받기 협응",
-        "햄스트링의 움직임 경로 인식"
+        "햄스트링의 움직임 경로 인식",
       ],
-      "warning": "스플릿 스내치 중 착지 불안, 무릎·발목·허리 통증, 어지러움 또는 공간 부족이 있으면 즉시 중단하세요.",
-      "reference": {
-        "label": "ACSM — Exercise Safety",
-        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
-      }
+      warning:
+        "스플릿 스내치 중 착지 불안, 무릎·발목·허리 통증, 어지러움 또는 공간 부족이 있으면 즉시 중단하세요.",
+      reference: {
+        label: "ACSM — Exercise Safety",
+        url: "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/",
+      },
     },
-    "detail": {
-      "setup": [
+    detail: {
+      setup: [
         "바벨의 좌우 중량·안전핀·내려놓을 위치를 확인하고 손 간격을 고정합니다",
         "발 또는 지지면을 단단히 고정하고 몸통을 길게 세웁니다",
-        "스플릿 스내치에 맞춰 미끄럽지 않은 바닥과 충분한 빈 공간을 확보합니다"
+        "스플릿 스내치에 맞춰 미끄럽지 않은 바닥과 충분한 빈 공간을 확보합니다",
       ],
-      "finish": "스플릿 스내치을 마친 뒤 착지 또는 받기 뒤 잠시 균형을 확인하고 호흡이 안정된 후 다음 반복을 시작합니다.",
-      "commonMistakes": [
+      finish:
+        "스플릿 스내치을 마친 뒤 착지 또는 받기 뒤 잠시 균형을 확인하고 호흡이 안정된 후 다음 반복을 시작합니다.",
+      commonMistakes: [
         "스플릿 스내치에서 피로한 상태에서 높이·속도·부하를 함께 올리는 경우",
         "스플릿 스내치에서 착지 소리와 무릎 흔들림을 무시하는 경우",
-        "스플릿 스내치에서 도구 경로가 불안정한데 반복을 이어 가는 경우"
+        "스플릿 스내치에서 도구 경로가 불안정한데 반복을 이어 가는 경우",
       ],
-      "regressions": [
+      regressions: [
         "스플릿 스내치은 점프·속도를 빼고 체중 이동으로 바꿉니다",
         "스플릿 스내치은 낮은 높이·짧은 거리·가벼운 도구를 사용합니다",
-        "스플릿 스내치은 지지대 가까이에서 받기 자세만 연습합니다"
+        "스플릿 스내치은 지지대 가까이에서 받기 자세만 연습합니다",
       ],
-      "progressions": [
+      progressions: [
         "스플릿 스내치은 안정된 착지 뒤 반복을 한두 회 늘립니다",
         "스플릿 스내치은 한 번에 거리·높이·부하 중 하나만 조절합니다",
-        "스플릿 스내치은 복잡한 연속 동작은 기본 패턴이 안정된 뒤 시도합니다"
-      ]
-    }
+        "스플릿 스내치은 복잡한 연속 동작은 기본 패턴이 안정된 뒤 시도합니다",
+      ],
+    },
   },
   {
-    "exercise": {
-      "id": "verified-wide-stance-stiff-legs",
-      "name": "와이드 스탠스 스티프 레그",
-      "englishName": "Wide Stance Stiff Legs",
-      "category": "프리웨이트",
-      "regions": [
-        "하체",
-        "둔근"
-      ],
-      "focus": "근력",
-      "difficulty": "중급",
-      "equipment": "바벨·안전 랙 선택",
-      "minutes": "6–12회 · 2세트",
-      "description": "와이드 스탠스 스티프 레그은 햄스트링 주변을 통증 없는 범위에서 천천히 움직여 가동 범위와 자세 감각을 확인하는 모빌리티 종목입니다. 넓은 그립에서는 팔꿈치와 어깨가 불편하지 않은 범위만 사용합니다",
-      "cues": [
+    exercise: {
+      id: "verified-wide-stance-stiff-legs",
+      name: "와이드 스탠스 스티프 레그",
+      englishName: "Wide Stance Stiff Legs",
+      category: "프리웨이트",
+      regions: ["하체", "둔근"],
+      focus: "근력",
+      difficulty: "중급",
+      equipment: "바벨·안전 랙 선택",
+      minutes: "6–12회 · 2세트",
+      description:
+        "와이드 스탠스 스티프 레그은 햄스트링 주변을 통증 없는 범위에서 천천히 움직여 가동 범위와 자세 감각을 확인하는 모빌리티 종목입니다. 넓은 그립에서는 팔꿈치와 어깨가 불편하지 않은 범위만 사용합니다",
+      cues: [
         "와이드 스탠스 스티프 레그에서 작은 범위에서 호흡을 멈추지 않기",
         "햄스트링을 느끼며 끝 범위를 밀지 말고 부드럽게 왕복",
-        "넓은 그립에서는 팔꿈치와 어깨가 불편하지 않은 범위만 사용합니다"
+        "넓은 그립에서는 팔꿈치와 어깨가 불편하지 않은 범위만 사용합니다",
       ],
-      "benefits": [
+      benefits: [
         "와이드 스탠스 스티프 레그으로 관절 위치와 범위 인식",
         "햄스트링을 활용한 편안한 움직임 준비",
-        "햄스트링의 움직임 경로 인식"
+        "햄스트링의 움직임 경로 인식",
       ],
-      "warning": "와이드 스탠스 스티프 레그 중 날카로운 통증, 저림, 방사통, 붓기·열감이 있으면 자가 진행을 멈추고 평가를 우선하세요.",
-      "reference": {
-        "label": "ACSM — Exercise Safety",
-        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
-      }
+      warning:
+        "와이드 스탠스 스티프 레그 중 날카로운 통증, 저림, 방사통, 붓기·열감이 있으면 자가 진행을 멈추고 평가를 우선하세요.",
+      reference: {
+        label: "ACSM — Exercise Safety",
+        url: "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/",
+      },
     },
-    "detail": {
-      "setup": [
+    detail: {
+      setup: [
         "바벨의 좌우 중량·안전핀·내려놓을 위치를 확인하고 손 간격을 고정합니다",
         "발 또는 지지면을 단단히 고정하고 몸통을 길게 세웁니다",
-        "와이드 스탠스 스티프 레그에 맞춰 편안한 바닥·매트 또는 지지대를 준비합니다"
+        "와이드 스탠스 스티프 레그에 맞춰 편안한 바닥·매트 또는 지지대를 준비합니다",
       ],
-      "finish": "와이드 스탠스 스티프 레그을 마친 뒤 중립 자세로 천천히 돌아와 불편감이 남지 않는지 확인합니다.",
-      "commonMistakes": [
+      finish:
+        "와이드 스탠스 스티프 레그을 마친 뒤 중립 자세로 천천히 돌아와 불편감이 남지 않는지 확인합니다.",
+      commonMistakes: [
         "와이드 스탠스 스티프 레그에서 끝 범위를 억지로 밀어 통증을 만드는 경우",
         "와이드 스탠스 스티프 레그에서 호흡을 참거나 반동을 쓰는 경우",
-        "와이드 스탠스 스티프 레그에서 저림·방사통을 무시하고 지속하는 경우"
+        "와이드 스탠스 스티프 레그에서 저림·방사통을 무시하고 지속하는 경우",
       ],
-      "regressions": [
+      regressions: [
         "와이드 스탠스 스티프 레그은 범위와 유지 시간을 줄입니다",
         "와이드 스탠스 스티프 레그은 벽·의자·블록 같은 지지대를 사용합니다",
-        "와이드 스탠스 스티프 레그은 누운 또는 앉은 안정된 자세로 바꿉니다"
+        "와이드 스탠스 스티프 레그은 누운 또는 앉은 안정된 자세로 바꿉니다",
       ],
-      "progressions": [
+      progressions: [
         "와이드 스탠스 스티프 레그은 다음 날 편안하면 범위만 조금 늘립니다",
         "와이드 스탠스 스티프 레그은 호흡 주기를 한 번 추가합니다",
-        "와이드 스탠스 스티프 레그은 지지대는 안정적으로 줄여 갑니다"
-      ]
-    }
+        "와이드 스탠스 스티프 레그은 지지대는 안정적으로 줄여 갑니다",
+      ],
+    },
   },
   {
-    "exercise": {
-      "id": "verified-bench-jump",
-      "name": "벤치 점프",
-      "englishName": "Bench Jump",
-      "category": "파워·민첩성",
-      "regions": [
-        "하체"
-      ],
-      "focus": "파워",
-      "difficulty": "중급",
-      "equipment": "장비 없음",
-      "minutes": "3–6회 · 2세트",
-      "description": "벤치 점프은 대퇴사두근을 빠르게 쓰되 착지·받기·도구 경로를 먼저 통제해야 하는 파워 또는 기술 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
-      "cues": [
+    exercise: {
+      id: "verified-bench-jump",
+      name: "벤치 점프",
+      englishName: "Bench Jump",
+      category: "파워·민첩성",
+      regions: ["하체"],
+      focus: "파워",
+      difficulty: "중급",
+      equipment: "장비 없음",
+      minutes: "3–6회 · 2세트",
+      description:
+        "벤치 점프은 대퇴사두근을 빠르게 쓰되 착지·받기·도구 경로를 먼저 통제해야 하는 파워 또는 기술 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
+      cues: [
         "벤치 점프에서 낮은 속도 리허설 뒤에만 힘을 빠르게 쓰기",
         "대퇴사두근을 느끼며 발·무릎·골반이 같은 방향으로 받기",
-        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다"
+        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
       ],
-      "benefits": [
+      benefits: [
         "벤치 점프으로 힘 발휘와 제어의 연결",
         "대퇴사두근을 활용한 착지·받기 협응",
-        "대퇴사두근의 움직임 경로 인식"
+        "대퇴사두근의 움직임 경로 인식",
       ],
-      "warning": "벤치 점프 중 착지 불안, 무릎·발목·허리 통증, 어지러움 또는 공간 부족이 있으면 즉시 중단하세요.",
-      "reference": {
-        "label": "ACSM — Exercise Safety",
-        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
-      }
+      warning:
+        "벤치 점프 중 착지 불안, 무릎·발목·허리 통증, 어지러움 또는 공간 부족이 있으면 즉시 중단하세요.",
+      reference: {
+        label: "ACSM — Exercise Safety",
+        url: "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/",
+      },
     },
-    "detail": {
-      "setup": [
+    detail: {
+      setup: [
         "장비 없음·바닥·주변 공간을 확인하고 가장 쉬운 범위로 한 번 리허설합니다",
         "발 또는 지지면을 단단히 고정하고 몸통을 길게 세웁니다",
-        "벤치 점프에 맞춰 미끄럽지 않은 바닥과 충분한 빈 공간을 확보합니다"
+        "벤치 점프에 맞춰 미끄럽지 않은 바닥과 충분한 빈 공간을 확보합니다",
       ],
-      "finish": "벤치 점프을 마친 뒤 착지 또는 받기 뒤 잠시 균형을 확인하고 호흡이 안정된 후 다음 반복을 시작합니다.",
-      "commonMistakes": [
+      finish:
+        "벤치 점프을 마친 뒤 착지 또는 받기 뒤 잠시 균형을 확인하고 호흡이 안정된 후 다음 반복을 시작합니다.",
+      commonMistakes: [
         "벤치 점프에서 피로한 상태에서 높이·속도·부하를 함께 올리는 경우",
         "벤치 점프에서 착지 소리와 무릎 흔들림을 무시하는 경우",
-        "벤치 점프에서 도구 경로가 불안정한데 반복을 이어 가는 경우"
+        "벤치 점프에서 도구 경로가 불안정한데 반복을 이어 가는 경우",
       ],
-      "regressions": [
+      regressions: [
         "벤치 점프은 점프·속도를 빼고 체중 이동으로 바꿉니다",
         "벤치 점프은 낮은 높이·짧은 거리·가벼운 도구를 사용합니다",
-        "벤치 점프은 지지대 가까이에서 받기 자세만 연습합니다"
+        "벤치 점프은 지지대 가까이에서 받기 자세만 연습합니다",
       ],
-      "progressions": [
+      progressions: [
         "벤치 점프은 안정된 착지 뒤 반복을 한두 회 늘립니다",
         "벤치 점프은 한 번에 거리·높이·부하 중 하나만 조절합니다",
-        "벤치 점프은 복잡한 연속 동작은 기본 패턴이 안정된 뒤 시도합니다"
-      ]
-    }
+        "벤치 점프은 복잡한 연속 동작은 기본 패턴이 안정된 뒤 시도합니다",
+      ],
+    },
   },
   {
-    "exercise": {
-      "id": "verified-double-leg-butt-kick",
-      "name": "양다리 버트킥",
-      "englishName": "Double Leg Butt Kick",
-      "category": "파워·민첩성",
-      "regions": [
-        "하체"
-      ],
-      "focus": "파워",
-      "difficulty": "입문",
-      "equipment": "장비 없음",
-      "minutes": "3–6회 · 2세트",
-      "description": "양다리 버트킥은 대퇴사두근 주변을 통증 없는 범위에서 천천히 움직여 가동 범위와 자세 감각을 확인하는 모빌리티 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
-      "cues": [
+    exercise: {
+      id: "verified-double-leg-butt-kick",
+      name: "양다리 버트킥",
+      englishName: "Double Leg Butt Kick",
+      category: "파워·민첩성",
+      regions: ["하체"],
+      focus: "파워",
+      difficulty: "입문",
+      equipment: "장비 없음",
+      minutes: "3–6회 · 2세트",
+      description:
+        "양다리 버트킥은 대퇴사두근 주변을 통증 없는 범위에서 천천히 움직여 가동 범위와 자세 감각을 확인하는 모빌리티 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
+      cues: [
         "양다리 버트킥에서 작은 범위에서 호흡을 멈추지 않기",
         "대퇴사두근을 느끼며 끝 범위를 밀지 말고 부드럽게 왕복",
-        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다"
+        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
       ],
-      "benefits": [
+      benefits: [
         "양다리 버트킥으로 관절 위치와 범위 인식",
         "대퇴사두근을 활용한 편안한 움직임 준비",
-        "대퇴사두근의 움직임 경로 인식"
+        "대퇴사두근의 움직임 경로 인식",
       ],
-      "warning": "양다리 버트킥 중 날카로운 통증, 저림, 방사통, 붓기·열감이 있으면 자가 진행을 멈추고 평가를 우선하세요.",
-      "reference": {
-        "label": "ACSM — Exercise Safety",
-        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
-      }
+      warning:
+        "양다리 버트킥 중 날카로운 통증, 저림, 방사통, 붓기·열감이 있으면 자가 진행을 멈추고 평가를 우선하세요.",
+      reference: {
+        label: "ACSM — Exercise Safety",
+        url: "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/",
+      },
     },
-    "detail": {
-      "setup": [
+    detail: {
+      setup: [
         "장비 없음·바닥·주변 공간을 확인하고 가장 쉬운 범위로 한 번 리허설합니다",
         "발 또는 지지면을 단단히 고정하고 몸통을 길게 세웁니다",
-        "양다리 버트킥에 맞춰 편안한 바닥·매트 또는 지지대를 준비합니다"
+        "양다리 버트킥에 맞춰 편안한 바닥·매트 또는 지지대를 준비합니다",
       ],
-      "finish": "양다리 버트킥을 마친 뒤 중립 자세로 천천히 돌아와 불편감이 남지 않는지 확인합니다.",
-      "commonMistakes": [
+      finish:
+        "양다리 버트킥을 마친 뒤 중립 자세로 천천히 돌아와 불편감이 남지 않는지 확인합니다.",
+      commonMistakes: [
         "양다리 버트킥에서 끝 범위를 억지로 밀어 통증을 만드는 경우",
         "양다리 버트킥에서 호흡을 참거나 반동을 쓰는 경우",
-        "양다리 버트킥에서 저림·방사통을 무시하고 지속하는 경우"
+        "양다리 버트킥에서 저림·방사통을 무시하고 지속하는 경우",
       ],
-      "regressions": [
+      regressions: [
         "양다리 버트킥은 범위와 유지 시간을 줄입니다",
         "양다리 버트킥은 벽·의자·블록 같은 지지대를 사용합니다",
-        "양다리 버트킥은 누운 또는 앉은 안정된 자세로 바꿉니다"
+        "양다리 버트킥은 누운 또는 앉은 안정된 자세로 바꿉니다",
       ],
-      "progressions": [
+      progressions: [
         "양다리 버트킥은 다음 날 편안하면 범위만 조금 늘립니다",
         "양다리 버트킥은 호흡 주기를 한 번 추가합니다",
-        "양다리 버트킥은 지지대는 안정적으로 줄여 갑니다"
-      ]
-    }
+        "양다리 버트킥은 지지대는 안정적으로 줄여 갑니다",
+      ],
+    },
   },
   {
-    "exercise": {
-      "id": "verified-fast-skipping",
-      "name": "빠른 줄넘기",
-      "englishName": "Fast Skipping",
-      "category": "파워·민첩성",
-      "regions": [
-        "하체"
-      ],
-      "focus": "파워",
-      "difficulty": "입문",
-      "equipment": "장비 없음",
-      "minutes": "3–6회 · 2세트",
-      "description": "빠른 줄넘기은 대퇴사두근 주변을 통증 없는 범위에서 천천히 움직여 가동 범위와 자세 감각을 확인하는 모빌리티 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
-      "cues": [
+    exercise: {
+      id: "verified-fast-skipping",
+      name: "빠른 줄넘기",
+      englishName: "Fast Skipping",
+      category: "파워·민첩성",
+      regions: ["하체"],
+      focus: "파워",
+      difficulty: "입문",
+      equipment: "장비 없음",
+      minutes: "3–6회 · 2세트",
+      description:
+        "빠른 줄넘기은 대퇴사두근 주변을 통증 없는 범위에서 천천히 움직여 가동 범위와 자세 감각을 확인하는 모빌리티 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
+      cues: [
         "빠른 줄넘기에서 작은 범위에서 호흡을 멈추지 않기",
         "대퇴사두근을 느끼며 끝 범위를 밀지 말고 부드럽게 왕복",
-        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다"
+        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
       ],
-      "benefits": [
+      benefits: [
         "빠른 줄넘기으로 관절 위치와 범위 인식",
         "대퇴사두근을 활용한 편안한 움직임 준비",
-        "대퇴사두근의 움직임 경로 인식"
+        "대퇴사두근의 움직임 경로 인식",
       ],
-      "warning": "빠른 줄넘기 중 날카로운 통증, 저림, 방사통, 붓기·열감이 있으면 자가 진행을 멈추고 평가를 우선하세요.",
-      "reference": {
-        "label": "ACSM — Exercise Safety",
-        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
-      }
+      warning:
+        "빠른 줄넘기 중 날카로운 통증, 저림, 방사통, 붓기·열감이 있으면 자가 진행을 멈추고 평가를 우선하세요.",
+      reference: {
+        label: "ACSM — Exercise Safety",
+        url: "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/",
+      },
     },
-    "detail": {
-      "setup": [
+    detail: {
+      setup: [
         "장비 없음·바닥·주변 공간을 확인하고 가장 쉬운 범위로 한 번 리허설합니다",
         "발 또는 지지면을 단단히 고정하고 몸통을 길게 세웁니다",
-        "빠른 줄넘기에 맞춰 편안한 바닥·매트 또는 지지대를 준비합니다"
+        "빠른 줄넘기에 맞춰 편안한 바닥·매트 또는 지지대를 준비합니다",
       ],
-      "finish": "빠른 줄넘기을 마친 뒤 중립 자세로 천천히 돌아와 불편감이 남지 않는지 확인합니다.",
-      "commonMistakes": [
+      finish:
+        "빠른 줄넘기을 마친 뒤 중립 자세로 천천히 돌아와 불편감이 남지 않는지 확인합니다.",
+      commonMistakes: [
         "빠른 줄넘기에서 끝 범위를 억지로 밀어 통증을 만드는 경우",
         "빠른 줄넘기에서 호흡을 참거나 반동을 쓰는 경우",
-        "빠른 줄넘기에서 저림·방사통을 무시하고 지속하는 경우"
+        "빠른 줄넘기에서 저림·방사통을 무시하고 지속하는 경우",
       ],
-      "regressions": [
+      regressions: [
         "빠른 줄넘기은 범위와 유지 시간을 줄입니다",
         "빠른 줄넘기은 벽·의자·블록 같은 지지대를 사용합니다",
-        "빠른 줄넘기은 누운 또는 앉은 안정된 자세로 바꿉니다"
+        "빠른 줄넘기은 누운 또는 앉은 안정된 자세로 바꿉니다",
       ],
-      "progressions": [
+      progressions: [
         "빠른 줄넘기은 다음 날 편안하면 범위만 조금 늘립니다",
         "빠른 줄넘기은 호흡 주기를 한 번 추가합니다",
-        "빠른 줄넘기은 지지대는 안정적으로 줄여 갑니다"
-      ]
-    }
+        "빠른 줄넘기은 지지대는 안정적으로 줄여 갑니다",
+      ],
+    },
   },
   {
-    "exercise": {
-      "id": "verified-isometric-chest-squeezes",
-      "name": "등척성 체스트 스퀴즈",
-      "englishName": "Isometric Chest Squeezes",
-      "category": "파워·민첩성",
-      "regions": [
-        "가슴"
-      ],
-      "focus": "파워",
-      "difficulty": "입문",
-      "equipment": "장비 없음",
-      "minutes": "3–6회 · 2세트",
-      "description": "등척성 체스트 스퀴즈은 가슴 주변을 통증 없는 범위에서 천천히 움직여 가동 범위와 자세 감각을 확인하는 모빌리티 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
-      "cues": [
+    exercise: {
+      id: "verified-isometric-chest-squeezes",
+      name: "등척성 체스트 스퀴즈",
+      englishName: "Isometric Chest Squeezes",
+      category: "파워·민첩성",
+      regions: ["가슴"],
+      focus: "파워",
+      difficulty: "입문",
+      equipment: "장비 없음",
+      minutes: "3–6회 · 2세트",
+      description:
+        "등척성 체스트 스퀴즈은 가슴 주변을 통증 없는 범위에서 천천히 움직여 가동 범위와 자세 감각을 확인하는 모빌리티 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
+      cues: [
         "등척성 체스트 스퀴즈에서 작은 범위에서 호흡을 멈추지 않기",
         "가슴을 느끼며 끝 범위를 밀지 말고 부드럽게 왕복",
-        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다"
+        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
       ],
-      "benefits": [
+      benefits: [
         "등척성 체스트 스퀴즈으로 관절 위치와 범위 인식",
         "가슴을 활용한 편안한 움직임 준비",
-        "가슴의 움직임 경로 인식"
+        "가슴의 움직임 경로 인식",
       ],
-      "warning": "등척성 체스트 스퀴즈 중 날카로운 통증, 저림, 방사통, 붓기·열감이 있으면 자가 진행을 멈추고 평가를 우선하세요.",
-      "reference": {
-        "label": "ACSM — Exercise Safety",
-        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
-      }
+      warning:
+        "등척성 체스트 스퀴즈 중 날카로운 통증, 저림, 방사통, 붓기·열감이 있으면 자가 진행을 멈추고 평가를 우선하세요.",
+      reference: {
+        label: "ACSM — Exercise Safety",
+        url: "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/",
+      },
     },
-    "detail": {
-      "setup": [
+    detail: {
+      setup: [
         "장비 없음·바닥·주변 공간을 확인하고 가장 쉬운 범위로 한 번 리허설합니다",
         "발 또는 지지면을 단단히 고정하고 몸통을 길게 세웁니다",
-        "등척성 체스트 스퀴즈에 맞춰 편안한 바닥·매트 또는 지지대를 준비합니다"
+        "등척성 체스트 스퀴즈에 맞춰 편안한 바닥·매트 또는 지지대를 준비합니다",
       ],
-      "finish": "등척성 체스트 스퀴즈을 마친 뒤 중립 자세로 천천히 돌아와 불편감이 남지 않는지 확인합니다.",
-      "commonMistakes": [
+      finish:
+        "등척성 체스트 스퀴즈을 마친 뒤 중립 자세로 천천히 돌아와 불편감이 남지 않는지 확인합니다.",
+      commonMistakes: [
         "등척성 체스트 스퀴즈에서 끝 범위를 억지로 밀어 통증을 만드는 경우",
         "등척성 체스트 스퀴즈에서 호흡을 참거나 반동을 쓰는 경우",
-        "등척성 체스트 스퀴즈에서 저림·방사통을 무시하고 지속하는 경우"
+        "등척성 체스트 스퀴즈에서 저림·방사통을 무시하고 지속하는 경우",
       ],
-      "regressions": [
+      regressions: [
         "등척성 체스트 스퀴즈은 범위와 유지 시간을 줄입니다",
         "등척성 체스트 스퀴즈은 벽·의자·블록 같은 지지대를 사용합니다",
-        "등척성 체스트 스퀴즈은 누운 또는 앉은 안정된 자세로 바꿉니다"
+        "등척성 체스트 스퀴즈은 누운 또는 앉은 안정된 자세로 바꿉니다",
       ],
-      "progressions": [
+      progressions: [
         "등척성 체스트 스퀴즈은 다음 날 편안하면 범위만 조금 늘립니다",
         "등척성 체스트 스퀴즈은 호흡 주기를 한 번 추가합니다",
-        "등척성 체스트 스퀴즈은 지지대는 안정적으로 줄여 갑니다"
-      ]
-    }
+        "등척성 체스트 스퀴즈은 지지대는 안정적으로 줄여 갑니다",
+      ],
+    },
   },
   {
-    "exercise": {
-      "id": "verified-knee-tuck-jump",
-      "name": "니턱 점프",
-      "englishName": "Knee Tuck Jump",
-      "category": "파워·민첩성",
-      "regions": [
-        "하체",
-        "둔근"
-      ],
-      "focus": "파워",
-      "difficulty": "입문",
-      "equipment": "장비 없음",
-      "minutes": "3–6회 · 2세트",
-      "description": "니턱 점프은 햄스트링을 빠르게 쓰되 착지·받기·도구 경로를 먼저 통제해야 하는 파워 또는 기술 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
-      "cues": [
+    exercise: {
+      id: "verified-knee-tuck-jump",
+      name: "니턱 점프",
+      englishName: "Knee Tuck Jump",
+      category: "파워·민첩성",
+      regions: ["하체", "둔근"],
+      focus: "파워",
+      difficulty: "입문",
+      equipment: "장비 없음",
+      minutes: "3–6회 · 2세트",
+      description:
+        "니턱 점프은 햄스트링을 빠르게 쓰되 착지·받기·도구 경로를 먼저 통제해야 하는 파워 또는 기술 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
+      cues: [
         "니턱 점프에서 낮은 속도 리허설 뒤에만 힘을 빠르게 쓰기",
         "햄스트링을 느끼며 발·무릎·골반이 같은 방향으로 받기",
-        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다"
+        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
       ],
-      "benefits": [
+      benefits: [
         "니턱 점프으로 힘 발휘와 제어의 연결",
         "햄스트링을 활용한 착지·받기 협응",
-        "햄스트링의 움직임 경로 인식"
+        "햄스트링의 움직임 경로 인식",
       ],
-      "warning": "니턱 점프 중 착지 불안, 무릎·발목·허리 통증, 어지러움 또는 공간 부족이 있으면 즉시 중단하세요.",
-      "reference": {
-        "label": "ACSM — Exercise Safety",
-        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
-      }
+      warning:
+        "니턱 점프 중 착지 불안, 무릎·발목·허리 통증, 어지러움 또는 공간 부족이 있으면 즉시 중단하세요.",
+      reference: {
+        label: "ACSM — Exercise Safety",
+        url: "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/",
+      },
     },
-    "detail": {
-      "setup": [
+    detail: {
+      setup: [
         "장비 없음·바닥·주변 공간을 확인하고 가장 쉬운 범위로 한 번 리허설합니다",
         "발 또는 지지면을 단단히 고정하고 몸통을 길게 세웁니다",
-        "니턱 점프에 맞춰 미끄럽지 않은 바닥과 충분한 빈 공간을 확보합니다"
+        "니턱 점프에 맞춰 미끄럽지 않은 바닥과 충분한 빈 공간을 확보합니다",
       ],
-      "finish": "니턱 점프을 마친 뒤 착지 또는 받기 뒤 잠시 균형을 확인하고 호흡이 안정된 후 다음 반복을 시작합니다.",
-      "commonMistakes": [
+      finish:
+        "니턱 점프을 마친 뒤 착지 또는 받기 뒤 잠시 균형을 확인하고 호흡이 안정된 후 다음 반복을 시작합니다.",
+      commonMistakes: [
         "니턱 점프에서 피로한 상태에서 높이·속도·부하를 함께 올리는 경우",
         "니턱 점프에서 착지 소리와 무릎 흔들림을 무시하는 경우",
-        "니턱 점프에서 도구 경로가 불안정한데 반복을 이어 가는 경우"
+        "니턱 점프에서 도구 경로가 불안정한데 반복을 이어 가는 경우",
       ],
-      "regressions": [
+      regressions: [
         "니턱 점프은 점프·속도를 빼고 체중 이동으로 바꿉니다",
         "니턱 점프은 낮은 높이·짧은 거리·가벼운 도구를 사용합니다",
-        "니턱 점프은 지지대 가까이에서 받기 자세만 연습합니다"
+        "니턱 점프은 지지대 가까이에서 받기 자세만 연습합니다",
       ],
-      "progressions": [
+      progressions: [
         "니턱 점프은 안정된 착지 뒤 반복을 한두 회 늘립니다",
         "니턱 점프은 한 번에 거리·높이·부하 중 하나만 조절합니다",
-        "니턱 점프은 복잡한 연속 동작은 기본 패턴이 안정된 뒤 시도합니다"
-      ]
-    }
+        "니턱 점프은 복잡한 연속 동작은 기본 패턴이 안정된 뒤 시도합니다",
+      ],
+    },
   },
   {
-    "exercise": {
-      "id": "verified-lateral-bound",
-      "name": "사이드 바운드",
-      "englishName": "Lateral Bound",
-      "category": "파워·민첩성",
-      "regions": [
-        "하체"
-      ],
-      "focus": "파워",
-      "difficulty": "입문",
-      "equipment": "장비 없음",
-      "minutes": "3–6회 · 2세트",
-      "description": "사이드 바운드은 허벅지 안쪽을 사용해 팔 또는 도구를 정해진 평면으로 들어 올리며 어깨 위치를 제어하는 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
-      "cues": [
+    exercise: {
+      id: "verified-lateral-bound",
+      name: "사이드 바운드",
+      englishName: "Lateral Bound",
+      category: "파워·민첩성",
+      regions: ["하체"],
+      focus: "파워",
+      difficulty: "입문",
+      equipment: "장비 없음",
+      minutes: "3–6회 · 2세트",
+      description:
+        "사이드 바운드은 허벅지 안쪽을 사용해 팔 또는 도구를 정해진 평면으로 들어 올리며 어깨 위치를 제어하는 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
+      cues: [
         "사이드 바운드에서 어깨를 귀에서 멀리 두고 목을 길게 유지",
         "허벅지 안쪽을 느끼며 도구를 몸에서 너무 멀리 보내지 않기",
-        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다"
+        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
       ],
-      "benefits": [
+      benefits: [
         "사이드 바운드으로 어깨 주변의 제어",
         "허벅지 안쪽을 활용한 팔과 견갑의 협응",
-        "허벅지 안쪽의 움직임 경로 인식"
+        "허벅지 안쪽의 움직임 경로 인식",
       ],
-      "warning": "사이드 바운드 중 어깨 위쪽 통증, 목 긴장, 저림 또는 반동이 생기면 즉시 범위·저항을 낮추거나 중단하세요.",
-      "reference": {
-        "label": "ACSM — Exercise Safety",
-        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
-      }
+      warning:
+        "사이드 바운드 중 어깨 위쪽 통증, 목 긴장, 저림 또는 반동이 생기면 즉시 범위·저항을 낮추거나 중단하세요.",
+      reference: {
+        label: "ACSM — Exercise Safety",
+        url: "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/",
+      },
     },
-    "detail": {
-      "setup": [
+    detail: {
+      setup: [
         "장비 없음·바닥·주변 공간을 확인하고 가장 쉬운 범위로 한 번 리허설합니다",
         "발 또는 지지면을 단단히 고정하고 몸통을 길게 세웁니다",
-        "사이드 바운드에 맞춰 낮은 중량으로 시작하고 양발 또는 벤치 지지로 균형을 만듭니다"
+        "사이드 바운드에 맞춰 낮은 중량으로 시작하고 양발 또는 벤치 지지로 균형을 만듭니다",
       ],
-      "finish": "사이드 바운드을 마친 뒤 어깨가 앞으로 밀리지 않게 도구를 몸 옆으로 통제해 되돌립니다.",
-      "commonMistakes": [
+      finish:
+        "사이드 바운드을 마친 뒤 어깨가 앞으로 밀리지 않게 도구를 몸 옆으로 통제해 되돌립니다.",
+      commonMistakes: [
         "사이드 바운드에서 어깨를 으쓱하며 목에 힘을 주는 경우",
         "사이드 바운드에서 반동으로 도구를 목표 높이보다 높게 던지는 경우",
-        "사이드 바운드에서 손목을 꺾어 도구를 지지하는 경우"
+        "사이드 바운드에서 손목을 꺾어 도구를 지지하는 경우",
       ],
-      "regressions": [
+      regressions: [
         "사이드 바운드은 중량을 낮추거나 한 팔씩 지지된 자세로 수행합니다",
         "사이드 바운드은 들기 높이를 어깨 아래로 줄입니다",
-        "사이드 바운드은 밴드 또는 더 짧은 지렛대를 사용합니다"
+        "사이드 바운드은 밴드 또는 더 짧은 지렛대를 사용합니다",
       ],
-      "progressions": [
+      progressions: [
         "사이드 바운드은 동일한 높이와 정렬에서 반복을 늘립니다",
         "사이드 바운드은 작은 중량 증가를 한 번만 적용합니다",
-        "사이드 바운드은 편측·인클라인 변형은 어깨가 편안할 때 시도합니다"
-      ]
-    }
+        "사이드 바운드은 편측·인클라인 변형은 어깨가 편안할 때 시도합니다",
+      ],
+    },
   },
   {
-    "exercise": {
-      "id": "verified-plyo-push-up",
-      "name": "플라이오 푸시업",
-      "englishName": "Plyo Push-up",
-      "category": "파워·민첩성",
-      "regions": [
-        "가슴"
-      ],
-      "focus": "파워",
-      "difficulty": "입문",
-      "equipment": "장비 없음",
-      "minutes": "3–6회 · 2세트",
-      "description": "플라이오 푸시업은 가슴을 사용해 손잡이·도구 또는 바닥을 몸에서 멀어지게 미는 상체 밀기 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
-      "cues": [
+    exercise: {
+      id: "verified-plyo-push-up",
+      name: "플라이오 푸시업",
+      englishName: "Plyo Push-up",
+      category: "파워·민첩성",
+      regions: ["가슴"],
+      focus: "파워",
+      difficulty: "입문",
+      equipment: "장비 없음",
+      minutes: "3–6회 · 2세트",
+      description:
+        "플라이오 푸시업은 가슴을 사용해 손잡이·도구 또는 바닥을 몸에서 멀어지게 미는 상체 밀기 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
+      cues: [
         "플라이오 푸시업에서 손목을 중립에 가깝게 두고 손잡이를 안정적으로 잡기",
         "가슴을 느끼며 갈비뼈를 과하게 들지 않고 몸통 길이 유지",
-        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다"
+        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
       ],
-      "benefits": [
+      benefits: [
         "플라이오 푸시업으로 가슴·어깨·팔의 밀기 협응",
         "가슴을 활용한 손목과 견갑 안정 제어",
-        "가슴의 움직임 경로 인식"
+        "가슴의 움직임 경로 인식",
       ],
-      "warning": "플라이오 푸시업 중 어깨·팔꿈치·손목 통증, 저림 또는 도구 흔들림이 있으면 즉시 멈추고 설정을 다시 확인하세요.",
-      "reference": {
-        "label": "ACSM — Exercise Safety",
-        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
-      }
+      warning:
+        "플라이오 푸시업 중 어깨·팔꿈치·손목 통증, 저림 또는 도구 흔들림이 있으면 즉시 멈추고 설정을 다시 확인하세요.",
+      reference: {
+        label: "ACSM — Exercise Safety",
+        url: "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/",
+      },
     },
-    "detail": {
-      "setup": [
+    detail: {
+      setup: [
         "장비 없음·바닥·주변 공간을 확인하고 가장 쉬운 범위로 한 번 리허설합니다",
         "발 또는 지지면을 단단히 고정하고 몸통을 길게 세웁니다",
-        "플라이오 푸시업에 맞춰 손잡이·바·지지면의 높이와 좌우 설정을 확인합니다"
+        "플라이오 푸시업에 맞춰 손잡이·바·지지면의 높이와 좌우 설정을 확인합니다",
       ],
-      "finish": "플라이오 푸시업을 마친 뒤 팔꿈치를 잠그지 않은 편안한 끝 범위에서 잠시 멈춘 뒤 같은 경로로 돌아옵니다.",
-      "commonMistakes": [
+      finish:
+        "플라이오 푸시업을 마친 뒤 팔꿈치를 잠그지 않은 편안한 끝 범위에서 잠시 멈춘 뒤 같은 경로로 돌아옵니다.",
+      commonMistakes: [
         "플라이오 푸시업에서 어깨가 앞으로 말린 채 밀어 올리는 경우",
         "플라이오 푸시업에서 허리를 과하게 젖혀 무게를 넘기는 경우",
-        "플라이오 푸시업에서 손목을 꺾고 그립을 느슨하게 유지하는 경우"
+        "플라이오 푸시업에서 손목을 꺾고 그립을 느슨하게 유지하는 경우",
       ],
-      "regressions": [
+      regressions: [
         "플라이오 푸시업은 벽·높은 벤치 또는 가벼운 저항으로 바꿉니다",
         "플라이오 푸시업은 가동 범위를 줄이고 어깨 편안함을 확인합니다",
-        "플라이오 푸시업은 양손 지지로 안정성을 먼저 확보합니다"
+        "플라이오 푸시업은 양손 지지로 안정성을 먼저 확보합니다",
       ],
-      "progressions": [
+      progressions: [
         "플라이오 푸시업은 정렬이 유지될 때 반복을 소폭 늘립니다",
         "플라이오 푸시업은 안정된 지지면에서 저항을 한 단계만 올립니다",
-        "플라이오 푸시업은 낮은 지지 또는 편측 변형은 통제 후 시도합니다"
-      ]
-    }
+        "플라이오 푸시업은 낮은 지지 또는 편측 변형은 통제 후 시도합니다",
+      ],
+    },
   },
   {
-    "exercise": {
-      "id": "verified-rocket-jump",
-      "name": "로켓 점프",
-      "englishName": "Rocket Jump",
-      "category": "파워·민첩성",
-      "regions": [
-        "하체"
-      ],
-      "focus": "파워",
-      "difficulty": "입문",
-      "equipment": "장비 없음",
-      "minutes": "3–6회 · 2세트",
-      "description": "로켓 점프은 대퇴사두근을 빠르게 쓰되 착지·받기·도구 경로를 먼저 통제해야 하는 파워 또는 기술 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
-      "cues": [
+    exercise: {
+      id: "verified-rocket-jump",
+      name: "로켓 점프",
+      englishName: "Rocket Jump",
+      category: "파워·민첩성",
+      regions: ["하체"],
+      focus: "파워",
+      difficulty: "입문",
+      equipment: "장비 없음",
+      minutes: "3–6회 · 2세트",
+      description:
+        "로켓 점프은 대퇴사두근을 빠르게 쓰되 착지·받기·도구 경로를 먼저 통제해야 하는 파워 또는 기술 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
+      cues: [
         "로켓 점프에서 낮은 속도 리허설 뒤에만 힘을 빠르게 쓰기",
         "대퇴사두근을 느끼며 발·무릎·골반이 같은 방향으로 받기",
-        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다"
+        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
       ],
-      "benefits": [
+      benefits: [
         "로켓 점프으로 힘 발휘와 제어의 연결",
         "대퇴사두근을 활용한 착지·받기 협응",
-        "대퇴사두근의 움직임 경로 인식"
+        "대퇴사두근의 움직임 경로 인식",
       ],
-      "warning": "로켓 점프 중 착지 불안, 무릎·발목·허리 통증, 어지러움 또는 공간 부족이 있으면 즉시 중단하세요.",
-      "reference": {
-        "label": "ACSM — Exercise Safety",
-        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
-      }
+      warning:
+        "로켓 점프 중 착지 불안, 무릎·발목·허리 통증, 어지러움 또는 공간 부족이 있으면 즉시 중단하세요.",
+      reference: {
+        label: "ACSM — Exercise Safety",
+        url: "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/",
+      },
     },
-    "detail": {
-      "setup": [
+    detail: {
+      setup: [
         "장비 없음·바닥·주변 공간을 확인하고 가장 쉬운 범위로 한 번 리허설합니다",
         "발 또는 지지면을 단단히 고정하고 몸통을 길게 세웁니다",
-        "로켓 점프에 맞춰 미끄럽지 않은 바닥과 충분한 빈 공간을 확보합니다"
+        "로켓 점프에 맞춰 미끄럽지 않은 바닥과 충분한 빈 공간을 확보합니다",
       ],
-      "finish": "로켓 점프을 마친 뒤 착지 또는 받기 뒤 잠시 균형을 확인하고 호흡이 안정된 후 다음 반복을 시작합니다.",
-      "commonMistakes": [
+      finish:
+        "로켓 점프을 마친 뒤 착지 또는 받기 뒤 잠시 균형을 확인하고 호흡이 안정된 후 다음 반복을 시작합니다.",
+      commonMistakes: [
         "로켓 점프에서 피로한 상태에서 높이·속도·부하를 함께 올리는 경우",
         "로켓 점프에서 착지 소리와 무릎 흔들림을 무시하는 경우",
-        "로켓 점프에서 도구 경로가 불안정한데 반복을 이어 가는 경우"
+        "로켓 점프에서 도구 경로가 불안정한데 반복을 이어 가는 경우",
       ],
-      "regressions": [
+      regressions: [
         "로켓 점프은 점프·속도를 빼고 체중 이동으로 바꿉니다",
         "로켓 점프은 낮은 높이·짧은 거리·가벼운 도구를 사용합니다",
-        "로켓 점프은 지지대 가까이에서 받기 자세만 연습합니다"
+        "로켓 점프은 지지대 가까이에서 받기 자세만 연습합니다",
       ],
-      "progressions": [
+      progressions: [
         "로켓 점프은 안정된 착지 뒤 반복을 한두 회 늘립니다",
         "로켓 점프은 한 번에 거리·높이·부하 중 하나만 조절합니다",
-        "로켓 점프은 복잡한 연속 동작은 기본 패턴이 안정된 뒤 시도합니다"
-      ]
-    }
+        "로켓 점프은 복잡한 연속 동작은 기본 패턴이 안정된 뒤 시도합니다",
+      ],
+    },
   },
   {
-    "exercise": {
-      "id": "verified-scissors-jump",
-      "name": "가위 점프",
-      "englishName": "Scissors Jump",
-      "category": "파워·민첩성",
-      "regions": [
-        "하체"
-      ],
-      "focus": "파워",
-      "difficulty": "입문",
-      "equipment": "장비 없음",
-      "minutes": "3–6회 · 2세트",
-      "description": "가위 점프은 대퇴사두근을 빠르게 쓰되 착지·받기·도구 경로를 먼저 통제해야 하는 파워 또는 기술 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
-      "cues": [
+    exercise: {
+      id: "verified-scissors-jump",
+      name: "가위 점프",
+      englishName: "Scissors Jump",
+      category: "파워·민첩성",
+      regions: ["하체"],
+      focus: "파워",
+      difficulty: "입문",
+      equipment: "장비 없음",
+      minutes: "3–6회 · 2세트",
+      description:
+        "가위 점프은 대퇴사두근을 빠르게 쓰되 착지·받기·도구 경로를 먼저 통제해야 하는 파워 또는 기술 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
+      cues: [
         "가위 점프에서 낮은 속도 리허설 뒤에만 힘을 빠르게 쓰기",
         "대퇴사두근을 느끼며 발·무릎·골반이 같은 방향으로 받기",
-        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다"
+        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
       ],
-      "benefits": [
+      benefits: [
         "가위 점프으로 힘 발휘와 제어의 연결",
         "대퇴사두근을 활용한 착지·받기 협응",
-        "대퇴사두근의 움직임 경로 인식"
+        "대퇴사두근의 움직임 경로 인식",
       ],
-      "warning": "가위 점프 중 착지 불안, 무릎·발목·허리 통증, 어지러움 또는 공간 부족이 있으면 즉시 중단하세요.",
-      "reference": {
-        "label": "ACSM — Exercise Safety",
-        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
-      }
+      warning:
+        "가위 점프 중 착지 불안, 무릎·발목·허리 통증, 어지러움 또는 공간 부족이 있으면 즉시 중단하세요.",
+      reference: {
+        label: "ACSM — Exercise Safety",
+        url: "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/",
+      },
     },
-    "detail": {
-      "setup": [
+    detail: {
+      setup: [
         "장비 없음·바닥·주변 공간을 확인하고 가장 쉬운 범위로 한 번 리허설합니다",
         "발 또는 지지면을 단단히 고정하고 몸통을 길게 세웁니다",
-        "가위 점프에 맞춰 미끄럽지 않은 바닥과 충분한 빈 공간을 확보합니다"
+        "가위 점프에 맞춰 미끄럽지 않은 바닥과 충분한 빈 공간을 확보합니다",
       ],
-      "finish": "가위 점프을 마친 뒤 착지 또는 받기 뒤 잠시 균형을 확인하고 호흡이 안정된 후 다음 반복을 시작합니다.",
-      "commonMistakes": [
+      finish:
+        "가위 점프을 마친 뒤 착지 또는 받기 뒤 잠시 균형을 확인하고 호흡이 안정된 후 다음 반복을 시작합니다.",
+      commonMistakes: [
         "가위 점프에서 피로한 상태에서 높이·속도·부하를 함께 올리는 경우",
         "가위 점프에서 착지 소리와 무릎 흔들림을 무시하는 경우",
-        "가위 점프에서 도구 경로가 불안정한데 반복을 이어 가는 경우"
+        "가위 점프에서 도구 경로가 불안정한데 반복을 이어 가는 경우",
       ],
-      "regressions": [
+      regressions: [
         "가위 점프은 점프·속도를 빼고 체중 이동으로 바꿉니다",
         "가위 점프은 낮은 높이·짧은 거리·가벼운 도구를 사용합니다",
-        "가위 점프은 지지대 가까이에서 받기 자세만 연습합니다"
+        "가위 점프은 지지대 가까이에서 받기 자세만 연습합니다",
       ],
-      "progressions": [
+      progressions: [
         "가위 점프은 안정된 착지 뒤 반복을 한두 회 늘립니다",
         "가위 점프은 한 번에 거리·높이·부하 중 하나만 조절합니다",
-        "가위 점프은 복잡한 연속 동작은 기본 패턴이 안정된 뒤 시도합니다"
-      ]
-    }
+        "가위 점프은 복잡한 연속 동작은 기본 패턴이 안정된 뒤 시도합니다",
+      ],
+    },
   },
   {
-    "exercise": {
-      "id": "verified-single-leg-butt-kick",
-      "name": "한다리 버트킥",
-      "englishName": "Single Leg Butt Kick",
-      "category": "파워·민첩성",
-      "regions": [
-        "하체"
-      ],
-      "focus": "파워",
-      "difficulty": "입문",
-      "equipment": "장비 없음",
-      "minutes": "3–6회 · 2세트",
-      "description": "한다리 버트킥은 대퇴사두근 주변을 통증 없는 범위에서 천천히 움직여 가동 범위와 자세 감각을 확인하는 모빌리티 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
-      "cues": [
+    exercise: {
+      id: "verified-single-leg-butt-kick",
+      name: "한다리 버트킥",
+      englishName: "Single Leg Butt Kick",
+      category: "파워·민첩성",
+      regions: ["하체"],
+      focus: "파워",
+      difficulty: "입문",
+      equipment: "장비 없음",
+      minutes: "3–6회 · 2세트",
+      description:
+        "한다리 버트킥은 대퇴사두근 주변을 통증 없는 범위에서 천천히 움직여 가동 범위와 자세 감각을 확인하는 모빌리티 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
+      cues: [
         "한다리 버트킥에서 작은 범위에서 호흡을 멈추지 않기",
         "대퇴사두근을 느끼며 끝 범위를 밀지 말고 부드럽게 왕복",
-        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다"
+        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
       ],
-      "benefits": [
+      benefits: [
         "한다리 버트킥으로 관절 위치와 범위 인식",
         "대퇴사두근을 활용한 편안한 움직임 준비",
-        "대퇴사두근의 움직임 경로 인식"
+        "대퇴사두근의 움직임 경로 인식",
       ],
-      "warning": "한다리 버트킥 중 날카로운 통증, 저림, 방사통, 붓기·열감이 있으면 자가 진행을 멈추고 평가를 우선하세요.",
-      "reference": {
-        "label": "ACSM — Exercise Safety",
-        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
-      }
+      warning:
+        "한다리 버트킥 중 날카로운 통증, 저림, 방사통, 붓기·열감이 있으면 자가 진행을 멈추고 평가를 우선하세요.",
+      reference: {
+        label: "ACSM — Exercise Safety",
+        url: "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/",
+      },
     },
-    "detail": {
-      "setup": [
+    detail: {
+      setup: [
         "장비 없음·바닥·주변 공간을 확인하고 가장 쉬운 범위로 한 번 리허설합니다",
         "지지 발 전체를 바닥에 두고 벽이나 벤치 가까이에서 균형을 준비합니다",
-        "한다리 버트킥에 맞춰 편안한 바닥·매트 또는 지지대를 준비합니다"
+        "한다리 버트킥에 맞춰 편안한 바닥·매트 또는 지지대를 준비합니다",
       ],
-      "finish": "한다리 버트킥을 마친 뒤 중립 자세로 천천히 돌아와 불편감이 남지 않는지 확인합니다.",
-      "commonMistakes": [
+      finish:
+        "한다리 버트킥을 마친 뒤 중립 자세로 천천히 돌아와 불편감이 남지 않는지 확인합니다.",
+      commonMistakes: [
         "한다리 버트킥에서 끝 범위를 억지로 밀어 통증을 만드는 경우",
         "한다리 버트킥에서 호흡을 참거나 반동을 쓰는 경우",
-        "한다리 버트킥에서 저림·방사통을 무시하고 지속하는 경우"
+        "한다리 버트킥에서 저림·방사통을 무시하고 지속하는 경우",
       ],
-      "regressions": [
+      regressions: [
         "한다리 버트킥은 범위와 유지 시간을 줄입니다",
         "한다리 버트킥은 벽·의자·블록 같은 지지대를 사용합니다",
-        "한다리 버트킥은 누운 또는 앉은 안정된 자세로 바꿉니다"
+        "한다리 버트킥은 누운 또는 앉은 안정된 자세로 바꿉니다",
       ],
-      "progressions": [
+      progressions: [
         "한다리 버트킥은 다음 날 편안하면 범위만 조금 늘립니다",
         "한다리 버트킥은 호흡 주기를 한 번 추가합니다",
-        "한다리 버트킥은 지지대는 안정적으로 줄여 갑니다"
-      ]
-    }
+        "한다리 버트킥은 지지대는 안정적으로 줄여 갑니다",
+      ],
+    },
   },
   {
-    "exercise": {
-      "id": "verified-split-jump",
-      "name": "스플릿 점프",
-      "englishName": "Split Jump",
-      "category": "파워·민첩성",
-      "regions": [
-        "하체"
-      ],
-      "focus": "파워",
-      "difficulty": "입문",
-      "equipment": "장비 없음",
-      "minutes": "3–6회 · 2세트",
-      "description": "스플릿 점프은 대퇴사두근을 빠르게 쓰되 착지·받기·도구 경로를 먼저 통제해야 하는 파워 또는 기술 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
-      "cues": [
+    exercise: {
+      id: "verified-split-jump",
+      name: "스플릿 점프",
+      englishName: "Split Jump",
+      category: "파워·민첩성",
+      regions: ["하체"],
+      focus: "파워",
+      difficulty: "입문",
+      equipment: "장비 없음",
+      minutes: "3–6회 · 2세트",
+      description:
+        "스플릿 점프은 대퇴사두근을 빠르게 쓰되 착지·받기·도구 경로를 먼저 통제해야 하는 파워 또는 기술 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
+      cues: [
         "스플릿 점프에서 낮은 속도 리허설 뒤에만 힘을 빠르게 쓰기",
         "대퇴사두근을 느끼며 발·무릎·골반이 같은 방향으로 받기",
-        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다"
+        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
       ],
-      "benefits": [
+      benefits: [
         "스플릿 점프으로 힘 발휘와 제어의 연결",
         "대퇴사두근을 활용한 착지·받기 협응",
-        "대퇴사두근의 움직임 경로 인식"
+        "대퇴사두근의 움직임 경로 인식",
       ],
-      "warning": "스플릿 점프 중 착지 불안, 무릎·발목·허리 통증, 어지러움 또는 공간 부족이 있으면 즉시 중단하세요.",
-      "reference": {
-        "label": "ACSM — Exercise Safety",
-        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
-      }
+      warning:
+        "스플릿 점프 중 착지 불안, 무릎·발목·허리 통증, 어지러움 또는 공간 부족이 있으면 즉시 중단하세요.",
+      reference: {
+        label: "ACSM — Exercise Safety",
+        url: "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/",
+      },
     },
-    "detail": {
-      "setup": [
+    detail: {
+      setup: [
         "장비 없음·바닥·주변 공간을 확인하고 가장 쉬운 범위로 한 번 리허설합니다",
         "발 또는 지지면을 단단히 고정하고 몸통을 길게 세웁니다",
-        "스플릿 점프에 맞춰 미끄럽지 않은 바닥과 충분한 빈 공간을 확보합니다"
+        "스플릿 점프에 맞춰 미끄럽지 않은 바닥과 충분한 빈 공간을 확보합니다",
       ],
-      "finish": "스플릿 점프을 마친 뒤 착지 또는 받기 뒤 잠시 균형을 확인하고 호흡이 안정된 후 다음 반복을 시작합니다.",
-      "commonMistakes": [
+      finish:
+        "스플릿 점프을 마친 뒤 착지 또는 받기 뒤 잠시 균형을 확인하고 호흡이 안정된 후 다음 반복을 시작합니다.",
+      commonMistakes: [
         "스플릿 점프에서 피로한 상태에서 높이·속도·부하를 함께 올리는 경우",
         "스플릿 점프에서 착지 소리와 무릎 흔들림을 무시하는 경우",
-        "스플릿 점프에서 도구 경로가 불안정한데 반복을 이어 가는 경우"
+        "스플릿 점프에서 도구 경로가 불안정한데 반복을 이어 가는 경우",
       ],
-      "regressions": [
+      regressions: [
         "스플릿 점프은 점프·속도를 빼고 체중 이동으로 바꿉니다",
         "스플릿 점프은 낮은 높이·짧은 거리·가벼운 도구를 사용합니다",
-        "스플릿 점프은 지지대 가까이에서 받기 자세만 연습합니다"
+        "스플릿 점프은 지지대 가까이에서 받기 자세만 연습합니다",
       ],
-      "progressions": [
+      progressions: [
         "스플릿 점프은 안정된 착지 뒤 반복을 한두 회 늘립니다",
         "스플릿 점프은 한 번에 거리·높이·부하 중 하나만 조절합니다",
-        "스플릿 점프은 복잡한 연속 동작은 기본 패턴이 안정된 뒤 시도합니다"
-      ]
-    }
+        "스플릿 점프은 복잡한 연속 동작은 기본 패턴이 안정된 뒤 시도합니다",
+      ],
+    },
   },
   {
-    "exercise": {
-      "id": "verified-standing-long-jump",
-      "name": "제자리 멀리뛰기",
-      "englishName": "Standing Long Jump",
-      "category": "파워·민첩성",
-      "regions": [
-        "하체"
-      ],
-      "focus": "파워",
-      "difficulty": "입문",
-      "equipment": "장비 없음",
-      "minutes": "3–6회 · 2세트",
-      "description": "제자리 멀리뛰기은 대퇴사두근을 빠르게 쓰되 착지·받기·도구 경로를 먼저 통제해야 하는 파워 또는 기술 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
-      "cues": [
+    exercise: {
+      id: "verified-standing-long-jump",
+      name: "제자리 멀리뛰기",
+      englishName: "Standing Long Jump",
+      category: "파워·민첩성",
+      regions: ["하체"],
+      focus: "파워",
+      difficulty: "입문",
+      equipment: "장비 없음",
+      minutes: "3–6회 · 2세트",
+      description:
+        "제자리 멀리뛰기은 대퇴사두근을 빠르게 쓰되 착지·받기·도구 경로를 먼저 통제해야 하는 파워 또는 기술 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
+      cues: [
         "제자리 멀리뛰기에서 낮은 속도 리허설 뒤에만 힘을 빠르게 쓰기",
         "대퇴사두근을 느끼며 발·무릎·골반이 같은 방향으로 받기",
-        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다"
+        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
       ],
-      "benefits": [
+      benefits: [
         "제자리 멀리뛰기으로 힘 발휘와 제어의 연결",
         "대퇴사두근을 활용한 착지·받기 협응",
-        "대퇴사두근의 움직임 경로 인식"
+        "대퇴사두근의 움직임 경로 인식",
       ],
-      "warning": "제자리 멀리뛰기 중 착지 불안, 무릎·발목·허리 통증, 어지러움 또는 공간 부족이 있으면 즉시 중단하세요.",
-      "reference": {
-        "label": "ACSM — Exercise Safety",
-        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
-      }
+      warning:
+        "제자리 멀리뛰기 중 착지 불안, 무릎·발목·허리 통증, 어지러움 또는 공간 부족이 있으면 즉시 중단하세요.",
+      reference: {
+        label: "ACSM — Exercise Safety",
+        url: "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/",
+      },
     },
-    "detail": {
-      "setup": [
+    detail: {
+      setup: [
         "장비 없음·바닥·주변 공간을 확인하고 가장 쉬운 범위로 한 번 리허설합니다",
         "발 또는 지지면을 단단히 고정하고 몸통을 길게 세웁니다",
-        "제자리 멀리뛰기에 맞춰 미끄럽지 않은 바닥과 충분한 빈 공간을 확보합니다"
+        "제자리 멀리뛰기에 맞춰 미끄럽지 않은 바닥과 충분한 빈 공간을 확보합니다",
       ],
-      "finish": "제자리 멀리뛰기을 마친 뒤 착지 또는 받기 뒤 잠시 균형을 확인하고 호흡이 안정된 후 다음 반복을 시작합니다.",
-      "commonMistakes": [
+      finish:
+        "제자리 멀리뛰기을 마친 뒤 착지 또는 받기 뒤 잠시 균형을 확인하고 호흡이 안정된 후 다음 반복을 시작합니다.",
+      commonMistakes: [
         "제자리 멀리뛰기에서 피로한 상태에서 높이·속도·부하를 함께 올리는 경우",
         "제자리 멀리뛰기에서 착지 소리와 무릎 흔들림을 무시하는 경우",
-        "제자리 멀리뛰기에서 도구 경로가 불안정한데 반복을 이어 가는 경우"
+        "제자리 멀리뛰기에서 도구 경로가 불안정한데 반복을 이어 가는 경우",
       ],
-      "regressions": [
+      regressions: [
         "제자리 멀리뛰기은 점프·속도를 빼고 체중 이동으로 바꿉니다",
         "제자리 멀리뛰기은 낮은 높이·짧은 거리·가벼운 도구를 사용합니다",
-        "제자리 멀리뛰기은 지지대 가까이에서 받기 자세만 연습합니다"
+        "제자리 멀리뛰기은 지지대 가까이에서 받기 자세만 연습합니다",
       ],
-      "progressions": [
+      progressions: [
         "제자리 멀리뛰기은 안정된 착지 뒤 반복을 한두 회 늘립니다",
         "제자리 멀리뛰기은 한 번에 거리·높이·부하 중 하나만 조절합니다",
-        "제자리 멀리뛰기은 복잡한 연속 동작은 기본 패턴이 안정된 뒤 시도합니다"
-      ]
-    }
+        "제자리 멀리뛰기은 복잡한 연속 동작은 기본 패턴이 안정된 뒤 시도합니다",
+      ],
+    },
   },
   {
-    "exercise": {
-      "id": "verified-star-jump",
-      "name": "스타 점프",
-      "englishName": "Star Jump",
-      "category": "파워·민첩성",
-      "regions": [
-        "하체"
-      ],
-      "focus": "파워",
-      "difficulty": "입문",
-      "equipment": "장비 없음",
-      "minutes": "3–6회 · 2세트",
-      "description": "스타 점프은 대퇴사두근을 빠르게 쓰되 착지·받기·도구 경로를 먼저 통제해야 하는 파워 또는 기술 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
-      "cues": [
+    exercise: {
+      id: "verified-star-jump",
+      name: "스타 점프",
+      englishName: "Star Jump",
+      category: "파워·민첩성",
+      regions: ["하체"],
+      focus: "파워",
+      difficulty: "입문",
+      equipment: "장비 없음",
+      minutes: "3–6회 · 2세트",
+      description:
+        "스타 점프은 대퇴사두근을 빠르게 쓰되 착지·받기·도구 경로를 먼저 통제해야 하는 파워 또는 기술 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
+      cues: [
         "스타 점프에서 낮은 속도 리허설 뒤에만 힘을 빠르게 쓰기",
         "대퇴사두근을 느끼며 발·무릎·골반이 같은 방향으로 받기",
-        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다"
+        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
       ],
-      "benefits": [
+      benefits: [
         "스타 점프으로 힘 발휘와 제어의 연결",
         "대퇴사두근을 활용한 착지·받기 협응",
-        "대퇴사두근의 움직임 경로 인식"
+        "대퇴사두근의 움직임 경로 인식",
       ],
-      "warning": "스타 점프 중 착지 불안, 무릎·발목·허리 통증, 어지러움 또는 공간 부족이 있으면 즉시 중단하세요.",
-      "reference": {
-        "label": "ACSM — Exercise Safety",
-        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
-      }
+      warning:
+        "스타 점프 중 착지 불안, 무릎·발목·허리 통증, 어지러움 또는 공간 부족이 있으면 즉시 중단하세요.",
+      reference: {
+        label: "ACSM — Exercise Safety",
+        url: "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/",
+      },
     },
-    "detail": {
-      "setup": [
+    detail: {
+      setup: [
         "장비 없음·바닥·주변 공간을 확인하고 가장 쉬운 범위로 한 번 리허설합니다",
         "발 또는 지지면을 단단히 고정하고 몸통을 길게 세웁니다",
-        "스타 점프에 맞춰 미끄럽지 않은 바닥과 충분한 빈 공간을 확보합니다"
+        "스타 점프에 맞춰 미끄럽지 않은 바닥과 충분한 빈 공간을 확보합니다",
       ],
-      "finish": "스타 점프을 마친 뒤 착지 또는 받기 뒤 잠시 균형을 확인하고 호흡이 안정된 후 다음 반복을 시작합니다.",
-      "commonMistakes": [
+      finish:
+        "스타 점프을 마친 뒤 착지 또는 받기 뒤 잠시 균형을 확인하고 호흡이 안정된 후 다음 반복을 시작합니다.",
+      commonMistakes: [
         "스타 점프에서 피로한 상태에서 높이·속도·부하를 함께 올리는 경우",
         "스타 점프에서 착지 소리와 무릎 흔들림을 무시하는 경우",
-        "스타 점프에서 도구 경로가 불안정한데 반복을 이어 가는 경우"
+        "스타 점프에서 도구 경로가 불안정한데 반복을 이어 가는 경우",
       ],
-      "regressions": [
+      regressions: [
         "스타 점프은 점프·속도를 빼고 체중 이동으로 바꿉니다",
         "스타 점프은 낮은 높이·짧은 거리·가벼운 도구를 사용합니다",
-        "스타 점프은 지지대 가까이에서 받기 자세만 연습합니다"
+        "스타 점프은 지지대 가까이에서 받기 자세만 연습합니다",
       ],
-      "progressions": [
+      progressions: [
         "스타 점프은 안정된 착지 뒤 반복을 한두 회 늘립니다",
         "스타 점프은 한 번에 거리·높이·부하 중 하나만 조절합니다",
-        "스타 점프은 복잡한 연속 동작은 기본 패턴이 안정된 뒤 시도합니다"
-      ]
-    }
+        "스타 점프은 복잡한 연속 동작은 기본 패턴이 안정된 뒤 시도합니다",
+      ],
+    },
   },
   {
-    "exercise": {
-      "id": "verified-dumbbell-seated-box-jump",
-      "name": "덤벨 착석 박스 점프",
-      "englishName": "Dumbbell Seated Box Jump",
-      "category": "파워·민첩성",
-      "regions": [
-        "하체"
-      ],
-      "focus": "파워",
-      "difficulty": "중급",
-      "equipment": "덤벨·안정된 지지면 선택",
-      "minutes": "3–6회 · 2세트",
-      "description": "덤벨 착석 박스 점프은 대퇴사두근을 빠르게 쓰되 착지·받기·도구 경로를 먼저 통제해야 하는 파워 또는 기술 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
-      "cues": [
+    exercise: {
+      id: "verified-dumbbell-seated-box-jump",
+      name: "덤벨 착석 박스 점프",
+      englishName: "Dumbbell Seated Box Jump",
+      category: "파워·민첩성",
+      regions: ["하체"],
+      focus: "파워",
+      difficulty: "중급",
+      equipment: "덤벨·안정된 지지면 선택",
+      minutes: "3–6회 · 2세트",
+      description:
+        "덤벨 착석 박스 점프은 대퇴사두근을 빠르게 쓰되 착지·받기·도구 경로를 먼저 통제해야 하는 파워 또는 기술 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
+      cues: [
         "덤벨 착석 박스 점프에서 낮은 속도 리허설 뒤에만 힘을 빠르게 쓰기",
         "대퇴사두근을 느끼며 발·무릎·골반이 같은 방향으로 받기",
-        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다"
+        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
       ],
-      "benefits": [
+      benefits: [
         "덤벨 착석 박스 점프으로 힘 발휘와 제어의 연결",
         "대퇴사두근을 활용한 착지·받기 협응",
-        "대퇴사두근의 움직임 경로 인식"
+        "대퇴사두근의 움직임 경로 인식",
       ],
-      "warning": "덤벨 착석 박스 점프 중 착지 불안, 무릎·발목·허리 통증, 어지러움 또는 공간 부족이 있으면 즉시 중단하세요.",
-      "reference": {
-        "label": "ACSM — Exercise Safety",
-        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
-      }
+      warning:
+        "덤벨 착석 박스 점프 중 착지 불안, 무릎·발목·허리 통증, 어지러움 또는 공간 부족이 있으면 즉시 중단하세요.",
+      reference: {
+        label: "ACSM — Exercise Safety",
+        url: "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/",
+      },
     },
-    "detail": {
-      "setup": [
+    detail: {
+      setup: [
         "도구를 몸 가까이에서 안정적으로 잡고 양쪽 중량이 같은지 확인합니다",
         "시티드 자세에서 골반을 등받이 또는 벤치에 안정시킵니다",
-        "덤벨 착석 박스 점프에 맞춰 미끄럽지 않은 바닥과 충분한 빈 공간을 확보합니다"
+        "덤벨 착석 박스 점프에 맞춰 미끄럽지 않은 바닥과 충분한 빈 공간을 확보합니다",
       ],
-      "finish": "덤벨 착석 박스 점프을 마친 뒤 착지 또는 받기 뒤 잠시 균형을 확인하고 호흡이 안정된 후 다음 반복을 시작합니다.",
-      "commonMistakes": [
+      finish:
+        "덤벨 착석 박스 점프을 마친 뒤 착지 또는 받기 뒤 잠시 균형을 확인하고 호흡이 안정된 후 다음 반복을 시작합니다.",
+      commonMistakes: [
         "덤벨 착석 박스 점프에서 피로한 상태에서 높이·속도·부하를 함께 올리는 경우",
         "덤벨 착석 박스 점프에서 착지 소리와 무릎 흔들림을 무시하는 경우",
-        "덤벨 착석 박스 점프에서 도구 경로가 불안정한데 반복을 이어 가는 경우"
+        "덤벨 착석 박스 점프에서 도구 경로가 불안정한데 반복을 이어 가는 경우",
       ],
-      "regressions": [
+      regressions: [
         "덤벨 착석 박스 점프은 점프·속도를 빼고 체중 이동으로 바꿉니다",
         "덤벨 착석 박스 점프은 낮은 높이·짧은 거리·가벼운 도구를 사용합니다",
-        "덤벨 착석 박스 점프은 지지대 가까이에서 받기 자세만 연습합니다"
+        "덤벨 착석 박스 점프은 지지대 가까이에서 받기 자세만 연습합니다",
       ],
-      "progressions": [
+      progressions: [
         "덤벨 착석 박스 점프은 안정된 착지 뒤 반복을 한두 회 늘립니다",
         "덤벨 착석 박스 점프은 한 번에 거리·높이·부하 중 하나만 조절합니다",
-        "덤벨 착석 박스 점프은 복잡한 연속 동작은 기본 패턴이 안정된 뒤 시도합니다"
-      ]
-    }
+        "덤벨 착석 박스 점프은 복잡한 연속 동작은 기본 패턴이 안정된 뒤 시도합니다",
+      ],
+    },
   },
   {
-    "exercise": {
-      "id": "verified-vertical-swing",
-      "name": "버티컬 스윙",
-      "englishName": "Vertical Swing",
-      "category": "파워·민첩성",
-      "regions": [
-        "하체",
-        "둔근"
-      ],
-      "focus": "파워",
-      "difficulty": "입문",
-      "equipment": "덤벨·안정된 지지면 선택",
-      "minutes": "3–6회 · 2세트",
-      "description": "버티컬 스윙은 햄스트링 주변을 통증 없는 범위에서 천천히 움직여 가동 범위와 자세 감각을 확인하는 모빌리티 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
-      "cues": [
+    exercise: {
+      id: "verified-vertical-swing",
+      name: "버티컬 스윙",
+      englishName: "Vertical Swing",
+      category: "파워·민첩성",
+      regions: ["하체", "둔근"],
+      focus: "파워",
+      difficulty: "입문",
+      equipment: "덤벨·안정된 지지면 선택",
+      minutes: "3–6회 · 2세트",
+      description:
+        "버티컬 스윙은 햄스트링 주변을 통증 없는 범위에서 천천히 움직여 가동 범위와 자세 감각을 확인하는 모빌리티 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
+      cues: [
         "버티컬 스윙에서 작은 범위에서 호흡을 멈추지 않기",
         "햄스트링을 느끼며 끝 범위를 밀지 말고 부드럽게 왕복",
-        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다"
+        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
       ],
-      "benefits": [
+      benefits: [
         "버티컬 스윙으로 관절 위치와 범위 인식",
         "햄스트링을 활용한 편안한 움직임 준비",
-        "햄스트링의 움직임 경로 인식"
+        "햄스트링의 움직임 경로 인식",
       ],
-      "warning": "버티컬 스윙 중 날카로운 통증, 저림, 방사통, 붓기·열감이 있으면 자가 진행을 멈추고 평가를 우선하세요.",
-      "reference": {
-        "label": "ACSM — Exercise Safety",
-        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
-      }
+      warning:
+        "버티컬 스윙 중 날카로운 통증, 저림, 방사통, 붓기·열감이 있으면 자가 진행을 멈추고 평가를 우선하세요.",
+      reference: {
+        label: "ACSM — Exercise Safety",
+        url: "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/",
+      },
     },
-    "detail": {
-      "setup": [
+    detail: {
+      setup: [
         "도구를 몸 가까이에서 안정적으로 잡고 양쪽 중량이 같은지 확인합니다",
         "발 또는 지지면을 단단히 고정하고 몸통을 길게 세웁니다",
-        "버티컬 스윙에 맞춰 편안한 바닥·매트 또는 지지대를 준비합니다"
+        "버티컬 스윙에 맞춰 편안한 바닥·매트 또는 지지대를 준비합니다",
       ],
-      "finish": "버티컬 스윙을 마친 뒤 중립 자세로 천천히 돌아와 불편감이 남지 않는지 확인합니다.",
-      "commonMistakes": [
+      finish:
+        "버티컬 스윙을 마친 뒤 중립 자세로 천천히 돌아와 불편감이 남지 않는지 확인합니다.",
+      commonMistakes: [
         "버티컬 스윙에서 끝 범위를 억지로 밀어 통증을 만드는 경우",
         "버티컬 스윙에서 호흡을 참거나 반동을 쓰는 경우",
-        "버티컬 스윙에서 저림·방사통을 무시하고 지속하는 경우"
+        "버티컬 스윙에서 저림·방사통을 무시하고 지속하는 경우",
       ],
-      "regressions": [
+      regressions: [
         "버티컬 스윙은 범위와 유지 시간을 줄입니다",
         "버티컬 스윙은 벽·의자·블록 같은 지지대를 사용합니다",
-        "버티컬 스윙은 누운 또는 앉은 안정된 자세로 바꿉니다"
+        "버티컬 스윙은 누운 또는 앉은 안정된 자세로 바꿉니다",
       ],
-      "progressions": [
+      progressions: [
         "버티컬 스윙은 다음 날 편안하면 범위만 조금 늘립니다",
         "버티컬 스윙은 호흡 주기를 한 번 추가합니다",
-        "버티컬 스윙은 지지대는 안정적으로 줄여 갑니다"
-      ]
-    }
+        "버티컬 스윙은 지지대는 안정적으로 줄여 갑니다",
+      ],
+    },
   },
   {
-    "exercise": {
-      "id": "verified-backward-medicine-ball-throw",
-      "name": "메디신볼 뒤로 던지기",
-      "englishName": "Backward Medicine Ball Throw",
-      "category": "파워·민첩성",
-      "regions": [
-        "어깨"
-      ],
-      "focus": "파워",
-      "difficulty": "입문",
-      "equipment": "가벼운 메디신볼·공간",
-      "minutes": "3–6회 · 2세트",
-      "description": "메디신볼 뒤로 던지기은 어깨을 쓰며 손잡이 또는 도구를 몸 쪽으로 당기고 어깨뼈의 위치를 제어하는 당기기 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
-      "cues": [
+    exercise: {
+      id: "verified-backward-medicine-ball-throw",
+      name: "메디신볼 뒤로 던지기",
+      englishName: "Backward Medicine Ball Throw",
+      category: "파워·민첩성",
+      regions: ["어깨"],
+      focus: "파워",
+      difficulty: "입문",
+      equipment: "가벼운 메디신볼·공간",
+      minutes: "3–6회 · 2세트",
+      description:
+        "메디신볼 뒤로 던지기은 어깨을 쓰며 손잡이 또는 도구를 몸 쪽으로 당기고 어깨뼈의 위치를 제어하는 당기기 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
+      cues: [
         "메디신볼 뒤로 던지기에서 먼저 어깨를 귀에서 멀리 두고 가슴을 편안히 유지",
         "어깨을 느끼며 팔꿈치를 목적 방향으로 끌되 몸통 반동 줄이기",
-        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다"
+        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
       ],
-      "benefits": [
+      benefits: [
         "메디신볼 뒤로 던지기으로 등·팔의 당기기 협응",
         "어깨을 활용한 견갑 위치 인식",
-        "어깨의 움직임 경로 인식"
+        "어깨의 움직임 경로 인식",
       ],
-      "warning": "메디신볼 뒤로 던지기 중 어깨 앞쪽의 날카로운 통증, 손 저림, 고정점 흔들림 또는 그립 이탈이 있으면 즉시 중단하세요.",
-      "reference": {
-        "label": "ACSM — Exercise Safety",
-        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
-      }
+      warning:
+        "메디신볼 뒤로 던지기 중 어깨 앞쪽의 날카로운 통증, 손 저림, 고정점 흔들림 또는 그립 이탈이 있으면 즉시 중단하세요.",
+      reference: {
+        label: "ACSM — Exercise Safety",
+        url: "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/",
+      },
     },
-    "detail": {
-      "setup": [
+    detail: {
+      setup: [
         "공을 놓을 공간과 튀어 나갈 방향을 비우고 손가락을 펴서 받습니다",
         "발 또는 지지면을 단단히 고정하고 몸통을 길게 세웁니다",
-        "메디신볼 뒤로 던지기에 맞춰 그립·바·손잡이 높이와 고정 상태를 확인합니다"
+        "메디신볼 뒤로 던지기에 맞춰 그립·바·손잡이 높이와 고정 상태를 확인합니다",
       ],
-      "finish": "메디신볼 뒤로 던지기을 마친 뒤 팔을 급하게 펴지 말고 어깨가 앞으로 쏠리지 않는 범위에서 시작 위치로 돌아갑니다.",
-      "commonMistakes": [
+      finish:
+        "메디신볼 뒤로 던지기을 마친 뒤 팔을 급하게 펴지 말고 어깨가 앞으로 쏠리지 않는 범위에서 시작 위치로 돌아갑니다.",
+      commonMistakes: [
         "메디신볼 뒤로 던지기에서 어깨를 으쓱한 채 팔만 사용하는 경우",
         "메디신볼 뒤로 던지기에서 몸통을 크게 흔들어 반동을 만드는 경우",
-        "메디신볼 뒤로 던지기에서 팔꿈치를 끝까지 밀어 관절을 잠그는 경우"
+        "메디신볼 뒤로 던지기에서 팔꿈치를 끝까지 밀어 관절을 잠그는 경우",
       ],
-      "regressions": [
+      regressions: [
         "메디신볼 뒤로 던지기은 밴드·보조 장치 또는 더 가벼운 저항을 사용합니다",
         "메디신볼 뒤로 던지기은 지지된 시티드 자세로 몸통 부담을 줄입니다",
-        "메디신볼 뒤로 던지기은 당기는 범위를 짧게 정하고 멈춥니다"
+        "메디신볼 뒤로 던지기은 당기는 범위를 짧게 정하고 멈춥니다",
       ],
-      "progressions": [
+      progressions: [
         "메디신볼 뒤로 던지기은 같은 경로에서 저항을 한 단계만 올립니다",
         "메디신볼 뒤로 던지기은 완전한 어깨 제어가 되면 범위를 조금 늘립니다",
-        "메디신볼 뒤로 던지기은 편측 당김은 몸통 회전을 통제할 수 있을 때 시도합니다"
-      ]
-    }
+        "메디신볼 뒤로 던지기은 편측 당김은 몸통 회전을 통제할 수 있을 때 시도합니다",
+      ],
+    },
   },
   {
-    "exercise": {
-      "id": "verified-catch-and-overhead-throw",
-      "name": "캐치 앤 오버헤드 스로우",
-      "englishName": "Catch and Overhead Throw",
-      "category": "파워·민첩성",
-      "regions": [
-        "등"
-      ],
-      "focus": "파워",
-      "difficulty": "입문",
-      "equipment": "가벼운 메디신볼·공간",
-      "minutes": "3–6회 · 2세트",
-      "description": "캐치 앤 오버헤드 스로우은 광배근을 쓰며 손잡이 또는 도구를 몸 쪽으로 당기고 어깨뼈의 위치를 제어하는 당기기 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
-      "cues": [
+    exercise: {
+      id: "verified-catch-and-overhead-throw",
+      name: "캐치 앤 오버헤드 스로우",
+      englishName: "Catch and Overhead Throw",
+      category: "파워·민첩성",
+      regions: ["등"],
+      focus: "파워",
+      difficulty: "입문",
+      equipment: "가벼운 메디신볼·공간",
+      minutes: "3–6회 · 2세트",
+      description:
+        "캐치 앤 오버헤드 스로우은 광배근을 쓰며 손잡이 또는 도구를 몸 쪽으로 당기고 어깨뼈의 위치를 제어하는 당기기 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
+      cues: [
         "캐치 앤 오버헤드 스로우에서 먼저 어깨를 귀에서 멀리 두고 가슴을 편안히 유지",
         "광배근을 느끼며 팔꿈치를 목적 방향으로 끌되 몸통 반동 줄이기",
-        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다"
+        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
       ],
-      "benefits": [
+      benefits: [
         "캐치 앤 오버헤드 스로우으로 등·팔의 당기기 협응",
         "광배근을 활용한 견갑 위치 인식",
-        "광배근의 움직임 경로 인식"
+        "광배근의 움직임 경로 인식",
       ],
-      "warning": "캐치 앤 오버헤드 스로우 중 어깨 앞쪽의 날카로운 통증, 손 저림, 고정점 흔들림 또는 그립 이탈이 있으면 즉시 중단하세요.",
-      "reference": {
-        "label": "ACSM — Exercise Safety",
-        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
-      }
+      warning:
+        "캐치 앤 오버헤드 스로우 중 어깨 앞쪽의 날카로운 통증, 손 저림, 고정점 흔들림 또는 그립 이탈이 있으면 즉시 중단하세요.",
+      reference: {
+        label: "ACSM — Exercise Safety",
+        url: "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/",
+      },
     },
-    "detail": {
-      "setup": [
+    detail: {
+      setup: [
         "공을 놓을 공간과 튀어 나갈 방향을 비우고 손가락을 펴서 받습니다",
         "발 또는 지지면을 단단히 고정하고 몸통을 길게 세웁니다",
-        "캐치 앤 오버헤드 스로우에 맞춰 그립·바·손잡이 높이와 고정 상태를 확인합니다"
+        "캐치 앤 오버헤드 스로우에 맞춰 그립·바·손잡이 높이와 고정 상태를 확인합니다",
       ],
-      "finish": "캐치 앤 오버헤드 스로우을 마친 뒤 팔을 급하게 펴지 말고 어깨가 앞으로 쏠리지 않는 범위에서 시작 위치로 돌아갑니다.",
-      "commonMistakes": [
+      finish:
+        "캐치 앤 오버헤드 스로우을 마친 뒤 팔을 급하게 펴지 말고 어깨가 앞으로 쏠리지 않는 범위에서 시작 위치로 돌아갑니다.",
+      commonMistakes: [
         "캐치 앤 오버헤드 스로우에서 어깨를 으쓱한 채 팔만 사용하는 경우",
         "캐치 앤 오버헤드 스로우에서 몸통을 크게 흔들어 반동을 만드는 경우",
-        "캐치 앤 오버헤드 스로우에서 팔꿈치를 끝까지 밀어 관절을 잠그는 경우"
+        "캐치 앤 오버헤드 스로우에서 팔꿈치를 끝까지 밀어 관절을 잠그는 경우",
       ],
-      "regressions": [
+      regressions: [
         "캐치 앤 오버헤드 스로우은 밴드·보조 장치 또는 더 가벼운 저항을 사용합니다",
         "캐치 앤 오버헤드 스로우은 지지된 시티드 자세로 몸통 부담을 줄입니다",
-        "캐치 앤 오버헤드 스로우은 당기는 범위를 짧게 정하고 멈춥니다"
+        "캐치 앤 오버헤드 스로우은 당기는 범위를 짧게 정하고 멈춥니다",
       ],
-      "progressions": [
+      progressions: [
         "캐치 앤 오버헤드 스로우은 같은 경로에서 저항을 한 단계만 올립니다",
         "캐치 앤 오버헤드 스로우은 완전한 어깨 제어가 되면 범위를 조금 늘립니다",
-        "캐치 앤 오버헤드 스로우은 편측 당김은 몸통 회전을 통제할 수 있을 때 시도합니다"
-      ]
-    }
+        "캐치 앤 오버헤드 스로우은 편측 당김은 몸통 회전을 통제할 수 있을 때 시도합니다",
+      ],
+    },
   },
   {
-    "exercise": {
-      "id": "verified-chest-push-multiple-response",
-      "name": "체스트 푸시(복수 응답)",
-      "englishName": "Chest Push (multiple response)",
-      "category": "파워·민첩성",
-      "regions": [
-        "가슴"
-      ],
-      "focus": "파워",
-      "difficulty": "입문",
-      "equipment": "가벼운 메디신볼·공간",
-      "minutes": "3–6회 · 2세트",
-      "description": "체스트 푸시(복수 응답)은 가슴 주변을 통증 없는 범위에서 천천히 움직여 가동 범위와 자세 감각을 확인하는 모빌리티 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
-      "cues": [
+    exercise: {
+      id: "verified-chest-push-multiple-response",
+      name: "체스트 푸시(복수 응답)",
+      englishName: "Chest Push (multiple response)",
+      category: "파워·민첩성",
+      regions: ["가슴"],
+      focus: "파워",
+      difficulty: "입문",
+      equipment: "가벼운 메디신볼·공간",
+      minutes: "3–6회 · 2세트",
+      description:
+        "체스트 푸시(복수 응답)은 가슴 주변을 통증 없는 범위에서 천천히 움직여 가동 범위와 자세 감각을 확인하는 모빌리티 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
+      cues: [
         "체스트 푸시(복수 응답)에서 작은 범위에서 호흡을 멈추지 않기",
         "가슴을 느끼며 끝 범위를 밀지 말고 부드럽게 왕복",
-        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다"
+        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
       ],
-      "benefits": [
+      benefits: [
         "체스트 푸시(복수 응답)으로 관절 위치와 범위 인식",
         "가슴을 활용한 편안한 움직임 준비",
-        "가슴의 움직임 경로 인식"
+        "가슴의 움직임 경로 인식",
       ],
-      "warning": "체스트 푸시(복수 응답) 중 날카로운 통증, 저림, 방사통, 붓기·열감이 있으면 자가 진행을 멈추고 평가를 우선하세요.",
-      "reference": {
-        "label": "ACSM — Exercise Safety",
-        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
-      }
+      warning:
+        "체스트 푸시(복수 응답) 중 날카로운 통증, 저림, 방사통, 붓기·열감이 있으면 자가 진행을 멈추고 평가를 우선하세요.",
+      reference: {
+        label: "ACSM — Exercise Safety",
+        url: "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/",
+      },
     },
-    "detail": {
-      "setup": [
+    detail: {
+      setup: [
         "공을 놓을 공간과 튀어 나갈 방향을 비우고 손가락을 펴서 받습니다",
         "발 또는 지지면을 단단히 고정하고 몸통을 길게 세웁니다",
-        "체스트 푸시(복수 응답)에 맞춰 편안한 바닥·매트 또는 지지대를 준비합니다"
+        "체스트 푸시(복수 응답)에 맞춰 편안한 바닥·매트 또는 지지대를 준비합니다",
       ],
-      "finish": "체스트 푸시(복수 응답)을 마친 뒤 중립 자세로 천천히 돌아와 불편감이 남지 않는지 확인합니다.",
-      "commonMistakes": [
+      finish:
+        "체스트 푸시(복수 응답)을 마친 뒤 중립 자세로 천천히 돌아와 불편감이 남지 않는지 확인합니다.",
+      commonMistakes: [
         "체스트 푸시(복수 응답)에서 끝 범위를 억지로 밀어 통증을 만드는 경우",
         "체스트 푸시(복수 응답)에서 호흡을 참거나 반동을 쓰는 경우",
-        "체스트 푸시(복수 응답)에서 저림·방사통을 무시하고 지속하는 경우"
+        "체스트 푸시(복수 응답)에서 저림·방사통을 무시하고 지속하는 경우",
       ],
-      "regressions": [
+      regressions: [
         "체스트 푸시(복수 응답)은 범위와 유지 시간을 줄입니다",
         "체스트 푸시(복수 응답)은 벽·의자·블록 같은 지지대를 사용합니다",
-        "체스트 푸시(복수 응답)은 누운 또는 앉은 안정된 자세로 바꿉니다"
+        "체스트 푸시(복수 응답)은 누운 또는 앉은 안정된 자세로 바꿉니다",
       ],
-      "progressions": [
+      progressions: [
         "체스트 푸시(복수 응답)은 다음 날 편안하면 범위만 조금 늘립니다",
         "체스트 푸시(복수 응답)은 호흡 주기를 한 번 추가합니다",
-        "체스트 푸시(복수 응답)은 지지대는 안정적으로 줄여 갑니다"
-      ]
-    }
+        "체스트 푸시(복수 응답)은 지지대는 안정적으로 줄여 갑니다",
+      ],
+    },
   },
   {
-    "exercise": {
-      "id": "verified-chest-push-single-response",
-      "name": "체스트 푸시(단일 응답)",
-      "englishName": "Chest Push (single response)",
-      "category": "파워·민첩성",
-      "regions": [
-        "가슴"
-      ],
-      "focus": "파워",
-      "difficulty": "입문",
-      "equipment": "가벼운 메디신볼·공간",
-      "minutes": "3–6회 · 2세트",
-      "description": "체스트 푸시(단일 응답)은 가슴 주변을 통증 없는 범위에서 천천히 움직여 가동 범위와 자세 감각을 확인하는 모빌리티 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
-      "cues": [
+    exercise: {
+      id: "verified-chest-push-single-response",
+      name: "체스트 푸시(단일 응답)",
+      englishName: "Chest Push (single response)",
+      category: "파워·민첩성",
+      regions: ["가슴"],
+      focus: "파워",
+      difficulty: "입문",
+      equipment: "가벼운 메디신볼·공간",
+      minutes: "3–6회 · 2세트",
+      description:
+        "체스트 푸시(단일 응답)은 가슴 주변을 통증 없는 범위에서 천천히 움직여 가동 범위와 자세 감각을 확인하는 모빌리티 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
+      cues: [
         "체스트 푸시(단일 응답)에서 작은 범위에서 호흡을 멈추지 않기",
         "가슴을 느끼며 끝 범위를 밀지 말고 부드럽게 왕복",
-        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다"
+        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
       ],
-      "benefits": [
+      benefits: [
         "체스트 푸시(단일 응답)으로 관절 위치와 범위 인식",
         "가슴을 활용한 편안한 움직임 준비",
-        "가슴의 움직임 경로 인식"
+        "가슴의 움직임 경로 인식",
       ],
-      "warning": "체스트 푸시(단일 응답) 중 날카로운 통증, 저림, 방사통, 붓기·열감이 있으면 자가 진행을 멈추고 평가를 우선하세요.",
-      "reference": {
-        "label": "ACSM — Exercise Safety",
-        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
-      }
+      warning:
+        "체스트 푸시(단일 응답) 중 날카로운 통증, 저림, 방사통, 붓기·열감이 있으면 자가 진행을 멈추고 평가를 우선하세요.",
+      reference: {
+        label: "ACSM — Exercise Safety",
+        url: "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/",
+      },
     },
-    "detail": {
-      "setup": [
+    detail: {
+      setup: [
         "공을 놓을 공간과 튀어 나갈 방향을 비우고 손가락을 펴서 받습니다",
         "발 또는 지지면을 단단히 고정하고 몸통을 길게 세웁니다",
-        "체스트 푸시(단일 응답)에 맞춰 편안한 바닥·매트 또는 지지대를 준비합니다"
+        "체스트 푸시(단일 응답)에 맞춰 편안한 바닥·매트 또는 지지대를 준비합니다",
       ],
-      "finish": "체스트 푸시(단일 응답)을 마친 뒤 중립 자세로 천천히 돌아와 불편감이 남지 않는지 확인합니다.",
-      "commonMistakes": [
+      finish:
+        "체스트 푸시(단일 응답)을 마친 뒤 중립 자세로 천천히 돌아와 불편감이 남지 않는지 확인합니다.",
+      commonMistakes: [
         "체스트 푸시(단일 응답)에서 끝 범위를 억지로 밀어 통증을 만드는 경우",
         "체스트 푸시(단일 응답)에서 호흡을 참거나 반동을 쓰는 경우",
-        "체스트 푸시(단일 응답)에서 저림·방사통을 무시하고 지속하는 경우"
+        "체스트 푸시(단일 응답)에서 저림·방사통을 무시하고 지속하는 경우",
       ],
-      "regressions": [
+      regressions: [
         "체스트 푸시(단일 응답)은 범위와 유지 시간을 줄입니다",
         "체스트 푸시(단일 응답)은 벽·의자·블록 같은 지지대를 사용합니다",
-        "체스트 푸시(단일 응답)은 누운 또는 앉은 안정된 자세로 바꿉니다"
+        "체스트 푸시(단일 응답)은 누운 또는 앉은 안정된 자세로 바꿉니다",
       ],
-      "progressions": [
+      progressions: [
         "체스트 푸시(단일 응답)은 다음 날 편안하면 범위만 조금 늘립니다",
         "체스트 푸시(단일 응답)은 호흡 주기를 한 번 추가합니다",
-        "체스트 푸시(단일 응답)은 지지대는 안정적으로 줄여 갑니다"
-      ]
-    }
+        "체스트 푸시(단일 응답)은 지지대는 안정적으로 줄여 갑니다",
+      ],
+    },
   },
   {
-    "exercise": {
-      "id": "verified-chest-push-from-3-point-stance",
-      "name": "3포인트 자세 체스트 푸시",
-      "englishName": "Chest Push from 3 point stance",
-      "category": "파워·민첩성",
-      "regions": [
-        "가슴"
-      ],
-      "focus": "파워",
-      "difficulty": "입문",
-      "equipment": "가벼운 메디신볼·공간",
-      "minutes": "3–6회 · 2세트",
-      "description": "3포인트 자세 체스트 푸시은 가슴 주변을 통증 없는 범위에서 천천히 움직여 가동 범위와 자세 감각을 확인하는 모빌리티 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
-      "cues": [
+    exercise: {
+      id: "verified-chest-push-from-3-point-stance",
+      name: "3포인트 자세 체스트 푸시",
+      englishName: "Chest Push from 3 point stance",
+      category: "파워·민첩성",
+      regions: ["가슴"],
+      focus: "파워",
+      difficulty: "입문",
+      equipment: "가벼운 메디신볼·공간",
+      minutes: "3–6회 · 2세트",
+      description:
+        "3포인트 자세 체스트 푸시은 가슴 주변을 통증 없는 범위에서 천천히 움직여 가동 범위와 자세 감각을 확인하는 모빌리티 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
+      cues: [
         "3포인트 자세 체스트 푸시에서 작은 범위에서 호흡을 멈추지 않기",
         "가슴을 느끼며 끝 범위를 밀지 말고 부드럽게 왕복",
-        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다"
+        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
       ],
-      "benefits": [
+      benefits: [
         "3포인트 자세 체스트 푸시으로 관절 위치와 범위 인식",
         "가슴을 활용한 편안한 움직임 준비",
-        "가슴의 움직임 경로 인식"
+        "가슴의 움직임 경로 인식",
       ],
-      "warning": "3포인트 자세 체스트 푸시 중 날카로운 통증, 저림, 방사통, 붓기·열감이 있으면 자가 진행을 멈추고 평가를 우선하세요.",
-      "reference": {
-        "label": "ACSM — Exercise Safety",
-        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
-      }
+      warning:
+        "3포인트 자세 체스트 푸시 중 날카로운 통증, 저림, 방사통, 붓기·열감이 있으면 자가 진행을 멈추고 평가를 우선하세요.",
+      reference: {
+        label: "ACSM — Exercise Safety",
+        url: "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/",
+      },
     },
-    "detail": {
-      "setup": [
+    detail: {
+      setup: [
         "공을 놓을 공간과 튀어 나갈 방향을 비우고 손가락을 펴서 받습니다",
         "발 또는 지지면을 단단히 고정하고 몸통을 길게 세웁니다",
-        "3포인트 자세 체스트 푸시에 맞춰 편안한 바닥·매트 또는 지지대를 준비합니다"
+        "3포인트 자세 체스트 푸시에 맞춰 편안한 바닥·매트 또는 지지대를 준비합니다",
       ],
-      "finish": "3포인트 자세 체스트 푸시을 마친 뒤 중립 자세로 천천히 돌아와 불편감이 남지 않는지 확인합니다.",
-      "commonMistakes": [
+      finish:
+        "3포인트 자세 체스트 푸시을 마친 뒤 중립 자세로 천천히 돌아와 불편감이 남지 않는지 확인합니다.",
+      commonMistakes: [
         "3포인트 자세 체스트 푸시에서 끝 범위를 억지로 밀어 통증을 만드는 경우",
         "3포인트 자세 체스트 푸시에서 호흡을 참거나 반동을 쓰는 경우",
-        "3포인트 자세 체스트 푸시에서 저림·방사통을 무시하고 지속하는 경우"
+        "3포인트 자세 체스트 푸시에서 저림·방사통을 무시하고 지속하는 경우",
       ],
-      "regressions": [
+      regressions: [
         "3포인트 자세 체스트 푸시은 범위와 유지 시간을 줄입니다",
         "3포인트 자세 체스트 푸시은 벽·의자·블록 같은 지지대를 사용합니다",
-        "3포인트 자세 체스트 푸시은 누운 또는 앉은 안정된 자세로 바꿉니다"
+        "3포인트 자세 체스트 푸시은 누운 또는 앉은 안정된 자세로 바꿉니다",
       ],
-      "progressions": [
+      progressions: [
         "3포인트 자세 체스트 푸시은 다음 날 편안하면 범위만 조금 늘립니다",
         "3포인트 자세 체스트 푸시은 호흡 주기를 한 번 추가합니다",
-        "3포인트 자세 체스트 푸시은 지지대는 안정적으로 줄여 갑니다"
-      ]
-    }
+        "3포인트 자세 체스트 푸시은 지지대는 안정적으로 줄여 갑니다",
+      ],
+    },
   },
   {
-    "exercise": {
-      "id": "verified-chest-push-with-run-release",
-      "name": "체스트 푸시(런 릴리스)",
-      "englishName": "Chest Push with Run Release",
-      "category": "파워·민첩성",
-      "regions": [
-        "가슴"
-      ],
-      "focus": "파워",
-      "difficulty": "입문",
-      "equipment": "가벼운 메디신볼·공간",
-      "minutes": "3–6회 · 2세트",
-      "description": "체스트 푸시(런 릴리스)은 가슴 주변을 통증 없는 범위에서 천천히 움직여 가동 범위와 자세 감각을 확인하는 모빌리티 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
-      "cues": [
+    exercise: {
+      id: "verified-chest-push-with-run-release",
+      name: "체스트 푸시(런 릴리스)",
+      englishName: "Chest Push with Run Release",
+      category: "파워·민첩성",
+      regions: ["가슴"],
+      focus: "파워",
+      difficulty: "입문",
+      equipment: "가벼운 메디신볼·공간",
+      minutes: "3–6회 · 2세트",
+      description:
+        "체스트 푸시(런 릴리스)은 가슴 주변을 통증 없는 범위에서 천천히 움직여 가동 범위와 자세 감각을 확인하는 모빌리티 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
+      cues: [
         "체스트 푸시(런 릴리스)에서 작은 범위에서 호흡을 멈추지 않기",
         "가슴을 느끼며 끝 범위를 밀지 말고 부드럽게 왕복",
-        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다"
+        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
       ],
-      "benefits": [
+      benefits: [
         "체스트 푸시(런 릴리스)으로 관절 위치와 범위 인식",
         "가슴을 활용한 편안한 움직임 준비",
-        "가슴의 움직임 경로 인식"
+        "가슴의 움직임 경로 인식",
       ],
-      "warning": "체스트 푸시(런 릴리스) 중 날카로운 통증, 저림, 방사통, 붓기·열감이 있으면 자가 진행을 멈추고 평가를 우선하세요.",
-      "reference": {
-        "label": "ACSM — Exercise Safety",
-        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
-      }
+      warning:
+        "체스트 푸시(런 릴리스) 중 날카로운 통증, 저림, 방사통, 붓기·열감이 있으면 자가 진행을 멈추고 평가를 우선하세요.",
+      reference: {
+        label: "ACSM — Exercise Safety",
+        url: "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/",
+      },
     },
-    "detail": {
-      "setup": [
+    detail: {
+      setup: [
         "공을 놓을 공간과 튀어 나갈 방향을 비우고 손가락을 펴서 받습니다",
         "발 또는 지지면을 단단히 고정하고 몸통을 길게 세웁니다",
-        "체스트 푸시(런 릴리스)에 맞춰 편안한 바닥·매트 또는 지지대를 준비합니다"
+        "체스트 푸시(런 릴리스)에 맞춰 편안한 바닥·매트 또는 지지대를 준비합니다",
       ],
-      "finish": "체스트 푸시(런 릴리스)을 마친 뒤 중립 자세로 천천히 돌아와 불편감이 남지 않는지 확인합니다.",
-      "commonMistakes": [
+      finish:
+        "체스트 푸시(런 릴리스)을 마친 뒤 중립 자세로 천천히 돌아와 불편감이 남지 않는지 확인합니다.",
+      commonMistakes: [
         "체스트 푸시(런 릴리스)에서 끝 범위를 억지로 밀어 통증을 만드는 경우",
         "체스트 푸시(런 릴리스)에서 호흡을 참거나 반동을 쓰는 경우",
-        "체스트 푸시(런 릴리스)에서 저림·방사통을 무시하고 지속하는 경우"
+        "체스트 푸시(런 릴리스)에서 저림·방사통을 무시하고 지속하는 경우",
       ],
-      "regressions": [
+      regressions: [
         "체스트 푸시(런 릴리스)은 범위와 유지 시간을 줄입니다",
         "체스트 푸시(런 릴리스)은 벽·의자·블록 같은 지지대를 사용합니다",
-        "체스트 푸시(런 릴리스)은 누운 또는 앉은 안정된 자세로 바꿉니다"
+        "체스트 푸시(런 릴리스)은 누운 또는 앉은 안정된 자세로 바꿉니다",
       ],
-      "progressions": [
+      progressions: [
         "체스트 푸시(런 릴리스)은 다음 날 편안하면 범위만 조금 늘립니다",
         "체스트 푸시(런 릴리스)은 호흡 주기를 한 번 추가합니다",
-        "체스트 푸시(런 릴리스)은 지지대는 안정적으로 줄여 갑니다"
-      ]
-    }
+        "체스트 푸시(런 릴리스)은 지지대는 안정적으로 줄여 갑니다",
+      ],
+    },
   },
   {
-    "exercise": {
-      "id": "verified-medicine-ball-full-twist",
-      "name": "메디신볼 풀트위스트",
-      "englishName": "Medicine Ball Full Twist",
-      "category": "파워·민첩성",
-      "regions": [
-        "코어"
-      ],
-      "focus": "파워",
-      "difficulty": "입문",
-      "equipment": "가벼운 메디신볼·공간",
-      "minutes": "3–6회 · 2세트",
-      "description": "메디신볼 풀트위스트은 복부 주변을 통증 없는 범위에서 천천히 움직여 가동 범위와 자세 감각을 확인하는 모빌리티 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
-      "cues": [
+    exercise: {
+      id: "verified-medicine-ball-full-twist",
+      name: "메디신볼 풀트위스트",
+      englishName: "Medicine Ball Full Twist",
+      category: "파워·민첩성",
+      regions: ["코어"],
+      focus: "파워",
+      difficulty: "입문",
+      equipment: "가벼운 메디신볼·공간",
+      minutes: "3–6회 · 2세트",
+      description:
+        "메디신볼 풀트위스트은 복부 주변을 통증 없는 범위에서 천천히 움직여 가동 범위와 자세 감각을 확인하는 모빌리티 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
+      cues: [
         "메디신볼 풀트위스트에서 작은 범위에서 호흡을 멈추지 않기",
         "복부을 느끼며 끝 범위를 밀지 말고 부드럽게 왕복",
-        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다"
+        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
       ],
-      "benefits": [
+      benefits: [
         "메디신볼 풀트위스트으로 관절 위치와 범위 인식",
         "복부을 활용한 편안한 움직임 준비",
-        "복부의 움직임 경로 인식"
+        "복부의 움직임 경로 인식",
       ],
-      "warning": "메디신볼 풀트위스트 중 날카로운 통증, 저림, 방사통, 붓기·열감이 있으면 자가 진행을 멈추고 평가를 우선하세요.",
-      "reference": {
-        "label": "ACSM — Exercise Safety",
-        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
-      }
+      warning:
+        "메디신볼 풀트위스트 중 날카로운 통증, 저림, 방사통, 붓기·열감이 있으면 자가 진행을 멈추고 평가를 우선하세요.",
+      reference: {
+        label: "ACSM — Exercise Safety",
+        url: "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/",
+      },
     },
-    "detail": {
-      "setup": [
+    detail: {
+      setup: [
         "공을 놓을 공간과 튀어 나갈 방향을 비우고 손가락을 펴서 받습니다",
         "발 또는 지지면을 단단히 고정하고 몸통을 길게 세웁니다",
-        "메디신볼 풀트위스트에 맞춰 편안한 바닥·매트 또는 지지대를 준비합니다"
+        "메디신볼 풀트위스트에 맞춰 편안한 바닥·매트 또는 지지대를 준비합니다",
       ],
-      "finish": "메디신볼 풀트위스트을 마친 뒤 중립 자세로 천천히 돌아와 불편감이 남지 않는지 확인합니다.",
-      "commonMistakes": [
+      finish:
+        "메디신볼 풀트위스트을 마친 뒤 중립 자세로 천천히 돌아와 불편감이 남지 않는지 확인합니다.",
+      commonMistakes: [
         "메디신볼 풀트위스트에서 끝 범위를 억지로 밀어 통증을 만드는 경우",
         "메디신볼 풀트위스트에서 호흡을 참거나 반동을 쓰는 경우",
-        "메디신볼 풀트위스트에서 저림·방사통을 무시하고 지속하는 경우"
+        "메디신볼 풀트위스트에서 저림·방사통을 무시하고 지속하는 경우",
       ],
-      "regressions": [
+      regressions: [
         "메디신볼 풀트위스트은 범위와 유지 시간을 줄입니다",
         "메디신볼 풀트위스트은 벽·의자·블록 같은 지지대를 사용합니다",
-        "메디신볼 풀트위스트은 누운 또는 앉은 안정된 자세로 바꿉니다"
+        "메디신볼 풀트위스트은 누운 또는 앉은 안정된 자세로 바꿉니다",
       ],
-      "progressions": [
+      progressions: [
         "메디신볼 풀트위스트은 다음 날 편안하면 범위만 조금 늘립니다",
         "메디신볼 풀트위스트은 호흡 주기를 한 번 추가합니다",
-        "메디신볼 풀트위스트은 지지대는 안정적으로 줄여 갑니다"
-      ]
-    }
+        "메디신볼 풀트위스트은 지지대는 안정적으로 줄여 갑니다",
+      ],
+    },
   },
   {
-    "exercise": {
-      "id": "verified-medicine-ball-scoop-throw",
-      "name": "메디신볼 스쿱 던지기",
-      "englishName": "Medicine Ball Scoop Throw",
-      "category": "파워·민첩성",
-      "regions": [
-        "어깨"
-      ],
-      "focus": "파워",
-      "difficulty": "입문",
-      "equipment": "가벼운 메디신볼·공간",
-      "minutes": "3–6회 · 2세트",
-      "description": "메디신볼 스쿱 던지기은 어깨을 쓰며 손잡이 또는 도구를 몸 쪽으로 당기고 어깨뼈의 위치를 제어하는 당기기 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
-      "cues": [
+    exercise: {
+      id: "verified-medicine-ball-scoop-throw",
+      name: "메디신볼 스쿱 던지기",
+      englishName: "Medicine Ball Scoop Throw",
+      category: "파워·민첩성",
+      regions: ["어깨"],
+      focus: "파워",
+      difficulty: "입문",
+      equipment: "가벼운 메디신볼·공간",
+      minutes: "3–6회 · 2세트",
+      description:
+        "메디신볼 스쿱 던지기은 어깨을 쓰며 손잡이 또는 도구를 몸 쪽으로 당기고 어깨뼈의 위치를 제어하는 당기기 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
+      cues: [
         "메디신볼 스쿱 던지기에서 먼저 어깨를 귀에서 멀리 두고 가슴을 편안히 유지",
         "어깨을 느끼며 팔꿈치를 목적 방향으로 끌되 몸통 반동 줄이기",
-        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다"
+        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
       ],
-      "benefits": [
+      benefits: [
         "메디신볼 스쿱 던지기으로 등·팔의 당기기 협응",
         "어깨을 활용한 견갑 위치 인식",
-        "어깨의 움직임 경로 인식"
+        "어깨의 움직임 경로 인식",
       ],
-      "warning": "메디신볼 스쿱 던지기 중 어깨 앞쪽의 날카로운 통증, 손 저림, 고정점 흔들림 또는 그립 이탈이 있으면 즉시 중단하세요.",
-      "reference": {
-        "label": "ACSM — Exercise Safety",
-        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
-      }
+      warning:
+        "메디신볼 스쿱 던지기 중 어깨 앞쪽의 날카로운 통증, 손 저림, 고정점 흔들림 또는 그립 이탈이 있으면 즉시 중단하세요.",
+      reference: {
+        label: "ACSM — Exercise Safety",
+        url: "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/",
+      },
     },
-    "detail": {
-      "setup": [
+    detail: {
+      setup: [
         "공을 놓을 공간과 튀어 나갈 방향을 비우고 손가락을 펴서 받습니다",
         "발 또는 지지면을 단단히 고정하고 몸통을 길게 세웁니다",
-        "메디신볼 스쿱 던지기에 맞춰 그립·바·손잡이 높이와 고정 상태를 확인합니다"
+        "메디신볼 스쿱 던지기에 맞춰 그립·바·손잡이 높이와 고정 상태를 확인합니다",
       ],
-      "finish": "메디신볼 스쿱 던지기을 마친 뒤 팔을 급하게 펴지 말고 어깨가 앞으로 쏠리지 않는 범위에서 시작 위치로 돌아갑니다.",
-      "commonMistakes": [
+      finish:
+        "메디신볼 스쿱 던지기을 마친 뒤 팔을 급하게 펴지 말고 어깨가 앞으로 쏠리지 않는 범위에서 시작 위치로 돌아갑니다.",
+      commonMistakes: [
         "메디신볼 스쿱 던지기에서 어깨를 으쓱한 채 팔만 사용하는 경우",
         "메디신볼 스쿱 던지기에서 몸통을 크게 흔들어 반동을 만드는 경우",
-        "메디신볼 스쿱 던지기에서 팔꿈치를 끝까지 밀어 관절을 잠그는 경우"
+        "메디신볼 스쿱 던지기에서 팔꿈치를 끝까지 밀어 관절을 잠그는 경우",
       ],
-      "regressions": [
+      regressions: [
         "메디신볼 스쿱 던지기은 밴드·보조 장치 또는 더 가벼운 저항을 사용합니다",
         "메디신볼 스쿱 던지기은 지지된 시티드 자세로 몸통 부담을 줄입니다",
-        "메디신볼 스쿱 던지기은 당기는 범위를 짧게 정하고 멈춥니다"
+        "메디신볼 스쿱 던지기은 당기는 범위를 짧게 정하고 멈춥니다",
       ],
-      "progressions": [
+      progressions: [
         "메디신볼 스쿱 던지기은 같은 경로에서 저항을 한 단계만 올립니다",
         "메디신볼 스쿱 던지기은 완전한 어깨 제어가 되면 범위를 조금 늘립니다",
-        "메디신볼 스쿱 던지기은 편측 당김은 몸통 회전을 통제할 수 있을 때 시도합니다"
-      ]
-    }
+        "메디신볼 스쿱 던지기은 편측 당김은 몸통 회전을 통제할 수 있을 때 시도합니다",
+      ],
+    },
   },
   {
-    "exercise": {
-      "id": "verified-overhead-slam",
-      "name": "오버헤드 슬램",
-      "englishName": "Overhead Slam",
-      "category": "파워·민첩성",
-      "regions": [
-        "등"
-      ],
-      "focus": "파워",
-      "difficulty": "입문",
-      "equipment": "가벼운 메디신볼·공간",
-      "minutes": "3–6회 · 2세트",
-      "description": "오버헤드 슬램은 광배근 주변을 통증 없는 범위에서 천천히 움직여 가동 범위와 자세 감각을 확인하는 모빌리티 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
-      "cues": [
+    exercise: {
+      id: "verified-overhead-slam",
+      name: "오버헤드 슬램",
+      englishName: "Overhead Slam",
+      category: "파워·민첩성",
+      regions: ["등"],
+      focus: "파워",
+      difficulty: "입문",
+      equipment: "가벼운 메디신볼·공간",
+      minutes: "3–6회 · 2세트",
+      description:
+        "오버헤드 슬램은 광배근 주변을 통증 없는 범위에서 천천히 움직여 가동 범위와 자세 감각을 확인하는 모빌리티 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
+      cues: [
         "오버헤드 슬램에서 작은 범위에서 호흡을 멈추지 않기",
         "광배근을 느끼며 끝 범위를 밀지 말고 부드럽게 왕복",
-        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다"
+        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
       ],
-      "benefits": [
+      benefits: [
         "오버헤드 슬램으로 관절 위치와 범위 인식",
         "광배근을 활용한 편안한 움직임 준비",
-        "광배근의 움직임 경로 인식"
+        "광배근의 움직임 경로 인식",
       ],
-      "warning": "오버헤드 슬램 중 날카로운 통증, 저림, 방사통, 붓기·열감이 있으면 자가 진행을 멈추고 평가를 우선하세요.",
-      "reference": {
-        "label": "ACSM — Exercise Safety",
-        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
-      }
+      warning:
+        "오버헤드 슬램 중 날카로운 통증, 저림, 방사통, 붓기·열감이 있으면 자가 진행을 멈추고 평가를 우선하세요.",
+      reference: {
+        label: "ACSM — Exercise Safety",
+        url: "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/",
+      },
     },
-    "detail": {
-      "setup": [
+    detail: {
+      setup: [
         "공을 놓을 공간과 튀어 나갈 방향을 비우고 손가락을 펴서 받습니다",
         "발 또는 지지면을 단단히 고정하고 몸통을 길게 세웁니다",
-        "오버헤드 슬램에 맞춰 편안한 바닥·매트 또는 지지대를 준비합니다"
+        "오버헤드 슬램에 맞춰 편안한 바닥·매트 또는 지지대를 준비합니다",
       ],
-      "finish": "오버헤드 슬램을 마친 뒤 중립 자세로 천천히 돌아와 불편감이 남지 않는지 확인합니다.",
-      "commonMistakes": [
+      finish:
+        "오버헤드 슬램을 마친 뒤 중립 자세로 천천히 돌아와 불편감이 남지 않는지 확인합니다.",
+      commonMistakes: [
         "오버헤드 슬램에서 끝 범위를 억지로 밀어 통증을 만드는 경우",
         "오버헤드 슬램에서 호흡을 참거나 반동을 쓰는 경우",
-        "오버헤드 슬램에서 저림·방사통을 무시하고 지속하는 경우"
+        "오버헤드 슬램에서 저림·방사통을 무시하고 지속하는 경우",
       ],
-      "regressions": [
+      regressions: [
         "오버헤드 슬램은 범위와 유지 시간을 줄입니다",
         "오버헤드 슬램은 벽·의자·블록 같은 지지대를 사용합니다",
-        "오버헤드 슬램은 누운 또는 앉은 안정된 자세로 바꿉니다"
+        "오버헤드 슬램은 누운 또는 앉은 안정된 자세로 바꿉니다",
       ],
-      "progressions": [
+      progressions: [
         "오버헤드 슬램은 다음 날 편안하면 범위만 조금 늘립니다",
         "오버헤드 슬램은 호흡 주기를 한 번 추가합니다",
-        "오버헤드 슬램은 지지대는 안정적으로 줄여 갑니다"
-      ]
-    }
+        "오버헤드 슬램은 지지대는 안정적으로 줄여 갑니다",
+      ],
+    },
   },
   {
-    "exercise": {
-      "id": "verified-return-push-from-stance",
-      "name": "스탠스 리턴 푸시",
-      "englishName": "Return Push from Stance",
-      "category": "파워·민첩성",
-      "regions": [
-        "어깨"
-      ],
-      "focus": "파워",
-      "difficulty": "입문",
-      "equipment": "가벼운 메디신볼·공간",
-      "minutes": "3–6회 · 2세트",
-      "description": "스탠스 리턴 푸시은 어깨 주변을 통증 없는 범위에서 천천히 움직여 가동 범위와 자세 감각을 확인하는 모빌리티 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
-      "cues": [
+    exercise: {
+      id: "verified-return-push-from-stance",
+      name: "스탠스 리턴 푸시",
+      englishName: "Return Push from Stance",
+      category: "파워·민첩성",
+      regions: ["어깨"],
+      focus: "파워",
+      difficulty: "입문",
+      equipment: "가벼운 메디신볼·공간",
+      minutes: "3–6회 · 2세트",
+      description:
+        "스탠스 리턴 푸시은 어깨 주변을 통증 없는 범위에서 천천히 움직여 가동 범위와 자세 감각을 확인하는 모빌리티 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
+      cues: [
         "스탠스 리턴 푸시에서 작은 범위에서 호흡을 멈추지 않기",
         "어깨을 느끼며 끝 범위를 밀지 말고 부드럽게 왕복",
-        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다"
+        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
       ],
-      "benefits": [
+      benefits: [
         "스탠스 리턴 푸시으로 관절 위치와 범위 인식",
         "어깨을 활용한 편안한 움직임 준비",
-        "어깨의 움직임 경로 인식"
+        "어깨의 움직임 경로 인식",
       ],
-      "warning": "스탠스 리턴 푸시 중 날카로운 통증, 저림, 방사통, 붓기·열감이 있으면 자가 진행을 멈추고 평가를 우선하세요.",
-      "reference": {
-        "label": "ACSM — Exercise Safety",
-        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
-      }
+      warning:
+        "스탠스 리턴 푸시 중 날카로운 통증, 저림, 방사통, 붓기·열감이 있으면 자가 진행을 멈추고 평가를 우선하세요.",
+      reference: {
+        label: "ACSM — Exercise Safety",
+        url: "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/",
+      },
     },
-    "detail": {
-      "setup": [
+    detail: {
+      setup: [
         "공을 놓을 공간과 튀어 나갈 방향을 비우고 손가락을 펴서 받습니다",
         "발 또는 지지면을 단단히 고정하고 몸통을 길게 세웁니다",
-        "스탠스 리턴 푸시에 맞춰 편안한 바닥·매트 또는 지지대를 준비합니다"
+        "스탠스 리턴 푸시에 맞춰 편안한 바닥·매트 또는 지지대를 준비합니다",
       ],
-      "finish": "스탠스 리턴 푸시을 마친 뒤 중립 자세로 천천히 돌아와 불편감이 남지 않는지 확인합니다.",
-      "commonMistakes": [
+      finish:
+        "스탠스 리턴 푸시을 마친 뒤 중립 자세로 천천히 돌아와 불편감이 남지 않는지 확인합니다.",
+      commonMistakes: [
         "스탠스 리턴 푸시에서 끝 범위를 억지로 밀어 통증을 만드는 경우",
         "스탠스 리턴 푸시에서 호흡을 참거나 반동을 쓰는 경우",
-        "스탠스 리턴 푸시에서 저림·방사통을 무시하고 지속하는 경우"
+        "스탠스 리턴 푸시에서 저림·방사통을 무시하고 지속하는 경우",
       ],
-      "regressions": [
+      regressions: [
         "스탠스 리턴 푸시은 범위와 유지 시간을 줄입니다",
         "스탠스 리턴 푸시은 벽·의자·블록 같은 지지대를 사용합니다",
-        "스탠스 리턴 푸시은 누운 또는 앉은 안정된 자세로 바꿉니다"
+        "스탠스 리턴 푸시은 누운 또는 앉은 안정된 자세로 바꿉니다",
       ],
-      "progressions": [
+      progressions: [
         "스탠스 리턴 푸시은 다음 날 편안하면 범위만 조금 늘립니다",
         "스탠스 리턴 푸시은 호흡 주기를 한 번 추가합니다",
-        "스탠스 리턴 푸시은 지지대는 안정적으로 줄여 갑니다"
-      ]
-    }
+        "스탠스 리턴 푸시은 지지대는 안정적으로 줄여 갑니다",
+      ],
+    },
   },
   {
-    "exercise": {
-      "id": "verified-standing-two-arm-overhead-throw",
-      "name": "서서 양손 오버헤드 던지기",
-      "englishName": "Standing Two-Arm Overhead Throw",
-      "category": "파워·민첩성",
-      "regions": [
-        "어깨"
-      ],
-      "focus": "파워",
-      "difficulty": "입문",
-      "equipment": "가벼운 메디신볼·공간",
-      "minutes": "3–6회 · 2세트",
-      "description": "서서 양손 오버헤드 던지기은 어깨을 쓰며 손잡이 또는 도구를 몸 쪽으로 당기고 어깨뼈의 위치를 제어하는 당기기 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
-      "cues": [
+    exercise: {
+      id: "verified-standing-two-arm-overhead-throw",
+      name: "서서 양손 오버헤드 던지기",
+      englishName: "Standing Two-Arm Overhead Throw",
+      category: "파워·민첩성",
+      regions: ["어깨"],
+      focus: "파워",
+      difficulty: "입문",
+      equipment: "가벼운 메디신볼·공간",
+      minutes: "3–6회 · 2세트",
+      description:
+        "서서 양손 오버헤드 던지기은 어깨을 쓰며 손잡이 또는 도구를 몸 쪽으로 당기고 어깨뼈의 위치를 제어하는 당기기 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
+      cues: [
         "서서 양손 오버헤드 던지기에서 먼저 어깨를 귀에서 멀리 두고 가슴을 편안히 유지",
         "어깨을 느끼며 팔꿈치를 목적 방향으로 끌되 몸통 반동 줄이기",
-        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다"
+        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
       ],
-      "benefits": [
+      benefits: [
         "서서 양손 오버헤드 던지기으로 등·팔의 당기기 협응",
         "어깨을 활용한 견갑 위치 인식",
-        "어깨의 움직임 경로 인식"
+        "어깨의 움직임 경로 인식",
       ],
-      "warning": "서서 양손 오버헤드 던지기 중 어깨 앞쪽의 날카로운 통증, 손 저림, 고정점 흔들림 또는 그립 이탈이 있으면 즉시 중단하세요.",
-      "reference": {
-        "label": "ACSM — Exercise Safety",
-        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
-      }
+      warning:
+        "서서 양손 오버헤드 던지기 중 어깨 앞쪽의 날카로운 통증, 손 저림, 고정점 흔들림 또는 그립 이탈이 있으면 즉시 중단하세요.",
+      reference: {
+        label: "ACSM — Exercise Safety",
+        url: "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/",
+      },
     },
-    "detail": {
-      "setup": [
+    detail: {
+      setup: [
         "공을 놓을 공간과 튀어 나갈 방향을 비우고 손가락을 펴서 받습니다",
         "발 또는 지지면을 단단히 고정하고 몸통을 길게 세웁니다",
-        "서서 양손 오버헤드 던지기에 맞춰 그립·바·손잡이 높이와 고정 상태를 확인합니다"
+        "서서 양손 오버헤드 던지기에 맞춰 그립·바·손잡이 높이와 고정 상태를 확인합니다",
       ],
-      "finish": "서서 양손 오버헤드 던지기을 마친 뒤 팔을 급하게 펴지 말고 어깨가 앞으로 쏠리지 않는 범위에서 시작 위치로 돌아갑니다.",
-      "commonMistakes": [
+      finish:
+        "서서 양손 오버헤드 던지기을 마친 뒤 팔을 급하게 펴지 말고 어깨가 앞으로 쏠리지 않는 범위에서 시작 위치로 돌아갑니다.",
+      commonMistakes: [
         "서서 양손 오버헤드 던지기에서 어깨를 으쓱한 채 팔만 사용하는 경우",
         "서서 양손 오버헤드 던지기에서 몸통을 크게 흔들어 반동을 만드는 경우",
-        "서서 양손 오버헤드 던지기에서 팔꿈치를 끝까지 밀어 관절을 잠그는 경우"
+        "서서 양손 오버헤드 던지기에서 팔꿈치를 끝까지 밀어 관절을 잠그는 경우",
       ],
-      "regressions": [
+      regressions: [
         "서서 양손 오버헤드 던지기은 밴드·보조 장치 또는 더 가벼운 저항을 사용합니다",
         "서서 양손 오버헤드 던지기은 지지된 시티드 자세로 몸통 부담을 줄입니다",
-        "서서 양손 오버헤드 던지기은 당기는 범위를 짧게 정하고 멈춥니다"
+        "서서 양손 오버헤드 던지기은 당기는 범위를 짧게 정하고 멈춥니다",
       ],
-      "progressions": [
+      progressions: [
         "서서 양손 오버헤드 던지기은 같은 경로에서 저항을 한 단계만 올립니다",
         "서서 양손 오버헤드 던지기은 완전한 어깨 제어가 되면 범위를 조금 늘립니다",
-        "서서 양손 오버헤드 던지기은 편측 당김은 몸통 회전을 통제할 수 있을 때 시도합니다"
-      ]
-    }
+        "서서 양손 오버헤드 던지기은 편측 당김은 몸통 회전을 통제할 수 있을 때 시도합니다",
+      ],
+    },
   },
   {
-    "exercise": {
-      "id": "verified-supine-chest-throw",
-      "name": "누운 체스트 던지기",
-      "englishName": "Supine Chest Throw",
-      "category": "파워·민첩성",
-      "regions": [
-        "팔"
-      ],
-      "focus": "파워",
-      "difficulty": "입문",
-      "equipment": "가벼운 메디신볼·공간",
-      "minutes": "3–6회 · 2세트",
-      "description": "누운 체스트 던지기은 삼두근을 쓰며 손잡이 또는 도구를 몸 쪽으로 당기고 어깨뼈의 위치를 제어하는 당기기 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
-      "cues": [
+    exercise: {
+      id: "verified-supine-chest-throw",
+      name: "누운 체스트 던지기",
+      englishName: "Supine Chest Throw",
+      category: "파워·민첩성",
+      regions: ["팔"],
+      focus: "파워",
+      difficulty: "입문",
+      equipment: "가벼운 메디신볼·공간",
+      minutes: "3–6회 · 2세트",
+      description:
+        "누운 체스트 던지기은 삼두근을 쓰며 손잡이 또는 도구를 몸 쪽으로 당기고 어깨뼈의 위치를 제어하는 당기기 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
+      cues: [
         "누운 체스트 던지기에서 먼저 어깨를 귀에서 멀리 두고 가슴을 편안히 유지",
         "삼두근을 느끼며 팔꿈치를 목적 방향으로 끌되 몸통 반동 줄이기",
-        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다"
+        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
       ],
-      "benefits": [
+      benefits: [
         "누운 체스트 던지기으로 등·팔의 당기기 협응",
         "삼두근을 활용한 견갑 위치 인식",
-        "삼두근의 움직임 경로 인식"
+        "삼두근의 움직임 경로 인식",
       ],
-      "warning": "누운 체스트 던지기 중 어깨 앞쪽의 날카로운 통증, 손 저림, 고정점 흔들림 또는 그립 이탈이 있으면 즉시 중단하세요.",
-      "reference": {
-        "label": "ACSM — Exercise Safety",
-        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
-      }
+      warning:
+        "누운 체스트 던지기 중 어깨 앞쪽의 날카로운 통증, 손 저림, 고정점 흔들림 또는 그립 이탈이 있으면 즉시 중단하세요.",
+      reference: {
+        label: "ACSM — Exercise Safety",
+        url: "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/",
+      },
     },
-    "detail": {
-      "setup": [
+    detail: {
+      setup: [
         "공을 놓을 공간과 튀어 나갈 방향을 비우고 손가락을 펴서 받습니다",
         "바닥 또는 벤치에 등을 안정적으로 댄 뒤 갈비뼈를 과하게 들지 않습니다",
-        "누운 체스트 던지기에 맞춰 그립·바·손잡이 높이와 고정 상태를 확인합니다"
+        "누운 체스트 던지기에 맞춰 그립·바·손잡이 높이와 고정 상태를 확인합니다",
       ],
-      "finish": "누운 체스트 던지기을 마친 뒤 팔을 급하게 펴지 말고 어깨가 앞으로 쏠리지 않는 범위에서 시작 위치로 돌아갑니다.",
-      "commonMistakes": [
+      finish:
+        "누운 체스트 던지기을 마친 뒤 팔을 급하게 펴지 말고 어깨가 앞으로 쏠리지 않는 범위에서 시작 위치로 돌아갑니다.",
+      commonMistakes: [
         "누운 체스트 던지기에서 어깨를 으쓱한 채 팔만 사용하는 경우",
         "누운 체스트 던지기에서 몸통을 크게 흔들어 반동을 만드는 경우",
-        "누운 체스트 던지기에서 팔꿈치를 끝까지 밀어 관절을 잠그는 경우"
+        "누운 체스트 던지기에서 팔꿈치를 끝까지 밀어 관절을 잠그는 경우",
       ],
-      "regressions": [
+      regressions: [
         "누운 체스트 던지기은 밴드·보조 장치 또는 더 가벼운 저항을 사용합니다",
         "누운 체스트 던지기은 지지된 시티드 자세로 몸통 부담을 줄입니다",
-        "누운 체스트 던지기은 당기는 범위를 짧게 정하고 멈춥니다"
+        "누운 체스트 던지기은 당기는 범위를 짧게 정하고 멈춥니다",
       ],
-      "progressions": [
+      progressions: [
         "누운 체스트 던지기은 같은 경로에서 저항을 한 단계만 올립니다",
         "누운 체스트 던지기은 완전한 어깨 제어가 되면 범위를 조금 늘립니다",
-        "누운 체스트 던지기은 편측 당김은 몸통 회전을 통제할 수 있을 때 시도합니다"
-      ]
-    }
+        "누운 체스트 던지기은 편측 당김은 몸통 회전을 통제할 수 있을 때 시도합니다",
+      ],
+    },
   },
   {
-    "exercise": {
-      "id": "verified-supine-one-arm-overhead-throw",
-      "name": "누운 한팔 오버헤드 던지기",
-      "englishName": "Supine One-Arm Overhead Throw",
-      "category": "파워·민첩성",
-      "regions": [
-        "코어"
-      ],
-      "focus": "파워",
-      "difficulty": "입문",
-      "equipment": "가벼운 메디신볼·공간",
-      "minutes": "3–6회 · 2세트",
-      "description": "누운 한팔 오버헤드 던지기은 복부을 쓰며 손잡이 또는 도구를 몸 쪽으로 당기고 어깨뼈의 위치를 제어하는 당기기 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
-      "cues": [
+    exercise: {
+      id: "verified-supine-one-arm-overhead-throw",
+      name: "누운 한팔 오버헤드 던지기",
+      englishName: "Supine One-Arm Overhead Throw",
+      category: "파워·민첩성",
+      regions: ["코어"],
+      focus: "파워",
+      difficulty: "입문",
+      equipment: "가벼운 메디신볼·공간",
+      minutes: "3–6회 · 2세트",
+      description:
+        "누운 한팔 오버헤드 던지기은 복부을 쓰며 손잡이 또는 도구를 몸 쪽으로 당기고 어깨뼈의 위치를 제어하는 당기기 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
+      cues: [
         "누운 한팔 오버헤드 던지기에서 먼저 어깨를 귀에서 멀리 두고 가슴을 편안히 유지",
         "복부을 느끼며 팔꿈치를 목적 방향으로 끌되 몸통 반동 줄이기",
-        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다"
+        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
       ],
-      "benefits": [
+      benefits: [
         "누운 한팔 오버헤드 던지기으로 등·팔의 당기기 협응",
         "복부을 활용한 견갑 위치 인식",
-        "복부의 움직임 경로 인식"
+        "복부의 움직임 경로 인식",
       ],
-      "warning": "누운 한팔 오버헤드 던지기 중 어깨 앞쪽의 날카로운 통증, 손 저림, 고정점 흔들림 또는 그립 이탈이 있으면 즉시 중단하세요.",
-      "reference": {
-        "label": "ACSM — Exercise Safety",
-        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
-      }
+      warning:
+        "누운 한팔 오버헤드 던지기 중 어깨 앞쪽의 날카로운 통증, 손 저림, 고정점 흔들림 또는 그립 이탈이 있으면 즉시 중단하세요.",
+      reference: {
+        label: "ACSM — Exercise Safety",
+        url: "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/",
+      },
     },
-    "detail": {
-      "setup": [
+    detail: {
+      setup: [
         "공을 놓을 공간과 튀어 나갈 방향을 비우고 손가락을 펴서 받습니다",
         "바닥 또는 벤치에 등을 안정적으로 댄 뒤 갈비뼈를 과하게 들지 않습니다",
-        "누운 한팔 오버헤드 던지기에 맞춰 그립·바·손잡이 높이와 고정 상태를 확인합니다"
+        "누운 한팔 오버헤드 던지기에 맞춰 그립·바·손잡이 높이와 고정 상태를 확인합니다",
       ],
-      "finish": "누운 한팔 오버헤드 던지기을 마친 뒤 팔을 급하게 펴지 말고 어깨가 앞으로 쏠리지 않는 범위에서 시작 위치로 돌아갑니다.",
-      "commonMistakes": [
+      finish:
+        "누운 한팔 오버헤드 던지기을 마친 뒤 팔을 급하게 펴지 말고 어깨가 앞으로 쏠리지 않는 범위에서 시작 위치로 돌아갑니다.",
+      commonMistakes: [
         "누운 한팔 오버헤드 던지기에서 어깨를 으쓱한 채 팔만 사용하는 경우",
         "누운 한팔 오버헤드 던지기에서 몸통을 크게 흔들어 반동을 만드는 경우",
-        "누운 한팔 오버헤드 던지기에서 팔꿈치를 끝까지 밀어 관절을 잠그는 경우"
+        "누운 한팔 오버헤드 던지기에서 팔꿈치를 끝까지 밀어 관절을 잠그는 경우",
       ],
-      "regressions": [
+      regressions: [
         "누운 한팔 오버헤드 던지기은 밴드·보조 장치 또는 더 가벼운 저항을 사용합니다",
         "누운 한팔 오버헤드 던지기은 지지된 시티드 자세로 몸통 부담을 줄입니다",
-        "누운 한팔 오버헤드 던지기은 당기는 범위를 짧게 정하고 멈춥니다"
+        "누운 한팔 오버헤드 던지기은 당기는 범위를 짧게 정하고 멈춥니다",
       ],
-      "progressions": [
+      progressions: [
         "누운 한팔 오버헤드 던지기은 같은 경로에서 저항을 한 단계만 올립니다",
         "누운 한팔 오버헤드 던지기은 완전한 어깨 제어가 되면 범위를 조금 늘립니다",
-        "누운 한팔 오버헤드 던지기은 편측 당김은 몸통 회전을 통제할 수 있을 때 시도합니다"
-      ]
-    }
+        "누운 한팔 오버헤드 던지기은 편측 당김은 몸통 회전을 통제할 수 있을 때 시도합니다",
+      ],
+    },
   },
   {
-    "exercise": {
-      "id": "verified-supine-two-arm-overhead-throw",
-      "name": "누운 양손 오버헤드 던지기",
-      "englishName": "Supine Two-Arm Overhead Throw",
-      "category": "파워·민첩성",
-      "regions": [
-        "코어"
-      ],
-      "focus": "파워",
-      "difficulty": "입문",
-      "equipment": "가벼운 메디신볼·공간",
-      "minutes": "3–6회 · 2세트",
-      "description": "누운 양손 오버헤드 던지기은 복부을 쓰며 손잡이 또는 도구를 몸 쪽으로 당기고 어깨뼈의 위치를 제어하는 당기기 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
-      "cues": [
+    exercise: {
+      id: "verified-supine-two-arm-overhead-throw",
+      name: "누운 양손 오버헤드 던지기",
+      englishName: "Supine Two-Arm Overhead Throw",
+      category: "파워·민첩성",
+      regions: ["코어"],
+      focus: "파워",
+      difficulty: "입문",
+      equipment: "가벼운 메디신볼·공간",
+      minutes: "3–6회 · 2세트",
+      description:
+        "누운 양손 오버헤드 던지기은 복부을 쓰며 손잡이 또는 도구를 몸 쪽으로 당기고 어깨뼈의 위치를 제어하는 당기기 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
+      cues: [
         "누운 양손 오버헤드 던지기에서 먼저 어깨를 귀에서 멀리 두고 가슴을 편안히 유지",
         "복부을 느끼며 팔꿈치를 목적 방향으로 끌되 몸통 반동 줄이기",
-        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다"
+        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
       ],
-      "benefits": [
+      benefits: [
         "누운 양손 오버헤드 던지기으로 등·팔의 당기기 협응",
         "복부을 활용한 견갑 위치 인식",
-        "복부의 움직임 경로 인식"
+        "복부의 움직임 경로 인식",
       ],
-      "warning": "누운 양손 오버헤드 던지기 중 어깨 앞쪽의 날카로운 통증, 손 저림, 고정점 흔들림 또는 그립 이탈이 있으면 즉시 중단하세요.",
-      "reference": {
-        "label": "ACSM — Exercise Safety",
-        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
-      }
+      warning:
+        "누운 양손 오버헤드 던지기 중 어깨 앞쪽의 날카로운 통증, 손 저림, 고정점 흔들림 또는 그립 이탈이 있으면 즉시 중단하세요.",
+      reference: {
+        label: "ACSM — Exercise Safety",
+        url: "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/",
+      },
     },
-    "detail": {
-      "setup": [
+    detail: {
+      setup: [
         "공을 놓을 공간과 튀어 나갈 방향을 비우고 손가락을 펴서 받습니다",
         "바닥 또는 벤치에 등을 안정적으로 댄 뒤 갈비뼈를 과하게 들지 않습니다",
-        "누운 양손 오버헤드 던지기에 맞춰 그립·바·손잡이 높이와 고정 상태를 확인합니다"
+        "누운 양손 오버헤드 던지기에 맞춰 그립·바·손잡이 높이와 고정 상태를 확인합니다",
       ],
-      "finish": "누운 양손 오버헤드 던지기을 마친 뒤 팔을 급하게 펴지 말고 어깨가 앞으로 쏠리지 않는 범위에서 시작 위치로 돌아갑니다.",
-      "commonMistakes": [
+      finish:
+        "누운 양손 오버헤드 던지기을 마친 뒤 팔을 급하게 펴지 말고 어깨가 앞으로 쏠리지 않는 범위에서 시작 위치로 돌아갑니다.",
+      commonMistakes: [
         "누운 양손 오버헤드 던지기에서 어깨를 으쓱한 채 팔만 사용하는 경우",
         "누운 양손 오버헤드 던지기에서 몸통을 크게 흔들어 반동을 만드는 경우",
-        "누운 양손 오버헤드 던지기에서 팔꿈치를 끝까지 밀어 관절을 잠그는 경우"
+        "누운 양손 오버헤드 던지기에서 팔꿈치를 끝까지 밀어 관절을 잠그는 경우",
       ],
-      "regressions": [
+      regressions: [
         "누운 양손 오버헤드 던지기은 밴드·보조 장치 또는 더 가벼운 저항을 사용합니다",
         "누운 양손 오버헤드 던지기은 지지된 시티드 자세로 몸통 부담을 줄입니다",
-        "누운 양손 오버헤드 던지기은 당기는 범위를 짧게 정하고 멈춥니다"
+        "누운 양손 오버헤드 던지기은 당기는 범위를 짧게 정하고 멈춥니다",
       ],
-      "progressions": [
+      progressions: [
         "누운 양손 오버헤드 던지기은 같은 경로에서 저항을 한 단계만 올립니다",
         "누운 양손 오버헤드 던지기은 완전한 어깨 제어가 되면 범위를 조금 늘립니다",
-        "누운 양손 오버헤드 던지기은 편측 당김은 몸통 회전을 통제할 수 있을 때 시도합니다"
-      ]
-    }
+        "누운 양손 오버헤드 던지기은 편측 당김은 몸통 회전을 통제할 수 있을 때 시도합니다",
+      ],
+    },
   },
   {
-    "exercise": {
-      "id": "verified-alternate-leg-diagonal-bound",
-      "name": "교대 대각선 도약",
-      "englishName": "Alternate Leg Diagonal Bound",
-      "category": "파워·민첩성",
-      "regions": [
-        "하체"
-      ],
-      "focus": "파워",
-      "difficulty": "입문",
-      "equipment": "장비 없음",
-      "minutes": "3–6회 · 2세트",
-      "description": "교대 대각선 도약은 대퇴사두근 주변을 통증 없는 범위에서 천천히 움직여 가동 범위와 자세 감각을 확인하는 모빌리티 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
-      "cues": [
+    exercise: {
+      id: "verified-alternate-leg-diagonal-bound",
+      name: "교대 대각선 도약",
+      englishName: "Alternate Leg Diagonal Bound",
+      category: "파워·민첩성",
+      regions: ["하체"],
+      focus: "파워",
+      difficulty: "입문",
+      equipment: "장비 없음",
+      minutes: "3–6회 · 2세트",
+      description:
+        "교대 대각선 도약은 대퇴사두근 주변을 통증 없는 범위에서 천천히 움직여 가동 범위와 자세 감각을 확인하는 모빌리티 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
+      cues: [
         "교대 대각선 도약에서 작은 범위에서 호흡을 멈추지 않기",
         "대퇴사두근을 느끼며 끝 범위를 밀지 말고 부드럽게 왕복",
-        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다"
+        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
       ],
-      "benefits": [
+      benefits: [
         "교대 대각선 도약으로 관절 위치와 범위 인식",
         "대퇴사두근을 활용한 편안한 움직임 준비",
-        "대퇴사두근의 움직임 경로 인식"
+        "대퇴사두근의 움직임 경로 인식",
       ],
-      "warning": "교대 대각선 도약 중 날카로운 통증, 저림, 방사통, 붓기·열감이 있으면 자가 진행을 멈추고 평가를 우선하세요.",
-      "reference": {
-        "label": "ACSM — Exercise Safety",
-        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
-      }
+      warning:
+        "교대 대각선 도약 중 날카로운 통증, 저림, 방사통, 붓기·열감이 있으면 자가 진행을 멈추고 평가를 우선하세요.",
+      reference: {
+        label: "ACSM — Exercise Safety",
+        url: "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/",
+      },
     },
-    "detail": {
-      "setup": [
+    detail: {
+      setup: [
         "장비 없음·바닥·주변 공간을 확인하고 가장 쉬운 범위로 한 번 리허설합니다",
         "발 또는 지지면을 단단히 고정하고 몸통을 길게 세웁니다",
-        "교대 대각선 도약에 맞춰 편안한 바닥·매트 또는 지지대를 준비합니다"
+        "교대 대각선 도약에 맞춰 편안한 바닥·매트 또는 지지대를 준비합니다",
       ],
-      "finish": "교대 대각선 도약을 마친 뒤 중립 자세로 천천히 돌아와 불편감이 남지 않는지 확인합니다.",
-      "commonMistakes": [
+      finish:
+        "교대 대각선 도약을 마친 뒤 중립 자세로 천천히 돌아와 불편감이 남지 않는지 확인합니다.",
+      commonMistakes: [
         "교대 대각선 도약에서 끝 범위를 억지로 밀어 통증을 만드는 경우",
         "교대 대각선 도약에서 호흡을 참거나 반동을 쓰는 경우",
-        "교대 대각선 도약에서 저림·방사통을 무시하고 지속하는 경우"
+        "교대 대각선 도약에서 저림·방사통을 무시하고 지속하는 경우",
       ],
-      "regressions": [
+      regressions: [
         "교대 대각선 도약은 범위와 유지 시간을 줄입니다",
         "교대 대각선 도약은 벽·의자·블록 같은 지지대를 사용합니다",
-        "교대 대각선 도약은 누운 또는 앉은 안정된 자세로 바꿉니다"
+        "교대 대각선 도약은 누운 또는 앉은 안정된 자세로 바꿉니다",
       ],
-      "progressions": [
+      progressions: [
         "교대 대각선 도약은 다음 날 편안하면 범위만 조금 늘립니다",
         "교대 대각선 도약은 호흡 주기를 한 번 추가합니다",
-        "교대 대각선 도약은 지지대는 안정적으로 줄여 갑니다"
-      ]
-    }
+        "교대 대각선 도약은 지지대는 안정적으로 줄여 갑니다",
+      ],
+    },
   },
   {
-    "exercise": {
-      "id": "verified-carioca-quick-step",
-      "name": "카리오카 스텝",
-      "englishName": "Carioca Quick Step",
-      "category": "파워·민첩성",
-      "regions": [
-        "하체"
-      ],
-      "focus": "파워",
-      "difficulty": "입문",
-      "equipment": "장비 없음",
-      "minutes": "3–6회 · 2세트",
-      "description": "카리오카 스텝은 허벅지 안쪽 주변을 통증 없는 범위에서 천천히 움직여 가동 범위와 자세 감각을 확인하는 모빌리티 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
-      "cues": [
+    exercise: {
+      id: "verified-carioca-quick-step",
+      name: "카리오카 스텝",
+      englishName: "Carioca Quick Step",
+      category: "파워·민첩성",
+      regions: ["하체"],
+      focus: "파워",
+      difficulty: "입문",
+      equipment: "장비 없음",
+      minutes: "3–6회 · 2세트",
+      description:
+        "카리오카 스텝은 허벅지 안쪽 주변을 통증 없는 범위에서 천천히 움직여 가동 범위와 자세 감각을 확인하는 모빌리티 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
+      cues: [
         "카리오카 스텝에서 작은 범위에서 호흡을 멈추지 않기",
         "허벅지 안쪽을 느끼며 끝 범위를 밀지 말고 부드럽게 왕복",
-        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다"
+        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
       ],
-      "benefits": [
+      benefits: [
         "카리오카 스텝으로 관절 위치와 범위 인식",
         "허벅지 안쪽을 활용한 편안한 움직임 준비",
-        "허벅지 안쪽의 움직임 경로 인식"
+        "허벅지 안쪽의 움직임 경로 인식",
       ],
-      "warning": "카리오카 스텝 중 날카로운 통증, 저림, 방사통, 붓기·열감이 있으면 자가 진행을 멈추고 평가를 우선하세요.",
-      "reference": {
-        "label": "ACSM — Exercise Safety",
-        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
-      }
+      warning:
+        "카리오카 스텝 중 날카로운 통증, 저림, 방사통, 붓기·열감이 있으면 자가 진행을 멈추고 평가를 우선하세요.",
+      reference: {
+        label: "ACSM — Exercise Safety",
+        url: "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/",
+      },
     },
-    "detail": {
-      "setup": [
+    detail: {
+      setup: [
         "장비 없음·바닥·주변 공간을 확인하고 가장 쉬운 범위로 한 번 리허설합니다",
         "발 또는 지지면을 단단히 고정하고 몸통을 길게 세웁니다",
-        "카리오카 스텝에 맞춰 편안한 바닥·매트 또는 지지대를 준비합니다"
+        "카리오카 스텝에 맞춰 편안한 바닥·매트 또는 지지대를 준비합니다",
       ],
-      "finish": "카리오카 스텝을 마친 뒤 중립 자세로 천천히 돌아와 불편감이 남지 않는지 확인합니다.",
-      "commonMistakes": [
+      finish:
+        "카리오카 스텝을 마친 뒤 중립 자세로 천천히 돌아와 불편감이 남지 않는지 확인합니다.",
+      commonMistakes: [
         "카리오카 스텝에서 끝 범위를 억지로 밀어 통증을 만드는 경우",
         "카리오카 스텝에서 호흡을 참거나 반동을 쓰는 경우",
-        "카리오카 스텝에서 저림·방사통을 무시하고 지속하는 경우"
+        "카리오카 스텝에서 저림·방사통을 무시하고 지속하는 경우",
       ],
-      "regressions": [
+      regressions: [
         "카리오카 스텝은 범위와 유지 시간을 줄입니다",
         "카리오카 스텝은 벽·의자·블록 같은 지지대를 사용합니다",
-        "카리오카 스텝은 누운 또는 앉은 안정된 자세로 바꿉니다"
+        "카리오카 스텝은 누운 또는 앉은 안정된 자세로 바꿉니다",
       ],
-      "progressions": [
+      progressions: [
         "카리오카 스텝은 다음 날 편안하면 범위만 조금 늘립니다",
         "카리오카 스텝은 호흡 주기를 한 번 추가합니다",
-        "카리오카 스텝은 지지대는 안정적으로 줄여 갑니다"
-      ]
-    }
+        "카리오카 스텝은 지지대는 안정적으로 줄여 갑니다",
+      ],
+    },
   },
   {
-    "exercise": {
-      "id": "verified-kneeling-arm-drill",
-      "name": "무릎 팔 드릴",
-      "englishName": "Kneeling Arm Drill",
-      "category": "파워·민첩성",
-      "regions": [
-        "어깨"
-      ],
-      "focus": "파워",
-      "difficulty": "입문",
-      "equipment": "장비 없음",
-      "minutes": "3–6회 · 2세트",
-      "description": "무릎 팔 드릴은 어깨 주변을 통증 없는 범위에서 천천히 움직여 가동 범위와 자세 감각을 확인하는 모빌리티 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
-      "cues": [
+    exercise: {
+      id: "verified-kneeling-arm-drill",
+      name: "무릎 팔 드릴",
+      englishName: "Kneeling Arm Drill",
+      category: "파워·민첩성",
+      regions: ["어깨"],
+      focus: "파워",
+      difficulty: "입문",
+      equipment: "장비 없음",
+      minutes: "3–6회 · 2세트",
+      description:
+        "무릎 팔 드릴은 어깨 주변을 통증 없는 범위에서 천천히 움직여 가동 범위와 자세 감각을 확인하는 모빌리티 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
+      cues: [
         "무릎 팔 드릴에서 작은 범위에서 호흡을 멈추지 않기",
         "어깨을 느끼며 끝 범위를 밀지 말고 부드럽게 왕복",
-        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다"
+        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
       ],
-      "benefits": [
+      benefits: [
         "무릎 팔 드릴으로 관절 위치와 범위 인식",
         "어깨을 활용한 편안한 움직임 준비",
-        "어깨의 움직임 경로 인식"
+        "어깨의 움직임 경로 인식",
       ],
-      "warning": "무릎 팔 드릴 중 날카로운 통증, 저림, 방사통, 붓기·열감이 있으면 자가 진행을 멈추고 평가를 우선하세요.",
-      "reference": {
-        "label": "ACSM — Exercise Safety",
-        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
-      }
+      warning:
+        "무릎 팔 드릴 중 날카로운 통증, 저림, 방사통, 붓기·열감이 있으면 자가 진행을 멈추고 평가를 우선하세요.",
+      reference: {
+        label: "ACSM — Exercise Safety",
+        url: "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/",
+      },
     },
-    "detail": {
-      "setup": [
+    detail: {
+      setup: [
         "장비 없음·바닥·주변 공간을 확인하고 가장 쉬운 범위로 한 번 리허설합니다",
         "무릎 아래에 매트를 두고 골반을 중립 가까이 맞춥니다",
-        "무릎 팔 드릴에 맞춰 편안한 바닥·매트 또는 지지대를 준비합니다"
+        "무릎 팔 드릴에 맞춰 편안한 바닥·매트 또는 지지대를 준비합니다",
       ],
-      "finish": "무릎 팔 드릴을 마친 뒤 중립 자세로 천천히 돌아와 불편감이 남지 않는지 확인합니다.",
-      "commonMistakes": [
+      finish:
+        "무릎 팔 드릴을 마친 뒤 중립 자세로 천천히 돌아와 불편감이 남지 않는지 확인합니다.",
+      commonMistakes: [
         "무릎 팔 드릴에서 끝 범위를 억지로 밀어 통증을 만드는 경우",
         "무릎 팔 드릴에서 호흡을 참거나 반동을 쓰는 경우",
-        "무릎 팔 드릴에서 저림·방사통을 무시하고 지속하는 경우"
+        "무릎 팔 드릴에서 저림·방사통을 무시하고 지속하는 경우",
       ],
-      "regressions": [
+      regressions: [
         "무릎 팔 드릴은 범위와 유지 시간을 줄입니다",
         "무릎 팔 드릴은 벽·의자·블록 같은 지지대를 사용합니다",
-        "무릎 팔 드릴은 누운 또는 앉은 안정된 자세로 바꿉니다"
+        "무릎 팔 드릴은 누운 또는 앉은 안정된 자세로 바꿉니다",
       ],
-      "progressions": [
+      progressions: [
         "무릎 팔 드릴은 다음 날 편안하면 범위만 조금 늘립니다",
         "무릎 팔 드릴은 호흡 주기를 한 번 추가합니다",
-        "무릎 팔 드릴은 지지대는 안정적으로 줄여 갑니다"
-      ]
-    }
+        "무릎 팔 드릴은 지지대는 안정적으로 줄여 갑니다",
+      ],
+    },
   },
   {
-    "exercise": {
-      "id": "verified-linear-3-part-start-technique",
-      "name": "직선 3단 스타트",
-      "englishName": "Linear 3-Part Start Technique",
-      "category": "파워·민첩성",
-      "regions": [
-        "하체",
-        "둔근"
-      ],
-      "focus": "파워",
-      "difficulty": "입문",
-      "equipment": "장비 없음",
-      "minutes": "3–6회 · 2세트",
-      "description": "직선 3단 스타트은 햄스트링 주변을 통증 없는 범위에서 천천히 움직여 가동 범위와 자세 감각을 확인하는 모빌리티 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
-      "cues": [
+    exercise: {
+      id: "verified-linear-3-part-start-technique",
+      name: "직선 3단 스타트",
+      englishName: "Linear 3-Part Start Technique",
+      category: "파워·민첩성",
+      regions: ["하체", "둔근"],
+      focus: "파워",
+      difficulty: "입문",
+      equipment: "장비 없음",
+      minutes: "3–6회 · 2세트",
+      description:
+        "직선 3단 스타트은 햄스트링 주변을 통증 없는 범위에서 천천히 움직여 가동 범위와 자세 감각을 확인하는 모빌리티 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
+      cues: [
         "직선 3단 스타트에서 작은 범위에서 호흡을 멈추지 않기",
         "햄스트링을 느끼며 끝 범위를 밀지 말고 부드럽게 왕복",
-        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다"
+        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
       ],
-      "benefits": [
+      benefits: [
         "직선 3단 스타트으로 관절 위치와 범위 인식",
         "햄스트링을 활용한 편안한 움직임 준비",
-        "햄스트링의 움직임 경로 인식"
+        "햄스트링의 움직임 경로 인식",
       ],
-      "warning": "직선 3단 스타트 중 날카로운 통증, 저림, 방사통, 붓기·열감이 있으면 자가 진행을 멈추고 평가를 우선하세요.",
-      "reference": {
-        "label": "ACSM — Exercise Safety",
-        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
-      }
+      warning:
+        "직선 3단 스타트 중 날카로운 통증, 저림, 방사통, 붓기·열감이 있으면 자가 진행을 멈추고 평가를 우선하세요.",
+      reference: {
+        label: "ACSM — Exercise Safety",
+        url: "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/",
+      },
     },
-    "detail": {
-      "setup": [
+    detail: {
+      setup: [
         "장비 없음·바닥·주변 공간을 확인하고 가장 쉬운 범위로 한 번 리허설합니다",
         "발 또는 지지면을 단단히 고정하고 몸통을 길게 세웁니다",
-        "직선 3단 스타트에 맞춰 편안한 바닥·매트 또는 지지대를 준비합니다"
+        "직선 3단 스타트에 맞춰 편안한 바닥·매트 또는 지지대를 준비합니다",
       ],
-      "finish": "직선 3단 스타트을 마친 뒤 중립 자세로 천천히 돌아와 불편감이 남지 않는지 확인합니다.",
-      "commonMistakes": [
+      finish:
+        "직선 3단 스타트을 마친 뒤 중립 자세로 천천히 돌아와 불편감이 남지 않는지 확인합니다.",
+      commonMistakes: [
         "직선 3단 스타트에서 끝 범위를 억지로 밀어 통증을 만드는 경우",
         "직선 3단 스타트에서 호흡을 참거나 반동을 쓰는 경우",
-        "직선 3단 스타트에서 저림·방사통을 무시하고 지속하는 경우"
+        "직선 3단 스타트에서 저림·방사통을 무시하고 지속하는 경우",
       ],
-      "regressions": [
+      regressions: [
         "직선 3단 스타트은 범위와 유지 시간을 줄입니다",
         "직선 3단 스타트은 벽·의자·블록 같은 지지대를 사용합니다",
-        "직선 3단 스타트은 누운 또는 앉은 안정된 자세로 바꿉니다"
+        "직선 3단 스타트은 누운 또는 앉은 안정된 자세로 바꿉니다",
       ],
-      "progressions": [
+      progressions: [
         "직선 3단 스타트은 다음 날 편안하면 범위만 조금 늘립니다",
         "직선 3단 스타트은 호흡 주기를 한 번 추가합니다",
-        "직선 3단 스타트은 지지대는 안정적으로 줄여 갑니다"
-      ]
-    }
+        "직선 3단 스타트은 지지대는 안정적으로 줄여 갑니다",
+      ],
+    },
   },
   {
-    "exercise": {
-      "id": "verified-linear-acceleration-wall-drill",
-      "name": "직선 가속 벽 드릴",
-      "englishName": "Linear Acceleration Wall Drill",
-      "category": "파워·민첩성",
-      "regions": [
-        "하체",
-        "둔근"
-      ],
-      "focus": "파워",
-      "difficulty": "입문",
-      "equipment": "장비 없음",
-      "minutes": "3–6회 · 2세트",
-      "description": "직선 가속 벽 드릴은 햄스트링 주변을 통증 없는 범위에서 천천히 움직여 가동 범위와 자세 감각을 확인하는 모빌리티 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
-      "cues": [
+    exercise: {
+      id: "verified-linear-acceleration-wall-drill",
+      name: "직선 가속 벽 드릴",
+      englishName: "Linear Acceleration Wall Drill",
+      category: "파워·민첩성",
+      regions: ["하체", "둔근"],
+      focus: "파워",
+      difficulty: "입문",
+      equipment: "장비 없음",
+      minutes: "3–6회 · 2세트",
+      description:
+        "직선 가속 벽 드릴은 햄스트링 주변을 통증 없는 범위에서 천천히 움직여 가동 범위와 자세 감각을 확인하는 모빌리티 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
+      cues: [
         "직선 가속 벽 드릴에서 작은 범위에서 호흡을 멈추지 않기",
         "햄스트링을 느끼며 끝 범위를 밀지 말고 부드럽게 왕복",
-        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다"
+        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
       ],
-      "benefits": [
+      benefits: [
         "직선 가속 벽 드릴으로 관절 위치와 범위 인식",
         "햄스트링을 활용한 편안한 움직임 준비",
-        "햄스트링의 움직임 경로 인식"
+        "햄스트링의 움직임 경로 인식",
       ],
-      "warning": "직선 가속 벽 드릴 중 날카로운 통증, 저림, 방사통, 붓기·열감이 있으면 자가 진행을 멈추고 평가를 우선하세요.",
-      "reference": {
-        "label": "ACSM — Exercise Safety",
-        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
-      }
+      warning:
+        "직선 가속 벽 드릴 중 날카로운 통증, 저림, 방사통, 붓기·열감이 있으면 자가 진행을 멈추고 평가를 우선하세요.",
+      reference: {
+        label: "ACSM — Exercise Safety",
+        url: "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/",
+      },
     },
-    "detail": {
-      "setup": [
+    detail: {
+      setup: [
         "장비 없음·바닥·주변 공간을 확인하고 가장 쉬운 범위로 한 번 리허설합니다",
         "발 또는 지지면을 단단히 고정하고 몸통을 길게 세웁니다",
-        "직선 가속 벽 드릴에 맞춰 편안한 바닥·매트 또는 지지대를 준비합니다"
+        "직선 가속 벽 드릴에 맞춰 편안한 바닥·매트 또는 지지대를 준비합니다",
       ],
-      "finish": "직선 가속 벽 드릴을 마친 뒤 중립 자세로 천천히 돌아와 불편감이 남지 않는지 확인합니다.",
-      "commonMistakes": [
+      finish:
+        "직선 가속 벽 드릴을 마친 뒤 중립 자세로 천천히 돌아와 불편감이 남지 않는지 확인합니다.",
+      commonMistakes: [
         "직선 가속 벽 드릴에서 끝 범위를 억지로 밀어 통증을 만드는 경우",
         "직선 가속 벽 드릴에서 호흡을 참거나 반동을 쓰는 경우",
-        "직선 가속 벽 드릴에서 저림·방사통을 무시하고 지속하는 경우"
+        "직선 가속 벽 드릴에서 저림·방사통을 무시하고 지속하는 경우",
       ],
-      "regressions": [
+      regressions: [
         "직선 가속 벽 드릴은 범위와 유지 시간을 줄입니다",
         "직선 가속 벽 드릴은 벽·의자·블록 같은 지지대를 사용합니다",
-        "직선 가속 벽 드릴은 누운 또는 앉은 안정된 자세로 바꿉니다"
+        "직선 가속 벽 드릴은 누운 또는 앉은 안정된 자세로 바꿉니다",
       ],
-      "progressions": [
+      progressions: [
         "직선 가속 벽 드릴은 다음 날 편안하면 범위만 조금 늘립니다",
         "직선 가속 벽 드릴은 호흡 주기를 한 번 추가합니다",
-        "직선 가속 벽 드릴은 지지대는 안정적으로 줄여 갑니다"
-      ]
-    }
+        "직선 가속 벽 드릴은 지지대는 안정적으로 줄여 갑니다",
+      ],
+    },
   },
   {
-    "exercise": {
-      "id": "verified-mountain-climbers",
-      "name": "마운틴클라이머",
-      "englishName": "Mountain Climbers",
-      "category": "파워·민첩성",
-      "regions": [
-        "하체"
-      ],
-      "focus": "파워",
-      "difficulty": "입문",
-      "equipment": "장비 없음",
-      "minutes": "3–6회 · 2세트",
-      "description": "마운틴클라이머은 대퇴사두근을 포함한 전신 또는 하체를 리드미컬하게 사용해 심폐 활동을 만드는 유산소 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
-      "cues": [
+    exercise: {
+      id: "verified-mountain-climbers",
+      name: "마운틴클라이머",
+      englishName: "Mountain Climbers",
+      category: "파워·민첩성",
+      regions: ["하체"],
+      focus: "파워",
+      difficulty: "입문",
+      equipment: "장비 없음",
+      minutes: "3–6회 · 2세트",
+      description:
+        "마운틴클라이머은 대퇴사두근을 포함한 전신 또는 하체를 리드미컬하게 사용해 심폐 활동을 만드는 유산소 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
+      cues: [
         "마운틴클라이머에서 낮은 저항에서 편안한 호흡 리듬 먼저 찾기",
         "대퇴사두근을 느끼며 관절이 자연스럽게 움직이는 범위를 유지",
-        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다"
+        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
       ],
-      "benefits": [
+      benefits: [
         "마운틴클라이머으로 저충격 심폐 활동",
         "대퇴사두근을 활용한 지속적인 리듬과 호흡 인식",
-        "대퇴사두근의 움직임 경로 인식"
+        "대퇴사두근의 움직임 경로 인식",
       ],
-      "warning": "마운틴클라이머 중 흉통·현기증·비정상적인 숨참, 관절 통증 또는 기구 이상이 있으면 즉시 멈추고 안전하게 내려오세요.",
-      "reference": {
-        "label": "ACSM — Exercise Safety",
-        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
-      }
+      warning:
+        "마운틴클라이머 중 흉통·현기증·비정상적인 숨참, 관절 통증 또는 기구 이상이 있으면 즉시 멈추고 안전하게 내려오세요.",
+      reference: {
+        label: "ACSM — Exercise Safety",
+        url: "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/",
+      },
     },
-    "detail": {
-      "setup": [
+    detail: {
+      setup: [
         "장비 없음·바닥·주변 공간을 확인하고 가장 쉬운 범위로 한 번 리허설합니다",
         "발 또는 지지면을 단단히 고정하고 몸통을 길게 세웁니다",
-        "마운틴클라이머에 맞춰 시트·손잡이·페달 또는 보폭 설정을 몸에 맞춥니다"
+        "마운틴클라이머에 맞춰 시트·손잡이·페달 또는 보폭 설정을 몸에 맞춥니다",
       ],
-      "finish": "마운틴클라이머을 마친 뒤 저항과 속도를 서서히 낮춰 호흡을 정리한 뒤 천천히 기구에서 내립니다.",
-      "commonMistakes": [
+      finish:
+        "마운틴클라이머을 마친 뒤 저항과 속도를 서서히 낮춰 호흡을 정리한 뒤 천천히 기구에서 내립니다.",
+      commonMistakes: [
         "마운틴클라이머에서 처음부터 저항과 속도를 함께 높이는 경우",
         "마운틴클라이머에서 손잡이에 체중을 실어 자세가 무너지는 경우",
-        "마운틴클라이머에서 피로 신호를 무시하고 불안정한 리듬을 지속하는 경우"
+        "마운틴클라이머에서 피로 신호를 무시하고 불안정한 리듬을 지속하는 경우",
       ],
-      "regressions": [
+      regressions: [
         "마운틴클라이머은 저항과 시간을 모두 낮춥니다",
         "마운틴클라이머은 더 안정된 기구 또는 앉은 자세를 선택합니다",
-        "마운틴클라이머은 짧은 활동 뒤 충분히 회복합니다"
+        "마운틴클라이머은 짧은 활동 뒤 충분히 회복합니다",
       ],
-      "progressions": [
+      progressions: [
         "마운틴클라이머은 편안한 호흡이 유지되면 시간만 소폭 늘립니다",
         "마운틴클라이머은 시간 적응 뒤 저항을 한 단계만 조절합니다",
-        "마운틴클라이머은 다음 날 관절 반응이 편안할 때만 빈도를 늘립니다"
-      ]
-    }
+        "마운틴클라이머은 다음 날 관절 반응이 편안할 때만 빈도를 늘립니다",
+      ],
+    },
   },
   {
-    "exercise": {
-      "id": "verified-moving-claw-series",
-      "name": "무빙 클로 시리즈",
-      "englishName": "Moving Claw Series",
-      "category": "파워·민첩성",
-      "regions": [
-        "하체",
-        "둔근"
-      ],
-      "focus": "파워",
-      "difficulty": "입문",
-      "equipment": "장비 없음",
-      "minutes": "3–6회 · 2세트",
-      "description": "무빙 클로 시리즈은 햄스트링 주변을 통증 없는 범위에서 천천히 움직여 가동 범위와 자세 감각을 확인하는 모빌리티 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
-      "cues": [
+    exercise: {
+      id: "verified-moving-claw-series",
+      name: "무빙 클로 시리즈",
+      englishName: "Moving Claw Series",
+      category: "파워·민첩성",
+      regions: ["하체", "둔근"],
+      focus: "파워",
+      difficulty: "입문",
+      equipment: "장비 없음",
+      minutes: "3–6회 · 2세트",
+      description:
+        "무빙 클로 시리즈은 햄스트링 주변을 통증 없는 범위에서 천천히 움직여 가동 범위와 자세 감각을 확인하는 모빌리티 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
+      cues: [
         "무빙 클로 시리즈에서 작은 범위에서 호흡을 멈추지 않기",
         "햄스트링을 느끼며 끝 범위를 밀지 말고 부드럽게 왕복",
-        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다"
+        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
       ],
-      "benefits": [
+      benefits: [
         "무빙 클로 시리즈으로 관절 위치와 범위 인식",
         "햄스트링을 활용한 편안한 움직임 준비",
-        "햄스트링의 움직임 경로 인식"
+        "햄스트링의 움직임 경로 인식",
       ],
-      "warning": "무빙 클로 시리즈 중 날카로운 통증, 저림, 방사통, 붓기·열감이 있으면 자가 진행을 멈추고 평가를 우선하세요.",
-      "reference": {
-        "label": "ACSM — Exercise Safety",
-        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
-      }
+      warning:
+        "무빙 클로 시리즈 중 날카로운 통증, 저림, 방사통, 붓기·열감이 있으면 자가 진행을 멈추고 평가를 우선하세요.",
+      reference: {
+        label: "ACSM — Exercise Safety",
+        url: "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/",
+      },
     },
-    "detail": {
-      "setup": [
+    detail: {
+      setup: [
         "장비 없음·바닥·주변 공간을 확인하고 가장 쉬운 범위로 한 번 리허설합니다",
         "발 또는 지지면을 단단히 고정하고 몸통을 길게 세웁니다",
-        "무빙 클로 시리즈에 맞춰 편안한 바닥·매트 또는 지지대를 준비합니다"
+        "무빙 클로 시리즈에 맞춰 편안한 바닥·매트 또는 지지대를 준비합니다",
       ],
-      "finish": "무빙 클로 시리즈을 마친 뒤 중립 자세로 천천히 돌아와 불편감이 남지 않는지 확인합니다.",
-      "commonMistakes": [
+      finish:
+        "무빙 클로 시리즈을 마친 뒤 중립 자세로 천천히 돌아와 불편감이 남지 않는지 확인합니다.",
+      commonMistakes: [
         "무빙 클로 시리즈에서 끝 범위를 억지로 밀어 통증을 만드는 경우",
         "무빙 클로 시리즈에서 호흡을 참거나 반동을 쓰는 경우",
-        "무빙 클로 시리즈에서 저림·방사통을 무시하고 지속하는 경우"
+        "무빙 클로 시리즈에서 저림·방사통을 무시하고 지속하는 경우",
       ],
-      "regressions": [
+      regressions: [
         "무빙 클로 시리즈은 범위와 유지 시간을 줄입니다",
         "무빙 클로 시리즈은 벽·의자·블록 같은 지지대를 사용합니다",
-        "무빙 클로 시리즈은 누운 또는 앉은 안정된 자세로 바꿉니다"
+        "무빙 클로 시리즈은 누운 또는 앉은 안정된 자세로 바꿉니다",
       ],
-      "progressions": [
+      progressions: [
         "무빙 클로 시리즈은 다음 날 편안하면 범위만 조금 늘립니다",
         "무빙 클로 시리즈은 호흡 주기를 한 번 추가합니다",
-        "무빙 클로 시리즈은 지지대는 안정적으로 줄여 갑니다"
-      ]
-    }
+        "무빙 클로 시리즈은 지지대는 안정적으로 줄여 갑니다",
+      ],
+    },
   },
   {
-    "exercise": {
-      "id": "verified-side-standing-long-jump",
-      "name": "옆서기 멀리뛰기",
-      "englishName": "Side Standing Long Jump",
-      "category": "파워·민첩성",
-      "regions": [
-        "하체"
-      ],
-      "focus": "파워",
-      "difficulty": "입문",
-      "equipment": "장비 없음",
-      "minutes": "3–6회 · 2세트",
-      "description": "옆서기 멀리뛰기은 대퇴사두근을 빠르게 쓰되 착지·받기·도구 경로를 먼저 통제해야 하는 파워 또는 기술 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
-      "cues": [
+    exercise: {
+      id: "verified-side-standing-long-jump",
+      name: "옆서기 멀리뛰기",
+      englishName: "Side Standing Long Jump",
+      category: "파워·민첩성",
+      regions: ["하체"],
+      focus: "파워",
+      difficulty: "입문",
+      equipment: "장비 없음",
+      minutes: "3–6회 · 2세트",
+      description:
+        "옆서기 멀리뛰기은 대퇴사두근을 빠르게 쓰되 착지·받기·도구 경로를 먼저 통제해야 하는 파워 또는 기술 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
+      cues: [
         "옆서기 멀리뛰기에서 낮은 속도 리허설 뒤에만 힘을 빠르게 쓰기",
         "대퇴사두근을 느끼며 발·무릎·골반이 같은 방향으로 받기",
-        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다"
+        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
       ],
-      "benefits": [
+      benefits: [
         "옆서기 멀리뛰기으로 힘 발휘와 제어의 연결",
         "대퇴사두근을 활용한 착지·받기 협응",
-        "대퇴사두근의 움직임 경로 인식"
+        "대퇴사두근의 움직임 경로 인식",
       ],
-      "warning": "옆서기 멀리뛰기 중 착지 불안, 무릎·발목·허리 통증, 어지러움 또는 공간 부족이 있으면 즉시 중단하세요.",
-      "reference": {
-        "label": "ACSM — Exercise Safety",
-        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
-      }
+      warning:
+        "옆서기 멀리뛰기 중 착지 불안, 무릎·발목·허리 통증, 어지러움 또는 공간 부족이 있으면 즉시 중단하세요.",
+      reference: {
+        label: "ACSM — Exercise Safety",
+        url: "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/",
+      },
     },
-    "detail": {
-      "setup": [
+    detail: {
+      setup: [
         "장비 없음·바닥·주변 공간을 확인하고 가장 쉬운 범위로 한 번 리허설합니다",
         "발 또는 지지면을 단단히 고정하고 몸통을 길게 세웁니다",
-        "옆서기 멀리뛰기에 맞춰 미끄럽지 않은 바닥과 충분한 빈 공간을 확보합니다"
+        "옆서기 멀리뛰기에 맞춰 미끄럽지 않은 바닥과 충분한 빈 공간을 확보합니다",
       ],
-      "finish": "옆서기 멀리뛰기을 마친 뒤 착지 또는 받기 뒤 잠시 균형을 확인하고 호흡이 안정된 후 다음 반복을 시작합니다.",
-      "commonMistakes": [
+      finish:
+        "옆서기 멀리뛰기을 마친 뒤 착지 또는 받기 뒤 잠시 균형을 확인하고 호흡이 안정된 후 다음 반복을 시작합니다.",
+      commonMistakes: [
         "옆서기 멀리뛰기에서 피로한 상태에서 높이·속도·부하를 함께 올리는 경우",
         "옆서기 멀리뛰기에서 착지 소리와 무릎 흔들림을 무시하는 경우",
-        "옆서기 멀리뛰기에서 도구 경로가 불안정한데 반복을 이어 가는 경우"
+        "옆서기 멀리뛰기에서 도구 경로가 불안정한데 반복을 이어 가는 경우",
       ],
-      "regressions": [
+      regressions: [
         "옆서기 멀리뛰기은 점프·속도를 빼고 체중 이동으로 바꿉니다",
         "옆서기 멀리뛰기은 낮은 높이·짧은 거리·가벼운 도구를 사용합니다",
-        "옆서기 멀리뛰기은 지지대 가까이에서 받기 자세만 연습합니다"
+        "옆서기 멀리뛰기은 지지대 가까이에서 받기 자세만 연습합니다",
       ],
-      "progressions": [
+      progressions: [
         "옆서기 멀리뛰기은 안정된 착지 뒤 반복을 한두 회 늘립니다",
         "옆서기 멀리뛰기은 한 번에 거리·높이·부하 중 하나만 조절합니다",
-        "옆서기 멀리뛰기은 복잡한 연속 동작은 기본 패턴이 안정된 뒤 시도합니다"
-      ]
-    }
+        "옆서기 멀리뛰기은 복잡한 연속 동작은 기본 패턴이 안정된 뒤 시도합니다",
+      ],
+    },
   },
   {
-    "exercise": {
-      "id": "verified-bench-sprint",
-      "name": "벤치 스프린트",
-      "englishName": "Bench Sprint",
-      "category": "파워·민첩성",
-      "regions": [
-        "하체"
-      ],
-      "focus": "파워",
-      "difficulty": "입문",
-      "equipment": "안정된 전용 장비",
-      "minutes": "3–6회 · 2세트",
-      "description": "벤치 스프린트은 대퇴사두근 주변을 통증 없는 범위에서 천천히 움직여 가동 범위와 자세 감각을 확인하는 모빌리티 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
-      "cues": [
+    exercise: {
+      id: "verified-bench-sprint",
+      name: "벤치 스프린트",
+      englishName: "Bench Sprint",
+      category: "파워·민첩성",
+      regions: ["하체"],
+      focus: "파워",
+      difficulty: "입문",
+      equipment: "안정된 전용 장비",
+      minutes: "3–6회 · 2세트",
+      description:
+        "벤치 스프린트은 대퇴사두근 주변을 통증 없는 범위에서 천천히 움직여 가동 범위와 자세 감각을 확인하는 모빌리티 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
+      cues: [
         "벤치 스프린트에서 작은 범위에서 호흡을 멈추지 않기",
         "대퇴사두근을 느끼며 끝 범위를 밀지 말고 부드럽게 왕복",
-        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다"
+        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
       ],
-      "benefits": [
+      benefits: [
         "벤치 스프린트으로 관절 위치와 범위 인식",
         "대퇴사두근을 활용한 편안한 움직임 준비",
-        "대퇴사두근의 움직임 경로 인식"
+        "대퇴사두근의 움직임 경로 인식",
       ],
-      "warning": "벤치 스프린트 중 날카로운 통증, 저림, 방사통, 붓기·열감이 있으면 자가 진행을 멈추고 평가를 우선하세요.",
-      "reference": {
-        "label": "ACSM — Exercise Safety",
-        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
-      }
+      warning:
+        "벤치 스프린트 중 날카로운 통증, 저림, 방사통, 붓기·열감이 있으면 자가 진행을 멈추고 평가를 우선하세요.",
+      reference: {
+        label: "ACSM — Exercise Safety",
+        url: "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/",
+      },
     },
-    "detail": {
-      "setup": [
+    detail: {
+      setup: [
         "안정된 전용 장비·바닥·주변 공간을 확인하고 가장 쉬운 범위로 한 번 리허설합니다",
         "발 또는 지지면을 단단히 고정하고 몸통을 길게 세웁니다",
-        "벤치 스프린트에 맞춰 편안한 바닥·매트 또는 지지대를 준비합니다"
+        "벤치 스프린트에 맞춰 편안한 바닥·매트 또는 지지대를 준비합니다",
       ],
-      "finish": "벤치 스프린트을 마친 뒤 중립 자세로 천천히 돌아와 불편감이 남지 않는지 확인합니다.",
-      "commonMistakes": [
+      finish:
+        "벤치 스프린트을 마친 뒤 중립 자세로 천천히 돌아와 불편감이 남지 않는지 확인합니다.",
+      commonMistakes: [
         "벤치 스프린트에서 끝 범위를 억지로 밀어 통증을 만드는 경우",
         "벤치 스프린트에서 호흡을 참거나 반동을 쓰는 경우",
-        "벤치 스프린트에서 저림·방사통을 무시하고 지속하는 경우"
+        "벤치 스프린트에서 저림·방사통을 무시하고 지속하는 경우",
       ],
-      "regressions": [
+      regressions: [
         "벤치 스프린트은 범위와 유지 시간을 줄입니다",
         "벤치 스프린트은 벽·의자·블록 같은 지지대를 사용합니다",
-        "벤치 스프린트은 누운 또는 앉은 안정된 자세로 바꿉니다"
+        "벤치 스프린트은 누운 또는 앉은 안정된 자세로 바꿉니다",
       ],
-      "progressions": [
+      progressions: [
         "벤치 스프린트은 다음 날 편안하면 범위만 조금 늘립니다",
         "벤치 스프린트은 호흡 주기를 한 번 추가합니다",
-        "벤치 스프린트은 지지대는 안정적으로 줄여 갑니다"
-      ]
-    }
+        "벤치 스프린트은 지지대는 안정적으로 줄여 갑니다",
+      ],
+    },
   },
   {
-    "exercise": {
-      "id": "verified-box-jump-multiple-response",
-      "name": "박스 점프(다중 반응)",
-      "englishName": "Box Jump (Multiple Response)",
-      "category": "파워·민첩성",
-      "regions": [
-        "하체",
-        "둔근"
-      ],
-      "focus": "파워",
-      "difficulty": "입문",
-      "equipment": "안정된 전용 장비",
-      "minutes": "3–6회 · 2세트",
-      "description": "박스 점프(다중 반응)은 햄스트링을 빠르게 쓰되 착지·받기·도구 경로를 먼저 통제해야 하는 파워 또는 기술 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
-      "cues": [
+    exercise: {
+      id: "verified-box-jump-multiple-response",
+      name: "박스 점프(다중 반응)",
+      englishName: "Box Jump (Multiple Response)",
+      category: "파워·민첩성",
+      regions: ["하체", "둔근"],
+      focus: "파워",
+      difficulty: "입문",
+      equipment: "안정된 전용 장비",
+      minutes: "3–6회 · 2세트",
+      description:
+        "박스 점프(다중 반응)은 햄스트링을 빠르게 쓰되 착지·받기·도구 경로를 먼저 통제해야 하는 파워 또는 기술 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
+      cues: [
         "박스 점프(다중 반응)에서 낮은 속도 리허설 뒤에만 힘을 빠르게 쓰기",
         "햄스트링을 느끼며 발·무릎·골반이 같은 방향으로 받기",
-        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다"
+        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
       ],
-      "benefits": [
+      benefits: [
         "박스 점프(다중 반응)으로 힘 발휘와 제어의 연결",
         "햄스트링을 활용한 착지·받기 협응",
-        "햄스트링의 움직임 경로 인식"
+        "햄스트링의 움직임 경로 인식",
       ],
-      "warning": "박스 점프(다중 반응) 중 착지 불안, 무릎·발목·허리 통증, 어지러움 또는 공간 부족이 있으면 즉시 중단하세요.",
-      "reference": {
-        "label": "ACSM — Exercise Safety",
-        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
-      }
+      warning:
+        "박스 점프(다중 반응) 중 착지 불안, 무릎·발목·허리 통증, 어지러움 또는 공간 부족이 있으면 즉시 중단하세요.",
+      reference: {
+        label: "ACSM — Exercise Safety",
+        url: "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/",
+      },
     },
-    "detail": {
-      "setup": [
+    detail: {
+      setup: [
         "안정된 전용 장비·바닥·주변 공간을 확인하고 가장 쉬운 범위로 한 번 리허설합니다",
         "발 또는 지지면을 단단히 고정하고 몸통을 길게 세웁니다",
-        "박스 점프(다중 반응)에 맞춰 미끄럽지 않은 바닥과 충분한 빈 공간을 확보합니다"
+        "박스 점프(다중 반응)에 맞춰 미끄럽지 않은 바닥과 충분한 빈 공간을 확보합니다",
       ],
-      "finish": "박스 점프(다중 반응)을 마친 뒤 착지 또는 받기 뒤 잠시 균형을 확인하고 호흡이 안정된 후 다음 반복을 시작합니다.",
-      "commonMistakes": [
+      finish:
+        "박스 점프(다중 반응)을 마친 뒤 착지 또는 받기 뒤 잠시 균형을 확인하고 호흡이 안정된 후 다음 반복을 시작합니다.",
+      commonMistakes: [
         "박스 점프(다중 반응)에서 피로한 상태에서 높이·속도·부하를 함께 올리는 경우",
         "박스 점프(다중 반응)에서 착지 소리와 무릎 흔들림을 무시하는 경우",
-        "박스 점프(다중 반응)에서 도구 경로가 불안정한데 반복을 이어 가는 경우"
+        "박스 점프(다중 반응)에서 도구 경로가 불안정한데 반복을 이어 가는 경우",
       ],
-      "regressions": [
+      regressions: [
         "박스 점프(다중 반응)은 점프·속도를 빼고 체중 이동으로 바꿉니다",
         "박스 점프(다중 반응)은 낮은 높이·짧은 거리·가벼운 도구를 사용합니다",
-        "박스 점프(다중 반응)은 지지대 가까이에서 받기 자세만 연습합니다"
+        "박스 점프(다중 반응)은 지지대 가까이에서 받기 자세만 연습합니다",
       ],
-      "progressions": [
+      progressions: [
         "박스 점프(다중 반응)은 안정된 착지 뒤 반복을 한두 회 늘립니다",
         "박스 점프(다중 반응)은 한 번에 거리·높이·부하 중 하나만 조절합니다",
-        "박스 점프(다중 반응)은 복잡한 연속 동작은 기본 패턴이 안정된 뒤 시도합니다"
-      ]
-    }
+        "박스 점프(다중 반응)은 복잡한 연속 동작은 기본 패턴이 안정된 뒤 시도합니다",
+      ],
+    },
   },
   {
-    "exercise": {
-      "id": "verified-box-skip",
-      "name": "박스 스킵",
-      "englishName": "Box Skip",
-      "category": "파워·민첩성",
-      "regions": [
-        "하체",
-        "둔근"
-      ],
-      "focus": "파워",
-      "difficulty": "입문",
-      "equipment": "안정된 전용 장비",
-      "minutes": "3–6회 · 2세트",
-      "description": "박스 스킵은 햄스트링 주변을 통증 없는 범위에서 천천히 움직여 가동 범위와 자세 감각을 확인하는 모빌리티 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
-      "cues": [
+    exercise: {
+      id: "verified-box-skip",
+      name: "박스 스킵",
+      englishName: "Box Skip",
+      category: "파워·민첩성",
+      regions: ["하체", "둔근"],
+      focus: "파워",
+      difficulty: "입문",
+      equipment: "안정된 전용 장비",
+      minutes: "3–6회 · 2세트",
+      description:
+        "박스 스킵은 햄스트링 주변을 통증 없는 범위에서 천천히 움직여 가동 범위와 자세 감각을 확인하는 모빌리티 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
+      cues: [
         "박스 스킵에서 작은 범위에서 호흡을 멈추지 않기",
         "햄스트링을 느끼며 끝 범위를 밀지 말고 부드럽게 왕복",
-        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다"
+        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
       ],
-      "benefits": [
+      benefits: [
         "박스 스킵으로 관절 위치와 범위 인식",
         "햄스트링을 활용한 편안한 움직임 준비",
-        "햄스트링의 움직임 경로 인식"
+        "햄스트링의 움직임 경로 인식",
       ],
-      "warning": "박스 스킵 중 날카로운 통증, 저림, 방사통, 붓기·열감이 있으면 자가 진행을 멈추고 평가를 우선하세요.",
-      "reference": {
-        "label": "ACSM — Exercise Safety",
-        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
-      }
+      warning:
+        "박스 스킵 중 날카로운 통증, 저림, 방사통, 붓기·열감이 있으면 자가 진행을 멈추고 평가를 우선하세요.",
+      reference: {
+        label: "ACSM — Exercise Safety",
+        url: "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/",
+      },
     },
-    "detail": {
-      "setup": [
+    detail: {
+      setup: [
         "안정된 전용 장비·바닥·주변 공간을 확인하고 가장 쉬운 범위로 한 번 리허설합니다",
         "발 또는 지지면을 단단히 고정하고 몸통을 길게 세웁니다",
-        "박스 스킵에 맞춰 편안한 바닥·매트 또는 지지대를 준비합니다"
+        "박스 스킵에 맞춰 편안한 바닥·매트 또는 지지대를 준비합니다",
       ],
-      "finish": "박스 스킵을 마친 뒤 중립 자세로 천천히 돌아와 불편감이 남지 않는지 확인합니다.",
-      "commonMistakes": [
+      finish:
+        "박스 스킵을 마친 뒤 중립 자세로 천천히 돌아와 불편감이 남지 않는지 확인합니다.",
+      commonMistakes: [
         "박스 스킵에서 끝 범위를 억지로 밀어 통증을 만드는 경우",
         "박스 스킵에서 호흡을 참거나 반동을 쓰는 경우",
-        "박스 스킵에서 저림·방사통을 무시하고 지속하는 경우"
+        "박스 스킵에서 저림·방사통을 무시하고 지속하는 경우",
       ],
-      "regressions": [
+      regressions: [
         "박스 스킵은 범위와 유지 시간을 줄입니다",
         "박스 스킵은 벽·의자·블록 같은 지지대를 사용합니다",
-        "박스 스킵은 누운 또는 앉은 안정된 자세로 바꿉니다"
+        "박스 스킵은 누운 또는 앉은 안정된 자세로 바꿉니다",
       ],
-      "progressions": [
+      progressions: [
         "박스 스킵은 다음 날 편안하면 범위만 조금 늘립니다",
         "박스 스킵은 호흡 주기를 한 번 추가합니다",
-        "박스 스킵은 지지대는 안정적으로 줄여 갑니다"
-      ]
-    }
+        "박스 스킵은 지지대는 안정적으로 줄여 갑니다",
+      ],
+    },
   },
   {
-    "exercise": {
-      "id": "verified-depth-jump-leap",
-      "name": "데프트 점프",
-      "englishName": "Depth Jump Leap",
-      "category": "파워·민첩성",
-      "regions": [
-        "하체"
-      ],
-      "focus": "파워",
-      "difficulty": "입문",
-      "equipment": "안정된 전용 장비",
-      "minutes": "3–6회 · 2세트",
-      "description": "데프트 점프은 대퇴사두근을 빠르게 쓰되 착지·받기·도구 경로를 먼저 통제해야 하는 파워 또는 기술 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
-      "cues": [
+    exercise: {
+      id: "verified-depth-jump-leap",
+      name: "데프트 점프",
+      englishName: "Depth Jump Leap",
+      category: "파워·민첩성",
+      regions: ["하체"],
+      focus: "파워",
+      difficulty: "입문",
+      equipment: "안정된 전용 장비",
+      minutes: "3–6회 · 2세트",
+      description:
+        "데프트 점프은 대퇴사두근을 빠르게 쓰되 착지·받기·도구 경로를 먼저 통제해야 하는 파워 또는 기술 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
+      cues: [
         "데프트 점프에서 낮은 속도 리허설 뒤에만 힘을 빠르게 쓰기",
         "대퇴사두근을 느끼며 발·무릎·골반이 같은 방향으로 받기",
-        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다"
+        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
       ],
-      "benefits": [
+      benefits: [
         "데프트 점프으로 힘 발휘와 제어의 연결",
         "대퇴사두근을 활용한 착지·받기 협응",
-        "대퇴사두근의 움직임 경로 인식"
+        "대퇴사두근의 움직임 경로 인식",
       ],
-      "warning": "데프트 점프 중 착지 불안, 무릎·발목·허리 통증, 어지러움 또는 공간 부족이 있으면 즉시 중단하세요.",
-      "reference": {
-        "label": "ACSM — Exercise Safety",
-        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
-      }
+      warning:
+        "데프트 점프 중 착지 불안, 무릎·발목·허리 통증, 어지러움 또는 공간 부족이 있으면 즉시 중단하세요.",
+      reference: {
+        label: "ACSM — Exercise Safety",
+        url: "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/",
+      },
     },
-    "detail": {
-      "setup": [
+    detail: {
+      setup: [
         "안정된 전용 장비·바닥·주변 공간을 확인하고 가장 쉬운 범위로 한 번 리허설합니다",
         "발 또는 지지면을 단단히 고정하고 몸통을 길게 세웁니다",
-        "데프트 점프에 맞춰 미끄럽지 않은 바닥과 충분한 빈 공간을 확보합니다"
+        "데프트 점프에 맞춰 미끄럽지 않은 바닥과 충분한 빈 공간을 확보합니다",
       ],
-      "finish": "데프트 점프을 마친 뒤 착지 또는 받기 뒤 잠시 균형을 확인하고 호흡이 안정된 후 다음 반복을 시작합니다.",
-      "commonMistakes": [
+      finish:
+        "데프트 점프을 마친 뒤 착지 또는 받기 뒤 잠시 균형을 확인하고 호흡이 안정된 후 다음 반복을 시작합니다.",
+      commonMistakes: [
         "데프트 점프에서 피로한 상태에서 높이·속도·부하를 함께 올리는 경우",
         "데프트 점프에서 착지 소리와 무릎 흔들림을 무시하는 경우",
-        "데프트 점프에서 도구 경로가 불안정한데 반복을 이어 가는 경우"
+        "데프트 점프에서 도구 경로가 불안정한데 반복을 이어 가는 경우",
       ],
-      "regressions": [
+      regressions: [
         "데프트 점프은 점프·속도를 빼고 체중 이동으로 바꿉니다",
         "데프트 점프은 낮은 높이·짧은 거리·가벼운 도구를 사용합니다",
-        "데프트 점프은 지지대 가까이에서 받기 자세만 연습합니다"
+        "데프트 점프은 지지대 가까이에서 받기 자세만 연습합니다",
       ],
-      "progressions": [
+      progressions: [
         "데프트 점프은 안정된 착지 뒤 반복을 한두 회 늘립니다",
         "데프트 점프은 한 번에 거리·높이·부하 중 하나만 조절합니다",
-        "데프트 점프은 복잡한 연속 동작은 기본 패턴이 안정된 뒤 시도합니다"
-      ]
-    }
+        "데프트 점프은 복잡한 연속 동작은 기본 패턴이 안정된 뒤 시도합니다",
+      ],
+    },
   },
   {
-    "exercise": {
-      "id": "verified-drop-push",
-      "name": "드롭 푸시",
-      "englishName": "Drop Push",
-      "category": "파워·민첩성",
-      "regions": [
-        "가슴"
-      ],
-      "focus": "파워",
-      "difficulty": "중급",
-      "equipment": "안정된 전용 장비",
-      "minutes": "3–6회 · 2세트",
-      "description": "드롭 푸시은 가슴 주변을 통증 없는 범위에서 천천히 움직여 가동 범위와 자세 감각을 확인하는 모빌리티 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
-      "cues": [
+    exercise: {
+      id: "verified-drop-push",
+      name: "드롭 푸시",
+      englishName: "Drop Push",
+      category: "파워·민첩성",
+      regions: ["가슴"],
+      focus: "파워",
+      difficulty: "중급",
+      equipment: "안정된 전용 장비",
+      minutes: "3–6회 · 2세트",
+      description:
+        "드롭 푸시은 가슴 주변을 통증 없는 범위에서 천천히 움직여 가동 범위와 자세 감각을 확인하는 모빌리티 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
+      cues: [
         "드롭 푸시에서 작은 범위에서 호흡을 멈추지 않기",
         "가슴을 느끼며 끝 범위를 밀지 말고 부드럽게 왕복",
-        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다"
+        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
       ],
-      "benefits": [
+      benefits: [
         "드롭 푸시으로 관절 위치와 범위 인식",
         "가슴을 활용한 편안한 움직임 준비",
-        "가슴의 움직임 경로 인식"
+        "가슴의 움직임 경로 인식",
       ],
-      "warning": "드롭 푸시 중 날카로운 통증, 저림, 방사통, 붓기·열감이 있으면 자가 진행을 멈추고 평가를 우선하세요.",
-      "reference": {
-        "label": "ACSM — Exercise Safety",
-        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
-      }
+      warning:
+        "드롭 푸시 중 날카로운 통증, 저림, 방사통, 붓기·열감이 있으면 자가 진행을 멈추고 평가를 우선하세요.",
+      reference: {
+        label: "ACSM — Exercise Safety",
+        url: "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/",
+      },
     },
-    "detail": {
-      "setup": [
+    detail: {
+      setup: [
         "안정된 전용 장비·바닥·주변 공간을 확인하고 가장 쉬운 범위로 한 번 리허설합니다",
         "발 또는 지지면을 단단히 고정하고 몸통을 길게 세웁니다",
-        "드롭 푸시에 맞춰 편안한 바닥·매트 또는 지지대를 준비합니다"
+        "드롭 푸시에 맞춰 편안한 바닥·매트 또는 지지대를 준비합니다",
       ],
-      "finish": "드롭 푸시을 마친 뒤 중립 자세로 천천히 돌아와 불편감이 남지 않는지 확인합니다.",
-      "commonMistakes": [
+      finish:
+        "드롭 푸시을 마친 뒤 중립 자세로 천천히 돌아와 불편감이 남지 않는지 확인합니다.",
+      commonMistakes: [
         "드롭 푸시에서 끝 범위를 억지로 밀어 통증을 만드는 경우",
         "드롭 푸시에서 호흡을 참거나 반동을 쓰는 경우",
-        "드롭 푸시에서 저림·방사통을 무시하고 지속하는 경우"
+        "드롭 푸시에서 저림·방사통을 무시하고 지속하는 경우",
       ],
-      "regressions": [
+      regressions: [
         "드롭 푸시은 범위와 유지 시간을 줄입니다",
         "드롭 푸시은 벽·의자·블록 같은 지지대를 사용합니다",
-        "드롭 푸시은 누운 또는 앉은 안정된 자세로 바꿉니다"
+        "드롭 푸시은 누운 또는 앉은 안정된 자세로 바꿉니다",
       ],
-      "progressions": [
+      progressions: [
         "드롭 푸시은 다음 날 편안하면 범위만 조금 늘립니다",
         "드롭 푸시은 호흡 주기를 한 번 추가합니다",
-        "드롭 푸시은 지지대는 안정적으로 줄여 갑니다"
-      ]
-    }
+        "드롭 푸시은 지지대는 안정적으로 줄여 갑니다",
+      ],
+    },
   },
   {
-    "exercise": {
-      "id": "verified-front-box-jump",
-      "name": "프론트 박스 점프",
-      "englishName": "Front Box Jump",
-      "category": "파워·민첩성",
-      "regions": [
-        "하체",
-        "둔근"
-      ],
-      "focus": "파워",
-      "difficulty": "입문",
-      "equipment": "안정된 전용 장비",
-      "minutes": "3–6회 · 2세트",
-      "description": "프론트 박스 점프은 햄스트링을 빠르게 쓰되 착지·받기·도구 경로를 먼저 통제해야 하는 파워 또는 기술 종목입니다. 앞쪽으로 도구가 이동할 때 갈비뼈를 과하게 들지 않습니다",
-      "cues": [
+    exercise: {
+      id: "verified-front-box-jump",
+      name: "프론트 박스 점프",
+      englishName: "Front Box Jump",
+      category: "파워·민첩성",
+      regions: ["하체", "둔근"],
+      focus: "파워",
+      difficulty: "입문",
+      equipment: "안정된 전용 장비",
+      minutes: "3–6회 · 2세트",
+      description:
+        "프론트 박스 점프은 햄스트링을 빠르게 쓰되 착지·받기·도구 경로를 먼저 통제해야 하는 파워 또는 기술 종목입니다. 앞쪽으로 도구가 이동할 때 갈비뼈를 과하게 들지 않습니다",
+      cues: [
         "프론트 박스 점프에서 낮은 속도 리허설 뒤에만 힘을 빠르게 쓰기",
         "햄스트링을 느끼며 발·무릎·골반이 같은 방향으로 받기",
-        "앞쪽으로 도구가 이동할 때 갈비뼈를 과하게 들지 않습니다"
+        "앞쪽으로 도구가 이동할 때 갈비뼈를 과하게 들지 않습니다",
       ],
-      "benefits": [
+      benefits: [
         "프론트 박스 점프으로 힘 발휘와 제어의 연결",
         "햄스트링을 활용한 착지·받기 협응",
-        "햄스트링의 움직임 경로 인식"
+        "햄스트링의 움직임 경로 인식",
       ],
-      "warning": "프론트 박스 점프 중 착지 불안, 무릎·발목·허리 통증, 어지러움 또는 공간 부족이 있으면 즉시 중단하세요.",
-      "reference": {
-        "label": "ACSM — Exercise Safety",
-        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
-      }
+      warning:
+        "프론트 박스 점프 중 착지 불안, 무릎·발목·허리 통증, 어지러움 또는 공간 부족이 있으면 즉시 중단하세요.",
+      reference: {
+        label: "ACSM — Exercise Safety",
+        url: "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/",
+      },
     },
-    "detail": {
-      "setup": [
+    detail: {
+      setup: [
         "안정된 전용 장비·바닥·주변 공간을 확인하고 가장 쉬운 범위로 한 번 리허설합니다",
         "발 또는 지지면을 단단히 고정하고 몸통을 길게 세웁니다",
-        "프론트 박스 점프에 맞춰 미끄럽지 않은 바닥과 충분한 빈 공간을 확보합니다"
+        "프론트 박스 점프에 맞춰 미끄럽지 않은 바닥과 충분한 빈 공간을 확보합니다",
       ],
-      "finish": "프론트 박스 점프을 마친 뒤 착지 또는 받기 뒤 잠시 균형을 확인하고 호흡이 안정된 후 다음 반복을 시작합니다.",
-      "commonMistakes": [
+      finish:
+        "프론트 박스 점프을 마친 뒤 착지 또는 받기 뒤 잠시 균형을 확인하고 호흡이 안정된 후 다음 반복을 시작합니다.",
+      commonMistakes: [
         "프론트 박스 점프에서 피로한 상태에서 높이·속도·부하를 함께 올리는 경우",
         "프론트 박스 점프에서 착지 소리와 무릎 흔들림을 무시하는 경우",
-        "프론트 박스 점프에서 도구 경로가 불안정한데 반복을 이어 가는 경우"
+        "프론트 박스 점프에서 도구 경로가 불안정한데 반복을 이어 가는 경우",
       ],
-      "regressions": [
+      regressions: [
         "프론트 박스 점프은 점프·속도를 빼고 체중 이동으로 바꿉니다",
         "프론트 박스 점프은 낮은 높이·짧은 거리·가벼운 도구를 사용합니다",
-        "프론트 박스 점프은 지지대 가까이에서 받기 자세만 연습합니다"
+        "프론트 박스 점프은 지지대 가까이에서 받기 자세만 연습합니다",
       ],
-      "progressions": [
+      progressions: [
         "프론트 박스 점프은 안정된 착지 뒤 반복을 한두 회 늘립니다",
         "프론트 박스 점프은 한 번에 거리·높이·부하 중 하나만 조절합니다",
-        "프론트 박스 점프은 복잡한 연속 동작은 기본 패턴이 안정된 뒤 시도합니다"
-      ]
-    }
+        "프론트 박스 점프은 복잡한 연속 동작은 기본 패턴이 안정된 뒤 시도합니다",
+      ],
+    },
   },
   {
-    "exercise": {
-      "id": "verified-front-cone-hops-or-hurdle-hops",
-      "name": "앞 콘 홉(허들 홉)",
-      "englishName": "Front Cone Hops (or hurdle hops)",
-      "category": "파워·민첩성",
-      "regions": [
-        "하체"
-      ],
-      "focus": "파워",
-      "difficulty": "입문",
-      "equipment": "안정된 전용 장비",
-      "minutes": "3–6회 · 2세트",
-      "description": "앞 콘 홉(허들 홉)은 대퇴사두근을 빠르게 쓰되 착지·받기·도구 경로를 먼저 통제해야 하는 파워 또는 기술 종목입니다. 앞쪽으로 도구가 이동할 때 갈비뼈를 과하게 들지 않습니다",
-      "cues": [
+    exercise: {
+      id: "verified-front-cone-hops-or-hurdle-hops",
+      name: "앞 콘 홉(허들 홉)",
+      englishName: "Front Cone Hops (or hurdle hops)",
+      category: "파워·민첩성",
+      regions: ["하체"],
+      focus: "파워",
+      difficulty: "입문",
+      equipment: "안정된 전용 장비",
+      minutes: "3–6회 · 2세트",
+      description:
+        "앞 콘 홉(허들 홉)은 대퇴사두근을 빠르게 쓰되 착지·받기·도구 경로를 먼저 통제해야 하는 파워 또는 기술 종목입니다. 앞쪽으로 도구가 이동할 때 갈비뼈를 과하게 들지 않습니다",
+      cues: [
         "앞 콘 홉(허들 홉)에서 낮은 속도 리허설 뒤에만 힘을 빠르게 쓰기",
         "대퇴사두근을 느끼며 발·무릎·골반이 같은 방향으로 받기",
-        "앞쪽으로 도구가 이동할 때 갈비뼈를 과하게 들지 않습니다"
+        "앞쪽으로 도구가 이동할 때 갈비뼈를 과하게 들지 않습니다",
       ],
-      "benefits": [
+      benefits: [
         "앞 콘 홉(허들 홉)으로 힘 발휘와 제어의 연결",
         "대퇴사두근을 활용한 착지·받기 협응",
-        "대퇴사두근의 움직임 경로 인식"
+        "대퇴사두근의 움직임 경로 인식",
       ],
-      "warning": "앞 콘 홉(허들 홉) 중 착지 불안, 무릎·발목·허리 통증, 어지러움 또는 공간 부족이 있으면 즉시 중단하세요.",
-      "reference": {
-        "label": "ACSM — Exercise Safety",
-        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
-      }
+      warning:
+        "앞 콘 홉(허들 홉) 중 착지 불안, 무릎·발목·허리 통증, 어지러움 또는 공간 부족이 있으면 즉시 중단하세요.",
+      reference: {
+        label: "ACSM — Exercise Safety",
+        url: "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/",
+      },
     },
-    "detail": {
-      "setup": [
+    detail: {
+      setup: [
         "안정된 전용 장비·바닥·주변 공간을 확인하고 가장 쉬운 범위로 한 번 리허설합니다",
         "발 또는 지지면을 단단히 고정하고 몸통을 길게 세웁니다",
-        "앞 콘 홉(허들 홉)에 맞춰 미끄럽지 않은 바닥과 충분한 빈 공간을 확보합니다"
+        "앞 콘 홉(허들 홉)에 맞춰 미끄럽지 않은 바닥과 충분한 빈 공간을 확보합니다",
       ],
-      "finish": "앞 콘 홉(허들 홉)을 마친 뒤 착지 또는 받기 뒤 잠시 균형을 확인하고 호흡이 안정된 후 다음 반복을 시작합니다.",
-      "commonMistakes": [
+      finish:
+        "앞 콘 홉(허들 홉)을 마친 뒤 착지 또는 받기 뒤 잠시 균형을 확인하고 호흡이 안정된 후 다음 반복을 시작합니다.",
+      commonMistakes: [
         "앞 콘 홉(허들 홉)에서 피로한 상태에서 높이·속도·부하를 함께 올리는 경우",
         "앞 콘 홉(허들 홉)에서 착지 소리와 무릎 흔들림을 무시하는 경우",
-        "앞 콘 홉(허들 홉)에서 도구 경로가 불안정한데 반복을 이어 가는 경우"
+        "앞 콘 홉(허들 홉)에서 도구 경로가 불안정한데 반복을 이어 가는 경우",
       ],
-      "regressions": [
+      regressions: [
         "앞 콘 홉(허들 홉)은 점프·속도를 빼고 체중 이동으로 바꿉니다",
         "앞 콘 홉(허들 홉)은 낮은 높이·짧은 거리·가벼운 도구를 사용합니다",
-        "앞 콘 홉(허들 홉)은 지지대 가까이에서 받기 자세만 연습합니다"
+        "앞 콘 홉(허들 홉)은 지지대 가까이에서 받기 자세만 연습합니다",
       ],
-      "progressions": [
+      progressions: [
         "앞 콘 홉(허들 홉)은 안정된 착지 뒤 반복을 한두 회 늘립니다",
         "앞 콘 홉(허들 홉)은 한 번에 거리·높이·부하 중 하나만 조절합니다",
-        "앞 콘 홉(허들 홉)은 복잡한 연속 동작은 기본 패턴이 안정된 뒤 시도합니다"
-      ]
-    }
+        "앞 콘 홉(허들 홉)은 복잡한 연속 동작은 기본 패턴이 안정된 뒤 시도합니다",
+      ],
+    },
   },
   {
-    "exercise": {
-      "id": "verified-heavy-bag-thrust",
-      "name": "헤비백 스러스트",
-      "englishName": "Heavy Bag Thrust",
-      "category": "파워·민첩성",
-      "regions": [
-        "가슴"
-      ],
-      "focus": "파워",
-      "difficulty": "입문",
-      "equipment": "안정된 전용 장비",
-      "minutes": "3–6회 · 2세트",
-      "description": "헤비백 스러스트은 가슴을 사용해 무릎과 엉덩이를 함께 굽혔다 펴는 하체 지지·밀기 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
-      "cues": [
+    exercise: {
+      id: "verified-heavy-bag-thrust",
+      name: "헤비백 스러스트",
+      englishName: "Heavy Bag Thrust",
+      category: "파워·민첩성",
+      regions: ["가슴"],
+      focus: "파워",
+      difficulty: "입문",
+      equipment: "안정된 전용 장비",
+      minutes: "3–6회 · 2세트",
+      description:
+        "헤비백 스러스트은 가슴을 사용해 무릎과 엉덩이를 함께 굽혔다 펴는 하체 지지·밀기 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
+      cues: [
         "헤비백 스러스트에서 발 전체를 바닥에 붙이고 무릎을 발 방향으로 이동",
         "가슴을 느끼며 골반과 흉곽이 함께 내려가도록 몸통을 길게 유지",
-        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다"
+        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
       ],
-      "benefits": [
+      benefits: [
         "헤비백 스러스트으로 하체 지지력과 제어",
         "가슴을 활용한 엉덩이·무릎 협응",
-        "가슴의 움직임 경로 인식"
+        "가슴의 움직임 경로 인식",
       ],
-      "warning": "헤비백 스러스트 중 무릎·고관절의 날카로운 통증, 발바닥 들림 또는 균형 상실이 있으면 깊이·부하를 낮추거나 중단하세요.",
-      "reference": {
-        "label": "ACSM — Exercise Safety",
-        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
-      }
+      warning:
+        "헤비백 스러스트 중 무릎·고관절의 날카로운 통증, 발바닥 들림 또는 균형 상실이 있으면 깊이·부하를 낮추거나 중단하세요.",
+      reference: {
+        label: "ACSM — Exercise Safety",
+        url: "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/",
+      },
     },
-    "detail": {
-      "setup": [
+    detail: {
+      setup: [
         "안정된 전용 장비·바닥·주변 공간을 확인하고 가장 쉬운 범위로 한 번 리허설합니다",
         "발 또는 지지면을 단단히 고정하고 몸통을 길게 세웁니다",
-        "헤비백 스러스트에 맞춰 발 간격과 발끝 방향을 편안한 범위에서 정합니다"
+        "헤비백 스러스트에 맞춰 발 간격과 발끝 방향을 편안한 범위에서 정합니다",
       ],
-      "finish": "헤비백 스러스트을 마친 뒤 무릎과 엉덩이를 함께 펴고 발 전체로 균형을 회복한 뒤 다음 반복을 준비합니다.",
-      "commonMistakes": [
+      finish:
+        "헤비백 스러스트을 마친 뒤 무릎과 엉덩이를 함께 펴고 발 전체로 균형을 회복한 뒤 다음 반복을 준비합니다.",
+      commonMistakes: [
         "헤비백 스러스트에서 무릎이 발 안쪽으로 무너지는 경우",
         "헤비백 스러스트에서 발뒤꿈치가 들린 채 깊이를 억지로 늘리는 경우",
-        "헤비백 스러스트에서 내려가며 허리가 과하게 말리거나 젖혀지는 경우"
+        "헤비백 스러스트에서 내려가며 허리가 과하게 말리거나 젖혀지는 경우",
       ],
-      "regressions": [
+      regressions: [
         "헤비백 스러스트은 의자·박스를 목표 높이로 사용합니다",
         "헤비백 스러스트은 지지대를 잡고 얕은 범위로 수행합니다",
-        "헤비백 스러스트은 부하를 빼고 체중 이동부터 연습합니다"
+        "헤비백 스러스트은 부하를 빼고 체중 이동부터 연습합니다",
       ],
-      "progressions": [
+      progressions: [
         "헤비백 스러스트은 안정된 범위에서 반복만 소폭 늘립니다",
         "헤비백 스러스트은 편안한 깊이가 확보된 뒤 부하를 추가합니다",
-        "헤비백 스러스트은 편측 변형은 지지대 가까이에서 시작합니다"
-      ]
-    }
+        "헤비백 스러스트은 편측 변형은 지지대 가까이에서 시작합니다",
+      ],
+    },
   },
   {
-    "exercise": {
-      "id": "verified-hurdle-hops",
-      "name": "허들 홉",
-      "englishName": "Hurdle Hops",
-      "category": "파워·민첩성",
-      "regions": [
-        "하체",
-        "둔근"
-      ],
-      "focus": "파워",
-      "difficulty": "입문",
-      "equipment": "안정된 전용 장비",
-      "minutes": "3–6회 · 2세트",
-      "description": "허들 홉은 햄스트링을 빠르게 쓰되 착지·받기·도구 경로를 먼저 통제해야 하는 파워 또는 기술 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
-      "cues": [
+    exercise: {
+      id: "verified-hurdle-hops",
+      name: "허들 홉",
+      englishName: "Hurdle Hops",
+      category: "파워·민첩성",
+      regions: ["하체", "둔근"],
+      focus: "파워",
+      difficulty: "입문",
+      equipment: "안정된 전용 장비",
+      minutes: "3–6회 · 2세트",
+      description:
+        "허들 홉은 햄스트링을 빠르게 쓰되 착지·받기·도구 경로를 먼저 통제해야 하는 파워 또는 기술 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
+      cues: [
         "허들 홉에서 낮은 속도 리허설 뒤에만 힘을 빠르게 쓰기",
         "햄스트링을 느끼며 발·무릎·골반이 같은 방향으로 받기",
-        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다"
+        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
       ],
-      "benefits": [
+      benefits: [
         "허들 홉으로 힘 발휘와 제어의 연결",
         "햄스트링을 활용한 착지·받기 협응",
-        "햄스트링의 움직임 경로 인식"
+        "햄스트링의 움직임 경로 인식",
       ],
-      "warning": "허들 홉 중 착지 불안, 무릎·발목·허리 통증, 어지러움 또는 공간 부족이 있으면 즉시 중단하세요.",
-      "reference": {
-        "label": "ACSM — Exercise Safety",
-        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
-      }
+      warning:
+        "허들 홉 중 착지 불안, 무릎·발목·허리 통증, 어지러움 또는 공간 부족이 있으면 즉시 중단하세요.",
+      reference: {
+        label: "ACSM — Exercise Safety",
+        url: "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/",
+      },
     },
-    "detail": {
-      "setup": [
+    detail: {
+      setup: [
         "안정된 전용 장비·바닥·주변 공간을 확인하고 가장 쉬운 범위로 한 번 리허설합니다",
         "발 또는 지지면을 단단히 고정하고 몸통을 길게 세웁니다",
-        "허들 홉에 맞춰 미끄럽지 않은 바닥과 충분한 빈 공간을 확보합니다"
+        "허들 홉에 맞춰 미끄럽지 않은 바닥과 충분한 빈 공간을 확보합니다",
       ],
-      "finish": "허들 홉을 마친 뒤 착지 또는 받기 뒤 잠시 균형을 확인하고 호흡이 안정된 후 다음 반복을 시작합니다.",
-      "commonMistakes": [
+      finish:
+        "허들 홉을 마친 뒤 착지 또는 받기 뒤 잠시 균형을 확인하고 호흡이 안정된 후 다음 반복을 시작합니다.",
+      commonMistakes: [
         "허들 홉에서 피로한 상태에서 높이·속도·부하를 함께 올리는 경우",
         "허들 홉에서 착지 소리와 무릎 흔들림을 무시하는 경우",
-        "허들 홉에서 도구 경로가 불안정한데 반복을 이어 가는 경우"
+        "허들 홉에서 도구 경로가 불안정한데 반복을 이어 가는 경우",
       ],
-      "regressions": [
+      regressions: [
         "허들 홉은 점프·속도를 빼고 체중 이동으로 바꿉니다",
         "허들 홉은 낮은 높이·짧은 거리·가벼운 도구를 사용합니다",
-        "허들 홉은 지지대 가까이에서 받기 자세만 연습합니다"
+        "허들 홉은 지지대 가까이에서 받기 자세만 연습합니다",
       ],
-      "progressions": [
+      progressions: [
         "허들 홉은 안정된 착지 뒤 반복을 한두 회 늘립니다",
         "허들 홉은 한 번에 거리·높이·부하 중 하나만 조절합니다",
-        "허들 홉은 복잡한 연속 동작은 기본 패턴이 안정된 뒤 시도합니다"
-      ]
-    }
+        "허들 홉은 복잡한 연속 동작은 기본 패턴이 안정된 뒤 시도합니다",
+      ],
+    },
   },
   {
-    "exercise": {
-      "id": "verified-incline-push-up-depth-jump",
-      "name": "경사 푸시업 데프트 점프",
-      "englishName": "Incline Push-Up Depth Jump",
-      "category": "파워·민첩성",
-      "regions": [
-        "가슴"
-      ],
-      "focus": "파워",
-      "difficulty": "입문",
-      "equipment": "안정된 전용 장비",
-      "minutes": "3–6회 · 2세트",
-      "description": "경사 푸시업 데프트 점프은 가슴을 사용해 손잡이·도구 또는 바닥을 몸에서 멀어지게 미는 상체 밀기 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
-      "cues": [
+    exercise: {
+      id: "verified-incline-push-up-depth-jump",
+      name: "경사 푸시업 데프트 점프",
+      englishName: "Incline Push-Up Depth Jump",
+      category: "파워·민첩성",
+      regions: ["가슴"],
+      focus: "파워",
+      difficulty: "입문",
+      equipment: "안정된 전용 장비",
+      minutes: "3–6회 · 2세트",
+      description:
+        "경사 푸시업 데프트 점프은 가슴을 사용해 손잡이·도구 또는 바닥을 몸에서 멀어지게 미는 상체 밀기 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
+      cues: [
         "경사 푸시업 데프트 점프에서 손목을 중립에 가깝게 두고 손잡이를 안정적으로 잡기",
         "가슴을 느끼며 갈비뼈를 과하게 들지 않고 몸통 길이 유지",
-        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다"
+        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
       ],
-      "benefits": [
+      benefits: [
         "경사 푸시업 데프트 점프으로 가슴·어깨·팔의 밀기 협응",
         "가슴을 활용한 손목과 견갑 안정 제어",
-        "가슴의 움직임 경로 인식"
+        "가슴의 움직임 경로 인식",
       ],
-      "warning": "경사 푸시업 데프트 점프 중 어깨·팔꿈치·손목 통증, 저림 또는 도구 흔들림이 있으면 즉시 멈추고 설정을 다시 확인하세요.",
-      "reference": {
-        "label": "ACSM — Exercise Safety",
-        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
-      }
+      warning:
+        "경사 푸시업 데프트 점프 중 어깨·팔꿈치·손목 통증, 저림 또는 도구 흔들림이 있으면 즉시 멈추고 설정을 다시 확인하세요.",
+      reference: {
+        label: "ACSM — Exercise Safety",
+        url: "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/",
+      },
     },
-    "detail": {
-      "setup": [
+    detail: {
+      setup: [
         "안정된 전용 장비·바닥·주변 공간을 확인하고 가장 쉬운 범위로 한 번 리허설합니다",
         "인클라인 지지면을 고정하고 머리·등·골반이 흔들리지 않게 둡니다",
-        "경사 푸시업 데프트 점프에 맞춰 손잡이·바·지지면의 높이와 좌우 설정을 확인합니다"
+        "경사 푸시업 데프트 점프에 맞춰 손잡이·바·지지면의 높이와 좌우 설정을 확인합니다",
       ],
-      "finish": "경사 푸시업 데프트 점프을 마친 뒤 팔꿈치를 잠그지 않은 편안한 끝 범위에서 잠시 멈춘 뒤 같은 경로로 돌아옵니다.",
-      "commonMistakes": [
+      finish:
+        "경사 푸시업 데프트 점프을 마친 뒤 팔꿈치를 잠그지 않은 편안한 끝 범위에서 잠시 멈춘 뒤 같은 경로로 돌아옵니다.",
+      commonMistakes: [
         "경사 푸시업 데프트 점프에서 어깨가 앞으로 말린 채 밀어 올리는 경우",
         "경사 푸시업 데프트 점프에서 허리를 과하게 젖혀 무게를 넘기는 경우",
-        "경사 푸시업 데프트 점프에서 손목을 꺾고 그립을 느슨하게 유지하는 경우"
+        "경사 푸시업 데프트 점프에서 손목을 꺾고 그립을 느슨하게 유지하는 경우",
       ],
-      "regressions": [
+      regressions: [
         "경사 푸시업 데프트 점프은 벽·높은 벤치 또는 가벼운 저항으로 바꿉니다",
         "경사 푸시업 데프트 점프은 가동 범위를 줄이고 어깨 편안함을 확인합니다",
-        "경사 푸시업 데프트 점프은 양손 지지로 안정성을 먼저 확보합니다"
+        "경사 푸시업 데프트 점프은 양손 지지로 안정성을 먼저 확보합니다",
       ],
-      "progressions": [
+      progressions: [
         "경사 푸시업 데프트 점프은 정렬이 유지될 때 반복을 소폭 늘립니다",
         "경사 푸시업 데프트 점프은 안정된 지지면에서 저항을 한 단계만 올립니다",
-        "경사 푸시업 데프트 점프은 낮은 지지 또는 편측 변형은 통제 후 시도합니다"
-      ]
-    }
+        "경사 푸시업 데프트 점프은 낮은 지지 또는 편측 변형은 통제 후 시도합니다",
+      ],
+    },
   },
   {
-    "exercise": {
-      "id": "verified-lateral-box-jump",
-      "name": "측면 박스 점프",
-      "englishName": "Lateral Box Jump",
-      "category": "파워·민첩성",
-      "regions": [
-        "하체"
-      ],
-      "focus": "파워",
-      "difficulty": "입문",
-      "equipment": "안정된 전용 장비",
-      "minutes": "3–6회 · 2세트",
-      "description": "측면 박스 점프은 허벅지 안쪽을 사용해 팔 또는 도구를 정해진 평면으로 들어 올리며 어깨 위치를 제어하는 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
-      "cues": [
+    exercise: {
+      id: "verified-lateral-box-jump",
+      name: "측면 박스 점프",
+      englishName: "Lateral Box Jump",
+      category: "파워·민첩성",
+      regions: ["하체"],
+      focus: "파워",
+      difficulty: "입문",
+      equipment: "안정된 전용 장비",
+      minutes: "3–6회 · 2세트",
+      description:
+        "측면 박스 점프은 허벅지 안쪽을 사용해 팔 또는 도구를 정해진 평면으로 들어 올리며 어깨 위치를 제어하는 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
+      cues: [
         "측면 박스 점프에서 어깨를 귀에서 멀리 두고 목을 길게 유지",
         "허벅지 안쪽을 느끼며 도구를 몸에서 너무 멀리 보내지 않기",
-        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다"
+        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
       ],
-      "benefits": [
+      benefits: [
         "측면 박스 점프으로 어깨 주변의 제어",
         "허벅지 안쪽을 활용한 팔과 견갑의 협응",
-        "허벅지 안쪽의 움직임 경로 인식"
+        "허벅지 안쪽의 움직임 경로 인식",
       ],
-      "warning": "측면 박스 점프 중 어깨 위쪽 통증, 목 긴장, 저림 또는 반동이 생기면 즉시 범위·저항을 낮추거나 중단하세요.",
-      "reference": {
-        "label": "ACSM — Exercise Safety",
-        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
-      }
+      warning:
+        "측면 박스 점프 중 어깨 위쪽 통증, 목 긴장, 저림 또는 반동이 생기면 즉시 범위·저항을 낮추거나 중단하세요.",
+      reference: {
+        label: "ACSM — Exercise Safety",
+        url: "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/",
+      },
     },
-    "detail": {
-      "setup": [
+    detail: {
+      setup: [
         "안정된 전용 장비·바닥·주변 공간을 확인하고 가장 쉬운 범위로 한 번 리허설합니다",
         "발 또는 지지면을 단단히 고정하고 몸통을 길게 세웁니다",
-        "측면 박스 점프에 맞춰 낮은 중량으로 시작하고 양발 또는 벤치 지지로 균형을 만듭니다"
+        "측면 박스 점프에 맞춰 낮은 중량으로 시작하고 양발 또는 벤치 지지로 균형을 만듭니다",
       ],
-      "finish": "측면 박스 점프을 마친 뒤 어깨가 앞으로 밀리지 않게 도구를 몸 옆으로 통제해 되돌립니다.",
-      "commonMistakes": [
+      finish:
+        "측면 박스 점프을 마친 뒤 어깨가 앞으로 밀리지 않게 도구를 몸 옆으로 통제해 되돌립니다.",
+      commonMistakes: [
         "측면 박스 점프에서 어깨를 으쓱하며 목에 힘을 주는 경우",
         "측면 박스 점프에서 반동으로 도구를 목표 높이보다 높게 던지는 경우",
-        "측면 박스 점프에서 손목을 꺾어 도구를 지지하는 경우"
+        "측면 박스 점프에서 손목을 꺾어 도구를 지지하는 경우",
       ],
-      "regressions": [
+      regressions: [
         "측면 박스 점프은 중량을 낮추거나 한 팔씩 지지된 자세로 수행합니다",
         "측면 박스 점프은 들기 높이를 어깨 아래로 줄입니다",
-        "측면 박스 점프은 밴드 또는 더 짧은 지렛대를 사용합니다"
+        "측면 박스 점프은 밴드 또는 더 짧은 지렛대를 사용합니다",
       ],
-      "progressions": [
+      progressions: [
         "측면 박스 점프은 동일한 높이와 정렬에서 반복을 늘립니다",
         "측면 박스 점프은 작은 중량 증가를 한 번만 적용합니다",
-        "측면 박스 점프은 편측·인클라인 변형은 어깨가 편안할 때 시도합니다"
-      ]
-    }
+        "측면 박스 점프은 편측·인클라인 변형은 어깨가 편안할 때 시도합니다",
+      ],
+    },
   },
   {
-    "exercise": {
-      "id": "verified-lateral-cone-hops",
-      "name": "측면 콘 홉",
-      "englishName": "Lateral Cone Hops",
-      "category": "파워·민첩성",
-      "regions": [
-        "하체"
-      ],
-      "focus": "파워",
-      "difficulty": "입문",
-      "equipment": "안정된 전용 장비",
-      "minutes": "3–6회 · 2세트",
-      "description": "측면 콘 홉은 허벅지 안쪽을 사용해 팔 또는 도구를 정해진 평면으로 들어 올리며 어깨 위치를 제어하는 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
-      "cues": [
+    exercise: {
+      id: "verified-lateral-cone-hops",
+      name: "측면 콘 홉",
+      englishName: "Lateral Cone Hops",
+      category: "파워·민첩성",
+      regions: ["하체"],
+      focus: "파워",
+      difficulty: "입문",
+      equipment: "안정된 전용 장비",
+      minutes: "3–6회 · 2세트",
+      description:
+        "측면 콘 홉은 허벅지 안쪽을 사용해 팔 또는 도구를 정해진 평면으로 들어 올리며 어깨 위치를 제어하는 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
+      cues: [
         "측면 콘 홉에서 어깨를 귀에서 멀리 두고 목을 길게 유지",
         "허벅지 안쪽을 느끼며 도구를 몸에서 너무 멀리 보내지 않기",
-        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다"
+        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
       ],
-      "benefits": [
+      benefits: [
         "측면 콘 홉으로 어깨 주변의 제어",
         "허벅지 안쪽을 활용한 팔과 견갑의 협응",
-        "허벅지 안쪽의 움직임 경로 인식"
+        "허벅지 안쪽의 움직임 경로 인식",
       ],
-      "warning": "측면 콘 홉 중 어깨 위쪽 통증, 목 긴장, 저림 또는 반동이 생기면 즉시 범위·저항을 낮추거나 중단하세요.",
-      "reference": {
-        "label": "ACSM — Exercise Safety",
-        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
-      }
+      warning:
+        "측면 콘 홉 중 어깨 위쪽 통증, 목 긴장, 저림 또는 반동이 생기면 즉시 범위·저항을 낮추거나 중단하세요.",
+      reference: {
+        label: "ACSM — Exercise Safety",
+        url: "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/",
+      },
     },
-    "detail": {
-      "setup": [
+    detail: {
+      setup: [
         "안정된 전용 장비·바닥·주변 공간을 확인하고 가장 쉬운 범위로 한 번 리허설합니다",
         "발 또는 지지면을 단단히 고정하고 몸통을 길게 세웁니다",
-        "측면 콘 홉에 맞춰 낮은 중량으로 시작하고 양발 또는 벤치 지지로 균형을 만듭니다"
+        "측면 콘 홉에 맞춰 낮은 중량으로 시작하고 양발 또는 벤치 지지로 균형을 만듭니다",
       ],
-      "finish": "측면 콘 홉을 마친 뒤 어깨가 앞으로 밀리지 않게 도구를 몸 옆으로 통제해 되돌립니다.",
-      "commonMistakes": [
+      finish:
+        "측면 콘 홉을 마친 뒤 어깨가 앞으로 밀리지 않게 도구를 몸 옆으로 통제해 되돌립니다.",
+      commonMistakes: [
         "측면 콘 홉에서 어깨를 으쓱하며 목에 힘을 주는 경우",
         "측면 콘 홉에서 반동으로 도구를 목표 높이보다 높게 던지는 경우",
-        "측면 콘 홉에서 손목을 꺾어 도구를 지지하는 경우"
+        "측면 콘 홉에서 손목을 꺾어 도구를 지지하는 경우",
       ],
-      "regressions": [
+      regressions: [
         "측면 콘 홉은 중량을 낮추거나 한 팔씩 지지된 자세로 수행합니다",
         "측면 콘 홉은 들기 높이를 어깨 아래로 줄입니다",
-        "측면 콘 홉은 밴드 또는 더 짧은 지렛대를 사용합니다"
+        "측면 콘 홉은 밴드 또는 더 짧은 지렛대를 사용합니다",
       ],
-      "progressions": [
+      progressions: [
         "측면 콘 홉은 동일한 높이와 정렬에서 반복을 늘립니다",
         "측면 콘 홉은 작은 중량 증가를 한 번만 적용합니다",
-        "측면 콘 홉은 편측·인클라인 변형은 어깨가 편안할 때 시도합니다"
-      ]
-    }
+        "측면 콘 홉은 편측·인클라인 변형은 어깨가 편안할 때 시도합니다",
+      ],
+    },
   },
   {
-    "exercise": {
-      "id": "verified-linear-depth-jump",
-      "name": "직선 데프트 점프",
-      "englishName": "Linear Depth Jump",
-      "category": "파워·민첩성",
-      "regions": [
-        "하체"
-      ],
-      "focus": "파워",
-      "difficulty": "중급",
-      "equipment": "안정된 전용 장비",
-      "minutes": "3–6회 · 2세트",
-      "description": "직선 데프트 점프은 대퇴사두근을 빠르게 쓰되 착지·받기·도구 경로를 먼저 통제해야 하는 파워 또는 기술 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
-      "cues": [
+    exercise: {
+      id: "verified-linear-depth-jump",
+      name: "직선 데프트 점프",
+      englishName: "Linear Depth Jump",
+      category: "파워·민첩성",
+      regions: ["하체"],
+      focus: "파워",
+      difficulty: "중급",
+      equipment: "안정된 전용 장비",
+      minutes: "3–6회 · 2세트",
+      description:
+        "직선 데프트 점프은 대퇴사두근을 빠르게 쓰되 착지·받기·도구 경로를 먼저 통제해야 하는 파워 또는 기술 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
+      cues: [
         "직선 데프트 점프에서 낮은 속도 리허설 뒤에만 힘을 빠르게 쓰기",
         "대퇴사두근을 느끼며 발·무릎·골반이 같은 방향으로 받기",
-        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다"
+        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
       ],
-      "benefits": [
+      benefits: [
         "직선 데프트 점프으로 힘 발휘와 제어의 연결",
         "대퇴사두근을 활용한 착지·받기 협응",
-        "대퇴사두근의 움직임 경로 인식"
+        "대퇴사두근의 움직임 경로 인식",
       ],
-      "warning": "직선 데프트 점프 중 착지 불안, 무릎·발목·허리 통증, 어지러움 또는 공간 부족이 있으면 즉시 중단하세요.",
-      "reference": {
-        "label": "ACSM — Exercise Safety",
-        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
-      }
+      warning:
+        "직선 데프트 점프 중 착지 불안, 무릎·발목·허리 통증, 어지러움 또는 공간 부족이 있으면 즉시 중단하세요.",
+      reference: {
+        label: "ACSM — Exercise Safety",
+        url: "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/",
+      },
     },
-    "detail": {
-      "setup": [
+    detail: {
+      setup: [
         "안정된 전용 장비·바닥·주변 공간을 확인하고 가장 쉬운 범위로 한 번 리허설합니다",
         "발 또는 지지면을 단단히 고정하고 몸통을 길게 세웁니다",
-        "직선 데프트 점프에 맞춰 미끄럽지 않은 바닥과 충분한 빈 공간을 확보합니다"
+        "직선 데프트 점프에 맞춰 미끄럽지 않은 바닥과 충분한 빈 공간을 확보합니다",
       ],
-      "finish": "직선 데프트 점프을 마친 뒤 착지 또는 받기 뒤 잠시 균형을 확인하고 호흡이 안정된 후 다음 반복을 시작합니다.",
-      "commonMistakes": [
+      finish:
+        "직선 데프트 점프을 마친 뒤 착지 또는 받기 뒤 잠시 균형을 확인하고 호흡이 안정된 후 다음 반복을 시작합니다.",
+      commonMistakes: [
         "직선 데프트 점프에서 피로한 상태에서 높이·속도·부하를 함께 올리는 경우",
         "직선 데프트 점프에서 착지 소리와 무릎 흔들림을 무시하는 경우",
-        "직선 데프트 점프에서 도구 경로가 불안정한데 반복을 이어 가는 경우"
+        "직선 데프트 점프에서 도구 경로가 불안정한데 반복을 이어 가는 경우",
       ],
-      "regressions": [
+      regressions: [
         "직선 데프트 점프은 점프·속도를 빼고 체중 이동으로 바꿉니다",
         "직선 데프트 점프은 낮은 높이·짧은 거리·가벼운 도구를 사용합니다",
-        "직선 데프트 점프은 지지대 가까이에서 받기 자세만 연습합니다"
+        "직선 데프트 점프은 지지대 가까이에서 받기 자세만 연습합니다",
       ],
-      "progressions": [
+      progressions: [
         "직선 데프트 점프은 안정된 착지 뒤 반복을 한두 회 늘립니다",
         "직선 데프트 점프은 한 번에 거리·높이·부하 중 하나만 조절합니다",
-        "직선 데프트 점프은 복잡한 연속 동작은 기본 패턴이 안정된 뒤 시도합니다"
-      ]
-    }
+        "직선 데프트 점프은 복잡한 연속 동작은 기본 패턴이 안정된 뒤 시도합니다",
+      ],
+    },
   },
   {
-    "exercise": {
-      "id": "verified-quick-leap",
-      "name": "빠른 도약",
-      "englishName": "Quick Leap",
-      "category": "파워·민첩성",
-      "regions": [
-        "하체"
-      ],
-      "focus": "파워",
-      "difficulty": "입문",
-      "equipment": "안정된 전용 장비",
-      "minutes": "3–6회 · 2세트",
-      "description": "빠른 도약은 대퇴사두근 주변을 통증 없는 범위에서 천천히 움직여 가동 범위와 자세 감각을 확인하는 모빌리티 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
-      "cues": [
+    exercise: {
+      id: "verified-quick-leap",
+      name: "빠른 도약",
+      englishName: "Quick Leap",
+      category: "파워·민첩성",
+      regions: ["하체"],
+      focus: "파워",
+      difficulty: "입문",
+      equipment: "안정된 전용 장비",
+      minutes: "3–6회 · 2세트",
+      description:
+        "빠른 도약은 대퇴사두근 주변을 통증 없는 범위에서 천천히 움직여 가동 범위와 자세 감각을 확인하는 모빌리티 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
+      cues: [
         "빠른 도약에서 작은 범위에서 호흡을 멈추지 않기",
         "대퇴사두근을 느끼며 끝 범위를 밀지 말고 부드럽게 왕복",
-        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다"
+        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
       ],
-      "benefits": [
+      benefits: [
         "빠른 도약으로 관절 위치와 범위 인식",
         "대퇴사두근을 활용한 편안한 움직임 준비",
-        "대퇴사두근의 움직임 경로 인식"
+        "대퇴사두근의 움직임 경로 인식",
       ],
-      "warning": "빠른 도약 중 날카로운 통증, 저림, 방사통, 붓기·열감이 있으면 자가 진행을 멈추고 평가를 우선하세요.",
-      "reference": {
-        "label": "ACSM — Exercise Safety",
-        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
-      }
+      warning:
+        "빠른 도약 중 날카로운 통증, 저림, 방사통, 붓기·열감이 있으면 자가 진행을 멈추고 평가를 우선하세요.",
+      reference: {
+        label: "ACSM — Exercise Safety",
+        url: "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/",
+      },
     },
-    "detail": {
-      "setup": [
+    detail: {
+      setup: [
         "안정된 전용 장비·바닥·주변 공간을 확인하고 가장 쉬운 범위로 한 번 리허설합니다",
         "발 또는 지지면을 단단히 고정하고 몸통을 길게 세웁니다",
-        "빠른 도약에 맞춰 편안한 바닥·매트 또는 지지대를 준비합니다"
+        "빠른 도약에 맞춰 편안한 바닥·매트 또는 지지대를 준비합니다",
       ],
-      "finish": "빠른 도약을 마친 뒤 중립 자세로 천천히 돌아와 불편감이 남지 않는지 확인합니다.",
-      "commonMistakes": [
+      finish:
+        "빠른 도약을 마친 뒤 중립 자세로 천천히 돌아와 불편감이 남지 않는지 확인합니다.",
+      commonMistakes: [
         "빠른 도약에서 끝 범위를 억지로 밀어 통증을 만드는 경우",
         "빠른 도약에서 호흡을 참거나 반동을 쓰는 경우",
-        "빠른 도약에서 저림·방사통을 무시하고 지속하는 경우"
+        "빠른 도약에서 저림·방사통을 무시하고 지속하는 경우",
       ],
-      "regressions": [
+      regressions: [
         "빠른 도약은 범위와 유지 시간을 줄입니다",
         "빠른 도약은 벽·의자·블록 같은 지지대를 사용합니다",
-        "빠른 도약은 누운 또는 앉은 안정된 자세로 바꿉니다"
+        "빠른 도약은 누운 또는 앉은 안정된 자세로 바꿉니다",
       ],
-      "progressions": [
+      progressions: [
         "빠른 도약은 다음 날 편안하면 범위만 조금 늘립니다",
         "빠른 도약은 호흡 주기를 한 번 추가합니다",
-        "빠른 도약은 지지대는 안정적으로 줄여 갑니다"
-      ]
-    }
+        "빠른 도약은 지지대는 안정적으로 줄여 갑니다",
+      ],
+    },
   },
   {
-    "exercise": {
-      "id": "verified-side-hop-sprint",
-      "name": "사이드 홉-스프린트",
-      "englishName": "Side Hop-Sprint",
-      "category": "파워·민첩성",
-      "regions": [
-        "하체"
-      ],
-      "focus": "파워",
-      "difficulty": "입문",
-      "equipment": "안정된 전용 장비",
-      "minutes": "3–6회 · 2세트",
-      "description": "사이드 홉-스프린트은 대퇴사두근을 빠르게 쓰되 착지·받기·도구 경로를 먼저 통제해야 하는 파워 또는 기술 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
-      "cues": [
+    exercise: {
+      id: "verified-side-hop-sprint",
+      name: "사이드 홉-스프린트",
+      englishName: "Side Hop-Sprint",
+      category: "파워·민첩성",
+      regions: ["하체"],
+      focus: "파워",
+      difficulty: "입문",
+      equipment: "안정된 전용 장비",
+      minutes: "3–6회 · 2세트",
+      description:
+        "사이드 홉-스프린트은 대퇴사두근을 빠르게 쓰되 착지·받기·도구 경로를 먼저 통제해야 하는 파워 또는 기술 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
+      cues: [
         "사이드 홉-스프린트에서 낮은 속도 리허설 뒤에만 힘을 빠르게 쓰기",
         "대퇴사두근을 느끼며 발·무릎·골반이 같은 방향으로 받기",
-        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다"
+        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
       ],
-      "benefits": [
+      benefits: [
         "사이드 홉-스프린트으로 힘 발휘와 제어의 연결",
         "대퇴사두근을 활용한 착지·받기 협응",
-        "대퇴사두근의 움직임 경로 인식"
+        "대퇴사두근의 움직임 경로 인식",
       ],
-      "warning": "사이드 홉-스프린트 중 착지 불안, 무릎·발목·허리 통증, 어지러움 또는 공간 부족이 있으면 즉시 중단하세요.",
-      "reference": {
-        "label": "ACSM — Exercise Safety",
-        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
-      }
+      warning:
+        "사이드 홉-스프린트 중 착지 불안, 무릎·발목·허리 통증, 어지러움 또는 공간 부족이 있으면 즉시 중단하세요.",
+      reference: {
+        label: "ACSM — Exercise Safety",
+        url: "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/",
+      },
     },
-    "detail": {
-      "setup": [
+    detail: {
+      setup: [
         "안정된 전용 장비·바닥·주변 공간을 확인하고 가장 쉬운 범위로 한 번 리허설합니다",
         "발 또는 지지면을 단단히 고정하고 몸통을 길게 세웁니다",
-        "사이드 홉-스프린트에 맞춰 미끄럽지 않은 바닥과 충분한 빈 공간을 확보합니다"
+        "사이드 홉-스프린트에 맞춰 미끄럽지 않은 바닥과 충분한 빈 공간을 확보합니다",
       ],
-      "finish": "사이드 홉-스프린트을 마친 뒤 착지 또는 받기 뒤 잠시 균형을 확인하고 호흡이 안정된 후 다음 반복을 시작합니다.",
-      "commonMistakes": [
+      finish:
+        "사이드 홉-스프린트을 마친 뒤 착지 또는 받기 뒤 잠시 균형을 확인하고 호흡이 안정된 후 다음 반복을 시작합니다.",
+      commonMistakes: [
         "사이드 홉-스프린트에서 피로한 상태에서 높이·속도·부하를 함께 올리는 경우",
         "사이드 홉-스프린트에서 착지 소리와 무릎 흔들림을 무시하는 경우",
-        "사이드 홉-스프린트에서 도구 경로가 불안정한데 반복을 이어 가는 경우"
+        "사이드 홉-스프린트에서 도구 경로가 불안정한데 반복을 이어 가는 경우",
       ],
-      "regressions": [
+      regressions: [
         "사이드 홉-스프린트은 점프·속도를 빼고 체중 이동으로 바꿉니다",
         "사이드 홉-스프린트은 낮은 높이·짧은 거리·가벼운 도구를 사용합니다",
-        "사이드 홉-스프린트은 지지대 가까이에서 받기 자세만 연습합니다"
+        "사이드 홉-스프린트은 지지대 가까이에서 받기 자세만 연습합니다",
       ],
-      "progressions": [
+      progressions: [
         "사이드 홉-스프린트은 안정된 착지 뒤 반복을 한두 회 늘립니다",
         "사이드 홉-스프린트은 한 번에 거리·높이·부하 중 하나만 조절합니다",
-        "사이드 홉-스프린트은 복잡한 연속 동작은 기본 패턴이 안정된 뒤 시도합니다"
-      ]
-    }
+        "사이드 홉-스프린트은 복잡한 연속 동작은 기본 패턴이 안정된 뒤 시도합니다",
+      ],
+    },
   },
   {
-    "exercise": {
-      "id": "verified-side-to-side-box-shuffle",
-      "name": "박스 좌우 셔플",
-      "englishName": "Side to Side Box Shuffle",
-      "category": "파워·민첩성",
-      "regions": [
-        "하체"
-      ],
-      "focus": "파워",
-      "difficulty": "입문",
-      "equipment": "안정된 전용 장비",
-      "minutes": "3–6회 · 2세트",
-      "description": "박스 좌우 셔플은 대퇴사두근 주변을 통증 없는 범위에서 천천히 움직여 가동 범위와 자세 감각을 확인하는 모빌리티 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
-      "cues": [
+    exercise: {
+      id: "verified-side-to-side-box-shuffle",
+      name: "박스 좌우 셔플",
+      englishName: "Side to Side Box Shuffle",
+      category: "파워·민첩성",
+      regions: ["하체"],
+      focus: "파워",
+      difficulty: "입문",
+      equipment: "안정된 전용 장비",
+      minutes: "3–6회 · 2세트",
+      description:
+        "박스 좌우 셔플은 대퇴사두근 주변을 통증 없는 범위에서 천천히 움직여 가동 범위와 자세 감각을 확인하는 모빌리티 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
+      cues: [
         "박스 좌우 셔플에서 작은 범위에서 호흡을 멈추지 않기",
         "대퇴사두근을 느끼며 끝 범위를 밀지 말고 부드럽게 왕복",
-        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다"
+        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
       ],
-      "benefits": [
+      benefits: [
         "박스 좌우 셔플으로 관절 위치와 범위 인식",
         "대퇴사두근을 활용한 편안한 움직임 준비",
-        "대퇴사두근의 움직임 경로 인식"
+        "대퇴사두근의 움직임 경로 인식",
       ],
-      "warning": "박스 좌우 셔플 중 날카로운 통증, 저림, 방사통, 붓기·열감이 있으면 자가 진행을 멈추고 평가를 우선하세요.",
-      "reference": {
-        "label": "ACSM — Exercise Safety",
-        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
-      }
+      warning:
+        "박스 좌우 셔플 중 날카로운 통증, 저림, 방사통, 붓기·열감이 있으면 자가 진행을 멈추고 평가를 우선하세요.",
+      reference: {
+        label: "ACSM — Exercise Safety",
+        url: "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/",
+      },
     },
-    "detail": {
-      "setup": [
+    detail: {
+      setup: [
         "안정된 전용 장비·바닥·주변 공간을 확인하고 가장 쉬운 범위로 한 번 리허설합니다",
         "발 또는 지지면을 단단히 고정하고 몸통을 길게 세웁니다",
-        "박스 좌우 셔플에 맞춰 편안한 바닥·매트 또는 지지대를 준비합니다"
+        "박스 좌우 셔플에 맞춰 편안한 바닥·매트 또는 지지대를 준비합니다",
       ],
-      "finish": "박스 좌우 셔플을 마친 뒤 중립 자세로 천천히 돌아와 불편감이 남지 않는지 확인합니다.",
-      "commonMistakes": [
+      finish:
+        "박스 좌우 셔플을 마친 뒤 중립 자세로 천천히 돌아와 불편감이 남지 않는지 확인합니다.",
+      commonMistakes: [
         "박스 좌우 셔플에서 끝 범위를 억지로 밀어 통증을 만드는 경우",
         "박스 좌우 셔플에서 호흡을 참거나 반동을 쓰는 경우",
-        "박스 좌우 셔플에서 저림·방사통을 무시하고 지속하는 경우"
+        "박스 좌우 셔플에서 저림·방사통을 무시하고 지속하는 경우",
       ],
-      "regressions": [
+      regressions: [
         "박스 좌우 셔플은 범위와 유지 시간을 줄입니다",
         "박스 좌우 셔플은 벽·의자·블록 같은 지지대를 사용합니다",
-        "박스 좌우 셔플은 누운 또는 앉은 안정된 자세로 바꿉니다"
+        "박스 좌우 셔플은 누운 또는 앉은 안정된 자세로 바꿉니다",
       ],
-      "progressions": [
+      progressions: [
         "박스 좌우 셔플은 다음 날 편안하면 범위만 조금 늘립니다",
         "박스 좌우 셔플은 호흡 주기를 한 번 추가합니다",
-        "박스 좌우 셔플은 지지대는 안정적으로 줄여 갑니다"
-      ]
-    }
+        "박스 좌우 셔플은 지지대는 안정적으로 줄여 갑니다",
+      ],
+    },
   },
   {
-    "exercise": {
-      "id": "verified-single-leg-push-off",
-      "name": "싱글레그 푸시오프",
-      "englishName": "Single Leg Push-off",
-      "category": "파워·민첩성",
-      "regions": [
-        "하체"
-      ],
-      "focus": "파워",
-      "difficulty": "입문",
-      "equipment": "안정된 전용 장비",
-      "minutes": "3–6회 · 2세트",
-      "description": "싱글레그 푸시오프은 대퇴사두근 주변을 통증 없는 범위에서 천천히 움직여 가동 범위와 자세 감각을 확인하는 모빌리티 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
-      "cues": [
+    exercise: {
+      id: "verified-single-leg-push-off",
+      name: "싱글레그 푸시오프",
+      englishName: "Single Leg Push-off",
+      category: "파워·민첩성",
+      regions: ["하체"],
+      focus: "파워",
+      difficulty: "입문",
+      equipment: "안정된 전용 장비",
+      minutes: "3–6회 · 2세트",
+      description:
+        "싱글레그 푸시오프은 대퇴사두근 주변을 통증 없는 범위에서 천천히 움직여 가동 범위와 자세 감각을 확인하는 모빌리티 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
+      cues: [
         "싱글레그 푸시오프에서 작은 범위에서 호흡을 멈추지 않기",
         "대퇴사두근을 느끼며 끝 범위를 밀지 말고 부드럽게 왕복",
-        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다"
+        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
       ],
-      "benefits": [
+      benefits: [
         "싱글레그 푸시오프으로 관절 위치와 범위 인식",
         "대퇴사두근을 활용한 편안한 움직임 준비",
-        "대퇴사두근의 움직임 경로 인식"
+        "대퇴사두근의 움직임 경로 인식",
       ],
-      "warning": "싱글레그 푸시오프 중 날카로운 통증, 저림, 방사통, 붓기·열감이 있으면 자가 진행을 멈추고 평가를 우선하세요.",
-      "reference": {
-        "label": "ACSM — Exercise Safety",
-        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
-      }
+      warning:
+        "싱글레그 푸시오프 중 날카로운 통증, 저림, 방사통, 붓기·열감이 있으면 자가 진행을 멈추고 평가를 우선하세요.",
+      reference: {
+        label: "ACSM — Exercise Safety",
+        url: "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/",
+      },
     },
-    "detail": {
-      "setup": [
+    detail: {
+      setup: [
         "안정된 전용 장비·바닥·주변 공간을 확인하고 가장 쉬운 범위로 한 번 리허설합니다",
         "지지 발 전체를 바닥에 두고 벽이나 벤치 가까이에서 균형을 준비합니다",
-        "싱글레그 푸시오프에 맞춰 편안한 바닥·매트 또는 지지대를 준비합니다"
+        "싱글레그 푸시오프에 맞춰 편안한 바닥·매트 또는 지지대를 준비합니다",
       ],
-      "finish": "싱글레그 푸시오프을 마친 뒤 중립 자세로 천천히 돌아와 불편감이 남지 않는지 확인합니다.",
-      "commonMistakes": [
+      finish:
+        "싱글레그 푸시오프을 마친 뒤 중립 자세로 천천히 돌아와 불편감이 남지 않는지 확인합니다.",
+      commonMistakes: [
         "싱글레그 푸시오프에서 끝 범위를 억지로 밀어 통증을 만드는 경우",
         "싱글레그 푸시오프에서 호흡을 참거나 반동을 쓰는 경우",
-        "싱글레그 푸시오프에서 저림·방사통을 무시하고 지속하는 경우"
+        "싱글레그 푸시오프에서 저림·방사통을 무시하고 지속하는 경우",
       ],
-      "regressions": [
+      regressions: [
         "싱글레그 푸시오프은 범위와 유지 시간을 줄입니다",
         "싱글레그 푸시오프은 벽·의자·블록 같은 지지대를 사용합니다",
-        "싱글레그 푸시오프은 누운 또는 앉은 안정된 자세로 바꿉니다"
+        "싱글레그 푸시오프은 누운 또는 앉은 안정된 자세로 바꿉니다",
       ],
-      "progressions": [
+      progressions: [
         "싱글레그 푸시오프은 다음 날 편안하면 범위만 조금 늘립니다",
         "싱글레그 푸시오프은 호흡 주기를 한 번 추가합니다",
-        "싱글레그 푸시오프은 지지대는 안정적으로 줄여 갑니다"
-      ]
-    }
+        "싱글레그 푸시오프은 지지대는 안정적으로 줄여 갑니다",
+      ],
+    },
   },
   {
-    "exercise": {
-      "id": "verified-single-cone-sprint-drill",
-      "name": "싱글 콘 스프린트",
-      "englishName": "Single-Cone Sprint Drill",
-      "category": "파워·민첩성",
-      "regions": [
-        "하체"
-      ],
-      "focus": "파워",
-      "difficulty": "입문",
-      "equipment": "안정된 전용 장비",
-      "minutes": "3–6회 · 2세트",
-      "description": "싱글 콘 스프린트은 대퇴사두근 주변을 통증 없는 범위에서 천천히 움직여 가동 범위와 자세 감각을 확인하는 모빌리티 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
-      "cues": [
+    exercise: {
+      id: "verified-single-cone-sprint-drill",
+      name: "싱글 콘 스프린트",
+      englishName: "Single-Cone Sprint Drill",
+      category: "파워·민첩성",
+      regions: ["하체"],
+      focus: "파워",
+      difficulty: "입문",
+      equipment: "안정된 전용 장비",
+      minutes: "3–6회 · 2세트",
+      description:
+        "싱글 콘 스프린트은 대퇴사두근 주변을 통증 없는 범위에서 천천히 움직여 가동 범위와 자세 감각을 확인하는 모빌리티 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
+      cues: [
         "싱글 콘 스프린트에서 작은 범위에서 호흡을 멈추지 않기",
         "대퇴사두근을 느끼며 끝 범위를 밀지 말고 부드럽게 왕복",
-        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다"
+        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
       ],
-      "benefits": [
+      benefits: [
         "싱글 콘 스프린트으로 관절 위치와 범위 인식",
         "대퇴사두근을 활용한 편안한 움직임 준비",
-        "대퇴사두근의 움직임 경로 인식"
+        "대퇴사두근의 움직임 경로 인식",
       ],
-      "warning": "싱글 콘 스프린트 중 날카로운 통증, 저림, 방사통, 붓기·열감이 있으면 자가 진행을 멈추고 평가를 우선하세요.",
-      "reference": {
-        "label": "ACSM — Exercise Safety",
-        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
-      }
+      warning:
+        "싱글 콘 스프린트 중 날카로운 통증, 저림, 방사통, 붓기·열감이 있으면 자가 진행을 멈추고 평가를 우선하세요.",
+      reference: {
+        label: "ACSM — Exercise Safety",
+        url: "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/",
+      },
     },
-    "detail": {
-      "setup": [
+    detail: {
+      setup: [
         "안정된 전용 장비·바닥·주변 공간을 확인하고 가장 쉬운 범위로 한 번 리허설합니다",
         "발 또는 지지면을 단단히 고정하고 몸통을 길게 세웁니다",
-        "싱글 콘 스프린트에 맞춰 편안한 바닥·매트 또는 지지대를 준비합니다"
+        "싱글 콘 스프린트에 맞춰 편안한 바닥·매트 또는 지지대를 준비합니다",
       ],
-      "finish": "싱글 콘 스프린트을 마친 뒤 중립 자세로 천천히 돌아와 불편감이 남지 않는지 확인합니다.",
-      "commonMistakes": [
+      finish:
+        "싱글 콘 스프린트을 마친 뒤 중립 자세로 천천히 돌아와 불편감이 남지 않는지 확인합니다.",
+      commonMistakes: [
         "싱글 콘 스프린트에서 끝 범위를 억지로 밀어 통증을 만드는 경우",
         "싱글 콘 스프린트에서 호흡을 참거나 반동을 쓰는 경우",
-        "싱글 콘 스프린트에서 저림·방사통을 무시하고 지속하는 경우"
+        "싱글 콘 스프린트에서 저림·방사통을 무시하고 지속하는 경우",
       ],
-      "regressions": [
+      regressions: [
         "싱글 콘 스프린트은 범위와 유지 시간을 줄입니다",
         "싱글 콘 스프린트은 벽·의자·블록 같은 지지대를 사용합니다",
-        "싱글 콘 스프린트은 누운 또는 앉은 안정된 자세로 바꿉니다"
+        "싱글 콘 스프린트은 누운 또는 앉은 안정된 자세로 바꿉니다",
       ],
-      "progressions": [
+      progressions: [
         "싱글 콘 스프린트은 다음 날 편안하면 범위만 조금 늘립니다",
         "싱글 콘 스프린트은 호흡 주기를 한 번 추가합니다",
-        "싱글 콘 스프린트은 지지대는 안정적으로 줄여 갑니다"
-      ]
-    }
+        "싱글 콘 스프린트은 지지대는 안정적으로 줄여 갑니다",
+      ],
+    },
   },
   {
-    "exercise": {
-      "id": "verified-single-leg-lateral-hop",
-      "name": "싱글레그 측면 홉",
-      "englishName": "Single-Leg Lateral Hop",
-      "category": "파워·민첩성",
-      "regions": [
-        "하체"
-      ],
-      "focus": "파워",
-      "difficulty": "입문",
-      "equipment": "안정된 전용 장비",
-      "minutes": "3–6회 · 2세트",
-      "description": "싱글레그 측면 홉은 대퇴사두근을 사용해 팔 또는 도구를 정해진 평면으로 들어 올리며 어깨 위치를 제어하는 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
-      "cues": [
+    exercise: {
+      id: "verified-single-leg-lateral-hop",
+      name: "싱글레그 측면 홉",
+      englishName: "Single-Leg Lateral Hop",
+      category: "파워·민첩성",
+      regions: ["하체"],
+      focus: "파워",
+      difficulty: "입문",
+      equipment: "안정된 전용 장비",
+      minutes: "3–6회 · 2세트",
+      description:
+        "싱글레그 측면 홉은 대퇴사두근을 사용해 팔 또는 도구를 정해진 평면으로 들어 올리며 어깨 위치를 제어하는 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
+      cues: [
         "싱글레그 측면 홉에서 어깨를 귀에서 멀리 두고 목을 길게 유지",
         "대퇴사두근을 느끼며 도구를 몸에서 너무 멀리 보내지 않기",
-        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다"
+        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
       ],
-      "benefits": [
+      benefits: [
         "싱글레그 측면 홉으로 어깨 주변의 제어",
         "대퇴사두근을 활용한 팔과 견갑의 협응",
-        "대퇴사두근의 움직임 경로 인식"
+        "대퇴사두근의 움직임 경로 인식",
       ],
-      "warning": "싱글레그 측면 홉 중 어깨 위쪽 통증, 목 긴장, 저림 또는 반동이 생기면 즉시 범위·저항을 낮추거나 중단하세요.",
-      "reference": {
-        "label": "ACSM — Exercise Safety",
-        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
-      }
+      warning:
+        "싱글레그 측면 홉 중 어깨 위쪽 통증, 목 긴장, 저림 또는 반동이 생기면 즉시 범위·저항을 낮추거나 중단하세요.",
+      reference: {
+        label: "ACSM — Exercise Safety",
+        url: "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/",
+      },
     },
-    "detail": {
-      "setup": [
+    detail: {
+      setup: [
         "안정된 전용 장비·바닥·주변 공간을 확인하고 가장 쉬운 범위로 한 번 리허설합니다",
         "발 또는 지지면을 단단히 고정하고 몸통을 길게 세웁니다",
-        "싱글레그 측면 홉에 맞춰 낮은 중량으로 시작하고 양발 또는 벤치 지지로 균형을 만듭니다"
+        "싱글레그 측면 홉에 맞춰 낮은 중량으로 시작하고 양발 또는 벤치 지지로 균형을 만듭니다",
       ],
-      "finish": "싱글레그 측면 홉을 마친 뒤 어깨가 앞으로 밀리지 않게 도구를 몸 옆으로 통제해 되돌립니다.",
-      "commonMistakes": [
+      finish:
+        "싱글레그 측면 홉을 마친 뒤 어깨가 앞으로 밀리지 않게 도구를 몸 옆으로 통제해 되돌립니다.",
+      commonMistakes: [
         "싱글레그 측면 홉에서 어깨를 으쓱하며 목에 힘을 주는 경우",
         "싱글레그 측면 홉에서 반동으로 도구를 목표 높이보다 높게 던지는 경우",
-        "싱글레그 측면 홉에서 손목을 꺾어 도구를 지지하는 경우"
+        "싱글레그 측면 홉에서 손목을 꺾어 도구를 지지하는 경우",
       ],
-      "regressions": [
+      regressions: [
         "싱글레그 측면 홉은 중량을 낮추거나 한 팔씩 지지된 자세로 수행합니다",
         "싱글레그 측면 홉은 들기 높이를 어깨 아래로 줄입니다",
-        "싱글레그 측면 홉은 밴드 또는 더 짧은 지렛대를 사용합니다"
+        "싱글레그 측면 홉은 밴드 또는 더 짧은 지렛대를 사용합니다",
       ],
-      "progressions": [
+      progressions: [
         "싱글레그 측면 홉은 동일한 높이와 정렬에서 반복을 늘립니다",
         "싱글레그 측면 홉은 작은 중량 증가를 한 번만 적용합니다",
-        "싱글레그 측면 홉은 편측·인클라인 변형은 어깨가 편안할 때 시도합니다"
-      ]
-    }
+        "싱글레그 측면 홉은 편측·인클라인 변형은 어깨가 편안할 때 시도합니다",
+      ],
+    },
   },
   {
-    "exercise": {
-      "id": "verified-single-leg-stride-jump",
-      "name": "싱글레그 스트라이드 점프",
-      "englishName": "Single-Leg Stride Jump",
-      "category": "파워·민첩성",
-      "regions": [
-        "하체"
-      ],
-      "focus": "파워",
-      "difficulty": "입문",
-      "equipment": "안정된 전용 장비",
-      "minutes": "3–6회 · 2세트",
-      "description": "싱글레그 스트라이드 점프은 대퇴사두근을 빠르게 쓰되 착지·받기·도구 경로를 먼저 통제해야 하는 파워 또는 기술 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
-      "cues": [
+    exercise: {
+      id: "verified-single-leg-stride-jump",
+      name: "싱글레그 스트라이드 점프",
+      englishName: "Single-Leg Stride Jump",
+      category: "파워·민첩성",
+      regions: ["하체"],
+      focus: "파워",
+      difficulty: "입문",
+      equipment: "안정된 전용 장비",
+      minutes: "3–6회 · 2세트",
+      description:
+        "싱글레그 스트라이드 점프은 대퇴사두근을 빠르게 쓰되 착지·받기·도구 경로를 먼저 통제해야 하는 파워 또는 기술 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
+      cues: [
         "싱글레그 스트라이드 점프에서 낮은 속도 리허설 뒤에만 힘을 빠르게 쓰기",
         "대퇴사두근을 느끼며 발·무릎·골반이 같은 방향으로 받기",
-        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다"
+        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
       ],
-      "benefits": [
+      benefits: [
         "싱글레그 스트라이드 점프으로 힘 발휘와 제어의 연결",
         "대퇴사두근을 활용한 착지·받기 협응",
-        "대퇴사두근의 움직임 경로 인식"
+        "대퇴사두근의 움직임 경로 인식",
       ],
-      "warning": "싱글레그 스트라이드 점프 중 착지 불안, 무릎·발목·허리 통증, 어지러움 또는 공간 부족이 있으면 즉시 중단하세요.",
-      "reference": {
-        "label": "ACSM — Exercise Safety",
-        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
-      }
+      warning:
+        "싱글레그 스트라이드 점프 중 착지 불안, 무릎·발목·허리 통증, 어지러움 또는 공간 부족이 있으면 즉시 중단하세요.",
+      reference: {
+        label: "ACSM — Exercise Safety",
+        url: "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/",
+      },
     },
-    "detail": {
-      "setup": [
+    detail: {
+      setup: [
         "안정된 전용 장비·바닥·주변 공간을 확인하고 가장 쉬운 범위로 한 번 리허설합니다",
         "발 또는 지지면을 단단히 고정하고 몸통을 길게 세웁니다",
-        "싱글레그 스트라이드 점프에 맞춰 미끄럽지 않은 바닥과 충분한 빈 공간을 확보합니다"
+        "싱글레그 스트라이드 점프에 맞춰 미끄럽지 않은 바닥과 충분한 빈 공간을 확보합니다",
       ],
-      "finish": "싱글레그 스트라이드 점프을 마친 뒤 착지 또는 받기 뒤 잠시 균형을 확인하고 호흡이 안정된 후 다음 반복을 시작합니다.",
-      "commonMistakes": [
+      finish:
+        "싱글레그 스트라이드 점프을 마친 뒤 착지 또는 받기 뒤 잠시 균형을 확인하고 호흡이 안정된 후 다음 반복을 시작합니다.",
+      commonMistakes: [
         "싱글레그 스트라이드 점프에서 피로한 상태에서 높이·속도·부하를 함께 올리는 경우",
         "싱글레그 스트라이드 점프에서 착지 소리와 무릎 흔들림을 무시하는 경우",
-        "싱글레그 스트라이드 점프에서 도구 경로가 불안정한데 반복을 이어 가는 경우"
+        "싱글레그 스트라이드 점프에서 도구 경로가 불안정한데 반복을 이어 가는 경우",
       ],
-      "regressions": [
+      regressions: [
         "싱글레그 스트라이드 점프은 점프·속도를 빼고 체중 이동으로 바꿉니다",
         "싱글레그 스트라이드 점프은 낮은 높이·짧은 거리·가벼운 도구를 사용합니다",
-        "싱글레그 스트라이드 점프은 지지대 가까이에서 받기 자세만 연습합니다"
+        "싱글레그 스트라이드 점프은 지지대 가까이에서 받기 자세만 연습합니다",
       ],
-      "progressions": [
+      progressions: [
         "싱글레그 스트라이드 점프은 안정된 착지 뒤 반복을 한두 회 늘립니다",
         "싱글레그 스트라이드 점프은 한 번에 거리·높이·부하 중 하나만 조절합니다",
-        "싱글레그 스트라이드 점프은 복잡한 연속 동작은 기본 패턴이 안정된 뒤 시도합니다"
-      ]
-    }
+        "싱글레그 스트라이드 점프은 복잡한 연속 동작은 기본 패턴이 안정된 뒤 시도합니다",
+      ],
+    },
   },
   {
-    "exercise": {
-      "id": "verified-sledgehammer-swings",
-      "name": "슬레지해머 스윙",
-      "englishName": "Sledgehammer Swings",
-      "category": "파워·민첩성",
-      "regions": [
-        "코어"
-      ],
-      "focus": "파워",
-      "difficulty": "입문",
-      "equipment": "안정된 전용 장비",
-      "minutes": "3–6회 · 2세트",
-      "description": "슬레지해머 스윙은 복부 주변을 통증 없는 범위에서 천천히 움직여 가동 범위와 자세 감각을 확인하는 모빌리티 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
-      "cues": [
+    exercise: {
+      id: "verified-sledgehammer-swings",
+      name: "슬레지해머 스윙",
+      englishName: "Sledgehammer Swings",
+      category: "파워·민첩성",
+      regions: ["코어"],
+      focus: "파워",
+      difficulty: "입문",
+      equipment: "안정된 전용 장비",
+      minutes: "3–6회 · 2세트",
+      description:
+        "슬레지해머 스윙은 복부 주변을 통증 없는 범위에서 천천히 움직여 가동 범위와 자세 감각을 확인하는 모빌리티 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
+      cues: [
         "슬레지해머 스윙에서 작은 범위에서 호흡을 멈추지 않기",
         "복부을 느끼며 끝 범위를 밀지 말고 부드럽게 왕복",
-        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다"
+        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
       ],
-      "benefits": [
+      benefits: [
         "슬레지해머 스윙으로 관절 위치와 범위 인식",
         "복부을 활용한 편안한 움직임 준비",
-        "복부의 움직임 경로 인식"
+        "복부의 움직임 경로 인식",
       ],
-      "warning": "슬레지해머 스윙 중 날카로운 통증, 저림, 방사통, 붓기·열감이 있으면 자가 진행을 멈추고 평가를 우선하세요.",
-      "reference": {
-        "label": "ACSM — Exercise Safety",
-        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
-      }
+      warning:
+        "슬레지해머 스윙 중 날카로운 통증, 저림, 방사통, 붓기·열감이 있으면 자가 진행을 멈추고 평가를 우선하세요.",
+      reference: {
+        label: "ACSM — Exercise Safety",
+        url: "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/",
+      },
     },
-    "detail": {
-      "setup": [
+    detail: {
+      setup: [
         "안정된 전용 장비·바닥·주변 공간을 확인하고 가장 쉬운 범위로 한 번 리허설합니다",
         "발 또는 지지면을 단단히 고정하고 몸통을 길게 세웁니다",
-        "슬레지해머 스윙에 맞춰 편안한 바닥·매트 또는 지지대를 준비합니다"
+        "슬레지해머 스윙에 맞춰 편안한 바닥·매트 또는 지지대를 준비합니다",
       ],
-      "finish": "슬레지해머 스윙을 마친 뒤 중립 자세로 천천히 돌아와 불편감이 남지 않는지 확인합니다.",
-      "commonMistakes": [
+      finish:
+        "슬레지해머 스윙을 마친 뒤 중립 자세로 천천히 돌아와 불편감이 남지 않는지 확인합니다.",
+      commonMistakes: [
         "슬레지해머 스윙에서 끝 범위를 억지로 밀어 통증을 만드는 경우",
         "슬레지해머 스윙에서 호흡을 참거나 반동을 쓰는 경우",
-        "슬레지해머 스윙에서 저림·방사통을 무시하고 지속하는 경우"
+        "슬레지해머 스윙에서 저림·방사통을 무시하고 지속하는 경우",
       ],
-      "regressions": [
+      regressions: [
         "슬레지해머 스윙은 범위와 유지 시간을 줄입니다",
         "슬레지해머 스윙은 벽·의자·블록 같은 지지대를 사용합니다",
-        "슬레지해머 스윙은 누운 또는 앉은 안정된 자세로 바꿉니다"
+        "슬레지해머 스윙은 누운 또는 앉은 안정된 자세로 바꿉니다",
       ],
-      "progressions": [
+      progressions: [
         "슬레지해머 스윙은 다음 날 편안하면 범위만 조금 늘립니다",
         "슬레지해머 스윙은 호흡 주기를 한 번 추가합니다",
-        "슬레지해머 스윙은 지지대는 안정적으로 줄여 갑니다"
-      ]
-    }
+        "슬레지해머 스윙은 지지대는 안정적으로 줄여 갑니다",
+      ],
+    },
   },
   {
-    "exercise": {
-      "id": "verified-stride-jump-crossover",
-      "name": "스트라이드 점프 크로스오버",
-      "englishName": "Stride Jump Crossover",
-      "category": "파워·민첩성",
-      "regions": [
-        "하체"
-      ],
-      "focus": "파워",
-      "difficulty": "입문",
-      "equipment": "안정된 전용 장비",
-      "minutes": "3–6회 · 2세트",
-      "description": "스트라이드 점프 크로스오버은 대퇴사두근을 빠르게 쓰되 착지·받기·도구 경로를 먼저 통제해야 하는 파워 또는 기술 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
-      "cues": [
+    exercise: {
+      id: "verified-stride-jump-crossover",
+      name: "스트라이드 점프 크로스오버",
+      englishName: "Stride Jump Crossover",
+      category: "파워·민첩성",
+      regions: ["하체"],
+      focus: "파워",
+      difficulty: "입문",
+      equipment: "안정된 전용 장비",
+      minutes: "3–6회 · 2세트",
+      description:
+        "스트라이드 점프 크로스오버은 대퇴사두근을 빠르게 쓰되 착지·받기·도구 경로를 먼저 통제해야 하는 파워 또는 기술 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
+      cues: [
         "스트라이드 점프 크로스오버에서 낮은 속도 리허설 뒤에만 힘을 빠르게 쓰기",
         "대퇴사두근을 느끼며 발·무릎·골반이 같은 방향으로 받기",
-        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다"
+        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
       ],
-      "benefits": [
+      benefits: [
         "스트라이드 점프 크로스오버으로 힘 발휘와 제어의 연결",
         "대퇴사두근을 활용한 착지·받기 협응",
-        "대퇴사두근의 움직임 경로 인식"
+        "대퇴사두근의 움직임 경로 인식",
       ],
-      "warning": "스트라이드 점프 크로스오버 중 착지 불안, 무릎·발목·허리 통증, 어지러움 또는 공간 부족이 있으면 즉시 중단하세요.",
-      "reference": {
-        "label": "ACSM — Exercise Safety",
-        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
-      }
+      warning:
+        "스트라이드 점프 크로스오버 중 착지 불안, 무릎·발목·허리 통증, 어지러움 또는 공간 부족이 있으면 즉시 중단하세요.",
+      reference: {
+        label: "ACSM — Exercise Safety",
+        url: "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/",
+      },
     },
-    "detail": {
-      "setup": [
+    detail: {
+      setup: [
         "안정된 전용 장비·바닥·주변 공간을 확인하고 가장 쉬운 범위로 한 번 리허설합니다",
         "발 또는 지지면을 단단히 고정하고 몸통을 길게 세웁니다",
-        "스트라이드 점프 크로스오버에 맞춰 미끄럽지 않은 바닥과 충분한 빈 공간을 확보합니다"
+        "스트라이드 점프 크로스오버에 맞춰 미끄럽지 않은 바닥과 충분한 빈 공간을 확보합니다",
       ],
-      "finish": "스트라이드 점프 크로스오버을 마친 뒤 착지 또는 받기 뒤 잠시 균형을 확인하고 호흡이 안정된 후 다음 반복을 시작합니다.",
-      "commonMistakes": [
+      finish:
+        "스트라이드 점프 크로스오버을 마친 뒤 착지 또는 받기 뒤 잠시 균형을 확인하고 호흡이 안정된 후 다음 반복을 시작합니다.",
+      commonMistakes: [
         "스트라이드 점프 크로스오버에서 피로한 상태에서 높이·속도·부하를 함께 올리는 경우",
         "스트라이드 점프 크로스오버에서 착지 소리와 무릎 흔들림을 무시하는 경우",
-        "스트라이드 점프 크로스오버에서 도구 경로가 불안정한데 반복을 이어 가는 경우"
+        "스트라이드 점프 크로스오버에서 도구 경로가 불안정한데 반복을 이어 가는 경우",
       ],
-      "regressions": [
+      regressions: [
         "스트라이드 점프 크로스오버은 점프·속도를 빼고 체중 이동으로 바꿉니다",
         "스트라이드 점프 크로스오버은 낮은 높이·짧은 거리·가벼운 도구를 사용합니다",
-        "스트라이드 점프 크로스오버은 지지대 가까이에서 받기 자세만 연습합니다"
+        "스트라이드 점프 크로스오버은 지지대 가까이에서 받기 자세만 연습합니다",
       ],
-      "progressions": [
+      progressions: [
         "스트라이드 점프 크로스오버은 안정된 착지 뒤 반복을 한두 회 늘립니다",
         "스트라이드 점프 크로스오버은 한 번에 거리·높이·부하 중 하나만 조절합니다",
-        "스트라이드 점프 크로스오버은 복잡한 연속 동작은 기본 패턴이 안정된 뒤 시도합니다"
-      ]
-    }
+        "스트라이드 점프 크로스오버은 복잡한 연속 동작은 기본 패턴이 안정된 뒤 시도합니다",
+      ],
+    },
   },
   {
-    "exercise": {
-      "id": "verified-band-good-morning",
-      "name": "밴드 굿모닝",
-      "englishName": "Band Good Morning",
-      "category": "프리웨이트",
-      "regions": [
-        "하체",
-        "둔근"
-      ],
-      "focus": "근력",
-      "difficulty": "입문",
-      "equipment": "저항 밴드·안정된 고정점",
-      "minutes": "6–12회 · 2세트",
-      "description": "밴드 굿모닝은 햄스트링을 길게 사용하면서 엉덩이를 뒤로 보내고 도구를 몸 가까이 이동시키는 힙 힌지 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
-      "cues": [
+    exercise: {
+      id: "verified-band-good-morning",
+      name: "밴드 굿모닝",
+      englishName: "Band Good Morning",
+      category: "프리웨이트",
+      regions: ["하체", "둔근"],
+      focus: "근력",
+      difficulty: "입문",
+      equipment: "저항 밴드·안정된 고정점",
+      minutes: "6–12회 · 2세트",
+      description:
+        "밴드 굿모닝은 햄스트링을 길게 사용하면서 엉덩이를 뒤로 보내고 도구를 몸 가까이 이동시키는 힙 힌지 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
+      cues: [
         "밴드 굿모닝에서 발 전체로 바닥을 누르고 무릎은 부드럽게 유지",
         "햄스트링을 느끼며 골반을 뒤로 보내며 척추 길이를 유지",
-        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다"
+        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
       ],
-      "benefits": [
+      benefits: [
         "밴드 굿모닝으로 후면 사슬의 힘 사용 인식",
         "햄스트링을 활용한 엉덩이 주도 움직임 연습",
-        "햄스트링의 움직임 경로 인식"
+        "햄스트링의 움직임 경로 인식",
       ],
-      "warning": "밴드 굿모닝 중 허리의 날카로운 통증·저림, 그립 미끄러짐 또는 균형 상실이 있으면 즉시 중단하고 도구를 안전하게 내려놓으세요.",
-      "reference": {
-        "label": "ACSM — Exercise Safety",
-        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
-      }
+      warning:
+        "밴드 굿모닝 중 허리의 날카로운 통증·저림, 그립 미끄러짐 또는 균형 상실이 있으면 즉시 중단하고 도구를 안전하게 내려놓으세요.",
+      reference: {
+        label: "ACSM — Exercise Safety",
+        url: "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/",
+      },
     },
-    "detail": {
-      "setup": [
+    detail: {
+      setup: [
         "밴드의 갈라짐과 고정점을 확인하고 당김 선에 사람이 없는지 살핍니다",
         "발 또는 지지면을 단단히 고정하고 몸통을 길게 세웁니다",
-        "밴드 굿모닝에 맞춰 발을 골반 너비 근처에 두고 도구를 발 중앙 가까이에 둡니다"
+        "밴드 굿모닝에 맞춰 발을 골반 너비 근처에 두고 도구를 발 중앙 가까이에 둡니다",
       ],
-      "finish": "밴드 굿모닝을 마친 뒤 엉덩이를 앞으로 가져와 선 뒤, 도구를 통제된 경로로 안전하게 내려놓습니다.",
-      "commonMistakes": [
+      finish:
+        "밴드 굿모닝을 마친 뒤 엉덩이를 앞으로 가져와 선 뒤, 도구를 통제된 경로로 안전하게 내려놓습니다.",
+      commonMistakes: [
         "밴드 굿모닝에서 무릎을 먼저 과하게 굽혀 힌지가 사라지는 경우",
         "밴드 굿모닝에서 도구가 몸에서 멀어져 허리에 부담이 커지는 경우",
-        "밴드 굿모닝에서 끝 범위에서 등을 둥글게 말아 당기는 경우"
+        "밴드 굿모닝에서 끝 범위에서 등을 둥글게 말아 당기는 경우",
       ],
-      "regressions": [
+      regressions: [
         "밴드 굿모닝은 가벼운 덤벨 또는 높은 시작 위치로 바꿉니다",
         "밴드 굿모닝은 도구 없이 벽 터치 힌지로 범위를 익힙니다",
-        "밴드 굿모닝은 가능한 범위까지만 내려가고 멈춥니다"
+        "밴드 굿모닝은 가능한 범위까지만 내려가고 멈춥니다",
       ],
-      "progressions": [
+      progressions: [
         "밴드 굿모닝은 동일한 정렬에서 부하만 소폭 올립니다",
         "밴드 굿모닝은 지지면을 안정적으로 유지한 채 범위를 조금 늘립니다",
-        "밴드 굿모닝은 한쪽 도구 또는 더 긴 지렛대는 숙련 뒤에만 시도합니다"
-      ]
-    }
+        "밴드 굿모닝은 한쪽 도구 또는 더 긴 지렛대는 숙련 뒤에만 시도합니다",
+      ],
+    },
   },
   {
-    "exercise": {
-      "id": "verified-band-good-morning-pull-through",
-      "name": "밴드 굿모닝(풀스루)",
-      "englishName": "Band Good Morning (Pull Through)",
-      "category": "프리웨이트",
-      "regions": [
-        "하체",
-        "둔근"
-      ],
-      "focus": "근력",
-      "difficulty": "입문",
-      "equipment": "저항 밴드·안정된 고정점",
-      "minutes": "6–12회 · 2세트",
-      "description": "밴드 굿모닝(풀스루)은 햄스트링을 길게 사용하면서 엉덩이를 뒤로 보내고 도구를 몸 가까이 이동시키는 힙 힌지 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
-      "cues": [
+    exercise: {
+      id: "verified-band-good-morning-pull-through",
+      name: "밴드 굿모닝(풀스루)",
+      englishName: "Band Good Morning (Pull Through)",
+      category: "프리웨이트",
+      regions: ["하체", "둔근"],
+      focus: "근력",
+      difficulty: "입문",
+      equipment: "저항 밴드·안정된 고정점",
+      minutes: "6–12회 · 2세트",
+      description:
+        "밴드 굿모닝(풀스루)은 햄스트링을 길게 사용하면서 엉덩이를 뒤로 보내고 도구를 몸 가까이 이동시키는 힙 힌지 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
+      cues: [
         "밴드 굿모닝(풀스루)에서 발 전체로 바닥을 누르고 무릎은 부드럽게 유지",
         "햄스트링을 느끼며 골반을 뒤로 보내며 척추 길이를 유지",
-        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다"
+        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
       ],
-      "benefits": [
+      benefits: [
         "밴드 굿모닝(풀스루)으로 후면 사슬의 힘 사용 인식",
         "햄스트링을 활용한 엉덩이 주도 움직임 연습",
-        "햄스트링의 움직임 경로 인식"
+        "햄스트링의 움직임 경로 인식",
       ],
-      "warning": "밴드 굿모닝(풀스루) 중 허리의 날카로운 통증·저림, 그립 미끄러짐 또는 균형 상실이 있으면 즉시 중단하고 도구를 안전하게 내려놓으세요.",
-      "reference": {
-        "label": "ACSM — Exercise Safety",
-        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
-      }
+      warning:
+        "밴드 굿모닝(풀스루) 중 허리의 날카로운 통증·저림, 그립 미끄러짐 또는 균형 상실이 있으면 즉시 중단하고 도구를 안전하게 내려놓으세요.",
+      reference: {
+        label: "ACSM — Exercise Safety",
+        url: "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/",
+      },
     },
-    "detail": {
-      "setup": [
+    detail: {
+      setup: [
         "밴드의 갈라짐과 고정점을 확인하고 당김 선에 사람이 없는지 살핍니다",
         "발 또는 지지면을 단단히 고정하고 몸통을 길게 세웁니다",
-        "밴드 굿모닝(풀스루)에 맞춰 발을 골반 너비 근처에 두고 도구를 발 중앙 가까이에 둡니다"
+        "밴드 굿모닝(풀스루)에 맞춰 발을 골반 너비 근처에 두고 도구를 발 중앙 가까이에 둡니다",
       ],
-      "finish": "밴드 굿모닝(풀스루)을 마친 뒤 엉덩이를 앞으로 가져와 선 뒤, 도구를 통제된 경로로 안전하게 내려놓습니다.",
-      "commonMistakes": [
+      finish:
+        "밴드 굿모닝(풀스루)을 마친 뒤 엉덩이를 앞으로 가져와 선 뒤, 도구를 통제된 경로로 안전하게 내려놓습니다.",
+      commonMistakes: [
         "밴드 굿모닝(풀스루)에서 무릎을 먼저 과하게 굽혀 힌지가 사라지는 경우",
         "밴드 굿모닝(풀스루)에서 도구가 몸에서 멀어져 허리에 부담이 커지는 경우",
-        "밴드 굿모닝(풀스루)에서 끝 범위에서 등을 둥글게 말아 당기는 경우"
+        "밴드 굿모닝(풀스루)에서 끝 범위에서 등을 둥글게 말아 당기는 경우",
       ],
-      "regressions": [
+      regressions: [
         "밴드 굿모닝(풀스루)은 가벼운 덤벨 또는 높은 시작 위치로 바꿉니다",
         "밴드 굿모닝(풀스루)은 도구 없이 벽 터치 힌지로 범위를 익힙니다",
-        "밴드 굿모닝(풀스루)은 가능한 범위까지만 내려가고 멈춥니다"
+        "밴드 굿모닝(풀스루)은 가능한 범위까지만 내려가고 멈춥니다",
       ],
-      "progressions": [
+      progressions: [
         "밴드 굿모닝(풀스루)은 동일한 정렬에서 부하만 소폭 올립니다",
         "밴드 굿모닝(풀스루)은 지지면을 안정적으로 유지한 채 범위를 조금 늘립니다",
-        "밴드 굿모닝(풀스루)은 한쪽 도구 또는 더 긴 지렛대는 숙련 뒤에만 시도합니다"
-      ]
-    }
+        "밴드 굿모닝(풀스루)은 한쪽 도구 또는 더 긴 지렛대는 숙련 뒤에만 시도합니다",
+      ],
+    },
   },
   {
-    "exercise": {
-      "id": "verified-hip-lift-with-band",
-      "name": "밴드 힙 리프트",
-      "englishName": "Hip Lift with Band",
-      "category": "프리웨이트",
-      "regions": [
-        "둔근",
-        "하체"
-      ],
-      "focus": "근력",
-      "difficulty": "입문",
-      "equipment": "저항 밴드·안정된 고정점",
-      "minutes": "6–12회 · 2세트",
-      "description": "밴드 힙 리프트은 둔근 주변을 통증 없는 범위에서 천천히 움직여 가동 범위와 자세 감각을 확인하는 모빌리티 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
-      "cues": [
+    exercise: {
+      id: "verified-hip-lift-with-band",
+      name: "밴드 힙 리프트",
+      englishName: "Hip Lift with Band",
+      category: "프리웨이트",
+      regions: ["둔근", "하체"],
+      focus: "근력",
+      difficulty: "입문",
+      equipment: "저항 밴드·안정된 고정점",
+      minutes: "6–12회 · 2세트",
+      description:
+        "밴드 힙 리프트은 둔근 주변을 통증 없는 범위에서 천천히 움직여 가동 범위와 자세 감각을 확인하는 모빌리티 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
+      cues: [
         "밴드 힙 리프트에서 작은 범위에서 호흡을 멈추지 않기",
         "둔근을 느끼며 끝 범위를 밀지 말고 부드럽게 왕복",
-        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다"
+        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
       ],
-      "benefits": [
+      benefits: [
         "밴드 힙 리프트으로 관절 위치와 범위 인식",
         "둔근을 활용한 편안한 움직임 준비",
-        "둔근의 움직임 경로 인식"
+        "둔근의 움직임 경로 인식",
       ],
-      "warning": "밴드 힙 리프트 중 날카로운 통증, 저림, 방사통, 붓기·열감이 있으면 자가 진행을 멈추고 평가를 우선하세요.",
-      "reference": {
-        "label": "ACSM — Exercise Safety",
-        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
-      }
+      warning:
+        "밴드 힙 리프트 중 날카로운 통증, 저림, 방사통, 붓기·열감이 있으면 자가 진행을 멈추고 평가를 우선하세요.",
+      reference: {
+        label: "ACSM — Exercise Safety",
+        url: "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/",
+      },
     },
-    "detail": {
-      "setup": [
+    detail: {
+      setup: [
         "밴드의 갈라짐과 고정점을 확인하고 당김 선에 사람이 없는지 살핍니다",
         "발 또는 지지면을 단단히 고정하고 몸통을 길게 세웁니다",
-        "밴드 힙 리프트에 맞춰 편안한 바닥·매트 또는 지지대를 준비합니다"
+        "밴드 힙 리프트에 맞춰 편안한 바닥·매트 또는 지지대를 준비합니다",
       ],
-      "finish": "밴드 힙 리프트을 마친 뒤 중립 자세로 천천히 돌아와 불편감이 남지 않는지 확인합니다.",
-      "commonMistakes": [
+      finish:
+        "밴드 힙 리프트을 마친 뒤 중립 자세로 천천히 돌아와 불편감이 남지 않는지 확인합니다.",
+      commonMistakes: [
         "밴드 힙 리프트에서 끝 범위를 억지로 밀어 통증을 만드는 경우",
         "밴드 힙 리프트에서 호흡을 참거나 반동을 쓰는 경우",
-        "밴드 힙 리프트에서 저림·방사통을 무시하고 지속하는 경우"
+        "밴드 힙 리프트에서 저림·방사통을 무시하고 지속하는 경우",
       ],
-      "regressions": [
+      regressions: [
         "밴드 힙 리프트은 범위와 유지 시간을 줄입니다",
         "밴드 힙 리프트은 벽·의자·블록 같은 지지대를 사용합니다",
-        "밴드 힙 리프트은 누운 또는 앉은 안정된 자세로 바꿉니다"
+        "밴드 힙 리프트은 누운 또는 앉은 안정된 자세로 바꿉니다",
       ],
-      "progressions": [
+      progressions: [
         "밴드 힙 리프트은 다음 날 편안하면 범위만 조금 늘립니다",
         "밴드 힙 리프트은 호흡 주기를 한 번 추가합니다",
-        "밴드 힙 리프트은 지지대는 안정적으로 줄여 갑니다"
-      ]
-    }
+        "밴드 힙 리프트은 지지대는 안정적으로 줄여 갑니다",
+      ],
+    },
   },
   {
-    "exercise": {
-      "id": "verified-barbell-glute-bridge",
-      "name": "바벨 글루트 브릿지",
-      "englishName": "Barbell Glute Bridge",
-      "category": "프리웨이트",
-      "regions": [
-        "둔근",
-        "하체"
-      ],
-      "focus": "근력",
-      "difficulty": "중급",
-      "equipment": "바벨·안전 랙 선택",
-      "minutes": "6–12회 · 2세트",
-      "description": "바벨 글루트 브릿지은 둔근을 사용해 무릎과 엉덩이를 함께 굽혔다 펴는 하체 지지·밀기 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
-      "cues": [
+    exercise: {
+      id: "verified-barbell-glute-bridge",
+      name: "바벨 글루트 브릿지",
+      englishName: "Barbell Glute Bridge",
+      category: "프리웨이트",
+      regions: ["둔근", "하체"],
+      focus: "근력",
+      difficulty: "중급",
+      equipment: "바벨·안전 랙 선택",
+      minutes: "6–12회 · 2세트",
+      description:
+        "바벨 글루트 브릿지은 둔근을 사용해 무릎과 엉덩이를 함께 굽혔다 펴는 하체 지지·밀기 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
+      cues: [
         "바벨 글루트 브릿지에서 발 전체를 바닥에 붙이고 무릎을 발 방향으로 이동",
         "둔근을 느끼며 골반과 흉곽이 함께 내려가도록 몸통을 길게 유지",
-        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다"
+        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
       ],
-      "benefits": [
+      benefits: [
         "바벨 글루트 브릿지으로 하체 지지력과 제어",
         "둔근을 활용한 엉덩이·무릎 협응",
-        "둔근의 움직임 경로 인식"
+        "둔근의 움직임 경로 인식",
       ],
-      "warning": "바벨 글루트 브릿지 중 무릎·고관절의 날카로운 통증, 발바닥 들림 또는 균형 상실이 있으면 깊이·부하를 낮추거나 중단하세요.",
-      "reference": {
-        "label": "ACSM — Exercise Safety",
-        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
-      }
+      warning:
+        "바벨 글루트 브릿지 중 무릎·고관절의 날카로운 통증, 발바닥 들림 또는 균형 상실이 있으면 깊이·부하를 낮추거나 중단하세요.",
+      reference: {
+        label: "ACSM — Exercise Safety",
+        url: "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/",
+      },
     },
-    "detail": {
-      "setup": [
+    detail: {
+      setup: [
         "바벨의 좌우 중량·안전핀·내려놓을 위치를 확인하고 손 간격을 고정합니다",
         "발 또는 지지면을 단단히 고정하고 몸통을 길게 세웁니다",
-        "바벨 글루트 브릿지에 맞춰 발 간격과 발끝 방향을 편안한 범위에서 정합니다"
+        "바벨 글루트 브릿지에 맞춰 발 간격과 발끝 방향을 편안한 범위에서 정합니다",
       ],
-      "finish": "바벨 글루트 브릿지을 마친 뒤 무릎과 엉덩이를 함께 펴고 발 전체로 균형을 회복한 뒤 다음 반복을 준비합니다.",
-      "commonMistakes": [
+      finish:
+        "바벨 글루트 브릿지을 마친 뒤 무릎과 엉덩이를 함께 펴고 발 전체로 균형을 회복한 뒤 다음 반복을 준비합니다.",
+      commonMistakes: [
         "바벨 글루트 브릿지에서 무릎이 발 안쪽으로 무너지는 경우",
         "바벨 글루트 브릿지에서 발뒤꿈치가 들린 채 깊이를 억지로 늘리는 경우",
-        "바벨 글루트 브릿지에서 내려가며 허리가 과하게 말리거나 젖혀지는 경우"
+        "바벨 글루트 브릿지에서 내려가며 허리가 과하게 말리거나 젖혀지는 경우",
       ],
-      "regressions": [
+      regressions: [
         "바벨 글루트 브릿지은 의자·박스를 목표 높이로 사용합니다",
         "바벨 글루트 브릿지은 지지대를 잡고 얕은 범위로 수행합니다",
-        "바벨 글루트 브릿지은 부하를 빼고 체중 이동부터 연습합니다"
+        "바벨 글루트 브릿지은 부하를 빼고 체중 이동부터 연습합니다",
       ],
-      "progressions": [
+      progressions: [
         "바벨 글루트 브릿지은 안정된 범위에서 반복만 소폭 늘립니다",
         "바벨 글루트 브릿지은 편안한 깊이가 확보된 뒤 부하를 추가합니다",
-        "바벨 글루트 브릿지은 편측 변형은 지지대 가까이에서 시작합니다"
-      ]
-    }
+        "바벨 글루트 브릿지은 편측 변형은 지지대 가까이에서 시작합니다",
+      ],
+    },
   },
   {
-    "exercise": {
-      "id": "verified-bench-press-powerlifting",
-      "name": "벤치프레스(파워리프팅)",
-      "englishName": "Bench Press - Powerlifting",
-      "category": "프리웨이트",
-      "regions": [
-        "팔"
-      ],
-      "focus": "근력",
-      "difficulty": "중급",
-      "equipment": "바벨·안전 랙 선택",
-      "minutes": "6–12회 · 2세트",
-      "description": "벤치프레스(파워리프팅)은 삼두근을 사용해 손잡이·도구 또는 바닥을 몸에서 멀어지게 미는 상체 밀기 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
-      "cues": [
+    exercise: {
+      id: "verified-bench-press-powerlifting",
+      name: "벤치프레스(파워리프팅)",
+      englishName: "Bench Press - Powerlifting",
+      category: "프리웨이트",
+      regions: ["팔"],
+      focus: "근력",
+      difficulty: "중급",
+      equipment: "바벨·안전 랙 선택",
+      minutes: "6–12회 · 2세트",
+      description:
+        "벤치프레스(파워리프팅)은 삼두근을 사용해 손잡이·도구 또는 바닥을 몸에서 멀어지게 미는 상체 밀기 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
+      cues: [
         "벤치프레스(파워리프팅)에서 손목을 중립에 가깝게 두고 손잡이를 안정적으로 잡기",
         "삼두근을 느끼며 갈비뼈를 과하게 들지 않고 몸통 길이 유지",
-        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다"
+        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
       ],
-      "benefits": [
+      benefits: [
         "벤치프레스(파워리프팅)으로 가슴·어깨·팔의 밀기 협응",
         "삼두근을 활용한 손목과 견갑 안정 제어",
-        "삼두근의 움직임 경로 인식"
+        "삼두근의 움직임 경로 인식",
       ],
-      "warning": "벤치프레스(파워리프팅) 중 어깨·팔꿈치·손목 통증, 저림 또는 도구 흔들림이 있으면 즉시 멈추고 설정을 다시 확인하세요.",
-      "reference": {
-        "label": "ACSM — Exercise Safety",
-        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
-      }
+      warning:
+        "벤치프레스(파워리프팅) 중 어깨·팔꿈치·손목 통증, 저림 또는 도구 흔들림이 있으면 즉시 멈추고 설정을 다시 확인하세요.",
+      reference: {
+        label: "ACSM — Exercise Safety",
+        url: "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/",
+      },
     },
-    "detail": {
-      "setup": [
+    detail: {
+      setup: [
         "바벨의 좌우 중량·안전핀·내려놓을 위치를 확인하고 손 간격을 고정합니다",
         "발 또는 지지면을 단단히 고정하고 몸통을 길게 세웁니다",
-        "벤치프레스(파워리프팅)에 맞춰 손잡이·바·지지면의 높이와 좌우 설정을 확인합니다"
+        "벤치프레스(파워리프팅)에 맞춰 손잡이·바·지지면의 높이와 좌우 설정을 확인합니다",
       ],
-      "finish": "벤치프레스(파워리프팅)을 마친 뒤 팔꿈치를 잠그지 않은 편안한 끝 범위에서 잠시 멈춘 뒤 같은 경로로 돌아옵니다.",
-      "commonMistakes": [
+      finish:
+        "벤치프레스(파워리프팅)을 마친 뒤 팔꿈치를 잠그지 않은 편안한 끝 범위에서 잠시 멈춘 뒤 같은 경로로 돌아옵니다.",
+      commonMistakes: [
         "벤치프레스(파워리프팅)에서 어깨가 앞으로 말린 채 밀어 올리는 경우",
         "벤치프레스(파워리프팅)에서 허리를 과하게 젖혀 무게를 넘기는 경우",
-        "벤치프레스(파워리프팅)에서 손목을 꺾고 그립을 느슨하게 유지하는 경우"
+        "벤치프레스(파워리프팅)에서 손목을 꺾고 그립을 느슨하게 유지하는 경우",
       ],
-      "regressions": [
+      regressions: [
         "벤치프레스(파워리프팅)은 벽·높은 벤치 또는 가벼운 저항으로 바꿉니다",
         "벤치프레스(파워리프팅)은 가동 범위를 줄이고 어깨 편안함을 확인합니다",
-        "벤치프레스(파워리프팅)은 양손 지지로 안정성을 먼저 확보합니다"
+        "벤치프레스(파워리프팅)은 양손 지지로 안정성을 먼저 확보합니다",
       ],
-      "progressions": [
+      progressions: [
         "벤치프레스(파워리프팅)은 정렬이 유지될 때 반복을 소폭 늘립니다",
         "벤치프레스(파워리프팅)은 안정된 지지면에서 저항을 한 단계만 올립니다",
-        "벤치프레스(파워리프팅)은 낮은 지지 또는 편측 변형은 통제 후 시도합니다"
-      ]
-    }
+        "벤치프레스(파워리프팅)은 낮은 지지 또는 편측 변형은 통제 후 시도합니다",
+      ],
+    },
   },
   {
-    "exercise": {
-      "id": "verified-board-press",
-      "name": "보드프레스",
-      "englishName": "Board Press",
-      "category": "프리웨이트",
-      "regions": [
-        "팔"
-      ],
-      "focus": "근력",
-      "difficulty": "중급",
-      "equipment": "바벨·안전 랙 선택",
-      "minutes": "6–12회 · 2세트",
-      "description": "보드프레스은 삼두근을 사용해 손잡이·도구 또는 바닥을 몸에서 멀어지게 미는 상체 밀기 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
-      "cues": [
+    exercise: {
+      id: "verified-board-press",
+      name: "보드프레스",
+      englishName: "Board Press",
+      category: "프리웨이트",
+      regions: ["팔"],
+      focus: "근력",
+      difficulty: "중급",
+      equipment: "바벨·안전 랙 선택",
+      minutes: "6–12회 · 2세트",
+      description:
+        "보드프레스은 삼두근을 사용해 손잡이·도구 또는 바닥을 몸에서 멀어지게 미는 상체 밀기 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
+      cues: [
         "보드프레스에서 손목을 중립에 가깝게 두고 손잡이를 안정적으로 잡기",
         "삼두근을 느끼며 갈비뼈를 과하게 들지 않고 몸통 길이 유지",
-        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다"
+        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
       ],
-      "benefits": [
+      benefits: [
         "보드프레스으로 가슴·어깨·팔의 밀기 협응",
         "삼두근을 활용한 손목과 견갑 안정 제어",
-        "삼두근의 움직임 경로 인식"
+        "삼두근의 움직임 경로 인식",
       ],
-      "warning": "보드프레스 중 어깨·팔꿈치·손목 통증, 저림 또는 도구 흔들림이 있으면 즉시 멈추고 설정을 다시 확인하세요.",
-      "reference": {
-        "label": "ACSM — Exercise Safety",
-        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
-      }
+      warning:
+        "보드프레스 중 어깨·팔꿈치·손목 통증, 저림 또는 도구 흔들림이 있으면 즉시 멈추고 설정을 다시 확인하세요.",
+      reference: {
+        label: "ACSM — Exercise Safety",
+        url: "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/",
+      },
     },
-    "detail": {
-      "setup": [
+    detail: {
+      setup: [
         "바벨의 좌우 중량·안전핀·내려놓을 위치를 확인하고 손 간격을 고정합니다",
         "발 또는 지지면을 단단히 고정하고 몸통을 길게 세웁니다",
-        "보드프레스에 맞춰 손잡이·바·지지면의 높이와 좌우 설정을 확인합니다"
+        "보드프레스에 맞춰 손잡이·바·지지면의 높이와 좌우 설정을 확인합니다",
       ],
-      "finish": "보드프레스을 마친 뒤 팔꿈치를 잠그지 않은 편안한 끝 범위에서 잠시 멈춘 뒤 같은 경로로 돌아옵니다.",
-      "commonMistakes": [
+      finish:
+        "보드프레스을 마친 뒤 팔꿈치를 잠그지 않은 편안한 끝 범위에서 잠시 멈춘 뒤 같은 경로로 돌아옵니다.",
+      commonMistakes: [
         "보드프레스에서 어깨가 앞으로 말린 채 밀어 올리는 경우",
         "보드프레스에서 허리를 과하게 젖혀 무게를 넘기는 경우",
-        "보드프레스에서 손목을 꺾고 그립을 느슨하게 유지하는 경우"
+        "보드프레스에서 손목을 꺾고 그립을 느슨하게 유지하는 경우",
       ],
-      "regressions": [
+      regressions: [
         "보드프레스은 벽·높은 벤치 또는 가벼운 저항으로 바꿉니다",
         "보드프레스은 가동 범위를 줄이고 어깨 편안함을 확인합니다",
-        "보드프레스은 양손 지지로 안정성을 먼저 확보합니다"
+        "보드프레스은 양손 지지로 안정성을 먼저 확보합니다",
       ],
-      "progressions": [
+      progressions: [
         "보드프레스은 정렬이 유지될 때 반복을 소폭 늘립니다",
         "보드프레스은 안정된 지지면에서 저항을 한 단계만 올립니다",
-        "보드프레스은 낮은 지지 또는 편측 변형은 통제 후 시도합니다"
-      ]
-    }
+        "보드프레스은 낮은 지지 또는 편측 변형은 통제 후 시도합니다",
+      ],
+    },
   },
   {
-    "exercise": {
-      "id": "verified-box-squat",
-      "name": "박스 스쿼트",
-      "englishName": "Box Squat",
-      "category": "프리웨이트",
-      "regions": [
-        "하체"
-      ],
-      "focus": "근력",
-      "difficulty": "중급",
-      "equipment": "바벨·안전 랙 선택",
-      "minutes": "6–12회 · 2세트",
-      "description": "박스 스쿼트은 대퇴사두근을 사용해 무릎과 엉덩이를 함께 굽혔다 펴는 하체 지지·밀기 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
-      "cues": [
+    exercise: {
+      id: "verified-box-squat",
+      name: "박스 스쿼트",
+      englishName: "Box Squat",
+      category: "프리웨이트",
+      regions: ["하체"],
+      focus: "근력",
+      difficulty: "중급",
+      equipment: "바벨·안전 랙 선택",
+      minutes: "6–12회 · 2세트",
+      description:
+        "박스 스쿼트은 대퇴사두근을 사용해 무릎과 엉덩이를 함께 굽혔다 펴는 하체 지지·밀기 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
+      cues: [
         "박스 스쿼트에서 발 전체를 바닥에 붙이고 무릎을 발 방향으로 이동",
         "대퇴사두근을 느끼며 골반과 흉곽이 함께 내려가도록 몸통을 길게 유지",
-        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다"
+        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
       ],
-      "benefits": [
+      benefits: [
         "박스 스쿼트으로 하체 지지력과 제어",
         "대퇴사두근을 활용한 엉덩이·무릎 협응",
-        "대퇴사두근의 움직임 경로 인식"
+        "대퇴사두근의 움직임 경로 인식",
       ],
-      "warning": "박스 스쿼트 중 무릎·고관절의 날카로운 통증, 발바닥 들림 또는 균형 상실이 있으면 깊이·부하를 낮추거나 중단하세요.",
-      "reference": {
-        "label": "ACSM — Exercise Safety",
-        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
-      }
+      warning:
+        "박스 스쿼트 중 무릎·고관절의 날카로운 통증, 발바닥 들림 또는 균형 상실이 있으면 깊이·부하를 낮추거나 중단하세요.",
+      reference: {
+        label: "ACSM — Exercise Safety",
+        url: "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/",
+      },
     },
-    "detail": {
-      "setup": [
+    detail: {
+      setup: [
         "바벨의 좌우 중량·안전핀·내려놓을 위치를 확인하고 손 간격을 고정합니다",
         "발 또는 지지면을 단단히 고정하고 몸통을 길게 세웁니다",
-        "박스 스쿼트에 맞춰 발 간격과 발끝 방향을 편안한 범위에서 정합니다"
+        "박스 스쿼트에 맞춰 발 간격과 발끝 방향을 편안한 범위에서 정합니다",
       ],
-      "finish": "박스 스쿼트을 마친 뒤 무릎과 엉덩이를 함께 펴고 발 전체로 균형을 회복한 뒤 다음 반복을 준비합니다.",
-      "commonMistakes": [
+      finish:
+        "박스 스쿼트을 마친 뒤 무릎과 엉덩이를 함께 펴고 발 전체로 균형을 회복한 뒤 다음 반복을 준비합니다.",
+      commonMistakes: [
         "박스 스쿼트에서 무릎이 발 안쪽으로 무너지는 경우",
         "박스 스쿼트에서 발뒤꿈치가 들린 채 깊이를 억지로 늘리는 경우",
-        "박스 스쿼트에서 내려가며 허리가 과하게 말리거나 젖혀지는 경우"
+        "박스 스쿼트에서 내려가며 허리가 과하게 말리거나 젖혀지는 경우",
       ],
-      "regressions": [
+      regressions: [
         "박스 스쿼트은 의자·박스를 목표 높이로 사용합니다",
         "박스 스쿼트은 지지대를 잡고 얕은 범위로 수행합니다",
-        "박스 스쿼트은 부하를 빼고 체중 이동부터 연습합니다"
+        "박스 스쿼트은 부하를 빼고 체중 이동부터 연습합니다",
       ],
-      "progressions": [
+      progressions: [
         "박스 스쿼트은 안정된 범위에서 반복만 소폭 늘립니다",
         "박스 스쿼트은 편안한 깊이가 확보된 뒤 부하를 추가합니다",
-        "박스 스쿼트은 편측 변형은 지지대 가까이에서 시작합니다"
-      ]
-    }
+        "박스 스쿼트은 편측 변형은 지지대 가까이에서 시작합니다",
+      ],
+    },
   },
   {
-    "exercise": {
-      "id": "verified-deficit-deadlift",
-      "name": "데피시트 데드리프트",
-      "englishName": "Deficit Deadlift",
-      "category": "프리웨이트",
-      "regions": [
-        "등",
-        "코어"
-      ],
-      "focus": "근력",
-      "difficulty": "중급",
-      "equipment": "바벨·안전 랙 선택",
-      "minutes": "6–12회 · 2세트",
-      "description": "데피시트 데드리프트은 허리 주변을 길게 사용하면서 엉덩이를 뒤로 보내고 도구를 몸 가까이 이동시키는 힙 힌지 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
-      "cues": [
+    exercise: {
+      id: "verified-deficit-deadlift",
+      name: "데피시트 데드리프트",
+      englishName: "Deficit Deadlift",
+      category: "프리웨이트",
+      regions: ["등", "코어"],
+      focus: "근력",
+      difficulty: "중급",
+      equipment: "바벨·안전 랙 선택",
+      minutes: "6–12회 · 2세트",
+      description:
+        "데피시트 데드리프트은 허리 주변을 길게 사용하면서 엉덩이를 뒤로 보내고 도구를 몸 가까이 이동시키는 힙 힌지 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
+      cues: [
         "데피시트 데드리프트에서 발 전체로 바닥을 누르고 무릎은 부드럽게 유지",
         "허리 주변을 느끼며 골반을 뒤로 보내며 척추 길이를 유지",
-        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다"
+        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
       ],
-      "benefits": [
+      benefits: [
         "데피시트 데드리프트으로 후면 사슬의 힘 사용 인식",
         "허리 주변을 활용한 엉덩이 주도 움직임 연습",
-        "허리 주변의 움직임 경로 인식"
+        "허리 주변의 움직임 경로 인식",
       ],
-      "warning": "데피시트 데드리프트 중 허리의 날카로운 통증·저림, 그립 미끄러짐 또는 균형 상실이 있으면 즉시 중단하고 도구를 안전하게 내려놓으세요.",
-      "reference": {
-        "label": "ACSM — Exercise Safety",
-        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
-      }
+      warning:
+        "데피시트 데드리프트 중 허리의 날카로운 통증·저림, 그립 미끄러짐 또는 균형 상실이 있으면 즉시 중단하고 도구를 안전하게 내려놓으세요.",
+      reference: {
+        label: "ACSM — Exercise Safety",
+        url: "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/",
+      },
     },
-    "detail": {
-      "setup": [
+    detail: {
+      setup: [
         "바벨의 좌우 중량·안전핀·내려놓을 위치를 확인하고 손 간격을 고정합니다",
         "발 또는 지지면을 단단히 고정하고 몸통을 길게 세웁니다",
-        "데피시트 데드리프트에 맞춰 발을 골반 너비 근처에 두고 도구를 발 중앙 가까이에 둡니다"
+        "데피시트 데드리프트에 맞춰 발을 골반 너비 근처에 두고 도구를 발 중앙 가까이에 둡니다",
       ],
-      "finish": "데피시트 데드리프트을 마친 뒤 엉덩이를 앞으로 가져와 선 뒤, 도구를 통제된 경로로 안전하게 내려놓습니다.",
-      "commonMistakes": [
+      finish:
+        "데피시트 데드리프트을 마친 뒤 엉덩이를 앞으로 가져와 선 뒤, 도구를 통제된 경로로 안전하게 내려놓습니다.",
+      commonMistakes: [
         "데피시트 데드리프트에서 무릎을 먼저 과하게 굽혀 힌지가 사라지는 경우",
         "데피시트 데드리프트에서 도구가 몸에서 멀어져 허리에 부담이 커지는 경우",
-        "데피시트 데드리프트에서 끝 범위에서 등을 둥글게 말아 당기는 경우"
+        "데피시트 데드리프트에서 끝 범위에서 등을 둥글게 말아 당기는 경우",
       ],
-      "regressions": [
+      regressions: [
         "데피시트 데드리프트은 가벼운 덤벨 또는 높은 시작 위치로 바꿉니다",
         "데피시트 데드리프트은 도구 없이 벽 터치 힌지로 범위를 익힙니다",
-        "데피시트 데드리프트은 가능한 범위까지만 내려가고 멈춥니다"
+        "데피시트 데드리프트은 가능한 범위까지만 내려가고 멈춥니다",
       ],
-      "progressions": [
+      progressions: [
         "데피시트 데드리프트은 동일한 정렬에서 부하만 소폭 올립니다",
         "데피시트 데드리프트은 지지면을 안정적으로 유지한 채 범위를 조금 늘립니다",
-        "데피시트 데드리프트은 한쪽 도구 또는 더 긴 지렛대는 숙련 뒤에만 시도합니다"
-      ]
-    }
+        "데피시트 데드리프트은 한쪽 도구 또는 더 긴 지렛대는 숙련 뒤에만 시도합니다",
+      ],
+    },
   },
   {
-    "exercise": {
-      "id": "verified-floor-press",
-      "name": "플로어 프레스",
-      "englishName": "Floor Press",
-      "category": "프리웨이트",
-      "regions": [
-        "팔"
-      ],
-      "focus": "근력",
-      "difficulty": "중급",
-      "equipment": "바벨·안전 랙 선택",
-      "minutes": "6–12회 · 2세트",
-      "description": "플로어 프레스은 삼두근을 사용해 손잡이·도구 또는 바닥을 몸에서 멀어지게 미는 상체 밀기 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
-      "cues": [
+    exercise: {
+      id: "verified-floor-press",
+      name: "플로어 프레스",
+      englishName: "Floor Press",
+      category: "프리웨이트",
+      regions: ["팔"],
+      focus: "근력",
+      difficulty: "중급",
+      equipment: "바벨·안전 랙 선택",
+      minutes: "6–12회 · 2세트",
+      description:
+        "플로어 프레스은 삼두근을 사용해 손잡이·도구 또는 바닥을 몸에서 멀어지게 미는 상체 밀기 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
+      cues: [
         "플로어 프레스에서 손목을 중립에 가깝게 두고 손잡이를 안정적으로 잡기",
         "삼두근을 느끼며 갈비뼈를 과하게 들지 않고 몸통 길이 유지",
-        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다"
+        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
       ],
-      "benefits": [
+      benefits: [
         "플로어 프레스으로 가슴·어깨·팔의 밀기 협응",
         "삼두근을 활용한 손목과 견갑 안정 제어",
-        "삼두근의 움직임 경로 인식"
+        "삼두근의 움직임 경로 인식",
       ],
-      "warning": "플로어 프레스 중 어깨·팔꿈치·손목 통증, 저림 또는 도구 흔들림이 있으면 즉시 멈추고 설정을 다시 확인하세요.",
-      "reference": {
-        "label": "ACSM — Exercise Safety",
-        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
-      }
+      warning:
+        "플로어 프레스 중 어깨·팔꿈치·손목 통증, 저림 또는 도구 흔들림이 있으면 즉시 멈추고 설정을 다시 확인하세요.",
+      reference: {
+        label: "ACSM — Exercise Safety",
+        url: "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/",
+      },
     },
-    "detail": {
-      "setup": [
+    detail: {
+      setup: [
         "바벨의 좌우 중량·안전핀·내려놓을 위치를 확인하고 손 간격을 고정합니다",
         "바닥 또는 벤치에 등을 안정적으로 댄 뒤 갈비뼈를 과하게 들지 않습니다",
-        "플로어 프레스에 맞춰 손잡이·바·지지면의 높이와 좌우 설정을 확인합니다"
+        "플로어 프레스에 맞춰 손잡이·바·지지면의 높이와 좌우 설정을 확인합니다",
       ],
-      "finish": "플로어 프레스을 마친 뒤 팔꿈치를 잠그지 않은 편안한 끝 범위에서 잠시 멈춘 뒤 같은 경로로 돌아옵니다.",
-      "commonMistakes": [
+      finish:
+        "플로어 프레스을 마친 뒤 팔꿈치를 잠그지 않은 편안한 끝 범위에서 잠시 멈춘 뒤 같은 경로로 돌아옵니다.",
+      commonMistakes: [
         "플로어 프레스에서 어깨가 앞으로 말린 채 밀어 올리는 경우",
         "플로어 프레스에서 허리를 과하게 젖혀 무게를 넘기는 경우",
-        "플로어 프레스에서 손목을 꺾고 그립을 느슨하게 유지하는 경우"
+        "플로어 프레스에서 손목을 꺾고 그립을 느슨하게 유지하는 경우",
       ],
-      "regressions": [
+      regressions: [
         "플로어 프레스은 벽·높은 벤치 또는 가벼운 저항으로 바꿉니다",
         "플로어 프레스은 가동 범위를 줄이고 어깨 편안함을 확인합니다",
-        "플로어 프레스은 양손 지지로 안정성을 먼저 확보합니다"
+        "플로어 프레스은 양손 지지로 안정성을 먼저 확보합니다",
       ],
-      "progressions": [
+      progressions: [
         "플로어 프레스은 정렬이 유지될 때 반복을 소폭 늘립니다",
         "플로어 프레스은 안정된 지지면에서 저항을 한 단계만 올립니다",
-        "플로어 프레스은 낮은 지지 또는 편측 변형은 통제 후 시도합니다"
-      ]
-    }
+        "플로어 프레스은 낮은 지지 또는 편측 변형은 통제 후 시도합니다",
+      ],
+    },
   },
   {
-    "exercise": {
-      "id": "verified-good-morning",
-      "name": "굿모닝",
-      "englishName": "Good Morning",
-      "category": "프리웨이트",
-      "regions": [
-        "하체",
-        "둔근"
-      ],
-      "focus": "근력",
-      "difficulty": "중급",
-      "equipment": "바벨·안전 랙 선택",
-      "minutes": "6–12회 · 2세트",
-      "description": "굿모닝은 햄스트링을 길게 사용하면서 엉덩이를 뒤로 보내고 도구를 몸 가까이 이동시키는 힙 힌지 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
-      "cues": [
+    exercise: {
+      id: "verified-good-morning",
+      name: "굿모닝",
+      englishName: "Good Morning",
+      category: "프리웨이트",
+      regions: ["하체", "둔근"],
+      focus: "근력",
+      difficulty: "중급",
+      equipment: "바벨·안전 랙 선택",
+      minutes: "6–12회 · 2세트",
+      description:
+        "굿모닝은 햄스트링을 길게 사용하면서 엉덩이를 뒤로 보내고 도구를 몸 가까이 이동시키는 힙 힌지 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
+      cues: [
         "굿모닝에서 발 전체로 바닥을 누르고 무릎은 부드럽게 유지",
         "햄스트링을 느끼며 골반을 뒤로 보내며 척추 길이를 유지",
-        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다"
+        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
       ],
-      "benefits": [
+      benefits: [
         "굿모닝으로 후면 사슬의 힘 사용 인식",
         "햄스트링을 활용한 엉덩이 주도 움직임 연습",
-        "햄스트링의 움직임 경로 인식"
+        "햄스트링의 움직임 경로 인식",
       ],
-      "warning": "굿모닝 중 허리의 날카로운 통증·저림, 그립 미끄러짐 또는 균형 상실이 있으면 즉시 중단하고 도구를 안전하게 내려놓으세요.",
-      "reference": {
-        "label": "ACSM — Exercise Safety",
-        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
-      }
+      warning:
+        "굿모닝 중 허리의 날카로운 통증·저림, 그립 미끄러짐 또는 균형 상실이 있으면 즉시 중단하고 도구를 안전하게 내려놓으세요.",
+      reference: {
+        label: "ACSM — Exercise Safety",
+        url: "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/",
+      },
     },
-    "detail": {
-      "setup": [
+    detail: {
+      setup: [
         "바벨의 좌우 중량·안전핀·내려놓을 위치를 확인하고 손 간격을 고정합니다",
         "발 또는 지지면을 단단히 고정하고 몸통을 길게 세웁니다",
-        "굿모닝에 맞춰 발을 골반 너비 근처에 두고 도구를 발 중앙 가까이에 둡니다"
+        "굿모닝에 맞춰 발을 골반 너비 근처에 두고 도구를 발 중앙 가까이에 둡니다",
       ],
-      "finish": "굿모닝을 마친 뒤 엉덩이를 앞으로 가져와 선 뒤, 도구를 통제된 경로로 안전하게 내려놓습니다.",
-      "commonMistakes": [
+      finish:
+        "굿모닝을 마친 뒤 엉덩이를 앞으로 가져와 선 뒤, 도구를 통제된 경로로 안전하게 내려놓습니다.",
+      commonMistakes: [
         "굿모닝에서 무릎을 먼저 과하게 굽혀 힌지가 사라지는 경우",
         "굿모닝에서 도구가 몸에서 멀어져 허리에 부담이 커지는 경우",
-        "굿모닝에서 끝 범위에서 등을 둥글게 말아 당기는 경우"
+        "굿모닝에서 끝 범위에서 등을 둥글게 말아 당기는 경우",
       ],
-      "regressions": [
+      regressions: [
         "굿모닝은 가벼운 덤벨 또는 높은 시작 위치로 바꿉니다",
         "굿모닝은 도구 없이 벽 터치 힌지로 범위를 익힙니다",
-        "굿모닝은 가능한 범위까지만 내려가고 멈춥니다"
+        "굿모닝은 가능한 범위까지만 내려가고 멈춥니다",
       ],
-      "progressions": [
+      progressions: [
         "굿모닝은 동일한 정렬에서 부하만 소폭 올립니다",
         "굿모닝은 지지면을 안정적으로 유지한 채 범위를 조금 늘립니다",
-        "굿모닝은 한쪽 도구 또는 더 긴 지렛대는 숙련 뒤에만 시도합니다"
-      ]
-    }
+        "굿모닝은 한쪽 도구 또는 더 긴 지렛대는 숙련 뒤에만 시도합니다",
+      ],
+    },
   },
   {
-    "exercise": {
-      "id": "verified-good-morning-off-pins",
-      "name": "핀에서 굿모닝",
-      "englishName": "Good Morning off Pins",
-      "category": "프리웨이트",
-      "regions": [
-        "하체",
-        "둔근"
-      ],
-      "focus": "근력",
-      "difficulty": "중급",
-      "equipment": "바벨·안전 랙 선택",
-      "minutes": "6–12회 · 2세트",
-      "description": "핀에서 굿모닝은 햄스트링을 길게 사용하면서 엉덩이를 뒤로 보내고 도구를 몸 가까이 이동시키는 힙 힌지 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
-      "cues": [
+    exercise: {
+      id: "verified-good-morning-off-pins",
+      name: "핀에서 굿모닝",
+      englishName: "Good Morning off Pins",
+      category: "프리웨이트",
+      regions: ["하체", "둔근"],
+      focus: "근력",
+      difficulty: "중급",
+      equipment: "바벨·안전 랙 선택",
+      minutes: "6–12회 · 2세트",
+      description:
+        "핀에서 굿모닝은 햄스트링을 길게 사용하면서 엉덩이를 뒤로 보내고 도구를 몸 가까이 이동시키는 힙 힌지 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
+      cues: [
         "핀에서 굿모닝에서 발 전체로 바닥을 누르고 무릎은 부드럽게 유지",
         "햄스트링을 느끼며 골반을 뒤로 보내며 척추 길이를 유지",
-        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다"
+        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
       ],
-      "benefits": [
+      benefits: [
         "핀에서 굿모닝으로 후면 사슬의 힘 사용 인식",
         "햄스트링을 활용한 엉덩이 주도 움직임 연습",
-        "햄스트링의 움직임 경로 인식"
+        "햄스트링의 움직임 경로 인식",
       ],
-      "warning": "핀에서 굿모닝 중 허리의 날카로운 통증·저림, 그립 미끄러짐 또는 균형 상실이 있으면 즉시 중단하고 도구를 안전하게 내려놓으세요.",
-      "reference": {
-        "label": "ACSM — Exercise Safety",
-        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
-      }
+      warning:
+        "핀에서 굿모닝 중 허리의 날카로운 통증·저림, 그립 미끄러짐 또는 균형 상실이 있으면 즉시 중단하고 도구를 안전하게 내려놓으세요.",
+      reference: {
+        label: "ACSM — Exercise Safety",
+        url: "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/",
+      },
     },
-    "detail": {
-      "setup": [
+    detail: {
+      setup: [
         "바벨의 좌우 중량·안전핀·내려놓을 위치를 확인하고 손 간격을 고정합니다",
         "발 또는 지지면을 단단히 고정하고 몸통을 길게 세웁니다",
-        "핀에서 굿모닝에 맞춰 발을 골반 너비 근처에 두고 도구를 발 중앙 가까이에 둡니다"
+        "핀에서 굿모닝에 맞춰 발을 골반 너비 근처에 두고 도구를 발 중앙 가까이에 둡니다",
       ],
-      "finish": "핀에서 굿모닝을 마친 뒤 엉덩이를 앞으로 가져와 선 뒤, 도구를 통제된 경로로 안전하게 내려놓습니다.",
-      "commonMistakes": [
+      finish:
+        "핀에서 굿모닝을 마친 뒤 엉덩이를 앞으로 가져와 선 뒤, 도구를 통제된 경로로 안전하게 내려놓습니다.",
+      commonMistakes: [
         "핀에서 굿모닝에서 무릎을 먼저 과하게 굽혀 힌지가 사라지는 경우",
         "핀에서 굿모닝에서 도구가 몸에서 멀어져 허리에 부담이 커지는 경우",
-        "핀에서 굿모닝에서 끝 범위에서 등을 둥글게 말아 당기는 경우"
+        "핀에서 굿모닝에서 끝 범위에서 등을 둥글게 말아 당기는 경우",
       ],
-      "regressions": [
+      regressions: [
         "핀에서 굿모닝은 가벼운 덤벨 또는 높은 시작 위치로 바꿉니다",
         "핀에서 굿모닝은 도구 없이 벽 터치 힌지로 범위를 익힙니다",
-        "핀에서 굿모닝은 가능한 범위까지만 내려가고 멈춥니다"
+        "핀에서 굿모닝은 가능한 범위까지만 내려가고 멈춥니다",
       ],
-      "progressions": [
+      progressions: [
         "핀에서 굿모닝은 동일한 정렬에서 부하만 소폭 올립니다",
         "핀에서 굿모닝은 지지면을 안정적으로 유지한 채 범위를 조금 늘립니다",
-        "핀에서 굿모닝은 한쪽 도구 또는 더 긴 지렛대는 숙련 뒤에만 시도합니다"
-      ]
-    }
+        "핀에서 굿모닝은 한쪽 도구 또는 더 긴 지렛대는 숙련 뒤에만 시도합니다",
+      ],
+    },
   },
   {
-    "exercise": {
-      "id": "verified-hanging-bar-good-morning",
-      "name": "행잉바 굿모닝",
-      "englishName": "Hanging Bar Good Morning",
-      "category": "프리웨이트",
-      "regions": [
-        "하체",
-        "둔근"
-      ],
-      "focus": "근력",
-      "difficulty": "중급",
-      "equipment": "바벨·안전 랙 선택",
-      "minutes": "6–12회 · 2세트",
-      "description": "행잉바 굿모닝은 햄스트링을 길게 사용하면서 엉덩이를 뒤로 보내고 도구를 몸 가까이 이동시키는 힙 힌지 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
-      "cues": [
+    exercise: {
+      id: "verified-hanging-bar-good-morning",
+      name: "행잉바 굿모닝",
+      englishName: "Hanging Bar Good Morning",
+      category: "프리웨이트",
+      regions: ["하체", "둔근"],
+      focus: "근력",
+      difficulty: "중급",
+      equipment: "바벨·안전 랙 선택",
+      minutes: "6–12회 · 2세트",
+      description:
+        "행잉바 굿모닝은 햄스트링을 길게 사용하면서 엉덩이를 뒤로 보내고 도구를 몸 가까이 이동시키는 힙 힌지 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
+      cues: [
         "행잉바 굿모닝에서 발 전체로 바닥을 누르고 무릎은 부드럽게 유지",
         "햄스트링을 느끼며 골반을 뒤로 보내며 척추 길이를 유지",
-        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다"
+        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
       ],
-      "benefits": [
+      benefits: [
         "행잉바 굿모닝으로 후면 사슬의 힘 사용 인식",
         "햄스트링을 활용한 엉덩이 주도 움직임 연습",
-        "햄스트링의 움직임 경로 인식"
+        "햄스트링의 움직임 경로 인식",
       ],
-      "warning": "행잉바 굿모닝 중 허리의 날카로운 통증·저림, 그립 미끄러짐 또는 균형 상실이 있으면 즉시 중단하고 도구를 안전하게 내려놓으세요.",
-      "reference": {
-        "label": "ACSM — Exercise Safety",
-        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
-      }
+      warning:
+        "행잉바 굿모닝 중 허리의 날카로운 통증·저림, 그립 미끄러짐 또는 균형 상실이 있으면 즉시 중단하고 도구를 안전하게 내려놓으세요.",
+      reference: {
+        label: "ACSM — Exercise Safety",
+        url: "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/",
+      },
     },
-    "detail": {
-      "setup": [
+    detail: {
+      setup: [
         "바벨의 좌우 중량·안전핀·내려놓을 위치를 확인하고 손 간격을 고정합니다",
         "발 또는 지지면을 단단히 고정하고 몸통을 길게 세웁니다",
-        "행잉바 굿모닝에 맞춰 발을 골반 너비 근처에 두고 도구를 발 중앙 가까이에 둡니다"
+        "행잉바 굿모닝에 맞춰 발을 골반 너비 근처에 두고 도구를 발 중앙 가까이에 둡니다",
       ],
-      "finish": "행잉바 굿모닝을 마친 뒤 엉덩이를 앞으로 가져와 선 뒤, 도구를 통제된 경로로 안전하게 내려놓습니다.",
-      "commonMistakes": [
+      finish:
+        "행잉바 굿모닝을 마친 뒤 엉덩이를 앞으로 가져와 선 뒤, 도구를 통제된 경로로 안전하게 내려놓습니다.",
+      commonMistakes: [
         "행잉바 굿모닝에서 무릎을 먼저 과하게 굽혀 힌지가 사라지는 경우",
         "행잉바 굿모닝에서 도구가 몸에서 멀어져 허리에 부담이 커지는 경우",
-        "행잉바 굿모닝에서 끝 범위에서 등을 둥글게 말아 당기는 경우"
+        "행잉바 굿모닝에서 끝 범위에서 등을 둥글게 말아 당기는 경우",
       ],
-      "regressions": [
+      regressions: [
         "행잉바 굿모닝은 가벼운 덤벨 또는 높은 시작 위치로 바꿉니다",
         "행잉바 굿모닝은 도구 없이 벽 터치 힌지로 범위를 익힙니다",
-        "행잉바 굿모닝은 가능한 범위까지만 내려가고 멈춥니다"
+        "행잉바 굿모닝은 가능한 범위까지만 내려가고 멈춥니다",
       ],
-      "progressions": [
+      progressions: [
         "행잉바 굿모닝은 동일한 정렬에서 부하만 소폭 올립니다",
         "행잉바 굿모닝은 지지면을 안정적으로 유지한 채 범위를 조금 늘립니다",
-        "행잉바 굿모닝은 한쪽 도구 또는 더 긴 지렛대는 숙련 뒤에만 시도합니다"
-      ]
-    }
+        "행잉바 굿모닝은 한쪽 도구 또는 더 긴 지렛대는 숙련 뒤에만 시도합니다",
+      ],
+    },
   },
   {
-    "exercise": {
-      "id": "verified-kneeling-squat",
-      "name": "무릎꿇기 스쿼트",
-      "englishName": "Kneeling Squat",
-      "category": "프리웨이트",
-      "regions": [
-        "둔근",
-        "하체"
-      ],
-      "focus": "근력",
-      "difficulty": "중급",
-      "equipment": "바벨·안전 랙 선택",
-      "minutes": "6–12회 · 2세트",
-      "description": "무릎꿇기 스쿼트은 둔근을 사용해 무릎과 엉덩이를 함께 굽혔다 펴는 하체 지지·밀기 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
-      "cues": [
+    exercise: {
+      id: "verified-kneeling-squat",
+      name: "무릎꿇기 스쿼트",
+      englishName: "Kneeling Squat",
+      category: "프리웨이트",
+      regions: ["둔근", "하체"],
+      focus: "근력",
+      difficulty: "중급",
+      equipment: "바벨·안전 랙 선택",
+      minutes: "6–12회 · 2세트",
+      description:
+        "무릎꿇기 스쿼트은 둔근을 사용해 무릎과 엉덩이를 함께 굽혔다 펴는 하체 지지·밀기 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
+      cues: [
         "무릎꿇기 스쿼트에서 발 전체를 바닥에 붙이고 무릎을 발 방향으로 이동",
         "둔근을 느끼며 골반과 흉곽이 함께 내려가도록 몸통을 길게 유지",
-        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다"
+        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
       ],
-      "benefits": [
+      benefits: [
         "무릎꿇기 스쿼트으로 하체 지지력과 제어",
         "둔근을 활용한 엉덩이·무릎 협응",
-        "둔근의 움직임 경로 인식"
+        "둔근의 움직임 경로 인식",
       ],
-      "warning": "무릎꿇기 스쿼트 중 무릎·고관절의 날카로운 통증, 발바닥 들림 또는 균형 상실이 있으면 깊이·부하를 낮추거나 중단하세요.",
-      "reference": {
-        "label": "ACSM — Exercise Safety",
-        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
-      }
+      warning:
+        "무릎꿇기 스쿼트 중 무릎·고관절의 날카로운 통증, 발바닥 들림 또는 균형 상실이 있으면 깊이·부하를 낮추거나 중단하세요.",
+      reference: {
+        label: "ACSM — Exercise Safety",
+        url: "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/",
+      },
     },
-    "detail": {
-      "setup": [
+    detail: {
+      setup: [
         "바벨의 좌우 중량·안전핀·내려놓을 위치를 확인하고 손 간격을 고정합니다",
         "무릎 아래에 매트를 두고 골반을 중립 가까이 맞춥니다",
-        "무릎꿇기 스쿼트에 맞춰 발 간격과 발끝 방향을 편안한 범위에서 정합니다"
+        "무릎꿇기 스쿼트에 맞춰 발 간격과 발끝 방향을 편안한 범위에서 정합니다",
       ],
-      "finish": "무릎꿇기 스쿼트을 마친 뒤 무릎과 엉덩이를 함께 펴고 발 전체로 균형을 회복한 뒤 다음 반복을 준비합니다.",
-      "commonMistakes": [
+      finish:
+        "무릎꿇기 스쿼트을 마친 뒤 무릎과 엉덩이를 함께 펴고 발 전체로 균형을 회복한 뒤 다음 반복을 준비합니다.",
+      commonMistakes: [
         "무릎꿇기 스쿼트에서 무릎이 발 안쪽으로 무너지는 경우",
         "무릎꿇기 스쿼트에서 발뒤꿈치가 들린 채 깊이를 억지로 늘리는 경우",
-        "무릎꿇기 스쿼트에서 내려가며 허리가 과하게 말리거나 젖혀지는 경우"
+        "무릎꿇기 스쿼트에서 내려가며 허리가 과하게 말리거나 젖혀지는 경우",
       ],
-      "regressions": [
+      regressions: [
         "무릎꿇기 스쿼트은 의자·박스를 목표 높이로 사용합니다",
         "무릎꿇기 스쿼트은 지지대를 잡고 얕은 범위로 수행합니다",
-        "무릎꿇기 스쿼트은 부하를 빼고 체중 이동부터 연습합니다"
+        "무릎꿇기 스쿼트은 부하를 빼고 체중 이동부터 연습합니다",
       ],
-      "progressions": [
+      progressions: [
         "무릎꿇기 스쿼트은 안정된 범위에서 반복만 소폭 늘립니다",
         "무릎꿇기 스쿼트은 편안한 깊이가 확보된 뒤 부하를 추가합니다",
-        "무릎꿇기 스쿼트은 편측 변형은 지지대 가까이에서 시작합니다"
-      ]
-    }
+        "무릎꿇기 스쿼트은 편측 변형은 지지대 가까이에서 시작합니다",
+      ],
+    },
   },
   {
-    "exercise": {
-      "id": "verified-pin-presses",
-      "name": "핀프레스",
-      "englishName": "Pin Presses",
-      "category": "프리웨이트",
-      "regions": [
-        "팔"
-      ],
-      "focus": "근력",
-      "difficulty": "중급",
-      "equipment": "바벨·안전 랙 선택",
-      "minutes": "6–12회 · 2세트",
-      "description": "핀프레스은 삼두근을 사용해 손잡이·도구 또는 바닥을 몸에서 멀어지게 미는 상체 밀기 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
-      "cues": [
+    exercise: {
+      id: "verified-pin-presses",
+      name: "핀프레스",
+      englishName: "Pin Presses",
+      category: "프리웨이트",
+      regions: ["팔"],
+      focus: "근력",
+      difficulty: "중급",
+      equipment: "바벨·안전 랙 선택",
+      minutes: "6–12회 · 2세트",
+      description:
+        "핀프레스은 삼두근을 사용해 손잡이·도구 또는 바닥을 몸에서 멀어지게 미는 상체 밀기 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
+      cues: [
         "핀프레스에서 손목을 중립에 가깝게 두고 손잡이를 안정적으로 잡기",
         "삼두근을 느끼며 갈비뼈를 과하게 들지 않고 몸통 길이 유지",
-        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다"
+        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
       ],
-      "benefits": [
+      benefits: [
         "핀프레스으로 가슴·어깨·팔의 밀기 협응",
         "삼두근을 활용한 손목과 견갑 안정 제어",
-        "삼두근의 움직임 경로 인식"
+        "삼두근의 움직임 경로 인식",
       ],
-      "warning": "핀프레스 중 어깨·팔꿈치·손목 통증, 저림 또는 도구 흔들림이 있으면 즉시 멈추고 설정을 다시 확인하세요.",
-      "reference": {
-        "label": "ACSM — Exercise Safety",
-        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
-      }
+      warning:
+        "핀프레스 중 어깨·팔꿈치·손목 통증, 저림 또는 도구 흔들림이 있으면 즉시 멈추고 설정을 다시 확인하세요.",
+      reference: {
+        label: "ACSM — Exercise Safety",
+        url: "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/",
+      },
     },
-    "detail": {
-      "setup": [
+    detail: {
+      setup: [
         "바벨의 좌우 중량·안전핀·내려놓을 위치를 확인하고 손 간격을 고정합니다",
         "발 또는 지지면을 단단히 고정하고 몸통을 길게 세웁니다",
-        "핀프레스에 맞춰 손잡이·바·지지면의 높이와 좌우 설정을 확인합니다"
+        "핀프레스에 맞춰 손잡이·바·지지면의 높이와 좌우 설정을 확인합니다",
       ],
-      "finish": "핀프레스을 마친 뒤 팔꿈치를 잠그지 않은 편안한 끝 범위에서 잠시 멈춘 뒤 같은 경로로 돌아옵니다.",
-      "commonMistakes": [
+      finish:
+        "핀프레스을 마친 뒤 팔꿈치를 잠그지 않은 편안한 끝 범위에서 잠시 멈춘 뒤 같은 경로로 돌아옵니다.",
+      commonMistakes: [
         "핀프레스에서 어깨가 앞으로 말린 채 밀어 올리는 경우",
         "핀프레스에서 허리를 과하게 젖혀 무게를 넘기는 경우",
-        "핀프레스에서 손목을 꺾고 그립을 느슨하게 유지하는 경우"
+        "핀프레스에서 손목을 꺾고 그립을 느슨하게 유지하는 경우",
       ],
-      "regressions": [
+      regressions: [
         "핀프레스은 벽·높은 벤치 또는 가벼운 저항으로 바꿉니다",
         "핀프레스은 가동 범위를 줄이고 어깨 편안함을 확인합니다",
-        "핀프레스은 양손 지지로 안정성을 먼저 확보합니다"
+        "핀프레스은 양손 지지로 안정성을 먼저 확보합니다",
       ],
-      "progressions": [
+      progressions: [
         "핀프레스은 정렬이 유지될 때 반복을 소폭 늘립니다",
         "핀프레스은 안정된 지지면에서 저항을 한 단계만 올립니다",
-        "핀프레스은 낮은 지지 또는 편측 변형은 통제 후 시도합니다"
-      ]
-    }
+        "핀프레스은 낮은 지지 또는 편측 변형은 통제 후 시도합니다",
+      ],
+    },
   },
   {
-    "exercise": {
-      "id": "verified-rack-pulls",
-      "name": "랙풀",
-      "englishName": "Rack Pulls",
-      "category": "프리웨이트",
-      "regions": [
-        "등",
-        "코어"
-      ],
-      "focus": "근력",
-      "difficulty": "중급",
-      "equipment": "바벨·안전 랙 선택",
-      "minutes": "6–12회 · 2세트",
-      "description": "랙풀은 허리 주변 주변을 통증 없는 범위에서 천천히 움직여 가동 범위와 자세 감각을 확인하는 모빌리티 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
-      "cues": [
+    exercise: {
+      id: "verified-rack-pulls",
+      name: "랙풀",
+      englishName: "Rack Pulls",
+      category: "프리웨이트",
+      regions: ["등", "코어"],
+      focus: "근력",
+      difficulty: "중급",
+      equipment: "바벨·안전 랙 선택",
+      minutes: "6–12회 · 2세트",
+      description:
+        "랙풀은 허리 주변 주변을 통증 없는 범위에서 천천히 움직여 가동 범위와 자세 감각을 확인하는 모빌리티 종목입니다. 반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
+      cues: [
         "랙풀에서 작은 범위에서 호흡을 멈추지 않기",
         "허리 주변을 느끼며 끝 범위를 밀지 말고 부드럽게 왕복",
-        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다"
+        "반복 사이에도 시작 자세의 지지와 정렬을 다시 확인합니다",
       ],
-      "benefits": [
+      benefits: [
         "랙풀으로 관절 위치와 범위 인식",
         "허리 주변을 활용한 편안한 움직임 준비",
-        "허리 주변의 움직임 경로 인식"
+        "허리 주변의 움직임 경로 인식",
       ],
-      "warning": "랙풀 중 날카로운 통증, 저림, 방사통, 붓기·열감이 있으면 자가 진행을 멈추고 평가를 우선하세요.",
-      "reference": {
-        "label": "ACSM — Exercise Safety",
-        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
-      }
+      warning:
+        "랙풀 중 날카로운 통증, 저림, 방사통, 붓기·열감이 있으면 자가 진행을 멈추고 평가를 우선하세요.",
+      reference: {
+        label: "ACSM — Exercise Safety",
+        url: "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/",
+      },
     },
-    "detail": {
-      "setup": [
+    detail: {
+      setup: [
         "바벨의 좌우 중량·안전핀·내려놓을 위치를 확인하고 손 간격을 고정합니다",
         "발 또는 지지면을 단단히 고정하고 몸통을 길게 세웁니다",
-        "랙풀에 맞춰 편안한 바닥·매트 또는 지지대를 준비합니다"
+        "랙풀에 맞춰 편안한 바닥·매트 또는 지지대를 준비합니다",
       ],
-      "finish": "랙풀을 마친 뒤 중립 자세로 천천히 돌아와 불편감이 남지 않는지 확인합니다.",
-      "commonMistakes": [
+      finish:
+        "랙풀을 마친 뒤 중립 자세로 천천히 돌아와 불편감이 남지 않는지 확인합니다.",
+      commonMistakes: [
         "랙풀에서 끝 범위를 억지로 밀어 통증을 만드는 경우",
         "랙풀에서 호흡을 참거나 반동을 쓰는 경우",
-        "랙풀에서 저림·방사통을 무시하고 지속하는 경우"
+        "랙풀에서 저림·방사통을 무시하고 지속하는 경우",
       ],
-      "regressions": [
+      regressions: [
         "랙풀은 범위와 유지 시간을 줄입니다",
         "랙풀은 벽·의자·블록 같은 지지대를 사용합니다",
-        "랙풀은 누운 또는 앉은 안정된 자세로 바꿉니다"
+        "랙풀은 누운 또는 앉은 안정된 자세로 바꿉니다",
       ],
-      "progressions": [
+      progressions: [
         "랙풀은 다음 날 편안하면 범위만 조금 늘립니다",
         "랙풀은 호흡 주기를 한 번 추가합니다",
-        "랙풀은 지지대는 안정적으로 줄여 갑니다"
-      ]
-    }
+        "랙풀은 지지대는 안정적으로 줄여 갑니다",
+      ],
+    },
   },
   {
-    "exercise": {
-      "id": "verified-reverse-band-bench-press",
-      "name": "리버스 밴드 벤치프레스",
-      "englishName": "Reverse Band Bench Press",
-      "category": "프리웨이트",
-      "regions": [
-        "팔"
-      ],
-      "focus": "근력",
-      "difficulty": "중급",
-      "equipment": "바벨·안전 랙 선택",
-      "minutes": "6–12회 · 2세트",
-      "description": "리버스 밴드 벤치프레스은 삼두근을 사용해 손잡이·도구 또는 바닥을 몸에서 멀어지게 미는 상체 밀기 종목입니다. 반대 방향으로 움직일 때도 어깨·손목 정렬을 먼저 확인합니다",
-      "cues": [
+    exercise: {
+      id: "verified-reverse-band-bench-press",
+      name: "리버스 밴드 벤치프레스",
+      englishName: "Reverse Band Bench Press",
+      category: "프리웨이트",
+      regions: ["팔"],
+      focus: "근력",
+      difficulty: "중급",
+      equipment: "바벨·안전 랙 선택",
+      minutes: "6–12회 · 2세트",
+      description:
+        "리버스 밴드 벤치프레스은 삼두근을 사용해 손잡이·도구 또는 바닥을 몸에서 멀어지게 미는 상체 밀기 종목입니다. 반대 방향으로 움직일 때도 어깨·손목 정렬을 먼저 확인합니다",
+      cues: [
         "리버스 밴드 벤치프레스에서 손목을 중립에 가깝게 두고 손잡이를 안정적으로 잡기",
         "삼두근을 느끼며 갈비뼈를 과하게 들지 않고 몸통 길이 유지",
-        "반대 방향으로 움직일 때도 어깨·손목 정렬을 먼저 확인합니다"
+        "반대 방향으로 움직일 때도 어깨·손목 정렬을 먼저 확인합니다",
       ],
-      "benefits": [
+      benefits: [
         "리버스 밴드 벤치프레스으로 가슴·어깨·팔의 밀기 협응",
         "삼두근을 활용한 손목과 견갑 안정 제어",
-        "삼두근의 움직임 경로 인식"
+        "삼두근의 움직임 경로 인식",
       ],
-      "warning": "리버스 밴드 벤치프레스 중 어깨·팔꿈치·손목 통증, 저림 또는 도구 흔들림이 있으면 즉시 멈추고 설정을 다시 확인하세요.",
-      "reference": {
-        "label": "ACSM — Exercise Safety",
-        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
-      }
+      warning:
+        "리버스 밴드 벤치프레스 중 어깨·팔꿈치·손목 통증, 저림 또는 도구 흔들림이 있으면 즉시 멈추고 설정을 다시 확인하세요.",
+      reference: {
+        label: "ACSM — Exercise Safety",
+        url: "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/",
+      },
     },
-    "detail": {
-      "setup": [
+    detail: {
+      setup: [
         "바벨의 좌우 중량·안전핀·내려놓을 위치를 확인하고 손 간격을 고정합니다",
         "발 또는 지지면을 단단히 고정하고 몸통을 길게 세웁니다",
-        "리버스 밴드 벤치프레스에 맞춰 손잡이·바·지지면의 높이와 좌우 설정을 확인합니다"
+        "리버스 밴드 벤치프레스에 맞춰 손잡이·바·지지면의 높이와 좌우 설정을 확인합니다",
       ],
-      "finish": "리버스 밴드 벤치프레스을 마친 뒤 팔꿈치를 잠그지 않은 편안한 끝 범위에서 잠시 멈춘 뒤 같은 경로로 돌아옵니다.",
-      "commonMistakes": [
+      finish:
+        "리버스 밴드 벤치프레스을 마친 뒤 팔꿈치를 잠그지 않은 편안한 끝 범위에서 잠시 멈춘 뒤 같은 경로로 돌아옵니다.",
+      commonMistakes: [
         "리버스 밴드 벤치프레스에서 어깨가 앞으로 말린 채 밀어 올리는 경우",
         "리버스 밴드 벤치프레스에서 허리를 과하게 젖혀 무게를 넘기는 경우",
-        "리버스 밴드 벤치프레스에서 손목을 꺾고 그립을 느슨하게 유지하는 경우"
+        "리버스 밴드 벤치프레스에서 손목을 꺾고 그립을 느슨하게 유지하는 경우",
       ],
-      "regressions": [
+      regressions: [
         "리버스 밴드 벤치프레스은 벽·높은 벤치 또는 가벼운 저항으로 바꿉니다",
         "리버스 밴드 벤치프레스은 가동 범위를 줄이고 어깨 편안함을 확인합니다",
-        "리버스 밴드 벤치프레스은 양손 지지로 안정성을 먼저 확보합니다"
+        "리버스 밴드 벤치프레스은 양손 지지로 안정성을 먼저 확보합니다",
       ],
-      "progressions": [
+      progressions: [
         "리버스 밴드 벤치프레스은 정렬이 유지될 때 반복을 소폭 늘립니다",
         "리버스 밴드 벤치프레스은 안정된 지지면에서 저항을 한 단계만 올립니다",
-        "리버스 밴드 벤치프레스은 낮은 지지 또는 편측 변형은 통제 후 시도합니다"
-      ]
-    }
+        "리버스 밴드 벤치프레스은 낮은 지지 또는 편측 변형은 통제 후 시도합니다",
+      ],
+    },
   },
   {
-    "exercise": {
-      "id": "verified-reverse-band-box-squat",
-      "name": "리버스 밴드 박스 스쿼트",
-      "englishName": "Reverse Band Box Squat",
-      "category": "프리웨이트",
-      "regions": [
-        "하체"
-      ],
-      "focus": "근력",
-      "difficulty": "중급",
-      "equipment": "바벨·안전 랙 선택",
-      "minutes": "6–12회 · 2세트",
-      "description": "리버스 밴드 박스 스쿼트은 대퇴사두근을 사용해 무릎과 엉덩이를 함께 굽혔다 펴는 하체 지지·밀기 종목입니다. 반대 방향으로 움직일 때도 어깨·손목 정렬을 먼저 확인합니다",
-      "cues": [
+    exercise: {
+      id: "verified-reverse-band-box-squat",
+      name: "리버스 밴드 박스 스쿼트",
+      englishName: "Reverse Band Box Squat",
+      category: "프리웨이트",
+      regions: ["하체"],
+      focus: "근력",
+      difficulty: "중급",
+      equipment: "바벨·안전 랙 선택",
+      minutes: "6–12회 · 2세트",
+      description:
+        "리버스 밴드 박스 스쿼트은 대퇴사두근을 사용해 무릎과 엉덩이를 함께 굽혔다 펴는 하체 지지·밀기 종목입니다. 반대 방향으로 움직일 때도 어깨·손목 정렬을 먼저 확인합니다",
+      cues: [
         "리버스 밴드 박스 스쿼트에서 발 전체를 바닥에 붙이고 무릎을 발 방향으로 이동",
         "대퇴사두근을 느끼며 골반과 흉곽이 함께 내려가도록 몸통을 길게 유지",
-        "반대 방향으로 움직일 때도 어깨·손목 정렬을 먼저 확인합니다"
+        "반대 방향으로 움직일 때도 어깨·손목 정렬을 먼저 확인합니다",
       ],
-      "benefits": [
+      benefits: [
         "리버스 밴드 박스 스쿼트으로 하체 지지력과 제어",
         "대퇴사두근을 활용한 엉덩이·무릎 협응",
-        "대퇴사두근의 움직임 경로 인식"
+        "대퇴사두근의 움직임 경로 인식",
       ],
-      "warning": "리버스 밴드 박스 스쿼트 중 무릎·고관절의 날카로운 통증, 발바닥 들림 또는 균형 상실이 있으면 깊이·부하를 낮추거나 중단하세요.",
-      "reference": {
-        "label": "ACSM — Exercise Safety",
-        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
-      }
+      warning:
+        "리버스 밴드 박스 스쿼트 중 무릎·고관절의 날카로운 통증, 발바닥 들림 또는 균형 상실이 있으면 깊이·부하를 낮추거나 중단하세요.",
+      reference: {
+        label: "ACSM — Exercise Safety",
+        url: "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/",
+      },
     },
-    "detail": {
-      "setup": [
+    detail: {
+      setup: [
         "바벨의 좌우 중량·안전핀·내려놓을 위치를 확인하고 손 간격을 고정합니다",
         "발 또는 지지면을 단단히 고정하고 몸통을 길게 세웁니다",
-        "리버스 밴드 박스 스쿼트에 맞춰 발 간격과 발끝 방향을 편안한 범위에서 정합니다"
+        "리버스 밴드 박스 스쿼트에 맞춰 발 간격과 발끝 방향을 편안한 범위에서 정합니다",
       ],
-      "finish": "리버스 밴드 박스 스쿼트을 마친 뒤 무릎과 엉덩이를 함께 펴고 발 전체로 균형을 회복한 뒤 다음 반복을 준비합니다.",
-      "commonMistakes": [
+      finish:
+        "리버스 밴드 박스 스쿼트을 마친 뒤 무릎과 엉덩이를 함께 펴고 발 전체로 균형을 회복한 뒤 다음 반복을 준비합니다.",
+      commonMistakes: [
         "리버스 밴드 박스 스쿼트에서 무릎이 발 안쪽으로 무너지는 경우",
         "리버스 밴드 박스 스쿼트에서 발뒤꿈치가 들린 채 깊이를 억지로 늘리는 경우",
-        "리버스 밴드 박스 스쿼트에서 내려가며 허리가 과하게 말리거나 젖혀지는 경우"
+        "리버스 밴드 박스 스쿼트에서 내려가며 허리가 과하게 말리거나 젖혀지는 경우",
       ],
-      "regressions": [
+      regressions: [
         "리버스 밴드 박스 스쿼트은 의자·박스를 목표 높이로 사용합니다",
         "리버스 밴드 박스 스쿼트은 지지대를 잡고 얕은 범위로 수행합니다",
-        "리버스 밴드 박스 스쿼트은 부하를 빼고 체중 이동부터 연습합니다"
+        "리버스 밴드 박스 스쿼트은 부하를 빼고 체중 이동부터 연습합니다",
       ],
-      "progressions": [
+      progressions: [
         "리버스 밴드 박스 스쿼트은 안정된 범위에서 반복만 소폭 늘립니다",
         "리버스 밴드 박스 스쿼트은 편안한 깊이가 확보된 뒤 부하를 추가합니다",
-        "리버스 밴드 박스 스쿼트은 편측 변형은 지지대 가까이에서 시작합니다"
-      ]
-    }
+        "리버스 밴드 박스 스쿼트은 편측 변형은 지지대 가까이에서 시작합니다",
+      ],
+    },
   },
   {
-    "exercise": {
-      "id": "verified-reverse-band-deadlift",
-      "name": "리버스 밴드 데드리프트",
-      "englishName": "Reverse Band Deadlift",
-      "category": "프리웨이트",
-      "regions": [
-        "등",
-        "코어"
-      ],
-      "focus": "근력",
-      "difficulty": "상급",
-      "equipment": "바벨·안전 랙 선택",
-      "minutes": "6–12회 · 2세트",
-      "description": "리버스 밴드 데드리프트은 허리 주변을 길게 사용하면서 엉덩이를 뒤로 보내고 도구를 몸 가까이 이동시키는 힙 힌지 종목입니다. 반대 방향으로 움직일 때도 어깨·손목 정렬을 먼저 확인합니다",
-      "cues": [
+    exercise: {
+      id: "verified-reverse-band-deadlift",
+      name: "리버스 밴드 데드리프트",
+      englishName: "Reverse Band Deadlift",
+      category: "프리웨이트",
+      regions: ["등", "코어"],
+      focus: "근력",
+      difficulty: "상급",
+      equipment: "바벨·안전 랙 선택",
+      minutes: "6–12회 · 2세트",
+      description:
+        "리버스 밴드 데드리프트은 허리 주변을 길게 사용하면서 엉덩이를 뒤로 보내고 도구를 몸 가까이 이동시키는 힙 힌지 종목입니다. 반대 방향으로 움직일 때도 어깨·손목 정렬을 먼저 확인합니다",
+      cues: [
         "리버스 밴드 데드리프트에서 발 전체로 바닥을 누르고 무릎은 부드럽게 유지",
         "허리 주변을 느끼며 골반을 뒤로 보내며 척추 길이를 유지",
-        "반대 방향으로 움직일 때도 어깨·손목 정렬을 먼저 확인합니다"
+        "반대 방향으로 움직일 때도 어깨·손목 정렬을 먼저 확인합니다",
       ],
-      "benefits": [
+      benefits: [
         "리버스 밴드 데드리프트으로 후면 사슬의 힘 사용 인식",
         "허리 주변을 활용한 엉덩이 주도 움직임 연습",
-        "허리 주변의 움직임 경로 인식"
+        "허리 주변의 움직임 경로 인식",
       ],
-      "warning": "리버스 밴드 데드리프트 중 허리의 날카로운 통증·저림, 그립 미끄러짐 또는 균형 상실이 있으면 즉시 중단하고 도구를 안전하게 내려놓으세요.",
-      "reference": {
-        "label": "ACSM — Exercise Safety",
-        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
-      }
+      warning:
+        "리버스 밴드 데드리프트 중 허리의 날카로운 통증·저림, 그립 미끄러짐 또는 균형 상실이 있으면 즉시 중단하고 도구를 안전하게 내려놓으세요.",
+      reference: {
+        label: "ACSM — Exercise Safety",
+        url: "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/",
+      },
     },
-    "detail": {
-      "setup": [
+    detail: {
+      setup: [
         "바벨의 좌우 중량·안전핀·내려놓을 위치를 확인하고 손 간격을 고정합니다",
         "발 또는 지지면을 단단히 고정하고 몸통을 길게 세웁니다",
-        "리버스 밴드 데드리프트에 맞춰 발을 골반 너비 근처에 두고 도구를 발 중앙 가까이에 둡니다"
+        "리버스 밴드 데드리프트에 맞춰 발을 골반 너비 근처에 두고 도구를 발 중앙 가까이에 둡니다",
       ],
-      "finish": "리버스 밴드 데드리프트을 마친 뒤 엉덩이를 앞으로 가져와 선 뒤, 도구를 통제된 경로로 안전하게 내려놓습니다.",
-      "commonMistakes": [
+      finish:
+        "리버스 밴드 데드리프트을 마친 뒤 엉덩이를 앞으로 가져와 선 뒤, 도구를 통제된 경로로 안전하게 내려놓습니다.",
+      commonMistakes: [
         "리버스 밴드 데드리프트에서 무릎을 먼저 과하게 굽혀 힌지가 사라지는 경우",
         "리버스 밴드 데드리프트에서 도구가 몸에서 멀어져 허리에 부담이 커지는 경우",
-        "리버스 밴드 데드리프트에서 끝 범위에서 등을 둥글게 말아 당기는 경우"
+        "리버스 밴드 데드리프트에서 끝 범위에서 등을 둥글게 말아 당기는 경우",
       ],
-      "regressions": [
+      regressions: [
         "리버스 밴드 데드리프트은 가벼운 덤벨 또는 높은 시작 위치로 바꿉니다",
         "리버스 밴드 데드리프트은 도구 없이 벽 터치 힌지로 범위를 익힙니다",
-        "리버스 밴드 데드리프트은 가능한 범위까지만 내려가고 멈춥니다"
+        "리버스 밴드 데드리프트은 가능한 범위까지만 내려가고 멈춥니다",
       ],
-      "progressions": [
+      progressions: [
         "리버스 밴드 데드리프트은 동일한 정렬에서 부하만 소폭 올립니다",
         "리버스 밴드 데드리프트은 지지면을 안정적으로 유지한 채 범위를 조금 늘립니다",
-        "리버스 밴드 데드리프트은 한쪽 도구 또는 더 긴 지렛대는 숙련 뒤에만 시도합니다"
-      ]
-    }
+        "리버스 밴드 데드리프트은 한쪽 도구 또는 더 긴 지렛대는 숙련 뒤에만 시도합니다",
+      ],
+    },
   },
   {
-    "exercise": {
-      "id": "verified-reverse-band-power-squat",
-      "name": "리버스 밴드 파워 스쿼트",
-      "englishName": "Reverse Band Power Squat",
-      "category": "프리웨이트",
-      "regions": [
-        "하체"
-      ],
-      "focus": "근력",
-      "difficulty": "상급",
-      "equipment": "바벨·안전 랙 선택",
-      "minutes": "6–12회 · 2세트",
-      "description": "리버스 밴드 파워 스쿼트은 대퇴사두근을 사용해 무릎과 엉덩이를 함께 굽혔다 펴는 하체 지지·밀기 종목입니다. 반대 방향으로 움직일 때도 어깨·손목 정렬을 먼저 확인합니다",
-      "cues": [
+    exercise: {
+      id: "verified-reverse-band-power-squat",
+      name: "리버스 밴드 파워 스쿼트",
+      englishName: "Reverse Band Power Squat",
+      category: "프리웨이트",
+      regions: ["하체"],
+      focus: "근력",
+      difficulty: "상급",
+      equipment: "바벨·안전 랙 선택",
+      minutes: "6–12회 · 2세트",
+      description:
+        "리버스 밴드 파워 스쿼트은 대퇴사두근을 사용해 무릎과 엉덩이를 함께 굽혔다 펴는 하체 지지·밀기 종목입니다. 반대 방향으로 움직일 때도 어깨·손목 정렬을 먼저 확인합니다",
+      cues: [
         "리버스 밴드 파워 스쿼트에서 발 전체를 바닥에 붙이고 무릎을 발 방향으로 이동",
         "대퇴사두근을 느끼며 골반과 흉곽이 함께 내려가도록 몸통을 길게 유지",
-        "반대 방향으로 움직일 때도 어깨·손목 정렬을 먼저 확인합니다"
+        "반대 방향으로 움직일 때도 어깨·손목 정렬을 먼저 확인합니다",
       ],
-      "benefits": [
+      benefits: [
         "리버스 밴드 파워 스쿼트으로 하체 지지력과 제어",
         "대퇴사두근을 활용한 엉덩이·무릎 협응",
-        "대퇴사두근의 움직임 경로 인식"
+        "대퇴사두근의 움직임 경로 인식",
       ],
-      "warning": "리버스 밴드 파워 스쿼트 중 무릎·고관절의 날카로운 통증, 발바닥 들림 또는 균형 상실이 있으면 깊이·부하를 낮추거나 중단하세요.",
-      "reference": {
-        "label": "ACSM — Exercise Safety",
-        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
-      }
+      warning:
+        "리버스 밴드 파워 스쿼트 중 무릎·고관절의 날카로운 통증, 발바닥 들림 또는 균형 상실이 있으면 깊이·부하를 낮추거나 중단하세요.",
+      reference: {
+        label: "ACSM — Exercise Safety",
+        url: "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/",
+      },
     },
-    "detail": {
-      "setup": [
+    detail: {
+      setup: [
         "바벨의 좌우 중량·안전핀·내려놓을 위치를 확인하고 손 간격을 고정합니다",
         "발 또는 지지면을 단단히 고정하고 몸통을 길게 세웁니다",
-        "리버스 밴드 파워 스쿼트에 맞춰 발 간격과 발끝 방향을 편안한 범위에서 정합니다"
+        "리버스 밴드 파워 스쿼트에 맞춰 발 간격과 발끝 방향을 편안한 범위에서 정합니다",
       ],
-      "finish": "리버스 밴드 파워 스쿼트을 마친 뒤 무릎과 엉덩이를 함께 펴고 발 전체로 균형을 회복한 뒤 다음 반복을 준비합니다.",
-      "commonMistakes": [
+      finish:
+        "리버스 밴드 파워 스쿼트을 마친 뒤 무릎과 엉덩이를 함께 펴고 발 전체로 균형을 회복한 뒤 다음 반복을 준비합니다.",
+      commonMistakes: [
         "리버스 밴드 파워 스쿼트에서 무릎이 발 안쪽으로 무너지는 경우",
         "리버스 밴드 파워 스쿼트에서 발뒤꿈치가 들린 채 깊이를 억지로 늘리는 경우",
-        "리버스 밴드 파워 스쿼트에서 내려가며 허리가 과하게 말리거나 젖혀지는 경우"
+        "리버스 밴드 파워 스쿼트에서 내려가며 허리가 과하게 말리거나 젖혀지는 경우",
       ],
-      "regressions": [
+      regressions: [
         "리버스 밴드 파워 스쿼트은 의자·박스를 목표 높이로 사용합니다",
         "리버스 밴드 파워 스쿼트은 지지대를 잡고 얕은 범위로 수행합니다",
-        "리버스 밴드 파워 스쿼트은 부하를 빼고 체중 이동부터 연습합니다"
+        "리버스 밴드 파워 스쿼트은 부하를 빼고 체중 이동부터 연습합니다",
       ],
-      "progressions": [
+      progressions: [
         "리버스 밴드 파워 스쿼트은 안정된 범위에서 반복만 소폭 늘립니다",
         "리버스 밴드 파워 스쿼트은 편안한 깊이가 확보된 뒤 부하를 추가합니다",
-        "리버스 밴드 파워 스쿼트은 편측 변형은 지지대 가까이에서 시작합니다"
-      ]
-    }
+        "리버스 밴드 파워 스쿼트은 편측 변형은 지지대 가까이에서 시작합니다",
+      ],
+    },
   },
   {
-    "exercise": {
-      "id": "verified-reverse-band-sumo-deadlift",
-      "name": "리버스밴드 스모 데드리프트",
-      "englishName": "Reverse Band Sumo Deadlift",
-      "category": "프리웨이트",
-      "regions": [
-        "하체",
-        "둔근"
-      ],
-      "focus": "근력",
-      "difficulty": "상급",
-      "equipment": "바벨·안전 랙 선택",
-      "minutes": "6–12회 · 2세트",
-      "description": "리버스밴드 스모 데드리프트은 햄스트링을 길게 사용하면서 엉덩이를 뒤로 보내고 도구를 몸 가까이 이동시키는 힙 힌지 종목입니다. 반대 방향으로 움직일 때도 어깨·손목 정렬을 먼저 확인합니다",
-      "cues": [
+    exercise: {
+      id: "verified-reverse-band-sumo-deadlift",
+      name: "리버스밴드 스모 데드리프트",
+      englishName: "Reverse Band Sumo Deadlift",
+      category: "프리웨이트",
+      regions: ["하체", "둔근"],
+      focus: "근력",
+      difficulty: "상급",
+      equipment: "바벨·안전 랙 선택",
+      minutes: "6–12회 · 2세트",
+      description:
+        "리버스밴드 스모 데드리프트은 햄스트링을 길게 사용하면서 엉덩이를 뒤로 보내고 도구를 몸 가까이 이동시키는 힙 힌지 종목입니다. 반대 방향으로 움직일 때도 어깨·손목 정렬을 먼저 확인합니다",
+      cues: [
         "리버스밴드 스모 데드리프트에서 발 전체로 바닥을 누르고 무릎은 부드럽게 유지",
         "햄스트링을 느끼며 골반을 뒤로 보내며 척추 길이를 유지",
-        "반대 방향으로 움직일 때도 어깨·손목 정렬을 먼저 확인합니다"
+        "반대 방향으로 움직일 때도 어깨·손목 정렬을 먼저 확인합니다",
       ],
-      "benefits": [
+      benefits: [
         "리버스밴드 스모 데드리프트으로 후면 사슬의 힘 사용 인식",
         "햄스트링을 활용한 엉덩이 주도 움직임 연습",
-        "햄스트링의 움직임 경로 인식"
+        "햄스트링의 움직임 경로 인식",
       ],
-      "warning": "리버스밴드 스모 데드리프트 중 허리의 날카로운 통증·저림, 그립 미끄러짐 또는 균형 상실이 있으면 즉시 중단하고 도구를 안전하게 내려놓으세요.",
-      "reference": {
-        "label": "ACSM — Exercise Safety",
-        "url": "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/"
-      }
+      warning:
+        "리버스밴드 스모 데드리프트 중 허리의 날카로운 통증·저림, 그립 미끄러짐 또는 균형 상실이 있으면 즉시 중단하고 도구를 안전하게 내려놓으세요.",
+      reference: {
+        label: "ACSM — Exercise Safety",
+        url: "https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/",
+      },
     },
-    "detail": {
-      "setup": [
+    detail: {
+      setup: [
         "바벨의 좌우 중량·안전핀·내려놓을 위치를 확인하고 손 간격을 고정합니다",
         "발 또는 지지면을 단단히 고정하고 몸통을 길게 세웁니다",
-        "리버스밴드 스모 데드리프트에 맞춰 발을 골반 너비 근처에 두고 도구를 발 중앙 가까이에 둡니다"
+        "리버스밴드 스모 데드리프트에 맞춰 발을 골반 너비 근처에 두고 도구를 발 중앙 가까이에 둡니다",
       ],
-      "finish": "리버스밴드 스모 데드리프트을 마친 뒤 엉덩이를 앞으로 가져와 선 뒤, 도구를 통제된 경로로 안전하게 내려놓습니다.",
-      "commonMistakes": [
+      finish:
+        "리버스밴드 스모 데드리프트을 마친 뒤 엉덩이를 앞으로 가져와 선 뒤, 도구를 통제된 경로로 안전하게 내려놓습니다.",
+      commonMistakes: [
         "리버스밴드 스모 데드리프트에서 무릎을 먼저 과하게 굽혀 힌지가 사라지는 경우",
         "리버스밴드 스모 데드리프트에서 도구가 몸에서 멀어져 허리에 부담이 커지는 경우",
-        "리버스밴드 스모 데드리프트에서 끝 범위에서 등을 둥글게 말아 당기는 경우"
+        "리버스밴드 스모 데드리프트에서 끝 범위에서 등을 둥글게 말아 당기는 경우",
       ],
-      "regressions": [
+      regressions: [
         "리버스밴드 스모 데드리프트은 가벼운 덤벨 또는 높은 시작 위치로 바꿉니다",
         "리버스밴드 스모 데드리프트은 도구 없이 벽 터치 힌지로 범위를 익힙니다",
-        "리버스밴드 스모 데드리프트은 가능한 범위까지만 내려가고 멈춥니다"
+        "리버스밴드 스모 데드리프트은 가능한 범위까지만 내려가고 멈춥니다",
       ],
-      "progressions": [
+      progressions: [
         "리버스밴드 스모 데드리프트은 동일한 정렬에서 부하만 소폭 올립니다",
         "리버스밴드 스모 데드리프트은 지지면을 안정적으로 유지한 채 범위를 조금 늘립니다",
-        "리버스밴드 스모 데드리프트은 한쪽 도구 또는 더 긴 지렛대는 숙련 뒤에만 시도합니다"
-      ]
-    }
-  }
+        "리버스밴드 스모 데드리프트은 한쪽 도구 또는 더 긴 지렛대는 숙련 뒤에만 시도합니다",
+      ],
+    },
+  },
 ];

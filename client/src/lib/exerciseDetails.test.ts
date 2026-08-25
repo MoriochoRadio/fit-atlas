@@ -31,7 +31,10 @@ describe("exercise detail knowledge", () => {
   });
 
   it("gives every newly added equipment and low-impact movement an individual detail definition", () => {
-    [...expandedExercisesPart5, ...expandedExercisesPart6, ...expandedExercisesPart7, ...expandedExercisesPart8, ...expandedExercisesPart9, ...expandedExercisesPart10, ...expandedExercisesPart11].filter(isIndependentCatalogExercise).forEach((exercise) => {
+    // expandedExercisesPart*는 카탈로그로 옮겨가기 전의 옛 목록이라, 중복 정리로 사라진 항목이 남아 있다.
+    // 지금 카탈로그에 실제로 있는 것만 검사한다.
+    const catalogIds = new Set(exercises.map((exercise) => exercise.id));
+    [...expandedExercisesPart5, ...expandedExercisesPart6, ...expandedExercisesPart7, ...expandedExercisesPart8, ...expandedExercisesPart9, ...expandedExercisesPart10, ...expandedExercisesPart11].filter(isIndependentCatalogExercise).filter((exercise) => catalogIds.has(exercise.id)).forEach((exercise) => {
       expect(exerciseDetails[exercise.id]).toBeDefined();
       expect(exerciseDetails[exercise.id].setup).toHaveLength(3);
       expect(exerciseDetails[exercise.id].commonMistakes).toHaveLength(3);
