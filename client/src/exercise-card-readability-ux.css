@@ -1,16 +1,128 @@
-.exercise-card .exercise-top { min-height: 22px; }
-.exercise-card .exercise-category-label { max-width: 62%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
-.exercise-card .difficulty { min-height: 24px; padding: 3px 6px; border: 1px solid #f0d7cd; border-radius: 999px; background: #fff8f5; }
-.exercise-card .difficulty small { margin-right: 3px; }
-.exercise-card .exercise-description { min-height: 3.4em; margin: 10px 0 12px; color: #52657f; font-size: 12px; line-height: 1.72; letter-spacing: -.018em; }
-.exercise-card .tag-row { gap: 5px; min-height: 27px; }
-.exercise-card .tag-row span { display: inline-flex; min-height: 25px; align-items: center; padding: 4px 7px; font-size: 10px; line-height: 1.2; }
-.exercise-card .exercise-meta { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 7px; margin-top: 13px; padding: 0; border: 0; }
-.exercise-card .exercise-meta span { display: grid; grid-template-columns: 15px auto minmax(0, 1fr); align-items: center; gap: 4px; min-height: 37px; padding: 7px 8px; border: 1px solid #e0e8dc; border-radius: 9px; background: #f8faf5; }
-.exercise-card .exercise-meta span::before { display: none; }
-.exercise-card .exercise-meta svg { color: #788d1a; }
-.exercise-card .exercise-meta b { color: #77857d; font: 800 9px "IBM Plex Mono", monospace; letter-spacing: .02em; }
-.exercise-card .exercise-meta em { overflow: hidden; color: #33475d; font-size: 11px; font-style: normal; font-weight: 800; text-align: right; text-overflow: ellipsis; white-space: nowrap; }
-.exercise-card .card-expand { min-height: 48px; margin-top: 16px; padding: 11px 12px; border-radius: 10px; }.exercise-card .card-expand svg { transition: transform .18s var(--ease-out); }.exercise-card.is-expanded .card-expand { margin-top: 18px; }
-@media (max-width: 700px) { .exercise-card .exercise-description { min-height: 0; margin: 9px 0 11px; font-size: 13px; line-height: 1.68; }.exercise-card .tag-row { margin-top: 0; }.exercise-card .tag-row span { min-height: 26px; font-size: 10px; }.exercise-card .exercise-meta { gap: 6px; margin-top: 12px; }.exercise-card .exercise-meta span { min-height: 39px; padding: 7px; }.exercise-card .exercise-meta em { font-size: 11px; }.exercise-card .card-expand { min-height: 52px; margin-top: 14px; } }
-@media (prefers-reduced-motion: reduce) { .exercise-card .card-expand svg { transition: none; } }
+.exercise-card .exercise-top {
+  min-height: 22px;
+}
+.exercise-card .exercise-category-label {
+  max-width: 62%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.exercise-card .difficulty {
+  min-height: 24px;
+  padding: 3px 6px;
+  border: 1px solid #f0d7cd;
+  border-radius: 999px;
+  background: #fff8f5;
+}
+.exercise-card .difficulty small {
+  margin-right: 3px;
+}
+.exercise-card .exercise-description {
+  min-height: 3.4em;
+  margin: 10px 0 12px;
+  color: #52657f;
+  font-size: 12px;
+  line-height: 1.72;
+  letter-spacing: -0.018em;
+}
+.exercise-card .tag-row {
+  gap: 5px;
+  min-height: 27px;
+}
+.exercise-card .tag-row span {
+  display: inline-flex;
+  min-height: 25px;
+  align-items: center;
+  padding: 4px 7px;
+  font-size: 10px;
+  line-height: 1.2;
+}
+.exercise-card .exercise-meta {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 7px;
+  margin-top: 13px;
+  padding: 0;
+  border: 0;
+}
+.exercise-card .exercise-meta span {
+  display: grid;
+  grid-template-columns: 15px auto minmax(0, 1fr);
+  align-items: center;
+  gap: 4px;
+  min-height: 37px;
+  padding: 7px 8px;
+  border: 1px solid #e0e8dc;
+  border-radius: 9px;
+  background: #f8faf5;
+}
+.exercise-card .exercise-meta span::before {
+  display: none;
+}
+.exercise-card .exercise-meta svg {
+  color: #788d1a;
+}
+.exercise-card .exercise-meta b {
+  color: #77857d;
+  font:
+    800 9px "IBM Plex Mono",
+    monospace;
+  letter-spacing: 0.02em;
+}
+.exercise-card .exercise-meta em {
+  overflow: hidden;
+  color: #33475d;
+  font-size: 11px;
+  font-style: normal;
+  font-weight: 800;
+  text-align: right;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.exercise-card .card-expand {
+  min-height: 48px;
+  margin-top: 16px;
+  padding: 11px 12px;
+  border-radius: 10px;
+}
+.exercise-card .card-expand svg {
+  transition: transform 0.18s var(--ease-out);
+}
+.exercise-card.is-expanded .card-expand {
+  margin-top: 18px;
+}
+@media (max-width: 700px) {
+  .exercise-card .exercise-description {
+    min-height: 0;
+    margin: 9px 0 11px;
+    font-size: 13px;
+    line-height: 1.68;
+  }
+  .exercise-card .tag-row {
+    margin-top: 0;
+  }
+  .exercise-card .tag-row span {
+    min-height: 26px;
+    font-size: 10px;
+  }
+  .exercise-card .exercise-meta {
+    gap: 6px;
+    margin-top: 12px;
+  }
+  .exercise-card .exercise-meta span {
+    min-height: 39px;
+    padding: 7px;
+  }
+  .exercise-card .exercise-meta em {
+    font-size: 11px;
+  }
+  .exercise-card .card-expand {
+    min-height: 52px;
+    margin-top: 14px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .exercise-card .card-expand svg {
+    transition: none;
+  }
+}

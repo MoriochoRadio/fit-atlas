@@ -52,7 +52,7 @@
   min-height: 58px;
   padding: 11px 12px;
   border-radius: 10px;
-  background: rgba(255, 255, 255, .76);
+  background: rgba(255, 255, 255, 0.76);
 }
 
 .exercise-detail .detail-grid > div,
