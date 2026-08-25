@@ -2,7 +2,7 @@
 
 > **운동 백과사전 · 개인화 세션 · 기록 분석 · 회복 · 웰니스를 하나의 브라우저 로컬 앱으로 연결합니다.**
 
-[**GitHub Pages에서 열기**](https://moriochoradio.github.io/fit-atlas/) · [요구사항 QA](./docs/qa_requirements.md) · [작업 이력](./docs/todo.md)
+[**GitHub Pages에서 열기**](https://moriochoradio.github.io/fit-atlas/) · [요구사항 QA](./docs/qa_requirements.md) · [개발 기록 아카이브](https://github.com/MoriochoRadio/fit-atlas/tree/docs/archive)
 
 Fit Atlas는 개인 또는 소수 사용자를 위한 **정적·로컬 우선 피트니스 웹앱**입니다. 계정, 서버, 데이터베이스 없이 브라우저에서 동작하며, 운동 기록과 프로필은 사용자의 기기에만 저장됩니다.
 
@@ -108,14 +108,13 @@ docs/
 | 문서 | 내용 |
 |---|---|
 | [요구사항 QA](./docs/qa_requirements.md) | 초기 요구사항과 현재 구현의 대조·제약 사항 |
-| [QA 결과](./docs/qa_report.md) | 기능·저장·빌드 검증 결과 |
-| [작업 목록](./docs/todo.md) | 완료 이력과 남은 개선 항목 |
 | [연구·출처](./docs/research_sources.md) | WHO·CDC 등 공공 보건·운동 지침의 활용 범위 |
 | [콘텐츠 모델](./docs/content_model.md) | 운동·회복 항목 데이터 표준 |
-| [카탈로그 범위](./docs/catalog_coverage_report.md) | 운동 분류·포괄성 점검 |
 | [라켓·격투 입문 범위](./docs/racket_combat_intro_scope.md) | 비접촉 입문 드릴의 공간·안전 경계 |
 | [대표 시각·근거 범위](./docs/representative_visual_evidence_scope.md) | 대표 운동 시각 가이드·직접 자료 연결 원칙 |
 | [앉은 자세 회복 범위](./docs/seated_recovery_scope.md) | 5분·10분 회복 루틴의 일반 교육 범위 |
+
+진행 로그·QA 리포트·디자인 방향 문서는 [`docs/archive` 브랜치](https://github.com/MoriochoRadio/fit-atlas/tree/docs/archive)에 그대로 보관합니다. `main` 에는 콘텐츠의 근거가 되는 자료만 남깁니다.
 
 ## 라이선스
 
