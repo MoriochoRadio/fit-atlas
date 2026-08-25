@@ -37,10 +37,8 @@ import {
 } from "lucide-react";
 import React, { useEffect, useMemo, useRef, useState } from "react";
 import { AnatomyMap } from "@/components/AnatomyMap";
-import { HeroGymMachine3D } from "@/components/HeroGymMachine3D";
 import { WeeklyAtlasDetailReport } from "@/components/WeeklyAtlasDetailReport";
 import { HeroRecentEquipmentResume } from "@/components/HeroRecentEquipmentResume";
-import { HeroAtlasControl } from "@/components/HeroAtlasControl";
 import { ExplorePresetPanel } from "@/components/ExplorePresetPanel";
 import { SceneExperienceDialog } from "@/components/SceneExperienceDialog";
 import { RomStatusDashboard } from "@/components/RomStatusDashboard";
@@ -1889,17 +1887,6 @@ export default function Home() {
             </button>
           </div>
         </header>
-        <div className="axis-control-top">
-          <button
-            className={
-              axisVisible ? "axis-toggle-button is-on" : "axis-toggle-button"
-            }
-            onClick={() => setAxisVisible(current => !current)}
-            aria-pressed={axisVisible}
-          >
-            <Activity size={15} /> 중심축 {axisVisible ? "표시" : "숨김"}
-          </button>
-        </div>
 
         <main id="top">
           <nav className="mobile-quick-nav" aria-label="모바일 빠른 이동">
@@ -2013,46 +2000,18 @@ export default function Home() {
                 </div>
               </div>
               <div className="hero-workspace">
-                <div
-                  className="hero-atlas"
-                  aria-label={`오늘의 ${sessionDuration}분 ${sessionGoal === "strength" ? "기초 근력" : sessionGoal === "endurance" ? "심폐 리듬" : "전신 균형"} 세션 요약`}
-                >
-                  <div className="atlas-visual-head">
-                    <span>ATLAS / TODAY</span>
-                    <span className="atlas-ready">
-                      <i /> READY
-                    </span>
-                  </div>
-                  <HeroGymMachine3D
-                    goal={sessionGoal}
-                    environment={sessionEnvironment}
-                    completion={weeklyCompletionPercent}
-                    equipment={atlasInteraction.heroEquipment}
-                    resistance={atlasInteraction.resistance}
-                    nodes={atlasBlocks.slice(0, 3).map(block => block.label)}
-                    onEquipment={heroEquipment => {
-                      if (heroEquipment === atlasInteraction.heroEquipment)
-                        return;
-                      setAtlasInteraction(current => ({
-                        ...current,
-                        heroEquipment,
-                      }));
-                      playAtlasTransition(
-                        "route",
-                        `${{ cable: "케이블 머신", dumbbell: "덤벨", treadmill: "트레드밀" }[heroEquipment]} 장비를 선택했습니다.`
-                      );
-                    }}
-                    onResistance={resistance =>
-                      setAtlasInteraction(current => ({
-                        ...current,
-                        resistance,
-                      }))
-                    }
-                    onOpenNode={openAtlasNode}
-                  />
-                </div>
+                {/*
+                  드래그로 돌리는 의사(擬似) 3D 기구를 걷어냈다. rotateY 한 줄짜리 장식이라
+                  회전이 아무 값도 만들지 않았고, 홈에서 가장 큰 자리를 차지하면서 정작
+                  운동을 찾는 흐름을 아래로 밀어냈다. 실제로 하던 일은 장비 선택과 강도
+                  설정 두 가지뿐이라 그대로 읽히는 컨트롤로 남긴다.
+                  테마·모션 속도는 운동과 무관한 외형 설정이라 장면 설정으로 옮겼다.
+                */}
                 <div className="hero-workspace-bottom">
-                  <article className="hero-session-card">
+                  <article
+                    className="hero-session-card"
+                    aria-label={`오늘의 ${sessionDuration}분 ${sessionGoal === "strength" ? "기초 근력" : sessionGoal === "endurance" ? "심폐 리듬" : "전신 균형"} 세션 요약`}
+                  >
                     <p>{atlasRoute.label}</p>
                     <b>
                       {sessionDuration}
@@ -2080,6 +2039,69 @@ export default function Home() {
                       {machineSessionIntensity.label} RPE{" "}
                       {machineSessionIntensity.rpe}
                     </small>
+
+                    <div
+                      className="session-equipment-picker"
+                      role="group"
+                      aria-label="장비 선택"
+                    >
+                      {(
+                        [
+                          ["cable", "케이블"],
+                          ["dumbbell", "덤벨"],
+                          ["treadmill", "트레드밀"],
+                        ] as const
+                      ).map(([value, label]) => (
+                        <button
+                          key={value}
+                          type="button"
+                          aria-pressed={
+                            atlasInteraction.heroEquipment === value
+                          }
+                          className={
+                            atlasInteraction.heroEquipment === value
+                              ? "is-selected"
+                              : ""
+                          }
+                          onClick={() => {
+                            if (atlasInteraction.heroEquipment === value)
+                              return;
+                            setAtlasInteraction(current => ({
+                              ...current,
+                              heroEquipment: value,
+                            }));
+                            playAtlasTransition(
+                              "route",
+                              `${{ cable: "케이블 머신", dumbbell: "덤벨", treadmill: "트레드밀" }[value]} 장비를 선택했습니다.`
+                            );
+                          }}
+                        >
+                          {label}
+                        </button>
+                      ))}
+                    </div>
+
+                    <label className="session-resistance">
+                      <span>
+                        강도 <b>{atlasInteraction.resistance}%</b>
+                        <small>{machineSessionIntensity.label}</small>
+                      </span>
+                      <input
+                        type="range"
+                        min={20}
+                        max={90}
+                        step={2}
+                        value={atlasInteraction.resistance}
+                        aria-label="세션 강도"
+                        onChange={event =>
+                          setAtlasInteraction(current => ({
+                            ...current,
+                            resistance: Number(event.target.value),
+                          }))
+                        }
+                      />
+                    </label>
+
                     <button
                       className="hero-session-start"
                       onClick={startEquipmentSession}
@@ -2087,31 +2109,6 @@ export default function Home() {
                       이 장비로 세션 설계 <ArrowRight size={14} />
                     </button>
                   </article>
-                  <HeroAtlasControl
-                    theme={atlasTheme}
-                    motionSpeed={atlasInteraction.motionSpeed}
-                    onTheme={theme => {
-                      if (theme === atlasTheme) return;
-                      setAtlasTheme(theme);
-                      playAtlasTransition(
-                        "theme",
-                        `${{ lime: "라임", ocean: "오션", coral: "코랄", plum: "플럼" }[theme]} 테마를 적용했습니다.`
-                      );
-                    }}
-                    onMotionSpeed={speed => {
-                      if (speed === atlasInteraction.motionSpeed) return;
-                      setAtlasInteraction(current => ({
-                        ...current,
-                        motionSpeed: speed,
-                      }));
-                      playAtlasTransition(
-                        "route",
-                        `${{ slow: "느림", normal: "보통", fast: "빠름" }[speed]} 속도로 경로를 재생합니다.`
-                      );
-                    }}
-                    performanceText={`이번 주 ${weeklyPlanInsight.completed}/${weeklyPlanInsight.total || 0} · ${atlasPerformance === "surge" ? "신호 밀도 높음" : atlasPerformance === "active" ? "신호 흐름 활성" : "신호 준비 중"}`}
-                    feedback={atlasFeedback}
-                  />
                 </div>
               </div>
             </section>
@@ -2639,7 +2636,10 @@ export default function Home() {
                     </div>
                     <span>{atlasSessionPlan.adjustment}</span>
                   </div>
-                  <SessionComposition blocks={atlasBlocks} />
+                  <SessionComposition
+                    blocks={atlasBlocks}
+                    onOpenBlock={openAtlasNode}
+                  />
                   <div className="session-blocks">
                     {atlasSessionPlan.blocks.map((block, index) => (
                       <div key={block.label} className="session-block">
@@ -4245,6 +4245,22 @@ export default function Home() {
               setSceneExperience(current => ({ ...current, soundEnabled }))
             }
             onClose={() => setSceneSettingsOpen(false)}
+            theme={atlasTheme}
+            onChangeTheme={theme => {
+              if (theme === atlasTheme) return;
+              setAtlasTheme(theme);
+              playAtlasTransition(
+                "theme",
+                `${{ lime: "라임", ocean: "오션", coral: "코랄", plum: "플럼" }[theme]} 테마를 적용했습니다.`
+              );
+            }}
+            motionSpeed={atlasInteraction.motionSpeed}
+            onChangeMotionSpeed={motionSpeed => {
+              if (motionSpeed === atlasInteraction.motionSpeed) return;
+              setAtlasInteraction(current => ({ ...current, motionSpeed }));
+            }}
+            axisVisible={axisVisible}
+            onChangeAxisVisible={setAxisVisible}
           />
         )}
         {activeAtlasBlock && activeAtlasNode !== null && (

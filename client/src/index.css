@@ -7693,3 +7693,107 @@ main {
     min-height: 46px;
   }
 }
+
+/* ── 홈: 3D 기구를 걷어낸 자리의 장비·강도 컨트롤 ───────────────────────── */
+.session-equipment-picker {
+  display: flex;
+  gap: 8px;
+  margin-top: 14px;
+}
+.session-equipment-picker button {
+  flex: 1;
+  min-height: 40px;
+  padding: 8px 10px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: transparent;
+  color: inherit;
+  font-size: 13px;
+  font-weight: 600;
+}
+.session-equipment-picker button.is-selected {
+  border-color: var(--mint);
+  background: var(--mint);
+  color: var(--ink);
+}
+.session-resistance {
+  margin-top: 14px;
+  display: block;
+}
+.session-resistance > span {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  font-size: 13px;
+}
+.session-resistance b {
+  font-size: 17px;
+}
+.session-resistance small {
+  margin-left: auto;
+  opacity: 0.7;
+}
+.session-resistance input {
+  width: 100%;
+  min-height: 24px;
+  margin-top: 8px;
+}
+
+/* ── 장면 설정: 외형 옵션 ───────────────────────────────────────────────── */
+.scene-settings-group {
+  margin-top: 18px;
+  padding-top: 16px;
+  border-top: 1px solid var(--line);
+}
+.scene-settings-group h3 {
+  margin: 0 0 4px;
+  font-size: 14px;
+}
+.scene-settings-note {
+  margin: 0 0 12px;
+  font-size: 12px;
+  opacity: 0.7;
+}
+.scene-settings-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 10px;
+  font-size: 13px;
+}
+.scene-settings-row > span {
+  min-width: 92px;
+}
+.scene-settings-row > div {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+.scene-settings-row button {
+  min-height: 32px;
+  padding: 5px 11px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: transparent;
+  color: inherit;
+  font-size: 12px;
+}
+.scene-settings-row button.is-selected {
+  border-color: var(--mint);
+  background: var(--mint);
+  color: var(--ink);
+}
+
+/* 세션 구성 블록 — 홈 기구에 있던 편집 진입점을 세션 화면으로 옮겼다. */
+.session-composition-block {
+  min-height: 44px;
+  padding: 8px 10px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: transparent;
+  color: inherit;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}

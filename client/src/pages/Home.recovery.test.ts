@@ -82,54 +82,25 @@ describe("Home recovery alternative flow", () => {
     expect(document.querySelectorAll(".muscle-zone.is-primary").length).toBeGreaterThan(0);
   });
 
-  it("lets the hero cable machine rotate, adjust resistance, and open a session node", async () => {
+  it("장비를 고르고 강도를 조절하면 세션 안내에 반영된다", async () => {
+    // 드래그로 돌리던 의사 3D 기구를 걷어내고, 실제로 값을 만들던 장비·강도만 남겼다.
     render(createElement(Home));
-    const machine = await waitFor(() => screen.getByLabelText("직접 조작 가능한 3D 케이블 운동 장비"));
-    const canvas = machine.querySelector("svg") as SVGSVGElement;
-    fireEvent.pointerDown(canvas, { pointerId: 4, clientX: 90 });
-    fireEvent.pointerMove(canvas, { pointerId: 4, clientX: 150 });
-    fireEvent.pointerUp(canvas, { pointerId: 4, clientX: 150 });
-    expect(canvas.getAttribute("style")).toContain("rotateY(21deg)");
+    const picker = await waitFor(() => screen.getByRole("group", { name: "장비 선택" }));
+    fireEvent.click(within(picker).getByRole("button", { name: "덤벨" }));
+    expect(within(picker).getByRole("button", { name: "덤벨" }).getAttribute("aria-pressed")).toBe("true");
 
-    const resistance = within(machine).getByLabelText("케이블 저항 조절") as HTMLInputElement;
-    fireEvent.change(resistance, { target: { value: "77" } });
-    expect(resistance.value).toBe("77");
-    fireEvent.click(within(machine).getAllByRole("button", { name: /블록 상세 및 편집/ })[0]!);
-    expect(screen.getByRole("dialog")).toBeTruthy();
+    const resistance = screen.getByLabelText("세션 강도") as HTMLInputElement;
+    fireEvent.change(resistance, { target: { value: "78" } });
+    expect(resistance.value).toBe("78");
+    await waitFor(() => expect(screen.getAllByText(/78%/).length).toBeGreaterThan(0));
   });
 
-  it("switches the hero equipment and applies its resistance to the current session record", async () => {
+  it("장비를 바꾸고 강도를 올리면 현재 세션 기준에 반영된다", async () => {
     render(createElement(Home));
-    const cableMachine = await waitFor(() => screen.getByLabelText("직접 조작 가능한 3D 케이블 운동 장비"));
-    const equipmentControl = within(cableMachine).getByRole("group", { name: "메인 3D 운동 기구 선택" });
-
-    fireEvent.click(within(equipmentControl).getByRole("button", { name: "덤벨" }));
-    const dumbbellMachine = await waitFor(() => screen.getByLabelText("직접 조작 가능한 3D 덤벨 운동 장비"));
-    expect(within(dumbbellMachine).getByRole("button", { name: "덤벨" }).getAttribute("aria-pressed")).toBe("true");
-    const resistance = within(dumbbellMachine).getByLabelText("덤벨 부하 조절") as HTMLInputElement;
-    fireEvent.change(resistance, { target: { value: "77" } });
-
-    await waitFor(() => expect(screen.getAllByText(/전신 부하 77% · 집중 RPE 8/).length).toBeGreaterThan(0));
-    const [energy, sleep, stress, pain] = Array.from(document.querySelectorAll(".checkin-controls input")) as HTMLInputElement[];
-    fireEvent.change(energy!, { target: { value: "5" } });
-    fireEvent.change(sleep!, { target: { value: "5" } });
-    fireEvent.change(stress!, { target: { value: "1" } });
-    fireEvent.change(pain!, { target: { value: "1" } });
-    fireEvent.click(screen.getByRole("button", { name: "운동 기록 열기" }));
-    expect((screen.getByLabelText(/주관적 강도 RPE/) as HTMLInputElement).value).toBe("8");
-  });
-
-  it("offers equipment-specific resistance presets and updates the current intensity", async () => {
-    render(createElement(Home));
-    const cableMachine = await waitFor(() => screen.getByLabelText("직접 조작 가능한 3D 케이블 운동 장비"));
-    fireEvent.click(within(cableMachine).getByRole("button", { name: "케이블 집중 76% 프리셋" }));
-    expect((within(cableMachine).getByLabelText("케이블 저항 조절") as HTMLInputElement).value).toBe("76");
-    expect(screen.getByText("집중 · RPE 8")).toBeTruthy();
-
-    fireEvent.click(within(cableMachine).getByRole("button", { name: "트레드밀" }));
-    const treadmillMachine = await waitFor(() => screen.getByLabelText("직접 조작 가능한 3D 트레드밀 운동 장비"));
-    fireEvent.click(within(treadmillMachine).getByRole("button", { name: "트레드밀 페이스업 68% 프리셋" }));
-    expect((within(treadmillMachine).getByLabelText("트레드밀 페이스 조절") as HTMLInputElement).value).toBe("68");
+    const picker = await waitFor(() => screen.getByRole("group", { name: "장비 선택" }));
+    fireEvent.click(within(picker).getByRole("button", { name: "덤벨" }));
+    fireEvent.change(screen.getByLabelText("세션 강도") as HTMLInputElement, { target: { value: "78" } });
+    await waitFor(() => expect(screen.getAllByText(/78% · 집중 RPE 8/).length).toBeGreaterThan(0));
   });
 
   it("renders the action-first start panel and opens the independent current session scene", async () => {
@@ -146,25 +117,22 @@ describe("Home recovery alternative flow", () => {
     expect(screen.getByRole("heading", { name: "30분 전신 균형 세션 · 집·매트" })).toBeTruthy();
   });
 
-  it("keeps hero status, machine controls, session readout, and atlas controls on separate surfaces", async () => {
+  it("히어로에는 상태 요약과 세션 카드만 남기고 외형 설정은 두지 않는다", async () => {
     render(createElement(Home));
     const workspace = document.querySelector(".hero-workspace");
     expect(workspace).toBeTruthy();
     expect(screen.getByLabelText("오늘 운동 상태 요약")).toBeTruthy();
-    expect(within(workspace as HTMLElement).getByLabelText("직접 조작 가능한 3D 케이블 운동 장비")).toBeTruthy();
     expect(within(workspace as HTMLElement).getByText("BALANCE ROUTE")).toBeTruthy();
-    await waitFor(() => expect(within(workspace as HTMLElement).getByRole("group", { name: "아틀라스 제어" })).toBeTruthy());
-    expect(document.querySelector(".hero-atlas .hero-session-card")).toBeNull();
-    expect(document.querySelector(".hero-atlas .atlas-theme-control")).toBeNull();
+    // 테마·모션 속도는 장면 설정으로 옮겼다.
+    expect(document.querySelector(".hero-workspace .atlas-theme-control")).toBeNull();
+    expect(screen.queryByRole("group", { name: "아틀라스 제어" })).toBeNull();
   });
 
-  it("starts a matching session goal from the selected hero equipment", async () => {
+  it("고른 장비에 맞는 목표로 세션을 시작한다", async () => {
     render(createElement(Home));
-    const cableMachine = await waitFor(() => screen.getByLabelText("직접 조작 가능한 3D 케이블 운동 장비"));
-    fireEvent.click(within(cableMachine).getByRole("button", { name: "트레드밀" }));
-    const treadmillMachine = await waitFor(() => screen.getByLabelText("직접 조작 가능한 3D 트레드밀 운동 장비"));
-
-    fireEvent.click(within(treadmillMachine.closest(".hero-workspace") as HTMLElement).getByRole("button", { name: "이 장비로 세션 설계" }));
+    const picker = await waitFor(() => screen.getByRole("group", { name: "장비 선택" }));
+    fireEvent.click(within(picker).getByRole("button", { name: "트레드밀" }));
+    fireEvent.click(screen.getByRole("button", { name: "이 장비로 세션 설계" }));
 
     await waitFor(() => expect(document.querySelector(".site-shell")?.classList.contains("scene-session")).toBe(true));
     expect(screen.getByRole("heading", { name: "30분 심폐 리듬 세션 · 집·매트" })).toBeTruthy();
@@ -257,11 +225,10 @@ describe("Home recovery alternative flow", () => {
     expect(screen.queryByRole("button", { name: "집 운동 프리셋 삭제" })).toBeNull();
   });
 
-  it("restores a recently started equipment session and resumes its matching goal", async () => {
+  it("최근 시작한 장비 세션을 다시 이어간다", async () => {
     render(createElement(Home));
-    const cableMachine = await waitFor(() => screen.getByLabelText("직접 조작 가능한 3D 케이블 운동 장비"));
-    fireEvent.click(within(cableMachine).getByRole("button", { name: "덤벨" }));
-    const dumbbellMachine = await waitFor(() => screen.getByLabelText("직접 조작 가능한 3D 덤벨 운동 장비"));
+    const picker = await waitFor(() => screen.getByRole("group", { name: "장비 선택" }));
+    fireEvent.click(within(picker).getByRole("button", { name: "덤벨" }));
     fireEvent.click(screen.getByRole("button", { name: "이 장비로 세션 설계" }));
     await waitFor(() => expect(screen.getByRole("button", { name: "최근 덤벨 54% 설정으로 세션 다시 시작" })).toBeTruthy());
 
@@ -269,7 +236,6 @@ describe("Home recovery alternative flow", () => {
     render(createElement(Home));
     expect(screen.getByRole("button", { name: "최근 세션 이어하기" })).toBeTruthy();
     fireEvent.click(screen.getByRole("button", { name: "최근 세션 이어하기" }));
-
     expect(screen.getByRole("heading", { name: "30분 전신 균형 세션 · 집·매트" })).toBeTruthy();
   });
 
@@ -325,28 +291,35 @@ describe("Home recovery alternative flow", () => {
     ["회복 시작", "생활 습관", "유산소", "무점프", "안전"].forEach((name) => expect(within(wellnessNavigation).getByRole("button", { name })).toBeTruthy());
   });
 
-  it("lets the user change and restore a preferred atlas theme locally", () => {
+  it("장면 설정에서 테마를 바꾸면 저장되고 다시 열어도 유지된다", async () => {
     render(createElement(Home));
-    const oceanTheme = screen.getByRole("button", { name: "오션 테마 선택" });
-    fireEvent.click(oceanTheme);
-    expect(oceanTheme.getAttribute("aria-pressed")).toBe("true");
-    expect(screen.getByText("오션 테마를 적용했습니다.")).toBeTruthy();
+    fireEvent.click(screen.getAllByRole("button", { name: /장면 설정/ })[0]!);
+    const themeGroup = await waitFor(() => screen.getByRole("group", { name: "테마 선택" }));
+    fireEvent.click(within(themeGroup).getByRole("button", { name: "오션" }));
     expect(document.querySelector(".site-shell")?.className).toContain("atlas-theme-ocean");
     cleanup();
+
     render(createElement(Home));
-    expect(screen.getByRole("button", { name: "오션 테마 선택" }).getAttribute("aria-pressed")).toBe("true");
+    expect(document.querySelector(".site-shell")?.className).toContain("atlas-theme-ocean");
   });
 
-  it("opens an atlas node editor, stores a block edit, and changes the route speed", () => {
+  it("세션 화면에서 블록을 편집하고, 장면 설정에서 속도를 바꾼다", async () => {
+    // 블록 편집 진입점을 홈 기구에서 세션 구성(TIME MIX)으로 옮겼다.
     render(createElement(Home));
-    fireEvent.click(screen.getByRole("button", { name: "준비 블록 상세 및 편집" }));
+    fireEvent.click(screen.getAllByRole("button", { name: /오늘 세션/ })[0]!);
+    await waitFor(() => expect(document.querySelector(".site-shell")?.classList.contains("scene-session")).toBe(true));
+
+    fireEvent.click(await waitFor(() => screen.getByRole("button", { name: "준비 블록 상세 및 편집" })));
     expect(screen.getByRole("heading", { name: "준비 블록 편집" })).toBeTruthy();
     fireEvent.change(screen.getByLabelText("블록 이름"), { target: { value: "리듬 준비" } });
     fireEvent.change(screen.getByLabelText("움직임 · 한 줄에 하나씩"), { target: { value: "편안한 걷기\n캣·카우 · 6회" } });
     fireEvent.click(screen.getByRole("button", { name: /블록 저장/ }));
     expect(screen.queryByRole("dialog", { name: /블록 편집/ })).toBeNull();
     expect(screen.getByText("리듬 준비 · 약 5분")).toBeTruthy();
-    fireEvent.click(screen.getByRole("button", { name: /빠름/ }));
+
+    fireEvent.click(screen.getAllByRole("button", { name: /장면 설정/ })[0]!);
+    const speeds = await waitFor(() => screen.getByRole("group", { name: "모션 속도 선택" }));
+    fireEvent.click(within(speeds).getByRole("button", { name: "빠름" }));
     expect(document.querySelector(".site-shell")?.className).toContain("atlas-speed-fast");
   });
 
@@ -465,14 +438,14 @@ describe("Home recovery alternative flow", () => {
     expect(screen.getByLabelText("주간 피로 통증 및 추천 ROM 대시보드")).toBeTruthy();
   });
 
-  it("filters the library by ROM size and lets the top control hide joint axes", () => {
+  it("장면 설정에서 중심축을 끄고, 라이브러리를 ROM 크기로 거른다", async () => {
     render(createElement(Home));
-    const axisToggle = screen.getByRole("button", { name: "중심축 표시" });
-    fireEvent.click(axisToggle);
-    expect(axisToggle.getAttribute("aria-pressed")).toBe("false");
-    cleanup();
-    render(createElement(Home));
-    expect(screen.getByRole("button", { name: "중심축 숨김" }).getAttribute("aria-pressed")).toBe("false");
+    fireEvent.click(screen.getAllByRole("button", { name: /장면 설정/ })[0]!);
+    const axis = await waitFor(() => screen.getByRole("button", { name: "표시" }));
+    fireEvent.click(axis);
+    await waitFor(() => expect(screen.getByRole("button", { name: "숨김" })).toBeTruthy());
+    fireEvent.click(screen.getByRole("button", { name: /닫기/ }));
+
     const smallRomFilter = screen.getByRole("button", { name: "ROM · 작음" });
     fireEvent.click(smallRomFilter);
     expect(smallRomFilter.getAttribute("aria-pressed")).toBe("true");
