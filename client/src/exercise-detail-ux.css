@@ -71,13 +71,6 @@
   line-height: 1.65;
 }
 
-.exercise-card .card-expand {
-  min-height: 46px;
-  margin-top: 17px;
-  padding: 10px 12px;
-  border-radius: 10px;
-}
-
 @media (max-width: 700px) {
   .exercise-detail {
     gap: 13px;
@@ -93,9 +86,5 @@
   .text-guide-sequence li {
     min-height: 54px;
     padding: 10px;
-  }
-
-  .exercise-card .card-expand {
-    min-height: 50px;
   }
 }

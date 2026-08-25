@@ -38,9 +38,6 @@
   line-height: 1.2;
 }
 .exercise-card .exercise-meta {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 7px;
   margin-top: 13px;
   padding: 0;
   border: 0;
@@ -50,11 +47,8 @@
   grid-template-columns: 15px auto minmax(0, 1fr);
   align-items: center;
   gap: 4px;
-  min-height: 37px;
-  padding: 7px 8px;
   border: 1px solid #e0e8dc;
   border-radius: 9px;
-  background: #f8faf5;
 }
 .exercise-card .exercise-meta span::before {
   display: none;

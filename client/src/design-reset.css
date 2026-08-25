@@ -21,11 +21,6 @@
   --shadow: 0 12px 34px rgba(30, 49, 82, 0.08);
   --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
 }
-html,
-body,
-.site-shell {
-  background: var(--paper);
-}
 body {
   font-family:
     "Noto Sans KR",
@@ -33,7 +28,6 @@ body {
     BlinkMacSystemFont,
     "Segoe UI",
     sans-serif;
-  color: var(--ink);
   letter-spacing: -0.025em;
 }
 button,
@@ -68,39 +62,25 @@ textarea {
   font-family: "IBM Plex Mono", monospace;
   font-size: 12px;
   font-weight: 500;
-  letter-spacing: 0.08em;
 }
 .brand-mark {
   width: 32px;
   height: 32px;
-  color: #fff;
-  border-radius: 10px;
-  background: var(--accent);
-  box-shadow: 0 6px 14px rgba(91, 102, 242, 0.24);
 }
 .nav {
   gap: clamp(18px, 2.4vw, 34px);
 }
 .nav a,
 .ghost-button {
-  color: #65738b;
-  font-size: 13px;
   font-weight: 600;
-}
-.nav a:hover,
-.nav a[aria-current="page"],
-.ghost-button:hover {
-  color: var(--accent-deep);
 }
 .mobile-only {
   display: none;
 }
 .login-button {
   padding: 8px 11px;
-  color: #53617a;
   border: 1px solid var(--line);
   border-radius: 10px;
-  background: var(--surface);
   font-size: 11px;
 }
 .topbar-actions {
@@ -119,17 +99,6 @@ textarea {
     transform 0.16s var(--ease-out),
     box-shadow 0.16s var(--ease-out),
     background 0.16s var(--ease-out);
-}
-.dark-button,
-.light-button {
-  color: #fff;
-  background: var(--accent);
-  box-shadow: 0 7px 16px rgba(91, 102, 242, 0.22);
-}
-.dark-button:hover,
-.light-button:hover {
-  background: var(--accent-deep);
-  box-shadow: 0 10px 19px rgba(91, 102, 242, 0.28);
 }
 .outline-button {
   color: #52617a;
@@ -159,11 +128,6 @@ textarea {
   background: rgba(255, 255, 255, 0.94);
   box-shadow: 0 7px 18px rgba(24, 42, 74, 0.08);
 }
-.axis-toggle-button.is-on {
-  color: #fff;
-  border-color: var(--accent);
-  background: var(--accent);
-}
 
 /* First impression: no campaign poster, a precise personal workspace. */
 .hero {
@@ -183,12 +147,8 @@ textarea {
   right: 7%;
   border: 1px solid rgba(91, 102, 242, 0.13);
   border-radius: 50%;
-  box-shadow:
-    0 0 0 62px rgba(91, 102, 242, 0.035),
-    0 0 0 124px rgba(91, 102, 242, 0.022);
 }
 .hero-noise {
-  opacity: 0.2;
   background-image: radial-gradient(
     rgba(74, 93, 141, 0.25) 0.6px,
     transparent 0.75px
@@ -206,16 +166,11 @@ textarea {
   color: var(--accent);
 }
 .hero h1 {
-  max-width: 720px;
-  color: var(--ink);
   font-family: "Noto Sans KR", sans-serif;
-  font-size: clamp(42px, 5.15vw, 70px);
   font-weight: 800;
   letter-spacing: -0.075em;
-  line-height: 1.18;
 }
 .hero h1 em {
-  color: var(--accent);
   font-style: normal;
 }
 .hero-description {
@@ -226,22 +181,12 @@ textarea {
 .local-first-note {
   color: #6f7d93;
 }
-.local-first-note strong {
-  color: var(--accent-deep);
-}
 .text-button {
   color: var(--accent-deep);
   font-size: 12px;
 }
 .hero-atlas {
-  width: min(100%, 462px);
-  height: 390px;
   padding: 14px;
-  border: 1px solid rgba(142, 159, 207, 0.25);
-  border-radius: 28px;
-  background: rgba(255, 255, 255, 0.58);
-  box-shadow: 0 24px 58px rgba(52, 72, 126, 0.16);
-  transform: rotate(1.5deg);
 }
 .hero-performance-image {
   border-radius: 18px;
@@ -259,14 +204,10 @@ textarea {
   right: 25px;
   bottom: 26px;
   padding: 13px;
-  color: #fff;
   border-radius: 14px;
-  background: var(--accent);
-  box-shadow: 0 8px 18px rgba(57, 66, 179, 0.34);
 }
 .hero-performance-tag span,
 .hero-performance-tag small {
-  color: rgba(255, 255, 255, 0.74);
   font-family: "IBM Plex Mono", monospace;
 }
 .atlas-stat {
@@ -288,11 +229,9 @@ textarea {
   font-weight: 800;
 }
 .atlas-caption {
-  color: #dbe1ff;
   font-family: "IBM Plex Mono", monospace;
 }
 .hero-footer {
-  color: #65748d;
   font-size: 11px;
 }
 
@@ -321,7 +260,6 @@ textarea {
   letter-spacing: -0.06em;
 }
 .start-dock-intro h2 em {
-  color: var(--accent);
   font-style: normal;
 }
 .start-dock-intro p:last-child {
@@ -340,7 +278,6 @@ textarea {
     transform 0.18s var(--ease-out);
 }
 .start-action:hover {
-  background: var(--accent-soft);
   transform: translateY(-2px);
 }
 .start-action span {
@@ -350,18 +287,6 @@ textarea {
   font-family: "Noto Sans KR", sans-serif;
   font-size: 15px;
   font-weight: 700;
-}
-.start-action svg:last-child {
-  color: var(--accent);
-}
-.start-action-session {
-  background: #f4f5ff;
-}
-.start-action-record {
-  background: #f8fbff;
-}
-.start-action-recover {
-  background: #f4fbf8;
 }
 .today-command {
   max-width: 1180px;
@@ -393,7 +318,6 @@ textarea {
 .today-command-meta article {
   border: 1px solid var(--line);
   border-radius: 16px;
-  background: var(--surface-soft);
 }
 .today-command-meta span {
   color: #79879e;
@@ -413,26 +337,19 @@ textarea {
   padding: 112px clamp(20px, 8vw, 128px);
 }
 .section-heading {
-  max-width: 1180px;
   margin: 0 auto 38px;
 }
 .section-heading h2 {
-  color: var(--ink);
   font-family: "Noto Sans KR", sans-serif;
-  font-size: clamp(30px, 3.6vw, 49px);
   font-weight: 800;
   letter-spacing: -0.065em;
-  line-height: 1.25;
 }
 .section-description {
-  color: #65748c;
   font-size: 14px;
   line-height: 1.8;
 }
 .library-count {
-  color: #63718b;
   border-color: var(--line);
-  background: var(--surface);
   font-family: "IBM Plex Mono", monospace;
 }
 .program-section,
@@ -447,11 +364,6 @@ textarea {
 .seated-recovery-section {
   background: transparent;
 }
-.program-section,
-.explore-section,
-.progress-section {
-  background: #f1f5fb;
-}
 .program-grid,
 .anatomy-grid,
 .session-builder,
@@ -464,10 +376,6 @@ textarea {
   background: var(--surface);
   box-shadow: var(--shadow);
 }
-.program-selector,
-.session-options {
-  background: #f3f5ff;
-}
 .goal-pills button,
 .session-choice-group button,
 .routine-goals button {
@@ -475,13 +383,6 @@ textarea {
   border-color: var(--line);
   border-radius: 11px;
   background: var(--surface);
-}
-.goal-pills button.is-selected,
-.session-choice-group button.is-selected,
-.routine-goals button.is-selected {
-  color: #fff;
-  border-color: var(--accent);
-  background: var(--accent);
 }
 .program-note,
 .session-local-note {
@@ -547,12 +448,6 @@ textarea {
   border-radius: 12px;
   background: #f8faff;
 }
-.checkin-controls b {
-  color: var(--accent-deep);
-}
-.checkin-controls input {
-  accent-color: var(--accent);
-}
 .session-launcher,
 .recovery-start {
   border: 1px solid var(--line);
@@ -568,16 +463,10 @@ textarea {
 .explore-paths button:hover,
 .explore-paths button.is-selected {
   color: var(--ink);
-  border-color: #bfc5ff;
-  background: var(--accent-soft);
-  box-shadow: 0 8px 18px rgba(91, 102, 242, 0.09);
 }
 .session-current-state,
 .explore-selection-state {
   color: #53617a;
-  border-color: var(--line);
-  border-radius: 14px;
-  background: #f8faff;
 }
 .session-current-state b,
 .explore-selection-state b {
@@ -590,15 +479,8 @@ textarea {
   color: #4b5bbb;
   background: var(--accent-soft);
 }
-.session-block {
-  border-color: var(--line);
-}
 .session-block > span {
-  color: var(--accent);
   font-family: "IBM Plex Mono", monospace;
-}
-.session-save-button {
-  background: var(--accent);
 }
 .session-log-button {
   color: #57667f;
@@ -618,7 +500,6 @@ textarea {
   margin-left: auto;
 }
 .search-field {
-  height: 58px;
   border-color: var(--line);
   border-radius: 16px;
   color: var(--accent);
@@ -653,18 +534,6 @@ textarea {
   border-color: var(--line);
   background: #fff;
 }
-.quick-category-options button.filter-active,
-.filter-scroll button.filter-active,
-.rom-filter button.is-selected {
-  color: #fff;
-  border-color: var(--accent);
-  background: var(--accent);
-}
-.advanced-filter-control button {
-  color: var(--accent-deep);
-  border-color: #cdd2ff;
-  background: var(--accent-soft);
-}
 .exercise-grid,
 .saved-exercise-panels {
   max-width: 1180px;
@@ -673,14 +542,6 @@ textarea {
 }
 .exercise-card {
   padding: 21px;
-  border-color: var(--line);
-  border-radius: 18px;
-  background: var(--surface);
-  box-shadow: 0 5px 15px rgba(31, 52, 92, 0.035);
-}
-.exercise-card:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 13px 27px rgba(38, 58, 99, 0.1);
 }
 .exercise-top,
 .english-name,
@@ -694,7 +555,6 @@ textarea {
 .exercise-card h3 {
   color: var(--ink);
   font-family: "Noto Sans KR", sans-serif;
-  font-size: 20px;
   font-weight: 800;
   letter-spacing: -0.05em;
 }
@@ -704,18 +564,7 @@ textarea {
 .exercise-finish {
   color: #63728b;
 }
-.tag-row span,
-.benefit-row span,
-.balance-tags span {
-  color: #4f5eb6;
-  background: var(--accent-soft);
-}
-.tag-row .focus-tag {
-  color: #0c8065;
-  background: #e9f8f4;
-}
 .card-expand {
-  color: var(--accent-deep);
   border-color: var(--line);
 }
 .exercise-detail,
@@ -725,18 +574,6 @@ textarea {
 .empty-library {
   color: #6c7b93;
   border-color: #bfc9d7;
-  background: rgba(255, 255, 255, 0.55);
-}
-.body-map-card {
-  background: linear-gradient(145deg, #eff2ff, #e4eefb);
-}
-.anatomy-zone:hover,
-.anatomy-zone.is-active {
-  fill: var(--accent);
-  filter: drop-shadow(0 0 6px rgba(91, 102, 242, 0.36));
-}
-.anatomy-info {
-  background: var(--surface);
 }
 .region-title h3,
 .recovery-card h3,
@@ -792,10 +629,6 @@ textarea {
   background: var(--surface);
   box-shadow: 0 5px 16px rgba(28, 48, 85, 0.035);
 }
-.metric-icon {
-  color: #fff;
-  background: var(--accent);
-}
 .metric-card p,
 .metric-card small,
 .calendar-empty,
@@ -820,33 +653,13 @@ textarea {
   color: #c4ccff;
   border-color: rgba(196, 204, 255, 0.4);
 }
-.volume-column i,
-.four-week-bar-track i {
-  background: var(--accent);
-}
-.week-calendar .has-activity {
-  border-color: var(--accent);
-  background: var(--accent);
-}
-.wellness-card {
-  border-radius: 20px;
-  box-shadow: var(--shadow);
-}
 .tone-plum {
   color: #f7f8ff;
   background: #374069;
 }
-.tone-sand {
-  color: #4d483c;
-  background: #f2e9d7;
-}
 .tone-ink {
   color: #f8f9ff;
   background: #25335f;
-}
-.wellness-detail {
-  color: #506078;
-  background: rgba(255, 255, 255, 0.86);
 }
 .interval-card {
   padding: 21px;
@@ -871,10 +684,6 @@ textarea {
 .evidence-section .eyebrow,
 .evidence-section a {
   color: #bac3ff;
-}
-.site-footer {
-  color: #738198;
-  background: #eaf0f7;
 }
 .modal-backdrop {
   background: rgba(27, 40, 72, 0.38);
@@ -910,22 +719,7 @@ textarea {
   background: rgba(255, 255, 255, 0.96);
   box-shadow: 0 -8px 22px rgba(27, 45, 81, 0.09);
 }
-.mobile-quick-nav a,
-.mobile-quick-nav button {
-  color: #68778e;
-}
-.mobile-quick-nav a:first-child,
-.mobile-quick-nav button {
-  color: var(--accent);
-}
-:where(button, a, input, select):focus-visible {
-  outline-color: var(--accent);
-}
 @media (max-width: 700px) {
-  .topbar {
-    height: 68px;
-    background: rgba(246, 248, 251, 0.96);
-  }
   .brand {
     font-size: 11px;
   }
@@ -935,10 +729,8 @@ textarea {
     border-radius: 9px;
   }
   .nav {
-    top: 68px;
     padding: 20px;
     border-bottom-color: var(--line);
-    background: #fff;
     box-shadow: 0 16px 32px rgba(27, 45, 81, 0.11);
   }
   .axis-control-top {
@@ -949,10 +741,6 @@ textarea {
     min-height: 38px;
     font-size: 11px;
   }
-  .hero {
-    min-height: auto;
-    padding: 58px 22px 42px;
-  }
   .hero:before {
     width: 360px;
     height: 360px;
@@ -960,26 +748,16 @@ textarea {
     right: -160px;
   }
   .hero h1 {
-    font-size: clamp(35px, 10.8vw, 50px);
     line-height: 1.22;
   }
   .hero-description {
     font-size: 13px;
   }
-  .hero-atlas {
-    height: 300px;
-    margin-top: 26px;
-    transform: rotate(0);
-  }
   .hero-footer {
     display: none;
   }
   .start-dock {
-    margin: -12px 14px 0;
     border-radius: 20px;
-  }
-  .start-dock-intro {
-    padding: 25px 20px;
   }
   .start-dock-actions {
     grid-template-columns: repeat(2, 1fr);
@@ -992,7 +770,6 @@ textarea {
     font-size: 13px;
   }
   .today-command {
-    margin: 28px 20px 0;
     padding: 21px;
     border-radius: 19px;
   }
@@ -1008,26 +785,12 @@ textarea {
   .today-command-meta p {
     font-size: 9px;
   }
-  .section-pad {
-    padding: 76px 20px;
-  }
   .section-heading h2 {
     font-size: 30px;
     line-height: 1.3;
   }
   .section-description {
     font-size: 13px;
-  }
-  .program-grid,
-  .anatomy-grid,
-  .session-builder,
-  .routine-card,
-  .checkin-card,
-  .session-launcher,
-  .recovery-start,
-  .recovery-toolkit,
-  .four-week-card {
-    border-radius: 18px;
   }
   .exercise-card,
   .metric-card,
@@ -1045,9 +808,6 @@ textarea {
   }
   .mobile-quick-nav {
     padding-bottom: max(9px, env(safe-area-inset-bottom));
-  }
-  .site-footer {
-    padding-bottom: 78px;
   }
 }
 @media (prefers-reduced-motion: reduce) {
@@ -1075,30 +835,8 @@ textarea {
   --mint: #d8ff4f;
   --atlas-lime: #d8ff4f;
 }
-html,
-body,
-.site-shell {
-  background: var(--paper);
-}
 .topbar {
   background: rgba(248, 248, 243, 0.9);
-}
-.brand-mark {
-  color: var(--ink);
-  background: var(--accent);
-  box-shadow: 0 6px 14px rgba(151, 184, 25, 0.2);
-}
-.dark-button,
-.light-button {
-  color: var(--ink);
-  background: var(--accent);
-  box-shadow: 0 7px 16px rgba(151, 184, 25, 0.2);
-}
-.dark-button:hover,
-.light-button:hover {
-  color: var(--ink);
-  background: #c6eb42;
-  box-shadow: 0 10px 19px rgba(151, 184, 25, 0.25);
 }
 .axis-toggle-button.is-on {
   color: var(--ink);
@@ -1117,12 +855,6 @@ body,
   box-shadow:
     0 0 0 62px rgba(151, 184, 25, 0.045),
     0 0 0 124px rgba(151, 184, 25, 0.024);
-}
-.hero h1 em {
-  color: #71890e;
-}
-.local-first-note strong {
-  color: #647b08;
 }
 .hero-performance-tag {
   color: var(--ink);
@@ -1217,34 +949,12 @@ body,
   color: var(--ink);
   background: var(--accent);
 }
-.session-current-state,
-.explore-selection-state {
-  background: #f7f9f2;
-}
 .quick-category-options button.filter-active,
 .filter-scroll button.filter-active,
 .rom-filter button.is-selected {
   color: var(--ink);
   border-color: var(--accent);
   background: var(--accent);
-}
-.advanced-filter-control button {
-  color: #5e730b;
-  border-color: #d2e995;
-  background: var(--accent-soft);
-}
-.tag-row span,
-.benefit-row span,
-.balance-tags span {
-  color: #5c710a;
-  background: var(--accent-soft);
-}
-.tag-row .focus-tag {
-  color: #09745c;
-  background: #e8f8f0;
-}
-.card-expand {
-  color: #657b0b;
 }
 .section-heading > div {
   position: relative;
@@ -1260,42 +970,17 @@ body,
   width: 15px;
   height: 15px;
   place-items: center;
-  color: #6f850e;
   border: 1px solid #cfd8a6;
-  border-radius: 3px;
-  background: #fbfdf1;
   font-size: 12px;
   line-height: 1;
 }
 .section-heading h2::after {
   content: "";
   display: block;
-  width: 42px;
-  height: 3px;
-  margin-top: 16px;
   border-radius: 999px;
-  background: var(--accent);
 }
 .body-map-card {
   background: linear-gradient(145deg, #f2f7e8, #e7efe2);
-}
-.anatomy-zone:hover,
-.anatomy-zone.is-active {
-  fill: #a7c525;
-  filter: drop-shadow(0 0 6px rgba(151, 184, 25, 0.35));
-}
-.metric-icon {
-  color: var(--ink);
-  background: var(--accent);
-}
-.volume-column i,
-.four-week-bar-track i {
-  background: #9bbb20;
-}
-.week-calendar .has-activity {
-  color: var(--ink);
-  border-color: var(--accent);
-  background: var(--accent);
 }
 
 /* Formerly isolated dark-green regions now participate in the same atlas system. */
@@ -1478,16 +1163,12 @@ body,
   color: var(--ink);
   background: var(--accent-soft);
 }
-.toolkit-grid article {
-  background: #f4f7ef;
-}
 .toolkit-grid ul,
 .toolkit-red-flags ul {
   color: #617188;
 }
 .toolkit-red-flags {
   color: #894d45;
-  background: #fff3f0;
 }
 .toolkit-red-flags li {
   color: #894d45;
@@ -1506,10 +1187,6 @@ body,
 .completion-celebration button {
   color: var(--ink);
   background: var(--accent);
-}
-.mobile-quick-nav a:first-child,
-.mobile-quick-nav button {
-  color: #667d0d;
 }
 :where(button, a, input, select):focus-visible {
   outline-color: #a6c623;
@@ -1541,47 +1218,18 @@ body,
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  color: #61770a;
   font-size: 9px;
 }
 .atlas-ready i {
   width: 7px;
   height: 7px;
   border-radius: 50%;
-  background: var(--accent);
-  box-shadow: 0 0 0 4px rgba(216, 255, 79, 0.3);
 }
 .motion-map {
   position: absolute;
   inset: 42px 10px 18px;
   overflow: hidden;
   border-radius: 18px;
-  background:
-    radial-gradient(
-      circle at 50% 52%,
-      transparent 0,
-      transparent 55px,
-      rgba(89, 110, 18, 0.3) 56px,
-      transparent 57px,
-      transparent 108px,
-      rgba(89, 110, 18, 0.22) 109px,
-      transparent 110px,
-      transparent 158px,
-      rgba(89, 110, 18, 0.22) 159px,
-      transparent 160px
-    ),
-    repeating-linear-gradient(
-      90deg,
-      transparent 0,
-      transparent 44px,
-      rgba(20, 33, 61, 0.05) 45px
-    ),
-    repeating-linear-gradient(
-      0deg,
-      transparent 0,
-      transparent 44px,
-      rgba(20, 33, 61, 0.05) 45px
-    );
 }
 .motion-map::before,
 .motion-map::after {
@@ -1591,34 +1239,13 @@ body,
   transform-origin: 0 50%;
 }
 .motion-map::before {
-  width: 250px;
-  top: 98px;
-  left: 67px;
-  background: #91ae20;
   transform: rotate(29deg);
-  box-shadow: 222px 120px 0 -1px #14213d;
 }
 .motion-map::after {
   top: 56px;
   right: 74px;
   width: 18px;
   height: 18px;
-  background:
-    linear-gradient(
-      90deg,
-      transparent 45%,
-      #809414 45%,
-      #809414 55%,
-      transparent 55%
-    ),
-    linear-gradient(
-      0deg,
-      transparent 45%,
-      #809414 45%,
-      #809414 55%,
-      transparent 55%
-    );
-  box-shadow: -29px 270px 0 -5px #809414;
 }
 .route-node {
   position: absolute;
@@ -1630,27 +1257,15 @@ body,
   color: #14213d;
   border: 1px solid #7f9915;
   border-radius: 50%;
-  background: #f9fedf;
-  box-shadow: 0 0 0 5px rgba(216, 255, 79, 0.22);
   font-family: "IBM Plex Mono", monospace;
   font-size: 9px;
   font-weight: 500;
 }
-.node-a {
-  top: 80px;
-  left: 50px;
-}
 .node-b {
-  top: 190px;
-  left: 286px;
   color: #fff;
   border-color: #14213d;
   background: #14213d;
   box-shadow: 0 0 0 5px rgba(20, 33, 61, 0.1);
-}
-.node-c {
-  top: 146px;
-  left: 160px;
 }
 .hero-session-card {
   position: absolute;
@@ -1659,11 +1274,8 @@ body,
   bottom: 21px;
   display: grid;
   gap: 2px;
-  width: 184px;
   padding: 15px;
-  color: #edf6d9;
   border-radius: 14px;
-  background: #14213d;
   box-shadow: 0 12px 24px rgba(20, 33, 61, 0.18);
 }
 .hero-session-card p {
@@ -1695,27 +1307,14 @@ body,
 .hero-atlas .atlas-stat {
   z-index: 4;
 }
-.hero-atlas .stat-one {
-  top: 64px;
-  right: 16px;
-}
-.hero-atlas .stat-two {
-  bottom: 38px;
-  left: 18px;
-}
 .hero-atlas .atlas-caption {
   z-index: 4;
   right: 22px;
-  bottom: 172px;
-  color: #748411;
 }
 @media (max-width: 700px) {
   .hero-atlas {
     padding: 16px;
     transform: none;
-  }
-  .motion-map {
-    inset: 38px 7px 10px;
   }
   .orbit-a {
     width: 260px;
@@ -1740,31 +1339,11 @@ body,
     width: 130px;
     left: 130px;
   }
-  .node-a {
-    left: 25px;
-  }
-  .node-b {
-    left: 225px;
-  }
-  .node-c {
-    left: 120px;
-  }
   .hero-session-card {
-    right: 14px;
-    bottom: 14px;
-    width: 155px;
     padding: 12px;
   }
   .hero-session-card b {
     font-size: 28px;
-  }
-  .hero-atlas .stat-one {
-    top: 52px;
-    right: 10px;
-  }
-  .hero-atlas .stat-two {
-    left: 10px;
-    bottom: 28px;
   }
   .hero-atlas .atlas-caption {
     display: none;
@@ -1808,18 +1387,12 @@ body,
   min-height: 660px;
 }
 .hero-atlas {
-  width: min(100%, 520px);
-  height: 456px;
   border-color: color-mix(in srgb, var(--atlas-signal) 38%, #cbd6ba);
-  background: linear-gradient(145deg, #fffef7, var(--atlas-panel));
-  box-shadow: 0 28px 64px
-    color-mix(in srgb, var(--atlas-signal-deep) 14%, transparent);
 }
 .atlas-ready {
   color: var(--atlas-signal-deep);
 }
 .atlas-ready i {
-  background: var(--atlas-signal);
   box-shadow: 0 0 0 4px color-mix(in srgb, var(--atlas-signal) 30%, transparent);
 }
 .motion-map {
@@ -1929,9 +1502,6 @@ body,
   width: 164px;
   padding: 10px;
   border: 1px solid color-mix(in srgb, var(--atlas-signal) 40%, #d9e1cf);
-  border-radius: 12px;
-  background: rgba(255, 255, 250, 0.9);
-  box-shadow: 0 9px 20px rgba(31, 48, 45, 0.08);
   backdrop-filter: blur(8px);
 }
 .atlas-theme-control p {
@@ -1991,9 +1561,6 @@ body,
 }
 .atlas-theme-options button:hover,
 .atlas-theme-options button.is-selected {
-  color: var(--ink);
-  border-color: var(--atlas-signal-deep);
-  background: var(--atlas-signal-soft);
   transform: translateY(-1px);
 }
 .atlas-theme-options button.is-selected i {
@@ -2122,12 +1689,8 @@ body,
   }
 }
 @media (max-width: 700px) {
-  .hero {
-    min-height: 0;
-  }
   .hero-atlas {
     width: 100%;
-    height: 334px;
   }
   .motion-map {
     inset: 38px 7px 8px;
@@ -2658,7 +2221,6 @@ body,
   margin-bottom: 12px;
 }
 .hero .hero-copy h1 {
-  max-width: 630px;
   letter-spacing: -0.075em;
 }
 .hero .hero-actions {
@@ -2808,9 +2370,6 @@ body,
   font-size: 15px;
 }
 @media (max-width: 700px) {
-  .hero .hero-copy h1 {
-    font-size: clamp(42px, 12vw, 58px);
-  }
   .hero .hero-actions {
     margin-top: 22px;
   }
@@ -3682,7 +3241,6 @@ body,
   fill: url(#machine-signal);
   stroke: rgba(237, 255, 146, 0.84);
   stroke-width: 0.7;
-  transition: opacity 0.18s var(--ease-out);
 }
 .machine-cable {
   fill: none;
@@ -3741,7 +3299,6 @@ body,
   grid-template-columns: auto auto;
   gap: 2px 9px;
   align-items: center;
-  min-width: 132px;
   padding: 9px 11px;
   color: #eff7dc;
   border: 1px solid rgba(216, 255, 79, 0.32);
@@ -3859,7 +3416,6 @@ body,
   }
   .gym-machine-canvas {
     top: 14px;
-    width: min(104%, 350px);
     height: 280px;
   }
   .machine-resistance {
@@ -4356,9 +3912,6 @@ body,
   .recovery-toolkit p {
     font-size: 13px;
     line-height: 1.7;
-  }
-  .site-footer {
-    padding-bottom: 92px;
   }
 }
 .session-guidance-toggle {
@@ -5055,7 +4608,6 @@ body,
 @media (max-width: 700px) {
   .hero {
     gap: 26px;
-    padding: 58px 22px 42px;
   }
   .hero .hero-copy h1 {
     font-size: clamp(38px, 10.8vw, 52px);

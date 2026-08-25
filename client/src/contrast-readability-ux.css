@@ -161,12 +161,6 @@
   color: var(--readable-danger);
 }
 
-:where(button, a, input, select, textarea):focus-visible {
-  outline: 3px solid #6f850e;
-  outline-offset: 3px;
-  box-shadow: 0 0 0 5px rgba(216, 255, 79, 0.5);
-}
-
 @media (max-width: 700px) {
   .section-description,
   .hero-description,
