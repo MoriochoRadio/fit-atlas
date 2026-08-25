@@ -967,6 +967,10 @@ export default function Home() {
       return "active";
     return "starting";
   }, [weeklyPlanInsight]);
+  // 처음 온 사람에게는 0%·0/3·0건만 가득한 대시보드가 먼저 보였다.
+  // 쌓인 기록이 있을 때만 주간 리포트를 띄우고, 그 전에는 할 일을 먼저 보여준다.
+  const hasTrainingHistory = logs.length > 0 || weeklyPlanInsight.completed > 0;
+
   const weeklyCompletionPercent = weeklyPlanInsight.total
     ? Math.round((weeklyPlanInsight.completed / weeklyPlanInsight.total) * 100)
     : 0;
@@ -1978,11 +1982,21 @@ export default function Home() {
                   </article>
                   <article>
                     <span>이번 주 흐름</span>
-                    <b>{weeklyCompletionPercent}% 완료</b>
-                    <small>
-                      {weeklyPlanInsight.completed}/
-                      {weeklyPlanInsight.total || 0} 세션
-                    </small>
+                    {hasTrainingHistory ? (
+                      <>
+                        <b>{weeklyCompletionPercent}% 완료</b>
+                        <small>
+                          {weeklyPlanInsight.completed}/
+                          {weeklyPlanInsight.total || 0} 세션
+                        </small>
+                      </>
+                    ) : (
+                      // 0% 완료 · 0/3 세션은 처음 온 사람에게 알려주는 것이 없다.
+                      <>
+                        <b>아직 기록 없음</b>
+                        <small>첫 세션을 마치면 흐름이 쌓입니다</small>
+                      </>
+                    )}
                   </article>
                   {atlasInteraction.recentEquipmentSession && (
                     <HeroRecentEquipmentResume
@@ -2113,73 +2127,6 @@ export default function Home() {
               </div>
             </section>
 
-            <section
-              className={`weekly-atlas-report signal-${atlasPerformance}`}
-              aria-label="주간 아틀라스 요약 리포트"
-            >
-              <div className="weekly-report-head">
-                <div>
-                  <p className="eyebrow">WEEKLY ATLAS</p>
-                  <h2>이번 주 흐름</h2>
-                </div>
-                <span>{atlasSignalSummary.title}</span>
-              </div>
-              <div className="weekly-report-body">
-                <div
-                  className="weekly-signal-orbit"
-                  style={
-                    {
-                      "--report-progress": `${weeklyCompletionPercent}%`,
-                    } as React.CSSProperties
-                  }
-                >
-                  <b>
-                    {weeklyCompletionPercent}
-                    <small>%</small>
-                  </b>
-                  <span>완료</span>
-                </div>
-                <div className="weekly-report-metrics">
-                  <article>
-                    <span>완료 세션</span>
-                    <b>
-                      {weeklyPlanInsight.completed}
-                      <small>/{weeklyPlanInsight.total || 0}</small>
-                    </b>
-                  </article>
-                  <article>
-                    <span>운동 기록</span>
-                    <b>{weeklyPlanInsight.loggedThisWeek}</b>
-                  </article>
-                  <article>
-                    <span>아틀라스</span>
-                    <b>
-                      {atlasPerformance === "surge"
-                        ? "HIGH"
-                        : atlasPerformance === "active"
-                          ? "FLOW"
-                          : "READY"}
-                    </b>
-                  </article>
-                </div>
-                <p>{atlasSignalSummary.detail}</p>
-              </div>
-            </section>
-            <WeeklyAtlasDetailReport
-              flow={weeklyCompletionFlow}
-              goal={weeklyPlan.goal}
-              onGoal={nextGoal => {
-                if (nextGoal === weeklyPlan.goal) return;
-                setWeeklyPlan(current => setWeeklyGoal(current, nextGoal));
-                setSessionGoal(nextGoal);
-                toast.success(
-                  `이번 주 목표를 ${{ all_round: "전신", strength: "근력", endurance: "심폐" }[nextGoal]} 중심으로 변경했고 다음 세션 설계에도 반영했습니다.`
-                );
-              }}
-              direction={weeklyDirection}
-              onOpenSession={() => navigateToScene("session")}
-            />
-
             <section className="start-dock" aria-label="오늘의 주요 행동">
               <div className="start-dock-intro">
                 <p className="eyebrow">START HERE</p>
@@ -2262,6 +2209,78 @@ export default function Home() {
                 </a>
               </div>
             </section>
+            {/* 0% · 0/3 · 0건만 가득한 통계는 처음 온 사람에게 보여줄 것이 없다.
+                기록이 쌓인 뒤에만 띄운다. 반면 주간 목표 설정은 시작하는 사람에게
+                필요한 출발점이라 항상 남긴다. */}
+            {hasTrainingHistory && (
+              <section
+                className={`weekly-atlas-report signal-${atlasPerformance}`}
+                aria-label="주간 아틀라스 요약 리포트"
+              >
+                <div className="weekly-report-head">
+                  <div>
+                    <p className="eyebrow">WEEKLY ATLAS</p>
+                    <h2>이번 주 흐름</h2>
+                  </div>
+                  <span>{atlasSignalSummary.title}</span>
+                </div>
+                <div className="weekly-report-body">
+                  <div
+                    className="weekly-signal-orbit"
+                    style={
+                      {
+                        "--report-progress": `${weeklyCompletionPercent}%`,
+                      } as React.CSSProperties
+                    }
+                  >
+                    <b>
+                      {weeklyCompletionPercent}
+                      <small>%</small>
+                    </b>
+                    <span>완료</span>
+                  </div>
+                  <div className="weekly-report-metrics">
+                    <article>
+                      <span>완료 세션</span>
+                      <b>
+                        {weeklyPlanInsight.completed}
+                        <small>/{weeklyPlanInsight.total || 0}</small>
+                      </b>
+                    </article>
+                    <article>
+                      <span>운동 기록</span>
+                      <b>{weeklyPlanInsight.loggedThisWeek}</b>
+                    </article>
+                    <article>
+                      <span>아틀라스</span>
+                      <b>
+                        {atlasPerformance === "surge"
+                          ? "HIGH"
+                          : atlasPerformance === "active"
+                            ? "FLOW"
+                            : "READY"}
+                      </b>
+                    </article>
+                  </div>
+                  <p>{atlasSignalSummary.detail}</p>
+                </div>
+              </section>
+            )}
+            <WeeklyAtlasDetailReport
+              showFlow={hasTrainingHistory}
+              flow={weeklyCompletionFlow}
+              goal={weeklyPlan.goal}
+              onGoal={nextGoal => {
+                if (nextGoal === weeklyPlan.goal) return;
+                setWeeklyPlan(current => setWeeklyGoal(current, nextGoal));
+                setSessionGoal(nextGoal);
+                toast.success(
+                  `이번 주 목표를 ${{ all_round: "전신", strength: "근력", endurance: "심폐" }[nextGoal]} 중심으로 변경했고 다음 세션 설계에도 반영했습니다.`
+                );
+              }}
+              direction={weeklyDirection}
+              onOpenSession={() => navigateToScene("session")}
+            />
 
             <section className="today-command" aria-label="오늘의 시작">
               <div className="today-command-copy">

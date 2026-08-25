@@ -242,9 +242,17 @@ describe("Home recovery alternative flow", () => {
   it("shows weekly completion flow, lets the user change the weekly goal, and gives the next direction", () => {
     render(createElement(Home));
     const report = screen.getByLabelText("주간 아틀라스 상세 리포트");
-    expect(within(report).getByRole("heading", { name: "주간 완료 흐름" })).toBeTruthy();
-    expect(within(report).getByRole("img", { name: /월요일 계획 0개 중 완료 0개/ })).toBeTruthy();
+
+    // 처음 온 사람에게는 0으로만 채워진 흐름 차트를 보여주지 않는다.
+    // 목표 설정과 다음 방향은 시작하는 사람에게 필요하므로 항상 남아 있다.
+    expect(within(report).queryByRole("heading", { name: "주간 완료 흐름" })).toBeNull();
+    expect(within(report).getByRole("button", { name: "근력" })).toBeTruthy();
     expect(within(report).getByText("가장 부담이 적은 한 세션을 선택해 이번 주의 첫 신호를 만드세요.")).toBeTruthy();
+
+    // 한 세션이라도 완료하면 흐름 차트가 나타나고, 다음 방향 문구도 바뀐다.
+    fireEvent.click(screen.getAllByRole("button", { name: /완료 처리/ })[0]!);
+    expect(within(report).getByRole("heading", { name: "주간 완료 흐름" })).toBeTruthy();
+    expect(within(report).getByText("완료한 세션 하나의 시간과 강도만 기록해 다음 주의 기준을 남겨 보세요.")).toBeTruthy();
     fireEvent.click(within(report).getByRole("button", { name: "근력" }));
     expect(within(report).getByRole("button", { name: "근력" }).getAttribute("aria-pressed")).toBe("true");
     screen.getAllByRole("button", { name: /완료 처리/ }).forEach((button) => fireEvent.click(button));
