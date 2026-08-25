@@ -1,0 +1,931 @@
+/*
+ * 화면별로 흩어져 있던 -ux 오버라이드 7개를 하나로 합친 파일.
+ *
+ * 원래는 고칠 때마다 새 파일을 만들어 main.tsx 에 import 를 한 줄씩 늘리는
+ * 방식이었다. 같은 셀렉터가 여러 파일에 흩어져 어느 값이 이기는지 알려면
+ * import 순서를 따라가야 했다.
+ *
+ * 합칠 때 원래 로딩 순서를 그대로 유지했으므로 캐스케이드 결과는 동일하다.
+ * 아래 구분선은 어느 화면을 손보던 규칙인지 알아볼 수 있게 남겨 둔다.
+ */
+
+/* ───── session-route-ux ───── */
+/* Session route: each coaching stage keeps its own visual height. */
+.scene-view-session .session-blocks {
+  align-items: start;
+}
+
+.scene-view-session .session-block {
+  align-self: start;
+  height: max-content;
+}
+
+.scene-view-session .session-block:nth-child(2) {
+  border-top-color: #8fb82c;
+  background: linear-gradient(180deg, #fffef9, #f7faef);
+}
+
+.scene-view-session .session-block:nth-child(3) {
+  border-top-color: #8db8d3;
+}
+
+.scene-view-session .session-block ul {
+  padding-right: 2px;
+}
+
+.scene-view-session .session-block li {
+  line-height: 1.42;
+}
+
+.scene-view-session .session-block li + li {
+  margin-top: 2px;
+}
+
+.scene-view-session .session-plan-actions {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.scene-view-session .session-plan-actions::before {
+  width: 26px;
+  height: 1px;
+  background: var(--atlas-lime);
+  content: "";
+}
+
+@media (max-width: 820px) {
+  .scene-view-session .session-blocks {
+    align-items: stretch;
+  }
+
+  .scene-view-session .session-block {
+    align-self: stretch;
+  }
+
+  .scene-view-session .session-plan-actions {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .scene-view-session .session-plan-actions::before {
+    width: 100%;
+  }
+}
+
+/* ───── home-summary-ux ───── */
+.weekly-next-action {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 8px;
+  align-items: center;
+}
+
+.weekly-next-action button {
+  min-height: 38px;
+  padding: 8px 11px;
+  color: #152210;
+  border: 1px solid var(--atlas-lime);
+  border-radius: 8px;
+  background: var(--atlas-lime);
+  font-size: 11px;
+  font-weight: 900;
+  white-space: nowrap;
+}
+
+.weekly-next-action button:active {
+  transform: scale(0.97);
+}
+
+@media (max-width: 700px) {
+  .weekly-next-action {
+    grid-template-columns: 1fr;
+  }
+
+  .weekly-next-action button {
+    width: 100%;
+    min-height: 44px;
+  }
+}
+
+/* ───── exercise-detail-ux ───── */
+.exercise-detail {
+  display: grid;
+  gap: 14px;
+  margin-top: 16px;
+  padding-top: 17px;
+  border-top: 1px solid #e1e7dc;
+}
+
+.exercise-detail > .small-label {
+  display: flex;
+  align-items: center;
+  min-height: 24px;
+  margin: 4px 0 -6px;
+  padding-left: 9px;
+  color: #60740d;
+  border-left: 3px solid var(--atlas-lime);
+}
+
+.exercise-detail > .small-label:not(:first-child) {
+  margin-top: 8px;
+  padding-top: 12px;
+  border-top: 1px solid #e6ebe2;
+}
+
+.exercise-detail .benefit-row {
+  margin-top: -4px;
+}
+
+.text-exercise-guide {
+  padding: 16px;
+  border: 1px solid #dce6ca;
+  border-radius: 14px;
+  background: linear-gradient(145deg, #fbfdf5, #f2f6e9);
+}
+
+.text-guide-head {
+  align-items: start;
+}
+
+.text-guide-head > span {
+  color: #64780f;
+  border-color: #cfdeaa;
+  background: #f9fce8;
+  font-weight: 800;
+}
+
+.text-guide-sequence {
+  gap: 10px;
+}
+
+.text-guide-sequence li {
+  min-height: 58px;
+  padding: 11px 12px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.76);
+}
+
+.exercise-detail .detail-grid > div,
+.exercise-detail .evidence-scope {
+  border-color: #dbe4d5;
+  background: #fafcf7;
+}
+
+.exercise-detail .exercise-warning {
+  margin: 2px 0;
+  padding: 12px 13px;
+  color: #6a463c;
+  border-left: 3px solid #dd7c63;
+  border-radius: 0 10px 10px 0;
+  background: #fff6f1;
+  line-height: 1.65;
+}
+
+@media (max-width: 700px) {
+  .exercise-detail {
+    gap: 13px;
+    margin-top: 14px;
+    padding-top: 15px;
+  }
+
+  .text-exercise-guide {
+    padding: 14px;
+    border-radius: 12px;
+  }
+
+  .text-guide-sequence li {
+    min-height: 54px;
+    padding: 10px;
+  }
+}
+
+/* ───── explore-filter-ux ───── */
+.explore-primary-controls {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 14px;
+  margin: 12px 0;
+  padding: 12px 14px;
+  border: 1px solid var(--line);
+  border-radius: 15px;
+  background: color-mix(in srgb, var(--surface) 84%, var(--accent-soft));
+}
+.explore-primary-controls .sort-select {
+  display: grid;
+  gap: 5px;
+  color: #65748c;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 10px;
+  letter-spacing: 0.08em;
+}
+.explore-primary-controls select {
+  min-height: 38px;
+  min-width: min(100%, 235px);
+  padding: 7px 30px 7px 10px;
+  color: var(--ink);
+  border: 1px solid var(--line);
+  border-radius: 9px;
+  background: var(--surface);
+  font:
+    700 12px "Noto Sans KR",
+    sans-serif;
+  letter-spacing: -0.02em;
+}
+.explore-primary-controls > p {
+  display: grid;
+  justify-items: end;
+  gap: 2px;
+  margin: 0;
+  color: #68778f;
+  font-size: 11px;
+}
+.explore-primary-controls > p span {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 9px;
+  letter-spacing: 0.08em;
+}
+.explore-primary-controls > p b {
+  color: #667d0d;
+  font-size: 13px;
+}
+.advanced-filter-control {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-top: 10px;
+  padding: 11px 13px;
+  border: 1px solid #dce6c5;
+  border-radius: 14px;
+  background: #fbfdf2;
+}
+.advanced-filter-control > div {
+  display: grid;
+  gap: 2px;
+}
+.advanced-filter-control .small-label {
+  margin: 0;
+  color: #71890e;
+  font-size: 9px;
+}
+.advanced-filter-control > div > span {
+  color: #697891;
+  font-size: 11px;
+}
+.advanced-filter-control button {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  min-height: 40px;
+  padding: 8px 11px;
+  border: 1px solid #d2e995;
+  border-radius: 10px;
+  font-size: 12px;
+  font-weight: 700;
+  transition:
+    transform 0.16s var(--ease-out),
+    background 0.16s var(--ease-out);
+}
+.advanced-filter-control button:hover {
+  background: #e8f9b9;
+}
+.advanced-filter-control button:active {
+  transform: scale(0.97);
+}
+.advanced-filter-control button svg {
+  transition: transform 0.18s var(--ease-out);
+}
+.advanced-filter-control button[aria-expanded="true"] svg {
+  transform: rotate(180deg);
+}
+.filter-row {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 9px;
+  margin-top: 10px;
+  padding: 13px;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: var(--surface);
+}
+.filter-row select {
+  min-height: 42px;
+  min-width: 0;
+  padding: 8px;
+  border: 1px solid var(--line);
+  border-radius: 9px;
+  color: var(--ink);
+  background: #fffefa;
+  font-size: 12px;
+}
+.explore-result-summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  margin-top: 12px;
+  padding: 16px;
+  border: 1px solid #dce6c5;
+  border-radius: 16px;
+  background: linear-gradient(115deg, #fffefa, #f7fbe9);
+}
+.explore-result-summary > div:first-child {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: end;
+  column-gap: 10px;
+}
+.explore-result-summary .small-label {
+  grid-column: 1 / -1;
+  margin: 0 0 2px;
+  color: #71890e;
+  font-size: 9px;
+}
+.explore-result-summary b {
+  color: var(--ink);
+  font-size: 28px;
+  font-weight: 800;
+  letter-spacing: -0.06em;
+  line-height: 1;
+}
+.explore-result-summary b small {
+  margin-left: 4px;
+  color: #71890e;
+  font-size: 12px;
+  letter-spacing: -0.03em;
+}
+.explore-result-summary > div:first-child > p {
+  grid-column: 1 / -1;
+  margin: 7px 0 0;
+  color: #64748c;
+  font-size: 11px;
+  line-height: 1.55;
+}
+.explore-filter-chips {
+  display: flex;
+  flex: 1 1 360px;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+.explore-filter-chips span {
+  padding: 6px 8px;
+  color: #586d08;
+  border: 1px solid #d5e7a6;
+  border-radius: 999px;
+  background: #fffefa;
+  font-size: 11px;
+  font-weight: 700;
+}
+.explore-filter-hint {
+  max-width: 240px;
+  margin: 0;
+  color: #68778f;
+  font-size: 11px;
+  line-height: 1.55;
+  text-align: right;
+}
+.empty-library {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  max-width: 1180px;
+  margin: 18px auto 0;
+  padding: 22px;
+  border: 1px dashed #bccab0;
+  border-radius: 18px;
+  background: #fbfdf6;
+}
+.empty-library > svg {
+  flex: 0 0 auto;
+  color: #71890e;
+}
+.empty-library h3 {
+  margin: 0;
+  color: var(--ink);
+  font-size: 16px;
+  font-weight: 800;
+}
+.empty-library p {
+  max-width: 500px;
+  margin: 5px 0 12px;
+  color: #64748c;
+  font-size: 12px;
+  line-height: 1.65;
+}
+.empty-library .outline-button {
+  min-height: 38px;
+  color: #536709;
+  border-color: #c8df88;
+  background: var(--accent-soft);
+}
+@media (max-width: 700px) {
+  .explore-primary-controls {
+    align-items: stretch;
+    gap: 10px;
+    padding: 11px;
+  }
+  .explore-primary-controls .sort-select {
+    flex: 1;
+  }
+  .explore-primary-controls select {
+    width: 100%;
+    min-width: 0;
+  }
+  .explore-primary-controls > p {
+    min-width: 70px;
+    align-self: center;
+  }
+  .advanced-filter-control {
+    align-items: stretch;
+    gap: 10px;
+    padding: 12px;
+  }
+  .advanced-filter-control button {
+    justify-content: center;
+    font-size: 11px;
+  }
+  .filter-row {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px;
+    padding: 11px;
+  }
+  .explore-result-summary {
+    display: grid;
+    gap: 12px;
+    padding: 14px;
+  }
+  .explore-filter-chips {
+    justify-content: flex-start;
+  }
+  .explore-filter-hint {
+    max-width: none;
+    text-align: left;
+  }
+  .empty-library {
+    margin-top: 14px;
+    padding: 18px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .advanced-filter-control button svg {
+    transition: none;
+  }
+}
+
+/* ───── exercise-card-readability-ux ───── */
+.exercise-card .exercise-top {
+  min-height: 22px;
+}
+.exercise-card .exercise-category-label {
+  max-width: 62%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.exercise-card .difficulty {
+  min-height: 24px;
+  padding: 3px 6px;
+  border: 1px solid #f0d7cd;
+  border-radius: 999px;
+  background: #fff8f5;
+}
+.exercise-card .difficulty small {
+  margin-right: 3px;
+}
+.exercise-card .exercise-description {
+  min-height: 3.4em;
+  margin: 10px 0 12px;
+  color: #52657f;
+  font-size: 12px;
+  line-height: 1.72;
+  letter-spacing: -0.018em;
+}
+.exercise-card .tag-row {
+  gap: 5px;
+  min-height: 27px;
+}
+.exercise-card .tag-row span {
+  display: inline-flex;
+  min-height: 25px;
+  align-items: center;
+  padding: 4px 7px;
+  font-size: 10px;
+  line-height: 1.2;
+}
+.exercise-card .exercise-meta {
+  margin-top: 13px;
+  padding: 0;
+  border: 0;
+}
+.exercise-card .exercise-meta span {
+  display: grid;
+  grid-template-columns: 15px auto minmax(0, 1fr);
+  align-items: center;
+  gap: 4px;
+  border: 1px solid #e0e8dc;
+  border-radius: 9px;
+}
+.exercise-card .exercise-meta span::before {
+  display: none;
+}
+.exercise-card .exercise-meta svg {
+  color: #788d1a;
+}
+.exercise-card .exercise-meta b {
+  color: #77857d;
+  font:
+    800 9px "IBM Plex Mono",
+    monospace;
+  letter-spacing: 0.02em;
+}
+.exercise-card .exercise-meta em {
+  overflow: hidden;
+  color: #33475d;
+  font-size: 11px;
+  font-style: normal;
+  font-weight: 800;
+  text-align: right;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.exercise-card .card-expand {
+  min-height: 48px;
+  margin-top: 16px;
+  padding: 11px 12px;
+  border-radius: 10px;
+}
+.exercise-card .card-expand svg {
+  transition: transform 0.18s var(--ease-out);
+}
+.exercise-card.is-expanded .card-expand {
+  margin-top: 18px;
+}
+@media (max-width: 700px) {
+  .exercise-card .exercise-description {
+    min-height: 0;
+    margin: 9px 0 11px;
+    font-size: 13px;
+    line-height: 1.68;
+  }
+  .exercise-card .tag-row {
+    margin-top: 0;
+  }
+  .exercise-card .tag-row span {
+    min-height: 26px;
+    font-size: 10px;
+  }
+  .exercise-card .exercise-meta {
+    gap: 6px;
+    margin-top: 12px;
+  }
+  .exercise-card .exercise-meta span {
+    min-height: 39px;
+    padding: 7px;
+  }
+  .exercise-card .exercise-meta em {
+    font-size: 11px;
+  }
+  .exercise-card .card-expand {
+    min-height: 52px;
+    margin-top: 14px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .exercise-card .card-expand svg {
+    transition: none;
+  }
+}
+
+/* ───── contrast-readability-ux ───── */
+:root {
+  --readable-copy: #334a65;
+  --readable-muted: #4d627d;
+  --readable-label: #40566f;
+  --readable-link: #36516b;
+  --readable-danger: #713f38;
+}
+
+/* Lime remains a state signal; readable ink carries explanatory copy. */
+.nav a,
+.ghost-button,
+.hero-description,
+.section-description,
+.today-command-copy > p,
+.checkin-head > div > p:last-child,
+.session-launcher-head > p,
+.recovery-start p,
+.program-note,
+.session-local-note,
+.saved-exercise-panel > p,
+.quick-category-head span,
+.library-count,
+.exercise-detail ul,
+.exercise-detail ol,
+.exercise-finish,
+.wellness-detail,
+.metric-card p,
+.metric-card small,
+.calendar-empty,
+.chart-empty,
+.insight-row article > p:last-of-type,
+.aerobic-trend-row p:last-child,
+.interval-card dd,
+.interval-card > p,
+.recovery-toolkit p,
+.wellness-card > p:not(.eyebrow) {
+  color: var(--readable-copy);
+}
+
+.small-label,
+.eyebrow,
+.exercise-top,
+.english-name,
+.exercise-meta,
+.metric-card span,
+.metric-card small,
+.calendar-card small,
+.library-count,
+.quick-category-head span,
+.saved-exercise-panel > p,
+.explore-primary-controls > p span,
+.explore-result-summary > div:first-child > p,
+.explore-filter-hint,
+.advanced-filter-control > div > span {
+  color: var(--readable-muted);
+}
+
+.eyebrow.light,
+.text-button,
+.card-expand,
+.exercise-card .exercise-meta svg,
+.exercise-card .exercise-meta b,
+.exercise-card .exercise-meta em,
+.explore-primary-controls > p b,
+.explore-result-summary b small,
+.explore-filter-chips span,
+.advanced-filter-control .small-label,
+.rom-readiness-inline b,
+.weekly-log-button,
+.profile-link {
+  color: var(--readable-link);
+}
+
+.exercise-card .exercise-description,
+.scene-view-explore .exercise-card .exercise-description,
+.scene-view-explore .exercise-card .english-name,
+.scene-view-explore .exercise-card .exercise-meta,
+.related-list button,
+.log-form label,
+.dashboard-export-note label {
+  color: var(--readable-copy);
+}
+
+/* Never use lime as a letter colour on a light surface. */
+.hero h1 em,
+.start-dock-intro h2 em,
+.eyebrow.light,
+.text-button,
+.profile-link,
+.card-expand,
+.explore-primary-controls > p b,
+.explore-result-summary b small,
+.explore-filter-chips span,
+.advanced-filter-control .small-label,
+.rom-readiness-inline b,
+.weekly-log-button,
+.exercise-card .exercise-meta svg,
+.exercise-card .exercise-meta b,
+.exercise-card .exercise-meta em,
+.explore-selection-state p strong,
+.session-current-state p strong,
+.session-current-state > b,
+.explore-selection-state > b,
+.session-block > span,
+.text-guide-head > span,
+.text-guide-sequence li > span,
+.explore-paths + .explore-selection-state strong,
+.saved-exercise-index,
+.saved-exercise-list button svg,
+.saved-exercise-count,
+.hero-atlas .atlas-ready,
+.hero-atlas .atlas-caption,
+.hero-atlas .hero-session-card p,
+.hero-atlas .hero-session-card b small,
+.hero-atlas .session-route-description,
+.hero-atlas .atlas-theme-control p {
+  color: #36516b;
+}
+
+.hero-atlas .machine-hud b,
+.hero-atlas .machine-hud span,
+.hero-atlas .machine-hud small {
+  color: #36516b;
+}
+
+.tag-row span,
+.benefit-row span,
+.balance-tags span,
+.tag-row .focus-tag {
+  color: #29445e;
+}
+
+.session-current-state,
+.explore-selection-state,
+.explore-result-summary,
+.advanced-filter-control,
+.empty-library,
+.chart-empty,
+.calendar-empty {
+  color: var(--readable-copy);
+}
+
+.session-current-state span,
+.explore-selection-state span,
+.session-current-state small,
+.explore-selection-state small,
+.session-current-state p,
+.explore-selection-state p,
+.empty-library p,
+.chart-empty p,
+.calendar-empty p {
+  color: var(--readable-muted);
+}
+
+.exercise-warning,
+.toolkit-red-flags,
+.toolkit-red-flags li,
+.safety-callout,
+.recovery-caution,
+.form-safety {
+  color: var(--readable-danger);
+}
+
+@media (max-width: 700px) {
+  .section-description,
+  .hero-description,
+  .quick-category-head span,
+  .saved-exercise-panel > p,
+  .explore-result-summary > div:first-child > p,
+  .explore-filter-hint,
+  .exercise-card .exercise-description {
+    line-height: 1.75;
+  }
+}
+
+/* ───── repeat-explore-ux ───── */
+.saved-exercise-panels {
+  gap: 12px;
+}
+.saved-exercise-panel {
+  display: grid;
+  gap: 12px;
+  min-height: 0;
+  padding: 17px;
+  border: 1px solid var(--line);
+  box-shadow: 0 7px 18px rgba(38, 57, 86, 0.04);
+}
+.saved-exercise-panel-recent {
+  border-top: 3px solid #b6d74b;
+}
+.saved-exercise-panel-favorite {
+  border-top: 3px solid #e0a15b;
+}
+.saved-exercise-head {
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  gap: 12px;
+}
+.saved-exercise-head .small-label {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin: 0 0 4px;
+}
+.saved-exercise-head h3 {
+  margin: 0;
+}
+.saved-exercise-count {
+  display: grid;
+  width: 29px;
+  height: 29px;
+  place-items: center;
+  color: #4e6208;
+  border: 1px solid #d4e59e;
+  border-radius: 50%;
+  background: #f6fbe6;
+  font:
+    800 12px "IBM Plex Mono",
+    monospace;
+}
+.saved-exercise-list {
+  display: grid;
+  gap: 6px;
+}
+.saved-exercise-list button {
+  display: grid;
+  grid-template-columns: 24px minmax(0, 1fr) 16px;
+  align-items: center;
+  gap: 9px;
+  min-height: 50px;
+  padding: 8px 9px;
+  border: 1px solid #e0e7dc;
+  border-radius: 10px;
+  color: var(--ink);
+  background: #fbfcf8;
+  text-align: left;
+  transition:
+    transform 0.16s var(--ease-out),
+    border-color 0.16s var(--ease-out),
+    background 0.16s var(--ease-out);
+}
+.saved-exercise-list button:hover {
+  border-color: #c8df89;
+  background: #f4fadd;
+  transform: translateX(2px);
+}
+.saved-exercise-list button:active {
+  transform: scale(0.98);
+}
+.saved-exercise-index {
+  color: #7c8e25;
+  font:
+    800 9px "IBM Plex Mono",
+    monospace;
+  letter-spacing: 0.05em;
+}
+.saved-exercise-list button div {
+  min-width: 0;
+}
+.saved-exercise-list button small {
+  display: block;
+  overflow: hidden;
+  color: #60718a;
+  font:
+    700 9px "IBM Plex Mono",
+    monospace;
+  letter-spacing: 0.02em;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.saved-exercise-list button b {
+  display: block;
+  overflow: hidden;
+  margin-top: 2px;
+  color: #203650;
+  font-size: 12px;
+  font-weight: 800;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.saved-exercise-list button svg {
+  color: #70840f;
+}
+.saved-exercise-empty {
+  padding: 11px 12px;
+  border: 1px dashed #cbd7c2;
+  border-radius: 10px;
+  background: #fbfcf8;
+}
+.saved-exercise-empty strong {
+  color: #31455f;
+  font-size: 12px;
+}
+.saved-exercise-empty p,
+.saved-exercise-foot {
+  margin: 4px 0 0;
+  color: #536980;
+  font-size: 11px;
+  line-height: 1.55;
+}
+.saved-exercise-foot {
+  padding-top: 9px;
+  border-top: 1px solid #e5ebe1;
+}
+@media (max-width: 700px) {
+  .saved-exercise-panels {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+  .saved-exercise-panel {
+    padding: 15px;
+  }
+  .saved-exercise-list button {
+    min-height: 52px;
+  }
+  .saved-exercise-list button b {
+    font-size: 13px;
+  }
+  .saved-exercise-foot {
+    font-size: 10px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .saved-exercise-list button {
+    transition: none;
+  }
+}
