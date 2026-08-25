@@ -7797,3 +7797,43 @@ main {
   flex-direction: column;
   gap: 2px;
 }
+
+/* ── 탐색: 상세 조건 접이식 ─────────────────────────────────────────────
+   ROM 필터·시작점 선택·저장한 조건이 검색 위에 쌓여 있어서, 모바일에서
+   첫 운동 카드가 3.3화면 아래에 있었다. 기본은 접어 두고 필요할 때만 편다. */
+.explore-more {
+  margin: 14px 0 18px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: color-mix(in srgb, var(--paper) 60%, transparent);
+}
+.explore-more > summary {
+  min-height: 48px;
+  padding: 12px 16px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  list-style: none;
+  font-size: 14px;
+  font-weight: 600;
+}
+.explore-more > summary::-webkit-details-marker {
+  display: none;
+}
+.explore-more > summary::after {
+  content: "＋";
+  margin-left: auto;
+  font-weight: 400;
+  opacity: 0.6;
+}
+.explore-more[open] > summary::after {
+  content: "－";
+}
+.explore-more > summary small {
+  font-weight: 400;
+  opacity: 0.65;
+}
+.explore-more > *:not(summary) {
+  margin: 0 16px 16px;
+}

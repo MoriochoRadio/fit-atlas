@@ -2857,91 +2857,9 @@ export default function Home() {
                       {filteredExercises.length} MATCHES ·{" "}
                       {catalogExercises.length}/{catalogStats.exerciseCount}
                     </span>
-                    <div
-                      className="rom-filter"
-                      role="group"
-                      aria-label="가동 범위 ROM 필터"
-                    >
-                      {(["전체", "작음", "보통", "큼"] as RomFilter[]).map(
-                        item => (
-                          <button
-                            key={item}
-                            className={romFilter === item ? "is-selected" : ""}
-                            aria-pressed={romFilter === item}
-                            onClick={() => setRomFilter(item)}
-                          >
-                            {item === "전체" ? "ROM 전체" : `ROM · ${item}`}
-                          </button>
-                        )
-                      )}
-                    </div>
-                    <div className="rom-readiness-inline">
-                      <span>오늘의 ROM</span>
-                      <b>{romReadiness.title}</b>
-                      <p>
-                        통증 {checkin.pain}/5 · 에너지 {checkin.energy}/5
-                      </p>
-                      <button onClick={applyRomReadiness}>
-                        {romReadiness.actionLabel} <ArrowRight size={13} />
-                      </button>
-                    </div>
                   </div>
                 }
               />
-              <section className="explore-launcher" aria-label="빠른 운동 시작">
-                <div className="explore-launcher-head">
-                  <div>
-                    <p className="eyebrow">01 / CHOOSE A START</p>
-                    <h3>어떻게 움직이고 싶나요?</h3>
-                  </div>
-                  <p>
-                    한 가지 시작점을 고르면 결과를 바로 좁힙니다. 이후
-                    부위·난이도·장비 조건을 더할 수 있습니다.
-                  </p>
-                </div>
-                <div className="explore-paths">
-                  {explorePaths.map(path => {
-                    const Icon = path.icon;
-                    const isSelected =
-                      category === path.category &&
-                      focus === path.focus &&
-                      equipment === path.equipment;
-                    return (
-                      <button
-                        key={path.id}
-                        className={isSelected ? "is-selected" : ""}
-                        aria-pressed={isSelected}
-                        onClick={() => applyExplorePath(path)}
-                      >
-                        <Icon size={20} />
-                        <span>{path.label}</span>
-                        <small>{path.description}</small>
-                        <ArrowRight size={16} />
-                      </button>
-                    );
-                  })}
-                </div>
-                <div className="explore-selection-state">
-                  <span>현재 조건</span>
-                  <b>
-                    {category === "전체" &&
-                    focus === "전체" &&
-                    equipment === "전체"
-                      ? "모든 운동 보기"
-                      : [
-                          category !== "전체" ? category : null,
-                          focus !== "전체" ? focus : null,
-                          equipment !== "전체" ? equipment : null,
-                        ]
-                          .filter(Boolean)
-                          .join(" · ")}
-                  </b>
-                  <p>
-                    <strong>{filteredExercises.length}개</strong> 운동을 바로
-                    살펴볼 수 있습니다.
-                  </p>
-                </div>
-              </section>
               <div className="search-panel">
                 <div className="search-field">
                   <Search size={18} />
@@ -3092,6 +3010,105 @@ export default function Home() {
                   activeFilterLabels={activeExploreFilterLabels}
                 />
               </div>
+              <details className="explore-more">
+                {/* 첫 화면에 운동이 보이도록, 자주 쓰지 않는 조건은 접어 둔다.
+                    이전에는 이 블록들이 검색 위에 쌓여 모바일에서 첫 운동이 3.3화면 아래 있었다. */}
+                <summary>
+                  <span>상세 조건</span>
+                  <small>ROM · 시작점 · 저장한 조건</small>
+                </summary>
+                <div
+                  className="rom-filter"
+                  role="group"
+                  aria-label="가동 범위 ROM 필터"
+                >
+                  {(["전체", "작음", "보통", "큼"] as RomFilter[]).map(item => (
+                    <button
+                      key={item}
+                      className={romFilter === item ? "is-selected" : ""}
+                      aria-pressed={romFilter === item}
+                      onClick={() => setRomFilter(item)}
+                    >
+                      {item === "전체" ? "ROM 전체" : `ROM · ${item}`}
+                    </button>
+                  ))}
+                </div>
+                <div className="rom-readiness-inline">
+                  <span>오늘의 ROM</span>
+                  <b>{romReadiness.title}</b>
+                  <p>
+                    통증 {checkin.pain}/5 · 에너지 {checkin.energy}/5
+                  </p>
+                  <button onClick={applyRomReadiness}>
+                    {romReadiness.actionLabel} <ArrowRight size={13} />
+                  </button>
+                </div>
+                <section
+                  className="explore-launcher"
+                  aria-label="빠른 운동 시작"
+                >
+                  <div className="explore-launcher-head">
+                    <div>
+                      <p className="eyebrow">01 / CHOOSE A START</p>
+                      <h3>어떻게 움직이고 싶나요?</h3>
+                    </div>
+                    <p>
+                      한 가지 시작점을 고르면 결과를 바로 좁힙니다. 이후
+                      부위·난이도·장비 조건을 더할 수 있습니다.
+                    </p>
+                  </div>
+                  <div className="explore-paths">
+                    {explorePaths.map(path => {
+                      const Icon = path.icon;
+                      const isSelected =
+                        category === path.category &&
+                        focus === path.focus &&
+                        equipment === path.equipment;
+                      return (
+                        <button
+                          key={path.id}
+                          className={isSelected ? "is-selected" : ""}
+                          aria-pressed={isSelected}
+                          onClick={() => applyExplorePath(path)}
+                        >
+                          <Icon size={20} />
+                          <span>{path.label}</span>
+                          <small>{path.description}</small>
+                          <ArrowRight size={16} />
+                        </button>
+                      );
+                    })}
+                  </div>
+                  <div className="explore-selection-state">
+                    <span>현재 조건</span>
+                    <b>
+                      {category === "전체" &&
+                      focus === "전체" &&
+                      equipment === "전체"
+                        ? "모든 운동 보기"
+                        : [
+                            category !== "전체" ? category : null,
+                            focus !== "전체" ? focus : null,
+                            equipment !== "전체" ? equipment : null,
+                          ]
+                            .filter(Boolean)
+                            .join(" · ")}
+                    </b>
+                    <p>
+                      <strong>{filteredExercises.length}개</strong> 운동을 바로
+                      살펴볼 수 있습니다.
+                    </p>
+                  </div>
+                </section>
+                <ExplorePresetPanel
+                  presetName={presetName}
+                  presets={explorePreferences.filterPresets}
+                  onPresetName={setPresetName}
+                  onSave={saveCurrentExplorePreset}
+                  onApply={applyExploreFilterPreset}
+                  onDelete={deleteExploreFilterPreset}
+                />
+              </details>
               <div
                 className="mobile-explore-rail"
                 aria-label="모바일 탐색 결과 위치"
@@ -3106,29 +3123,6 @@ export default function Home() {
                     ? activeExploreFilterLabels.join(" · ")
                     : "전체 카탈로그"}
                 </p>
-              </div>
-              <ExplorePresetPanel
-                presetName={presetName}
-                presets={explorePreferences.filterPresets}
-                onPresetName={setPresetName}
-                onSave={saveCurrentExplorePreset}
-                onApply={applyExploreFilterPreset}
-                onDelete={deleteExploreFilterPreset}
-              />
-              <div
-                className="saved-exercise-panels"
-                aria-label="빠른 운동 탐색"
-              >
-                <SavedExercisePanel
-                  kind="recent"
-                  exercises={recentExercises}
-                  onOpen={openSavedExercise}
-                />
-                <SavedExercisePanel
-                  kind="favorite"
-                  exercises={favoriteExercises}
-                  onOpen={openSavedExercise}
-                />
               </div>
               <div className="exercise-grid">
                 {visibleExercises.map((exercise, index) => (
@@ -3159,6 +3153,21 @@ export default function Home() {
                     }}
                   />
                 ))}
+              </div>
+              <div
+                className="saved-exercise-panels"
+                aria-label="빠른 운동 탐색"
+              >
+                <SavedExercisePanel
+                  kind="recent"
+                  exercises={recentExercises}
+                  onOpen={openSavedExercise}
+                />
+                <SavedExercisePanel
+                  kind="favorite"
+                  exercises={favoriteExercises}
+                  onOpen={openSavedExercise}
+                />
               </div>
               {filteredExercises.length === 0 && (
                 <div className="empty-library">
