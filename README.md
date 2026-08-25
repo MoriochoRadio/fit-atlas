@@ -14,7 +14,7 @@ Fit Atlas는 개인 또는 소수 사용자를 위한 **정적·로컬 우선 �
 | 탐색 범위 | 러닝, 유산소, 헬스기구, 프리웨이트, 맨몸운동, 모빌리티, 균형·협응, 요가·필라테스, 파워·민첩성의 9개 카테고리 |
 | 상세 지식 | 시작 자세, 수행 경로, 대표 오류, 쉬운 변형, 진행 변형, 종료 기준, 주의 사항, 근거 적용 범위 |
 | 데이터 저장 | `localStorage` 기반의 기록·프로필·체크인·주간 계획·즐겨찾기·최근 본 운동, 백업 버전 4 |
-| 품질 기준 | Vitest **141개 테스트**, TypeScript 검사, GitHub Pages용 정적 빌드 통과 |
+| 품질 기준 | Vitest **211개 테스트**(34개 파일), TypeScript 검사, GitHub Pages용 정적 빌드 통과 |
 | 배포 | `main` 푸시 시 GitHub Actions가 검사·테스트·빌드 후 GitHub Pages에 배포 |
 
 ## 주요 기능
@@ -69,7 +69,9 @@ pnpm test -- --pool=forks --poolOptions.forks.maxForks=1 --poolOptions.forks.min
 pnpm build
 ```
 
-`pnpm build`는 GitHub Pages 경로를 고려한 정적 `dist/` 번들을 생성합니다. 현재 초기 화면은 첫 100개 운동만 포함하고, 나머지 카탈로그는 정적 지연 청크로 불러옵니다. 최근 빌드에서 가장 큰 앱·런타임 청크도 각각 500kB 미만입니다.
+`pnpm build`는 GitHub Pages 경로를 고려한 정적 `dist/` 번들을 생성합니다. 현재 초기 화면은 첫 100개 운동만 포함하고, 나머지 카탈로그는 정적 지연 청크로 불러옵니다.
+
+지연 로딩은 **실제로 큰 것에만** 적용합니다. 카탈로그 페이지(각 100개 운동)와 화면 캡처용 `html2canvas`가 대상입니다. 작은 UI 컴포넌트까지 쪼개면 전송량은 거의 줄지 않으면서 요청 수와 Suspense 경계만 늘어나므로 하지 않습니다.
 
 ## GitHub Pages 배포
 
