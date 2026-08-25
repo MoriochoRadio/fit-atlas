@@ -1,11 +1,10 @@
 import { describe, expect, it } from "vitest";
 import { getExerciseEvidenceScope } from "./exerciseEvidence";
-import { verifiedActualExercisesPart14 } from "./verifiedActualExercisesPart14";
 import { exercises } from "./fitnessData";
 
 describe("exercise evidence scope", () => {
   it("separates a source-backed movement record from general safety guidance and individual-effect limits", () => {
-    const sourceExercise = verifiedActualExercisesPart14.find((exercise) => exercise.category === "프리웨이트")!;
+    const sourceExercise = exercises.find((exercise) => exercise.id.startsWith("verified-") && exercise.category === "프리웨이트")!;
     const scope = getExerciseEvidenceScope(sourceExercise);
     expect(scope.sourceLabel).toContain("종목 원천");
     expect(scope.guidanceLabel).toContain("저항 운동");

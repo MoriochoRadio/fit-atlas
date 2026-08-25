@@ -1,8 +1,11 @@
 import { describe, expect, it } from "vitest";
 import { getExerciseDetail } from "./exerciseDetails";
 import { exercises } from "./fitnessData";
-import { verifiedActualExercisesPart14 } from "./verifiedActualExercisesPart14";
 import { structuredTrainingEntryIds } from "./catalogQualityRules";
+
+// 공개 원천에서 가져온 534개는 카탈로그 안에 "verified-" 접두사로 들어 있다.
+// 같은 데이터를 별도 파일로 한 벌 더 두면 두 사본이 갈라질 수 있어 카탈로그에서 직접 뽑는다.
+const verifiedSourcedExercises = exercises.filter((exercise) => exercise.id.startsWith("verified-"));
 
 const normalize = (value: string) => value
   .toLocaleLowerCase("ko-KR")
@@ -35,8 +38,8 @@ describe("exercise catalog quality gate", () => {
   });
 
   it("keeps the new expansion grounded in sourced independent movements, not set prescriptions", () => {
-    expect(verifiedActualExercisesPart14).toHaveLength(534);
-    verifiedActualExercisesPart14.forEach((exercise) => {
+    expect(verifiedSourcedExercises).toHaveLength(534);
+    verifiedSourcedExercises.forEach((exercise) => {
       expect(exercise.reference.url).toMatch(/acsm\.org|github\.com\/yuhonas\/free-exercise-db/);
       expect(exercise.name).not.toMatch(/템포|폼 리셋|파셜 레인지|1\.5레프|포즈/);
       expect(exercise.englishName).not.toMatch(/tempo|form reset|partial range|one half rep|pause rep/i);
@@ -44,7 +47,7 @@ describe("exercise catalog quality gate", () => {
   });
 
   it("gives every sourced movement an exercise-specific instruction profile instead of a category template", () => {
-    const instructionSignatures = verifiedActualExercisesPart14.map((exercise) => {
+    const instructionSignatures = verifiedSourcedExercises.map((exercise) => {
       const detail = getExerciseDetail(exercise);
       expect(exercise.description).not.toContain("독립적인 동작 경로를 연습하는 실제 운동 종목입니다.");
       expect(exercise.cues.some((cue) => cue.includes(exercise.name))).toBe(true);
