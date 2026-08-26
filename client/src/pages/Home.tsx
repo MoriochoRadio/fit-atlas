@@ -22,6 +22,7 @@ import {
 } from "lucide-react";
 import React, { useEffect, useMemo, useRef, useState } from "react";
 import { SceneExperienceDialog } from "@/components/SceneExperienceDialog";
+import { ModalDialog } from "@/components/ModalDialog";
 import {
   AnatomyScene,
   type AnatomyMuscleRoles,
@@ -1897,375 +1898,359 @@ export default function Home() {
         )}
 
         {logOpen && (
-          <div
-            className="modal-backdrop"
-            role="presentation"
-            onMouseDown={() => setLogOpen(false)}
+          <ModalDialog
+            className="log-modal"
+            labelledBy="log-title"
+            onClose={() => setLogOpen(false)}
           >
-            <section
-              className="log-modal"
-              role="dialog"
-              aria-modal="true"
-              aria-labelledby="log-title"
-              onMouseDown={event => event.stopPropagation()}
-            >
-              <div className="modal-head">
-                <div>
-                  <p className="eyebrow">TRAINING LOG</p>
-                  <h2 id="log-title">운동 기록 추가</h2>
-                </div>
-                <button
-                  onClick={() => setLogOpen(false)}
-                  className="icon-button"
-                  aria-label="닫기"
-                >
-                  <X size={19} />
-                </button>
+            <div className="modal-head">
+              <div>
+                <p className="eyebrow">TRAINING LOG</p>
+                <h2 id="log-title">운동 기록 추가</h2>
               </div>
-              <div className="form-steps" aria-label="기록 입력 순서">
-                <span className="is-active">1 기본</span>
-                <span>2 강도</span>
-                <span>3 저장</span>
-              </div>
-              <p className="log-helper">
-                모든 수치를 완벽히 기억할 필요는 없습니다.{" "}
-                <strong>종목·시간·RPE</strong>부터 남기고, 세트·횟수·중량은
-                기억나는 만큼 입력하세요.
-              </p>
-              <div className="log-form">
-                <div className="form-grid">
-                  <label>
-                    운동 날짜
-                    <input
-                      type="date"
-                      max={new Date().toISOString().slice(0, 10)}
-                      value={form.date}
-                      onChange={event =>
-                        setForm({ ...form, date: event.target.value })
-                      }
-                    />
-                  </label>
-                  <label>
-                    운동
-                    <select
-                      value={form.exercise}
-                      onChange={event =>
-                        setForm({ ...form, exercise: event.target.value })
-                      }
-                    >
-                      {catalogExercises.map(exercise => (
-                        <option key={exercise.id}>{exercise.name}</option>
-                      ))}
-                    </select>
-                  </label>
-                </div>
-                <div className="form-grid">
-                  <label>
-                    세트
-                    <input
-                      inputMode="numeric"
-                      value={form.sets}
-                      onChange={event =>
-                        setForm({ ...form, sets: event.target.value })
-                      }
-                    />
-                  </label>
-                  <label>
-                    횟수
-                    <input
-                      inputMode="numeric"
-                      value={form.reps}
-                      onChange={event =>
-                        setForm({ ...form, reps: event.target.value })
-                      }
-                    />
-                  </label>
-                  <label>
-                    중량 (kg)
-                    <input
-                      inputMode="decimal"
-                      value={form.load}
-                      onChange={event =>
-                        setForm({ ...form, load: event.target.value })
-                      }
-                    />
-                  </label>
-                  <label>
-                    운동 시간 (분)
-                    <input
-                      inputMode="numeric"
-                      value={form.minutes}
-                      onChange={event =>
-                        setForm({ ...form, minutes: event.target.value })
-                      }
-                    />
-                  </label>
-                  <label>
-                    거리 · 선택
-                    <input
-                      inputMode="decimal"
-                      placeholder="러닝·사이클·로잉·수영"
-                      value={form.distance}
-                      onChange={event =>
-                        setForm({ ...form, distance: event.target.value })
-                      }
-                    />
-                    <select
-                      value={form.distanceUnit}
-                      onChange={event =>
-                        setForm({
-                          ...form,
-                          distanceUnit: event.target.value as "km" | "m",
-                        })
-                      }
-                    >
-                      <option value="km">km</option>
-                      <option value="m">m</option>
-                    </select>
-                  </label>
-                </div>
+              <button
+                onClick={() => setLogOpen(false)}
+                className="icon-button"
+                aria-label="닫기"
+              >
+                <X size={19} />
+              </button>
+            </div>
+            <div className="form-steps" aria-label="기록 입력 순서">
+              <span className="is-active">1 기본</span>
+              <span>2 강도</span>
+              <span>3 저장</span>
+            </div>
+            <p className="log-helper">
+              모든 수치를 완벽히 기억할 필요는 없습니다.{" "}
+              <strong>종목·시간·RPE</strong>부터 남기고, 세트·횟수·중량은
+              기억나는 만큼 입력하세요.
+            </p>
+            <div className="log-form">
+              <div className="form-grid">
                 <label>
-                  주관적 강도 RPE <span>{form.intensity}/10</span>
+                  운동 날짜
                   <input
-                    type="range"
-                    min="1"
-                    max="10"
-                    value={form.intensity}
+                    type="date"
+                    max={new Date().toISOString().slice(0, 10)}
+                    value={form.date}
                     onChange={event =>
-                      setForm({ ...form, intensity: event.target.value })
+                      setForm({ ...form, date: event.target.value })
                     }
                   />
                 </label>
-                <p className="form-safety">
-                  <ShieldCheck size={15} /> 거리 단위는 러닝·사이클에는 km,
-                  로잉·수영에는 m를 사용하세요. 수치가 불확실하면 낮게
-                  추정하거나 다음 기록부터 보완해도 됩니다.
-                </p>
-                <button className="dark-button form-submit" onClick={addLog}>
-                  이 기록 저장하기 <ArrowRight size={16} />
-                </button>
-              </div>
-            </section>
-          </div>
-        )}
-        {profileOpen && (
-          <div
-            className="modal-backdrop"
-            role="presentation"
-            onMouseDown={() => setProfileOpen(false)}
-          >
-            <section
-              className="log-modal profile-modal"
-              role="dialog"
-              aria-modal="true"
-              aria-labelledby="profile-title"
-              onMouseDown={event => event.stopPropagation()}
-            >
-              <div className="modal-head">
-                <div>
-                  <p className="eyebrow">PERSONALIZATION</p>
-                  <h2 id="profile-title">운동 기준 설정</h2>
-                </div>
-                <button
-                  onClick={() => setProfileOpen(false)}
-                  className="icon-button"
-                  aria-label="닫기"
-                >
-                  <X size={19} />
-                </button>
-              </div>
-              <p className="modal-description">
-                입력값은 이 기기에만 저장되며 보수적인 시작 난이도와 안내 맥락을
-                정하는 데만 사용합니다. 질환·통증·임신 상태 등 의료 정보에 대한
-                진단은 제공하지 않습니다.
-              </p>
-              <div className="log-form">
-                <div className="form-grid">
-                  <label>
-                    연령
-                    <input
-                      inputMode="numeric"
-                      placeholder="예: 30"
-                      value={profileForm.age}
-                      onChange={event =>
-                        setProfileForm({
-                          ...profileForm,
-                          age: event.target.value,
-                        })
-                      }
-                    />
-                  </label>
-                  <label>
-                    체중 (kg)
-                    <input
-                      inputMode="decimal"
-                      placeholder="예: 68"
-                      value={profileForm.weightKg}
-                      onChange={event =>
-                        setProfileForm({
-                          ...profileForm,
-                          weightKg: event.target.value,
-                        })
-                      }
-                    />
-                  </label>
-                </div>
                 <label>
-                  성별
+                  운동
                   <select
-                    value={profileForm.sex}
+                    value={form.exercise}
                     onChange={event =>
-                      setProfileForm({
-                        ...profileForm,
-                        sex: event.target.value,
-                      })
+                      setForm({ ...form, exercise: event.target.value })
                     }
                   >
-                    <option value="undisclosed">응답하지 않음</option>
-                    <option value="female">여성</option>
-                    <option value="male">남성</option>
-                    <option value="nonbinary">논바이너리</option>
+                    {catalogExercises.map(exercise => (
+                      <option key={exercise.id}>{exercise.name}</option>
+                    ))}
                   </select>
                 </label>
-                <div className="form-grid">
-                  <label>
-                    주요 목표
-                    <select
-                      value={profileForm.primaryGoal}
-                      onChange={event =>
-                        setProfileForm({
-                          ...profileForm,
-                          primaryGoal: event.target.value,
-                        })
-                      }
-                    >
-                      <option value="strength">근력 증가</option>
-                      <option value="endurance">체력 증가</option>
-                      <option value="weight_management">체중 관리</option>
-                      <option value="general_health">건강 증진</option>
-                    </select>
-                  </label>
-                  <label>
-                    경험 수준
-                    <select
-                      value={profileForm.experience}
-                      onChange={event =>
-                        setProfileForm({
-                          ...profileForm,
-                          experience: event.target.value,
-                        })
-                      }
-                    >
-                      <option value="beginner">입문</option>
-                      <option value="intermediate">중급</option>
-                      <option value="advanced">상급</option>
-                    </select>
-                  </label>
-                </div>
-                <div className="form-grid">
-                  <label>
-                    선호 운동 종류
-                    <select
-                      aria-label="선호 운동 종류"
-                      value={profileForm.preferredCategory}
-                      onChange={event =>
-                        setProfileForm({
-                          ...profileForm,
-                          preferredCategory: event.target
-                            .value as typeof profileForm.preferredCategory,
-                        })
-                      }
-                    >
-                      {preferredCategoryOptions.map(item => (
-                        <option key={item} value={item}>
-                          {item === "전체" ? "특정 종류 없음" : item}
-                        </option>
-                      ))}
-                    </select>
-                  </label>
-                  <label>
-                    선호 장비
-                    <select
-                      aria-label="선호 장비"
-                      value={profileForm.preferredEquipment}
-                      onChange={event =>
-                        setProfileForm({
-                          ...profileForm,
-                          preferredEquipment: event.target
-                            .value as typeof profileForm.preferredEquipment,
-                        })
-                      }
-                    >
-                      {preferredEquipmentOptions.map(item => (
-                        <option key={item} value={item}>
-                          {
-                            {
-                              flexible: "상황에 맞게",
-                              bodyweight: "장비 없이",
-                              basic_home: "간단한 홈 장비",
-                              gym: "헬스장 장비",
-                            }[item]
-                          }
-                        </option>
-                      ))}
-                    </select>
-                  </label>
-                </div>
+              </div>
+              <div className="form-grid">
                 <label>
-                  주 활동 환경
-                  <select
-                    aria-label="주 활동 환경"
-                    value={profileForm.preferredEnvironment}
+                  세트
+                  <input
+                    inputMode="numeric"
+                    value={form.sets}
                     onChange={event =>
-                      setProfileForm({
-                        ...profileForm,
-                        preferredEnvironment: event.target
-                          .value as typeof profileForm.preferredEnvironment,
+                      setForm({ ...form, sets: event.target.value })
+                    }
+                  />
+                </label>
+                <label>
+                  횟수
+                  <input
+                    inputMode="numeric"
+                    value={form.reps}
+                    onChange={event =>
+                      setForm({ ...form, reps: event.target.value })
+                    }
+                  />
+                </label>
+                <label>
+                  중량 (kg)
+                  <input
+                    inputMode="decimal"
+                    value={form.load}
+                    onChange={event =>
+                      setForm({ ...form, load: event.target.value })
+                    }
+                  />
+                </label>
+                <label>
+                  운동 시간 (분)
+                  <input
+                    inputMode="numeric"
+                    value={form.minutes}
+                    onChange={event =>
+                      setForm({ ...form, minutes: event.target.value })
+                    }
+                  />
+                </label>
+                <label>
+                  거리 · 선택
+                  <input
+                    inputMode="decimal"
+                    placeholder="러닝·사이클·로잉·수영"
+                    value={form.distance}
+                    onChange={event =>
+                      setForm({ ...form, distance: event.target.value })
+                    }
+                  />
+                  <select
+                    value={form.distanceUnit}
+                    onChange={event =>
+                      setForm({
+                        ...form,
+                        distanceUnit: event.target.value as "km" | "m",
                       })
                     }
                   >
-                    {preferredEnvironmentOptions.map(item => (
+                    <option value="km">km</option>
+                    <option value="m">m</option>
+                  </select>
+                </label>
+              </div>
+              <label>
+                주관적 강도 RPE <span>{form.intensity}/10</span>
+                <input
+                  type="range"
+                  min="1"
+                  max="10"
+                  value={form.intensity}
+                  onChange={event =>
+                    setForm({ ...form, intensity: event.target.value })
+                  }
+                />
+              </label>
+              <p className="form-safety">
+                <ShieldCheck size={15} /> 거리 단위는 러닝·사이클에는 km,
+                로잉·수영에는 m를 사용하세요. 수치가 불확실하면 낮게 추정하거나
+                다음 기록부터 보완해도 됩니다.
+              </p>
+              <button className="dark-button form-submit" onClick={addLog}>
+                이 기록 저장하기 <ArrowRight size={16} />
+              </button>
+            </div>
+          </ModalDialog>
+        )}
+        {profileOpen && (
+          <ModalDialog
+            className="log-modal profile-modal"
+            labelledBy="profile-title"
+            onClose={() => setProfileOpen(false)}
+          >
+            <div className="modal-head">
+              <div>
+                <p className="eyebrow">PERSONALIZATION</p>
+                <h2 id="profile-title">운동 기준 설정</h2>
+              </div>
+              <button
+                onClick={() => setProfileOpen(false)}
+                className="icon-button"
+                aria-label="닫기"
+              >
+                <X size={19} />
+              </button>
+            </div>
+            <p className="modal-description">
+              입력값은 이 기기에만 저장되며 보수적인 시작 난이도와 안내 맥락을
+              정하는 데만 사용합니다. 질환·통증·임신 상태 등 의료 정보에 대한
+              진단은 제공하지 않습니다.
+            </p>
+            <div className="log-form">
+              <div className="form-grid">
+                <label>
+                  연령
+                  <input
+                    inputMode="numeric"
+                    placeholder="예: 30"
+                    value={profileForm.age}
+                    onChange={event =>
+                      setProfileForm({
+                        ...profileForm,
+                        age: event.target.value,
+                      })
+                    }
+                  />
+                </label>
+                <label>
+                  체중 (kg)
+                  <input
+                    inputMode="decimal"
+                    placeholder="예: 68"
+                    value={profileForm.weightKg}
+                    onChange={event =>
+                      setProfileForm({
+                        ...profileForm,
+                        weightKg: event.target.value,
+                      })
+                    }
+                  />
+                </label>
+              </div>
+              <label>
+                성별
+                <select
+                  value={profileForm.sex}
+                  onChange={event =>
+                    setProfileForm({
+                      ...profileForm,
+                      sex: event.target.value,
+                    })
+                  }
+                >
+                  <option value="undisclosed">응답하지 않음</option>
+                  <option value="female">여성</option>
+                  <option value="male">남성</option>
+                  <option value="nonbinary">논바이너리</option>
+                </select>
+              </label>
+              <div className="form-grid">
+                <label>
+                  주요 목표
+                  <select
+                    value={profileForm.primaryGoal}
+                    onChange={event =>
+                      setProfileForm({
+                        ...profileForm,
+                        primaryGoal: event.target.value,
+                      })
+                    }
+                  >
+                    <option value="strength">근력 증가</option>
+                    <option value="endurance">체력 증가</option>
+                    <option value="weight_management">체중 관리</option>
+                    <option value="general_health">건강 증진</option>
+                  </select>
+                </label>
+                <label>
+                  경험 수준
+                  <select
+                    value={profileForm.experience}
+                    onChange={event =>
+                      setProfileForm({
+                        ...profileForm,
+                        experience: event.target.value,
+                      })
+                    }
+                  >
+                    <option value="beginner">입문</option>
+                    <option value="intermediate">중급</option>
+                    <option value="advanced">상급</option>
+                  </select>
+                </label>
+              </div>
+              <div className="form-grid">
+                <label>
+                  선호 운동 종류
+                  <select
+                    aria-label="선호 운동 종류"
+                    value={profileForm.preferredCategory}
+                    onChange={event =>
+                      setProfileForm({
+                        ...profileForm,
+                        preferredCategory: event.target
+                          .value as typeof profileForm.preferredCategory,
+                      })
+                    }
+                  >
+                    {preferredCategoryOptions.map(item => (
+                      <option key={item} value={item}>
+                        {item === "전체" ? "특정 종류 없음" : item}
+                      </option>
+                    ))}
+                  </select>
+                </label>
+                <label>
+                  선호 장비
+                  <select
+                    aria-label="선호 장비"
+                    value={profileForm.preferredEquipment}
+                    onChange={event =>
+                      setProfileForm({
+                        ...profileForm,
+                        preferredEquipment: event.target
+                          .value as typeof profileForm.preferredEquipment,
+                      })
+                    }
+                  >
+                    {preferredEquipmentOptions.map(item => (
                       <option key={item} value={item}>
                         {
                           {
-                            home: "집·매트",
-                            gym: "헬스장",
-                            outdoor: "야외·걷기",
+                            flexible: "상황에 맞게",
+                            bodyweight: "장비 없이",
+                            basic_home: "간단한 홈 장비",
+                            gym: "헬스장 장비",
                           }[item]
                         }
                       </option>
                     ))}
                   </select>
                 </label>
-                <label>
-                  선택적 안전 모드
-                  <select
-                    value={profileForm.recoveryContext}
-                    onChange={event =>
-                      setProfileForm({
-                        ...profileForm,
-                        recoveryContext: event.target.value,
-                      })
-                    }
-                  >
-                    <option value="none">해당 없음</option>
-                    <option value="reduced_readiness">
-                      낮은 에너지·회복 저하·생애주기 변화
-                    </option>
-                    <option value="pregnancy_postpartum">
-                      임신·산후 — 의료진 확인 우선
-                    </option>
-                  </select>
-                </label>
-                <button
-                  className="dark-button form-submit"
-                  onClick={saveProfileSettings}
-                >
-                  설정 저장 <ArrowRight size={16} />
-                </button>
               </div>
-            </section>
-          </div>
+              <label>
+                주 활동 환경
+                <select
+                  aria-label="주 활동 환경"
+                  value={profileForm.preferredEnvironment}
+                  onChange={event =>
+                    setProfileForm({
+                      ...profileForm,
+                      preferredEnvironment: event.target
+                        .value as typeof profileForm.preferredEnvironment,
+                    })
+                  }
+                >
+                  {preferredEnvironmentOptions.map(item => (
+                    <option key={item} value={item}>
+                      {
+                        {
+                          home: "집·매트",
+                          gym: "헬스장",
+                          outdoor: "야외·걷기",
+                        }[item]
+                      }
+                    </option>
+                  ))}
+                </select>
+              </label>
+              <label>
+                선택적 안전 모드
+                <select
+                  value={profileForm.recoveryContext}
+                  onChange={event =>
+                    setProfileForm({
+                      ...profileForm,
+                      recoveryContext: event.target.value,
+                    })
+                  }
+                >
+                  <option value="none">해당 없음</option>
+                  <option value="reduced_readiness">
+                    낮은 에너지·회복 저하·생애주기 변화
+                  </option>
+                  <option value="pregnancy_postpartum">
+                    임신·산후 — 의료진 확인 우선
+                  </option>
+                </select>
+              </label>
+              <button
+                className="dark-button form-submit"
+                onClick={saveProfileSettings}
+              >
+                설정 저장 <ArrowRight size={16} />
+              </button>
+            </div>
+          </ModalDialog>
         )}
         {romRecommendationTarget && (
           <RomRecommendationDialog
@@ -2323,64 +2308,60 @@ function RomRecommendationDialog({
     AsciiInteractionContext
   );
   return (
-    <div className="modal-backdrop" role="presentation" onMouseDown={onClose}>
-      <section
-        className="log-modal rom-recommendation-modal"
-        role="dialog"
-        aria-modal="true"
-        aria-labelledby="rom-recommendation-title"
-        onMouseDown={event => event.stopPropagation()}
-      >
-        <div className="modal-head">
-          <div>
-            <p className="eyebrow">ROM ADJUSTMENT GUIDE</p>
-            <h2 id="rom-recommendation-title">
-              {target.exerciseName} · {recommendation.title}
-            </h2>
-          </div>
-          <button onClick={onClose} className="icon-button" aria-label="닫기">
-            <X size={19} />
-          </button>
+    <ModalDialog
+      className="log-modal rom-recommendation-modal"
+      labelledBy="rom-recommendation-title"
+      onClose={onClose}
+    >
+      <div className="modal-head">
+        <div>
+          <p className="eyebrow">ROM ADJUSTMENT GUIDE</p>
+          <h2 id="rom-recommendation-title">
+            {target.exerciseName} · {recommendation.title}
+          </h2>
         </div>
-        <p className="modal-description">{recommendation.intro}</p>
-        <div className="rom-recommendation-grid">
-          <article>
-            <p className="small-label">가볍게 풀기</p>
-            <ul>
-              {recommendation.stretch.map(item => (
-                <li key={item}>{item}</li>
-              ))}
-            </ul>
-          </article>
-          <article>
-            <p className="small-label">대체 운동 방식</p>
-            <ul>
-              {recommendation.alternatives.map(item => (
-                <li key={item.name}>
-                  <div className="alternative-exercise-actions">
-                    <button
-                      className="alternative-exercise-link"
-                      onClick={() => onExploreAlternative(item.name)}
-                    >
-                      <b>{item.name}</b>
-                      <span>{item.rationale}</span>
-                      <ArrowRight size={14} />
-                    </button>
-                    <button
-                      className="alternative-routine-add"
-                      onClick={() => onAddToTodayRoutine(item.name)}
-                    >
-                      <Plus size={13} /> 오늘 루틴
-                    </button>
-                  </div>
-                </li>
-              ))}
-            </ul>
-          </article>
-        </div>
-        <p className="text-guide-stop">{recommendation.caution}</p>
-      </section>
-    </div>
+        <button onClick={onClose} className="icon-button" aria-label="닫기">
+          <X size={19} />
+        </button>
+      </div>
+      <p className="modal-description">{recommendation.intro}</p>
+      <div className="rom-recommendation-grid">
+        <article>
+          <p className="small-label">가볍게 풀기</p>
+          <ul>
+            {recommendation.stretch.map(item => (
+              <li key={item}>{item}</li>
+            ))}
+          </ul>
+        </article>
+        <article>
+          <p className="small-label">대체 운동 방식</p>
+          <ul>
+            {recommendation.alternatives.map(item => (
+              <li key={item.name}>
+                <div className="alternative-exercise-actions">
+                  <button
+                    className="alternative-exercise-link"
+                    onClick={() => onExploreAlternative(item.name)}
+                  >
+                    <b>{item.name}</b>
+                    <span>{item.rationale}</span>
+                    <ArrowRight size={14} />
+                  </button>
+                  <button
+                    className="alternative-routine-add"
+                    onClick={() => onAddToTodayRoutine(item.name)}
+                  >
+                    <Plus size={13} /> 오늘 루틴
+                  </button>
+                </div>
+              </li>
+            ))}
+          </ul>
+        </article>
+      </div>
+      <p className="text-guide-stop">{recommendation.caution}</p>
+    </ModalDialog>
   );
 }
 
@@ -2404,85 +2385,81 @@ function AtlasNodeDialog({
   onReset: () => void;
 }) {
   return (
-    <div className="modal-backdrop" role="presentation" onMouseDown={onClose}>
-      <section
-        className="log-modal atlas-node-modal"
-        role="dialog"
-        aria-modal="true"
-        aria-labelledby="atlas-node-title"
-        onMouseDown={event => event.stopPropagation()}
-      >
-        <div className="modal-head">
-          <div>
-            <p className="eyebrow">ATLAS NODE 0{index + 1}</p>
-            <h2 id="atlas-node-title">{block.label} 블록 편집</h2>
-          </div>
-          <button onClick={onClose} className="icon-button" aria-label="닫기">
-            <X size={19} />
-          </button>
+    <ModalDialog
+      className="log-modal atlas-node-modal"
+      labelledBy="atlas-node-title"
+      onClose={onClose}
+    >
+      <div className="modal-head">
+        <div>
+          <p className="eyebrow">ATLAS NODE 0{index + 1}</p>
+          <h2 id="atlas-node-title">{block.label} 블록 편집</h2>
         </div>
-        <p className="modal-description">
-          아틀라스에서 이 노드는 현재 세션의{" "}
-          <strong>
-            {block.minutes}분 {block.label}
-          </strong>{" "}
-          블록입니다. 수정한 내용은 이 브라우저의 같은 목표·장소·시간 조합에만
-          저장됩니다.
-        </p>
-        <div className="log-form atlas-node-form">
-          <div className="form-grid">
-            <label>
-              블록 이름
-              <input
-                value={draft.label}
-                maxLength={40}
-                onChange={event =>
-                  onDraft(current => ({
-                    ...current,
-                    label: event.target.value,
-                  }))
-                }
-              />
-            </label>
-            <label>
-              예상 시간 (분)
-              <input
-                inputMode="numeric"
-                value={draft.minutes}
-                onChange={event =>
-                  onDraft(current => ({
-                    ...current,
-                    minutes: event.target.value,
-                  }))
-                }
-              />
-            </label>
-          </div>
+        <button onClick={onClose} className="icon-button" aria-label="닫기">
+          <X size={19} />
+        </button>
+      </div>
+      <p className="modal-description">
+        아틀라스에서 이 노드는 현재 세션의{" "}
+        <strong>
+          {block.minutes}분 {block.label}
+        </strong>{" "}
+        블록입니다. 수정한 내용은 이 브라우저의 같은 목표·장소·시간 조합에만
+        저장됩니다.
+      </p>
+      <div className="log-form atlas-node-form">
+        <div className="form-grid">
           <label>
-            움직임 · 한 줄에 하나씩
-            <textarea
-              value={draft.items}
-              rows={6}
-              maxLength={800}
+            블록 이름
+            <input
+              value={draft.label}
+              maxLength={40}
               onChange={event =>
-                onDraft(current => ({ ...current, items: event.target.value }))
+                onDraft(current => ({
+                  ...current,
+                  label: event.target.value,
+                }))
               }
             />
           </label>
-          <p className="form-safety">
-            <ShieldCheck size={15} /> 통증·어지러움·비정상적인 숨참이 있으면
-            계획보다 중단·조절을 우선하세요.
-          </p>
-          <div className="atlas-node-actions">
-            <button className="recovery-secondary" onClick={onReset}>
-              기본값으로 되돌리기
-            </button>
-            <button className="dark-button form-submit" onClick={onSave}>
-              블록 저장 <ArrowRight size={16} />
-            </button>
-          </div>
+          <label>
+            예상 시간 (분)
+            <input
+              inputMode="numeric"
+              value={draft.minutes}
+              onChange={event =>
+                onDraft(current => ({
+                  ...current,
+                  minutes: event.target.value,
+                }))
+              }
+            />
+          </label>
         </div>
-      </section>
-    </div>
+        <label>
+          움직임 · 한 줄에 하나씩
+          <textarea
+            value={draft.items}
+            rows={6}
+            maxLength={800}
+            onChange={event =>
+              onDraft(current => ({ ...current, items: event.target.value }))
+            }
+          />
+        </label>
+        <p className="form-safety">
+          <ShieldCheck size={15} /> 통증·어지러움·비정상적인 숨참이 있으면
+          계획보다 중단·조절을 우선하세요.
+        </p>
+        <div className="atlas-node-actions">
+          <button className="recovery-secondary" onClick={onReset}>
+            기본값으로 되돌리기
+          </button>
+          <button className="dark-button form-submit" onClick={onSave}>
+            블록 저장 <ArrowRight size={16} />
+          </button>
+        </div>
+      </div>
+    </ModalDialog>
   );
 }

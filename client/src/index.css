@@ -613,7 +613,7 @@ a {
 }
 .metric-card p {
   margin: 0;
-  color: #71817a;
+  color: #606e68;
   font-size: 11px;
 }
 .metric-card b {
@@ -904,7 +904,7 @@ a {
     monospace;
 }
 .four-week-bars span {
-  color: #74847e;
+  color: #606e69;
   font-size: 10px;
   white-space: nowrap;
 }
@@ -991,7 +991,7 @@ a {
   place-content: center;
   justify-items: center;
   gap: 3px;
-  color: #81928b;
+  color: #616e68;
   border: 1px solid rgba(23, 49, 44, 0.1);
   border-radius: 7px;
   font-size: 10px;
@@ -1003,7 +1003,7 @@ a {
     serif;
 }
 .week-calendar i {
-  color: #9aa9a2;
+  color: #646e69;
   font-style: normal;
 }
 .week-calendar .has-activity b,
@@ -1570,7 +1570,7 @@ a {
   font-size: 22px;
 }
 .toolkit-heading > p:last-child {
-  color: #63796f;
+  color: #5f746b;
   font-size: 13px;
   line-height: 1.65;
 }
@@ -1834,7 +1834,7 @@ a {
   border-bottom: 0;
 }
 .routine-weeks article > span {
-  color: #b06b4d;
+  color: #9e6045;
   font:
     11px "DM Mono",
     monospace;
@@ -1850,7 +1850,7 @@ a {
 }
 .routine-weeks p:last-child {
   margin: 0;
-  color: #71817a;
+  color: #606e68;
   font-size: 11px;
   line-height: 1.45;
 }
@@ -2145,7 +2145,7 @@ a {
 }
 .weekly-sessions p:last-child {
   margin: 0;
-  color: #71817a;
+  color: #606e68;
   font-size: 10px;
   line-height: 1.45;
 }
@@ -3248,7 +3248,7 @@ a {
   border-top: 1px solid #e3ece4;
 }
 .seated-routine ol > li > span {
-  color: #ad704e;
+  color: #9d6647;
   font:
     10px "DM Mono",
     monospace;
@@ -3992,10 +3992,10 @@ body {
   background: var(--atlas-lime);
 }
 .session-preference-button {
-  color: #d7f96d;
-  border-color: rgba(215, 249, 109, 0.45);
+  color: var(--accent-text);
+  border-color: rgba(99, 118, 15, 0.4);
   border-radius: 1px;
-  background: rgba(215, 249, 109, 0.06);
+  background: rgba(99, 118, 15, 0.06);
 }
 .session-plan {
   padding: 42px;
@@ -4815,7 +4815,7 @@ main {
 }
 .today-command-meta b small {
   margin-left: 3px;
-  color: var(--atlas-lime);
+  color: var(--accent-text);
   font-size: 12px;
   letter-spacing: 0;
 }
@@ -6066,7 +6066,7 @@ main {
   place-items: center;
   height: 78px;
   width: 100%;
-  color: #617a6a;
+  color: #5d7566;
   border-bottom: 1px solid #3b5d4d;
 }
 .monthly-rom-legend {
@@ -6404,7 +6404,7 @@ main {
   font-weight: 900;
 }
 .difficulty small {
-  color: #84908a;
+  color: #646d69;
   font:
     8px "IBM Plex Mono",
     monospace;
@@ -6505,7 +6505,7 @@ main {
   content: "";
 }
 .difficulty::before {
-  color: #84908a;
+  color: #646d69;
   content: "LEVEL";
   font:
     8px "IBM Plex Mono",

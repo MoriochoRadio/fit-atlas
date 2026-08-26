@@ -7,10 +7,15 @@
   --ink: #0e1c2f;
   --ink-2: #21344d;
   --line: #c8d3df;
-  --accent: #2f7bc4;
+  /* 흰 글자를 얹었을 때 4.5:1 을 넘도록 조금 어둡게 잡는다(#2f7bc4 는 4.42 였다). */
+  --accent: #2a70b4;
   --accent-deep: #155a9f;
   --accent-soft: #dcebf9;
   --atlas-lime: #a8c96a;
+  /* --atlas-lime·회색 톤을 밝은 배경 위 글자에 그대로 쓰면 WCAG AA(4.5:1)에 못 미친다.
+     밝은 표면 위 글자에는 아래 두 값을 쓴다. 어두운 배경 위에서는 기존 값을 그대로 둔다. */
+  --muted-text: #5f6b83;
+  --accent-text: #5c6d0d;
   --mint: #a8c96a;
   --shadow: 0 12px 28px rgba(13, 28, 48, 0.09);
 }
@@ -112,7 +117,7 @@ body {
   color: #fff;
   border-color: #3b88d0;
   border-radius: 8px;
-  background: #2f7bc4;
+  background: var(--accent);
   box-shadow: none;
 }
 .dark-button:hover,
@@ -218,15 +223,15 @@ body {
   width: 58px;
   height: 2px;
   margin-top: 17px;
-  background: #2f7bc4;
+  background: var(--accent);
 }
 .section-heading .eyebrow,
 .small-label,
 .eyebrow {
-  color: #58708c;
+  color: #546a85;
 }
 .section-heading .eyebrow::before {
-  color: #2f7bc4;
+  color: #2a6fb0;
   border-color: #9db8d2;
   border-radius: 2px;
   background: #edf5fc;
@@ -300,8 +305,8 @@ body {
 .session-quick-starts button.is-selected,
 .explore-paths button.is-selected {
   color: #fff;
-  border-color: #2f7bc4;
-  background: #2f7bc4;
+  border-color: #2a6fb0;
+  background: var(--accent);
 }
 .session-current-state,
 .explore-selection-state {
@@ -319,13 +324,13 @@ body {
 }
 .session-block > span,
 .checkin-controls b {
-  color: #2f7bc4;
+  color: #2a6fb0;
 }
 .session-save-button,
 .recovery-primary {
   color: #fff;
-  border-color: #2f7bc4;
-  background: #2f7bc4;
+  border-color: #2a6fb0;
+  background: var(--accent);
 }
 
 /* Explore reads as an indexed library with stronger routes and less decorative repetition. */
@@ -345,7 +350,7 @@ body {
   border-left: 4px solid #2f7bc4;
 }
 .search-field svg {
-  color: #2f7bc4;
+  color: #2a6fb0;
 }
 .filter-row select,
 .quick-category-options button,
@@ -355,8 +360,8 @@ body {
 .quick-category-options button.filter-active,
 .rom-filter button.is-selected {
   color: #fff;
-  border-color: #2f7bc4;
-  background: #2f7bc4;
+  border-color: #2a6fb0;
+  background: var(--accent);
 }
 .advanced-filter-control button {
   color: #205f9e;
@@ -408,7 +413,7 @@ body {
   background: #eef3f7;
 }
 .saved-exercise-panel-recent {
-  border-top-color: #2f7bc4;
+  border-top-color: #2a6fb0;
 }
 .saved-exercise-panel-favorite {
   border-top-color: #a8c96a;
@@ -456,7 +461,7 @@ body {
 .metric-icon {
   color: #fff;
   border-radius: 7px;
-  background: #2f7bc4;
+  background: var(--accent);
 }
 .chart-card {
   border-top: 3px solid #2f7bc4;
@@ -466,12 +471,12 @@ body {
 }
 .volume-column i,
 .four-week-bar-track i {
-  background: #2f7bc4;
+  background: var(--accent);
 }
 .week-calendar .has-activity {
   color: #fff;
-  border-color: #2f7bc4;
-  background: #2f7bc4;
+  border-color: #2a6fb0;
+  background: var(--accent);
 }
 .insight-row h3,
 .aerobic-trend-row h3,
@@ -493,6 +498,34 @@ body {
 .tone-ink {
   color: #f4f8fc;
   background: #173151;
+}
+/* 어두운 톤 카드 안에서는 제목·본문이 카드의 밝은 글자색을 물려받아야 한다.
+   .wellness-card h3 같은 규칙이 어두운 --ink 를 다시 씌우면 글자가 배경에 묻힌다. */
+.tone-plum h3,
+.tone-ink h3,
+.tone-plum h4,
+.tone-ink h4,
+.tone-plum p,
+.tone-ink p,
+.tone-plum li,
+.tone-ink li,
+.tone-plum b,
+.tone-ink b,
+.tone-plum small,
+.tone-ink small,
+.tone-plum span,
+.tone-ink span {
+  color: inherit;
+}
+.wellness-card.tone-plum > p:not(.eyebrow),
+.wellness-card.tone-ink > p:not(.eyebrow) {
+  color: inherit;
+}
+.tone-plum .eyebrow,
+.tone-ink .eyebrow,
+.tone-plum .small-label,
+.tone-ink .small-label {
+  color: #c9dbf0;
 }
 .tone-sand {
   color: #24374f;
@@ -539,7 +572,7 @@ body {
 }
 .mobile-quick-nav a:first-child,
 .mobile-quick-nav button {
-  color: #2f7bc4;
+  color: #2a6fb0;
 }
 :where(button, a, input, select, textarea):focus-visible {
   outline: 3px solid #6eb1e8;
@@ -791,7 +824,7 @@ body {
   border-left: 1px solid #c8d3df;
 }
 .first-record-route b {
-  color: #2f7bc4;
+  color: #2a6fb0;
   font:
     700 9px "IBM Plex Mono",
     monospace;
@@ -935,7 +968,7 @@ body {
 }
 .recovery-history-trend > span {
   flex: 0 0 auto;
-  color: #2f7bc4;
+  color: #2a6fb0;
   font:
     700 8px/1.5 "IBM Plex Mono",
     monospace;
@@ -985,7 +1018,7 @@ body {
 .recovery-history-sequence {
   display: inline-block;
   margin-right: 7px;
-  color: #2f7bc4;
+  color: #2a6fb0;
   font:
     700 8px/1 "IBM Plex Mono",
     monospace;
@@ -1196,7 +1229,7 @@ body {
 .session-composition small {
   display: block;
   margin-top: 3px;
-  color: #637b91;
+  color: #5c7287;
   font:
     700 9px "IBM Plex Mono",
     monospace;

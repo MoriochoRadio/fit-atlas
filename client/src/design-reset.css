@@ -211,7 +211,7 @@ textarea {
   transform: translateY(-2px);
 }
 .start-action span {
-  color: #66758e;
+  color: var(--muted-text);
 }
 .start-action b {
   font-family: "Noto Sans KR", sans-serif;
@@ -250,7 +250,7 @@ textarea {
   border-radius: 16px;
 }
 .today-command-meta span {
-  color: #79879e;
+  color: var(--muted-text);
   font-family: "IBM Plex Mono", monospace;
 }
 .today-command-meta b {
@@ -259,7 +259,7 @@ textarea {
   font-weight: 800;
 }
 .today-command-meta p {
-  color: #718097;
+  color: var(--muted-text);
 }
 
 /* Unified feature system */
@@ -366,7 +366,7 @@ textarea {
 .checkin-head > div > p:last-child,
 .session-launcher-head > p,
 .recovery-start p {
-  color: #68778f;
+  color: #637188;
 }
 .checkin-head > span {
   color: #4e5fba;
@@ -479,7 +479,7 @@ textarea {
   font-family: "IBM Plex Mono", monospace;
 }
 .difficulty {
-  color: #c0614f;
+  color: #a55344;
 }
 .exercise-card h3 {
   color: var(--ink);
@@ -501,7 +501,7 @@ textarea {
   border-color: var(--line);
 }
 .empty-library {
-  color: #6c7b93;
+  color: #627086;
   border-color: #bfc9d7;
 }
 .region-title h3,
@@ -597,7 +597,7 @@ textarea {
   border-color: var(--line);
 }
 .interval-card dt {
-  color: #75839a;
+  color: #606b7e;
   font-family: "IBM Plex Mono", monospace;
 }
 .interval-card dd,
@@ -768,7 +768,7 @@ textarea {
 }
 .start-dock-intro .eyebrow,
 .today-command-copy .eyebrow {
-  color: #748b12;
+  color: var(--accent-text);
 }
 .start-dock-intro h2 em {
   color: #71890e;
@@ -777,7 +777,7 @@ textarea {
   background: var(--accent-soft);
 }
 .start-action svg:last-child {
-  color: #748b12;
+  color: var(--accent-text);
 }
 .start-action-session {
   background: #fbfde9;
@@ -915,7 +915,7 @@ textarea {
 }
 .weekly-goals button.is-selected,
 .weekly-add-button {
-  color: var(--ink);
+  color: #fff;
   border-color: var(--accent);
   background: var(--accent);
 }
@@ -959,16 +959,16 @@ textarea {
 }
 .rom-status-head p,
 .monthly-rom-summary p {
-  color: #68778f;
+  color: #637188;
 }
 .rom-status-head > div:last-child {
-  color: #718098;
+  color: #5f6c80;
 }
 .rom-status-head > div:last-child b {
   color: #71890e;
 }
 .rom-status-week article {
-  color: #6c7b93;
+  color: #627086;
   border-color: var(--line);
   border-radius: 11px;
   background: #f7f9f3;
@@ -978,10 +978,10 @@ textarea {
   background: #fffefa;
 }
 .rom-status-week article.has-status > b {
-  color: #6c840c;
+  color: #647b0b;
 }
 .rom-status-week article.has-status small {
-  color: #718098;
+  color: #5f6c80;
 }
 .rom-status-bars {
   border-bottom-color: #d9e1d5;
@@ -998,7 +998,7 @@ textarea {
 }
 .rom-status-legend,
 .monthly-rom-legend {
-  color: #6b7a91;
+  color: #647187;
 }
 .dashboard-export-note {
   border-color: var(--line);
@@ -1016,11 +1016,11 @@ textarea {
   background: #fffefa;
 }
 .dashboard-export-note small {
-  color: #6f7e95;
+  color: #5f6c80;
 }
 .rom-export-button,
 .alternative-routine-add {
-  color: var(--ink);
+  color: #fff;
   border-color: var(--accent);
   background: var(--accent);
 }
@@ -1044,7 +1044,7 @@ textarea {
   background: var(--surface);
 }
 .recovery-start .eyebrow {
-  color: #748b12;
+  color: var(--accent-text);
 }
 .recovery-primary {
   color: var(--ink);
@@ -1062,7 +1062,7 @@ textarea {
 }
 .toolkit-grid ul,
 .toolkit-red-flags ul {
-  color: #617188;
+  color: #5d6c83;
 }
 .toolkit-red-flags {
   color: #894d45;
@@ -1734,7 +1734,7 @@ user-paced motion {
 }
 .weekly-goal-editor > span {
   margin-right: 4px;
-  color: #6e7b8f;
+  color: var(--muted-text);
   font-size: 10px;
 }
 .weekly-goal-editor button {
@@ -2116,7 +2116,7 @@ user-paced motion {
 }
 .anatomy-3d-stage .anatomy-label {
   bottom: 9px;
-  color: #718216;
+  color: #637213;
   background: #f5fbdc;
 }
 .body-map-card .region-selector {
@@ -2181,7 +2181,7 @@ user-paced motion {
   white-space: nowrap;
 }
 .related-list button span {
-  color: #718216;
+  color: #637213;
   font-size: 10px;
 }
 .related-list button svg {
@@ -2335,7 +2335,7 @@ user-paced motion {
 }
 .anatomy-list-empty {
   padding: 18px 4px;
-  color: #718098;
+  color: #5f6c80;
   font-size: 13px;
   line-height: 1.6;
 }
@@ -2847,7 +2847,7 @@ user-paced motion {
 }
 .explore-preset-head .small-label {
   margin: 0 0 4px;
-  color: #71870c;
+  color: #60730a;
 }
 .explore-preset-head h3 {
   margin: 0;
@@ -2888,7 +2888,7 @@ user-paced motion {
 .explore-preset-save button {
   min-height: 38px;
   padding: 8px 12px;
-  color: var(--ink);
+  color: #fff;
   border: 1px solid var(--accent);
   border-radius: 10px;
   background: var(--accent);
@@ -2948,7 +2948,7 @@ user-paced motion {
 }
 .explore-preset-empty {
   margin: 12px 0 0;
-  color: #738198;
+  color: #616c80;
   font-size: 12px;
 }
 .scene-settings-modal {
