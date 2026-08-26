@@ -41,7 +41,14 @@ import { WeeklyAtlasDetailReport } from "@/components/WeeklyAtlasDetailReport";
 import { HeroRecentEquipmentResume } from "@/components/HeroRecentEquipmentResume";
 import { ExplorePresetPanel } from "@/components/ExplorePresetPanel";
 import { SceneExperienceDialog } from "@/components/SceneExperienceDialog";
+import { Metric, SectionTitle } from "@/components/SectionPrimitives";
 import { RomStatusDashboard } from "@/components/RomStatusDashboard";
+import {
+  AnatomyScene,
+  type AnatomyMuscleRoles,
+} from "@/components/scenes/AnatomyScene";
+import { ProgressScene } from "@/components/scenes/ProgressScene";
+import { WorkdayRecoveryScene } from "@/components/scenes/WorkdayRecoveryScene";
 import { ExploreFilterResultSummary } from "@/components/ExploreFilterResultSummary";
 import { ExerciseCardSummary } from "@/components/ExerciseCardSummary";
 import { SessionComposition } from "@/components/SessionComposition";
@@ -191,10 +198,6 @@ type RomRecommendationTarget = {
   exerciseName: string;
   presentation: ReturnType<typeof getAsciiDiagramPresentation>;
 };
-type AnatomyMuscleRoles = {
-  primary: BodyRegion[];
-  supporting: BodyRegion[];
-} | null;
 const AsciiInteractionContext = React.createContext<{
   showAxis: boolean;
   pendingExerciseName: string | null;
@@ -304,86 +307,6 @@ const equipmentSessionSetup: Record<
   dumbbell: { goal: "all_round", label: "덤벨", goalLabel: "전신 균형" },
   treadmill: { goal: "endurance", label: "트레드밀", goalLabel: "심폐 리듬" },
 };
-
-function SectionTitle({
-  eyebrow,
-  title,
-  description,
-  action,
-}: {
-  eyebrow: string;
-  title: string;
-  description: string;
-  action?: React.ReactNode;
-}) {
-  return (
-    <div className="section-heading">
-      <div>
-        <p className="eyebrow">{eyebrow}</p>
-        <h2>{title}</h2>
-        <p className="section-description">{description}</p>
-      </div>
-      {action}
-    </div>
-  );
-}
-
-const wellnessJumpItems = [
-  { id: "recovery", label: "회복 시작" },
-  { id: "wellness", label: "생활 습관" },
-  { id: "cardio-intervals", label: "유산소" },
-  { id: "quiet-circuits", label: "무점프" },
-  { id: "start-safely", label: "안전" },
-] as const;
-
-function WellnessQuickNav({ onJump }: { onJump: (id: string) => void }) {
-  const [activeSection, setActiveSection] =
-    useState<(typeof wellnessJumpItems)[number]["id"]>("recovery");
-  useEffect(() => {
-    if (typeof window === "undefined" || !window.IntersectionObserver) return;
-    const observer = new IntersectionObserver(
-      entries => {
-        const visible = entries
-          .filter(entry => entry.isIntersecting)
-          .sort(
-            (left, right) => right.intersectionRatio - left.intersectionRatio
-          )[0];
-        if (
-          visible &&
-          wellnessJumpItems.some(item => item.id === visible.target.id)
-        )
-          setActiveSection(
-            visible.target.id as (typeof wellnessJumpItems)[number]["id"]
-          );
-      },
-      { rootMargin: "-20% 0px -62% 0px", threshold: [0.15, 0.4, 0.7] }
-    );
-    wellnessJumpItems.forEach(item => {
-      const target = document.getElementById(item.id);
-      if (target) observer.observe(target);
-    });
-    return () => observer.disconnect();
-  }, []);
-  return (
-    <nav className="wellness-toc" aria-label="웰니스 화면 빠른 이동">
-      <span>빠른 이동</span>
-      {wellnessJumpItems.map(item => (
-        <button
-          type="button"
-          key={item.id}
-          className={activeSection === item.id ? "is-active" : ""}
-          aria-current={activeSection === item.id ? "location" : undefined}
-          onClick={() => {
-            setActiveSection(item.id);
-            onJump(item.id);
-          }}
-        >
-          {item.label}
-        </button>
-      ))}
-    </nav>
-  );
-}
 
 function playSceneTransitionSound() {
   if (typeof window === "undefined") return;
@@ -2732,127 +2655,27 @@ export default function Home() {
               }}
             />
           </section>
-          <section
-            id="scene-wellness"
-            className="scene-view scene-view-wellness"
-            tabIndex={-1}
-          >
-            <WellnessQuickNav onJump={jumpToWellnessSection} />
-            <section
-              id="recovery"
-              className="seated-recovery-section section-pad"
-            >
-              <SectionTitle
-                eyebrow="WORKDAY RECOVERY"
-                title="오래 앉은 뒤, 다음 작업을 위한 짧은 전환."
-                description="장시간 같은 자세 뒤에 환경을 확인하고 가볍게 움직이는 일반 교육용 루틴입니다. 통증을 치료하려 하거나 무리한 스트레칭을 하는 대신, 작은 범위와 반응 확인을 우선합니다."
-              />
-              <section className="recovery-start" aria-label="빠른 회복 시작">
-                <div>
-                  <p className="eyebrow">START SMALL</p>
-                  <h3>지금은 무엇이 필요한가요?</h3>
-                  <p>
-                    불편감이 없다면 5분 움직임으로 재시작하고, 특정 부위가 신경
-                    쓰이면 부위별 안내로 이동하세요.
-                  </p>
-                </div>
-                <div className="recovery-start-actions">
-                  <button
-                    className="recovery-primary"
-                    onClick={() => setSeatedRecoveryDuration(5)}
-                  >
-                    <Timer size={17} /> 5분 가볍게 시작
-                  </button>
-                  <button
-                    className="recovery-secondary"
-                    onClick={() => navigateToScene("anatomy")}
-                  >
-                    <Activity size={17} /> 부위별로 확인
-                  </button>
-                </div>
-              </section>
-              <SeatedRecoveryPanel
-                duration={seatedRecoveryDuration}
-                onDuration={setSeatedRecoveryDuration}
-                recommendation={checkinRecommendation}
-                recoveryContext={profileForm.recoveryContext as RecoveryContext}
-                onExplore={exploreSeatedRecoveryExercise}
-                onBuildSession={() => {
-                  setSessionGoal("all_round");
-                  setSessionEnvironment("home");
-                  setSessionDuration(15);
-                  navigateToScene("session");
-                  toast.success(
-                    "집·매트 환경의 15분 가벼운 세션으로 설정했습니다."
-                  );
-                }}
-              />
-            </section>
-
-            <section className="routine-section section-pad">
-              <SectionTitle
-                eyebrow="ROUTINE LIBRARY"
-                title="목표를 루틴으로, 루틴을 리듬으로."
-                description="4주 템플릿은 일반적인 시작 구조입니다. 주차를 통과하기보다 통증·피로·수면 반응에 맞춰 머무르거나 가볍게 조절하세요."
-              />
-              <div className="routine-goals">
-                {(
-                  [
-                    "strength",
-                    "endurance",
-                    "weight_management",
-                    "general_health",
-                  ] as RoutineGoal[]
-                ).map(item => (
-                  <button
-                    key={item}
-                    className={routineGoal === item ? "is-selected" : ""}
-                    onClick={() => setRoutineGoal(item)}
-                  >
-                    {
-                      {
-                        strength: "근력",
-                        endurance: "심폐",
-                        weight_management: "체중 관리",
-                        general_health: "전신 건강",
-                      }[item]
-                    }
-                  </button>
-                ))}
-              </div>
-              <div className="routine-card">
-                <div className="routine-intro">
-                  <p className="eyebrow">
-                    {routineGoal.replace("_", " ").toUpperCase()}
-                  </p>
-                  <h3>{routine.title}</h3>
-                  <p>{routine.intro}</p>
-                  <div className="routine-safety">
-                    <ShieldCheck size={16} />
-                    {routine.safetyNote}
-                  </div>
-                </div>
-                <div className="routine-weeks">
-                  {routine.weeks.map(week => (
-                    <article key={week.week}>
-                      <span>W{week.week}</span>
-                      <div>
-                        <p className="small-label">
-                          {week.theme} · {week.sessions}
-                        </p>
-                        <ul>
-                          {week.focus.map(item => (
-                            <li key={item}>{item}</li>
-                          ))}
-                        </ul>
-                        <p>{week.note}</p>
-                      </div>
-                    </article>
-                  ))}
-                </div>
-              </div>
-            </section>
-          </section>
+          <WorkdayRecoveryScene
+            onJumpToSection={jumpToWellnessSection}
+            seatedRecoveryDuration={seatedRecoveryDuration}
+            onChangeDuration={setSeatedRecoveryDuration}
+            checkinRecommendation={checkinRecommendation}
+            recoveryContext={profileForm.recoveryContext as RecoveryContext}
+            onExploreExercise={exploreSeatedRecoveryExercise}
+            onBuildLightSession={() => {
+              setSessionGoal("all_round");
+              setSessionEnvironment("home");
+              setSessionDuration(15);
+              navigateToScene("session");
+              toast.success(
+                "집·매트 환경의 15분 가벼운 세션으로 설정했습니다."
+              );
+            }}
+            onGoToAnatomy={() => navigateToScene("anatomy")}
+            routineGoal={routineGoal}
+            onChangeRoutineGoal={setRoutineGoal}
+            routine={routine}
+          />
 
           <section
             id="scene-explore"
@@ -3230,467 +3053,49 @@ export default function Home() {
             </section>
           </section>
 
-          <section
-            id="scene-anatomy"
-            className="scene-view scene-view-anatomy"
-            tabIndex={-1}
-          >
-            <section id="anatomy" className="anatomy-section section-pad">
-              <SectionTitle
-                eyebrow="BODY ATLAS"
-                title="부위를 누르면, 필요한 움직임이 보입니다."
-                description="신체 지도의 부위를 선택해 연관 운동과 회복 관점을 확인하세요. 통증 정보는 교육 목적이며 진단이나 치료가 아닙니다."
-              />
-              <div className="anatomy-grid">
-                <div className="body-map-card">
-                  <div className="map-head">
-                    <span>INTERACTIVE 3D MUSCLE MODEL</span>
-                    <span className="live-dot">DRAG · MULTI SELECT</span>
-                  </div>
-                  <AnatomyMap
-                    activeRegion={activeRegion}
-                    selectedRegions={selectedAnatomyRegions}
-                    onToggleRegion={selectAnatomyRegion}
-                    muscleRoles={anatomyMuscleRoles}
-                  />
-                  <div
-                    className="region-selector"
-                    role="group"
-                    aria-label="근육 부위 다중 선택"
-                  >
-                    {(Object.keys(recoveryGuides) as BodyRegion[]).map(
-                      region => (
-                        <button
-                          key={region}
-                          className={
-                            selectedAnatomyRegions.includes(region)
-                              ? "is-active"
-                              : ""
-                          }
-                          aria-pressed={selectedAnatomyRegions.includes(region)}
-                          onClick={() => selectAnatomyRegion(region)}
-                        >
-                          {region}
-                        </button>
-                      )
-                    )}
-                  </div>
-                </div>
-                <div className="anatomy-info">
-                  <div className="region-title">
-                    <p className="eyebrow">
-                      {selectedAnatomyRegions.length > 1
-                        ? "COMPOUND MUSCLE FILTER"
-                        : "SELECTED MUSCLE / REGION"}
-                    </p>
-                    <h3>
-                      {selectedAnatomyRegions.length
-                        ? selectedAnatomyRegions.join(" · ")
-                        : activeRegion}
-                    </h3>
-                    <p>
-                      {selectedAnatomyRegions.length > 1
-                        ? "선택한 모든 부위를 함께 자극하는 복합 운동만 표시합니다."
-                        : "모델을 드래그해 회전하거나 근육을 눌러 여러 부위를 함께 선택하세요."}
-                    </p>
-                  </div>
-                  {anatomyExercise && (
-                    <div
-                      className="anatomy-muscle-legend"
-                      aria-label={`${anatomyExercise.name} 근육 역할`}
-                    >
-                      <span className="primary">
-                        주동근 ·{" "}
-                        {anatomyMuscleRoles?.primary.join(" · ") || "-"}
-                      </span>
-                      <span className="supporting">
-                        협응근 ·{" "}
-                        {anatomyMuscleRoles?.supporting.join(" · ") || "-"}
-                      </span>
-                    </div>
-                  )}
-                  <div className="related-list">
-                    <div className="related-list-head">
-                      <div>
-                        <p className="small-label">
-                          {selectedAnatomyRegions.length > 1
-                            ? "COMPOUND EXERCISES"
-                            : "RELATED EXERCISES"}
-                        </p>
-                        <b>
-                          {selectedAnatomyRegions.length
-                            ? selectedAnatomyRegions.join(" · ")
-                            : activeRegion}{" "}
-                          비교
-                        </b>
-                      </div>
-                      <span aria-label="선택 부위 운동 비교 요약">
-                        공통 자극 · {regionExercises.length}개
-                      </span>
-                    </div>
-                    {regionExercises.length ? (
-                      <div className="anatomy-exercise-list">
-                        {regionExercises.slice(0, 16).map(exercise => (
-                          <button
-                            key={exercise.id}
-                            onClick={() => openAnatomyExercise(exercise)}
-                          >
-                            <span>{exercise.category}</span>
-                            <b>{exercise.name}</b>
-                            <ArrowRight size={15} />
-                          </button>
-                        ))}
-                      </div>
-                    ) : (
-                      <p className="anatomy-list-empty">
-                        이 조합을 함께 자극하는 운동을 찾지 못했습니다. 한
-                        부위를 해제하거나 다른 조합을 선택해 보세요.
-                      </p>
-                    )}
-                  </div>
-                  <div className="safety-callout">
-                    <ShieldCheck size={18} />
-                    <p>
-                      <strong>안전한 탐색</strong>
-                      <br />
-                      날카로운 통증, 저림, 근력 저하, 외상 후 변화는 자가
-                      관리보다 의료 평가를 우선하세요.
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <div className="recovery-card">
-                <div>
-                  <p className="eyebrow">RECOVERY GUIDE · {activeRegion}</p>
-                  <h3>{recovery.title}</h3>
-                  <p>{recovery.intro}</p>
-                </div>
-                <ol>
-                  {recovery.steps.map((step, index) => (
-                    <li key={step}>
-                      <span>0{index + 1}</span>
-                      {step}
-                    </li>
-                  ))}
-                </ol>
-                <div className="recovery-caution">
-                  <HeartPulse size={17} /> {recovery.caution}
-                </div>
-              </div>
-              <RecoveryProtocolPanel region={activeRegion} />
-              <RecoveryPathwayPanel
-                pathways={recoveryPathways}
-                pathway={activeRecoveryPathway}
-                alternatives={pathwayAlternatives}
-                onChoose={id => {
-                  setActiveRecoveryPathwayId(id);
-                  setActiveRegion(getRecoveryPathway(id).region);
-                }}
-                onExplore={exploreRecoveryAlternative}
-              />
-            </section>
-          </section>
-
-          <section
-            id="scene-progress"
-            className="scene-view scene-view-progress"
-            tabIndex={-1}
-          >
-            <section id="progress" className="progress-section section-pad">
-              <SectionTitle
-                eyebrow="TRAINING LOG"
-                title="기록은 감이 아닌 방향을 만듭니다."
-                description="종목·세트·횟수·중량·시간·강도를 기록하면 누적 볼륨과 개인 최고 기록을 확인할 수 있습니다."
-                action={
-                  <button
-                    className="dark-button"
-                    onClick={() => setLogOpen(true)}
-                  >
-                    <Plus size={16} /> 새 기록
-                  </button>
-                }
-              />
-              <RomStatusDashboard
-                days={weekRomStatus}
-                dashboardRef={romDashboardRef}
-                exporting={romDashboardExporting}
-                onExport={() => void exportRomStatusDashboard()}
-                routineCompletion={{
-                  completed: weeklyPlanInsight.completed,
-                  total: weeklyPlanInsight.total,
-                }}
-                exportMeta={dashboardExportMeta}
-                onChangeMeta={(key, value) =>
-                  setDashboardExportMeta(current => ({
-                    ...current,
-                    [key]: value,
-                  }))
-                }
-                monthlySummary={fourWeekRomStatus}
-              />
-              <div className="metric-row">
-                <Metric
-                  icon={<Dumbbell size={18} />}
-                  label="누적 볼륨"
-                  value={
-                    logs.length ? `${totalVolume.toLocaleString()} kg` : "—"
-                  }
-                  caption={
-                    logs.length ? "기록된 세트 기준" : "기록을 추가해 시작"
-                  }
-                />
-                <Metric
-                  icon={<Timer size={18} />}
-                  label="운동 시간"
-                  value={logs.length ? `${totalMinutes}분` : "—"}
-                  caption={logs.length ? "누적 기록 기준" : "아직 기록 없음"}
-                />
-                <Metric
-                  icon={<Activity size={18} />}
-                  label="세션 수"
-                  value={`${logs.length}`}
-                  caption="기록된 운동"
-                />
-                <Metric
-                  icon={<CalendarDays size={18} />}
-                  label="이번 주"
-                  value={`${insights.load.sessions}`}
-                  caption="최근 7일 기록"
-                />
-              </div>
-              <div className="insight-row">
-                <article>
-                  <p className="small-label">TRAINING LOAD</p>
-                  <h3>
-                    {insights.load.load
-                      ? `${insights.load.load} 부하점수`
-                      : "기록 대기"}
-                  </h3>
-                  <p>{insights.loadLabel}</p>
-                </article>
-                <article>
-                  <p className="small-label">CONSISTENCY</p>
-                  <h3>
-                    {insights.consistency.activeDays
-                      ? `주 평균 ${insights.consistency.weeklyAverage}일`
-                      : "습관 만들기"}
-                  </h3>
-                  <p>{insights.consistencyLabel}</p>
-                </article>
-                <article>
-                  <p className="small-label">BODY BALANCE</p>
-                  <h3>{insights.balance[0]?.region ?? "부위 분석 대기"}</h3>
-                  <p>{insights.balanceLabel}</p>
-                  {insights.balance.length > 0 && (
-                    <div className="balance-tags">
-                      {insights.balance.slice(0, 4).map(item => (
-                        <span key={item.region}>{item.region}</span>
-                      ))}
-                    </div>
-                  )}
-                </article>
-              </div>
-              <div className="aerobic-trend-row">
-                <article>
-                  <p className="small-label">AEROBIC INTENSITY · RPE</p>
-                  <h3>
-                    {insights.aerobic.band}
-                    {insights.aerobic.sessions
-                      ? ` · RPE ${insights.aerobic.averageRpe}`
-                      : ""}
-                  </h3>
-                  <p>{insights.aerobic.label}</p>
-                </article>
-                <article>
-                  <p className="small-label">EXERCISE TREND · 7 DAYS</p>
-                  <h3>
-                    {insights.trend.direction} · {insights.prTrend.direction}
-                  </h3>
-                  <p>
-                    {insights.trend.label}
-                    <br />
-                    {insights.streak.label} · {insights.prTrend.label}
-                  </p>
-                </article>
-              </div>
-              <div className="four-week-card">
-                <div className="card-title">
-                  <div>
-                    <p className="small-label">4-WEEK RHYTHM</p>
-                    <h3>시간·거리·부하의 흐름</h3>
-                  </div>
-                  <BarChart3 size={21} />
-                </div>
-                <div
-                  className="four-week-bars"
-                  aria-label="최근 4주 운동 부하 추세"
-                >
-                  {fourWeekTrends.map(item => (
-                    <div key={item.label}>
-                      <div className="four-week-bar-track">
-                        <i
-                          style={{
-                            height: `${Math.max((item.load / maxFourWeekLoad) * 100, item.load ? 7 : 2)}%`,
-                          }}
-                        />
-                      </div>
-                      <b>{item.label}</b>
-                      <span>
-                        {item.minutes}분 ·{" "}
-                        {item.distanceKm ? `${item.distanceKm}km` : "거리—"}
-                      </span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-              <div className="analytics-grid">
-                <div className="chart-card">
-                  <div className="card-title">
-                    <div>
-                      <p className="small-label">WEEKLY VOLUME</p>
-                      <h3>최근 7일 볼륨</h3>
-                    </div>
-                    <BarChart3 size={21} />
-                  </div>
-                  {logs.length ? (
-                    <div
-                      className="volume-bars"
-                      aria-label="최근 7일 운동 볼륨"
-                    >
-                      {weeklyVolume.map(item => (
-                        <div
-                          className="volume-column"
-                          key={item.day}
-                          title={`${item.day}: ${item.volume.toLocaleString()} kg`}
-                        >
-                          <i
-                            style={{
-                              height: `${Math.max((item.volume / maxWeeklyVolume) * 100, item.volume ? 7 : 2)}%`,
-                            }}
-                          />
-                          <span>{item.day}</span>
-                          <b>
-                            {item.volume
-                              ? `${Math.round(item.volume / 1000)}k`
-                              : "·"}
-                          </b>
-                        </div>
-                      ))}
-                    </div>
-                  ) : (
-                    <div className="chart-empty">
-                      <div className="ghost-bars">
-                        <i />
-                        <i />
-                        <i />
-                        <i />
-                        <i />
-                        <i />
-                        <i />
-                      </div>
-                      <p>
-                        <strong>첫 기록 하나면 충분합니다.</strong>
-                        <br />
-                        종목·시간·강도만 남겨도 다음 세션의 기준이 생깁니다.
-                      </p>
-                      <div
-                        className="first-record-route"
-                        aria-label="첫 기록 다음 흐름"
-                      >
-                        <span>
-                          <b>01</b> 운동·시간·RPE 입력
-                        </span>
-                        <span>
-                          <b>02</b> 주간 흐름에 첫 신호 표시
-                        </span>
-                      </div>
-                      <button
-                        className="empty-state-action"
-                        onClick={() => setLogOpen(true)}
-                      >
-                        첫 기록 남기기 <ArrowRight size={14} />
-                      </button>
-                    </div>
-                  )}
-                </div>
-                <div className="pr-card">
-                  <p className="small-label">PERSONAL RECORDS</p>
-                  <h3>개인 최고 기록</h3>
-                  {Object.keys(pr).length ? (
-                    <div className="pr-list">
-                      {Object.entries(pr).map(([name, value]) => (
-                        <div key={name}>
-                          <span>{name}</span>
-                          <b>{value} kg</b>
-                        </div>
-                      ))}
-                    </div>
-                  ) : (
-                    <div className="pr-empty">
-                      <span className="pr-orbit">
-                        <Sparkles size={21} />
-                      </span>
-                      <p>
-                        중량 기록을 추가해
-                        <br />첫 PR을 만들어 보세요.
-                      </p>
-                    </div>
-                  )}
-                  <button
-                    className="text-button dark-text"
-                    onClick={() => setLogOpen(true)}
-                  >
-                    기록 추가하기 <ArrowRight size={15} />
-                  </button>
-                </div>
-              </div>
-              <div className="calendar-card">
-                <div>
-                  <p className="small-label">ACTIVITY CALENDAR</p>
-                  <h3>날짜별 운동 기록</h3>
-                </div>
-                <div>
-                  {
-                    <div className="week-calendar">
-                      {calendarDays.map(day => (
-                        <div
-                          key={day.key}
-                          className={day.count ? "has-activity" : ""}
-                        >
-                          <span>{day.weekday}</span>
-                          <b>{day.day}</b>
-                          <i>{day.count || "·"}</i>
-                        </div>
-                      ))}
-                    </div>
-                  }
-                  {logs.length ? (
-                    <div className="log-table">
-                      {logs.slice(0, 4).map(log => (
-                        <div key={log.id}>
-                          <span>{log.date.slice(5).replace("-", ".")}.</span>
-                          <b>{log.exercise}</b>
-                          <span>
-                            {log.sets}세트 · {log.reps}회 · {log.load}kg
-                          </span>
-                          <span>RPE {log.intensity}</span>
-                        </div>
-                      ))}
-                    </div>
-                  ) : (
-                    <div className="calendar-empty">
-                      <CalendarDays size={22} />
-                      <p>
-                        아직 기록된 운동이 없습니다. 세트와 강도를 남겨 다음
-                        세션의 기준을 만들어 보세요.
-                      </p>
-                    </div>
-                  )}
-                </div>
-              </div>
-            </section>
-          </section>
-
+          <AnatomyScene
+            activeRegion={activeRegion}
+            selectedAnatomyRegions={selectedAnatomyRegions}
+            onToggleRegion={selectAnatomyRegion}
+            regionExercises={regionExercises}
+            anatomyExercise={anatomyExercise}
+            anatomyMuscleRoles={anatomyMuscleRoles}
+            onOpenExercise={openAnatomyExercise}
+            recovery={recovery}
+            activeRecoveryPathway={activeRecoveryPathway}
+            pathwayAlternatives={pathwayAlternatives}
+            onChoosePathway={id => {
+              setActiveRecoveryPathwayId(id);
+              setActiveRegion(getRecoveryPathway(id).region);
+            }}
+            onExploreAlternative={exploreRecoveryAlternative}
+          />
+          <ProgressScene
+            logs={logs}
+            totalVolume={totalVolume}
+            totalMinutes={totalMinutes}
+            insights={insights}
+            weeklyVolume={weeklyVolume}
+            maxWeeklyVolume={maxWeeklyVolume}
+            fourWeekTrends={fourWeekTrends}
+            maxFourWeekLoad={maxFourWeekLoad}
+            calendarDays={calendarDays}
+            pr={pr}
+            weekRomStatus={weekRomStatus}
+            fourWeekRomStatus={fourWeekRomStatus}
+            romDashboardRef={romDashboardRef}
+            romDashboardExporting={romDashboardExporting}
+            onExportRomDashboard={() => void exportRomStatusDashboard()}
+            routineCompletion={{
+              completed: weeklyPlanInsight.completed,
+              total: weeklyPlanInsight.total,
+            }}
+            dashboardExportMeta={dashboardExportMeta}
+            onChangeDashboardMeta={(key, value) =>
+              setDashboardExportMeta(current => ({ ...current, [key]: value }))
+            }
+            onOpenLog={() => setLogOpen(true)}
+          />
           <section className="scene-view scene-view-wellness">
             <section id="wellness" className="wellness-section section-pad">
               <SectionTitle
@@ -4757,27 +4162,6 @@ function AtlasNodeDialog({
   );
 }
 
-function Metric({
-  icon,
-  label,
-  value,
-  caption,
-}: {
-  icon: React.ReactNode;
-  label: string;
-  value: string;
-  caption: string;
-}) {
-  return (
-    <div className="metric-card">
-      <span className="metric-icon">{icon}</span>
-      <p>{label}</p>
-      <b>{value}</b>
-      <small>{caption}</small>
-    </div>
-  );
-}
-
 function WeeklyPlanPanel({
   plan,
   insight,
@@ -4882,58 +4266,6 @@ function WeeklyPlanPanel({
               </div>
             </article>
           ))}
-        </div>
-      </div>
-    </section>
-  );
-}
-
-function RecoveryProtocolPanel({ region }: { region: BodyRegion }) {
-  const protocol = recoveryProtocols[region];
-  const stages = recoveryStageGuides[region];
-  const groups = [
-    ["스트레칭·가동성", protocol.stretch],
-    ["폼롤러", protocol.foamRoller],
-    ["마사지건", protocol.massageGun],
-    ["부하 조절", protocol.loadManagement],
-  ] as const;
-  return (
-    <section
-      className="recovery-toolkit"
-      aria-label={`${region} 회복 방법 상세`}
-    >
-      <div className="toolkit-heading">
-        <p className="eyebrow">RECOVERY TOOLKIT</p>
-        <h3>도구보다, 반응을 먼저 확인하세요.</h3>
-        <p>
-          아래 내용은 일반 교육용입니다. 통증을 치료하려 하기보다
-          불편감·피로·기능 변화를 관찰하며 부하를 조절하세요.
-        </p>
-      </div>
-      <RecoveryStageGrid stages={stages} />
-      <div className="toolkit-grid">
-        {groups.map(([label, steps]) => (
-          <article key={label}>
-            <p className="small-label">{label}</p>
-            <ul>
-              {steps.map(step => (
-                <li key={step}>{step}</li>
-              ))}
-            </ul>
-          </article>
-        ))}
-      </div>
-      <div className="toolkit-red-flags">
-        <ShieldCheck size={17} />
-        <div>
-          <p className="small-label">
-            즉시 자가 관리를 멈추고 평가가 필요한 신호
-          </p>
-          <ul>
-            {protocol.redFlags.map(flag => (
-              <li key={flag}>{flag}</li>
-            ))}
-          </ul>
         </div>
       </div>
     </section>
