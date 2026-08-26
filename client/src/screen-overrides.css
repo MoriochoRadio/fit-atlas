@@ -612,7 +612,6 @@
 /* Lime remains a state signal; readable ink carries explanatory copy. */
 .nav a,
 .ghost-button,
-.hero-description,
 .section-description,
 .today-command-copy > p,
 .checkin-head > div > p:last-child,
@@ -710,19 +709,7 @@
 .explore-paths + .explore-selection-state strong,
 .saved-exercise-index,
 .saved-exercise-list button svg,
-.saved-exercise-count,
-.hero-atlas .atlas-ready,
-.hero-atlas .atlas-caption,
-.hero-atlas .hero-session-card p,
-.hero-atlas .hero-session-card b small,
-.hero-atlas .session-route-description,
-.hero-atlas .atlas-theme-control p {
-  color: #36516b;
-}
-
-.hero-atlas .machine-hud b,
-.hero-atlas .machine-hud span,
-.hero-atlas .machine-hud small {
+.saved-exercise-count {
   color: #36516b;
 }
 
@@ -766,7 +753,6 @@
 
 @media (max-width: 700px) {
   .section-description,
-  .hero-description,
   .quick-category-head span,
   .saved-exercise-panel > p,
   .explore-result-summary > div:first-child > p,

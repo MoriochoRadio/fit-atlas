@@ -117,9 +117,7 @@ a {
     transparent
   );
 }
-.hero-copy,
-.hero-atlas,
-.hero-footer {
+.hero-copy {
   position: relative;
   z-index: 1;
 }
@@ -137,9 +135,6 @@ a {
 .hero h1 em {
   font-weight: 500;
 }
-.hero-description {
-  letter-spacing: -0.01em;
-}
 .hero-actions {
   display: flex;
   gap: 20px;
@@ -156,101 +151,6 @@ a {
   padding: 8px 0;
   border: 0;
   background: transparent;
-}
-.hero-atlas {
-  margin: 0 auto;
-  position: relative;
-  display: grid;
-  place-items: center;
-}
-.atlas-rings {
-  position: absolute;
-  border: 1px solid rgba(188, 227, 207, 0.4);
-  border-radius: 50%;
-}
-.atlas-rings:before,
-.atlas-rings:after {
-  content: "";
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  width: 100%;
-  height: 1px;
-  transform: translate(-50%, -50%) rotate(45deg);
-}
-.atlas-rings:after {
-  transform: translate(-50%, -50%) rotate(-45deg);
-}
-.atlas-core {
-  z-index: 1;
-  display: grid;
-  place-items: center;
-  border-radius: 50%;
-  border: 1px solid rgba(188, 227, 207, 0.45);
-}
-.atlas-stat {
-  position: absolute;
-}
-.atlas-stat span {
-  display: block;
-  font:
-    10px "DM Mono",
-    monospace;
-}
-.atlas-stat b {
-  font:
-    500 32px/1 "Fraunces",
-    serif;
-}
-.atlas-caption {
-  position: absolute;
-  bottom: 2px;
-  right: 11px;
-  font:
-    10px/1.4 "DM Mono",
-    monospace;
-  letter-spacing: 0.12em;
-  text-align: right;
-}
-.hero-footer {
-  grid-column: 1 / -1;
-  display: flex;
-  align-items: center;
-  gap: 28px;
-}
-.hero-footer span {
-  display: inline-flex;
-  align-items: center;
-  gap: 7px;
-}
-.quick-strip {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  border-bottom: 1px solid var(--line);
-}
-.quick-strip > div {
-  border-left: 1px solid var(--line);
-}
-.quick-strip > div:last-child {
-  border-right: 1px solid var(--line);
-}
-.strip-index {
-  display: block;
-  color: #a1aea8;
-  font:
-    10px "DM Mono",
-    monospace;
-  margin-bottom: 11px;
-}
-.quick-strip b {
-  font:
-    600 12px "DM Mono",
-    monospace;
-}
-.quick-strip p {
-  margin: 4px 0 0;
-  color: #6d7d77;
-  font-size: 12px;
 }
 .section-heading {
   display: flex;
@@ -388,14 +288,6 @@ a {
   outline: 0;
   background: transparent;
 }
-.filter-scroll {
-  display: flex;
-  gap: 7px;
-  flex: 1;
-  overflow-x: auto;
-  padding-bottom: 2px;
-}
-.filter-scroll button,
 .filter-row select {
   padding: 8px 11px;
   border: 1px solid rgba(23, 49, 44, 0.13);
@@ -404,11 +296,6 @@ a {
   background: rgba(255, 255, 255, 0.48);
   white-space: nowrap;
   font-size: 12px;
-}
-.filter-scroll button.filter-active {
-  color: #fff;
-  border-color: var(--ink);
-  background: var(--ink);
 }
 .filter-row select {
   outline: 0;
@@ -579,27 +466,6 @@ a {
   width: 365px;
   height: 194px;
   transform: rotate(-42deg);
-}
-.anatomy-skin {
-  fill: #c1b498;
-}
-.anatomy-silhouette {
-  fill: rgba(73, 105, 91, 0.18);
-  stroke: rgba(57, 91, 79, 0.26);
-  stroke-width: 1;
-}
-.anatomy-zone {
-  cursor: pointer;
-  fill: rgba(47, 83, 76, 0.35);
-  stroke: rgba(246, 246, 238, 0.6);
-  stroke-width: 0.8;
-  transition:
-    fill 0.16s ease,
-    filter 0.16s ease;
-}
-.anatomy-zone:hover,
-.anatomy-zone.is-active {
-  outline: none;
 }
 .anatomy-label {
   position: absolute;
@@ -792,9 +658,6 @@ a {
     500 24px/1.1 "Fraunces",
     serif;
   letter-spacing: -0.035em;
-}
-.chart-frame {
-  margin-top: 20px;
 }
 .chart-empty {
   min-height: 235px;
@@ -1385,9 +1248,6 @@ a {
   .hero {
     padding-top: 72px;
   }
-  .hero-footer {
-    padding-top: 22px;
-  }
   .program-grid,
   .anatomy-grid {
     grid-template-columns: 1fr;
@@ -1439,16 +1299,6 @@ a {
   }
   .menu-button {
     display: grid;
-  }
-  .hero-atlas {
-    margin: -8px auto -30px;
-  }
-  .quick-strip {
-    grid-template-columns: repeat(2, 1fr);
-    padding: 0;
-  }
-  .quick-strip > div:nth-child(3) {
-    border-left: 0;
   }
   .section-heading {
     display: block;
@@ -1550,15 +1400,6 @@ a {
   margin-top: 11px !important;
   color: rgba(188, 227, 207, 0.79) !important;
   font-size: 11px !important;
-}
-.local-first-note {
-  display: flex;
-  align-items: center;
-  gap: 7px;
-  max-width: 520px;
-  margin: 14px 0 0;
-  font-size: 11px;
-  line-height: 1.5;
 }
 .benefit-row {
   display: flex;
@@ -4076,66 +3917,6 @@ body {
 .hero-noise {
   background-size: 5px 5px;
 }
-.hero-description {
-  margin: 30px 0 32px;
-}
-.hero-atlas::before {
-  position: absolute;
-  font:
-    9px "DM Mono",
-    monospace;
-  letter-spacing: 0.14em;
-}
-.atlas-rings {
-  width: 302px;
-  height: 302px;
-  border-color: rgba(215, 249, 109, 0.42);
-  box-shadow:
-    0 0 0 42px rgba(215, 249, 109, 0.05),
-    0 0 0 84px rgba(215, 249, 109, 0.025);
-}
-.atlas-rings:before,
-.atlas-rings:after {
-  background: rgba(215, 249, 109, 0.32);
-}
-.atlas-core {
-  width: 130px;
-  height: 130px;
-  color: var(--atlas-lime);
-  border-color: var(--atlas-lime);
-  background: #0c251f;
-  box-shadow: 0 22px 60px rgba(0, 0, 0, 0.34);
-}
-.atlas-stat small {
-  display: block;
-  margin-top: 4px;
-}
-.atlas-caption {
-  display: none;
-}
-.hero-footer {
-  padding-top: 34px;
-  font:
-    10px "DM Mono",
-    monospace;
-}
-.quick-strip {
-  position: relative;
-  z-index: 3;
-  margin: -1px clamp(12px, 3vw, 44px) 0;
-  padding: 0;
-  border: 1px solid rgba(9, 27, 23, 0.22);
-}
-.quick-strip > div {
-  min-height: 122px;
-  padding: 22px 25px;
-  transition:
-    background 0.18s var(--ease-out),
-    color 0.18s var(--ease-out);
-}
-.quick-strip b {
-  letter-spacing: 0.13em;
-}
 .section-heading {
   position: relative;
   align-items: start;
@@ -4433,7 +4214,6 @@ select:focus-visible {
 }
 @media (prefers-reduced-motion: no-preference) {
   .exercise-card,
-  .quick-strip > div,
   .goal-pills button,
   .session-choice-group button {
     transition:
@@ -4444,9 +4224,6 @@ select:focus-visible {
   }
 }
 @media (max-width: 980px) {
-  .hero-atlas {
-    margin-top: 40px;
-  }
   .exercise-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -4466,36 +4243,6 @@ select:focus-visible {
     left: 20px;
     top: 18px;
     font-size: 7px;
-  }
-  .atlas-rings {
-    width: 190px;
-    height: 190px;
-    box-shadow:
-      0 0 0 27px rgba(215, 249, 109, 0.05),
-      0 0 0 54px rgba(215, 249, 109, 0.025);
-  }
-  .atlas-core {
-    width: 86px;
-    height: 86px;
-  }
-  .atlas-stat {
-    padding: 9px;
-  }
-  .stat-one {
-    top: 42px;
-  }
-  .hero-footer {
-    gap: 10px;
-    padding-top: 24px;
-    font-size: 9px;
-  }
-  .quick-strip {
-    margin-inline: 0;
-    border-inline: 0;
-  }
-  .quick-strip > div {
-    min-height: 90px;
-    padding: 16px 14px;
   }
   .program-selector,
   .program-card,
@@ -4534,166 +4281,6 @@ select:focus-visible {
     padding-block: 86px;
   }
 }
-.atlas-brief {
-  display: grid;
-  grid-template-columns: minmax(260px, 0.8fr) minmax(0, 1.2fr);
-  gap: 0;
-  padding: 0 clamp(20px, 8vw, 128px);
-  color: #eef5e4;
-}
-.atlas-brief-heading {
-  display: flex;
-  min-height: 365px;
-  padding: 42px clamp(24px, 4vw, 60px) 42px 0;
-  flex-direction: column;
-  justify-content: space-between;
-  border-right: 1px solid rgba(215, 249, 109, 0.23);
-}
-.atlas-brief-heading .eyebrow {
-  color: var(--atlas-lime);
-}
-.atlas-brief-heading h2 {
-  margin: 0;
-  font:
-    500 clamp(38px, 4.2vw, 64px) / 0.94 "Fraunces",
-    Georgia,
-    serif;
-  letter-spacing: -0.065em;
-}
-.atlas-brief-heading h2 em {
-  font-weight: inherit;
-}
-.atlas-brief-heading > p {
-  max-width: 370px;
-  margin: 0;
-  color: rgba(235, 244, 224, 0.62);
-  font-size: 12px;
-  line-height: 1.7;
-}
-.atlas-brief-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-}
-.atlas-brief-grid article {
-  display: flex;
-  min-height: 182px;
-  padding: 24px;
-  flex-direction: column;
-  border-right: 1px solid rgba(215, 249, 109, 0.18);
-  border-bottom: 1px solid rgba(215, 249, 109, 0.18);
-  background: rgba(255, 255, 255, 0.018);
-}
-.atlas-brief-grid article:nth-child(4) {
-  border-bottom: 0;
-}
-.atlas-brief-grid article > span,
-.atlas-brief-label {
-  display: inline-flex;
-  align-items: center;
-  gap: 7px;
-  color: rgba(215, 249, 109, 0.75);
-  font:
-    9px "DM Mono",
-    monospace;
-  letter-spacing: 0.12em;
-}
-.atlas-brief-grid article b {
-  display: block;
-  margin-top: auto;
-  color: #f3f6e9;
-  font:
-    500 44px/1 "Fraunces",
-    Georgia,
-    serif;
-  letter-spacing: -0.05em;
-}
-.atlas-brief-grid article p {
-  margin: 5px 0 13px;
-  color: rgba(235, 244, 224, 0.58);
-  font-size: 11px;
-}
-.atlas-brief-grid button,
-.atlas-brief-primary button {
-  display: inline-flex;
-  align-items: center;
-  gap: 5px;
-  align-self: flex-start;
-  padding: 0;
-  color: var(--atlas-lime);
-  border: 0;
-  background: transparent;
-  font-size: 10px;
-  font-weight: 700;
-}
-.atlas-brief-primary {
-  grid-row: span 2;
-  min-height: 365px !important;
-  padding: 29px !important;
-  background: linear-gradient(
-    145deg,
-    rgba(215, 249, 109, 0.14),
-    rgba(215, 249, 109, 0.025)
-  ) !important;
-}
-.atlas-brief-primary h3 {
-  margin: 27px 0 10px;
-  color: #f4f7ea;
-  font:
-    500 31px/1.05 "Fraunces",
-    Georgia,
-    serif;
-  letter-spacing: -0.045em;
-}
-.atlas-brief-primary p {
-  margin: 0 0 auto !important;
-  font-size: 12px !important;
-  line-height: 1.65;
-}
-@media (max-width: 980px) {
-  .atlas-brief {
-    grid-template-columns: 1fr;
-    padding-inline: 20px;
-  }
-  .atlas-brief-heading {
-    min-height: 0;
-    padding: 44px 0 30px;
-    border-right: 0;
-    border-bottom: 1px solid rgba(215, 249, 109, 0.23);
-    gap: 28px;
-  }
-  .atlas-brief-grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
-  .atlas-brief-primary {
-    grid-row: auto;
-    min-height: 210px !important;
-  }
-  .atlas-brief-grid article:nth-child(4) {
-    border-bottom: 1px solid rgba(215, 249, 109, 0.18);
-  }
-}
-@media (max-width: 700px) {
-  .atlas-brief-heading h2 {
-    font-size: 44px;
-  }
-  .atlas-brief-grid {
-    grid-template-columns: 1fr 1fr;
-  }
-  .atlas-brief-grid article {
-    min-height: 160px;
-    padding: 19px;
-  }
-  .atlas-brief-grid article:nth-child(2n) {
-    border-right: 0;
-  }
-  .atlas-brief-primary {
-    grid-column: 1 / -1;
-    min-height: 220px !important;
-  }
-  .atlas-brief-grid article b {
-    font-size: 37px;
-  }
-}
 .menu-button {
   color: #edf4e5;
 }
@@ -4727,14 +4314,7 @@ body {
 .nav a,
 .ghost-button,
 .eyebrow,
-.small-label,
-.strip-index,
-.atlas-brief-label,
-.atlas-brief-grid article > span,
-.hero-footer,
-.atlas-caption,
-.hero-performance-tag,
-.atlas-stat span {
+.small-label {
   font-family: "Oswald", "IBM Plex Sans KR", sans-serif;
 }
 .hero h1,
@@ -4743,9 +4323,7 @@ body {
 .session-plan-head h3,
 .region-title h3,
 .wellness-card h3,
-.evidence-section h2,
-.atlas-brief-heading h2,
-.atlas-brief-primary h3 {
+.evidence-section h2 {
   font-family: "Black Han Sans", "IBM Plex Sans KR", sans-serif;
   font-weight: 400;
   letter-spacing: -0.065em;
@@ -4788,10 +4366,6 @@ body {
 .hero h1 {
   text-transform: uppercase;
 }
-.hero-description {
-  max-width: 480px;
-  font-weight: 500;
-}
 .light-button {
   color: #070c0a;
   background: var(--atlas-lime);
@@ -4799,107 +4373,6 @@ body {
 }
 .text-button {
   font-weight: 700;
-}
-.hero-atlas {
-  overflow: hidden;
-}
-.hero-atlas::before {
-  content: "FIT ATLAS / TRAINING DAY";
-  z-index: 3;
-  left: 18px;
-  top: 18px;
-  color: #fff;
-}
-.hero-atlas::after {
-  z-index: 3;
-  right: 18px;
-}
-.hero-performance-image {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: 58% center;
-}
-.hero-image-shade {
-  position: absolute;
-  inset: 0;
-}
-.hero-performance-tag {
-  position: absolute;
-  z-index: 3;
-  display: grid;
-  gap: 2px;
-  left: 18px;
-  letter-spacing: 0.13em;
-}
-.hero-performance-tag span {
-  color: var(--atlas-lime);
-  font-size: 10px;
-}
-.hero-performance-tag b {
-  font-size: 52px;
-  line-height: 0.82;
-}
-.hero-performance-tag small {
-  font:
-    9px "Oswald",
-    sans-serif;
-  letter-spacing: 0.14em;
-}
-.atlas-rings,
-.atlas-core {
-  display: none;
-}
-.atlas-stat {
-  z-index: 4;
-  min-width: 124px;
-  color: #101613;
-}
-.atlas-stat span {
-  color: rgba(10, 14, 13, 0.72);
-  font-size: 10px;
-  letter-spacing: 0.13em;
-}
-.atlas-stat b {
-  letter-spacing: -0.04em;
-}
-.atlas-stat small {
-  color: rgba(10, 14, 13, 0.72);
-  font-size: 10px;
-  font-weight: 700;
-}
-.stat-one {
-  right: -12px;
-  top: 62px;
-}
-.stat-two {
-  left: -12px;
-  bottom: 118px;
-}
-.hero-footer {
-  font-family: "IBM Plex Sans KR", sans-serif;
-  letter-spacing: 0.02em;
-}
-.quick-strip {
-  background: #f5f3ed;
-  border-color: #111;
-}
-.quick-strip > div {
-  border-color: rgba(10, 14, 13, 0.2);
-}
-.quick-strip b {
-  font-family: "Oswald", sans-serif;
-  font-size: 13px;
-}
-.quick-strip > div:hover {
-  color: #0a0e0d;
-  background: var(--atlas-lime);
-}
-.quick-strip > div:hover p,
-.quick-strip > div:hover .strip-index {
-  color: #0a0e0d;
 }
 .section-heading::before {
   width: 90px;
@@ -4935,67 +4408,12 @@ body {
 .exercise-card:nth-child(3n) {
   background: #202925;
 }
-.atlas-brief {
-  background: #111815;
-}
-.atlas-brief-heading h2 em {
-  color: var(--atlas-lime);
-}
-.atlas-brief-primary {
-  background: linear-gradient(
-    145deg,
-    rgba(216, 255, 79, 0.2),
-    rgba(216, 255, 79, 0.025)
-  ) !important;
-}
 .wellness-section {
   background: #111815;
-}
-@media (max-width: 980px) {
-  .hero-atlas {
-    max-width: 620px;
-    margin: 32px 0 0;
-  }
 }
 @media (max-width: 700px) {
   .hero {
     padding-top: 88px;
-  }
-  .hero-atlas {
-    box-shadow: 12px 12px 0 rgba(216, 255, 79, 0.18);
-  }
-  .hero-performance-image {
-    object-position: 61% center;
-  }
-  .stat-one {
-    right: 0;
-  }
-  .stat-two {
-    left: 0;
-    bottom: 102px;
-  }
-  .atlas-stat {
-    min-width: 106px;
-  }
-  .atlas-stat b {
-    font-size: 34px;
-  }
-  .hero-performance-tag b {
-    font-size: 44px;
-  }
-}
-@media (max-width: 700px) {
-  .local-first-note {
-    align-items: flex-start;
-    line-height: 1.7;
-    word-break: keep-all;
-  }
-  .local-first-note svg {
-    flex: 0 0 auto;
-    margin-top: 3px;
-  }
-  .local-first-note strong {
-    white-space: nowrap;
   }
 }
 
@@ -5183,9 +4601,6 @@ main {
 .scene-wellness .wellness-section {
   box-shadow: inset 0 0 180px
     color-mix(in srgb, var(--scene-primary) 11%, transparent);
-}
-.scene-anatomy .anatomy-zone.is-active {
-  fill: var(--scene-primary);
 }
 .scene-progress .metric-icon {
   background: var(--scene-primary);
@@ -5409,10 +4824,6 @@ main {
   font-size: 10px;
   line-height: 1.4;
 }
-.quick-strip,
-.atlas-brief {
-  display: none;
-}
 @media (max-width: 1320px) {
   .start-dock,
   .today-command {
@@ -5465,29 +4876,6 @@ main {
   }
   .today-command-title h2 {
     font-size: 30px;
-  }
-}
-@media (max-width: 700px) {
-  .hero {
-    padding-bottom: 28px;
-    background:
-      linear-gradient(
-        90deg,
-        rgba(8, 14, 12, 0.98) 0%,
-        rgba(8, 14, 12, 0.88) 58%,
-        rgba(8, 14, 12, 0.42) 100%
-      ),
-      url("/manus-storage/fit-atlas-performance-hero_9e3d3d3c.jpg") 77% 50% /
-        cover no-repeat;
-  }
-  .hero-atlas {
-    display: none;
-  }
-  .hero-footer {
-    margin-top: 24px;
-  }
-  .hero-footer span:last-child {
-    display: none;
   }
 }
 
@@ -5993,25 +5381,6 @@ main {
 .log-helper strong {
   color: #0d2922;
 }
-.profile-quick-guide {
-  display: flex;
-  gap: 8px;
-  margin: 0 26px 16px;
-  padding: 11px 12px;
-  color: #355148;
-  border-left: 2px solid var(--atlas-lime);
-  background: #eef2ea;
-  font-size: 12px;
-  line-height: 1.55;
-}
-.profile-quick-guide svg {
-  flex: 0 0 auto;
-  margin-top: 2px;
-  color: #0d2922;
-}
-.profile-quick-guide p {
-  margin: 0;
-}
 .log-form label small {
   color: #597168;
   font-size: 10px;
@@ -6037,8 +5406,7 @@ main {
   .form-steps {
     padding: 0 20px 14px;
   }
-  .log-helper,
-  .profile-quick-guide {
+  .log-helper {
     margin-right: 20px;
     margin-left: 20px;
   }
@@ -6167,14 +5535,6 @@ main {
     justify-self: start;
   }
 }
-.axis-toggle-button {
-  display: inline-flex;
-  align-items: center;
-  gap: 5px;
-  padding: 9px 10px;
-  font-size: 10px;
-  font-weight: 800;
-}
 .rom-filter {
   display: flex;
   align-items: center;
@@ -6204,7 +5564,6 @@ main {
   cursor: pointer;
 }
 .rom-badge:focus-visible,
-.axis-toggle-button:focus-visible,
 .rom-filter button:focus-visible {
   outline: 2px solid #d8ff4f;
   outline-offset: 2px;
@@ -6233,9 +5592,6 @@ main {
   line-height: 1.5;
 }
 @media (max-width: 760px) {
-  .axis-toggle-button {
-    display: none;
-  }
   .rom-filter {
     align-items: flex-start;
     flex-direction: column;
@@ -6257,9 +5613,6 @@ main {
   display: none;
 }
 @media (max-width: 760px) {
-  .axis-control-top {
-    display: none;
-  }
   .library-actions {
     justify-items: start;
   }

@@ -156,51 +156,8 @@ body {
 .hero h1 em {
   color: #a8c96a;
 }
-.hero-description,
-.local-first-note {
-  color: #c3d1df;
-}
-.local-first-note strong {
-  color: #e5f0fa;
-}
 .hero .text-button {
   color: #a8c96a;
-}
-.hero-atlas {
-  width: min(100%, 510px);
-  height: 420px;
-  border: 1px solid rgba(185, 208, 231, 0.28);
-  border-radius: 12px;
-  background: #132943;
-  box-shadow: 18px 18px 0 rgba(6, 17, 31, 0.22);
-  transform: none;
-}
-.hero-atlas::after {
-  content: "LIVE / LOCAL";
-  position: absolute;
-  left: 18px;
-  bottom: 17px;
-  color: #91a9c1;
-  font:
-    9px "IBM Plex Mono",
-    monospace;
-  letter-spacing: 0.14em;
-}
-.atlas-visual-head,
-.atlas-ready,
-.hero-atlas .atlas-caption,
-.hero-atlas .machine-hud span,
-.hero-atlas .machine-hud small,
-.hero-atlas .machine-hud b,
-.hero-atlas .atlas-theme-control p {
-  color: #c9d7e6;
-}
-.atlas-ready i {
-  background: #a8c96a;
-}
-.motion-map {
-  border: 1px solid rgba(181, 207, 235, 0.15);
-  background-color: #10243c;
 }
 .atlas-theme-control {
   border-color: rgba(181, 207, 235, 0.26);
@@ -218,8 +175,7 @@ body {
   border-color: #6eaddd;
   background: rgba(72, 135, 193, 0.22);
 }
-.hero-session-card,
-.machine-resistance {
+.hero-session-card {
   border-color: rgba(141, 185, 226, 0.28);
   border-radius: 9px;
   background: #091728;
@@ -229,9 +185,6 @@ body {
 .hero-session-card b small,
 .session-route-description {
   color: #a8c96a !important;
-}
-.hero-footer {
-  color: #a5b8ca;
 }
 
 /* A single canvas supports all scenes; surfaces use borders and tracks instead of soft halos. */
@@ -394,13 +347,11 @@ body {
 .search-field svg {
   color: #2f7bc4;
 }
-.filter-scroll button,
 .filter-row select,
 .quick-category-options button,
 .rom-filter button {
   border-radius: 6px;
 }
-.filter-scroll button.filter-active,
 .quick-category-options button.filter-active,
 .rom-filter button.is-selected {
   color: #fff;
@@ -466,11 +417,6 @@ body {
 /* Data and anatomy become instrument panels, with a deliberate primary panel and flatter utilities. */
 .body-map-card {
   background: linear-gradient(145deg, #dbe7f1, #cfdce8);
-}
-.anatomy-zone:hover,
-.anatomy-zone.is-active {
-  fill: #2f7bc4;
-  filter: drop-shadow(0 0 7px rgba(47, 123, 196, 0.35));
 }
 .anatomy-info {
   background: #f8fafc;
@@ -630,13 +576,6 @@ body {
   }
   .hero h1 {
     font-size: clamp(36px, 10.5vw, 49px);
-  }
-  .hero-atlas {
-    height: 335px;
-    margin-top: 24px;
-  }
-  .hero-atlas .atlas-theme-control {
-    display: none;
   }
   .program-grid,
   .anatomy-grid,
