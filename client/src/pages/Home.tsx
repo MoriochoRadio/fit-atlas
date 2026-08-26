@@ -433,7 +433,6 @@ export default function Home() {
   const [atlasTransition, setAtlasTransition] = useState<
     "theme" | "route" | null
   >(null);
-  const [atlasFeedback, setAtlasFeedback] = useState("");
   const [activeAtlasNode, setActiveAtlasNode] = useState<number | null>(null);
   const [atlasNodeDraft, setAtlasNodeDraft] = useState({
     label: "",
@@ -654,15 +653,13 @@ export default function Home() {
       setStorageUnavailable(true);
   }, [sceneExperience]);
 
-  const playAtlasTransition = (kind: "theme" | "route", feedback: string) => {
+  const playAtlasTransition = (kind: "theme" | "route") => {
     if (atlasTransitionTimer.current)
       window.clearTimeout(atlasTransitionTimer.current);
     setAtlasTransition(null);
     window.setTimeout(() => setAtlasTransition(kind), 0);
-    setAtlasFeedback(feedback);
     atlasTransitionTimer.current = window.setTimeout(() => {
       setAtlasTransition(null);
-      setAtlasFeedback("");
     }, 820);
   };
 
@@ -685,7 +682,7 @@ export default function Home() {
         : sessionGoal === "endurance"
           ? "플로우"
           : "밸런스";
-    playAtlasTransition("route", `${label} 경로를 다시 그렸습니다.`);
+    playAtlasTransition("route");
   }, [sessionEnvironment, sessionGoal]);
 
   useEffect(() => {
@@ -1112,7 +1109,7 @@ export default function Home() {
       },
     }));
     setActiveAtlasNode(null);
-    playAtlasTransition("route", "세션 블록을 저장하고 경로를 갱신했습니다.");
+    playAtlasTransition("route");
     toast.success("아틀라스 세션 블록을 저장했습니다.");
   };
 
@@ -1124,7 +1121,7 @@ export default function Home() {
       return { ...current, blockEdits };
     });
     setActiveAtlasNode(null);
-    playAtlasTransition("route", "기본 세션 경로로 되돌렸습니다.");
+    playAtlasTransition("route");
   };
 
   const addLog = () => {
@@ -2084,10 +2081,7 @@ export default function Home() {
                               ...current,
                               heroEquipment: value,
                             }));
-                            playAtlasTransition(
-                              "route",
-                              `${{ cable: "케이블 머신", dumbbell: "덤벨", treadmill: "트레드밀" }[value]} 장비를 선택했습니다.`
-                            );
+                            playAtlasTransition("route");
                           }}
                         >
                           {label}
@@ -4277,10 +4271,7 @@ export default function Home() {
             onChangeTheme={theme => {
               if (theme === atlasTheme) return;
               setAtlasTheme(theme);
-              playAtlasTransition(
-                "theme",
-                `${{ lime: "라임", ocean: "오션", coral: "코랄", plum: "플럼" }[theme]} 테마를 적용했습니다.`
-              );
+              playAtlasTransition("theme");
             }}
             motionSpeed={atlasInteraction.motionSpeed}
             onChangeMotionSpeed={motionSpeed => {

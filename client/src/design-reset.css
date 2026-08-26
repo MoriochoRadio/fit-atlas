@@ -1273,75 +1273,7 @@ nodes {
     0 0 0 2px var(--atlas-node),
     0 0 0 3px var(--atlas-signal-deep);
 }
-@keyframes atlas-power-route {
-  from {
-    transform: rotate(25deg) scaleX(0.86);
-    transform-origin: left center;
-  }
-  to {
-    transform: rotate(29deg) scaleX(1.08);
-    transform-origin: left center;
-  }
-}
-@keyframes atlas-node-pulse {
-  from {
-    transform: scale(0.93);
-  }
-  to {
-    transform: scale(1.08);
-  }
-}
-@keyframes atlas-flow-breathe {
-  0%,
-  100% {
-    transform: scale(0.98);
-    opacity: 0.82;
-  }
-  50% {
-    transform: scale(1.02);
-    opacity: 1;
-  }
-}
-@keyframes atlas-scan {
-  from {
-    transform: translateX(-35%) skewX(-20deg);
-  }
-  to {
-    transform: translateX(680%) skewX(-20deg);
-  }
-}
-@keyframes atlas-node-orbit {
-  from {
-    transform: translate(-4px, 2px);
-  }
-  to {
-    transform: translate(5px, -4px);
-  }
-}
-@keyframes atlas-balance-route {
-  from {
-    transform: rotate(25deg) translateY(-4px);
-  }
-  to {
-    transform: rotate(33deg) translateY(4px);
-  }
-}
-@keyframes atlas-cross-drift {
-  from {
-    transform: translate(-2px, -2px);
-  }
-  to {
-    transform: translate(3px, 3px);
-  }
-}
-@keyframes atlas-gym-grid {
-  from {
-    filter: contrast(1);
-  }
-  to {
-    filter: contrast(1.12);
-  }
-}
+
 @media (max-width: 700px) {
   .hero-session-card {
     right: 14px;
@@ -1375,109 +1307,11 @@ nodes {
   --atlas-route-angle: 29deg;
 }
 @media (prefers-reduced-motion: no-preference) {
-  .atlas-transition-theme .atlas-theme-control {
-    animation: atlas-control-confirm 0.48s var(--ease-out);
-  }
   .atlas-transition-route .hero-session-card {
     animation: atlas-session-confirm 0.56s var(--ease-out);
   }
 }
-@keyframes atlas-panel-refresh {
-  0% {
-    transform: rotate(1.2deg) scale(0.985);
-  }
-  45% {
-    transform: rotate(1.2deg) scale(1.012);
-  }
-  100% {
-    transform: rotate(1.2deg) scale(1);
-  }
-}
-@keyframes atlas-theme-bloom {
-  0% {
-    opacity: 0.68;
-    filter: saturate(0.72);
-  }
-  55% {
-    opacity: 1;
-    filter: saturate(1.15);
-  }
-  100% {
-    opacity: 1;
-    filter: saturate(1);
-  }
-}
-@keyframes atlas-control-confirm {
-  0% {
-    transform: translateY(-5px);
-    opacity: 0.5;
-  }
-  100% {
-    transform: translateY(0);
-    opacity: 1;
-  }
-}
-@keyframes atlas-node-confirm {
-  0% {
-    opacity: 0.2;
-    transform: scale(0.62);
-  }
-  68% {
-    opacity: 1;
-    transform: scale(1.16);
-  }
-  100% {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
-@keyframes atlas-ripple {
-  0% {
-    opacity: 0.75;
-    transform: scale(0.3);
-  }
-  100% {
-    opacity: 0;
-    transform: scale(3.4);
-  }
-}
-@keyframes atlas-route-replay {
-  0% {
-    opacity: 0;
-    transform: rotate(var(--atlas-route-angle)) scaleX(0.04);
-    transform-origin: left center;
-  }
-  70% {
-    opacity: 1;
-    transform: rotate(var(--atlas-route-angle)) scaleX(1.06);
-    transform-origin: left center;
-  }
-  100% {
-    opacity: 1;
-    transform: rotate(var(--atlas-route-angle)) scaleX(1);
-    transform-origin: left center;
-  }
-}
-@keyframes atlas-cross-confirm {
-  0% {
-    opacity: 0;
-    transform: scale(0.3) rotate(-20deg);
-  }
-  100% {
-    opacity: 1;
-    transform: scale(1) rotate(0);
-  }
-}
-@keyframes atlas-route-node {
-  0% {
-    opacity: 0;
-    transform: translateX(-12px) scale(0.7);
-  }
-  100% {
-    opacity: 1;
-    transform: translateX(0) scale(1);
-  }
-}
+
 @keyframes atlas-session-confirm {
   0% {
     opacity: 0.35;
@@ -1486,17 +1320,6 @@ nodes {
   100% {
     opacity: 1;
     transform: translateY(0) scale(1);
-  }
-}
-@keyframes atlas-panel-refresh-mobile {
-  0% {
-    transform: scale(0.985);
-  }
-  45% {
-    transform: scale(1.012);
-  }
-  100% {
-    transform: scale(1);
   }
 }
 
@@ -1571,16 +1394,7 @@ user-paced motion {
 .atlas-node-actions .recovery-secondary {
   min-height: 42px;
 }
-@keyframes atlas-particle-twinkle {
-  from {
-    opacity: 0.18;
-    transform: scale(0.72);
-  }
-  to {
-    opacity: 0.9;
-    transform: scale(1.24);
-  }
-}
+
 @media (max-width: 700px) {
   .atlas-speed-control {
     padding-top: 5px;
@@ -2556,26 +2370,6 @@ user-paced motion {
   .muscle-zone.is-primary,
   .muscle-zone.is-supporting {
     animation: none !important;
-  }
-}
-@keyframes stack-rise {
-  from {
-    opacity: 0;
-    transform: translateY(12px) scaleY(0.35);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0) scaleY(1);
-  }
-}
-@keyframes weight-stack-rise {
-  from {
-    opacity: 0;
-    transform: translateY(17px) scaleY(0.45);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0) scaleY(1);
   }
 }
 
