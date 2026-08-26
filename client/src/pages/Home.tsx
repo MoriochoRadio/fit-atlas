@@ -36,6 +36,14 @@ import {
 import { AsciiInteractionContext } from "@/lib/asciiInteractionContext";
 import { explorePaths, type ExplorePath } from "@/lib/explorePaths";
 import { equipmentSessionSetup } from "@/lib/equipmentSessionSetup";
+import {
+  buildLogFormValues,
+  describeChangeFromLast,
+  emptyLogFormValues,
+  getRecentLoggedExercises,
+} from "@/lib/logFormDefaults";
+import { getTrackedProgressions } from "@/lib/exerciseProgression";
+import { getFilterRelaxations } from "@/lib/filterRelaxation";
 import { goalCopy } from "@/lib/goalCopy";
 import { sceneByHash, type CinematicScene } from "@/lib/scenes";
 import { HeroScene } from "@/components/scenes/HeroScene";
@@ -293,15 +301,9 @@ export default function Home() {
     typeof window === "undefined" ? [] : readTrainingLogs()
   );
   const [form, setForm] = useState(() => ({
+    ...emptyLogFormValues,
     date: new Date().toISOString().slice(0, 10),
     exercise: "바벨 백 스쿼트",
-    sets: "3",
-    reps: "8",
-    load: "40",
-    minutes: "35",
-    distance: "",
-    distanceUnit: "km" as "km" | "m",
-    intensity: "6",
   }));
   const [profileForm, setProfileForm] = useState(() =>
     typeof window === "undefined" ? readLocalProfile() : readLocalProfile()
@@ -895,6 +897,43 @@ export default function Home() {
     setActiveAtlasNode(null);
     playAtlasTransition("route");
   };
+
+  /**
+   * 계획·기구 세션에서 여는 경로는 그 세션에 맞춰 폼을 따로 채우므로 쓰지 않는다.
+   * 빈손으로 "기록 추가"를 누른 경우에만 마지막에 기록한 종목으로 시작한다.
+   */
+  const openBlankLog = () => {
+    const [lastExercise] = getRecentLoggedExercises(logs, 1);
+    if (lastExercise)
+      setForm(current => buildLogFormValues(logs, lastExercise, current.date));
+    setLinkedPlanSessionId(null);
+    setLogOpen(true);
+  };
+
+  const exerciseProgressions = useMemo(
+    () => getTrackedProgressions(logs),
+    [logs]
+  );
+  /** 결과가 0건일 때만 계산한다. 조건마다 카탈로그를 한 번씩 더 훑기 때문이다. */
+  const filterRelaxations = useMemo(
+    () =>
+      filteredExercises.length === 0
+        ? getFilterRelaxations(catalogExercises, exploreFilters)
+        : [],
+    [catalogExercises, exploreFilters, filteredExercises.length]
+  );
+
+  const recentLoggedExercises = useMemo(
+    () => getRecentLoggedExercises(logs),
+    [logs]
+  );
+  const logChangeFromLast = useMemo(
+    () => describeChangeFromLast(logs, form),
+    [form, logs]
+  );
+  /** 종목을 고르면 그 종목의 직전 기록으로 나머지 칸을 채운다. */
+  const selectLogExercise = (exercise: string) =>
+    setForm(current => buildLogFormValues(logs, exercise, current.date));
 
   const addLog = () => {
     const today = new Date().toISOString().slice(0, 10);
@@ -1591,7 +1630,7 @@ export default function Home() {
                 }}
               />
             </label>
-            <button className="dark-button" onClick={() => setLogOpen(true)}>
+            <button className="dark-button" onClick={openBlankLog}>
               <Plus size={16} /> 운동 기록
             </button>
             <button
@@ -1626,7 +1665,7 @@ export default function Home() {
               <Timer size={17} />
               <span>오늘 세션</span>
             </a>
-            <button onClick={() => setLogOpen(true)}>
+            <button onClick={openBlankLog}>
               <Plus size={18} />
               <span>기록</span>
             </button>
@@ -1661,7 +1700,7 @@ export default function Home() {
               setSessionGoal("all_round");
               navigateToScene("session");
             }}
-            onOpenLog={() => setLogOpen(true)}
+            onOpenLog={openBlankLog}
             machineSessionIntensity={machineSessionIntensity}
             atlasRoute={atlasRoute}
             atlasPerformance={atlasPerformance}
@@ -1773,6 +1812,10 @@ export default function Home() {
             filters={exploreFilters}
             onChangeFilters={updateExploreFilters}
             onResetFilters={resetExploreFilters}
+            relaxations={filterRelaxations}
+            onRelax={key =>
+              updateExploreFilters({ [key]: defaultExploreFilters[key] })
+            }
             activeFilterLabels={activeExploreFilterLabels}
             hasFilterState={hasExploreFilterState}
             sortLabel={sortLabel}
@@ -1845,6 +1888,7 @@ export default function Home() {
             totalVolume={totalVolume}
             totalMinutes={totalMinutes}
             insights={insights}
+            progressions={exerciseProgressions}
             weeklyVolume={weeklyVolume}
             maxWeeklyVolume={maxWeeklyVolume}
             fourWeekTrends={fourWeekTrends}
@@ -1864,7 +1908,7 @@ export default function Home() {
             onChangeDashboardMeta={(key, value) =>
               setDashboardExportMeta(current => ({ ...current, [key]: value }))
             }
-            onOpenLog={() => setLogOpen(true)}
+            onOpenLog={openBlankLog}
           />
           <WellnessScene />{" "}
         </main>
@@ -1926,6 +1970,31 @@ export default function Home() {
               <strong>종목·시간·RPE</strong>부터 남기고, 세트·횟수·중량은
               기억나는 만큼 입력하세요.
             </p>
+            {recentLoggedExercises.length > 0 && (
+              <div className="log-recent-exercises">
+                <p className="small-label">RECENT · 다시 기록</p>
+                <div role="group" aria-label="최근 기록한 운동 다시 고르기">
+                  {recentLoggedExercises.map(exercise => (
+                    <button
+                      key={exercise}
+                      type="button"
+                      className={
+                        form.exercise === exercise ? "is-selected" : ""
+                      }
+                      aria-pressed={form.exercise === exercise}
+                      onClick={() => selectLogExercise(exercise)}
+                    >
+                      {exercise}
+                    </button>
+                  ))}
+                </div>
+                {logChangeFromLast && (
+                  <p className="log-change-hint" aria-live="polite">
+                    {logChangeFromLast}
+                  </p>
+                )}
+              </div>
+            )}
             <div className="log-form">
               <div className="form-grid">
                 <label>
@@ -1943,9 +2012,7 @@ export default function Home() {
                   운동
                   <select
                     value={form.exercise}
-                    onChange={event =>
-                      setForm({ ...form, exercise: event.target.value })
-                    }
+                    onChange={event => selectLogExercise(event.target.value)}
                   >
                     {catalogExercises.map(exercise => (
                       <option key={exercise.id}>{exercise.name}</option>

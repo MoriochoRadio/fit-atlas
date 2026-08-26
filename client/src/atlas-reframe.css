@@ -1385,3 +1385,169 @@ body {
     width: 34px;
   }
 }
+
+/* ── 기록 입력: 최근 종목 다시 고르기 ─────────────────────────────────── */
+.log-recent-exercises {
+  margin: 14px 26px 0;
+}
+.log-recent-exercises .small-label {
+  margin: 0 0 8px;
+  color: var(--muted-text);
+}
+.log-recent-exercises > div {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+.log-recent-exercises button {
+  min-height: 32px;
+  padding: 6px 11px;
+  color: var(--ink);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #fff;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition:
+    border-color 0.16s var(--ease-out),
+    background 0.16s var(--ease-out);
+}
+.log-recent-exercises button:hover {
+  border-color: var(--accent);
+}
+.log-recent-exercises button.is-selected {
+  color: #fff;
+  border-color: var(--accent);
+  background: var(--accent);
+}
+.log-change-hint {
+  margin: 9px 0 0;
+  color: var(--muted-text);
+  font-size: 11px;
+  line-height: 1.5;
+}
+@media (max-width: 700px) {
+  .log-recent-exercises {
+    margin: 12px 18px 0;
+  }
+}
+
+/* ── 탐색 0건: 어떤 조건이 막고 있는지 ─────────────────────────────────── */
+.empty-library-relaxations {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 14px 0 16px;
+}
+.empty-library-relaxations button {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  min-height: 44px;
+  padding: 8px 13px;
+  color: var(--ink);
+  border: 1px solid var(--line);
+  border-radius: 9px;
+  background: #fff;
+  text-align: left;
+  cursor: pointer;
+  transition:
+    border-color 0.16s var(--ease-out),
+    box-shadow 0.16s var(--ease-out);
+}
+.empty-library-relaxations button:hover {
+  border-color: var(--accent);
+  box-shadow: 0 4px 12px rgba(42, 112, 180, 0.12);
+}
+.empty-library-relaxations b {
+  font-size: 12px;
+  font-weight: 700;
+}
+.empty-library-relaxations span {
+  color: var(--accent-text);
+  font-size: 11px;
+  font-weight: 600;
+}
+
+/* ── 기록 분석: 종목별 진척 ───────────────────────────────────────────── */
+.exercise-progression-card {
+  margin-bottom: 20px;
+  padding: 24px 26px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: var(--surface, #fff);
+}
+.exercise-progression-note {
+  margin: 10px 0 18px;
+  color: var(--muted-text);
+  font-size: 12px;
+  line-height: 1.6;
+}
+.exercise-progression-list {
+  display: grid;
+  gap: 16px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.exercise-progression-list li {
+  padding: 14px 16px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+}
+.exercise-progression-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 9px;
+}
+.exercise-progression-head b {
+  font-size: 14px;
+  font-weight: 700;
+}
+.exercise-progression-head span {
+  padding: 2px 8px;
+  border-radius: 999px;
+  background: #eef2f7;
+  color: var(--muted-text);
+  font-size: 11px;
+  font-weight: 700;
+}
+.exercise-progression-head span.is-올라감 {
+  color: #1f5a92;
+  background: #dcebfa;
+}
+.exercise-progression-head span.is-내려감 {
+  color: #8a4b3a;
+  background: #fbe9e3;
+}
+.exercise-progression-head small {
+  margin-left: auto;
+  color: var(--muted-text);
+  font-size: 11px;
+}
+.exercise-progression-bars {
+  display: flex;
+  align-items: flex-end;
+  gap: 5px;
+  height: 46px;
+  margin: 11px 0 9px;
+}
+.exercise-progression-bars i {
+  flex: 1;
+  min-width: 8px;
+  max-width: 26px;
+  border-radius: 3px 3px 0 0;
+  background: var(--accent);
+}
+.exercise-progression-list p {
+  margin: 0;
+  color: var(--muted-text);
+  font-size: 11px;
+}
+@media (max-width: 700px) {
+  .exercise-progression-card {
+    padding: 20px 18px;
+  }
+}

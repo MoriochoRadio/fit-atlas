@@ -9,6 +9,7 @@ import type { ExerciseDetail } from "@/lib/exerciseDetails";
 import type { ExerciseSort } from "@/lib/exerciseSorting";
 import type { ExploreFilterPreset } from "@/lib/explorePreferences";
 import type { ExploreFilters, RomFilter } from "@/lib/exploreFilterState";
+import type { RelaxationSuggestion } from "@/lib/filterRelaxation";
 import { recoveryGuides } from "@/lib/catalogContent";
 import type { Exercise } from "@/lib/catalogTypes";
 import { preferredCategoryOptions } from "@/lib/profilePreferences";
@@ -22,6 +23,8 @@ type ExploreSceneProps = {
   filters: ExploreFilters;
   onChangeFilters: (patch: Partial<ExploreFilters>) => void;
   onResetFilters: () => void;
+  relaxations: RelaxationSuggestion[];
+  onRelax: (key: keyof ExploreFilters) => void;
   activeFilterLabels: string[];
   hasFilterState: boolean;
   sortLabel: string;
@@ -61,6 +64,8 @@ export function ExploreScene({
   filters,
   onChangeFilters,
   onResetFilters,
+  relaxations,
+  onRelax,
   activeFilterLabels,
   hasFilterState,
   sortLabel,
@@ -422,10 +427,36 @@ export function ExploreScene({
             <Search size={26} />
             <div>
               <h3>일치하는 운동이 없습니다.</h3>
-              <p>
-                검색어 또는 적용 조건을 하나씩 줄여 보세요. 전체 카탈로그로 즉시
-                돌아갈 수도 있습니다.
-              </p>
+              {relaxations.length > 0 ? (
+                <>
+                  <p>
+                    조건 하나만 풀면 다시 결과가 나옵니다. 어떤 조건이 막고
+                    있는지 아래에서 고르세요.
+                  </p>
+                  <div
+                    className="empty-library-relaxations"
+                    aria-label="조건 하나만 풀어 보기"
+                  >
+                    {relaxations.map(item => (
+                      <button
+                        key={item.key}
+                        type="button"
+                        onClick={() => onRelax(item.key)}
+                      >
+                        <b>
+                          {item.label} · {item.value}
+                        </b>
+                        <span>{item.count}개 표시</span>
+                      </button>
+                    ))}
+                  </div>
+                </>
+              ) : (
+                <p>
+                  검색어 또는 적용 조건을 하나씩 줄여 보세요. 전체 카탈로그로
+                  즉시 돌아갈 수도 있습니다.
+                </p>
+              )}
               <button className="outline-button" onClick={onResetFilters}>
                 모든 조건 초기화
               </button>

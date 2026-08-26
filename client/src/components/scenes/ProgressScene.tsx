@@ -8,6 +8,7 @@ import {
   Plus,
   Sparkles,
   Timer,
+  TrendingUp,
 } from "lucide-react";
 import { Metric, SectionTitle } from "@/components/SectionPrimitives";
 import { RomStatusDashboard } from "@/components/RomStatusDashboard";
@@ -19,6 +20,7 @@ import type {
   TrainingLog,
 } from "@/lib/trainingMetrics";
 import type { getInsightSummary } from "@/lib/trainingInsights";
+import type { ExerciseProgression } from "@/lib/exerciseProgression";
 import type {
   getCurrentWeekRomStatus,
   getFourWeekRomStatus,
@@ -29,6 +31,7 @@ type ProgressSceneProps = {
   totalVolume: number;
   totalMinutes: number;
   insights: ReturnType<typeof getInsightSummary>;
+  progressions: ExerciseProgression[];
   weeklyVolume: ReturnType<typeof getWeeklyVolume>;
   maxWeeklyVolume: number;
   fourWeekTrends: ReturnType<typeof getFourWeekTrends>;
@@ -51,6 +54,7 @@ export function ProgressScene({
   totalVolume,
   totalMinutes,
   insights,
+  progressions,
   weeklyVolume,
   maxWeeklyVolume,
   fourWeekTrends,
@@ -175,6 +179,69 @@ export function ProgressScene({
             </p>
           </article>
         </div>
+        {progressions.length > 0 && (
+          <section
+            className="exercise-progression-card"
+            aria-label="종목별 진척"
+          >
+            <div className="card-title">
+              <div>
+                <p className="small-label">PER-EXERCISE PROGRESS</p>
+                <h3>같은 종목이 어떻게 달라졌나</h3>
+              </div>
+              <TrendingUp size={21} />
+            </div>
+            <p className="exercise-progression-note">
+              두 번 이상 기록한 종목만 표시합니다. 중량을 쓰는 종목은 중량으로,
+              맨몸 종목은 총 반복 수로 견줍니다. 숫자를 올리는 것보다 통증 없는
+              범위를 유지하는 편이 우선입니다.
+            </p>
+            <ol className="exercise-progression-list">
+              {progressions.map(item => {
+                const peak = Math.max(
+                  ...item.points.map(point =>
+                    item.measure === "load"
+                      ? point.load
+                      : point.sets * point.reps
+                  ),
+                  1
+                );
+                return (
+                  <li key={item.exercise}>
+                    <div className="exercise-progression-head">
+                      <b>{item.exercise}</b>
+                      <span className={`is-${item.direction}`}>
+                        {item.measureLabel} {item.direction}
+                      </span>
+                      <small>{item.sessions}회 기록</small>
+                    </div>
+                    <div
+                      className="exercise-progression-bars"
+                      aria-label={`${item.exercise} ${item.measureLabel} 변화`}
+                    >
+                      {item.points.slice(-8).map(point => {
+                        const value =
+                          item.measure === "load"
+                            ? point.load
+                            : point.sets * point.reps;
+                        return (
+                          <i
+                            key={point.date}
+                            style={{
+                              height: `${Math.max((value / peak) * 100, 6)}%`,
+                            }}
+                            title={`${point.date} · ${value}${item.measure === "load" ? "kg" : "회"}`}
+                          />
+                        );
+                      })}
+                    </div>
+                    <p>{item.summary}</p>
+                  </li>
+                );
+              })}
+            </ol>
+          </section>
+        )}
         <div className="four-week-card">
           <div className="card-title">
             <div>
