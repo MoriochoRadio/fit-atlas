@@ -47,6 +47,13 @@ import {
   AnatomyScene,
   type AnatomyMuscleRoles,
 } from "@/components/scenes/AnatomyScene";
+import {
+  defaultExploreFilters,
+  filtersForKeyword,
+  filtersFromPreset,
+  type ExploreFilters,
+  type RomFilter,
+} from "@/lib/exploreFilterState";
 import { ProgressScene } from "@/components/scenes/ProgressScene";
 import { WorkdayRecoveryScene } from "@/components/scenes/WorkdayRecoveryScene";
 import { ExploreFilterResultSummary } from "@/components/ExploreFilterResultSummary";
@@ -193,7 +200,6 @@ const sceneByHash: Record<string, CinematicScene> = {
   "#progress": "progress",
   "#wellness": "wellness",
 };
-type RomFilter = "전체" | "작음" | "보통" | "큼";
 type RomRecommendationTarget = {
   exerciseName: string;
   presentation: ReturnType<typeof getAsciiDiagramPresentation>;
@@ -336,14 +342,21 @@ function playSceneTransitionSound() {
 }
 
 export default function Home() {
-  const [keyword, setKeyword] = useState("");
-  const [category, setCategory] = useState<(typeof categories)[number]>("전체");
-  const [focus, setFocus] = useState("전체");
-  const [regionFilter, setRegionFilter] = useState("전체");
-  const [difficulty, setDifficulty] = useState("전체");
-  const [equipment, setEquipment] = useState("전체");
-  const [sort, setSort] = useState<ExerciseSort>("recommended");
-  const [romFilter, setRomFilter] = useState<RomFilter>("전체");
+  const [exploreFilters, setExploreFilters] = useState<ExploreFilters>(
+    defaultExploreFilters
+  );
+  const {
+    keyword,
+    category,
+    focus,
+    region: regionFilter,
+    difficulty,
+    equipment,
+    sort,
+    rom: romFilter,
+  } = exploreFilters;
+  const updateExploreFilters = (patch: Partial<ExploreFilters>) =>
+    setExploreFilters(current => ({ ...current, ...patch }));
   const [filtersOpen, setFiltersOpen] = useState(false);
   const [atlasTheme, setAtlasTheme] = useState<AtlasTheme>(() =>
     typeof window === "undefined" ? defaultAtlasTheme : readAtlasTheme()
@@ -1294,13 +1307,10 @@ export default function Home() {
 
   const openAnatomyExercise = (exercise: Exercise) => {
     setAnatomyExercise(exercise);
-    setKeyword(exercise.name);
-    setCategory("전체");
-    setFocus("전체");
-    setRegionFilter("전체");
-    setDifficulty("전체");
-    setEquipment("전체");
-    setRomFilter("전체");
+    setExploreFilters(current => ({
+      ...filtersForKeyword(exercise.name),
+      sort: current.sort,
+    }));
     setPendingExerciseName(exercise.name);
     navigateToScene("explore");
     toast.success(`${exercise.name}의 자세·방법·안전 단서를 엽니다.`);
@@ -1334,10 +1344,7 @@ export default function Home() {
       exerciseId,
       availableExercises,
       {
-        setKeyword,
-        setCategory,
-        setFocus,
-        setRegion: setRegionFilter,
+        applyFilters: filters => updateExploreFilters(filters),
         scrollToTarget: () => navigateToScene("explore"),
       }
     );
@@ -1355,10 +1362,12 @@ export default function Home() {
     }
     const exercise = availableExercises.find(item => item.id === exerciseId);
     if (!exercise) return;
-    setKeyword(exercise.name);
-    setCategory("전체");
-    setFocus("전체");
-    setRegionFilter("전체");
+    updateExploreFilters({
+      keyword: exercise.name,
+      category: "전체",
+      focus: "전체",
+      region: "전체",
+    });
     navigateToScene("explore");
     toast.success(`${exercise.name}의 자세·안전 단서를 확인하세요.`);
   };
@@ -1416,33 +1425,22 @@ export default function Home() {
   };
 
   const applySavedExplorePreferences = () => {
-    setKeyword("");
-    setCategory(profileForm.preferredCategory);
-    setFocus("전체");
-    setRegionFilter("전체");
-    setDifficulty("전체");
-    setEquipment(
-      profileForm.preferredEquipment === "bodyweight"
-        ? "장비 없음"
-        : profileForm.preferredEquipment === "flexible"
-          ? "전체"
-          : "장비 필요"
-    );
-    setSort("recommended");
-    setRomFilter("전체");
+    setExploreFilters({
+      ...defaultExploreFilters,
+      category: profileForm.preferredCategory,
+      equipment:
+        profileForm.preferredEquipment === "bodyweight"
+          ? "장비 없음"
+          : profileForm.preferredEquipment === "flexible"
+            ? "전체"
+            : "장비 필요",
+    });
     navigateToScene("explore");
     toast.success("저장한 선호 조건으로 운동을 찾습니다.");
   };
 
   const resetExploreFilters = () => {
-    setKeyword("");
-    setCategory("전체");
-    setFocus("전체");
-    setRegionFilter("전체");
-    setDifficulty("전체");
-    setEquipment("전체");
-    setSort("recommended");
-    setRomFilter("전체");
+    setExploreFilters(defaultExploreFilters);
   };
 
   const saveCurrentExplorePreset = () => {
@@ -1472,30 +1470,7 @@ export default function Home() {
   };
 
   const applyExploreFilterPreset = (preset: ExploreFilterPreset) => {
-    setKeyword(preset.keyword);
-    setCategory(
-      categories.includes(preset.category as (typeof categories)[number])
-        ? (preset.category as (typeof categories)[number])
-        : "전체"
-    );
-    setFocus(preset.focus || "전체");
-    setRegionFilter(preset.region || "전체");
-    setDifficulty(preset.difficulty || "전체");
-    setEquipment(preset.equipment || "전체");
-    setSort(
-      (["recommended", "difficulty", "duration"] as ExerciseSort[]).includes(
-        preset.sort as ExerciseSort
-      )
-        ? (preset.sort as ExerciseSort)
-        : "recommended"
-    );
-    setRomFilter(
-      (["전체", "작음", "보통", "큼"] as RomFilter[]).includes(
-        preset.rom as RomFilter
-      )
-        ? (preset.rom as RomFilter)
-        : "전체"
-    );
+    setExploreFilters(filtersFromPreset(preset));
     setVisibleExerciseCount(initialVisibleExerciseCount);
     setFiltersOpen(true);
     toast.success(`${preset.name} 조건을 적용했습니다.`);
@@ -1528,14 +1503,7 @@ export default function Home() {
         setCatalogLoading(false);
       }
     }
-    setKeyword(exercise.name);
-    setCategory("전체");
-    setFocus("전체");
-    setRegionFilter("전체");
-    setDifficulty("전체");
-    setEquipment("전체");
-    setSort("recommended");
-    setRomFilter("전체");
+    setExploreFilters(filtersForKeyword(exercise.name));
     setAnatomyExercise(exercise);
     setPendingExerciseName(exercise.name);
     navigateToScene("explore");
@@ -1543,14 +1511,12 @@ export default function Home() {
   };
 
   const applyExplorePath = (path: (typeof explorePaths)[number]) => {
-    setKeyword("");
-    setCategory(path.category as (typeof categories)[number]);
-    setFocus(path.focus);
-    setRegionFilter("전체");
-    setDifficulty("전체");
-    setEquipment(path.equipment);
-    setSort("recommended");
-    setRomFilter("전체");
+    setExploreFilters({
+      ...defaultExploreFilters,
+      category: path.category as (typeof categories)[number],
+      focus: path.focus,
+      equipment: path.equipment,
+    });
     navigateToScene("explore");
   };
 
@@ -1559,14 +1525,7 @@ export default function Home() {
       navigateToScene("wellness");
       return;
     }
-    setKeyword("");
-    setCategory("전체");
-    setFocus("전체");
-    setRegionFilter("전체");
-    setDifficulty("전체");
-    setEquipment("전체");
-    setSort("recommended");
-    setRomFilter(romReadiness.rom);
+    setExploreFilters({ ...defaultExploreFilters, rom: romReadiness.rom });
     navigateToScene("explore");
   };
 
@@ -1620,13 +1579,10 @@ export default function Home() {
           }),
         onExploreAlternative: exerciseName => {
           setRomRecommendationTarget(null);
-          setKeyword(exerciseName);
-          setCategory("전체");
-          setFocus("전체");
-          setRegionFilter("전체");
-          setDifficulty("전체");
-          setEquipment("전체");
-          setRomFilter("전체");
+          setExploreFilters(current => ({
+            ...filtersForKeyword(exerciseName),
+            sort: current.sort,
+          }));
           setPendingExerciseName(exerciseName);
           navigateToScene("explore");
         },
@@ -2701,7 +2657,9 @@ export default function Home() {
                   <Search size={18} />
                   <input
                     value={keyword}
-                    onChange={event => setKeyword(event.target.value)}
+                    onChange={event =>
+                      updateExploreFilters({ keyword: event.target.value })
+                    }
                     placeholder="운동, 부위, 장비 검색"
                     aria-label="운동 검색"
                   />
@@ -2712,7 +2670,9 @@ export default function Home() {
                     <select
                       value={sort}
                       onChange={event =>
-                        setSort(event.target.value as ExerciseSort)
+                        updateExploreFilters({
+                          sort: event.target.value as ExerciseSort,
+                        })
                       }
                       aria-label="정렬 기준"
                     >
@@ -2764,7 +2724,7 @@ export default function Home() {
                         key={item}
                         className={category === item ? "filter-active" : ""}
                         aria-pressed={category === item}
-                        onClick={() => setCategory(item)}
+                        onClick={() => updateExploreFilters({ category: item })}
                       >
                         {item === "전체" ? "전체 보기" : item}
                       </button>
@@ -2795,7 +2755,9 @@ export default function Home() {
                   <div id="advanced-exercise-filters" className="filter-row">
                     <select
                       value={regionFilter}
-                      onChange={event => setRegionFilter(event.target.value)}
+                      onChange={event =>
+                        updateExploreFilters({ region: event.target.value })
+                      }
                       aria-label="부위 필터"
                     >
                       <option>전체</option>
@@ -2805,7 +2767,9 @@ export default function Home() {
                     </select>
                     <select
                       value={focus}
-                      onChange={event => setFocus(event.target.value)}
+                      onChange={event =>
+                        updateExploreFilters({ focus: event.target.value })
+                      }
                       aria-label="목적 필터"
                     >
                       <option>전체</option>
@@ -2819,7 +2783,9 @@ export default function Home() {
                     </select>
                     <select
                       value={difficulty}
-                      onChange={event => setDifficulty(event.target.value)}
+                      onChange={event =>
+                        updateExploreFilters({ difficulty: event.target.value })
+                      }
                       aria-label="난이도 필터"
                     >
                       <option>전체</option>
@@ -2829,7 +2795,9 @@ export default function Home() {
                     </select>
                     <select
                       value={equipment}
-                      onChange={event => setEquipment(event.target.value)}
+                      onChange={event =>
+                        updateExploreFilters({ equipment: event.target.value })
+                      }
                       aria-label="장비 필터"
                     >
                       <option>전체</option>
@@ -2863,7 +2831,7 @@ export default function Home() {
                       key={item}
                       className={romFilter === item ? "is-selected" : ""}
                       aria-pressed={romFilter === item}
-                      onClick={() => setRomFilter(item)}
+                      onClick={() => updateExploreFilters({ rom: item })}
                     >
                       {item === "전체" ? "ROM 전체" : `ROM · ${item}`}
                     </button>
@@ -2982,10 +2950,12 @@ export default function Home() {
                       setAnatomyExercise(exercise);
                     }}
                     onAlt={() => {
-                      setKeyword("");
-                      setCategory(exercise.category);
-                      setDifficulty("초급");
-                      setSort("difficulty");
+                      updateExploreFilters({
+                        keyword: "",
+                        category: exercise.category,
+                        difficulty: "초급",
+                        sort: "difficulty",
+                      });
                     }}
                   />
                 ))}
