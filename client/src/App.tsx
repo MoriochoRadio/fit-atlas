@@ -6,7 +6,16 @@ import { ThemeProvider } from "./contexts/ThemeContext";
 const Home = lazy(() => import("./pages/Home"));
 
 function App() {
-  return <ErrorBoundary><ThemeProvider defaultTheme="light"><Toaster /><Suspense fallback={<main aria-busy="true" />}><Home /></Suspense></ThemeProvider></ErrorBoundary>;
+  return (
+    <ErrorBoundary>
+      <ThemeProvider defaultTheme="light">
+        <Toaster />
+        <Suspense fallback={<main aria-busy="true" />}>
+          <Home />
+        </Suspense>
+      </ThemeProvider>
+    </ErrorBoundary>
+  );
 }
 
 export default App;

@@ -10,7 +10,7 @@ describe("exercise text guide", () => {
     entries.forEach(({ exercise, detail }) => {
       const guide = getExerciseTextGuide(exercise, detail);
       expect(guide.sequence).toHaveLength(3);
-      expect(guide.sequence.every((step) => step.length > 8)).toBe(true);
+      expect(guide.sequence.every(step => step.length > 8)).toBe(true);
       expect(guide.primaryMuscles.length).toBeGreaterThan(0);
       expect(guide.supportingMuscles.length).toBeGreaterThan(0);
       expect(guide.breathing).toContain("↔");

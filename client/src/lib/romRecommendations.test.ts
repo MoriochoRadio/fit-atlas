@@ -15,7 +15,7 @@ const base: Omit<AsciiDiagramPresentation, "rom"> = {
 
 describe("ROM recommendations", () => {
   it("provides a stretch, alternative, and safety cue for all ROM sizes", () => {
-    (["작음", "보통", "큼"] as const).forEach((rom) => {
+    (["작음", "보통", "큼"] as const).forEach(rom => {
       const result = getRomRecommendation({ ...base, rom });
       expect(result.title.length).toBeGreaterThan(6);
       expect(result.stretch.length).toBeGreaterThan(0);

@@ -4,7 +4,11 @@ import { exercises } from "./fitnessData";
 
 describe("exercise evidence scope", () => {
   it("separates a source-backed movement record from general safety guidance and individual-effect limits", () => {
-    const sourceExercise = exercises.find((exercise) => exercise.id.startsWith("verified-") && exercise.category === "프리웨이트")!;
+    const sourceExercise = exercises.find(
+      exercise =>
+        exercise.id.startsWith("verified-") &&
+        exercise.category === "프리웨이트"
+    )!;
     const scope = getExerciseEvidenceScope(sourceExercise);
     expect(scope.sourceLabel).toContain("종목 원천");
     expect(scope.guidanceLabel).toContain("저항 운동");
@@ -12,7 +16,9 @@ describe("exercise evidence scope", () => {
   });
 
   it("labels public-health references as general guidance rather than movement-specific proof", () => {
-    const publicHealthExercise = exercises.find((exercise) => /who\.int|cdc\.gov/i.test(exercise.reference.url))!;
+    const publicHealthExercise = exercises.find(exercise =>
+      /who\.int|cdc\.gov/i.test(exercise.reference.url)
+    )!;
     const scope = getExerciseEvidenceScope(publicHealthExercise);
     expect(scope.sourceLabel).toContain("공공 보건");
     expect(scope.limit).toContain("개별 운동 동작");

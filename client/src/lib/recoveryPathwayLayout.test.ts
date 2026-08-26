@@ -7,7 +7,10 @@ import { describe, expect, it } from "vitest";
  * 깨졌다. 공백을 정규화한 뒤 필요한 선언이 있는지만 확인해 형식 변화에
  * 영향받지 않게 한다.
  */
-const css = readFileSync(resolve(import.meta.dirname, "..", "index.css"), "utf8");
+const css = readFileSync(
+  resolve(import.meta.dirname, "..", "index.css"),
+  "utf8"
+);
 const squish = (value: string) => value.replace(/\s+/g, " ").trim();
 
 /** source 안에서 selector 블록의 선언부를 공백 정규화해 돌려준다. */
@@ -18,9 +21,14 @@ function ruleBody(selector: string, source: string): string | null {
     if (at === -1) return null;
     const before = at === 0 ? "" : source[at - 1];
     const open = source.indexOf("{", at + selector.length);
-    const between = open === -1 ? "x" : source.slice(at + selector.length, open).trim();
+    const between =
+      open === -1 ? "x" : source.slice(at + selector.length, open).trim();
     // 셀렉터 경계이고( 앞이 구분자 ) 바로 뒤가 여는 중괄호인 경우만 인정한다.
-    if ((before === "" || "{};, ".includes(before)) && between === "" && open !== -1) {
+    if (
+      (before === "" || "{};, ".includes(before)) &&
+      between === "" &&
+      open !== -1
+    ) {
       const close = source.indexOf("}", open);
       return squish(source.slice(open + 1, close));
     }
@@ -43,7 +51,9 @@ describe("recovery pathway responsive layout", () => {
     const at = flat.indexOf("@media (max-width: 760px)");
     expect(at).toBeGreaterThan(-1);
     const scoped = flat.slice(at, at + 4000);
-    expect(ruleBody(".pathway-grid", scoped)).toContain("grid-template-columns: 1fr");
+    expect(ruleBody(".pathway-grid", scoped)).toContain(
+      "grid-template-columns: 1fr"
+    );
     expect(ruleBody(".recovery-pathway", scoped)).toContain("padding: 20px");
   });
 });

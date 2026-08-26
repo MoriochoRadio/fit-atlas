@@ -2,8 +2,8 @@ import { ArrowRight, HeartPulse, ShieldCheck } from "lucide-react";
 import { AnatomyMap } from "@/components/AnatomyMap";
 import { RecoveryStageGrid } from "@/components/GuidancePanels";
 import { SectionTitle } from "@/components/SectionPrimitives";
-import type { BodyRegion, Exercise } from "@/lib/fitnessData";
-import { recoveryGuides } from "@/lib/fitnessData";
+import type { BodyRegion, Exercise } from "@/lib/catalogTypes";
+import { recoveryGuides } from "@/lib/catalogContent";
 import {
   recoveryProtocols,
   recoveryStageGuides,

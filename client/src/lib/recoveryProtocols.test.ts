@@ -4,8 +4,10 @@ import { recoveryProtocols, recoveryStageGuides } from "./recoveryProtocols";
 
 describe("recovery protocols", () => {
   it("provides five safety-separated recovery domains for every mapped body region", () => {
-    expect(Object.keys(recoveryProtocols).sort()).toEqual(Object.keys(recoveryGuides).sort());
-    Object.values(recoveryProtocols).forEach((protocol) => {
+    expect(Object.keys(recoveryProtocols).sort()).toEqual(
+      Object.keys(recoveryGuides).sort()
+    );
+    Object.values(recoveryProtocols).forEach(protocol => {
       expect(protocol.stretch).toHaveLength(3);
       expect(protocol.foamRoller).toHaveLength(2);
       expect(protocol.massageGun).toHaveLength(2);
@@ -15,8 +17,10 @@ describe("recovery protocols", () => {
   });
 
   it("adds preparation, post-session, and gradual return guidance for every mapped body region", () => {
-    expect(Object.keys(recoveryStageGuides).sort()).toEqual(Object.keys(recoveryGuides).sort());
-    Object.values(recoveryStageGuides).forEach((guide) => {
+    expect(Object.keys(recoveryStageGuides).sort()).toEqual(
+      Object.keys(recoveryGuides).sort()
+    );
+    Object.values(recoveryStageGuides).forEach(guide => {
       expect(guide.beforeSession).toHaveLength(2);
       expect(guide.afterSession).toHaveLength(2);
       expect(guide.returnToLoad).toHaveLength(2);

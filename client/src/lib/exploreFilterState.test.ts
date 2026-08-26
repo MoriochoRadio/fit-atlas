@@ -1,8 +1,14 @@
 import { describe, expect, it } from "vitest";
-import { defaultExploreFilters, filtersForKeyword, filtersFromPreset } from "./exploreFilterState";
+import {
+  defaultExploreFilters,
+  filtersForKeyword,
+  filtersFromPreset,
+} from "./exploreFilterState";
 import type { ExploreFilterPreset } from "./explorePreferences";
 
-const preset = (overrides: Partial<ExploreFilterPreset> = {}): ExploreFilterPreset => ({
+const preset = (
+  overrides: Partial<ExploreFilterPreset> = {}
+): ExploreFilterPreset => ({
   id: "preset-1",
   name: "퇴근 후 가벼운 전신",
   keyword: "스쿼트",
@@ -19,7 +25,10 @@ const preset = (overrides: Partial<ExploreFilterPreset> = {}): ExploreFilterPres
 describe("exploreFilterState", () => {
   it("keeps only the keyword and returns every other condition to its default", () => {
     const filters = filtersForKeyword("발목 니투월 락");
-    expect(filters).toEqual({ ...defaultExploreFilters, keyword: "발목 니투월 락" });
+    expect(filters).toEqual({
+      ...defaultExploreFilters,
+      keyword: "발목 니투월 락",
+    });
   });
 
   it("restores a saved preset as it was written", () => {
@@ -48,11 +57,11 @@ describe("exploreFilterState", () => {
     const filters = filtersFromPreset(
       preset({ focus: "", region: "", difficulty: "", equipment: "" })
     );
-    expect([filters.focus, filters.region, filters.difficulty, filters.equipment]).toEqual([
-      "전체",
-      "전체",
-      "전체",
-      "전체",
-    ]);
+    expect([
+      filters.focus,
+      filters.region,
+      filters.difficulty,
+      filters.equipment,
+    ]).toEqual(["전체", "전체", "전체", "전체"]);
   });
 });

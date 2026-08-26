@@ -4,8 +4,10 @@ import { wellnessDetails } from "./wellnessDetails";
 
 describe("wellness detail knowledge", () => {
   it("provides practical, training-context, and safety guidance for every wellness card", () => {
-    expect(Object.keys(wellnessDetails).sort()).toEqual(wellnessCards.map((card) => card.title).sort());
-    Object.values(wellnessDetails).forEach((detail) => {
+    expect(Object.keys(wellnessDetails).sort()).toEqual(
+      wellnessCards.map(card => card.title).sort()
+    );
+    Object.values(wellnessDetails).forEach(detail => {
       expect(detail.practices).toHaveLength(3);
       expect(detail.trainingContext.length).toBeGreaterThanOrEqual(2);
       expect(detail.caution.length).toBeGreaterThan(30);

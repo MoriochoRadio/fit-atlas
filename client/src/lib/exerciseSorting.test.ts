@@ -2,7 +2,11 @@ import { describe, expect, it } from "vitest";
 import { getExerciseMinutes, sortExercises } from "./exerciseSorting";
 import type { Exercise } from "./fitnessData";
 
-const exercise = (id: string, difficulty: Exercise["difficulty"], minutes: string): Exercise => ({
+const exercise = (
+  id: string,
+  difficulty: Exercise["difficulty"],
+  minutes: string
+): Exercise => ({
   id,
   name: id,
   englishName: id,
@@ -20,7 +24,12 @@ const exercise = (id: string, difficulty: Exercise["difficulty"], minutes: strin
 });
 
 describe("exercise sorting", () => {
-  const sample = [exercise("advanced-short", "상급", "10–15분"), exercise("beginner-long", "입문", "30–40분"), exercise("beginner-short", "입문", "5–10분"), exercise("intermediate", "중급", "15–20분")];
+  const sample = [
+    exercise("advanced-short", "상급", "10–15분"),
+    exercise("beginner-long", "입문", "30–40분"),
+    exercise("beginner-short", "입문", "5–10분"),
+    exercise("intermediate", "중급", "15–20분"),
+  ];
 
   it("reads the lower bound of a Korean duration range", () => {
     expect(getExerciseMinutes("15–20분")).toBe(15);
@@ -28,10 +37,20 @@ describe("exercise sorting", () => {
   });
 
   it("sorts recommendations by entry readiness and then shorter duration", () => {
-    expect(sortExercises(sample, "recommended").map((item) => item.id)).toEqual(["beginner-short", "beginner-long", "intermediate", "advanced-short"]);
+    expect(sortExercises(sample, "recommended").map(item => item.id)).toEqual([
+      "beginner-short",
+      "beginner-long",
+      "intermediate",
+      "advanced-short",
+    ]);
   });
 
   it("sorts by duration independently from difficulty", () => {
-    expect(sortExercises(sample, "duration").map((item) => item.id)).toEqual(["beginner-short", "advanced-short", "intermediate", "beginner-long"]);
+    expect(sortExercises(sample, "duration").map(item => item.id)).toEqual([
+      "beginner-short",
+      "advanced-short",
+      "intermediate",
+      "beginner-long",
+    ]);
   });
 });

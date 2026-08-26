@@ -1,6 +1,22 @@
-export type BodyRegion = "가슴" | "등" | "어깨" | "팔" | "코어" | "둔근" | "하체";
+export type BodyRegion =
+  | "가슴"
+  | "등"
+  | "어깨"
+  | "팔"
+  | "코어"
+  | "둔근"
+  | "하체";
 
-export type ExerciseCategory = "러닝" | "유산소" | "헬스기구" | "프리웨이트" | "맨몸운동" | "모빌리티" | "균형·협응" | "요가·필라테스" | "파워·민첩성";
+export type ExerciseCategory =
+  | "러닝"
+  | "유산소"
+  | "헬스기구"
+  | "프리웨이트"
+  | "맨몸운동"
+  | "모빌리티"
+  | "균형·협응"
+  | "요가·필라테스"
+  | "파워·민첩성";
 
 export type Exercise = {
   id: string;

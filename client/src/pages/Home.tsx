@@ -1,4 +1,4 @@
-import { recoveryGuides, wellnessCards } from "@/lib/catalogContent";
+import { recoveryGuides } from "@/lib/catalogContent";
 import {
   catalogSummary,
   entriesToExercises,
@@ -8,41 +8,20 @@ import {
   loadCatalogPage,
   loadFullCatalog,
 } from "@/lib/catalogLoader";
-import type { BodyRegion, Exercise, ExerciseDetail } from "@/lib/catalogTypes";
-import { aerobicIntervalTemplates } from "@/lib/aerobicIntervals";
-import { lowNoiseCircuitTemplates } from "@/lib/lowNoiseCircuits";
-import { lifeStageGuides, startChecklist } from "@/lib/lifeStageGuidance";
+import type { BodyRegion, Exercise } from "@/lib/catalogTypes";
 import {
   Activity,
   ArrowRight,
-  BarChart3,
-  BookOpen,
-  Brain,
-  CalendarDays,
-  Check,
-  ChevronDown,
-  ChevronRight,
-  Dumbbell,
   HeartPulse,
-  History,
-  Loader2,
   Menu,
   Plus,
   Search,
   ShieldCheck,
-  Sparkles,
-  Star,
   Timer,
   X,
 } from "lucide-react";
 import React, { useEffect, useMemo, useRef, useState } from "react";
-import { AnatomyMap } from "@/components/AnatomyMap";
-import { WeeklyAtlasDetailReport } from "@/components/WeeklyAtlasDetailReport";
-import { HeroRecentEquipmentResume } from "@/components/HeroRecentEquipmentResume";
-import { ExplorePresetPanel } from "@/components/ExplorePresetPanel";
 import { SceneExperienceDialog } from "@/components/SceneExperienceDialog";
-import { Metric, SectionTitle } from "@/components/SectionPrimitives";
-import { RomStatusDashboard } from "@/components/RomStatusDashboard";
 import {
   AnatomyScene,
   type AnatomyMuscleRoles,
@@ -52,14 +31,18 @@ import {
   filtersForKeyword,
   filtersFromPreset,
   type ExploreFilters,
-  type RomFilter,
 } from "@/lib/exploreFilterState";
+import { AsciiInteractionContext } from "@/lib/asciiInteractionContext";
+import { explorePaths, type ExplorePath } from "@/lib/explorePaths";
+import { equipmentSessionSetup } from "@/lib/equipmentSessionSetup";
+import { goalCopy } from "@/lib/goalCopy";
+import { sceneByHash, type CinematicScene } from "@/lib/scenes";
+import { HeroScene } from "@/components/scenes/HeroScene";
+import { WellnessScene } from "@/components/scenes/WellnessScene";
+import { ExploreScene } from "@/components/scenes/ExploreScene";
+import { SessionScene } from "@/components/scenes/SessionScene";
 import { ProgressScene } from "@/components/scenes/ProgressScene";
 import { WorkdayRecoveryScene } from "@/components/scenes/WorkdayRecoveryScene";
-import { ExploreFilterResultSummary } from "@/components/ExploreFilterResultSummary";
-import { ExerciseCardSummary } from "@/components/ExerciseCardSummary";
-import { SessionComposition } from "@/components/SessionComposition";
-import { SavedExercisePanel } from "@/components/SavedExercisePanel";
 import { toast } from "sonner";
 import {
   getCalendarDays,
@@ -72,8 +55,6 @@ import {
 } from "@/lib/trainingMetrics";
 import { getPersonalizedProgram } from "@/lib/personalization";
 import {
-  atlasMotionSpeeds,
-  atlasThemes,
   defaultAtlasInteractionPreferences,
   defaultAtlasTheme,
   defaultSceneExperiencePreferences,
@@ -99,9 +80,7 @@ import {
   saveLocalWeeklyPlan,
   saveSceneExperiencePreferences,
   saveTrainingLogs,
-  type AtlasMotionSpeed,
   type AtlasTheme,
-  type HeroEquipment,
   type SceneExperiencePreferences,
 } from "@/lib/localStore";
 import {
@@ -114,28 +93,15 @@ import {
   type ExplorePreferences,
 } from "@/lib/explorePreferences";
 import { filterExercises } from "@/lib/exerciseFilters";
-import { sortExercises, type ExerciseSort } from "@/lib/exerciseSorting";
-import {
-  recoveryProtocols,
-  recoveryStageGuides,
-} from "@/lib/recoveryProtocols";
+import { sortExercises } from "@/lib/exerciseSorting";
 import {
   applyRecoveryExplore,
   getRecoveryPathway,
-  recoveryPathways,
   type RecoveryPathwayId,
 } from "@/lib/recoveryPathways";
 import { getInsightSummary } from "@/lib/trainingInsights";
-import { wellnessDetails } from "@/lib/wellnessDetails";
-import { getMovementVisual } from "@/lib/movementVisuals";
-import {
-  getExerciseTextGuide,
-  type ExerciseTextGuide,
-} from "@/lib/exerciseTextGuide";
-import {
-  getAsciiDiagramPresentation,
-  getAsciiMovementDiagram,
-} from "@/lib/asciiMovementDiagrams";
+import { getExerciseTextGuide } from "@/lib/exerciseTextGuide";
+import { getAsciiDiagramPresentation } from "@/lib/asciiMovementDiagrams";
 import { getRomRecommendation } from "@/lib/romRecommendations";
 import { getRomReadinessRecommendation } from "@/lib/romReadiness";
 import {
@@ -145,14 +111,6 @@ import {
   mergeRomStatusHistory,
   type RomStatusRecord,
 } from "@/lib/romStatusHistory";
-import { getExerciseEvidenceScope } from "@/lib/exerciseEvidence";
-import {
-  MovementVisualGuide,
-  RecoveryPathwayPanel,
-  RecoveryStageGrid,
-  SeatedRecoveryPanel,
-  WellnessDetailPanel,
-} from "@/components/GuidancePanels";
 import { getRoutineTemplate, type RoutineGoal } from "@/lib/routineTemplates";
 import {
   getCheckinRecommendation,
@@ -160,6 +118,7 @@ import {
 } from "@/lib/dailyCheckin";
 import {
   buildSession,
+  sessionQuickStarts,
   type SessionBlock,
   type SessionEnvironment,
   type SessionGoal,
@@ -185,134 +144,16 @@ import {
 } from "@/lib/profilePreferences";
 
 type LogEntry = TrainingLog;
-type CinematicScene =
-  | "home"
-  | "session"
-  | "explore"
-  | "anatomy"
-  | "progress"
-  | "wellness";
-const sceneByHash: Record<string, CinematicScene> = {
-  "#top": "home",
-  "#session": "session",
-  "#explore": "explore",
-  "#anatomy": "anatomy",
-  "#progress": "progress",
-  "#wellness": "wellness",
-};
 type RomRecommendationTarget = {
   exerciseName: string;
   presentation: ReturnType<typeof getAsciiDiagramPresentation>;
 };
-const AsciiInteractionContext = React.createContext<{
-  showAxis: boolean;
-  pendingExerciseName: string | null;
-  clearPendingExercise: () => void;
-  onOpenRom: (
-    exerciseName: string,
-    presentation: ReturnType<typeof getAsciiDiagramPresentation>
-  ) => void;
-  onExploreAlternative: (exerciseName: string) => void;
-  onAddToTodayRoutine: (exerciseName: string) => void;
-}>({
-  showAxis: true,
-  pendingExerciseName: null,
-  clearPendingExercise: () => undefined,
-  onOpenRom: () => undefined,
-  onExploreAlternative: () => undefined,
-  onAddToTodayRoutine: () => undefined,
-});
 
 const categories = preferredCategoryOptions;
 // 이 12개 컴포넌트는 모두 합쳐 31.7 kB다. lazy로 쪼개면 초기 전송량은 거의 줄지 않으면서
 // 요청만 12회 늘고, Suspense 경계 탓에 렌더 타이밍이 비결정적이 된다(회귀 테스트 2건이
 // 이 이유로 깨져 CI가 33회 연속 실패했다). 큰 것(카탈로그 페이지·html2canvas)만 지연 로드한다.
-const goalCopy = {
-  근력증가: "strength",
-  체력증가: "endurance",
-  다이어트: "weight_management",
-} as const;
-const catalogPageSize = catalogSummary.pageSize;
 const initialVisibleExerciseCount = 18;
-const explorePaths = [
-  {
-    id: "home",
-    label: "집에서 맨몸",
-    description: "장비 없이 바로 시작",
-    category: "맨몸운동",
-    focus: "전체",
-    equipment: "장비 없음",
-    icon: Activity,
-  },
-  {
-    id: "gym",
-    label: "헬스장 기구",
-    description: "기구·케이블 중심",
-    category: "헬스기구",
-    focus: "전체",
-    equipment: "장비 필요",
-    icon: Dumbbell,
-  },
-  {
-    id: "cardio",
-    label: "달리기·유산소",
-    description: "심폐 리듬 만들기",
-    category: "러닝",
-    focus: "심폐",
-    equipment: "전체",
-    icon: HeartPulse,
-  },
-  {
-    id: "mobility",
-    label: "가볍게 회복",
-    description: "가동성·저강도 움직임",
-    category: "전체",
-    focus: "가동성",
-    equipment: "전체",
-    icon: Sparkles,
-  },
-] as const;
-const sessionQuickStarts: {
-  id: string;
-  label: string;
-  detail: string;
-  goal: SessionGoal;
-  environment: SessionEnvironment;
-  duration: SessionDuration;
-}[] = [
-  {
-    id: "quick-home",
-    label: "15분 집에서",
-    detail: "가볍게 전신 깨우기",
-    goal: "all_round",
-    environment: "home",
-    duration: 15,
-  },
-  {
-    id: "quick-gym",
-    label: "30분 헬스장",
-    detail: "기초 근력에 집중",
-    goal: "strength",
-    environment: "gym",
-    duration: 30,
-  },
-  {
-    id: "quick-outdoor",
-    label: "30분 야외",
-    detail: "심폐 리듬 만들기",
-    goal: "endurance",
-    environment: "outdoor",
-    duration: 30,
-  },
-] as const;
-const equipmentSessionSetup: Record<
-  HeroEquipment,
-  { goal: SessionGoal; label: string; goalLabel: string }
-> = {
-  cable: { goal: "strength", label: "케이블 머신", goalLabel: "기초 근력" },
-  dumbbell: { goal: "all_round", label: "덤벨", goalLabel: "전신 균형" },
-  treadmill: { goal: "endurance", label: "트레드밀", goalLabel: "심폐 리듬" },
-};
 
 function playSceneTransitionSound() {
   if (typeof window === "undefined") return;
@@ -612,12 +453,6 @@ export default function Home() {
       atlasRouteInitialized.current = true;
       return;
     }
-    const label =
-      sessionGoal === "strength"
-        ? "파워"
-        : sessionGoal === "endurance"
-          ? "플로우"
-          : "밸런스";
     playAtlasTransition("route");
   }, [sessionEnvironment, sessionGoal]);
 
@@ -1510,7 +1345,7 @@ export default function Home() {
     toast.success(`${exercise.name}의 자세·안전 안내를 다시 엽니다.`);
   };
 
-  const applyExplorePath = (path: (typeof explorePaths)[number]) => {
+  const applyExplorePath = (path: ExplorePath) => {
     setExploreFilters({
       ...defaultExploreFilters,
       category: path.category as (typeof categories)[number],
@@ -1805,812 +1640,113 @@ export default function Home() {
               <span>회복</span>
             </a>
           </nav>
-          <section
-            id="scene-home"
-            className="scene-view scene-view-home"
-            tabIndex={-1}
-          >
-            <section className="hero">
-              <div className="hero-noise" />
-              <div className="hero-copy">
-                <p className="eyebrow light">TODAY</p>
-                <h1>
-                  오늘은
-                  <br />
-                  <em>무엇을 움직일까요?</em>
-                </h1>
-                <div className="hero-actions">
-                  <button
-                    className="light-button"
-                    onClick={() =>
-                      atlasInteraction.recentEquipmentSession
-                        ? resumeRecentEquipmentSession()
-                        : navigateToScene("session")
-                    }
-                  >
-                    {atlasInteraction.recentEquipmentSession
-                      ? "최근 세션 이어하기"
-                      : "오늘 세션"}{" "}
-                    <ArrowRight size={16} />
-                  </button>
-                  <a
-                    href="#explore"
-                    className="text-button"
-                    onClick={event => {
-                      event.preventDefault();
-                      navigateToScene("explore");
-                    }}
-                  >
-                    운동 탐색 <ChevronRight size={17} />
-                  </a>
-                </div>
-                <div className="hero-context" aria-label="오늘 운동 상태 요약">
-                  <article>
-                    <span>오늘의 강도</span>
-                    <b>
-                      {machineSessionIntensity.label} · RPE{" "}
-                      {machineSessionIntensity.rpe}
-                    </b>
-                    <small>
-                      {machineSessionIntensity.target}{" "}
-                      {atlasInteraction.resistance}%
-                    </small>
-                  </article>
-                  <article>
-                    <span>이번 주 흐름</span>
-                    {hasTrainingHistory ? (
-                      <>
-                        <b>{weeklyCompletionPercent}% 완료</b>
-                        <small>
-                          {weeklyPlanInsight.completed}/
-                          {weeklyPlanInsight.total || 0} 세션
-                        </small>
-                      </>
-                    ) : (
-                      // 0% 완료 · 0/3 세션은 처음 온 사람에게 알려주는 것이 없다.
-                      <>
-                        <b>아직 기록 없음</b>
-                        <small>첫 세션을 마치면 흐름이 쌓입니다</small>
-                      </>
-                    )}
-                  </article>
-                  {atlasInteraction.recentEquipmentSession && (
-                    <HeroRecentEquipmentResume
-                      label={
-                        equipmentSessionSetup[
-                          atlasInteraction.recentEquipmentSession.equipment
-                        ].label
-                      }
-                      resistance={
-                        atlasInteraction.recentEquipmentSession.resistance
-                      }
-                      onResume={resumeRecentEquipmentSession}
-                    />
-                  )}
-                </div>
-              </div>
-              <div className="hero-workspace">
-                {/*
-                  드래그로 돌리는 의사(擬似) 3D 기구를 걷어냈다. rotateY 한 줄짜리 장식이라
-                  회전이 아무 값도 만들지 않았고, 홈에서 가장 큰 자리를 차지하면서 정작
-                  운동을 찾는 흐름을 아래로 밀어냈다. 실제로 하던 일은 장비 선택과 강도
-                  설정 두 가지뿐이라 그대로 읽히는 컨트롤로 남긴다.
-                  테마·모션 속도는 운동과 무관한 외형 설정이라 장면 설정으로 옮겼다.
-                */}
-                <div className="hero-workspace-bottom">
-                  <article
-                    className="hero-session-card"
-                    aria-label={`오늘의 ${sessionDuration}분 ${sessionGoal === "strength" ? "기초 근력" : sessionGoal === "endurance" ? "심폐 리듬" : "전신 균형"} 세션 요약`}
-                  >
-                    <p>{atlasRoute.label}</p>
-                    <b>
-                      {sessionDuration}
-                      <small> MIN</small>
-                    </b>
-                    <span>
-                      {sessionGoal === "strength"
-                        ? "기초 근력"
-                        : sessionGoal === "endurance"
-                          ? "심폐 리듬"
-                          : "전신 균형"}{" "}
-                      ·{" "}
-                      {
-                        {
-                          home: "집·매트",
-                          gym: "헬스장",
-                          outdoor: "야외·걷기",
-                        }[sessionEnvironment]
-                      }
-                    </span>
-                    <small className="session-route-description">
-                      {atlasRoute.description} ·{" "}
-                      {machineSessionIntensity.target}{" "}
-                      {atlasInteraction.resistance}% ·{" "}
-                      {machineSessionIntensity.label} RPE{" "}
-                      {machineSessionIntensity.rpe}
-                    </small>
-
-                    <div
-                      className="session-equipment-picker"
-                      role="group"
-                      aria-label="장비 선택"
-                    >
-                      {(
-                        [
-                          ["cable", "케이블"],
-                          ["dumbbell", "덤벨"],
-                          ["treadmill", "트레드밀"],
-                        ] as const
-                      ).map(([value, label]) => (
-                        <button
-                          key={value}
-                          type="button"
-                          aria-pressed={
-                            atlasInteraction.heroEquipment === value
-                          }
-                          className={
-                            atlasInteraction.heroEquipment === value
-                              ? "is-selected"
-                              : ""
-                          }
-                          onClick={() => {
-                            if (atlasInteraction.heroEquipment === value)
-                              return;
-                            setAtlasInteraction(current => ({
-                              ...current,
-                              heroEquipment: value,
-                            }));
-                            playAtlasTransition("route");
-                          }}
-                        >
-                          {label}
-                        </button>
-                      ))}
-                    </div>
-
-                    <label className="session-resistance">
-                      <span>
-                        강도 <b>{atlasInteraction.resistance}%</b>
-                        <small>{machineSessionIntensity.label}</small>
-                      </span>
-                      <input
-                        type="range"
-                        min={20}
-                        max={90}
-                        step={2}
-                        value={atlasInteraction.resistance}
-                        aria-label="세션 강도"
-                        onChange={event =>
-                          setAtlasInteraction(current => ({
-                            ...current,
-                            resistance: Number(event.target.value),
-                          }))
-                        }
-                      />
-                    </label>
-
-                    <button
-                      className="hero-session-start"
-                      onClick={startEquipmentSession}
-                    >
-                      이 장비로 세션 설계 <ArrowRight size={14} />
-                    </button>
-                  </article>
-                </div>
-              </div>
-            </section>
-
-            <section className="start-dock" aria-label="오늘의 주요 행동">
-              <div className="start-dock-intro">
-                <p className="eyebrow">START HERE</p>
-                <h2>
-                  오늘, 무엇을
-                  <br />
-                  <em>시작할까요?</em>
-                </h2>
-                <p>
-                  복잡한 설정 없이 현재 목적에 맞는 한 가지 경로를 선택하세요.
-                </p>
-              </div>
-              <div className="start-dock-actions">
-                <a
-                  className="start-action start-action-explore"
-                  href="#explore"
-                  onClick={event => {
-                    event.preventDefault();
-                    navigateToScene("explore");
-                  }}
-                >
-                  <span>
-                    <BookOpen size={19} /> 운동 찾기
-                  </span>
-                  <b>
-                    1,008개 운동
-                    <br />
-                    자세·부위·근거
-                  </b>
-                  <ArrowRight size={18} />
-                </a>
-                <button
-                  className="start-action start-action-session"
-                  onClick={() => {
-                    setSessionGoal("all_round");
-                    navigateToScene("session");
-                  }}
-                >
-                  <span>
-                    <Timer size={19} /> 오늘 세션
-                  </span>
-                  <b>
-                    {sessionDuration}분 맞춤
-                    <br />
-                    운동 설계
-                  </b>
-                  <ArrowRight size={18} />
-                </button>
-                <button
-                  className="start-action start-action-record"
-                  onClick={() => setLogOpen(true)}
-                >
-                  <span>
-                    <History size={19} /> 운동 기록
-                  </span>
-                  <b>
-                    {logs.length}개 기록
-                    <br />
-                    변화 확인
-                  </b>
-                  <Plus size={18} />
-                </button>
-                <a
-                  className="start-action start-action-recover"
-                  href="#recovery"
-                  onClick={event => {
-                    event.preventDefault();
-                    navigateToScene("wellness");
-                  }}
-                >
-                  <span>
-                    <HeartPulse size={19} /> 회복 가이드
-                  </span>
-                  <b>
-                    불편감·피로
-                    <br />
-                    가벼운 회복
-                  </b>
-                  <ArrowRight size={18} />
-                </a>
-              </div>
-            </section>
-            {/* 0% · 0/3 · 0건만 가득한 통계는 처음 온 사람에게 보여줄 것이 없다.
-                기록이 쌓인 뒤에만 띄운다. 반면 주간 목표 설정은 시작하는 사람에게
-                필요한 출발점이라 항상 남긴다. */}
-            {hasTrainingHistory && (
-              <section
-                className={`weekly-atlas-report signal-${atlasPerformance}`}
-                aria-label="주간 아틀라스 요약 리포트"
-              >
-                <div className="weekly-report-head">
-                  <div>
-                    <p className="eyebrow">WEEKLY ATLAS</p>
-                    <h2>이번 주 흐름</h2>
-                  </div>
-                  <span>{atlasSignalSummary.title}</span>
-                </div>
-                <div className="weekly-report-body">
-                  <div
-                    className="weekly-signal-orbit"
-                    style={
-                      {
-                        "--report-progress": `${weeklyCompletionPercent}%`,
-                      } as React.CSSProperties
-                    }
-                  >
-                    <b>
-                      {weeklyCompletionPercent}
-                      <small>%</small>
-                    </b>
-                    <span>완료</span>
-                  </div>
-                  <div className="weekly-report-metrics">
-                    <article>
-                      <span>완료 세션</span>
-                      <b>
-                        {weeklyPlanInsight.completed}
-                        <small>/{weeklyPlanInsight.total || 0}</small>
-                      </b>
-                    </article>
-                    <article>
-                      <span>운동 기록</span>
-                      <b>{weeklyPlanInsight.loggedThisWeek}</b>
-                    </article>
-                    <article>
-                      <span>아틀라스</span>
-                      <b>
-                        {atlasPerformance === "surge"
-                          ? "HIGH"
-                          : atlasPerformance === "active"
-                            ? "FLOW"
-                            : "READY"}
-                      </b>
-                    </article>
-                  </div>
-                  <p>{atlasSignalSummary.detail}</p>
-                </div>
-              </section>
-            )}
-            <WeeklyAtlasDetailReport
-              showFlow={hasTrainingHistory}
-              flow={weeklyCompletionFlow}
-              goal={weeklyPlan.goal}
-              onGoal={nextGoal => {
-                if (nextGoal === weeklyPlan.goal) return;
-                setWeeklyPlan(current => setWeeklyGoal(current, nextGoal));
-                setSessionGoal(nextGoal);
-                toast.success(
-                  `이번 주 목표를 ${{ all_round: "전신", strength: "근력", endurance: "심폐" }[nextGoal]} 중심으로 변경했고 다음 세션 설계에도 반영했습니다.`
-                );
-              }}
-              direction={weeklyDirection}
-              onOpenSession={() => navigateToScene("session")}
-            />
-
-            <section className="today-command" aria-label="오늘의 시작">
-              <div className="today-command-copy">
-                <p className="eyebrow">TODAY'S READINESS</p>
-                <div className="today-command-title">
-                  <Brain size={21} />
-                  <h2>{checkinRecommendation.title}</h2>
-                </div>
-                <p>{checkinRecommendation.guidance}</p>
-                <button
-                  className="dark-button"
-                  onClick={() => navigateToScene("session")}
-                >
-                  오늘의 기준 확인 <ArrowRight size={15} />
-                </button>
-              </div>
-              <div className="today-command-meta">
-                <article>
-                  <span>CATALOG</span>
-                  <b>{catalogStats.exerciseCount.toLocaleString()}</b>
-                  <p>독립 운동 종목</p>
-                </article>
-                <article>
-                  <span>RECORDS</span>
-                  <b>{logs.length}</b>
-                  <p>기록된 운동</p>
-                </article>
-                <article>
-                  <span>SESSION</span>
-                  <b>
-                    {sessionDuration}
-                    <small>min</small>
-                  </b>
-                  <p>현재 설계 시간</p>
-                </article>
-              </div>
-            </section>
-          </section>
-
-          <section
-            id="scene-session"
-            className="scene-view scene-view-session"
-            tabIndex={-1}
-          >
-            <section id="program" className="program-section section-pad">
-              <SectionTitle
-                eyebrow="PERSONALIZE"
-                title="오늘의 움직임을, 당신의 목표에 맞게."
-                description="간단한 목표 선택으로 시작하는 보수적이고 점진적인 운동 제안입니다. 실제 서비스에서는 프로필·운동 이력·피로도까지 반영합니다."
-              />
-              <div className="program-grid">
-                <div className="program-selector">
-                  <p className="small-label">PRIMARY GOAL</p>
-                  <div className="goal-pills">
-                    {(
-                      Object.keys(goalCopy) as Array<keyof typeof goalCopy>
-                    ).map(item => (
-                      <button
-                        key={item}
-                        onClick={() => setGoal(item)}
-                        className={goal === item ? "is-selected" : ""}
-                      >
-                        {item}
-                      </button>
-                    ))}
-                  </div>
-                  <button
-                    className="profile-link"
-                    onClick={() => setProfileOpen(true)}
-                  >
-                    연령·체중·경험 수준 설정 <ArrowRight size={14} />
-                  </button>
-                  <button
-                    className="profile-link preference-link"
-                    onClick={applySavedExplorePreferences}
-                  >
-                    저장한 선호 조건으로 탐색 <ArrowRight size={14} />
-                  </button>
-                  <div className="program-note">
-                    <Sparkles size={18} />
-                    <p>
-                      <strong>권장 원칙</strong>
-                      <br />
-                      처음 2주간은 운동 전후 불편감·피로를 관찰하며 강도보다
-                      일관성을 우선하세요.
-                    </p>
-                  </div>
-                </div>
-                <div className="program-card">
-                  <div>
-                    <p className="eyebrow">
-                      YOUR STARTING POINT · {plan.sessionsPerWeek} ·{" "}
-                      {plan.targetRpe}
-                    </p>
-                    <h3>{plan.title}</h3>
-                    <p>
-                      {plan.note} {plan.personalizationNote}
-                    </p>
-                    <p className="profile-context">{plan.sexConsideration}</p>
-                  </div>
-                  <div className="program-exercise-list">
-                    {plan.recommendations.map((name, index) => (
-                      <div key={name}>
-                        <span>0{index + 1}</span>
-                        <b>{name}</b>
-                        <Check size={16} />
-                      </div>
-                    ))}
-                  </div>
-                  <button
-                    className="outline-button"
-                    onClick={() => navigateToScene("explore")}
-                  >
-                    운동 구성 살펴보기 <ArrowRight size={16} />
-                  </button>
-                </div>
-              </div>
-              <div
-                className={`checkin-card mode-${checkinRecommendation.mode}`}
-              >
-                <div className="checkin-head">
-                  <div>
-                    <p className="eyebrow">DAILY READINESS · LOCAL ONLY</p>
-                    <h3>{checkinRecommendation.title}</h3>
-                    <p>{checkinRecommendation.guidance}</p>
-                  </div>
-                  <span>{checkinRecommendation.rpeAdjustment}</span>
-                </div>
-                <div className="checkin-controls">
-                  <label>
-                    에너지 <b>{checkin.energy}/5</b>
-                    <input
-                      type="range"
-                      min="1"
-                      max="5"
-                      value={checkin.energy}
-                      onChange={event =>
-                        setCheckin(current => ({
-                          ...current,
-                          date: new Date().toISOString().slice(0, 10),
-                          energy: Number(event.target.value),
-                        }))
-                      }
-                    />
-                  </label>
-                  <label>
-                    수면 <b>{checkin.sleep}/5</b>
-                    <input
-                      type="range"
-                      min="1"
-                      max="5"
-                      value={checkin.sleep}
-                      onChange={event =>
-                        setCheckin(current => ({
-                          ...current,
-                          date: new Date().toISOString().slice(0, 10),
-                          sleep: Number(event.target.value),
-                        }))
-                      }
-                    />
-                  </label>
-                  <label>
-                    스트레스 <b>{checkin.stress}/5</b>
-                    <input
-                      type="range"
-                      min="1"
-                      max="5"
-                      value={checkin.stress}
-                      onChange={event =>
-                        setCheckin(current => ({
-                          ...current,
-                          date: new Date().toISOString().slice(0, 10),
-                          stress: Number(event.target.value),
-                        }))
-                      }
-                    />
-                  </label>
-                  <label>
-                    통증·불편감 <b>{checkin.pain}/5</b>
-                    <input
-                      type="range"
-                      min="1"
-                      max="5"
-                      value={checkin.pain}
-                      onChange={event =>
-                        setCheckin(current => ({
-                          ...current,
-                          date: new Date().toISOString().slice(0, 10),
-                          pain: Number(event.target.value),
-                        }))
-                      }
-                    />
-                  </label>
-                </div>
-              </div>
-            </section>
-
-            <section id="session" className="session-section section-pad">
-              <SectionTitle
-                eyebrow="SESSION DESIGNER"
-                title="오늘의 조건으로, 한 세션을 설계하세요."
-                description="시간·장소·목표를 고르면 오늘의 컨디션에 맞춘 시작 구조를 제안합니다. 부담되면 15분 또는 더 쉬운 환경으로 바꿔도 됩니다."
-              />
-              <section
-                className="session-launcher"
-                aria-label="빠른 오늘 세션 시작"
-              >
-                <div className="session-launcher-head">
-                  <div>
-                    <p className="eyebrow">01 / QUICK START</p>
-                    <h3>
-                      지금 가능한
-                      <br />
-                      <em>한 가지</em>를 고르세요.
-                    </h3>
-                  </div>
-                  <p>
-                    미리 정한 세 가지 시작점입니다. 선택 뒤에는 아래에서
-                    목표·장소·시간을 자유롭게 조정할 수 있습니다.
-                  </p>
-                </div>
-                <div className="session-quick-starts">
-                  {sessionQuickStarts.map(preset => {
-                    const isSelected =
-                      sessionGoal === preset.goal &&
-                      sessionEnvironment === preset.environment &&
-                      sessionDuration === preset.duration;
-                    return (
-                      <button
-                        key={preset.id}
-                        className={isSelected ? "is-selected" : ""}
-                        aria-pressed={isSelected}
-                        onClick={() => applySessionQuickStart(preset)}
-                      >
-                        <Timer size={19} />
-                        <span>{preset.label}</span>
-                        <small>{preset.detail}</small>
-                        <ArrowRight size={16} />
-                      </button>
-                    );
-                  })}
-                </div>
-                <div className="session-current-state">
-                  <span>현재 설계</span>
-                  <b>
-                    {sessionDuration}분 ·{" "}
-                    {
-                      { home: "집·매트", gym: "헬스장", outdoor: "야외·걷기" }[
-                        sessionEnvironment
-                      ]
-                    }{" "}
-                    ·{" "}
-                    {
-                      {
-                        all_round: "전신 균형",
-                        strength: "기초 근력",
-                        endurance: "심폐 리듬",
-                      }[sessionGoal]
-                    }
-                  </b>
-                  <p>
-                    <ShieldCheck size={15} /> {machineSessionIntensity.target}{" "}
-                    {atlasInteraction.resistance}% ·{" "}
-                    {machineSessionIntensity.label} RPE{" "}
-                    {machineSessionIntensity.rpe}가 오늘 기록 기본값에 자동
-                    반영됩니다.
-                  </p>
-                </div>
-              </section>
-              <div className="session-builder">
-                <div className="session-options">
-                  <p className="small-label">02 / FINE TUNE</p>
-                  <div className="session-choice-group">
-                    <span>목표</span>
-                    <div>
-                      {(
-                        ["all_round", "strength", "endurance"] as SessionGoal[]
-                      ).map(item => (
-                        <button
-                          key={item}
-                          className={sessionGoal === item ? "is-selected" : ""}
-                          onClick={() => setSessionGoal(item)}
-                        >
-                          {
-                            {
-                              all_round: "전신 균형",
-                              strength: "기초 근력",
-                              endurance: "심폐 리듬",
-                            }[item]
-                          }
-                        </button>
-                      ))}
-                    </div>
-                  </div>
-                  <div className="session-choice-group">
-                    <span>환경</span>
-                    <div>
-                      {(["home", "gym", "outdoor"] as SessionEnvironment[]).map(
-                        item => (
-                          <button
-                            key={item}
-                            className={
-                              sessionEnvironment === item ? "is-selected" : ""
-                            }
-                            onClick={() => setSessionEnvironment(item)}
-                          >
-                            {
-                              {
-                                home: "집·매트",
-                                gym: "헬스장",
-                                outdoor: "야외·걷기",
-                              }[item]
-                            }
-                          </button>
-                        )
-                      )}
-                    </div>
-                  </div>
-                  <button
-                    className="session-preference-button"
-                    onClick={() => {
-                      setSessionEnvironment(profileForm.preferredEnvironment);
-                      toast.success("저장한 운동 환경을 세션에 적용했습니다.");
-                    }}
-                  >
-                    저장 환경 적용 ·{" "}
-                    {
-                      { home: "집·매트", gym: "헬스장", outdoor: "야외·걷기" }[
-                        profileForm.preferredEnvironment
-                      ]
-                    }
-                  </button>
-                  <div className="session-choice-group">
-                    <span>시간</span>
-                    <div>
-                      {([15, 30, 45] as SessionDuration[]).map(item => (
-                        <button
-                          key={item}
-                          className={
-                            sessionDuration === item ? "is-selected" : ""
-                          }
-                          onClick={() => setSessionDuration(item)}
-                        >
-                          {item}분
-                        </button>
-                      ))}
-                    </div>
-                  </div>
-                  <button
-                    type="button"
-                    className="session-guidance-toggle"
-                    aria-expanded={sessionGuidanceOpen}
-                    onClick={() => setSessionGuidanceOpen(current => !current)}
-                  >
-                    {sessionGuidanceOpen
-                      ? "조절 기준 접기"
-                      : "피로·통증 조절 기준 보기"}
-                  </button>
-                  {sessionGuidanceOpen && (
-                    <p className="session-local-note">
-                      <ShieldCheck size={15} /> 피로·통증·수면 반응이 좋지
-                      않으면 시간을 줄이거나 범위를 낮추세요.
-                    </p>
-                  )}
-                </div>
-                <article className="session-plan">
-                  <div className="session-plan-head">
-                    <div>
-                      <p className="eyebrow">03 / YOUR SESSION</p>
-                      <h3>{atlasSessionPlan.title}</h3>
-                      <p>{atlasSessionPlan.summary}</p>
-                    </div>
-                    <span>{atlasSessionPlan.adjustment}</span>
-                  </div>
-                  <SessionComposition
-                    blocks={atlasBlocks}
-                    onOpenBlock={openAtlasNode}
-                  />
-                  <div className="session-blocks">
-                    {atlasSessionPlan.blocks.map((block, index) => (
-                      <div key={block.label} className="session-block">
-                        <span>0{index + 1}</span>
-                        <div>
-                          <p className="small-label">
-                            {block.label} · 약 {block.minutes}분
-                          </p>
-                          <ul>
-                            {block.items.map(item => (
-                              <li key={item}>{item}</li>
-                            ))}
-                          </ul>
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                  <div className="session-plan-actions">
-                    <button
-                      className="session-save-button"
-                      onClick={() => {
-                        setWeeklyPlan(current =>
-                          addDesignedSession(
-                            current,
-                            atlasSessionPlan,
-                            sessionGoal,
-                            sessionEnvironment,
-                            sessionDuration
-                          )
-                        );
-                        toast.success(
-                          "오늘의 세션을 이번 주 계획에 추가했습니다."
-                        );
-                      }}
-                    >
-                      <CalendarDays size={16} /> 이번 주 계획에 추가
-                    </button>
-                    <button
-                      className="session-log-button"
-                      onClick={startCurrentMachineSessionLog}
-                    >
-                      <Plus size={16} /> 운동 기록 열기
-                    </button>
-                  </div>
-                  <div className="session-safety">
-                    <HeartPulse size={16} />
-                    {atlasSessionPlan.safetyNote}
-                  </div>
-                </article>
-              </div>
-            </section>
-            <WeeklyPlanPanel
-              plan={weeklyPlan}
-              insight={weeklyPlanInsight}
-              onGoal={nextGoal =>
-                setWeeklyPlan(current => setWeeklyGoal(current, nextGoal))
-              }
-              onToggle={sessionId =>
-                setWeeklyPlan(current =>
-                  toggleWeeklySession(current, sessionId)
+          <HeroScene
+            onNavigate={navigateToScene}
+            atlasInteraction={atlasInteraction}
+            onChangeEquipment={equipment => {
+              if (atlasInteraction.heroEquipment === equipment) return;
+              setAtlasInteraction(current => ({
+                ...current,
+                heroEquipment: equipment,
+              }));
+              playAtlasTransition("route");
+            }}
+            onChangeResistance={resistance =>
+              setAtlasInteraction(current => ({ ...current, resistance }))
+            }
+            onStartEquipmentSession={startEquipmentSession}
+            onResumeRecentSession={resumeRecentEquipmentSession}
+            onStartAllRoundSession={() => {
+              setSessionGoal("all_round");
+              navigateToScene("session");
+            }}
+            onOpenLog={() => setLogOpen(true)}
+            machineSessionIntensity={machineSessionIntensity}
+            atlasRoute={atlasRoute}
+            atlasPerformance={atlasPerformance}
+            atlasSignalSummary={atlasSignalSummary}
+            checkinRecommendation={checkinRecommendation}
+            catalogStats={catalogStats}
+            logCount={logs.length}
+            sessionGoal={sessionGoal}
+            sessionEnvironment={sessionEnvironment}
+            sessionDuration={sessionDuration}
+            hasTrainingHistory={hasTrainingHistory}
+            weeklyPlan={weeklyPlan}
+            weeklyPlanInsight={weeklyPlanInsight}
+            weeklyCompletionPercent={weeklyCompletionPercent}
+            weeklyCompletionFlow={weeklyCompletionFlow}
+            weeklyDirection={weeklyDirection}
+            onChangeWeeklyGoal={nextGoal => {
+              if (nextGoal === weeklyPlan.goal) return;
+              setWeeklyPlan(current => setWeeklyGoal(current, nextGoal));
+              setSessionGoal(nextGoal);
+              toast.success(
+                `이번 주 목표를 ${{ all_round: "전신", strength: "근력", endurance: "심폐" }[nextGoal]} 중심으로 변경했고 다음 세션 설계에도 반영했습니다.`
+              );
+            }}
+          />{" "}
+          <SessionScene
+            goal={goal}
+            onChangeGoal={setGoal}
+            plan={plan}
+            profileForm={profileForm}
+            onOpenProfile={() => setProfileOpen(true)}
+            onGoToExplore={() => navigateToScene("explore")}
+            onApplySavedPreferences={applySavedExplorePreferences}
+            onApplySavedEnvironment={() => {
+              setSessionEnvironment(profileForm.preferredEnvironment);
+              toast.success("저장한 운동 환경을 세션에 적용했습니다.");
+            }}
+            checkin={checkin}
+            onChangeCheckin={(field, value) =>
+              setCheckin(current => ({
+                ...current,
+                date: new Date().toISOString().slice(0, 10),
+                [field]: value,
+              }))
+            }
+            checkinRecommendation={checkinRecommendation}
+            sessionGoal={sessionGoal}
+            onChangeSessionGoal={setSessionGoal}
+            sessionEnvironment={sessionEnvironment}
+            onChangeSessionEnvironment={setSessionEnvironment}
+            sessionDuration={sessionDuration}
+            onChangeSessionDuration={setSessionDuration}
+            onApplyQuickStart={applySessionQuickStart}
+            sessionGuidanceOpen={sessionGuidanceOpen}
+            onToggleSessionGuidance={() =>
+              setSessionGuidanceOpen(current => !current)
+            }
+            sessionPlan={sessionPlan}
+            atlasSessionPlan={atlasSessionPlan}
+            atlasBlocks={atlasBlocks}
+            atlasInteraction={atlasInteraction}
+            machineSessionIntensity={machineSessionIntensity}
+            onOpenBlock={openAtlasNode}
+            onOpenSessionLog={startCurrentMachineSessionLog}
+            onAddSessionToWeek={(planToAdd, message) => {
+              setWeeklyPlan(current =>
+                addDesignedSession(
+                  current,
+                  planToAdd,
+                  sessionGoal,
+                  sessionEnvironment,
+                  sessionDuration
                 )
-              }
-              onStartLog={startPlanSessionLog}
-              onAdd={() => {
-                setWeeklyPlan(current =>
-                  addDesignedSession(
-                    current,
-                    sessionPlan,
-                    sessionGoal,
-                    sessionEnvironment,
-                    sessionDuration
-                  )
-                );
-                toast.success(
-                  "오늘의 설계 세션을 이번 주 계획에 추가했습니다."
-                );
-              }}
-            />
-          </section>
+              );
+              toast.success(message);
+            }}
+            weeklyPlan={weeklyPlan}
+            weeklyPlanInsight={weeklyPlanInsight}
+            onChangeWeeklyGoal={nextGoal =>
+              setWeeklyPlan(current => setWeeklyGoal(current, nextGoal))
+            }
+            onToggleWeeklySession={sessionId =>
+              setWeeklyPlan(current => toggleWeeklySession(current, sessionId))
+            }
+            onStartPlanLog={startPlanSessionLog}
+          />{" "}
           <WorkdayRecoveryScene
             onJumpToSection={jumpToWellnessSection}
             seatedRecoveryDuration={seatedRecoveryDuration}
@@ -2632,397 +1768,60 @@ export default function Home() {
             onChangeRoutineGoal={setRoutineGoal}
             routine={routine}
           />
-
-          <section
-            id="scene-explore"
-            className="scene-view scene-view-explore"
-            tabIndex={-1}
-          >
-            <section id="explore" className="explore-section section-pad">
-              <SectionTitle
-                eyebrow="EXERCISE LIBRARY"
-                title="움직임을 지식으로 익히세요."
-                description={`개인용 정적 큐레이션: ${catalogStats.categoryCount}개 카테고리 · ${catalogStats.exerciseCount}개 운동. 카테고리와 목적, 장비로 탐색하고 올바른 자세·효과·안전 단서를 확인하세요.`}
-                action={
-                  <div className="library-actions">
-                    <span className="library-count">
-                      {filteredExercises.length} MATCHES ·{" "}
-                      {catalogExercises.length}/{catalogStats.exerciseCount}
-                    </span>
-                  </div>
-                }
-              />
-              <div className="search-panel">
-                <div className="search-field">
-                  <Search size={18} />
-                  <input
-                    value={keyword}
-                    onChange={event =>
-                      updateExploreFilters({ keyword: event.target.value })
-                    }
-                    placeholder="운동, 부위, 장비 검색"
-                    aria-label="운동 검색"
-                  />
-                </div>
-                <div className="explore-primary-controls">
-                  <label className="sort-select">
-                    정렬
-                    <select
-                      value={sort}
-                      onChange={event =>
-                        updateExploreFilters({
-                          sort: event.target.value as ExerciseSort,
-                        })
-                      }
-                      aria-label="정렬 기준"
-                    >
-                      <option value="recommended">추천순</option>
-                      <option value="difficulty">난이도순</option>
-                      <option value="duration">시간순</option>
-                    </select>
-                  </label>
-                  <p>
-                    <span>현재 정렬</span>
-                    <b>{sortLabel}</b>
-                  </p>
-                </div>
-                <div
-                  className="quick-category-filter"
-                  role="group"
-                  aria-label="운동 종류 빠른 필터"
-                >
-                  <div className="quick-category-head">
-                    <div>
-                      <p className="small-label">EXERCISE TYPE</p>
-                      <b>운동 종류 빠른 선택</b>
-                      <span aria-live="polite">
-                        {category === "전체"
-                          ? `전체 ${filteredExercises.length}개 표시`
-                          : `${category} ${filteredExercises.length}개 표시`}
-                      </span>
-                    </div>
-                    <div className="filter-head-actions">
-                      <button
-                        className="preference-filter-button"
-                        onClick={applySavedExplorePreferences}
-                      >
-                        선호 조건 적용
-                      </button>
-                      {hasExploreFilterState && (
-                        <button
-                          className="filter-reset"
-                          onClick={resetExploreFilters}
-                        >
-                          조건 초기화
-                        </button>
-                      )}
-                    </div>
-                  </div>
-                  <div className="quick-category-options">
-                    {categories.map(item => (
-                      <button
-                        key={item}
-                        className={category === item ? "filter-active" : ""}
-                        aria-pressed={category === item}
-                        onClick={() => updateExploreFilters({ category: item })}
-                      >
-                        {item === "전체" ? "전체 보기" : item}
-                      </button>
-                    ))}
-                  </div>
-                </div>
-                <div className="advanced-filter-control">
-                  <div>
-                    <p className="small-label">MORE FILTERS</p>
-                    <span>
-                      {activeExploreFilterLabels.length
-                        ? `${activeExploreFilterLabels.length}개 조건 적용됨`
-                        : "필요할 때만 조건을 더하세요"}
-                    </span>
-                  </div>
-                  <button
-                    onClick={() => setFiltersOpen(open => !open)}
-                    aria-expanded={filtersOpen}
-                    aria-controls="advanced-exercise-filters"
-                  >
-                    {filtersOpen
-                      ? "상세 조건 닫기"
-                      : "부위·목적·난이도 상세 조건"}
-                    <ChevronDown size={15} />
-                  </button>
-                </div>
-                {filtersOpen && (
-                  <div id="advanced-exercise-filters" className="filter-row">
-                    <select
-                      value={regionFilter}
-                      onChange={event =>
-                        updateExploreFilters({ region: event.target.value })
-                      }
-                      aria-label="부위 필터"
-                    >
-                      <option>전체</option>
-                      {Object.keys(recoveryGuides).map(region => (
-                        <option key={region}>{region}</option>
-                      ))}
-                    </select>
-                    <select
-                      value={focus}
-                      onChange={event =>
-                        updateExploreFilters({ focus: event.target.value })
-                      }
-                      aria-label="목적 필터"
-                    >
-                      <option>전체</option>
-                      <option>근력</option>
-                      <option>체력</option>
-                      <option>심폐</option>
-                      <option>가동성</option>
-                      <option>균형</option>
-                      <option>협응</option>
-                      <option>파워</option>
-                    </select>
-                    <select
-                      value={difficulty}
-                      onChange={event =>
-                        updateExploreFilters({ difficulty: event.target.value })
-                      }
-                      aria-label="난이도 필터"
-                    >
-                      <option>전체</option>
-                      <option>입문</option>
-                      <option>중급</option>
-                      <option>상급</option>
-                    </select>
-                    <select
-                      value={equipment}
-                      onChange={event =>
-                        updateExploreFilters({ equipment: event.target.value })
-                      }
-                      aria-label="장비 필터"
-                    >
-                      <option>전체</option>
-                      <option>장비 없음</option>
-                      <option>장비 필요</option>
-                    </select>
-                  </div>
-                )}
-                <ExploreFilterResultSummary
-                  filteredCount={filteredExercises.length}
-                  visibleCount={visibleExercises.length}
-                  loadedCount={catalogExercises.length}
-                  totalCount={catalogStats.exerciseCount}
-                  activeFilterLabels={activeExploreFilterLabels}
-                />
-              </div>
-              <details className="explore-more">
-                {/* 첫 화면에 운동이 보이도록, 자주 쓰지 않는 조건은 접어 둔다.
-                    이전에는 이 블록들이 검색 위에 쌓여 모바일에서 첫 운동이 3.3화면 아래 있었다. */}
-                <summary>
-                  <span>상세 조건</span>
-                  <small>ROM · 시작점 · 저장한 조건</small>
-                </summary>
-                <div
-                  className="rom-filter"
-                  role="group"
-                  aria-label="가동 범위 ROM 필터"
-                >
-                  {(["전체", "작음", "보통", "큼"] as RomFilter[]).map(item => (
-                    <button
-                      key={item}
-                      className={romFilter === item ? "is-selected" : ""}
-                      aria-pressed={romFilter === item}
-                      onClick={() => updateExploreFilters({ rom: item })}
-                    >
-                      {item === "전체" ? "ROM 전체" : `ROM · ${item}`}
-                    </button>
-                  ))}
-                </div>
-                <div className="rom-readiness-inline">
-                  <span>오늘의 ROM</span>
-                  <b>{romReadiness.title}</b>
-                  <p>
-                    통증 {checkin.pain}/5 · 에너지 {checkin.energy}/5
-                  </p>
-                  <button onClick={applyRomReadiness}>
-                    {romReadiness.actionLabel} <ArrowRight size={13} />
-                  </button>
-                </div>
-                <section
-                  className="explore-launcher"
-                  aria-label="빠른 운동 시작"
-                >
-                  <div className="explore-launcher-head">
-                    <div>
-                      <p className="eyebrow">01 / CHOOSE A START</p>
-                      <h3>어떻게 움직이고 싶나요?</h3>
-                    </div>
-                    <p>
-                      한 가지 시작점을 고르면 결과를 바로 좁힙니다. 이후
-                      부위·난이도·장비 조건을 더할 수 있습니다.
-                    </p>
-                  </div>
-                  <div className="explore-paths">
-                    {explorePaths.map(path => {
-                      const Icon = path.icon;
-                      const isSelected =
-                        category === path.category &&
-                        focus === path.focus &&
-                        equipment === path.equipment;
-                      return (
-                        <button
-                          key={path.id}
-                          className={isSelected ? "is-selected" : ""}
-                          aria-pressed={isSelected}
-                          onClick={() => applyExplorePath(path)}
-                        >
-                          <Icon size={20} />
-                          <span>{path.label}</span>
-                          <small>{path.description}</small>
-                          <ArrowRight size={16} />
-                        </button>
-                      );
-                    })}
-                  </div>
-                  <div className="explore-selection-state">
-                    <span>현재 조건</span>
-                    <b>
-                      {category === "전체" &&
-                      focus === "전체" &&
-                      equipment === "전체"
-                        ? "모든 운동 보기"
-                        : [
-                            category !== "전체" ? category : null,
-                            focus !== "전체" ? focus : null,
-                            equipment !== "전체" ? equipment : null,
-                          ]
-                            .filter(Boolean)
-                            .join(" · ")}
-                    </b>
-                    <p>
-                      <strong>{filteredExercises.length}개</strong> 운동을 바로
-                      살펴볼 수 있습니다.
-                    </p>
-                  </div>
-                </section>
-                <ExplorePresetPanel
-                  presetName={presetName}
-                  presets={explorePreferences.filterPresets}
-                  onPresetName={setPresetName}
-                  onSave={saveCurrentExplorePreset}
-                  onApply={applyExploreFilterPreset}
-                  onDelete={deleteExploreFilterPreset}
-                />
-              </details>
-              <div
-                className="mobile-explore-rail"
-                aria-label="모바일 탐색 결과 위치"
-                aria-live="polite"
-              >
-                <span>RESULT ROUTE</span>
-                <b>
-                  {visibleExercises.length} / {filteredExercises.length}
-                </b>
-                <p>
-                  {activeExploreFilterLabels.length
-                    ? activeExploreFilterLabels.join(" · ")
-                    : "전체 카탈로그"}
-                </p>
-              </div>
-              <div className="exercise-grid">
-                {visibleExercises.map((exercise, index) => (
-                  <ExerciseCard
-                    key={exercise.id}
-                    exercise={exercise}
-                    detail={detailsByExerciseId.get(exercise.id)!}
-                    index={index}
-                    isFavorite={explorePreferences.favoriteExerciseIds.includes(
-                      exercise.id
-                    )}
-                    onToggleFavorite={() =>
-                      setExplorePreferences(current =>
-                        toggleFavoriteExercise(current, exercise.id)
-                      )
-                    }
-                    onViewed={() => {
-                      setExplorePreferences(current =>
-                        recordRecentExercise(current, exercise.id)
-                      );
-                      setAnatomyExercise(exercise);
-                    }}
-                    onAlt={() => {
-                      updateExploreFilters({
-                        keyword: "",
-                        category: exercise.category,
-                        difficulty: "초급",
-                        sort: "difficulty",
-                      });
-                    }}
-                  />
-                ))}
-              </div>
-              <div
-                className="saved-exercise-panels"
-                aria-label="빠른 운동 탐색"
-              >
-                <SavedExercisePanel
-                  kind="recent"
-                  exercises={recentExercises}
-                  onOpen={openSavedExercise}
-                />
-                <SavedExercisePanel
-                  kind="favorite"
-                  exercises={favoriteExercises}
-                  onOpen={openSavedExercise}
-                />
-              </div>
-              {filteredExercises.length === 0 && (
-                <div className="empty-library">
-                  <Search size={26} />
-                  <div>
-                    <h3>일치하는 운동이 없습니다.</h3>
-                    <p>
-                      검색어 또는 적용 조건을 하나씩 줄여 보세요. 전체
-                      카탈로그로 즉시 돌아갈 수도 있습니다.
-                    </p>
-                    <button
-                      className="outline-button"
-                      onClick={resetExploreFilters}
-                    >
-                      모든 조건 초기화
-                    </button>
-                  </div>
-                </div>
-              )}
-              {filteredExercises.length > 0 &&
-                (visibleExerciseCount < filteredExercises.length ||
-                  loadedCatalogPages < getCatalogPageCount()) && (
-                  <div className="catalog-pagination">
-                    <p aria-live="polite">
-                      {visibleExercises.length}개 표시 ·{" "}
-                      {catalogExercises.length}/{catalogStats.exerciseCount}개
-                      카탈로그를 불러왔습니다.
-                    </p>
-                    <button
-                      className="outline-button catalog-load-more"
-                      onClick={() => void loadMoreExercises()}
-                      disabled={catalogLoading}
-                    >
-                      {catalogLoading ? (
-                        <>
-                          <Loader2 size={15} className="animate-spin" />{" "}
-                          불러오는 중
-                        </>
-                      ) : (
-                        <>
-                          운동 100개 더 보기 <ArrowRight size={15} />
-                        </>
-                      )}
-                    </button>
-                  </div>
-                )}
-            </section>
-          </section>
-
+          <ExploreScene
+            filters={exploreFilters}
+            onChangeFilters={updateExploreFilters}
+            onResetFilters={resetExploreFilters}
+            activeFilterLabels={activeExploreFilterLabels}
+            hasFilterState={hasExploreFilterState}
+            sortLabel={sortLabel}
+            filtersOpen={filtersOpen}
+            onToggleFilters={() => setFiltersOpen(open => !open)}
+            explorePaths={explorePaths}
+            onApplyPath={applyExplorePath}
+            onApplySavedPreferences={applySavedExplorePreferences}
+            romReadiness={romReadiness}
+            onApplyRomReadiness={applyRomReadiness}
+            checkin={checkin}
+            catalogStats={catalogStats}
+            catalogExercises={catalogExercises}
+            catalogLoading={catalogLoading}
+            loadedCatalogPages={loadedCatalogPages}
+            onLoadMore={loadMoreExercises}
+            filteredExercises={filteredExercises}
+            visibleExercises={visibleExercises}
+            visibleExerciseCount={visibleExerciseCount}
+            detailsByExerciseId={detailsByExerciseId}
+            favoriteExerciseIds={explorePreferences.favoriteExerciseIds}
+            onToggleFavorite={exerciseId =>
+              setExplorePreferences(current =>
+                toggleFavoriteExercise(current, exerciseId)
+              )
+            }
+            onViewExercise={exercise => {
+              setExplorePreferences(current =>
+                recordRecentExercise(current, exercise.id)
+              );
+              setAnatomyExercise(exercise);
+            }}
+            onFindEasier={exercise =>
+              updateExploreFilters({
+                keyword: "",
+                category: exercise.category,
+                difficulty: "초급",
+                sort: "difficulty",
+              })
+            }
+            filterPresets={explorePreferences.filterPresets}
+            presetName={presetName}
+            onChangePresetName={setPresetName}
+            onSavePreset={saveCurrentExplorePreset}
+            onApplyPreset={applyExploreFilterPreset}
+            onDeletePreset={deleteExploreFilterPreset}
+            favoriteExercises={favoriteExercises}
+            recentExercises={recentExercises}
+            onOpenSavedExercise={openSavedExercise}
+          />
           <AnatomyScene
             activeRegion={activeRegion}
             selectedAnatomyRegions={selectedAnatomyRegions}
@@ -3066,168 +1865,7 @@ export default function Home() {
             }
             onOpenLog={() => setLogOpen(true)}
           />
-          <section className="scene-view scene-view-wellness">
-            <section id="wellness" className="wellness-section section-pad">
-              <SectionTitle
-                eyebrow="WHOLE-PERSON WELLNESS"
-                title="회복도 훈련의 일부입니다."
-                description="영양, 수면, 열 노출은 운동을 대체하는 비법이 아니라, 일관된 훈련을 지지하는 생활 습관의 일부로 다룹니다."
-              />
-              <div className="wellness-grid">
-                {wellnessCards.map((card, index) => (
-                  <WellnessCard key={card.title} card={card} index={index} />
-                ))}
-              </div>
-            </section>
-
-            <section
-              id="cardio-intervals"
-              className="interval-section section-pad"
-            >
-              <SectionTitle
-                eyebrow="CARDIO INTERVALS"
-                title="종목에 맞춰, 숨이 무너지기 전에 낮춥니다."
-                description="모든 템플릿은 입문·회복 우선의 출발점입니다. 말하기 검사와 RPE가 계획보다 우선하며, 통증·어지러움·비정상적 숨참은 중단 신호입니다."
-              />
-              <div className="interval-grid">
-                {aerobicIntervalTemplates.map(template => (
-                  <article className="interval-card" key={template.id}>
-                    <p className="small-label">{template.format}</p>
-                    <h3>{template.title}</h3>
-                    <dl>
-                      <div>
-                        <dt>준비</dt>
-                        <dd>{template.warmup}</dd>
-                      </div>
-                      <div>
-                        <dt>작업</dt>
-                        <dd>{template.work}</dd>
-                      </div>
-                      <div>
-                        <dt>회복</dt>
-                        <dd>{template.recovery}</dd>
-                      </div>
-                    </dl>
-                    <p className="interval-rpe">{template.rpe}</p>
-                    <p>{template.adjust}</p>
-                    <p className="interval-safety">
-                      <ShieldCheck size={14} /> {template.safety}
-                    </p>
-                  </article>
-                ))}
-              </div>
-            </section>
-
-            <section
-              id="quiet-circuits"
-              className="interval-section section-pad"
-            >
-              <SectionTitle
-                eyebrow="QUIET HOME CIRCUITS"
-                title="바닥 충격을 낮추고, 리듬은 이어갑니다."
-                description="아파트·공유 주거 환경을 고려한 무점프 전신 서킷입니다. 발소리·호흡·자세 중 하나라도 통제되지 않으면 보폭·반복·라운드를 먼저 줄이세요."
-              />
-              <div className="interval-grid">
-                {lowNoiseCircuitTemplates.map(template => (
-                  <article className="interval-card" key={template.id}>
-                    <p className="small-label">{template.format}</p>
-                    <h3>{template.title}</h3>
-                    <dl>
-                      <div>
-                        <dt>소음</dt>
-                        <dd>{template.noise}</dd>
-                      </div>
-                      <div>
-                        <dt>공간</dt>
-                        <dd>{template.space}</dd>
-                      </div>
-                      <div>
-                        <dt>구성</dt>
-                        <dd>{template.blocks.join(" · ")}</dd>
-                      </div>
-                    </dl>
-                    <p className="interval-rpe">{template.intensity}</p>
-                    <p>{template.adjust}</p>
-                    <p className="interval-safety">
-                      <ShieldCheck size={14} /> {template.safety}
-                    </p>
-                  </article>
-                ))}
-              </div>
-            </section>
-
-            <section
-              id="start-safely"
-              className="life-stage-section section-pad"
-            >
-              <SectionTitle
-                eyebrow="START SAFELY"
-                title="시작 조건을 먼저 맞추고, 한 번에 하나만 조절합니다."
-                description="이 안내는 개인 진단·치료·운동 처방이 아닌 일반 정보입니다. 임신·산후 상태, 질환, 수술·부상 이력 또는 새 증상은 의료진의 안내를 우선하세요."
-              />
-              <div className="start-checklist">
-                <h3>운동 시작 전 5가지 확인</h3>
-                <ul>
-                  {startChecklist.map(item => (
-                    <li key={item}>
-                      <Check size={15} />
-                      {item}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-              <div className="life-stage-grid">
-                {lifeStageGuides.map(guide => (
-                  <article key={guide.id}>
-                    <p className="eyebrow">GENERAL STARTING POINT</p>
-                    <h3>{guide.title}</h3>
-                    <p>{guide.scope}</p>
-                    <h4>시작</h4>
-                    <ul>
-                      {guide.start.map(item => (
-                        <li key={item}>{item}</li>
-                      ))}
-                    </ul>
-                    <h4>조절</h4>
-                    <ul>
-                      {guide.adjust.map(item => (
-                        <li key={item}>{item}</li>
-                      ))}
-                    </ul>
-                    <p className="life-stage-stop">
-                      <ShieldCheck size={14} /> {guide.stop.join(" · ")}
-                    </p>
-                  </article>
-                ))}
-              </div>
-            </section>
-
-            <section className="evidence-section">
-              <div>
-                <BookOpen size={21} />
-                <p className="eyebrow">EVIDENCE FIRST</p>
-                <h2>
-                  근거를 남기고,
-                  <br />
-                  한계를 함께 말합니다.
-                </h2>
-              </div>
-              <div>
-                <p>
-                  Fit Atlas는 운동 항목마다 공공 보건 지침 또는 전문 기관의
-                  출처를 연결합니다. 권고량은 일반적 참고 정보이며 개인별 질환,
-                  임신·산후 상태, 부상 이력, 복용 약물을 대체 평가하지 않습니다.
-                </p>
-                <a
-                  href="https://www.who.int/news-room/fact-sheets/detail/physical-activity"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  WHO 신체 활동 권고 보기 <ArrowRight size={16} />
-                </a>
-              </div>
-            </section>
-          </section>
+          <WellnessScene />{" "}
         </main>
 
         <footer className="site-footer">
@@ -3673,289 +2311,6 @@ export default function Home() {
   );
 }
 
-function ExerciseCard({
-  exercise,
-  detail,
-  index,
-  isFavorite,
-  onToggleFavorite,
-  onViewed,
-  onAlt,
-}: {
-  exercise: Exercise;
-  detail: ExerciseDetail;
-  index: number;
-  isFavorite: boolean;
-  onToggleFavorite: () => void;
-  onViewed: () => void;
-  onAlt: () => void;
-}) {
-  const [expanded, setExpanded] = useState(false);
-  const visual = getMovementVisual(exercise.id);
-  const textGuide = getExerciseTextGuide(exercise, detail);
-  const evidence = getExerciseEvidenceScope(exercise);
-  const detailId = `exercise-detail-${exercise.id}`;
-  const { pendingExerciseName, clearPendingExercise } = React.useContext(
-    AsciiInteractionContext
-  );
-  useEffect(() => {
-    if (pendingExerciseName !== exercise.name) return;
-    setExpanded(true);
-    onViewed();
-    clearPendingExercise();
-  }, [clearPendingExercise, exercise.name, onViewed, pendingExerciseName]);
-  return (
-    <article
-      data-atlas-index={String(index + 1).padStart(3, "0")}
-      className={expanded ? "exercise-card is-expanded" : "exercise-card"}
-    >
-      <div className="exercise-top">
-        <span className="exercise-category-label">{exercise.category}</span>
-        <div className="exercise-card-actions">
-          <span className="difficulty">
-            <small>난이도</small>
-            {exercise.difficulty}
-          </span>
-          <button
-            className={
-              isFavorite ? "favorite-toggle is-favorite" : "favorite-toggle"
-            }
-            aria-label={`${exercise.name} ${isFavorite ? "즐겨찾기 해제" : "즐겨찾기 추가"}`}
-            aria-pressed={isFavorite}
-            onClick={onToggleFavorite}
-          >
-            <Star size={15} fill={isFavorite ? "currentColor" : "none"} />
-          </button>
-        </div>
-      </div>
-      <h3>{exercise.name}</h3>
-      <p className="english-name">{exercise.englishName}</p>
-      <ExerciseCardSummary exercise={exercise} />
-      {expanded && (
-        <div id={detailId} className="exercise-detail">
-          <p className="small-label">TRAINING BENEFITS</p>
-          <div className="benefit-row">
-            {exercise.benefits.map(benefit => (
-              <span key={benefit}>{benefit}</span>
-            ))}
-          </div>
-          <TextExerciseGuide guide={textGuide} exerciseName={exercise.name} />
-          {visual && (
-            <section
-              className="visual-guide-block"
-              aria-label={`${exercise.name} 단계형 자세 안내`}
-            >
-              <div className="visual-guide-note">
-                <span>01 · 02 · 03</span>
-                <p>
-                  그림의 순서대로 짧게 리허설한 뒤,{" "}
-                  <strong>통증·불안정·호흡 흐트러짐</strong>이 있으면 아래의
-                  쉬운 변형으로 조절하세요.
-                </p>
-              </div>
-              <MovementVisualGuide
-                title={visual.title}
-                frames={visual.frames}
-              />
-            </section>
-          )}
-          <p className="small-label">SETUP</p>
-          <ol>
-            {detail.setup.map((step, stepIndex) => (
-              <li key={step}>
-                <b>{stepIndex + 1}.</b>
-                {step}
-              </li>
-            ))}
-          </ol>
-          <p className="small-label">FORM CUES</p>
-          <ol>
-            {exercise.cues.map((cue, cueIndex) => (
-              <li key={cue}>
-                <b>{cueIndex + 1}.</b>
-                {cue}
-              </li>
-            ))}
-          </ol>
-          <div className="detail-grid">
-            <div>
-              <p className="small-label">EASIER</p>
-              <ul>
-                {detail.regressions.map(item => (
-                  <li key={item}>{item}</li>
-                ))}
-              </ul>
-            </div>
-            <div>
-              <p className="small-label">NEXT STEP</p>
-              <ul>
-                {detail.progressions.map(item => (
-                  <li key={item}>{item}</li>
-                ))}
-              </ul>
-            </div>
-          </div>
-          <p className="small-label">COMMON ERRORS</p>
-          <ul className="detail-errors">
-            {detail.commonMistakes.map(item => (
-              <li key={item}>{item}</li>
-            ))}
-          </ul>
-          <button className="detail-alt" onClick={onAlt}>
-            변형 비교 <ArrowRight size={14} />
-          </button>
-          <p className="exercise-finish">
-            <b>마무리</b>
-            {detail.finish}
-          </p>
-          <p className="exercise-warning">{exercise.warning}</p>
-          <section
-            className="evidence-scope"
-            aria-label={`${exercise.name} 근거 적용 범위`}
-          >
-            <p className="small-label">EVIDENCE SCOPE</p>
-            <p>{evidence.sourceLabel}</p>
-            <p>{evidence.guidanceLabel}</p>
-            <small>{evidence.limit}</small>
-          </section>
-          <a href={exercise.reference.url} target="_blank" rel="noreferrer">
-            {exercise.reference.label} <ArrowRight size={13} />
-          </a>
-        </div>
-      )}
-      <button
-        className="card-expand"
-        aria-expanded={expanded}
-        aria-controls={detailId}
-        onClick={() => {
-          const nextExpanded = !expanded;
-          setExpanded(nextExpanded);
-          if (nextExpanded) onViewed();
-        }}
-      >
-        {expanded ? "간단히 보기" : "자세·근거 보기"}
-        <ChevronRight size={15} className={expanded ? "rotate-icon" : ""} />
-      </button>
-    </article>
-  );
-}
-
-function TextExerciseGuide({
-  guide,
-  exerciseName,
-}: {
-  guide: ExerciseTextGuide;
-  exerciseName: string;
-}) {
-  const ascii = getAsciiMovementDiagram(exerciseName, guide);
-  const presentation = getAsciiDiagramPresentation(guide);
-  const { showAxis, onOpenRom } = React.useContext(AsciiInteractionContext);
-  return (
-    <section
-      className="text-exercise-guide"
-      aria-label={`${exerciseName} 사진 없는 자세 안내`}
-    >
-      <div className="text-guide-head">
-        <div>
-          <p className="small-label">TEXT MOVEMENT MAP</p>
-          <h4>읽으며 따라 하는 자세 지도</h4>
-        </div>
-        <span>
-          사진 없이도
-          <br />① → ② → ③
-        </span>
-      </div>
-      {ascii && (
-        <section
-          className={`ascii-movement-diagram theme-${presentation.categoryTheme} region-${presentation.regionTheme}`}
-          aria-label={`${exerciseName} ASCII 동작 도식`}
-        >
-          <div className="ascii-legend">
-            <p className="small-label">ASCII MOTION SKETCH</p>
-            <div>
-              <span>{presentation.categoryLabel}</span>
-              <span>● {presentation.regionLabel}</span>
-            </div>
-            <p>
-              <b>화살표 범례</b> {presentation.motionLabel}
-            </p>
-            <p>{ascii.description}</p>
-          </div>
-          <div
-            className="ascii-axis-rom"
-            aria-label={`중심축 ${presentation.jointFocus}, 가동 범위 ${presentation.rom}`}
-          >
-            {showAxis && (
-              <>
-                <div className="axis-points" aria-hidden="true">
-                  <i />
-                  <b />
-                  <i />
-                </div>
-                <p>
-                  <b>중심축</b> {presentation.jointFocus}
-                </p>
-              </>
-            )}
-            <button
-              className={`rom-badge rom-${presentation.rom}`}
-              onClick={() => onOpenRom(exerciseName, presentation)}
-              aria-haspopup="dialog"
-            >
-              ROM · {presentation.rom}
-            </button>
-            <small>{presentation.romDescription}</small>
-          </div>
-          <div className="ascii-stages">
-            {ascii.stages.map((stage, index) => (
-              <article key={stage.label}>
-                <span>
-                  0{index + 1} · {stage.label}
-                </span>
-                <pre aria-label={`${stage.label} ASCII 도식: ${stage.cue}`}>
-                  {stage.art}
-                </pre>
-                <i aria-hidden="true">{presentation.stageArrows[index]}</i>
-                <b>{stage.cue}</b>
-              </article>
-            ))}
-          </div>
-        </section>
-      )}
-      <ol className="text-guide-sequence">
-        {guide.sequence.map((step, index) => (
-          <li key={step}>
-            <span>0{index + 1}</span>
-            <div>
-              <b>{["시작 자세", "움직임", "마무리 확인"][index]}</b>
-              <p>{step}</p>
-            </div>
-          </li>
-        ))}
-      </ol>
-      <div className="text-guide-facts">
-        <article>
-          <span>◎ 주로 쓰는 근육</span>
-          <p>{guide.primaryMuscles.join(" · ")}</p>
-        </article>
-        <article>
-          <span>＋ 함께 쓰는 근육</span>
-          <p>{guide.supportingMuscles.join(" · ")}</p>
-        </article>
-        <article>
-          <span>↔ 호흡</span>
-          <p>{guide.breathing.replace("↔ ", "")}</p>
-        </article>
-        <article>
-          <span>↓ 어렵다면</span>
-          <p>{guide.adjustment.replace("↓ ", "")}</p>
-        </article>
-      </div>
-      <p className="text-guide-stop">{guide.stop}</p>
-    </section>
-  );
-}
-
 function RomRecommendationDialog({
   target,
   onClose,
@@ -4129,156 +2484,5 @@ function AtlasNodeDialog({
         </div>
       </section>
     </div>
-  );
-}
-
-function WeeklyPlanPanel({
-  plan,
-  insight,
-  onGoal,
-  onToggle,
-  onStartLog,
-  onAdd,
-}: {
-  plan: WeeklyPlan;
-  insight: ReturnType<typeof getWeeklyPlanInsight>;
-  onGoal: (goal: WeeklyPlan["goal"]) => void;
-  onToggle: (sessionId: string) => void;
-  onStartLog: (session: WeeklyPlan["sessions"][number]) => void;
-  onAdd: () => void;
-}) {
-  const completion = insight.total
-    ? Math.round((insight.completed / insight.total) * 100)
-    : 0;
-  return (
-    <section className="weekly-plan-section section-pad">
-      <SectionTitle
-        eyebrow="WEEKLY RHYTHM"
-        title="계획을 체크하고, 조절하며 이어가세요."
-        description="완료 체크는 이 브라우저에만 저장됩니다. 실제 운동 기록과는 구분해 두고, 컨디션이 낮은 날에는 미루거나 더 가볍게 바꿔도 됩니다."
-      />
-      <div className="weekly-plan-grid">
-        <aside className="weekly-summary">
-          <p className="eyebrow">THIS WEEK · LOCAL ONLY</p>
-          <h3>
-            {insight.completed} / {insight.total} 세션
-          </h3>
-          <div
-            className="weekly-progress-track"
-            aria-label={`주간 계획 이행률 ${completion}%`}
-          >
-            <i style={{ width: `${completion}%` }} />
-          </div>
-          <p>{insight.label}</p>
-          <div className="weekly-goals">
-            {(
-              ["all_round", "strength", "endurance"] as WeeklyPlan["goal"][]
-            ).map(goal => (
-              <button
-                key={goal}
-                className={plan.goal === goal ? "is-selected" : ""}
-                onClick={() => onGoal(goal)}
-              >
-                {
-                  {
-                    all_round: "전신 균형",
-                    strength: "기초 근력",
-                    endurance: "심폐 리듬",
-                  }[goal]
-                }
-              </button>
-            ))}
-          </div>
-          <button className="weekly-add-button" onClick={onAdd}>
-            <Plus size={15} /> 오늘 설계 세션 추가
-          </button>
-          <small>
-            기록 연결 {insight.linkedRecords}건 · 직접 체크{" "}
-            {insight.manualChecks}건 · 이번 주 운동 기록{" "}
-            {insight.loggedThisWeek}개
-          </small>
-        </aside>
-        <div className="weekly-sessions">
-          {plan.sessions.map((session, index) => (
-            <article
-              key={session.id}
-              className={session.completed ? "is-completed" : ""}
-            >
-              <button
-                className="weekly-check"
-                onClick={() => onToggle(session.id)}
-                aria-label={`${session.label} ${session.completed ? "완료 해제" : "완료 처리"}`}
-                aria-pressed={session.completed}
-              >
-                {session.completed ? <Check size={15} /> : <span />}
-              </button>
-              <div>
-                <p className="small-label">
-                  0{index + 1} · {session.weekday}요일 · {session.duration}분
-                </p>
-                <h3>{session.label}</h3>
-                <p>
-                  {session.recordedAt
-                    ? "운동 기록과 연결되어 완료됨"
-                    : session.addedFromDesigner
-                      ? "세션 설계 도구에서 추가됨"
-                      : "목표별 시작 계획"}
-                </p>
-                <button
-                  className="weekly-log-button"
-                  onClick={() => onStartLog(session)}
-                >
-                  {session.recordedAt
-                    ? "기록 다시 열기"
-                    : "이 계획으로 기록 시작"}
-                  <ArrowRight size={13} />
-                </button>
-              </div>
-            </article>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-}
-
-function WellnessCard({
-  card,
-  index,
-}: {
-  card: (typeof wellnessCards)[number];
-  index: number;
-}) {
-  const [expanded, setExpanded] = useState(false);
-  const detail = wellnessDetails[card.title];
-  const detailId = `wellness-detail-${index}`;
-  return (
-    <article
-      className={`wellness-card tone-${card.tone}${expanded ? " is-expanded" : ""}`}
-    >
-      <span className="wellness-index">
-        {String(index + 1).padStart(2, "0")}
-      </span>
-      <p className="eyebrow">{card.eyebrow}</p>
-      <h3>{card.title}</h3>
-      <p>{card.text}</p>
-      {expanded && (
-        <div id={detailId} className="wellness-detail-region">
-          <WellnessDetailPanel detail={detail} />
-        </div>
-      )}
-      <button
-        className="wellness-expand"
-        aria-expanded={expanded}
-        aria-controls={detailId}
-        onClick={() => setExpanded(!expanded)}
-      >
-        {expanded ? "간단히 보기" : "상세 가이드"}
-        <ChevronRight size={14} className={expanded ? "rotate-icon" : ""} />
-      </button>
-      <a href={card.url} target="_blank" rel="noreferrer">
-        {card.source} <ArrowRight size={14} />
-      </a>
-    </article>
   );
 }
