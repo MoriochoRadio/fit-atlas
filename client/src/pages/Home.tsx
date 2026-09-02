@@ -82,6 +82,7 @@ import {
   saveAtlasInteractionPreferences,
   saveAtlasTheme,
   saveAxisVisibility,
+  readStoredCheckin,
   saveLocalCheckin,
   saveLocalExplorePreferences,
   saveLocalProfile,
@@ -319,6 +320,16 @@ export default function Home() {
           date: today,
         };
   });
+  /**
+   * 오늘 체크인을 실제로 입력했는지. 슬라이더 기본값(3·3·3·1)과 구분해야
+   * 앱을 열어 보기만 한 날이 "입력한 날"로 기록되지 않는다.
+   */
+  const [checkinRecorded, setCheckinRecorded] = useState(() => {
+    const stored = readStoredCheckin();
+    return (
+      stored !== null && stored.date === new Date().toISOString().slice(0, 10)
+    );
+  });
   const [romStatusHistory, setRomStatusHistory] = useState<RomStatusRecord[]>(
     () => (typeof window === "undefined" ? [] : readLocalRomStatusHistory())
   );
@@ -363,11 +374,12 @@ export default function Home() {
   }, []);
 
   useEffect(() => {
+    if (!checkinRecorded) return;
     if (!saveLocalCheckin(checkin)) setStorageUnavailable(true);
     setRomStatusHistory(current =>
       mergeRomStatusHistory(current, createRomStatusRecord(checkin))
     );
-  }, [checkin]);
+  }, [checkin, checkinRecorded]);
 
   useEffect(() => {
     document
@@ -902,6 +914,55 @@ export default function Home() {
    * 계획·기구 세션에서 여는 경로는 그 세션에 맞춰 폼을 따로 채우므로 쓰지 않는다.
    * 빈손으로 "기록 추가"를 누른 경우에만 마지막에 기록한 종목으로 시작한다.
    */
+  const exportBackup = () =>
+    downloadBackup(
+      logs,
+      profileForm,
+      checkin,
+      weeklyPlan,
+      explorePreferences,
+      romStatusHistory,
+      atlasInteraction
+    );
+
+  /**
+   * 가져오기는 지금 브라우저의 기록을 통째로 대체한다. 되돌릴 수 없으므로
+   * 무엇이 얼마나 덮어써지는지 먼저 알리고 확인을 받는다.
+   */
+  const importBackupFile = async (file: File) => {
+    let backup;
+    try {
+      backup = parseBackup(await file.text());
+    } catch {
+      toast.error("백업 파일을 읽지 못했습니다.");
+      return;
+    }
+    const confirmed = window.confirm(
+      [
+        "가져오기는 이 브라우저의 기록을 백업 파일 내용으로 대체합니다.",
+        "",
+        `현재: 운동 기록 ${logs.length}개 · 컨디션 기록 ${romStatusHistory.length}일`,
+        `가져올 파일: 운동 기록 ${backup.logs.length}개 · 컨디션 기록 ${backup.romStatusHistory.length}일`,
+        "",
+        "되돌릴 수 없습니다. 계속할까요?",
+      ].join("\n")
+    );
+    if (!confirmed) return;
+    setLogs(backup.logs);
+    setProfileForm(backup.profile);
+    setCheckin(backup.checkin);
+    setCheckinRecorded(true);
+    setWeeklyPlan(backup.weeklyPlan);
+    setExplorePreferences(backup.explorePreferences);
+    setRomStatusHistory(backup.romStatusHistory);
+    setAtlasInteraction(backup.atlasInteraction);
+    saveLocalProfile(backup.profile);
+    saveLocalCheckin(backup.checkin);
+    saveLocalWeeklyPlan(backup.weeklyPlan);
+    saveLocalExplorePreferences(backup.explorePreferences);
+    toast.success("백업을 복원했습니다.");
+  };
+
   const openBlankLog = () => {
     const [lastExercise] = getRecentLoggedExercises(logs, 1);
     if (lastExercise)
@@ -1574,6 +1635,42 @@ export default function Home() {
             >
               장면 설정
             </button>
+            {/* 기록이 이 브라우저에만 있으므로 백업은 휴대폰에서도 닿아야 한다. */}
+            <button
+              type="button"
+              className="mobile-only mobile-scene-settings"
+              onClick={() => {
+                setMenuOpen(false);
+                setProfileOpen(true);
+              }}
+            >
+              내 프로필
+            </button>
+            <button
+              type="button"
+              className="mobile-only mobile-scene-settings"
+              onClick={() => {
+                setMenuOpen(false);
+                exportBackup();
+              }}
+            >
+              기록 백업
+            </button>
+            <label className="mobile-only mobile-scene-settings">
+              백업 가져오기
+              <input
+                className="sr-only"
+                type="file"
+                accept="application/json"
+                onChange={async event => {
+                  const file = event.target.files?.[0];
+                  const input = event.currentTarget;
+                  setMenuOpen(false);
+                  if (file) await importBackupFile(file);
+                  input.value = "";
+                }}
+              />
+            </label>
           </nav>
           <div className="topbar-actions">
             <button
@@ -1590,15 +1687,7 @@ export default function Home() {
             </button>
             <button
               className="ghost-button desktop-only"
-              onClick={() =>
-                downloadBackup(
-                  logs,
-                  profileForm,
-                  checkin,
-                  weeklyPlan,
-                  explorePreferences
-                )
-              }
+              onClick={exportBackup}
             >
               백업
             </button>
@@ -1610,23 +1699,9 @@ export default function Home() {
                 accept="application/json"
                 onChange={async event => {
                   const file = event.target.files?.[0];
-                  if (!file) return;
-                  try {
-                    const backup = parseBackup(await file.text());
-                    setLogs(backup.logs);
-                    setProfileForm(backup.profile);
-                    setCheckin(backup.checkin);
-                    setWeeklyPlan(backup.weeklyPlan);
-                    setExplorePreferences(backup.explorePreferences);
-                    saveLocalProfile(backup.profile);
-                    saveLocalCheckin(backup.checkin);
-                    saveLocalWeeklyPlan(backup.weeklyPlan);
-                    saveLocalExplorePreferences(backup.explorePreferences);
-                    toast.success("백업을 복원했습니다.");
-                  } catch {
-                    toast.error("백업 파일을 읽지 못했습니다.");
-                  }
-                  event.currentTarget.value = "";
+                  const input = event.currentTarget;
+                  if (file) await importBackupFile(file);
+                  input.value = "";
                 }}
               />
             </label>
@@ -1739,13 +1814,14 @@ export default function Home() {
               toast.success("저장한 운동 환경을 세션에 적용했습니다.");
             }}
             checkin={checkin}
-            onChangeCheckin={(field, value) =>
+            onChangeCheckin={(field, value) => {
+              setCheckinRecorded(true);
               setCheckin(current => ({
                 ...current,
                 date: new Date().toISOString().slice(0, 10),
                 [field]: value,
-              }))
-            }
+              }));
+            }}
             checkinRecommendation={checkinRecommendation}
             sessionGoal={sessionGoal}
             onChangeSessionGoal={setSessionGoal}

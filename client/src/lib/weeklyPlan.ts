@@ -217,16 +217,29 @@ export function completeWeeklySessionWithRecord(
 }
 
 /**
- * 목표를 바꾸면 그 주의 세션 구성이 통째로 달라지므로 계획을 새로 만든다.
- * 따라서 이전 계획의 완료 표시는 유지되지 않는다.
- * 첫 인자는 호출부가 setWeeklyPlan(current => ...) 형태를 쓰기 위해 남겨 둔다.
+ * 목표를 바꾸면 남은 세션 구성은 새 목표에 맞게 다시 짠다.
+ * 다만 이미 완료한 세션과 사용자가 직접 추가한 세션은 실제로 한 활동이므로 남긴다.
+ * (예전에는 계획을 통째로 새로 만들어, 목표만 바꿔도 완료 표시가 말없이 사라졌다.)
  */
 export function setWeeklyGoal(
-  _plan: WeeklyPlan,
+  plan: WeeklyPlan,
   goal: WeeklyPlanGoal,
   referenceDate = new Date()
 ): WeeklyPlan {
-  return createWeeklyPlan(goal, referenceDate);
+  const fresh = createWeeklyPlan(goal, referenceDate);
+  // 지난 주 계획이라면 남길 것이 없다. 이번 주 기록만 이어 간다.
+  if (plan.weekStart !== fresh.weekStart) return fresh;
+  const kept = plan.sessions.filter(
+    session => session.completed || session.addedFromDesigner
+  );
+  const keptIds = new Set(kept.map(session => session.id));
+  return {
+    ...fresh,
+    sessions: [
+      ...kept,
+      ...fresh.sessions.filter(session => !keptIds.has(session.id)),
+    ],
+  };
 }
 
 export function addDesignedSession(

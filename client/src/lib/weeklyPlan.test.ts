@@ -33,15 +33,54 @@ describe("weekly plan", () => {
     ).toBe("all_round");
   });
 
-  it("toggles completion and replaces starter sessions when the goal changes", () => {
+  it("replaces the unfinished starter sessions when the goal changes", () => {
     const plan = createWeeklyPlan("all_round", referenceDate);
     const toggled = toggleWeeklySession(plan, plan.sessions[0].id);
     expect(toggled.sessions[0].completed).toBe(true);
+
+    const switched = setWeeklyGoal(toggled, "endurance", referenceDate);
+    // 이미 마친 세션은 실제로 한 활동이므로 원래 목표 그대로 남는다.
     expect(
-      setWeeklyGoal(toggled, "endurance", referenceDate).sessions.every(
-        session => session.goal === "endurance"
-      )
+      switched.sessions
+        .filter(session => !session.completed)
+        .every(session => session.goal === "endurance")
     ).toBe(true);
+  });
+
+  it("keeps sessions already completed when the weekly goal changes", () => {
+    const plan = createWeeklyPlan("all_round", referenceDate);
+    const completed = toggleWeeklySession(plan, plan.sessions[0].id);
+    expect(
+      completed.sessions.filter(session => session.completed)
+    ).toHaveLength(1);
+
+    const switched = setWeeklyGoal(completed, "endurance", referenceDate);
+    expect(switched.goal).toBe("endurance");
+    expect(switched.sessions.filter(session => session.completed)).toHaveLength(
+      1
+    );
+    expect(switched.sessions.find(session => session.completed)?.id).toBe(
+      plan.sessions[0].id
+    );
+  });
+
+  it("rebuilds the sessions that were not finished for the new goal", () => {
+    const plan = createWeeklyPlan("all_round", referenceDate);
+    const completed = toggleWeeklySession(plan, plan.sessions[0].id);
+    const switched = setWeeklyGoal(completed, "endurance", referenceDate);
+    const rebuilt = switched.sessions.filter(session => !session.completed);
+    expect(rebuilt.length).toBeGreaterThan(0);
+    expect(rebuilt.every(session => session.goal === "endurance")).toBe(true);
+  });
+
+  it("starts clean when the stored plan belongs to an earlier week", () => {
+    const lastWeek = createWeeklyPlan(
+      "all_round",
+      new Date("2026-08-07T12:00:00Z")
+    );
+    const completed = toggleWeeklySession(lastWeek, lastWeek.sessions[0].id);
+    const switched = setWeeklyGoal(completed, "strength", referenceDate);
+    expect(switched.sessions.some(session => session.completed)).toBe(false);
   });
 
   it("marks an exact planned session as completed when a linked record is saved", () => {

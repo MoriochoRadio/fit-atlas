@@ -18,7 +18,9 @@ import {
   saveLocalWeeklyPlan,
   saveSceneExperiencePreferences,
   saveTrainingLogs,
+  defaultAtlasInteractionPreferences,
 } from "./localStore";
+import { defaultExplorePreferences } from "./explorePreferences";
 import { defaultProfilePreferences } from "./profilePreferences";
 import { createWeeklyPlan } from "./weeklyPlan";
 
@@ -55,7 +57,7 @@ describe("local backup format", () => {
       { ...defaultProfilePreferences, recoveryContext: "reduced_readiness" }
     );
     const restored = parseBackup(JSON.stringify(backup));
-    expect(backup.version).toBe(4);
+    expect(backup.version).toBe(5);
     expect(restored.logs).toHaveLength(1);
     expect(restored.profile.recoveryContext).toBe("reduced_readiness");
     expect(restored.weeklyPlan.sessions).toHaveLength(3);
@@ -371,6 +373,72 @@ describe("local backup format", () => {
     expect(readTrainingLogs()).toEqual(logs);
   });
 
+  it("carries the weekly readiness history and edited session blocks", () => {
+    const romStatusHistory = [
+      {
+        date: "2026-08-20",
+        energy: 4,
+        sleep: 3,
+        stress: 2,
+        pain: 1,
+        recommendedRom: "보통" as const,
+      },
+    ];
+    const atlasInteraction = {
+      ...defaultAtlasInteractionPreferences,
+      resistance: 72,
+      blockEdits: {
+        "all_round-home-30-1": {
+          label: "내가 고친 블록",
+          minutes: 12,
+          items: ["A"],
+        },
+      },
+    };
+    const restored = parseBackup(
+      JSON.stringify(
+        createBackup(
+          [],
+          defaultProfilePreferences,
+          undefined,
+          undefined,
+          undefined,
+          romStatusHistory,
+          atlasInteraction
+        )
+      )
+    );
+    expect(restored.romStatusHistory).toEqual(romStatusHistory);
+    expect(restored.atlasInteraction.resistance).toBe(72);
+    expect(
+      restored.atlasInteraction.blockEdits["all_round-home-30-1"].label
+    ).toBe("내가 고친 블록");
+  });
+
+  it("still reads a version 4 backup that predates those fields", () => {
+    const restored = parseBackup(
+      JSON.stringify({
+        version: 4,
+        exportedAt: "2026-08-20T00:00:00.000Z",
+        logs: [],
+        profile: defaultProfilePreferences,
+        checkin: {
+          date: "2026-08-20",
+          energy: 3,
+          sleep: 3,
+          stress: 3,
+          pain: 1,
+        },
+        weeklyPlan: createWeeklyPlan(),
+        explorePreferences: defaultExplorePreferences,
+      })
+    );
+    expect(restored.romStatusHistory).toEqual([]);
+    expect(restored.atlasInteraction).toEqual(
+      defaultAtlasInteractionPreferences
+    );
+  });
+
   it("rejects an invalid backup format", () => {
     expect(() =>
       parseBackup(
@@ -394,7 +462,7 @@ describe("local backup format", () => {
         },
       })
     );
-    expect(restored.version).toBe(4);
+    expect(restored.version).toBe(5);
     expect(restored.weeklyPlan.sessions).toHaveLength(3);
   });
 

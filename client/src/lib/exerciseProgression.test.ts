@@ -20,7 +20,10 @@ const log = (
 describe("getExerciseProgression", () => {
   it("returns nothing when the exercise has only been logged once", () => {
     expect(
-      getExerciseProgression([log({ date: "2026-08-20", exercise: "스쿼트" })], "스쿼트")
+      getExerciseProgression(
+        [log({ date: "2026-08-20", exercise: "스쿼트" })],
+        "스쿼트"
+      )
     ).toBeNull();
   });
 
@@ -43,8 +46,20 @@ describe("getExerciseProgression", () => {
   it("measures a bodyweight exercise by total repetitions instead of load", () => {
     const progression = getExerciseProgression(
       [
-        log({ date: "2026-08-06", exercise: "풀업", load: 0, sets: 3, reps: 4 }),
-        log({ date: "2026-08-20", exercise: "풀업", load: 0, sets: 4, reps: 5 }),
+        log({
+          date: "2026-08-06",
+          exercise: "풀업",
+          load: 0,
+          sets: 3,
+          reps: 4,
+        }),
+        log({
+          date: "2026-08-20",
+          exercise: "풀업",
+          load: 0,
+          sets: 4,
+          reps: 5,
+        }),
       ],
       "풀업"
     );
@@ -81,8 +96,20 @@ describe("getExerciseProgression", () => {
   it("computes volume per session from sets, reps and load", () => {
     const progression = getExerciseProgression(
       [
-        log({ date: "2026-08-06", exercise: "스쿼트", sets: 3, reps: 8, load: 40 }),
-        log({ date: "2026-08-20", exercise: "스쿼트", sets: 4, reps: 6, load: 60 }),
+        log({
+          date: "2026-08-06",
+          exercise: "스쿼트",
+          sets: 3,
+          reps: 8,
+          load: 40,
+        }),
+        log({
+          date: "2026-08-20",
+          exercise: "스쿼트",
+          sets: 4,
+          reps: 6,
+          load: 60,
+        }),
       ],
       "스쿼트"
     );
@@ -109,7 +136,9 @@ describe("getTrackedProgressions", () => {
 
   it("leaves out an exercise with nothing to compare against", () => {
     expect(
-      getTrackedProgressions(logs).some(item => item.exercise === "한 번만 한 운동")
+      getTrackedProgressions(logs).some(
+        item => item.exercise === "한 번만 한 운동"
+      )
     ).toBe(false);
   });
 

@@ -3,7 +3,9 @@ import { getFilterRelaxations } from "./filterRelaxation";
 import { defaultExploreFilters } from "./exploreFilterState";
 import type { Exercise } from "./catalogTypes";
 
-const exercise = (overrides: Partial<Exercise> & { id: string; name: string }): Exercise =>
+const exercise = (
+  overrides: Partial<Exercise> & { id: string; name: string }
+): Exercise =>
   ({
     englishName: overrides.name,
     category: "맨몸운동",
@@ -20,8 +22,19 @@ const exercise = (overrides: Partial<Exercise> & { id: string; name: string }): 
 const catalog: Exercise[] = [
   exercise({ id: "1", name: "바디웨이트 스쿼트" }),
   exercise({ id: "2", name: "리버스 런지", difficulty: "중급" }),
-  exercise({ id: "3", name: "레그 프레스", category: "헬스기구", equipment: "레그 프레스 머신" }),
-  exercise({ id: "4", name: "랫 풀다운", category: "헬스기구", regions: ["등"], equipment: "케이블 머신" }),
+  exercise({
+    id: "3",
+    name: "레그 프레스",
+    category: "헬스기구",
+    equipment: "레그 프레스 머신",
+  }),
+  exercise({
+    id: "4",
+    name: "랫 풀다운",
+    category: "헬스기구",
+    regions: ["등"],
+    equipment: "케이블 머신",
+  }),
 ];
 
 describe("getFilterRelaxations", () => {
@@ -58,7 +71,11 @@ describe("getFilterRelaxations", () => {
       ...defaultExploreFilters,
       difficulty: "상급",
     });
-    expect(first).toMatchObject({ key: "difficulty", label: "난이도", value: "상급" });
+    expect(first).toMatchObject({
+      key: "difficulty",
+      label: "난이도",
+      value: "상급",
+    });
   });
 
   it("skips a condition whose removal still leaves nothing", () => {

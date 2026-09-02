@@ -8,7 +8,9 @@ import {
 } from "./logFormDefaults";
 import type { TrainingLog } from "./trainingMetrics";
 
-const log = (overrides: Partial<TrainingLog> & { date: string; exercise: string }): TrainingLog => ({
+const log = (
+  overrides: Partial<TrainingLog> & { date: string; exercise: string }
+): TrainingLog => ({
   id: `${overrides.exercise}-${overrides.date}`,
   sets: 3,
   reps: 8,
@@ -19,9 +21,29 @@ const log = (overrides: Partial<TrainingLog> & { date: string; exercise: string 
 });
 
 const logs: TrainingLog[] = [
-  log({ date: "2026-08-20", exercise: "바벨 백 스쿼트", sets: 4, reps: 6, load: 60, minutes: 42, intensity: 7 }),
-  log({ date: "2026-08-18", exercise: "달리기", minutes: 30, distance: 5, distanceUnit: "km" }),
-  log({ date: "2026-08-14", exercise: "바벨 백 스쿼트", sets: 3, reps: 8, load: 50 }),
+  log({
+    date: "2026-08-20",
+    exercise: "바벨 백 스쿼트",
+    sets: 4,
+    reps: 6,
+    load: 60,
+    minutes: 42,
+    intensity: 7,
+  }),
+  log({
+    date: "2026-08-18",
+    exercise: "달리기",
+    minutes: 30,
+    distance: 5,
+    distanceUnit: "km",
+  }),
+  log({
+    date: "2026-08-14",
+    exercise: "바벨 백 스쿼트",
+    sets: 3,
+    reps: 8,
+    load: 50,
+  }),
   log({ date: "2026-08-12", exercise: "풀업" }),
 ];
 
@@ -62,11 +84,18 @@ describe("logFormDefaults", () => {
   });
 
   it("lists recently logged exercises newest first without repeating one", () => {
-    expect(getRecentLoggedExercises(logs)).toEqual(["바벨 백 스쿼트", "달리기", "풀업"]);
+    expect(getRecentLoggedExercises(logs)).toEqual([
+      "바벨 백 스쿼트",
+      "달리기",
+      "풀업",
+    ]);
   });
 
   it("respects the requested limit", () => {
-    expect(getRecentLoggedExercises(logs, 2)).toEqual(["바벨 백 스쿼트", "달리기"]);
+    expect(getRecentLoggedExercises(logs, 2)).toEqual([
+      "바벨 백 스쿼트",
+      "달리기",
+    ]);
   });
 
   it("names what changed against the last entry", () => {
@@ -78,7 +107,9 @@ describe("logFormDefaults", () => {
 
   it("says so when nothing changed", () => {
     const values = buildLogFormValues(logs, "바벨 백 스쿼트", "2026-08-26");
-    expect(describeChangeFromLast(logs, values)).toBe("2026-08-20 기록과 같은 구성입니다.");
+    expect(describeChangeFromLast(logs, values)).toBe(
+      "2026-08-20 기록과 같은 구성입니다."
+    );
   });
 
   it("stays quiet for an exercise with no history to compare against", () => {

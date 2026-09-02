@@ -1231,7 +1231,13 @@ describe("Home recovery alternative flow", () => {
 
   it("saves local category, equipment, and environment preferences then applies them to explore and session design", () => {
     render(createElement(Home));
-    fireEvent.click(screen.getByRole("button", { name: "내 프로필" }));
+    // 프로필은 데스크톱 상단과 모바일 메뉴 양쪽에 있으므로 범위를 좁혀 고른다.
+    const topbarActions = document.querySelector(
+      ".topbar-actions"
+    ) as HTMLElement;
+    fireEvent.click(
+      within(topbarActions).getByRole("button", { name: "내 프로필" })
+    );
     fireEvent.change(screen.getByLabelText("선호 운동 종류"), {
       target: { value: "맨몸운동" },
     });

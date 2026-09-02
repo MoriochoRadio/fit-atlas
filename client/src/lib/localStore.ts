@@ -91,13 +91,17 @@ function persistLocalValue(key: string, value: unknown) {
 }
 
 export type FitAtlasBackup = {
-  version: 4;
+  version: 5;
   exportedAt: string;
   logs: TrainingLog[];
   profile: ProfilePreferences;
   checkin: DailyCheckin;
   weeklyPlan: WeeklyPlan;
   explorePreferences: ExplorePreferences;
+  /** 주간 피로·통증 기록. 버전 4까지는 빠져 있어 기기를 옮기면 사라졌다. */
+  romStatusHistory: RomStatusRecord[];
+  /** 사용자가 편집한 세션 블록과 최근 장비 설정. 마찬가지로 버전 4까지 빠져 있었다. */
+  atlasInteraction: AtlasInteractionPreferences;
 };
 
 export function readTrainingLogs(): TrainingLog[] {
@@ -127,6 +131,18 @@ export function readLocalCheckin() {
   return typeof window === "undefined"
     ? defaultDailyCheckin
     : readDailyCheckin(window.localStorage.getItem(CHECKIN_KEY));
+}
+
+/**
+ * 저장된 체크인이 없으면 null 을 준다. readLocalCheckin 은 없을 때도 기본값을 돌려주므로
+ * "사용자가 실제로 입력했는지"를 구분해야 하는 곳에서는 이쪽을 써야 한다.
+ * 이 구분이 없어서 앱을 처음 연 것만으로 오늘 체크인이 기록되고,
+ * 주간 대시보드가 "1/7일 입력"으로 보이는 문제가 있었다.
+ */
+export function readStoredCheckin(): DailyCheckin | null {
+  if (typeof window === "undefined") return null;
+  const raw = window.localStorage.getItem(CHECKIN_KEY);
+  return raw === null ? null : readDailyCheckin(raw);
 }
 
 export function saveLocalCheckin(checkin: DailyCheckin) {
@@ -208,10 +224,19 @@ function readAtlasBlockEdit(value: unknown): AtlasBlockEdit | null {
   };
 }
 
-export function readAtlasInteractionPreferences(): AtlasInteractionPreferences {
+/**
+ * serialized 를 주면 그 문자열을, 주지 않으면 localStorage 를 읽는다.
+ * 백업 파일에서 복원할 때 같은 검증을 다시 쓰기 위해 인자를 받는다.
+ */
+export function readAtlasInteractionPreferences(
+  serialized?: string
+): AtlasInteractionPreferences {
   try {
     const value = JSON.parse(
-      window.localStorage.getItem(ATLAS_INTERACTION_KEY) ?? "{}"
+      serialized ??
+        (typeof window === "undefined"
+          ? "{}"
+          : (window.localStorage.getItem(ATLAS_INTERACTION_KEY) ?? "{}"))
     );
     const motionSpeed = atlasMotionSpeeds.includes(value?.motionSpeed)
       ? value.motionSpeed
@@ -310,16 +335,20 @@ export function createBackup(
   profile: ProfilePreferences,
   checkin: DailyCheckin = defaultDailyCheckin,
   weeklyPlan: WeeklyPlan = createWeeklyPlan(),
-  explorePreferences: ExplorePreferences = defaultExplorePreferences
+  explorePreferences: ExplorePreferences = defaultExplorePreferences,
+  romStatusHistory: RomStatusRecord[] = [],
+  atlasInteraction: AtlasInteractionPreferences = defaultAtlasInteractionPreferences
 ): FitAtlasBackup {
   return {
-    version: 4,
+    version: 5,
     exportedAt: new Date().toISOString(),
     logs,
     profile,
     checkin,
     weeklyPlan,
     explorePreferences,
+    romStatusHistory,
+    atlasInteraction,
   };
 }
 
@@ -328,12 +357,22 @@ export function downloadBackup(
   profile: ProfilePreferences,
   checkin: DailyCheckin,
   weeklyPlan: WeeklyPlan,
-  explorePreferences: ExplorePreferences
+  explorePreferences: ExplorePreferences,
+  romStatusHistory: RomStatusRecord[] = readLocalRomStatusHistory(),
+  atlasInteraction: AtlasInteractionPreferences = readAtlasInteractionPreferences()
 ) {
   const blob = new Blob(
     [
       JSON.stringify(
-        createBackup(logs, profile, checkin, weeklyPlan, explorePreferences),
+        createBackup(
+          logs,
+          profile,
+          checkin,
+          weeklyPlan,
+          explorePreferences,
+          romStatusHistory,
+          atlasInteraction
+        ),
         null,
         2
       ),
@@ -357,12 +396,13 @@ export function parseBackup(serialized: string): FitAtlasBackup {
     checkin?: unknown;
     weeklyPlan?: unknown;
     explorePreferences?: unknown;
+    romStatusHistory?: unknown;
+    atlasInteraction?: unknown;
   };
   if (
-    (value.version !== 1 &&
-      value.version !== 2 &&
-      value.version !== 3 &&
-      value.version !== 4) ||
+    typeof value.version !== "number" ||
+    value.version < 1 ||
+    value.version > 5 ||
     !Array.isArray(value.logs) ||
     !value.profile
   )
@@ -370,12 +410,12 @@ export function parseBackup(serialized: string): FitAtlasBackup {
   if (value.version === 2 && value.checkin === undefined)
     throw new Error("지원하지 않는 백업 파일입니다.");
   if (
-    (value.version === 3 || value.version === 4) &&
+    value.version >= 3 &&
     (value.checkin === undefined || value.weeklyPlan === undefined)
   )
     throw new Error("지원하지 않는 백업 파일입니다.");
   return {
-    version: 4,
+    version: 5,
     exportedAt: typeof value.exportedAt === "string" ? value.exportedAt : "",
     logs: value.logs as TrainingLog[],
     profile: readProfilePreferences(JSON.stringify(value.profile)),
@@ -387,6 +427,15 @@ export function parseBackup(serialized: string): FitAtlasBackup {
     ),
     explorePreferences: readExplorePreferences(
       JSON.stringify(value.explorePreferences ?? defaultExplorePreferences)
+    ),
+    // 버전 4 이하 백업에는 없다. 빈 값으로 복원해 기존 파일도 계속 읽힌다.
+    romStatusHistory: readRomStatusHistory(
+      JSON.stringify(value.romStatusHistory ?? [])
+    ),
+    atlasInteraction: readAtlasInteractionPreferences(
+      JSON.stringify(
+        value.atlasInteraction ?? defaultAtlasInteractionPreferences
+      )
     ),
   };
 }

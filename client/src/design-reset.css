@@ -2520,7 +2520,10 @@ user-paced motion {
   }
   .mobile-only.mobile-scene-settings {
     display: inline-flex;
+    align-items: center;
     justify-content: flex-start;
+    /* 손가락으로 누르는 항목이므로 WCAG 2.2 의 최소 24px 을 넘긴다. */
+    min-height: 34px;
     padding: 0;
     color: #65738b;
     border: 0;
@@ -2528,6 +2531,12 @@ user-paced motion {
     font: inherit;
     font-size: 13px;
     font-weight: 600;
+    cursor: pointer;
+  }
+  .topbar nav a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 34px;
   }
 }
 .scene-view-explore .section-heading h2 {
